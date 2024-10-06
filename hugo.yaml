@@ -1,0 +1,25 @@
+baseURL: https://example.org/
+languageCode: es-es
+defaultContentLanguage: "es"
+title: My New Tresycuarto Site
+theme: PaperMod
+params:
+  dateFormat: "02 de January de 2006" # Esto será reemplazado por las traducciones
+  showPostsOnHomePage: true
+pagination:
+  pagerSize: 5
+
+menu:
+  main:
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 3
+    - identifier: Social
+      name: Social
+      url: /categories/social/
+      weight: 2
+    - identifier: inicio
+      name: Inicio
+      url: http://localhost:1313
+      weight: 1

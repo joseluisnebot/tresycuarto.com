@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on My New Tresycuarto Site</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on My New Tresycuarto Site</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 06 Oct 2024 10:13:23 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>América Latina</title>
+      <link>http://localhost:1313/tags/am%C3%A9rica-latina/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/am%C3%A9rica-latina/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Brasil</title>
+      <link>http://localhost:1313/tags/brasil/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/brasil/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cambio Climático</title>
+      <link>http://localhost:1313/tags/cambio-clim%C3%A1tico/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/cambio-clim%C3%A1tico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desigualdad</title>
+      <link>http://localhost:1313/tags/desigualdad/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/desigualdad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Injusticia Social</title>
+      <link>http://localhost:1313/tags/injusticia-social/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/injusticia-social/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protestas</title>
+      <link>http://localhost:1313/tags/protestas/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/protestas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innovacion</title>
+      <link>http://localhost:1313/tags/innovacion/</link>
+      <pubDate>Sun, 06 Oct 2024 08:16:23 +0200</pubDate>
+      <guid>http://localhost:1313/tags/innovacion/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

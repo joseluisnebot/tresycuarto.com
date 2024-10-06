@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Desigualdad on My New Tresycuarto Site</title>
+    <link>http://localhost:1313/tags/desigualdad/</link>
+    <description>Recent content in Desigualdad on My New Tresycuarto Site</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 06 Oct 2024 10:13:23 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/desigualdad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crisis climática y desigualdad social: América Latina en alerta</title>
+      <link>http://localhost:1313/posts/crisis_climatica_desigualdad_social_2024/</link>
+      <pubDate>Sun, 06 Oct 2024 10:13:23 +0200</pubDate>
+      <guid>http://localhost:1313/posts/crisis_climatica_desigualdad_social_2024/</guid>
+      <description>&lt;p&gt;En las últimas 24 horas de octubre de 2024, América Latina ha sido testigo de múltiples crisis sociales y medioambientales que evidencian la creciente desigualdad en la región. Las sequías e incendios están afectando gravemente a países como Brasil, Paraguay y Bolivia. En Brasil, la crisis climática ha impactado duramente a las comunidades más vulnerables, especialmente a las poblaciones indígenas y a quienes viven en favelas.&lt;/p&gt;
+&lt;p&gt;Una de las iniciativas que busca mitigar estos efectos es &amp;ldquo;Agrofavela-Refazenda&amp;rdquo;, en la favela de Paraisópolis, un proyecto para producir alimentos sostenibles en medio de un contexto de abandono estatal. Los habitantes de estas áreas vulnerables enfrentan una profunda inseguridad alimentaria, agravada por la falta de políticas públicas inclusivas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

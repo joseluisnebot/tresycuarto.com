@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Manifestaciones on My New Tresycuarto Site</title>
+    <link>http://localhost:1313/tags/manifestaciones/</link>
+    <description>Recent content in Manifestaciones on My New Tresycuarto Site</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/manifestaciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protestas en América Latina por la creciente desigualdad social</title>
+      <link>http://localhost:1313/posts/protestas_desigualdad_social/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/protestas_desigualdad_social/</guid>
+      <description>&lt;p&gt;En las últimas 24 horas, varias ciudades de América Latina han sido el epicentro de intensas protestas sociales, impulsadas por el aumento de la desigualdad que afecta a la región. Desde Santiago de Chile hasta Ciudad de México, miles de personas han tomado las calles para reclamar justicia económica y social, exigiendo políticas más equitativas por parte de sus gobiernos.&lt;/p&gt;
+&lt;p&gt;Los manifestantes señalan que, tras los efectos devastadores de la pandemia de COVID-19 y la actual crisis económica global, las brechas entre ricos y pobres han crecido significativamente. La falta de acceso a servicios básicos, como la atención sanitaria, la educación de calidad y viviendas asequibles, ha sido uno de los principales motivos de las protestas. Además, muchas de las críticas se han dirigido a las reformas laborales que, en lugar de mejorar las condiciones de empleo, han dejado a un alto porcentaje de la población con trabajos precarios, sin seguridad social ni derechos laborales garantizados.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

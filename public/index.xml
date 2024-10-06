@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My New Tresycuarto Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Tresycuarto Site</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 06 Oct 2024 20:10:12 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crisis climática y desigualdad social: América Latina en alerta</title>
+      <link>http://localhost:1313/posts/crisis_climatica_desigualdad_social_actualizado/</link>
+      <pubDate>Sun, 06 Oct 2024 20:10:12 +0200</pubDate>
+      <guid>http://localhost:1313/posts/crisis_climatica_desigualdad_social_actualizado/</guid>
+      <description>&lt;p&gt;En las últimas 24 horas de octubre de 2024, América Latina ha sido testigo de múltiples crisis sociales y medioambientales que evidencian la creciente desigualdad en la región. Las sequías e incendios están afectando gravemente a países como Brasil, Paraguay y Bolivia. En Brasil, la crisis climática ha impactado duramente a las comunidades más vulnerables, especialmente a las poblaciones indígenas y a quienes viven en favelas.&lt;/p&gt;
+&lt;p&gt;Una de las iniciativas que busca mitigar estos efectos es &amp;ldquo;Agrofavela-Refazenda&amp;rdquo;, en la favela de Paraisópolis, un proyecto para producir alimentos sostenibles en medio de un contexto de abandono estatal. Los habitantes de estas áreas vulnerables enfrentan una profunda inseguridad alimentaria, agravada por la falta de políticas públicas inclusivas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentacion7</title>
+      <link>http://localhost:1313/posts/presentacion7/</link>
+      <pubDate>Sun, 06 Oct 2024 20:02:33 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion7/</guid>
+      <description>&lt;p&gt;Es la presentacion 7&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentacion6</title>
+      <link>http://localhost:1313/posts/presentacion6/</link>
+      <pubDate>Sun, 06 Oct 2024 19:07:56 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion6/</guid>
+      <description>&lt;p&gt;Hola esto es una prueba&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentacion5</title>
+      <link>http://localhost:1313/posts/presentacion5/</link>
+      <pubDate>Sun, 06 Oct 2024 19:07:51 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Presentacion4</title>
+      <link>http://localhost:1313/posts/presentacion4/</link>
+      <pubDate>Sun, 06 Oct 2024 19:07:46 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion4/</guid>
+      <description>&lt;p&gt;prueba 4&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentacion2</title>
+      <link>http://localhost:1313/posts/presentacion2/</link>
+      <pubDate>Sun, 06 Oct 2024 19:07:34 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion2/</guid>
+      <description>&lt;p&gt;prueba 2&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentacion1</title>
+      <link>http://localhost:1313/posts/presentacion1/</link>
+      <pubDate>Sun, 06 Oct 2024 19:07:20 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Presentacion</title>
+      <link>http://localhost:1313/posts/presentacion/</link>
+      <pubDate>Sun, 06 Oct 2024 08:16:23 +0200</pubDate>
+      <guid>http://localhost:1313/posts/presentacion/</guid>
+      <description>&lt;p&gt;Esto es una prueba&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
