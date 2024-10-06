@@ -21,5 +21,5 @@ menu:
       weight: 2
     - identifier: inicio
       name: Inicio
-      url: http://localhost:1313
+      url: https://joseluisnebot.github.io/tresycuarto.com/
       weight: 1
