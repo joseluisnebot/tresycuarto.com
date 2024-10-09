@@ -1,4 +1,4 @@
-baseURL: https://example.org/
+#baseURL: https://example.org/
 languageCode: es-es
 defaultContentLanguage: "es"
 title: My New Tresycuarto Site
