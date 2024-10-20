@@ -15,9 +15,9 @@ menu:
       name: tags
       url: /tags/
       weight: 3
-    - identifier: Social
-      name: Social
-      url: /categories/social/
+    - identifier: Noticias
+      name: Noticias
+      url: /categories/noticias/
       weight: 2
     - identifier: inicio
       name: Inicio
