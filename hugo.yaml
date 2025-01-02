@@ -8,8 +8,7 @@ params:
   showPostsOnHomePage: true
 pagination:
   pagerSize: 5
-homeInfoParams:
-    featuredPost: false
+disableSpecial1stPost: true
 menu:
   main:
     - identifier: tags
