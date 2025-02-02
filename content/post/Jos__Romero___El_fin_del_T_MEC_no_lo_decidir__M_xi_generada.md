@@ -1,16 +1,16 @@
 
 ---
 title: "José Romero*: El fin del T-MEC no lo decidirá México, sino Estados Unidos"
-date: 2025-02-02T09:33:17
+date: 2025-02-02T09:36:49
 categories: [Noticias]
-tags: ["SEO", "José Romero", "economía internacional", "Tratado entre México Estados Unidos y Canadá", "T-MEC", "TLCAN", "liberalización económica", "apertura comercial", "México", "Estados Unidos", "Canadá", "incertidumbre política", "incertidumbre económica"]
+tags: ["analista económico", "Tratado entre México", "Estados Unidos y Canadá", "T-MEC", "TLCAN", "crisis de la deuda", "modelo de sustitución de importaciones", "economía global", "aranceles", "GATT", "mercado interno", "desarrollo de industrias locales"]
 ---
 
-José Romero, experto en economía internacional, ha lanzado una advertencia sobre el futuro del Tratado entre México, Estados Unidos y Canadá (T-MEC), señalando que su destino no estará en manos de México, sino en las decisiones que tome Estados Unidos. Romero hace referencia a la historia del Tratado de Libre Comercio de América del Norte (TLCAN), el cual considera como una respuesta neoliberal a la crisis de la deuda que azotó la región en décadas pasadas.
+José Romero, reconocido analista económico, ha planteado recientemente que el destino del Tratado entre México, Estados Unidos y Canadá (T-MEC) no estará en manos de México, sino que será Estados Unidos quien tenga la última palabra en su continuidad. Esta afirmación surge en un contexto donde se cuestiona el papel del TLCAN como respuesta neoliberal a la crisis de la deuda en la región, atribuyendo la responsabilidad al modelo de sustitución de importaciones que predominaba en México en aquel entonces. 
 
-El TLCAN, firmado en 1994, fue visto por muchos como la culminación de un proceso de liberalización económica en México. En esa época, se atribuyó la crisis de la deuda a las políticas de sustitución de importaciones que habían predominado en la región. México, en su afán de integrarse a la economía global, había comenzado a reducir aranceles y abrir sus fronteras comerciales mucho antes de la firma del TLCAN, como parte de su ingreso al Acuerdo General sobre Aranceles Aduaneros y Comercio (GATT).
+En el pasado, el Tratado de Libre Comercio de América del Norte (TLCAN) fue presentado como una solución para modernizar las economías de los países involucrados y fomentar el intercambio comercial. Sin embargo, Romero destaca que este acuerdo no logró abordar de manera efectiva las raíces de la crisis de la deuda que afectaba a la región, sino que más bien profundizó la dependencia de ciertos sectores económicos en México.
 
-La apertura económica de México permitió que el país exportara sus productos de manera más libre y abriera nuevas oportunidades de comercio con socios internacionales. Sin embargo, esta liberalización también trajo consigo desafíos y críticas, especialmente en lo que respecta a la protección de sectores vulnerables de la economía nacional. El debate sobre los beneficios y desventajas de la apertura comercial sigue vigente en la actualidad, especialmente en un contexto de incertidumbre política y económica a nivel global.
+México, en un esfuerzo por integrarse a la economía global, había reducido sus aranceles significativamente tras su ingreso al Acuerdo General sobre Aranceles Aduaneros y Comercio (GATT), lo que le permitió expandir sus exportaciones. No obstante, esta apertura comercial no estuvo exenta de críticas, ya que se argumentaba que vulneraba la capacidad del país para proteger su mercado interno y fomentar el desarrollo de industrias locales.
 
-Ante la incertidumbre actual, con un panorama geopolítico en constante cambio y tensiones comerciales entre potencias mundiales, las palabras de José Romero resuenan con particular relevancia. El futuro del T-MEC, y por ende, de la relación comercial entre México, Estados Unidos y Canadá, parece depender en gran medida de las decisiones que se tomen en territorio estadounidense. En este contexto, resulta fundamental para México mantenerse alerta y preparado para afrontar los posibles escenarios que se presenten en el ámbito internacional.
+En la actualidad, la discusión sobre el futuro del T-MEC cobra relevancia en un contexto de tensiones comerciales entre Estados Unidos y México. La postura de José Romero plantea un escenario en el que la decisión final sobre la continuidad de este tratado recaerá en la potencia del norte, lo que sin duda generará debates sobre la soberanía económica de México y su capacidad para negociar en igualdad de condiciones en el ámbito internacional.
     
