@@ -1,0 +1,16 @@
+---
+title: "Sánchez anuncia una Ley de Agricultura Familiar en el marco de la Estrategia Nacional de Alimentación"
+date: 2025-02-07T13:15:03+0000
+categories: [Noticias]
+tags: ["presidente", "Pedro Sánchez", "Ley de Agricultura Familiar", "estrategia nacional de alimentación", "sector agrario", "seguridad alimentaria", "agricultura sostenible", "desarrollo rural."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-Y2yD90OTixwBkl2KqVwOdsdY.png?st=2025-02-07T12%3A15%3A03Z&se=2025-02-07T14%3A15%3A03Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-02-07T01%3A45%3A56Z&ske=2025-02-08T01%3A45%3A56Z&sks=b&skv=2024-08-04&sig=oDbntbIxzRxFCDUZDHTIC3bsQbajdCCbBHjUB2gyD7c%3D"
+---
+
+El presidente del Gobierno, Pedro Sánchez, ha dado un paso significativo en el ámbito agrícola al anunciar la creación de una nueva Ley de Agricultura Familiar en el marco de la Estrategia Nacional de Alimentación. Durante la presentación de esta estrategia, Sánchez destacó la importancia de apoyar a las familias que se dedican a la actividad agrícola, reconociendo su labor fundamental en la producción de alimentos para la población. Esta iniciativa se enmarca en la voluntad del Ejecutivo de fortalecer el sector agrario y garantizar la sostenibilidad de la producción de alimentos en el país.
+
+La nueva Ley de Agricultura Familiar que se prevé aprobar durante esta legislatura busca brindar un marco normativo adecuado para proteger y promover la actividad agrícola de las familias que dependen de ella para su sustento. Con esta medida, el Gobierno pretende impulsar el desarrollo rural, fomentar la agricultura sostenible y garantizar la seguridad alimentaria en España. Además, se espera que esta ley contribuya a mejorar las condiciones de vida de los agricultores familiares y a asegurar su permanencia en el sector a largo plazo.
+
+Uno de los principales objetivos de esta iniciativa es el de reconocer el papel fundamental de la agricultura familiar en la economía y la sociedad española, así como promover su profesionalización y modernización. Para ello, se contempla la implementación de medidas de apoyo, incentivos y programas de formación que permitan a las familias agricultoras mejorar sus prácticas productivas, acceder a tecnologías innovadoras y diversificar sus cultivos. De esta manera, se busca fortalecer la competitividad del sector agrícola familiar y favorecer su integración en las cadenas de valor alimentarias.
+
+En definitiva, la aprobación de esta nueva Ley de Agricultura Familiar representa un paso importante en el impulso de una agricultura más justa, sostenible y próspera en España. Con esta medida, el Gobierno de Pedro Sánchez reafirma su compromiso con el sector agrario y con la promoción de un modelo de producción de alimentos que garantice la calidad, la seguridad y la soberanía alimentaria en el país. Se espera que esta ley contribuya a consolidar a las familias agricultoras como actores clave en la construcción de un sistema agroalimentario más equitativo y resiliente.
+    
