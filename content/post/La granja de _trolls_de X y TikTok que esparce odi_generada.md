@@ -1,0 +1,16 @@
+---
+title: "La granja de ˈtrollsˈde X y TikTok que esparce odio contra la AEMET e intenta que te opongas a la ciencia - así es la estrategia de “lluvia fina”"
+date: 2025-02-09T13:14:22+0000
+categories: [Noticias]
+tags: ["redes sociales", "granja de trolls", "Agencia Estatal de Meteorología", "teorías conspiranoicas", "chemtrails", "desinformación", "manipulación en línea."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-V8ReztrAs11FbKlRma4747Vg.png?st=2025-02-09T12%3A14%3A22Z&se=2025-02-09T14%3A14%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-02-09T09%3A37%3A06Z&ske=2025-02-10T09%3A37%3A06Z&sks=b&skv=2024-08-04&sig=%2BJrvaSKAWCXHLXgwSLnQa7SAwEXQupa5czxtkxxGLe8%3D"
+---
+
+En los últimos tiempos, ha emergido una preocupante tendencia en las redes sociales, específicamente en plataformas como X y TikTok, donde una granja de "trolls" se ha dedicado a esparcir odio contra la Agencia Estatal de Meteorología (AEMET) y a sembrar desconfianza en la ciencia a través de una estrategia conocida como "lluvia fina". Esta estrategia, que se basa en la difusión de teorías conspiranoicas, ha generado un debate acalorado entre aquellos que creen en la veracidad de los fenómenos climáticos y aquellos que se aferran a creencias infundadas.
+
+Uno de los puntos más controvertidos de esta estrategia es la creencia de que ciertos aviones que surcan el cielo están provocando la sequía y fumigando a la población a través de la liberación de sustancias nocivas a través de estelas que dejan a su paso. Estas estelas, comúnmente conocidas como "chemtrails", han alimentado teorías conspirativas que han ganado terreno entre miles de personas, generando un clima de desconfianza y confusión en torno a temas relacionados con el clima y la salud pública.
+
+La propagación de estas teorías ha llevado a un aumento de la polarización en la sociedad, con un sector de la población creyendo firmemente en la existencia de una conspiración a gran escala para controlar el clima y fumigar a la población, mientras que otro sector se aferra a la evidencia científica que desmiente tales afirmaciones. Este fenómeno ha puesto de manifiesto la importancia de fomentar la alfabetización científica y promover el pensamiento crítico entre la población, especialmente en un momento donde la desinformación puede tener consecuencias graves para la sociedad.
+
+Ante este panorama, es fundamental que las autoridades y los medios de comunicación redoblen sus esfuerzos para desmentir las teorías conspirativas y promover un diálogo basado en la evidencia científica. La lucha contra la desinformación y la manipulación en línea se vuelve cada vez más crucial en un mundo donde la información circula a una velocidad vertiginosa y puede influir en la toma de decisiones individuales y colectivas. Es responsabilidad de todos contribuir a la construcción de un entorno digital más seguro y basado en la verdad, para garantizar que la sociedad pueda enfrentar los desafíos del presente y del futuro con conocimiento y claridad.
+    
