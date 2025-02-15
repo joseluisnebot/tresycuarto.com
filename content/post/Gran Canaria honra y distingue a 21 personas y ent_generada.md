@@ -1,0 +1,16 @@
+---
+title: "Gran Canaria honra y distingue a 21 personas y entidades por su trabajo en favor de la isla y sus habitantes"
+date: 2025-02-15T13:14:24+0000
+categories: [Noticias]
+tags: ["Cabildo de Gran Canaria", "reconocimiento", "Gran Canaria", "homenaje", "cultura", "literatura canaria", "patrimonio cultural."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-qA36an863oCsgp2Ba6LnuLPF.png?st=2025-02-15T12%3A14%3A24Z&se=2025-02-15T14%3A14%3A24Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-02-15T09%3A39%3A22Z&ske=2025-02-16T09%3A39%3A22Z&sks=b&skv=2024-08-04&sig=foq5luxcmm7nDcRosewX0nAP8bXq2V40czQLLnElW18%3D"
+---
+
+El Cabildo de Gran Canaria ha llevado a cabo un emotivo acto de reconocimiento en el que ha honrado y distinguido a 21 personas y entidades por su destacado trabajo en favor de la isla y sus habitantes. Entre los homenajeados se encuentran la escritora y artista plástica Pino Ojeda Quevedo, el reconocido escritor Rafael Romero Quesada, más conocido como Alonso Quesada, y el recordado futbolista Antonio Afonso Moreno, cariñosamente llamado Tonono. Este selecto grupo será nombrado Hija e Hijos Predilectos de Gran Canaria, un merecido reconocimiento que se realiza a título póstumo en el caso de Tonono.
+
+Pino Ojeda Quevedo, destacada escritora y artista plástica, ha dejado una huella imborrable en la cultura de Gran Canaria, siendo una fuente de inspiración para generaciones de artistas locales. Por su parte, Rafael Romero Quesada, bajo el seudónimo de Alonso Quesada, ha enriquecido la literatura canaria con su obra, convirtiéndose en un referente para la comunidad literaria de la isla. Asimismo, la figura de Tonono, el carismático futbolista que brilló en los terrenos de juego, será recordada por siempre en la memoria colectiva de los habitantes de Gran Canaria.
+
+El Cabildo de Gran Canaria ha destacado la importancia de reconocer y valorar el legado de aquellos que han contribuido de manera significativa al desarrollo y la identidad de la isla. La entrega de estos nombramientos como Hija e Hijos Predilectos es un gesto de gratitud hacia aquellos que, con su esfuerzo y dedicación, han dejado una profunda huella en la historia y la sociedad de Gran Canaria. Este acto de distinción refleja el compromiso de la institución por valorar y preservar el patrimonio cultural y humano de la isla.
+
+La ceremonia de homenaje contó con la presencia de autoridades, familiares y amigos de los homenajeados, quienes compartieron momentos de emoción y gratitud por el legado dejado por estos destacados personajes. El Cabildo de Gran Canaria reafirma su compromiso de seguir reconociendo la labor de aquellos que, como Pino Ojeda Quevedo, Rafael Romero Quesada (Alonso Quesada) y Antonio Afonso Moreno (Tonono), han contribuido de manera sobresaliente al enriquecimiento cultural y social de la isla. Este reconocimiento perdurará en la memoria de Gran Canaria como un tributo a quienes han dedicado su vida al servicio de la comunidad y al fomento de la identidad insular.
+    
