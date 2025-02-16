@@ -1,0 +1,16 @@
+---
+title: "Solo el 0.1 por ciento de los usuarios de internet es capaz de detectar un 'deepfake'"
+date: 2025-02-16T02:15:05+0000
+categories: [Noticias]
+tags: ["investigación", "deepfake", "inteligencia artificial", "contenido manipulado", "desinformación", "detección", "tecnologías avanzadas."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-1Y9dTtMKZdS0Mg0CmpNgqRq1.png?st=2025-02-16T01%3A15%3A05Z&se=2025-02-16T03%3A15%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-02-15T08%3A50%3A59Z&ske=2025-02-16T08%3A50%3A59Z&sks=b&skv=2024-08-04&sig=sUU/92AiB4s/%2Bmw2ToR7F37k58Oz4XMY/RQQIDTQUtU%3D"
+---
+
+Una investigación llevada a cabo por el proveedor de soluciones biométricas iProov, según reportado por Europa Press, reveló un dato impactante en el mundo digital actual: solo el 0.1 por ciento de los usuarios de internet posee la capacidad de distinguir con precisión un 'deepfake' generado por inteligencia artificial de un contenido auténtico. Este tipo de contenido manipulado, conocido como 'deepfake', ha despertado preocupaciones en cuanto a la veracidad de la información que se comparte en la red y su potencial impacto en la sociedad.
+
+Los 'deepfakes' son manipulaciones digitales cada vez más sofisticadas que utilizan inteligencia artificial para crear videos falsos que pueden resultar extremadamente convincentes para el ojo humano. En este sentido, la investigación realizada por iProov pone de manifiesto la complejidad de detectar este tipo de contenido fraudulento, lo cual plantea serias implicaciones en términos de desinformación y manipulación de la opinión pública.
+
+De acuerdo con los resultados obtenidos, los videos falsos generados por inteligencia artificial son los más difíciles de identificar como 'deepfakes', lo que resalta la necesidad de estar alerta y desarrollar herramientas efectivas para combatir este fenómeno en constante evolución. La distinción entre un 'deepfake' y un contenido real se vuelve cada vez más difusa, lo que subraya la importancia de la educación digital y la concienciación sobre los riesgos asociados con la manipulación de videos mediante tecnologías avanzadas.
+
+En un contexto donde la información circula de forma vertiginosa a través de plataformas digitales, la capacidad de discernir entre lo auténtico y lo manipulado se convierte en un desafío crucial para la sociedad actual. La investigación de iProov destaca la urgencia de desarrollar estrategias y herramientas que permitan detectar y contrarrestar eficazmente los 'deepfakes', protegiendo así la integridad de la información y preservando la confianza en el entorno digital. Con la proliferación de este tipo de contenido engañoso, la concienciación y la innovación tecnológica se presentan como pilares fundamentales para afrontar los desafíos que plantea la era de la desinformación digital.
+    
