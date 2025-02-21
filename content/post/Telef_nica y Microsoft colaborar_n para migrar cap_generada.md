@@ -1,0 +1,16 @@
+---
+title: "Telefónica y Microsoft colaborarán para migrar capacidades de Kernel a Azure"
+date: 2025-02-21T13:15:04+0000
+categories: [Noticias]
+tags: ["Telefónica", "Microsoft", "colaboración estratégica", "GSMA", "Open Gateway", "tecnología", "transformación digital."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-AK1MtvlS3aGSP8a8FdQxEEBG.png?st=2025-02-21T12%3A15%3A04Z&se=2025-02-21T14%3A15%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-02-21T00%3A25%3A13Z&ske=2025-02-22T00%3A25%3A13Z&sks=b&skv=2024-08-04&sig=qDEuJiEZdzeXtIsh1FgV0GRQFqkXhc93Al9a1fodvDE%3D"
+---
+
+Telefónica y Microsoft han reafirmado su colaboración estratégica al ampliar un acuerdo que iniciaron hace cinco años. En esta ocasión, ambas compañías anuncian un ambicioso proyecto de innovación que se centrará en la iniciativa de la GSMA, Open Gateway. Este acuerdo representa un paso significativo en la asociación entre Telefónica, una de las principales empresas de telecomunicaciones a nivel mundial, y Microsoft, líder en tecnología a nivel global.
+
+La iniciativa de colaboración entre Telefónica y Microsoft se enfocará en la migración de capacidades de Kernel a la plataforma de computación en la nube de Microsoft, Azure. Esto permitirá a ambas empresas explorar nuevas formas de optimizar sus operaciones y servicios, así como mejorar la experiencia de sus clientes. La fusión de la experiencia de Telefónica en el sector de las telecomunicaciones y la innovación tecnológica de Microsoft promete brindar soluciones de vanguardia en un mercado altamente competitivo y en constante evolución.
+
+La GSMA, entidad que representa los intereses de los operadores móviles a nivel mundial, ha sido un motor clave en la promoción de la iniciativa Open Gateway. Esta plataforma tiene como objetivo impulsar la colaboración y la innovación en el ecosistema de las telecomunicaciones, facilitando la integración de servicios y la creación de nuevas oportunidades de negocio. La participación de Telefónica y Microsoft en este proyecto demuestra su compromiso con la transformación digital y su voluntad de liderar la industria hacia un futuro más conectado y eficiente.
+
+En un contexto marcado por la rápida evolución de las tecnologías digitales, la asociación entre Telefónica y Microsoft cobra una relevancia aún mayor. Ambas empresas están decididas a aprovechar al máximo las oportunidades que ofrece la era digital, y esta colaboración en torno a la iniciativa Open Gateway es solo el comienzo de lo que promete ser una relación fructífera y de largo plazo. Con un enfoque en la innovación y la excelencia tecnológica, Telefónica y Microsoft se posicionan como actores clave en la transformación del sector de las telecomunicaciones, apostando por soluciones que impulsen el crecimiento y la competitividad en un mercado cada vez más exigente.
+    
