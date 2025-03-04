@@ -1,0 +1,16 @@
+---
+title: "Una empresa internacional busca 200 empleados en Sevilla con contratos indefinidos y sin experiencia"
+date: 2025-03-04T13:14:27+0000
+categories: [Noticias]
+tags: ["empresa internacional", "Foundever", "Sevilla", "experiencia del cliente", "tecnología", "inteligencia artificial", "creatividad."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-maW9JRCmtrWv2gWPonRRdh9f.png?st=2025-03-04T12%3A14%3A27Z&se=2025-03-04T14%3A14%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-04T03%3A49%3A02Z&ske=2025-03-05T03%3A49%3A02Z&sks=b&skv=2024-08-04&sig=XI0FSyKyzQ8SBGHYe6oFCJK%2BP8KG8bQx8BBI9AdHcf4%3D"
+---
+
+En el marco de una iniciativa sin precedentes, la reconocida empresa internacional Foundever ha anunciado la apertura de 200 puestos de trabajo en la ciudad de Sevilla, ofreciendo contratos indefinidos y la posibilidad de integrarse a su equipo sin necesidad de poseer experiencia previa. Esta empresa, considerada un verdadero líder global en el ámbito de la experiencia del cliente, ha consolidado su presencia en el mercado desde su fundación en 1994, destacándose por su innovación constante y el empleo de tecnologías de vanguardia como la inteligencia artificial y la creatividad como pilares fundamentales de su filosofía empresarial.
+
+Foundever, una compañía con una trayectoria sólida y reconocida a nivel mundial, ha decidido expandir sus operaciones en la ciudad de Sevilla, brindando una oportunidad única para aquellos que deseen formar parte de un equipo de alto rendimiento y comprometido con la excelencia en la experiencia del cliente. Con un enfoque centrado en la innovación y el desarrollo constante, esta empresa se ha destacado por su capacidad para adaptarse a las demandas del mercado global, utilizando la tecnología y la inteligencia artificial como herramientas clave para ofrecer soluciones creativas y eficientes a sus clientes.
+
+Los puestos de trabajo ofrecidos por Foundever en Sevilla abarcan diversas áreas y perfiles profesionales, brindando la posibilidad de integrarse a una empresa de renombre que valora el talento y la diversidad de sus empleados. Con un ambiente de trabajo dinámico y colaborativo, esta compañía se ha destacado por su cultura organizacional basada en la innovación y la creatividad, promoviendo el desarrollo profesional y personal de sus empleados a través de programas de formación y capacitación continua.
+
+En un mercado laboral cada vez más competitivo, la oportunidad de formar parte de una empresa líder como Foundever en la vibrante ciudad de Sevilla representa un verdadero hito para aquellos que buscan un empleo estable y desean crecer profesionalmente en un entorno estimulante y en constante evolución. Con su enfoque en la tecnología, la inteligencia artificial y la creatividad, Foundever se posiciona como un referente en el sector de la experiencia del cliente, ofreciendo a sus empleados la posibilidad de contribuir a proyectos innovadores y desafiantes que marcarán un antes y un después en la industria.
+    
