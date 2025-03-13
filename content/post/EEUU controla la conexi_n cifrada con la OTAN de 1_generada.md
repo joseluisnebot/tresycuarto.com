@@ -1,0 +1,16 @@
+---
+title: "EEUU controla la conexión cifrada con la OTAN de 121 de los 137 cazas españoles y de las cinco fragatas más modernas"
+date: 2025-03-13T02:14:22+0000
+categories: [Noticias]
+tags: ["Estados Unidos", "conexión cifrada", "OTAN", "Link 16", "comunicaciones cifradas", "Fuerzas Armadas", "tecnologías avanzadas", "submarinos", "Marina Real", "Scorpène francés", "Dolph", "flota naval", "relaciones internacionales", "defensa"]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-UUuiPxWkzTrlfqqw7QFFtbEY.png?st=2025-03-13T01%3A14%3A22Z&se=2025-03-13T03%3A14%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-12T18%3A33%3A20Z&ske=2025-03-13T18%3A33%3A20Z&sks=b&skv=2024-08-04&sig=6Zce/BSFVF4Mz5X4GhNRBHs28k40xD3ZTwzAsnQyk/k%3D"
+---
+
+En un reciente informe se ha revelado que Estados Unidos mantiene el control sobre la conexión cifrada con la OTAN de un significativo número de aeronaves y buques españoles, específicamente 121 de los 137 cazas de combate españoles y las cinco fragatas más avanzadas. Este control se ejerce a través del sistema Link 16, el cual es considerado un componente crítico para las operaciones de las Fuerzas Armadas al permitir comunicaciones cifradas de alto nivel de seguridad. Cabe destacar que el Link 16 se ha establecido como el estándar predominante utilizado en los cazas patrios, lo que subraya su importancia estratégica en el ámbito militar.
+
+La importancia del sistema Link 16 radica en su capacidad para asegurar comunicaciones cifradas dentro de las Fuerzas Armadas, lo que garantiza la confidencialidad y seguridad de la información transmitida durante las operaciones militares. En el caso de España, el uso extendido de este sistema en la flota de cazas y fragatas demuestra el compromiso del país con la adopción de tecnologías avanzadas para mantener su capacidad operativa a la vanguardia en el ámbito de la defensa.
+
+Por otro lado, en un contexto más amplio, se ha generado interés en torno a la adquisición de nuevos submarinos por parte de Marruecos para fortalecer su Marina Real. Entre las opciones consideradas se encuentran el Scorpène francés y el Dolph, dos submarinos con reputación internacional en cuanto a capacidad y tecnología. Esta decisión de Marruecos refleja la importancia estratégica de contar con una flota naval moderna y eficiente para salvaguardar sus intereses en la región.
+
+En este sentido, la gestión de la conectividad cifrada con la OTAN por parte de Estados Unidos sobre las aeronaves y buques españoles destaca la complejidad de las relaciones internacionales en el ámbito de la defensa y la importancia de contar con sistemas de comunicación seguros y eficaces. Asimismo, la elección de Marruecos de fortalecer su armada con submarinos de última generación subraya la relevancia de la tecnología en el ámbito militar y la constante evolución de las capacidades navales en la región.
+    
