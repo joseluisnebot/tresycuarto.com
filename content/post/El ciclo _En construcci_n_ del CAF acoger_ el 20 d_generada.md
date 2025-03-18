@@ -1,0 +1,16 @@
+---
+title: "El ciclo 'En construcción' del CAF acogerá el 20 de marzo la charla 'De Pain a Nacre' del artista Toni Amengual"
+date: 2025-03-18T13:14:46+0000
+categories: [Noticias]
+tags: ["Centro Andaluz de la Fotografía", "charla", "Toni Amengual", "fotografía", "arte", "ciclo 'En construcción'", "fotógrafos andaluces."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-31Tczf8tPcygIoyZT8ILIxn7.png?st=2025-03-18T12%3A14%3A45Z&se=2025-03-18T14%3A14%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-18T09%3A50%3A55Z&ske=2025-03-19T09%3A50%3A55Z&sks=b&skv=2024-08-04&sig=p/ScjplkXqeTadidmDzqwj/KLY0HhiVqp8bHg/PTFDw%3D"
+---
+
+El Centro Andaluz de la Fotografía (CAF) se prepara para recibir una nueva e imperdible charla enmarcada en su ciclo 'En construcción'. Será el próximo 20 de marzo cuando el reconocido artista Toni Amengual presente 'De Pain a Nacre', un proyecto que promete cautivar a los amantes de la fotografía y el arte en general. Esta iniciativa, que forma parte del ciclo mencionado, tiene como objetivo principal brindar un espacio de exposición y reflexión a creadores y fotógrafos andaluces o vinculados con Andalucía, quienes tendrán la oportunidad de compartir sus más recientes creaciones con el público.
+
+Toni Amengual, destacado por su talento y sensibilidad artística, se suma a la lista de exponentes de este ciclo que ha logrado consolidarse como un referente en la escena cultural andaluza. Con 'De Pain a Nacre', el artista promete llevar a los asistentes en un viaje visual único, donde la belleza y la profundidad se entrelazan para dar vida a una propuesta en la que la creatividad y la técnica se fusionan de manera magistral. Esta charla se presenta como una oportunidad única para adentrarse en el universo creativo de Amengual y descubrir las historias que se esconden detrás de cada imagen.
+
+Los fotógrafos andaluces y aquellos vinculados con esta región han encontrado en el ciclo 'En construcción' del CAF un espacio de encuentro y difusión de sus propuestas más innovadoras y arriesgadas. Cada edición de este ciclo se convierte en una ventana abierta a la experimentación y al intercambio de ideas, permitiendo que la fotografía se reinvente constantemente y que nuevos talentos puedan emerger y ser reconocidos en el ámbito artístico. En esta ocasión, la presencia de Toni Amengual promete ser un punto culminante que no dejará indiferente a nadie.
+
+Los nuevos proyectos que se presentarán en esta edición de 'En construcción' prometen sorprender y emocionar a todos los asistentes. La diversidad de propuestas, estilos y enfoques enriquecerá la experiencia de aquellos que se den cita en el Centro Andaluz de la Fotografía el 20 de marzo. Desde la experimentación con nuevas técnicas hasta la exploración de temáticas profundas y actuales, cada fotógrafo participante aportará su visión única al panorama artístico, contribuyendo así a enriquecer la escena cultural de la región y más allá.
+    

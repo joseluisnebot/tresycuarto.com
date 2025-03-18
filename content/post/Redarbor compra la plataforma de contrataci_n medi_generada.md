@@ -1,0 +1,16 @@
+---
+title: "Redarbor compra la plataforma de contratación mediante inteligencia artificial Genomawork"
+date: 2025-03-18T13:15:06+0000
+categories: [Noticias]
+tags: ["Redarbor", "empresa", "empleo", "recursos humanos", "tecnológicas", "inteligencia artificial", "Barcelona."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-TROI11dyuoLrv9qIZi98umOo.png?st=2025-03-18T12%3A15%3A06Z&se=2025-03-18T14%3A15%3A06Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-18T08%3A57%3A46Z&ske=2025-03-19T08%3A57%3A46Z&sks=b&skv=2024-08-04&sig=28FFf9QyY/5YRqpne6IP8C%2Bz5reorwSqE6IQV1it27w%3D"
+---
+
+Redarbor, una destacada empresa especializada en sites de empleo y soluciones digitales en el ámbito de recursos humanos, ha llevado a cabo una estratégica adquisición al comprar el 100% de la plataforma de contratación basada en inteligencia artificial, Genomawork. Esta operación, de gran relevancia en el sector, consolida la posición de Redarbor como líder en el mercado de soluciones tecnológicas para la gestión de recursos humanos. Con sede en la vibrante ciudad de Barcelona, la compañía ha demostrado una vez más su compromiso con la innovación y la excelencia en el ámbito laboral.
+
+Genomawork, la plataforma adquirida por Redarbor, se ha destacado por su enfoque pionero en la utilización de la inteligencia artificial para optimizar los procesos de selección de personal. Esta adquisición representa una oportunidad única para Redarbor de integrar tecnologías de vanguardia en su portafolio de servicios, mejorando significativamente la eficiencia y efectividad de sus soluciones en el ámbito de recursos humanos. La sinergia entre ambas empresas promete beneficios tanto para los clientes como para los profesionales del sector.
+
+La compra del 100% de Genomawork por parte de Redarbor no solo consolida su posición en el mercado, sino que también abre nuevas oportunidades de crecimiento y expansión. Con una visión clara de las necesidades del mercado laboral actual, Redarbor se posiciona como un referente en la transformación digital de los procesos de contratación y gestión de personal. La combinación de la experiencia de Redarbor y la tecnología innovadora de Genomawork promete revolucionar la forma en que las empresas abordan el reclutamiento y la selección de talento.
+
+Desde su sede en Barcelona, Redarbor continúa demostrando su compromiso con la excelencia y la innovación en el ámbito de los recursos humanos. Con la adquisición de Genomawork, la empresa refuerza su presencia en el mercado y se posiciona como un actor clave en la transformación digital de la gestión de personal. Esta operación no solo representa un paso importante en la estrategia de crecimiento de Redarbor, sino que también marca el inicio de una nueva etapa de desarrollo y evolución en el sector de la contratación mediante inteligencia artificial.
+    
