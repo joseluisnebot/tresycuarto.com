@@ -1,0 +1,16 @@
+---
+title: "Google presenta Gemini Robotics - IA avanzada para robots basada en Gemini 2.0"
+date: 2025-03-18T02:14:49+0000
+categories: [Noticias]
+tags: ["Google", "Gemini Robotics", "inteligencia artificial", "DeepMind", "robots especializados", "robótica de emergencia", "tecnología robótica."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-vGlGP7vwJFMClBhMe5lRhrzR.png?st=2025-03-18T01%3A14%3A49Z&se=2025-03-18T03%3A14%3A49Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-17T15%3A43%3A44Z&ske=2025-03-18T15%3A43%3A44Z&sks=b&skv=2024-08-04&sig=thtUc%2B7ofm1N4fBKAPK28GNUkcRUjbuX875hvyLt/ow%3D"
+---
+
+Google ha marcado un hito significativo en el campo de la robótica al presentar Gemini Robotics, una avanzada incorporación de inteligencia artificial (IA) basada en la potente plataforma Gemini 2.0. Este emocionante lanzamiento representa un avance significativo en la integración de la IA en el ámbito de la robótica, ofreciendo posibilidades revolucionarias para el desarrollo y desempeño de robots especializados. Desarrollados por DeepMind, los modelos Gemini Robotics y Gemini Robotics-ER prometen desbloquear un potencial sin precedentes en términos de capacidades y funcionalidades para la próxima generación de robots.
+
+La adopción de la inteligencia artificial en la robótica ha sido un objetivo de alto interés en la industria tecnológica, y con el lanzamiento de Gemini Robotics, Google está demostrando su liderazgo en este campo. Al aprovechar la experiencia y la tecnología de DeepMind, conocida por su excelencia en IA, estos nuevos modelos están diseñados para elevar el nivel de desempeño de los robots a niveles nunca antes vistos. La capacidad de aprendizaje y adaptación de Gemini Robotics promete transformar la interacción entre humanos y robots, abriendo nuevas posibilidades en diversos sectores, desde la fabricación hasta la salud.
+
+Gemini Robotics-ER, una variante especializada de Gemini Robotics, se destaca por su enfoque en la robótica de emergencia y respuesta a situaciones críticas. Este modelo ha sido diseñado para ofrecer un rendimiento excepcional en entornos desafiantes y situaciones de alto estrés, donde la rapidez y la precisión son fundamentales. Con capacidades mejoradas de detección, navegación y toma de decisiones, Gemini Robotics-ER está preparado para enfrentar escenarios exigentes y brindar soporte vital en situaciones de emergencia.
+
+La combinación de la experiencia de DeepMind en inteligencia artificial con la sólida infraestructura de Gemini 2.0 de Google ha dado como resultado un avance significativo en el campo de la robótica. La llegada de Gemini Robotics y Gemini Robotics-ER impulsa la evolución de la tecnología robótica hacia un futuro más inteligente, adaptable y eficiente. Con capacidades mejoradas en términos de comprensión del entorno, interacción con humanos y autonomía, estos modelos prometen redefinir las posibilidades de la robótica en una amplia gama de aplicaciones, desde la exploración espacial hasta la asistencia en tareas cotidianas.
+    
