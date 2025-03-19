@@ -1,6 +1,7 @@
 #baseURL: https://example.org/
 languageCode: es-es
 defaultContentLanguage: "es"
+googleAnalytics: G-18CE4JKZ1L
 title: My New Tresycuarto Site
 theme: PaperMod
 params:
