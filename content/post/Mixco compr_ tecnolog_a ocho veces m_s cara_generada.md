@@ -1,0 +1,18 @@
+---
+title: "Mixco compró tecnología ocho veces más cara"
+date: 2025-03-22T02:14:45+0000
+categories: [Noticias]
+tags: ["comuna mixqueña", "Neto Bran", "Guatecompras", "certificado SSL", "seguridad informática", "recursos públicos", "tecnología."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-FjsWjruM7wdj4uF3dF0O0hV7.png?st=2025-03-22T01%3A14%3A45Z&se=2025-03-22T03%3A14%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-21T21%3A42%3A06Z&ske=2025-03-22T21%3A42%3A06Z&sks=b&skv=2024-08-04&sig=P%2Bg8rOfXTd5AE%2BGyG3jcKontlgowIG9p2hKiFDD679M%3D"
+---
+
+La comuna mixqueña, bajo la dirección de Neto Bran, ha generado controversia tras reportar una serie de gastos relacionados con tecnología a través de Guatecompras. Entre las adquisiciones destacadas, se encuentra la compra de un certificado SSL tipo Wildcard, cuyo costo resultó ser ocho veces superior al valor de mercado. Este certificado, con una vigencia de un año, es fundamental para establecer un protocolo de cifrado seguro en las comunicaciones electrónicas de la institución, pero su elevado precio ha levantado cuestionamientos sobre la transparencia en el manejo de los recursos públicos.
+
+El certificado SSL tipo Wildcard adquirido por la comuna mixqueña es un componente esencial en la implementación de medidas de seguridad en línea, garantizando la protección de los datos sensibles y la confidencialidad de las comunicaciones digitales. Sin embargo, la disparidad entre el costo reportado y el valor real de mercado ha generado inquietudes entre los ciudadanos y organismos de control, quienes solicitan una explicación detallada sobre el proceso de adquisición y los criterios utilizados para la selección de proveedores.
+
+Neto Bran, alcalde de Mixco, ha defendido la compra del certificado SSL tipo Wildcard, argumentando que se trata de una inversión necesaria para fortalecer la seguridad informática de la comuna y proteger la integridad de los datos de los ciudadanos. No obstante, la discrepancia en el precio pagado ha suscitado dudas sobre posibles irregularidades en los procesos de contratación y la gestión de los recursos públicos destinados a tecnología.
+
+El protocolo de cifrado SSL es fundamental en la protección de la información confidencial y sensible que circula a través de las plataformas digitales de la comuna mixqueña. La adquisición de un certificado SSL tipo Wildcard, si bien es una medida positiva en términos de seguridad cibernética, debe ser evaluada en términos de eficiencia y transparencia en la gestión de los fondos públicos. Ante las críticas y cuestionamientos surgidos a raíz de este gasto inusual, se espera que se realice una revisión exhaustiva de los procesos de adquisición de tecnología en la comuna para garantizar la correcta utilización de los recursos y evitar posibles malas prácticas en el futuro.
+
+En conclusión, la compra del certificado SSL tipo Wildcard por parte de la comuna mixqueña, dirigida por Neto Bran, ha puesto en tela de juicio la gestión de los gastos de tecnología a través de Guatecompras. La transparencia y la rendición de cuentas en el manejo de los recursos públicos son aspectos fundamentales que deben ser salvaguardados en todo momento, especialmente cuando se trata de inversiones en seguridad informática. Es crucial que se esclarezcan las circunstancias que rodean esta adquisición para restaurar la confianza de la ciudadanía en la administración municipal.
+    
