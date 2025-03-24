@@ -1,0 +1,16 @@
+---
+title: "Metsola, Letta, Cormann y el exjefe del MI6, Dearlove, entre las figuras internacionales de 'Wake Up, Spain! 2025'"
+date: 2025-03-24T02:14:21+0000
+categories: [Noticias]
+tags: ["ponentes internacionales", "evento 'Wake Up", "Spain! 2025'", "Davos español", "networking de alto nivel", "economía", "tecnología", "medio ambiente", "líderes de opinión", "empresarios", "academia", "sociedad civil", "desarrollo", "transformación", "eventos internacionales."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-dsXbyNVggQI1gs9t4EkQI1uD.png?st=2025-03-24T01%3A14%3A21Z&se=2025-03-24T03%3A14%3A21Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-23T12%3A03%3A28Z&ske=2025-03-24T12%3A03%3A28Z&sks=b&skv=2024-08-04&sig=hM1Pjg%2BUWZ6Tsst8YjRquXAyCZ0h00vtCQ7OLTiUsNg%3D"
+---
+
+Más de 150 destacados ponentes internacionales se darán cita en el evento 'Wake Up, Spain! 2025', que se ha consolidado como el 'Davos español' por su relevancia y alcance. La celebración de este evento tendrá lugar entre el 31 de marzo y el 4 de abril, abarcando cinco días llenos de debates, conferencias y networking de alto nivel. Figuras como Metsola, Letta, Cormann y el exjefe del MI6, Dearlove, se encuentran entre los destacados participantes que compartirán sus conocimientos y perspectivas en este foro de gran importancia.
+
+El 'Davos español' se ha convertido en un espacio de intercambio de ideas y reflexión sobre los desafíos y oportunidades que enfrenta España y el mundo en el año 2025. Con un programa diverso y enriquecedor, los ponentes abordarán temas clave en áreas como la economía, la política, la tecnología y el medio ambiente, ofreciendo un panorama completo de las tendencias y perspectivas actuales. La participación de figuras de renombre internacional garantiza la calidad y relevancia de las discusiones que se llevarán a cabo durante el evento.
+
+Durante cinco intensos días, los asistentes al 'Wake Up, Spain! 2025' tendrán la oportunidad única de interactuar con expertos de distintas disciplinas, compartir experiencias y conocimientos, y establecer conexiones valiosas para el futuro. Este encuentro se presenta como una plataforma fundamental para la generación de ideas innovadoras y la exploración de soluciones a los retos globales que marcan la agenda actual. El mes de marzo será testigo de un evento que promete ser un referente en el panorama internacional.
+
+Con la llegada del mes de abril, la expectación crece en torno a la celebración de este importante evento, que se perfila como un punto de encuentro imprescindible para líderes de opinión, empresarios, académicos y representantes de la sociedad civil. 'Wake Up, Spain! 2025' se erige como un espacio de diálogo constructivo y colaboración, donde las ideas y propuestas se convierten en acciones concretas para impulsar el desarrollo y la transformación en un contexto global en constante evolución. La cita está marcada en el calendario y promete ser un hito en el ámbito de los eventos internacionales de alto nivel.
+    
