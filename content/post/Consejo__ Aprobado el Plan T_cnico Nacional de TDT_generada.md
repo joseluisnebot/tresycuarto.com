@@ -1,0 +1,16 @@
+---
+title: "Consejo.- Aprobado el Plan Técnico Nacional de TDT para lanzar Ultra Alta Definición y paso previo a licitar nuevo canal"
+date: 2025-03-26T13:14:24+0000
+categories: [Noticias]
+tags: ["Consejo de Ministros", "televisión en España", "Real Decreto", "Plan Técnico Nacional de la TDT", "Ultra Alta Definición", "licitación de un nuevo canal", "servicios audiovisuales."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-z26BvO7r6eAaNrKuYNxzk5T3.png?st=2025-03-26T12%3A14%3A24Z&se=2025-03-26T14%3A14%3A24Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-26T01%3A27%3A45Z&ske=2025-03-27T01%3A27%3A45Z&sks=b&skv=2024-08-04&sig=JYUj0btdydpuqqm3h3sfydk8KDaE32EP1PducCFRESs%3D"
+---
+
+El Consejo de Ministros ha dado luz verde este martes a un importante paso en el ámbito de la televisión en España al aprobar un Real Decreto que establece el Plan Técnico Nacional de la TDT. Esta medida tiene como objetivo primordial la posibilidad de lanzar emisiones en Ultra Alta Definición, un avance tecnológico que promete revolucionar la experiencia audiovisual de los espectadores. Además, este plan técnico sirve como paso previo fundamental para la posterior licitación de un nuevo canal de televisión, abriendo así la puerta a la diversificación de la oferta televisiva en el país.
+
+La aprobación de este Real Decreto por parte del Consejo de Ministros representa un hito significativo en la evolución del sector audiovisual en España. La inclusión de la Ultra Alta Definición en las emisiones de la TDT supone un salto cualitativo en la calidad de imagen que los televidentes podrán disfrutar en sus hogares, acercando la tecnología más avanzada a un público cada vez más exigente y ávido de innovación. Esta decisión refleja el compromiso del gobierno por impulsar el desarrollo tecnológico y fomentar la modernización de los servicios audiovisuales en el país.
+
+Además de permitir la emisión en Ultra Alta Definición, el Plan Técnico Nacional de la TDT aprobado incluye la hoja de ruta necesaria para llevar a cabo la licitación de un nuevo canal de televisión. Esta iniciativa abre nuevas oportunidades en el panorama televisivo español, facilitando la entrada de nuevos actores y propuestas que enriquecerán la oferta disponible para los espectadores. La competencia y la diversidad son pilares fundamentales en la construcción de un mercado audiovisual dinámico y en constante evolución.
+
+En resumen, la aprobación del Plan Técnico Nacional de la TDT por parte del Consejo de Ministros, mediante la aprobación de un Real Decreto, marca un antes y un después en el desarrollo de la televisión en España. La introducción de la Ultra Alta Definición y la futura licitación de un nuevo canal de televisión son pasos estratégicos que posicionan al sector audiovisual español en la vanguardia de la tecnología y la innovación, garantizando una experiencia televisiva más rica y satisfactoria para todos los espectadores.
+    
