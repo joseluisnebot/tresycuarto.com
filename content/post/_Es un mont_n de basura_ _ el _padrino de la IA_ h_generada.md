@@ -1,0 +1,16 @@
+---
+title: "'Es un montón de basura' - el 'padrino de la IA' habla claro sobre una técnica que están usando OpenAI y otras grandes del sector"
+date: 2025-04-01T13:14:45+0000
+categories: [Noticias]
+tags: ["Geoffrey Hinton", "inteligencia artificial", "deep learning", "tecnología", "IA", "innovación", "comunidad científica."]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-cGg9rGWmjGPNf8VjzRqWEMNG.png?st=2025-04-01T12%3A14%3A45Z&se=2025-04-01T14%3A14%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T00%3A51%3A27Z&ske=2025-04-02T00%3A51%3A27Z&sks=b&skv=2024-08-04&sig=y8vCfpwIugstW5C/ZV/Qkyg7XC4po/cI2n7zCGfCV4o%3D"
+---
+
+El renombrado científico y pionero en inteligencia artificial, Geoffrey Hinton, ha vuelto a acaparar titulares con sus controvertidas declaraciones sobre una técnica utilizada por OpenAI y otras grandes empresas del sector. Hinton, galardonado con el Premio Nobel en 2024 por sus contribuciones revolucionarias al campo del deep learning, ha criticado abiertamente la metodología empleada por estas compañías, calificándola como "un montón de basura". Su influencia en el ámbito de la tecnología es innegable, ya que ha sido uno de los principales impulsores del desarrollo de la inteligencia artificial tal como la conocemos en la actualidad.
+
+Desde su salida de Google en 2023, Geoffrey Hinton ha mantenido una postura crítica y desafiante respecto a las tendencias y prácticas dominantes en el ámbito de la IA. Considerado uno de los padres fundadores del deep learning, la técnica fundamental que ha impulsado el avance exponencial de la inteligencia artificial, Hinton ha sido una figura clave en la evolución de esta disciplina. Sus opiniones suelen ser seguidas de cerca por la comunidad científica y tecnológica, dada su vasta experiencia y conocimientos en el campo.
+
+Las declaraciones de Geoffrey Hinton han generado un intenso debate en el sector de la tecnología, especialmente entre los defensores de las técnicas cuestionadas y aquellos que respaldan la visión crítica del 'padrino de la IA'. A pesar de su prestigio y renombre, Hinton no ha dudado en expresar su opinión con contundencia, lo que ha puesto de manifiesto las divergencias y discrepancias existentes en torno a la innovación y el progreso en el campo de la inteligencia artificial. Su capacidad para cuestionar de manera incisiva los paradigmas establecidos lo consolida como una figura influyente y disruptiva en la comunidad científica.
+
+La polémica suscitada por las declaraciones de Geoffrey Hinton pone de manifiesto la complejidad y diversidad de enfoques que coexisten en el campo de la inteligencia artificial. A medida que la tecnología avanza a pasos agigantados, la necesidad de reflexionar críticamente sobre las prácticas y metodologías empleadas se vuelve cada vez más imperativa. En este contexto, la voz de figuras como Hinton adquiere un valor incalculable, ya que desafían las convenciones establecidas y estimulan el debate en torno al futuro de la IA y su impacto en la sociedad.
+    
