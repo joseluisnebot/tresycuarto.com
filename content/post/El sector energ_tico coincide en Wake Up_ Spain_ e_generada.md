@@ -1,0 +1,16 @@
+---
+title: "El sector energético coincide en Wake Up, Spain! en que cerrar las centrales nucleares en España será un error"
+date: 2025-04-02T01:14:51+0000
+categories: [Noticias]
+tags: ["conferencia Wake Up", "Spain", "sector energético español", "centrales nucleares", "Iberdrola", "Repsol", "Factorenergia", "energía en España", "seguridad energética", "precios de la electricidad", "transición energética", "desarrollo sostenible", "sector energ"]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-bg5EB2jWSVKRC8HOeqo3uVRk.png?st=2025-04-02T00%3A14%3A51Z&se=2025-04-02T02%3A14%3A51Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T15%3A01%3A43Z&ske=2025-04-02T15%3A01%3A43Z&sks=b&skv=2024-08-04&sig=ZlXsb/oZl5qHT2D2NXfhYzseP1s2BAo1JdA5sRKC494%3D"
+---
+
+Durante la conferencia Wake Up, Spain!, celebrada recientemente, el sector energético español se pronunció de manera contundente respecto al cierre de las centrales nucleares en el país. Ejecutivos de importantes empresas como Iberdrola, Repsol y Factorenergia hicieron un llamado unánime a la necesidad de tomar decisiones fundamentadas en criterios técnicos, evitando que motivos políticos influyan en las determinaciones que se tomen en este ámbito crucial para la economía y la sociedad.
+
+En este sentido, los representantes de Iberdrola, Repsol y Factorenergia destacaron la importancia de que las decisiones relacionadas con la energía en España se basen en evidencia científica y análisis técnico, en lugar de responder a intereses políticos o ideológicos. Se enfatizó la necesidad de considerar el impacto que el cierre de las centrales nucleares tendría en la seguridad energética del país y en los precios de la electricidad, aspectos que deben ser evaluados con rigurosidad y objetividad.
+
+El Rey Felipe VI, presente en el evento, respaldó la postura del sector energético al afirmar que es fundamental no permitir que el mundo del derecho y los principios constitucionales se vean socavados por decisiones que carezcan de un sustento técnico sólido. En este contexto, Su Majestad subrayó la importancia de mantener un equilibrio entre las consideraciones políticas y las necesidades técnicas en el ámbito energético, garantizando así la estabilidad y el desarrollo sostenible del país.
+
+En un contexto donde la transición energética es un tema de máxima relevancia, las declaraciones de los ejecutivos de Iberdrola, Repsol y Factorenergia en Wake Up, Spain! ponen de manifiesto la necesidad de abordar los retos del sector energético con un enfoque integral y basado en criterios técnicos sólidos. El debate sobre el futuro de las centrales nucleares en España continúa generando controversia, pero queda claro que la comunidad empresarial y las instituciones deben colaborar para encontrar soluciones que garanticen un suministro energético seguro, eficiente y sostenible para todos los ciudadanos.
+    
