@@ -7,8 +7,8 @@ theme: PaperMod
 params:
   dateFormat: "02 de January de 2006" # Esto será reemplazado por las traducciones
   showPostsOnHomePage: true
-  ShowPostImage: true        # 👈 muestra la imagen en la vista del post
-  ShowPostImageInList: true  # 👈 muestra la imagen en la lista (como portada)
+  ShowPostImage: true        # muestra la imagen en la vista del post
+  ShowPostImageInList: true  # muestra la imagen en la lista (como portada)
 pagination:
   pagerSize: 5
 disableSpecial1stPost: true
