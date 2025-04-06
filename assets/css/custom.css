@@ -1,0 +1,21 @@
+/* 📌 Estilos para reducir tamaño de cover.image en PaperMod */
+
+/* 🏠 En listas (home, categorías, tags...) */
+.post-entry .entry-cover img {
+    max-height: 250px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+/* 📄 En vista individual del post */
+.single .cover img {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
