@@ -1,18 +1,18 @@
 ---
 title: "Steven Forti - “Libertad e igualdad deben ir de la mano en una sociedad democrática”"
-date: 2025-04-06T04:16:50+0000
+date: 2025-04-06T04:32:02+0000
 categories: [Noticias]
-tags: ["historiador italiano", "Steven Forti", "reflexión", "libertad", "igualdad", "desigualdades", "democracias", "movimientos de derechas extremas", "crecimiento de las desigualdades económicas", "sociales", "polarización", "confrontación", "posturas políticas extrem"]
+tags: ["historiador italiano", "libertad", "igualdad", "desigualdad", "democracia", "derechas extremas", "estabilidad", "sociedad democrática."]
 cover:
   image: "/images/noticias/Steven_Forti___Libertad_e_igualdad_deben.png"
   alt: "Steven Forti - “Libertad e igualdad deben ir de la mano en una sociedad democrática”"
   hidden: false
 ---
 
-El reconocido historiador italiano, Steven Forti, ha planteado una reflexión contundente al afirmar que la libertad y la igualdad deben ser valores fundamentales que vayan de la mano en una sociedad democrática. En su análisis, Forti destaca que el aumento de las desigualdades se presenta como una de las principales causas del deterioro de las democracias en la actualidad, lo cual ha propiciado el surgimiento de movimientos de derechas extremas en diversos países.
+El reconocido historiador italiano Steven Forti ha destacado la estrecha relación que existe entre la libertad y la igualdad en una sociedad democrática, argumentando que ambas deben ir de la mano para garantizar un equilibrio social justo y sostenible. En un contexto global marcado por el aumento de las desigualdades, Forti advierte que este fenómeno no solo impacta en la distribución de la riqueza, sino que también contribuye al deterioro de las democracias al abrir espacio para el surgimiento de movimientos de derecha extrema.
 
-En este sentido, Forti advierte que el crecimiento de las desigualdades económicas y sociales ha generado un caldo de cultivo propicio para el fortalecimiento de posturas políticas extremas, que encuentran en la polarización y la confrontación su principal estrategia de acción. De acuerdo con el historiador italiano, este panorama ha permitido la emergencia de figuras como Milei, a quien describe como la versión argentina de este fenómeno, caracterizado por discursos radicales y propuestas disruptivas.
+En sus declaraciones, Forti señaló que las desigualdades crecientes representan una amenaza para la estabilidad de las sociedades democráticas, ya que generan un clima de malestar y descontento entre la población que puede ser capitalizado por fuerzas políticas extremistas. En este sentido, el historiador italiano hizo hincapié en la importancia de abordar de manera integral las causas subyacentes de las disparidades sociales y económicas para fortalecer los cimientos de la democracia.
 
-El análisis de Forti pone de relieve la importancia de abordar de manera integral las causas que subyacen al aumento de las desigualdades en nuestras sociedades, a fin de contrarrestar el deterioro de las democracias y prevenir el avance de corrientes políticas extremas. En este sentido, el historiador subraya la necesidad de promover políticas que fomenten la equidad y la inclusión social como pilares fundamentales para el fortalecimiento de la democracia y la convivencia pacífica.
+Asimismo, Forti no dudó en comparar al polémico economista argentino Javier Milei con una versión local de este fenómeno global de crecimiento de las derechas extremas. Según el historiador, Milei encarna en la realidad argentina un discurso radical que encuentra eco en sectores de la población descontenta con la situación actual, utilizando la retórica contra la desigualdad como plataforma para ganar adeptos y promover sus ideas.
 
-En un contexto global marcado por la polarización y el surgimiento de movimientos populistas de derechas extremas, las reflexiones de Steven Forti adquieren una relevancia particular al invitar a la sociedad a reflexionar sobre la importancia de preservar los valores democráticos y trabajar activamente en la construcción de sociedades más justas e igualitarias. Su llamado a la acción resuena como un recordatorio de que la defensa de la libertad y la igualdad son responsabilidades colectivas que deben ser asumidas con compromiso y determinación en aras de un futuro más próspero y equitativo para todos.
+La visión de Forti sobre la interconexión entre desigualdad, deterioro democrático y auge de las derechas extremas plantea un desafío para las sociedades contemporáneas, que deben enfrentar la complejidad de estos fenómenos en un contexto de creciente polarización política y social. El llamado del historiador italiano a la reflexión y al diálogo se presenta como una oportunidad para abordar de manera constructiva los desafíos que plantea la actual coyuntura, buscando promover un equilibrio entre libertad e igualdad en el marco de sociedades democráticas.
