@@ -1,0 +1,22 @@
+[06-04-2025 06:25:21] 🖼️ Imagen descargada en imagenes_generadas/el_bombazo_cu_ntico_que_acaba_de_ver_la_.png
+[06-04-2025 06:25:21] ✅ Noticia guardada en noticias_generadas/el_bombazo_cu_ntico_que_acaba_de_ver_la_luz___un_c_generada.md
+[06-04-2025 06:25:42] 🖼️ Imagen descargada en imagenes_generadas/adidas_original_por_solo_18__en_amazon__.png
+[06-04-2025 06:25:42] ✅ Noticia guardada en noticias_generadas/adidas_original_por_solo_18__en_amazon___ni_en_reb_generada.md
+[06-04-2025 06:26:03] 🖼️ Imagen descargada en imagenes_generadas/oye___boomer___los_j_venes_z_se_comunica.png
+[06-04-2025 06:26:03] ✅ Noticia guardada en noticias_generadas/oye___boomer____los_j_venes_z_se_comunican_as__par_generada.md
+[06-04-2025 06:26:25] 🖼️ Imagen descargada en imagenes_generadas/zumo_fresco_al_instante__donde_quieras__.png
+[06-04-2025 06:26:25] ✅ Noticia guardada en noticias_generadas/zumo_fresco_al_instante__donde_quieras____descubre_generada.md
+[06-04-2025 06:26:51] 🖼️ Imagen descargada en imagenes_generadas/steven_forti___libertad_e_igualdad_deben.png
+[06-04-2025 06:26:51] ✅ Noticia guardada en noticias_generadas/steven_forti____libertad_e_igualdad_deben_ir_de_la_generada.md
+[06-04-2025 06:26:51] 📄 .md movido: zumo_fresco_al_instante__donde_quieras____descubre_generada.md -> /home/papa/proyectos/tresycuarto/tresycuarto.com/content/post
+[06-04-2025 06:26:51] 📄 .md movido: el_bombazo_cu_ntico_que_acaba_de_ver_la_luz___un_c_generada.md -> /home/papa/proyectos/tresycuarto/tresycuarto.com/content/post
+[06-04-2025 06:26:51] 📄 .md movido: steven_forti____libertad_e_igualdad_deben_ir_de_la_generada.md -> /home/papa/proyectos/tresycuarto/tresycuarto.com/content/post
+[06-04-2025 06:26:51] 📄 .md movido: adidas_original_por_solo_18__en_amazon___ni_en_reb_generada.md -> /home/papa/proyectos/tresycuarto/tresycuarto.com/content/post
+[06-04-2025 06:26:51] 📄 .md movido: oye___boomer____los_j_venes_z_se_comunican_as__par_generada.md -> /home/papa/proyectos/tresycuarto/tresycuarto.com/content/post
+[06-04-2025 06:26:51] 🖼 Imagen movida: el_bombazo_cu_ntico_que_acaba_de_ver_la_.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: _mitad_hielo__mitad_fuego___descubren_un.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: adidas_original_por_solo_18__en_amazon__.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: oye___boomer___los_j_venes_z_se_comunica.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: ps5_y_xbox_series_x_recibieron_esta_func.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: steven_forti___libertad_e_igualdad_deben.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
+[06-04-2025 06:26:51] 🖼 Imagen movida: zumo_fresco_al_instante__donde_quieras__.png -> /home/papa/proyectos/tresycuarto/tresycuarto.com/static/images/noticias
