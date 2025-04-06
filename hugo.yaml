@@ -9,6 +9,9 @@ params:
   showPostsOnHomePage: true
   ShowPostImage: true        # muestra la imagen en la vista del post
   ShowPostImageInList: true  # muestra la imagen en la lista (como portada)
+  assets:
+    css:
+      - css/custom.css
 pagination:
   pagerSize: 5
 disableSpecial1stPost: true
