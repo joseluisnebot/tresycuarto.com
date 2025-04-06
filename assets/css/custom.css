@@ -1,21 +1,29 @@
-/* 📌 Estilos para reducir tamaño de cover.image en PaperMod */
+/* 🖼️ Estilos para limitar altura de las imágenes de portada */
 
-/* 🏠 En listas (home, categorías, tags...) */
-.post-entry .entry-cover img {
+/* En la lista de posts */
+.post-entry .entry-cover {
     max-height: 250px;
+    overflow: hidden;
+}
+.post-entry .entry-cover img {
+    max-height: 100%;
     width: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
-/* 📄 En vista individual del post */
-.single .cover img {
+/* En el post individual */
+.single .cover {
     max-height: 400px;
+    overflow: hidden;
+}
+.single .cover img {
+    max-height: 100%;
     width: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 10px;
 }
