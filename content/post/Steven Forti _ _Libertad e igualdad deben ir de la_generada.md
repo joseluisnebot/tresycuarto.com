@@ -1,0 +1,16 @@
+---
+title: "Steven Forti - “Libertad e igualdad deben ir de la mano en una sociedad democrática”"
+date: 2025-04-06T03:16:44+0000
+categories: [Noticias]
+tags: ["historiador italiano", "desigualdades", "democracias", "Milei", "Argentina", "libertad", "igualdad", "autoritarias", "polarización política", "radicalización", "diálogo inclusivo", "derechos individuales", "sociedades justas", "equitativas", "tendencias antidemocr"]
+image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-HKmKxpuNw3Y88lm4EBrIPq0n/user-ZwiCXOggLL8ZNNKE2g7rXFmV/img-vcieMEJrlFIJc7y4WUqxSTlx.png?st=2025-04-06T02%3A16%3A44Z&se=2025-04-06T04%3A16%3A44Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-05T10%3A19%3A06Z&ske=2025-04-06T10%3A19%3A06Z&sks=b&skv=2024-08-04&sig=1hjkEwGALoc9OTXNQmeHTz0xE2CzbJSGsbTCA8n1slk%3D"
+---
+
+En un reciente análisis, el historiador italiano Steven Forti ha expresado su preocupación sobre la relación entre el aumento de las desigualdades y el deterioro de las democracias en el contexto actual. Según Forti, este fenómeno ha generado un terreno fértil para el surgimiento de movimientos de derechas extremas en diversas sociedades. En particular, el experto señaló que en Argentina, la figura de Milei representa la versión local de este fenómeno, destacando la importancia de abordar de manera integral la cuestión de la libertad y la igualdad en el marco de una sociedad democrática.
+
+Forti advirtió que las desigualdades crecientes constituyen un factor fundamental en el debilitamiento de las bases democráticas, ya que socavan la cohesión social y generan tensiones que pueden ser capitalizadas por fuerzas políticas extremas. En este sentido, el historiador italiano subrayó la necesidad de abordar de manera urgente las raíces estructurales de dichas desigualdades para fortalecer el entramado democrático y prevenir el ascenso de ideologías autoritarias.
+
+En relación con la situación en Argentina, Forti hizo hincapié en la relevancia de comprender el surgimiento de figuras como Milei como parte de un fenómeno más amplio que atraviesa distintas democracias. Consideró que la polarización política y la radicalización de posturas son manifestaciones de las tensiones generadas por las desigualdades, y que es imperativo trabajar en la promoción de un diálogo inclusivo y constructivo que permita abordar los desafíos actuales de manera efectiva.
+
+El historiador italiano llamó a la reflexión y al debate informado sobre la compleja interacción entre libertad e igualdad en el contexto de las democracias modernas, destacando la importancia de encontrar un equilibrio que garantice la protección de los derechos individuales sin descuidar la necesidad de construir sociedades más justas y equitativas. En este sentido, Forti instó a las autoridades y a la ciudadanía en general a trabajar en conjunto para fortalecer los pilares de la democracia y prevenir la consolidación de tendencias antidemocráticas que puedan surgir a raíz de las desigualdades y el deterioro de las instituciones democráticas.
+    
