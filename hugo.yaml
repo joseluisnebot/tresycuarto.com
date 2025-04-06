@@ -10,7 +10,7 @@ params:
   ShowPostImage: true        # muestra la imagen en la vista del post
   ShowPostImageInList: true  # muestra la imagen en la lista (como portada)
   enable: true
-  customCSS: ["assets/css/custom.css"]
+  #customCSS: ["assets/css/custom.css"]
 pagination:
   pagerSize: 5
 disableSpecial1stPost: true
