@@ -6,8 +6,12 @@ googleAnalytics: G-18CE4JKZ1L
 title: Treycuarto |De Todo Un Poco|
 theme: PaperMod
 
-# ↓↓↓ añade esta línea al nivel raíz
 disableAliases: true
+build:
+  writeAliases: false
+
+# Paginación global de Hugo (sustituye al antiguo "pagination.pagerSize")
+paginate: 50   # pon 30 si prefieres
 
 params:
   dateFormat: "02 de January de 2006"
@@ -16,10 +20,6 @@ params:
   ShowPostImageInList: true
   enable: true
   #customCSS: ["assets/css/custom.css"]
-
-pagination:
-  # ↑ ya existe; solo cambia el tamaño:
-  pagerSize: 30   # antes 5
 
 disableSpecial1stPost: true
 
