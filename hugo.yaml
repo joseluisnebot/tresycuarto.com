@@ -5,26 +5,30 @@ defaultContentLanguage: "es"
 googleAnalytics: G-18CE4JKZ1L
 title: Treycuarto |De Todo Un Poco|
 theme: PaperMod
+
+# ↓↓↓ añade esta línea al nivel raíz
+disableAliases: true
+
 params:
-  dateFormat: "02 de January de 2006" # Esto será reemplazado por las traducciones
+  dateFormat: "02 de January de 2006"
   showPostsOnHomePage: true
-  ShowPostImage: true        # muestra la imagen en la vista del post
-  ShowPostImageInList: true  # muestra la imagen en la lista (como portada)
+  ShowPostImage: true
+  ShowPostImageInList: true
   enable: true
   #customCSS: ["assets/css/custom.css"]
+
 pagination:
-  pagerSize: 5
+  # ↑ ya existe; solo cambia el tamaño:
+  pagerSize: 30   # antes 5
+
 disableSpecial1stPost: true
+
 menu:
   main:
     - identifier: tags
       name: tags
       url: /tags/
       weight: 2
-   # - identifier: Noticias
-    #  name: Noticias
-     # url: /categories/noticias/
-      #weight: 2
     - identifier: inicio
       name: Inicio
       url: https://www.tresycuarto.com/
