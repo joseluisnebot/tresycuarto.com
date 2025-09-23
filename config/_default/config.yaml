@@ -1,6 +1,11 @@
+# Fuerza políticas de build (tiene prioridad alta)
 disableAliases: true
 build:
   writeAliases: false
+
+# Paginación alta para reducir listados
 paginate: 50
-# (opcional para bajar aún más listados de taxonomías)
-# disableKinds: ["taxonomy", "term"]
+
+# (Clave para recortar MUCHO) Desactiva páginas de taxonomías
+# Si mantienes un enlace /tags en el menú, quítalo para no dejarlo roto.
+disableKinds: ["taxonomy", "term"]
