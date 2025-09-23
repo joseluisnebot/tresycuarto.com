@@ -14,6 +14,8 @@ build:
 paginate: 50
 
 params:
+  mainSections:
+    - post
   dateFormat: "02 de January de 2006"
   showPostsOnHomePage: true
   ShowPostImage: true
