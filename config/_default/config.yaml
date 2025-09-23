@@ -1,0 +1,6 @@
+disableAliases: true
+build:
+  writeAliases: false
+paginate: 50
+# (opcional para bajar aún más listados de taxonomías)
+# disableKinds: ["taxonomy", "term"]
