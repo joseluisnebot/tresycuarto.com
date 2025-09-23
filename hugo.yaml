@@ -11,7 +11,7 @@ build:
   writeAliases: false
 
 # Paginación global de Hugo (sustituye al antiguo "pagination.pagerSize")
-paginate: 50   # pon 30 si prefieres
+paginate: 50
 
 params:
   dateFormat: "02 de January de 2006"
