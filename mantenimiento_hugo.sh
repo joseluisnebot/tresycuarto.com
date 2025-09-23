@@ -8,7 +8,7 @@ POST_DIR="$REPO/content/post"
 ARCHIVE_DIR="$REPO/content/post-archivo"
 IMAGES_DIR="$REPO/static/images/noticias"
 
-DAYS=70          # días para archivar/borrar
+DAYS=60          # días para archivar/borrar
 PAGINATE=50      # tamaño de paginación
 CLEAN_IMAGES=1   # 1= borrar imágenes antiguas; 0= no borrar
 DRY_RUN=0        # 1= no ejecuta cambios, solo muestra
