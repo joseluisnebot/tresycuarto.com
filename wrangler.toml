@@ -1,0 +1,12 @@
+name = "tresycuarto"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "out"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tresycuarto-db"
+database_id = "458672aa-392f-4767-8d2b-926406628ba0"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "tresycuarto-media"

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/",
+    "/para-locales",
+    "/faq",
+    "/contacto",
+    "/privacidad",
+    "/unete",
+    "/dashboard",
+    "/local",
+    "/local/*",
+    "/_next/*",
+    "/icon.svg",
+    "/icon-192.png",
+    "/icon-512.png",
+    "/manifest.json",
+    "/sw.js",
+    "/robots.txt",
+    "/*.png",
+    "/*.svg",
+    "/*.txt",
+    "/*.json"
+  ]
+}
