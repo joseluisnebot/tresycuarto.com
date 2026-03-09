@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# tresycuarto.com
 
-## Getting Started
+Plataforma de tardeo y ocio de media tarde en España. Base de datos de usuarios y locales gestionada por agentes IA.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Frontend:** Next.js 15.5 + Tailwind + TypeScript (`output: export` — HTML estático)
+- **Hosting:** Cloudflare Pages
+- **API:** Cloudflare Pages Functions (`/functions/`)
+- **Base de datos:** Cloudflare D1 (`tresycuarto-db`)
+- **Almacenamiento:** Cloudflare R2 (`tresycuarto-media`)
+
+> Las API routes de Next.js **no funcionan** con static export. Toda la lógica de servidor va en `/functions/` como Cloudflare Pages Functions.
+
+## Estructura
+
+```
+app/                    # Páginas Next.js
+  page.tsx              # Landing principal
+  dashboard/            # Dashboard usuario
+  local/                # Área de locales (login, registro, dashboard)
+  para-locales/         # Landing B2B
+  unete/                # Formulario alta usuarios
+  contacto/
+  faq/
+  privacidad/
+
+functions/              # Cloudflare Pages Functions (API serverless)
+  api/
+    local/              # Auth, perfil, fotos, menú, eventos, stats de locales
+    locales/            # Listado público de locales
+    solicitud/          # Alta de nuevos locales
+    admin/              # Panel administración
+    subscribe/          # Suscripción email
+    stripe/             # Webhook pagos
+  l/[slug].js           # Redirección slugs de locales
+  locales/[id].js       # Ficha pública de local
+  sitemap*.js           # Sitemaps dinámicos por ciudad
+
+scripts/                # Agentes y utilidades
+  overpass_scraper.py   # Extrae locales de OpenStreetMap (Overpass API)
+  enriquecedor.py       # Enriquece datos de locales via Instagram/web
+  enriquecedor_loop.sh  # Ejecuta el enriquecedor en bucle continuo
+  geocoder.py           # Geocodificación de direcciones
+  generar_sql.py        # Genera SQL de inserción desde JSON
+  importar_d1.py        # Importa datos a Cloudflare D1
+  schema.sql            # Esquema completo de la base de datos
+  migrate_*.sql         # Migraciones
+
+data/                   # Datos de locales por ciudad (JSON)
+  madrid.json, barcelona.json, valencia.json, sevilla.json
+  bilbao.json, malaga.json, murcia.json, zaragoza.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # genera /out (estático)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy a Cloudflare Pages
 
-## Learn More
+El deploy se hace desde la VM `tresycuarto-dev` (192.168.1.150) donde están los `node_modules`.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+ssh -i ~/.ssh/tresycuarto_vm ubuntu@192.168.1.150
+cd ~/tresycuarto
+npm run build
+export CLOUDFLARE_API_TOKEN=<token>
+export CLOUDFLARE_ACCOUNT_ID=0c4d9c91bb0f3a4c905545ecc158ec65
+npx wrangler pages deploy out --project-name=tresycuarto --branch=main
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Base de datos D1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**ID:** `458672aa-392f-4767-8d2b-926406628ba0`
 
-## Deploy on Vercel
+```bash
+# Aplicar esquema inicial
+npx wrangler d1 execute tresycuarto-db --file=scripts/schema.sql
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Importar locales de una ciudad
+python3 scripts/importar_d1.py --ciudad madrid
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Consulta directa
+npx wrangler d1 execute tresycuarto-db --command="SELECT COUNT(*) FROM locales"
+```
+
+## Agentes IA
+
+### Scraper OSM
+Extrae locales de bares, restaurantes y ocio de OpenStreetMap:
+```bash
+python3 scripts/overpass_scraper.py --ciudad madrid --radio 15000
+```
+
+### Enriquecedor
+Completa datos de cada local (Instagram, web, fotos):
+```bash
+python3 scripts/enriquecedor.py
+bash scripts/enriquecedor_loop.sh  # bucle continuo
+```
+
+## URLs
+
+| Entorno | URL |
+|---------|-----|
+| Producción | https://tresycuarto.com |
+| Pages (backup) | https://tresycuarto.pages.dev |
+| Listmonk (email marketing) | https://listmonk.tresycuarto.com |
+
+## Diseño
+
+| Color | Hex |
+|-------|-----|
+| Crema (fondo) | `#FFF8EF` |
+| Melocotón (acento) | `#FB923C` |
+| Dorado | `#F59E0B` |
+| Lavanda | `#A78BFA` |
