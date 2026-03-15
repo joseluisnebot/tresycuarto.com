@@ -16,7 +16,6 @@
     "/dashboard",
     "/dashboard/",
     "/local",
-    "/local/",
     "/local/*",
     "/_next/*",
     "/icon.svg",
