@@ -1,10 +1,17 @@
-const CACHE = 'tresycuarto-v2';
-const SHELL = ['/', '/para-locales', '/faq', '/contacto', '/privacidad'];
+const CACHE = 'tresycuarto-v3';
+const SHELL = ['/', '/para-locales/', '/faq/', '/contacto/', '/privacidad/'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
-      .then(c => c.addAll(SHELL))
+      .then(c =>
+        // allSettled: un fallo individual no rompe la instalación
+        Promise.allSettled(SHELL.map(url =>
+          fetch(url).then(res => {
+            if (res.ok) return c.put(url, res);
+          }).catch(() => {})
+        ))
+      )
       .then(() => self.skipWaiting())
   );
 });
@@ -19,10 +26,16 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  // API calls: siempre red
   if (event.request.url.includes('/api/')) return;
+  // Solo interceptar navegaciones y assets del mismo origen
+  const url = new URL(event.request.url);
+  if (url.origin !== location.origin) return;
+
   event.respondWith(
     caches.match(event.request)
-      .then(cached => cached || fetch(event.request))
+      .then(cached => {
+        if (cached) return cached;
+        return fetch(event.request).catch(() => caches.match('/'));
+      })
   );
 });
