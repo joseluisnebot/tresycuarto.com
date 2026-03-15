@@ -14,9 +14,9 @@ Plataforma de tardeo y ocio de media tarde en España.
 - Deploy desde la VM tresycuarto-dev (192.168.1.150), no desde el CT
 
 ## Deploy
+Todo desde el CT (agente-ia, /root/tresycuarto-sync/). No necesita la VM.
 ```bash
-ssh -i /root/.ssh/tresycuarto_vm ubuntu@192.168.1.150
-cd ~/tresycuarto
+cd /root/tresycuarto-sync
 npm run build
 export CLOUDFLARE_API_TOKEN=lEduOPo2NZzDKY7gyEMjkMJkZHf1MFKBg6T_5aau
 export CLOUDFLARE_ACCOUNT_ID=0c4d9c91bb0f3a4c905545ecc158ec65
