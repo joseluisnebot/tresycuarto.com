@@ -8,6 +8,27 @@ const CIUDADES = [
   "Bilbao","Málaga","Zaragoza","Murcia",
 ];
 
+const TODAS_CIUDADES = [
+  "Madrid","Barcelona","Valencia","Sevilla","Bilbao","Málaga","Zaragoza","Murcia",
+  "Alicante","Almería","Ávila","Badajoz","Burgos","Cáceres","Cádiz","Castellón",
+  "Ciudad Real","Córdoba","Cuenca","Girona","Granada","Guadalajara","Huelva",
+  "Huesca","Jaén","La Coruña","Las Palmas","León","Lleida","Logroño","Lugo",
+  "Palencia","Palma","Pamplona","Pontevedra","Salamanca","San Sebastián",
+  "Santa Cruz de Tenerife","Santander","Segovia","Soria","Tarragona","Teruel",
+  "Toledo","Valladolid","Vitoria","Zamora","Benidorm","Torremolinos","Marbella",
+  "Fuengirola","Estepona","Gandía","Dénia","Xàbia","Cullera","Salou","Cambrils",
+  "Lloret de Mar","Roses","Calpe","Altea","Torrevieja","Santa Pola","Peñíscola",
+  "Vinaròs","Benicàssim","Oropesa del Mar","Sitges","Tarragona",
+];
+
+function ciudadSlug(ciudad: string): string {
+  return ciudad.toLowerCase()
+    .replace(/á/g,"a").replace(/é/g,"e").replace(/í/g,"i").replace(/ó/g,"o")
+    .replace(/ú/g,"u").replace(/ü/g,"u").replace(/ñ/g,"n").replace(/ç/g,"c")
+    .replace(/à/g,"a").replace(/è/g,"e").replace(/ï/g,"i").replace(/ò/g,"o")
+    .replace(/·/g,"").replace(/\s+/g,"-");
+}
+
 const FEATURES = [
   { icon: "🗺️", bg: "#FEF3C7", title: "Locales cerca de ti",
     desc: "Más de 10.000 bares, terrazas y cafés mapeados en toda España. Filtra por ciudad, tipo y ambiente." },
@@ -23,7 +44,19 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [ciudades, setCiudades] = useState<string[]>([]);
   const [status, setStatus] = useState<Status>("idle");
+  const [busqueda, setBusqueda] = useState("");
   const { containerRef, getToken } = useTurnstile();
+
+  function handleBuscar(e: React.FormEvent) {
+    e.preventDefault();
+    const slug = ciudadSlug(busqueda.trim());
+    if (slug) window.location.href = `/locales/${slug}`;
+  }
+
+  const sugerencias = busqueda.length >= 2
+    ? TODAS_CIUDADES.filter(c => c.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .includes(busqueda.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""))).slice(0, 6)
+    : [];
 
   function toggleCiudad(c: string) {
     setCiudades(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c]);
@@ -102,8 +135,55 @@ export default function Home() {
           empiecen a las cuatro, no a las doce.
         </p>
 
+        {/* BUSCADOR */}
+        <div style={{ width: "100%", maxWidth: "480px", position: "relative", zIndex: 30 }}>
+          <form onSubmit={handleBuscar} style={{ display: "flex", gap: "0.5rem" }}>
+            <input
+              type="text"
+              placeholder="Busca tu ciudad... Madrid, Gandía, Marbella..."
+              value={busqueda}
+              onChange={e => setBusqueda(e.target.value)}
+              onBlur={() => setBusqueda("")}
+              style={{
+                flex: 1, padding: "0.9rem 1.2rem", borderRadius: "0.875rem",
+                border: "1.5px solid var(--peach-soft)", background: "white",
+                color: "var(--text)", fontSize: "1rem", outline: "none",
+                boxShadow: "0 2px 12px rgba(251,146,60,0.1)",
+              }}
+            />
+            <button type="submit" onMouseDown={e => e.preventDefault()} style={{
+              padding: "0.9rem 1.4rem", borderRadius: "0.875rem",
+              background: "linear-gradient(135deg, var(--peach) 0%, var(--golden) 100%)",
+              color: "white", fontWeight: 800, fontSize: "1rem",
+              border: "none", cursor: "pointer",
+              boxShadow: "0 4px 20px rgba(251,146,60,0.35)",
+              whiteSpace: "nowrap",
+            }}>Buscar 🔍</button>
+          </form>
+          {sugerencias.length > 0 && (
+            <div style={{
+              position: "absolute", top: "100%", left: 0, right: 0,
+              background: "white", borderRadius: "0.875rem", marginTop: "0.3rem",
+              border: "1.5px solid var(--peach-soft)", overflow: "hidden",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.1)", zIndex: 20,
+            }}>
+              {sugerencias.map(c => (
+                <div key={c}
+                  onMouseDown={e => { e.preventDefault(); window.location.href = `/locales/${ciudadSlug(c)}`; }}
+                  style={{
+                    display: "block", padding: "0.7rem 1.2rem", cursor: "pointer",
+                    color: "var(--text)", fontSize: "0.95rem",
+                    fontWeight: 500, borderBottom: "1px solid var(--peach-soft)",
+                  }}>
+                  📍 {c}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* FORM */}
-        <div className="fade-up delay-4" style={{ width: "100%", maxWidth: "420px" }}>
+        <div className="fade-up delay-4" style={{ width: "100%", maxWidth: "420px", zIndex: 1, position: "relative" }}>
           {status === "ok" ? (
             <div style={{
               background: "#FFFBF5", border: "1px solid var(--border)",
@@ -170,6 +250,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEMANA SANTA */}
+      <section style={{
+        margin: "0",
+        padding: "3rem 1.5rem",
+        background: "linear-gradient(135deg, #1E0A2E 0%, #2D1050 60%, #1A0A28 100%)",
+        textAlign: "center",
+      }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
+            <span style={{ fontSize: "1.5rem" }}>🕯️</span>
+            <span style={{
+              fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
+              color: "#C084FC", background: "rgba(192,132,252,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
+              border: "1px solid rgba(192,132,252,0.3)",
+            }}>Especial Semana Santa 2026</span>
+            <span style={{ fontSize: "1.5rem" }}>🕯️</span>
+          </div>
+          <h2 style={{
+            fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, letterSpacing: "-0.03em",
+            color: "white", marginBottom: "0.6rem", lineHeight: 1.2,
+          }}>
+            Tardea donde la Semana Santa<br />
+            <span style={{ color: "#C084FC" }}>es una experiencia única</span>
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", marginBottom: "2rem", maxWidth: "480px", margin: "0 auto 2rem" }}>
+            Entre procesión y procesión, descubre los mejores bares y terrazas de las capitales cofrades de España.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
+            {[
+              ["sevilla", "Sevilla"],
+              ["malaga", "Málaga"],
+              ["cordoba", "Córdoba"],
+              ["granada", "Granada"],
+              ["cadiz", "Cádiz"],
+              ["valladolid", "Valladolid"],
+              ["zamora", "Zamora"],
+              ["leon", "León"],
+              ["jerez-de-la-frontera", "Jerez"],
+              ["cartagena", "Cartagena"],
+              ["lorca", "Lorca"],
+              ["cuenca", "Cuenca"],
+            ].map(([slug, nombre]) => (
+              <a key={slug} href={`/locales/${slug}`} style={{
+                fontSize: "0.85rem", padding: "0.4rem 1rem", borderRadius: "999px",
+                background: "rgba(192,132,252,0.12)", color: "#E9D5FF",
+                fontWeight: 600, border: "1px solid rgba(192,132,252,0.25)",
+                textDecoration: "none", transition: "all 0.15s",
+              }}>🕯️ {nombre}</a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FEATURES */}
       <section style={{ padding: "4rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
@@ -194,7 +327,7 @@ export default function Home() {
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
           {CIUDADES.map(c => (
-            <a key={c} href={`/locales?ciudad=${encodeURIComponent(c)}`} style={{
+            <a key={c} href={`/locales/${ciudadSlug(c)}`} style={{
               fontSize: "0.85rem", padding: "0.35rem 0.9rem", borderRadius: "999px",
               background: "var(--lavender-soft)", color: "var(--lavender)",
               fontWeight: 600, border: "1px solid rgba(167,139,250,0.2)",
