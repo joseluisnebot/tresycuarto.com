@@ -1,56 +1,60 @@
 # tresycuarto.com
 
-Plataforma de tardeo y ocio de media tarde en España. Base de datos de usuarios y locales gestionada por agentes IA.
+Plataforma de tardeo y ocio de media tarde en España. Directorio de bares, cafés, pubs y terrazas con cobertura nacional, gestionado por agentes IA.
 
 ## Stack
 
-- **Frontend:** Next.js 15.5 + Tailwind + TypeScript (`output: export` — HTML estático)
-- **Hosting:** Cloudflare Pages
-- **API:** Cloudflare Pages Functions (`/functions/`)
-- **Base de datos:** Cloudflare D1 (`tresycuarto-db`)
-- **Almacenamiento:** Cloudflare R2 (`tresycuarto-media`)
+| Capa | Tecnología |
+|------|-----------|
+| Frontend | Next.js 15.5 + Tailwind + TypeScript |
+| Exportación | Static export (`output: export`) → HTML estático |
+| Hosting | Cloudflare Pages |
+| API serverless | Cloudflare Pages Functions (`/functions/`) |
+| Base de datos | Cloudflare D1 |
+| Mapa interactivo | Leaflet + OpenStreetMap |
+| Email marketing | Listmonk (self-hosted) + Brevo (transaccional) |
 
-> Las API routes de Next.js **no funcionan** con static export. Toda la lógica de servidor va en `/functions/` como Cloudflare Pages Functions.
+> **Importante:** Las API routes de Next.js no funcionan con static export. Toda la lógica de servidor está en `/functions/` como Cloudflare Pages Functions.
 
-## Estructura
+---
+
+## Estructura del proyecto
 
 ```
-app/                    # Páginas Next.js
-  page.tsx              # Landing principal
-  dashboard/            # Dashboard usuario
-  local/                # Área de locales (login, registro, dashboard)
-  para-locales/         # Landing B2B
-  unete/                # Formulario alta usuarios
-  contacto/
-  faq/
-  privacidad/
+app/
+  page.tsx                    # Landing principal con buscador de ciudades
+  locales/[ciudad]/
+    page.tsx                  # Server component — generateStaticParams
+    CiudadPage.tsx            # Client component — listado + mapa + filtros
+    MapaLocales.tsx           # Mapa Leaflet (carga dinámica, sin SSR)
+  local/                      # Área privada de locales (login, registro, dashboard)
+  para-locales/               # Landing B2B para propietarios
 
-functions/              # Cloudflare Pages Functions (API serverless)
+functions/                    # Cloudflare Pages Functions
   api/
-    local/              # Auth, perfil, fotos, menú, eventos, stats de locales
-    locales/            # Listado público de locales
-    solicitud/          # Alta de nuevos locales
-    admin/              # Panel administración
-    subscribe/          # Suscripción email
-    stripe/             # Webhook pagos
-  l/[slug].js           # Redirección slugs de locales
-  locales/[id].js       # Ficha pública de local
-  sitemap*.js           # Sitemaps dinámicos por ciudad
+    locales/                  # Listado público con filtros
+    local/                    # Auth, perfil, fotos, menú, eventos, stats
+    subscribe/                # Suscripción email
+    stripe/                   # Webhook pagos
+  locales/[id].js             # Ficha pública de local con mapa OSM
+  sitemap*.js                 # Sitemaps dinámicos
 
-scripts/                # Agentes y utilidades
-  overpass_scraper.py   # Extrae locales de OpenStreetMap (Overpass API)
-  enriquecedor.py       # Enriquece datos de locales via Instagram/web
-  enriquecedor_loop.sh  # Ejecuta el enriquecedor en bucle continuo
-  geocoder.py           # Geocodificación de direcciones
-  generar_sql.py        # Genera SQL de inserción desde JSON
-  importar_d1.py        # Importa datos a Cloudflare D1
-  schema.sql            # Esquema completo de la base de datos
-  migrate_*.sql         # Migraciones
+data/
+  cities.json                 # Ciudades publicadas (slug + nombre)
+  ciudad-content.json         # Contenido SEO por ciudad (intro, barrios, FAQs, coords)
 
-data/                   # Datos de locales por ciudad (JSON)
-  madrid.json, barcelona.json, valencia.json, sevilla.json
-  bilbao.json, malaga.json, murcia.json, zaragoza.json
+scripts/
+  scraper_batch.py            # Scraper masivo Overpass API — ~89 ciudades españolas
+  sync-cities.mjs             # Sincroniza D1 → cities.json → deploy automático
+  generar_content.py          # Genera contenido SEO inicial para ciudades sin datos
+  enriquecedor.py             # Enriquece datos de locales (web, Instagram)
+  schema.sql                  # Esquema completo D1
+
+public/
+  _routes.json                # Excluye slugs de ciudades del CF Worker
 ```
+
+---
 
 ## Desarrollo local
 
@@ -60,62 +64,141 @@ npm run dev        # http://localhost:3000
 npm run build      # genera /out (estático)
 ```
 
-## Deploy a Cloudflare Pages
+---
 
-El deploy se hace desde la VM `tresycuarto-dev` (192.168.1.150) donde están los `node_modules`.
+## Deploy
 
 ```bash
-ssh -i ~/.ssh/tresycuarto_vm ubuntu@192.168.1.150
-cd ~/tresycuarto
 npm run build
-export CLOUDFLARE_API_TOKEN=<token>
-export CLOUDFLARE_ACCOUNT_ID=0c4d9c91bb0f3a4c905545ecc158ec65
+
+export CLOUDFLARE_API_TOKEN=<tu_token>
+export CLOUDFLARE_ACCOUNT_ID=<tu_account_id>
 npx wrangler pages deploy out --project-name=tresycuarto --branch=main
 ```
 
-## Base de datos D1
+---
 
-**ID:** `458672aa-392f-4767-8d2b-926406628ba0`
+## Sistema de ciudades
+
+### Flujo completo
+
+1. **Scraper** extrae locales de OpenStreetMap (Overpass API)
+2. **Umbral de calidad**: solo se publica una ciudad con ≥10 locales con dirección
+3. **Sync automático** (cron 07:00): detecta ciudades nuevas en D1 y publica
+4. **Contenido SEO** (cron 06:00): genera intro, barrios y FAQs para ciudades nuevas
+
+### Scraper batch
 
 ```bash
-# Aplicar esquema inicial
-npx wrangler d1 execute tresycuarto-db --file=scripts/schema.sql
-
-# Importar locales de una ciudad
-python3 scripts/importar_d1.py --ciudad madrid
-
-# Consulta directa
-npx wrangler d1 execute tresycuarto-db --command="SELECT COUNT(*) FROM locales"
+python3 scripts/scraper_batch.py                   # todas las ciudades pendientes
+python3 scripts/scraper_batch.py --solo "Pamplona" # una ciudad concreta
+python3 scripts/scraper_batch.py --forzar          # re-raspar aunque ya haya datos
 ```
 
-## Agentes IA
+### Publicación automática
 
-### Scraper OSM
-Extrae locales de bares, restaurantes y ocio de OpenStreetMap:
 ```bash
-python3 scripts/overpass_scraper.py --ciudad madrid --radio 15000
+node scripts/sync-cities.mjs           # simular (sin deploy)
+node scripts/sync-cities.mjs --deploy  # build + deploy si hay ciudades nuevas
 ```
 
-### Enriquecedor
-Completa datos de cada local (Instagram, web, fotos):
-```bash
-python3 scripts/enriquecedor.py
-bash scripts/enriquecedor_loop.sh  # bucle continuo
+Consulta D1, compara con `cities.json` y publica las ciudades que cumplen el umbral. Se ejecuta a las 07:00 via cron.
+
+### Contenido SEO por ciudad
+
+`data/ciudad-content.json` — formato por ciudad:
+
+```json
+{
+  "NombreCiudad": {
+    "coords": { "lat": 40.4168, "lon": -3.7038 },
+    "intro": "Texto descriptivo sobre el tardeo en la ciudad...",
+    "barrios": ["Barrio1", "Barrio2", "Barrio3", "Barrio4", "Barrio5"],
+    "faqs": [
+      { "q": "¿Dónde tardeear en NombreCiudad?", "a": "..." },
+      { "q": "¿Qué tomar en el tardeo de NombreCiudad?", "a": "..." },
+      { "q": "¿A qué hora es el tardeo en NombreCiudad?", "a": "..." },
+      { "q": "¿Cuántos locales hay en NombreCiudad?", "a": "..." }
+    ]
+  }
+}
 ```
 
-## URLs
+Si `ANTHROPIC_API_KEY` está configurada, el cron de las 06:00 genera este contenido automáticamente con Claude Sonnet para las ciudades que lo necesiten.
 
-| Entorno | URL |
-|---------|-----|
-| Producción | https://tresycuarto.com |
-| Pages (backup) | https://tresycuarto.pages.dev |
-| Listmonk (email marketing) | https://listmonk.tresycuarto.com |
+---
+
+## Páginas de ciudad
+
+Cada ciudad publicada tiene `/locales/{slug}` con:
+
+- Previsión meteorológica 5 días (Open-Meteo, sin API key)
+- Intro + barrios característicos
+- Filtros: Todos / Bar / Pub / Cafetería / Con terraza
+- Mapa Leaflet con los locales de la página actual (pines por tipo)
+- Grid de cards (nombre, tipo, dirección, horario) enlazadas a la ficha
+- FAQs con schema.org para SEO
+
+Las páginas se generan en build via `generateStaticParams` leyendo `cities.json`. Las ciudades sin datos suficientes muestran "próximamente" sin indexación.
+
+---
+
+## Ficha de local
+
+`/locales/{id}` — servida por CF Function con:
+
+- Datos completos del local
+- Mapa OpenStreetMap embebido
+- Enlace de navegación a Google Maps
+- Schema.org `BarOrPub`
+
+---
+
+## Crons
+
+| Hora | Función |
+|------|---------|
+| 06:00 | Genera contenido SEO (intro/FAQs) para ciudades nuevas |
+| 07:00 | Detecta ciudades nuevas en D1 y despliega si las hay |
+| 08:00 | Notifica por email a suscriptores de nuevas ciudades |
+
+---
+
+## Variables de entorno
+
+| Variable | Uso |
+|----------|-----|
+| `CLOUDFLARE_API_TOKEN` | Deploy a Pages, consultas D1 |
+| `CLOUDFLARE_ACCOUNT_ID` | Identificador de cuenta Cloudflare |
+| `ANTHROPIC_API_KEY` | (opcional) Generación automática de contenido SEO |
+
+---
 
 ## Diseño
 
-| Color | Hex |
-|-------|-----|
-| Crema (fondo) | `#FFF8EF` |
-| Melocotón (acento) | `#FB923C` |
-| Dorado | `#F59E0B` |
-| Lavanda | `#A78BFA` |
+| Color | Hex | Uso |
+|-------|-----|-----|
+| Crema | `#FFF8EF` | Fondo principal |
+| Melocotón | `#FB923C` | Acento principal, CTAs |
+| Dorado | `#F59E0B` | Degradados |
+| Lavanda | `#A78BFA` | Pills ciudades y barrios |
+
+---
+
+## URLs
+
+| | URL |
+|-|-----|
+| Producción | https://tresycuarto.com |
+| Cloudflare Pages | https://tresycuarto.pages.dev |
+| Email marketing | https://listmonk.tresycuarto.com |
+
+---
+
+## Roadmap
+
+- [ ] Rutas de tardeo auto-generadas por barrio (mayor diferenciador)
+- [ ] Geolocalización "cerca de mí"
+- [ ] Filtros pet-friendly / con niños (datos OSM disponibles)
+- [ ] Eventos de tardeo publicados por propietarios
+- [ ] Mapa de calor por barrio

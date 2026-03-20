@@ -1,0 +1,455 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useTurnstile } from "../../components/useTurnstile";
+import citiesData from "../../../data/cities.json";
+import ciudadContentData from "../../../data/ciudad-content.json";
+import dynamic from "next/dynamic";
+
+const MapaLocales = dynamic(() => import("./MapaLocales"), { ssr: false });
+
+const SLUG_A_CIUDAD: Record<string, string> = Object.fromEntries(
+  (citiesData as { slug: string; nombre: string }[]).map(c => [c.slug, c.nombre])
+);
+
+type CiudadInfo = {
+  coords?: { lat: number; lon: number };
+  intro?: string;
+  barrios?: string[];
+  faqs?: { q: string; a: string }[];
+};
+const CIUDAD_CONTENT = ciudadContentData as Record<string, CiudadInfo>;
+
+// Las 8 ciudades con más locales para el selector
+const CIUDADES_PRINCIPALES = (citiesData as { slug: string; nombre: string }[]).slice(0, 8).map(c => c.nombre);
+
+function ciudadSlug(ciudad: string): string {
+  return ciudad
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+const WMO_ICON: Record<number, string> = {};
+function wmoIcon(code: number): string {
+  if (code === 0) return "☀️";
+  if (code <= 2) return "🌤️";
+  if (code === 3) return "☁️";
+  if (code <= 48) return "🌫️";
+  if (code <= 55) return "🌦️";
+  if (code <= 65) return "🌧️";
+  if (code <= 77) return "❄️";
+  if (code <= 82) return "🌦️";
+  return "⛈️";
+}
+
+const DIAS = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+
+const TIPO_LABEL: Record<string, string> = {
+  bar: "Bar", pub: "Pub", cafe: "Cafetería", biergarten: "Terraza",
+};
+
+type Local = {
+  id: string; nombre: string; tipo: string; ciudad: string;
+  direccion: string; horario: string | null; telefono: string | null;
+  web: string | null; instagram: string | null; terraza: number;
+  lat: number | null; lon: number | null; descripcion: string | null;
+};
+
+type WeatherDay = { time: string; temperature_2m_max: number; weathercode: number };
+
+const LIMIT = 24;
+
+export default function CiudadPage({ slug }: { slug: string }) {
+  const nombreCiudad = SLUG_A_CIUDAD[slug] || slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const content = CIUDAD_CONTENT[nombreCiudad] || null;
+  const router = useRouter();
+  const { containerRef, getToken } = useTurnstile();
+
+  const [locales, setLocales] = useState<Local[]>([]);
+  const [total, setTotal] = useState(0);
+  const [totalCiudad, setTotalCiudad] = useState<number | null>(null); // total sin filtrar
+  const [loading, setLoading] = useState(true);
+  const [offset, setOffset] = useState(0);
+  const [filtroTipo, setFiltroTipo] = useState("");
+  const [filtroTerraza, setFiltroTerraza] = useState(false);
+  const [weather, setWeather] = useState<WeatherDay[] | null>(null);
+  const [email, setEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
+
+  // Tiempo meteorológico
+  useEffect(() => {
+    const coords = content?.coords;
+    if (!coords) return;
+    fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&daily=temperature_2m_max,weathercode&timezone=Europe%2FMadrid&forecast_days=5`
+    )
+      .then(r => r.json())
+      .then(d => {
+        if (!d?.daily) return;
+        const { time, temperature_2m_max, weathercode } = d.daily;
+        setWeather(time.map((t: string, i: number) => ({
+          time: t, temperature_2m_max: temperature_2m_max[i], weathercode: weathercode[i],
+        })));
+      })
+      .catch(() => {});
+  }, [content]);
+
+  // Total sin filtrar (solo al montar, para saber si la ciudad tiene datos)
+  useEffect(() => {
+    fetch(`/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&limit=1&offset=0`)
+      .then(r => r.json())
+      .then(d => setTotalCiudad(d.total || 0))
+      .catch(() => setTotalCiudad(0));
+  }, [nombreCiudad]);
+
+  // Locales filtrados
+  useEffect(() => {
+    setLoading(true);
+    let url = `/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&limit=${LIMIT}&offset=${offset}`;
+    if (filtroTipo) url += `&tipo=${filtroTipo}`;
+    if (filtroTerraza) url += `&terraza=1`;
+    fetch(url)
+      .then(r => r.json())
+      .then(d => { setLocales(d.locales || []); setTotal(d.total || 0); })
+      .catch(() => setLocales([]))
+      .finally(() => setLoading(false));
+  }, [nombreCiudad, offset, filtroTipo, filtroTerraza]);
+
+  const noData = totalCiudad === 0 && !loading;
+  const hayFiltroActivo = !!filtroTipo || filtroTerraza;
+  const sinResultadosFiltro = !loading && locales.length === 0 && hayFiltroActivo;
+
+  return (
+    <main style={{ background: "#FFF8EF", minHeight: "100vh" }}>
+
+      {/* Nav */}
+      <nav style={{
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "1rem 1.5rem", borderBottom: "1px solid #F5E6D3",
+        background: "rgba(255,248,239,0.95)", position: "sticky", top: 0, zIndex: 10,
+        backdropFilter: "blur(8px)", gap: "1rem",
+      }}>
+        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.25rem", letterSpacing: "-0.03em", color: "#1C1917", flexShrink: 0 }}>
+          tres<span style={{ color: "#FB923C" }}>y</span>cuarto
+        </Link>
+
+        {/* Tiempo en el nav */}
+        {weather && weather.length > 0 && (
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", overflow: "hidden", flexShrink: 1 }}>
+            <span style={{ fontSize: "0.72rem", color: "#A8A29E", fontWeight: 600, whiteSpace: "nowrap" }}>
+              {nombreCiudad}
+            </span>
+            {weather.slice(0, 5).map((d, i) => {
+              const date = new Date(d.time + "T12:00:00");
+              const dia = i === 0 ? "Hoy" : DIAS[date.getDay()];
+              return (
+                <span key={d.time} style={{ display: "flex", alignItems: "center", gap: "0.2rem", fontSize: "0.85rem", whiteSpace: "nowrap" }}>
+                  <span>{wmoIcon(d.weathercode)}</span>
+                  <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.85rem" }}>{Math.round(d.temperature_2m_max)}°</span>
+                  <span style={{ fontSize: "0.72rem", color: "#A8A29E" }}>{dia}</span>
+                </span>
+              );
+            })}
+          </div>
+        )}
+
+        <Link href="/para-locales" style={{
+          textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, color: "white",
+          background: "linear-gradient(135deg,#FB923C,#F59E0B)", padding: "0.4rem 0.9rem",
+          borderRadius: "0.6rem", flexShrink: 0,
+        }}>
+          Soy propietario
+        </Link>
+      </nav>
+
+      {/* Header */}
+      <div style={{
+        background: "linear-gradient(180deg,#FFF8EF 0%,#FEF0DC 100%)",
+        padding: "2.5rem 1.5rem 1.5rem", textAlign: "center",
+      }}>
+        <span style={{
+          background: "#FEF0DC", color: "#FB923C", borderRadius: "999px",
+          padding: "0.3rem 0.9rem", fontSize: "0.78rem", fontWeight: 700,
+        }}>Tardeo en</span>
+        <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 900, color: "#1C1917", margin: "0.75rem 0 0.5rem" }}>
+          {nombreCiudad}
+        </h1>
+        {!loading && total > 0 && (
+          <p style={{ color: "#78716C", fontSize: "1rem" }}>
+            {total.toLocaleString("es-ES")} locales mapeados
+          </p>
+        )}
+      </div>
+
+      {/* Selector de ciudades principales */}
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem", padding: "0.75rem 1.5rem 0" }}>
+        {CIUDADES_PRINCIPALES.map(c => (
+          <a key={c} href={`/locales/${ciudadSlug(c)}`} style={{
+            fontSize: "0.8rem", fontWeight: 600, padding: "0.3rem 0.8rem", borderRadius: "999px",
+            background: c === nombreCiudad ? "#7C3AED" : "#EDE9FE",
+            color: c === nombreCiudad ? "white" : "#7C3AED",
+            border: "1.5px solid transparent", textDecoration: "none",
+          }}>{c}</a>
+        ))}
+      </div>
+
+      <div style={{ maxWidth: "960px", margin: "0 auto", padding: "1.5rem" }}>
+
+        {/* Intro + barrios */}
+        {content?.intro && !noData && (
+          <div style={{
+            background: "white", borderRadius: "1.25rem", border: "1px solid #F5E6D3",
+            padding: "1.5rem", marginBottom: "1.5rem",
+          }}>
+            <p style={{ color: "#57534E", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: content.barrios ? "1rem" : 0 }}>
+              {content.intro}
+            </p>
+            {content.barrios && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+                {content.barrios.map(b => (
+                  <span key={b} style={{
+                    fontSize: "0.78rem", fontWeight: 600, color: "#7C3AED",
+                    background: "#EDE9FE", padding: "0.2rem 0.7rem", borderRadius: "999px",
+                  }}>📍 {b}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Filtros — visibles siempre que la ciudad tenga datos */}
+        {!noData && totalCiudad !== null && totalCiudad > 0 && (
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+            {(["", "bar", "pub", "cafe"] as const).map(t => (
+              <button key={t} onClick={() => { setFiltroTipo(t); setFiltroTerraza(false); setOffset(0); }} style={{
+                padding: "0.4rem 1rem", borderRadius: "999px", border: "1.5px solid",
+                borderColor: filtroTipo === t && !filtroTerraza ? "#FB923C" : "#F5E6D3",
+                background: filtroTipo === t && !filtroTerraza ? "#FEF0DC" : "white",
+                color: filtroTipo === t && !filtroTerraza ? "#FB923C" : "#78716C",
+                fontWeight: 600, fontSize: "0.85rem", cursor: "pointer",
+              }}>
+                {t === "" ? "Todos" : (TIPO_LABEL[t] || t)}
+              </button>
+            ))}
+            <button onClick={() => { setFiltroTerraza(!filtroTerraza); setFiltroTipo(""); setOffset(0); }} style={{
+              padding: "0.4rem 1rem", borderRadius: "999px", border: "1.5px solid",
+              borderColor: filtroTerraza ? "#FB923C" : "#F5E6D3",
+              background: filtroTerraza ? "#FEF0DC" : "white",
+              color: filtroTerraza ? "#FB923C" : "#78716C",
+              fontWeight: 600, fontSize: "0.85rem", cursor: "pointer",
+            }}>☀️ Con terraza</button>
+          </div>
+        )}
+
+        {/* Sin resultados con filtro activo */}
+        {sinResultadosFiltro && (
+          <div style={{ textAlign: "center", padding: "3rem 1rem", color: "#78716C" }}>
+            <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>🔍</div>
+            <p style={{ fontWeight: 600 }}>No hay locales con ese filtro en {nombreCiudad}</p>
+            <button onClick={() => { setFiltroTipo(""); setFiltroTerraza(false); setOffset(0); }} style={{
+              marginTop: "1rem", padding: "0.5rem 1.2rem", borderRadius: "999px",
+              border: "1.5px solid #F5E6D3", background: "white", color: "#FB923C",
+              fontWeight: 700, fontSize: "0.85rem", cursor: "pointer",
+            }}>Ver todos los locales</button>
+          </div>
+        )}
+
+        {/* Cargando */}
+        {loading && (
+          <div style={{ textAlign: "center", padding: "4rem", color: "#A8A29E" }}>
+            Cargando locales...
+          </div>
+        )}
+
+        {/* Sin datos — formulario de aviso */}
+        {noData && (
+          <div style={{ textAlign: "center", padding: "4rem 1rem" }}>
+            <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🗺️</div>
+            <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1.5rem", marginBottom: "0.5rem" }}>
+              {nombreCiudad} llega pronto
+            </h2>
+            <p style={{ color: "#78716C", maxWidth: "400px", margin: "0.5rem auto 1.5rem", lineHeight: 1.6 }}>
+              Estamos mapeando los mejores locales de tardeo en {nombreCiudad}. Déjanos tu email y te avisamos cuando estén listos.
+            </p>
+
+            {subscribeStatus === "ok" ? (
+              <div style={{
+                background: "#F0FDF4", border: "1.5px solid #86EFAC", borderRadius: "1rem",
+                padding: "1.5rem", maxWidth: "400px", margin: "0 auto",
+              }}>
+                <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>✅</div>
+                <p style={{ fontWeight: 700, color: "#166534", marginBottom: "0.25rem" }}>¡Apuntado!</p>
+                <p style={{ color: "#15803D", fontSize: "0.9rem", marginBottom: "1rem" }}>
+                  Te avisaremos cuando {nombreCiudad} esté disponible.
+                </p>
+                <Link href="/" style={{ textDecoration: "none", fontWeight: 700, color: "#78716C", fontSize: "0.9rem" }}>
+                  Ver otras ciudades →
+                </Link>
+              </div>
+            ) : (
+              <>
+                <div ref={containerRef} />
+                <form
+                  onSubmit={async e => {
+                    e.preventDefault();
+                    if (!email) return;
+                    setSubscribeStatus("loading");
+                    try {
+                      const cf_token = await getToken();
+                      const res = await fetch("/api/subscribe", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email, ciudad: nombreCiudad, cf_token, proximamente: true }),
+                      });
+                      if (res.ok) {
+                        setSubscribeStatus("ok");
+                        setTimeout(() => router.push("/"), 3000);
+                      } else {
+                        setSubscribeStatus("error");
+                      }
+                    } catch {
+                      setSubscribeStatus("error");
+                    }
+                  }}
+                  style={{ maxWidth: "400px", margin: "0 auto" }}
+                >
+                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                    <input
+                      type="email" required placeholder="tu@email.com"
+                      value={email} onChange={e => setEmail(e.target.value)}
+                      style={{
+                        flex: 1, minWidth: "200px", padding: "0.85rem 1.1rem",
+                        borderRadius: "0.875rem", border: "1.5px solid #F5E6D3",
+                        background: "white", fontSize: "1rem", outline: "none", color: "#1C1917",
+                      }}
+                    />
+                    <button type="submit" disabled={subscribeStatus === "loading"} style={{
+                      padding: "0.85rem 1.5rem", borderRadius: "0.875rem", border: "none",
+                      background: "linear-gradient(135deg,#FB923C,#F59E0B)", color: "white",
+                      fontWeight: 800, fontSize: "1rem", cursor: "pointer",
+                      boxShadow: "0 4px 20px rgba(251,146,60,0.35)",
+                      opacity: subscribeStatus === "loading" ? 0.7 : 1,
+                    }}>
+                      {subscribeStatus === "loading" ? "..." : "Avisarme →"}
+                    </button>
+                  </div>
+                  {subscribeStatus === "error" && (
+                    <p style={{ color: "#DC2626", fontSize: "0.85rem", marginTop: "0.5rem" }}>
+                      Error al suscribirse. Inténtalo de nuevo.
+                    </p>
+                  )}
+                  <p style={{ fontSize: "0.75rem", color: "#A8A29E", marginTop: "0.75rem" }}>
+                    Sin spam. Solo te avisamos cuando {nombreCiudad} esté lista.
+                  </p>
+                </form>
+              </>
+            )}
+          </div>
+        )}
+
+        {/* Mapa */}
+        {!loading && locales.length > 0 && (
+          <MapaLocales locales={locales} ciudad={nombreCiudad} />
+        )}
+
+        {/* Grid de locales */}
+        {!loading && locales.length > 0 && (
+          <>
+            <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
+              {locales.map(local => (
+                <a key={local.id} href={`/locales/${local.id}`} style={{
+                  textDecoration: "none", color: "inherit",
+                  background: "white", borderRadius: "1.25rem",
+                  border: "1px solid #F5E6D3", padding: "1.25rem",
+                  display: "flex", flexDirection: "column", gap: "0.4rem",
+                  transition: "box-shadow 0.15s, transform 0.15s",
+                }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
+                >
+                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+                    <span style={{
+                      fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                      color: "#FB923C", background: "#FEF0DC", padding: "0.25rem 0.6rem", borderRadius: "999px",
+                    }}>
+                      {TIPO_LABEL[local.tipo] || "Local"}
+                    </span>
+                    {local.terraza === 1 && (
+                      <span style={{
+                        fontSize: "0.68rem", fontWeight: 700, color: "#059669",
+                        background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px",
+                      }}>☀️ Terraza</span>
+                    )}
+                  </div>
+                  <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>
+                    {local.nombre}
+                  </h2>
+                  {local.direccion && (
+                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      📍 {local.direccion}
+                    </p>
+                  )}
+                  {local.horario && (
+                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      🕒 {local.horario}
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+
+            {/* Paginación */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginTop: "2rem" }}>
+              {offset > 0 && (
+                <button onClick={() => setOffset(Math.max(0, offset - LIMIT))} style={{
+                  padding: "0.6rem 1.5rem", borderRadius: "0.75rem", border: "1.5px solid #F5E6D3",
+                  background: "white", color: "#78716C", fontWeight: 600, cursor: "pointer",
+                }}>← Anterior</button>
+              )}
+              <span style={{ color: "#78716C", fontSize: "0.875rem" }}>
+                Página {Math.floor(offset / LIMIT) + 1} de {Math.ceil(total / LIMIT)}
+              </span>
+              {offset + LIMIT < total && (
+                <button onClick={() => setOffset(offset + LIMIT)} style={{
+                  padding: "0.6rem 1.5rem", borderRadius: "0.75rem", border: "none",
+                  background: "linear-gradient(135deg,#FB923C,#F59E0B)", color: "white",
+                  fontWeight: 700, cursor: "pointer",
+                }}>Siguiente →</button>
+              )}
+            </div>
+          </>
+        )}
+
+        {/* FAQs */}
+        {content?.faqs && !noData && offset === 0 && (
+          <div style={{ marginTop: "2.5rem" }}>
+            <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1rem", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
+              Preguntas frecuentes sobre el tardeo en {nombreCiudad}
+            </h2>
+            {content.faqs.map((f, i) => (
+              <div key={i} style={{
+                background: "white", border: "1px solid #F5E6D3", borderRadius: "1rem",
+                padding: "1.1rem 1.25rem", marginBottom: "0.6rem",
+              }}>
+                <p style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.9rem", marginBottom: "0.4rem" }}>{f.q}</p>
+                <p style={{ color: "#57534E", fontSize: "0.85rem", lineHeight: 1.6 }}>{f.a}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <footer style={{ borderTop: "1px solid #F5E6D3", padding: "2rem 1.5rem", textAlign: "center", marginTop: "4rem" }}>
+        <p style={{ fontSize: "0.8rem", color: "#A8A29E" }}>
+          <Link href="/" style={{ color: "#FB923C", textDecoration: "none", fontWeight: 700 }}>tresycuarto.com</Link>
+          {" · "}El tardeo en España{" · "}
+          <Link href="/faq" style={{ color: "#A8A29E", textDecoration: "none" }}>FAQ</Link>
+          {" · "}
+          <Link href="/contacto" style={{ color: "#A8A29E", textDecoration: "none" }}>Contacto</Link>
+        </p>
+      </footer>
+    </main>
+  );
+}

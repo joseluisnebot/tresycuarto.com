@@ -1,0 +1,234 @@
+[
+  {
+    "slug": "albacete",
+    "nombre": "Albacete"
+  },
+  {
+    "slug": "alcala-de-henares",
+    "nombre": "Alcalá de Henares"
+  },
+  {
+    "slug": "almeria",
+    "nombre": "Almería"
+  },
+  {
+    "slug": "arona",
+    "nombre": "Arona"
+  },
+  {
+    "slug": "avila",
+    "nombre": "Ávila"
+  },
+  {
+    "slug": "badajoz",
+    "nombre": "Badajoz"
+  },
+  {
+    "slug": "barakaldo",
+    "nombre": "Barakaldo"
+  },
+  {
+    "slug": "barcelona",
+    "nombre": "Barcelona"
+  },
+  {
+    "slug": "benidorm",
+    "nombre": "Benidorm"
+  },
+  {
+    "slug": "bilbao",
+    "nombre": "Bilbao"
+  },
+  {
+    "slug": "burgos",
+    "nombre": "Burgos"
+  },
+  {
+    "slug": "caceres",
+    "nombre": "Cáceres"
+  },
+  {
+    "slug": "cadiz",
+    "nombre": "Cádiz"
+  },
+  {
+    "slug": "cartagena",
+    "nombre": "Cartagena"
+  },
+  {
+    "slug": "ciudad-real",
+    "nombre": "Ciudad Real"
+  },
+  {
+    "slug": "cordoba",
+    "nombre": "Córdoba"
+  },
+  {
+    "slug": "cuenca",
+    "nombre": "Cuenca"
+  },
+  {
+    "slug": "denia",
+    "nombre": "Dénia"
+  },
+  {
+    "slug": "getafe",
+    "nombre": "Getafe"
+  },
+  {
+    "slug": "girona",
+    "nombre": "Girona"
+  },
+  {
+    "slug": "granada",
+    "nombre": "Granada"
+  },
+  {
+    "slug": "guadalajara",
+    "nombre": "Guadalajara"
+  },
+  {
+    "slug": "huelva",
+    "nombre": "Huelva"
+  },
+  {
+    "slug": "huesca",
+    "nombre": "Huesca"
+  },
+  {
+    "slug": "jaen",
+    "nombre": "Jaén"
+  },
+  {
+    "slug": "jerez-de-la-frontera",
+    "nombre": "Jerez de la Frontera"
+  },
+  {
+    "slug": "la-coruna",
+    "nombre": "La Coruña"
+  },
+  {
+    "slug": "las-palmas",
+    "nombre": "Las Palmas"
+  },
+  {
+    "slug": "leganes",
+    "nombre": "Leganés"
+  },
+  {
+    "slug": "leon",
+    "nombre": "León"
+  },
+  {
+    "slug": "lleida",
+    "nombre": "Lleida"
+  },
+  {
+    "slug": "logrono",
+    "nombre": "Logroño"
+  },
+  {
+    "slug": "lorca",
+    "nombre": "Lorca"
+  },
+  {
+    "slug": "lugo",
+    "nombre": "Lugo"
+  },
+  {
+    "slug": "madrid",
+    "nombre": "Madrid"
+  },
+  {
+    "slug": "malaga",
+    "nombre": "Málaga"
+  },
+  {
+    "slug": "mostoles",
+    "nombre": "Móstoles"
+  },
+  {
+    "slug": "murcia",
+    "nombre": "Murcia"
+  },
+  {
+    "slug": "oviedo",
+    "nombre": "Oviedo"
+  },
+  {
+    "slug": "palencia",
+    "nombre": "Palencia"
+  },
+  {
+    "slug": "palma",
+    "nombre": "Palma"
+  },
+  {
+    "slug": "pontevedra",
+    "nombre": "Pontevedra"
+  },
+  {
+    "slug": "salamanca",
+    "nombre": "Salamanca"
+  },
+  {
+    "slug": "santa-cruz-de-tenerife",
+    "nombre": "Santa Cruz de Tenerife"
+  },
+  {
+    "slug": "santa-pola",
+    "nombre": "Santa Pola"
+  },
+  {
+    "slug": "santander",
+    "nombre": "Santander"
+  },
+  {
+    "slug": "segovia",
+    "nombre": "Segovia"
+  },
+  {
+    "slug": "sevilla",
+    "nombre": "Sevilla"
+  },
+  {
+    "slug": "soria",
+    "nombre": "Soria"
+  },
+  {
+    "slug": "tarragona",
+    "nombre": "Tarragona"
+  },
+  {
+    "slug": "teruel",
+    "nombre": "Teruel"
+  },
+  {
+    "slug": "toledo",
+    "nombre": "Toledo"
+  },
+  {
+    "slug": "torrevieja",
+    "nombre": "Torrevieja"
+  },
+  {
+    "slug": "valencia",
+    "nombre": "Valencia"
+  },
+  {
+    "slug": "valladolid",
+    "nombre": "Valladolid"
+  },
+  {
+    "slug": "vitoria",
+    "nombre": "Vitoria"
+  },
+  {
+    "slug": "zamora",
+    "nombre": "Zamora"
+  },
+  {
+    "slug": "zaragoza",
+    "nombre": "Zaragoza"
+  }
+]

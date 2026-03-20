@@ -1,0 +1,1750 @@
+{
+  "Madrid": {
+    "coords": {
+      "lat": 40.4168,
+      "lon": -3.7038
+    },
+    "intro": "El tardeo madrileño tiene su propio ritmo. Entre las 16h y las 21h, la capital se llena de terrazas animadas, bares de vermut y cafés con carácter. Malasaña, La Latina, Chueca y Lavapiés son los epicentros de un ocio de tarde que Madrid ha convertido en seña de identidad.",
+    "barrios": [
+      "Malasaña",
+      "La Latina",
+      "Chueca",
+      "Lavapiés",
+      "Salamanca"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Madrid?",
+        "a": "Los mejores barrios para tardeear en Madrid son Malasaña, La Latina y Chueca, con cientos de bares, terrazas y cafés abiertos desde las 16h."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Madrid?",
+        "a": "El tardeo madrileño suele arrancar entre las 16h y las 17h, especialmente los fines de semana, y se extiende hasta las 20h-21h."
+      },
+      {
+        "q": "¿Qué locales tienen terraza en Madrid?",
+        "a": "Madrid tiene una gran oferta de terrazas. En tresycuarto encontrarás todos los locales con terraza en Madrid filtrados por barrio y tipo."
+      },
+      {
+        "q": "¿Cuántos bares hay en Madrid para el tardeo?",
+        "a": "En tresycuarto tenemos más de 3.600 locales mapeados en Madrid entre bares, cafeterías, pubs y terrazas."
+      }
+    ]
+  },
+  "Barcelona": {
+    "coords": {
+      "lat": 41.3851,
+      "lon": 2.1734
+    },
+    "intro": "Barcelona combina la cultura del vermut con las terrazas del Mediterráneo. El Eixample, el Born y Gràcia son los epicentros del tardeo barcelonés, con una oferta que va desde los bares de toda la vida hasta los locales con más ambiente de la ciudad.",
+    "barrios": [
+      "El Born",
+      "Gràcia",
+      "Eixample",
+      "El Raval",
+      "Barceloneta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Barcelona?",
+        "a": "Los barrios más animados para el tardeo en Barcelona son El Born, Gràcia y el Eixample, con una enorme concentración de bares y terrazas."
+      },
+      {
+        "q": "¿Cuál es la mejor zona de vermut en Barcelona?",
+        "a": "El barrio de Gràcia y El Born son las zonas clásicas de vermut en Barcelona, con bares tradicionales abiertos desde el mediodía."
+      },
+      {
+        "q": "¿Hay terrazas en Barcelona para el tardeo?",
+        "a": "Sí, Barcelona tiene una de las mayores ofertas de terrazas de España. En tresycuarto encontrarás más de 500 locales con terraza en la ciudad."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Barcelona?",
+        "a": "El tardeo en Barcelona arranca habitualmente a partir de las 17h y se alarga hasta las 21h, especialmente en primavera y verano."
+      }
+    ]
+  },
+  "Valencia": {
+    "coords": {
+      "lat": 39.4699,
+      "lon": -0.3763
+    },
+    "intro": "Valencia, cuna del agua de Valencia y los mercados de abastos, tiene una escena de tardeo vibrante. El Carmen, Ruzafa y el Cabanyal concentran los mejores bares y cafeterías para disfrutar de las tardes levantinas con buen clima casi todo el año.",
+    "barrios": [
+      "El Carmen",
+      "Ruzafa",
+      "Cabanyal",
+      "Benimaclet",
+      "Centro"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Valencia?",
+        "a": "Ruzafa y El Carmen son los barrios de referencia para el tardeo en Valencia, con una gran concentración de bares modernos y terrazas."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Valencia?",
+        "a": "El tardeo valenciano es especialmente activo los fines de semana a partir de las 16h, aprovechando el buen clima mediterráneo."
+      },
+      {
+        "q": "¿Cuáles son los mejores bares de tarde en Valencia?",
+        "a": "En tresycuarto tienes más de 750 locales de tardeo en Valencia con dirección, horario y fotos."
+      }
+    ]
+  },
+  "Sevilla": {
+    "coords": {
+      "lat": 37.3891,
+      "lon": -5.9845
+    },
+    "intro": "Sevilla es la capital del tardeo andaluz. La Alameda de Hércules, Triana y el Casco Antiguo albergan cientos de bares donde el ambiente de tarde es una institución. El clima sevillano convierte el tardeo en una actividad de casi todo el año.",
+    "barrios": [
+      "Alameda de Hércules",
+      "Triana",
+      "Casco Antiguo",
+      "Macarena",
+      "Los Remedios"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Sevilla?",
+        "a": "La Alameda de Hércules y Triana son las zonas más animadas para el tardeo en Sevilla, con bares y terrazas llenos a partir de las 17h."
+      },
+      {
+        "q": "¿A qué hora se sale de tarde en Sevilla?",
+        "a": "En Sevilla el tardeo empieza pronto, sobre las 16h-17h, y es especialmente vibrante los jueves, viernes y fines de semana."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Sevilla?",
+        "a": "En tresycuarto tenemos más de 1.700 locales mapeados en Sevilla entre bares, cafeterías y terrazas."
+      }
+    ]
+  },
+  "Bilbao": {
+    "coords": {
+      "lat": 43.263,
+      "lon": -2.935
+    },
+    "intro": "El tardeo bilbaíno gira en torno a los pintxos y el txakoli. El Casco Viejo y el Ensanche son los puntos de encuentro de una ciudad que entiende el ocio de tarde como una forma de vida, con bares que abren desde el mediodía y se llenan de ambiente.",
+    "barrios": [
+      "Casco Viejo",
+      "Ensanche",
+      "Indautxu",
+      "San Francisco",
+      "Abando"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Bilbao?",
+        "a": "El Casco Viejo de Bilbao es el epicentro del tardeo, con cientos de bares de pintxos y txikiteos que se llenan cada tarde."
+      },
+      {
+        "q": "¿Qué es el txikiteo en Bilbao?",
+        "a": "El txikiteo es la tradición bilbaína de ir de bar en bar tomando txikitos con pintxos, especialmente por las tardes."
+      },
+      {
+        "q": "¿Cuáles son los mejores bares de pintxos de tarde en Bilbao?",
+        "a": "En tresycuarto tienes casi 1.000 locales mapeados en Bilbao con toda la información para planificar tu tardeo."
+      }
+    ]
+  },
+  "Málaga": {
+    "coords": {
+      "lat": 36.7213,
+      "lon": -4.4213
+    },
+    "intro": "Málaga, con su clima mediterráneo privilegiado, ofrece uno de los mejores tardeos de España. El Centro Histórico, el Soho y el barrio de El Perchel concentran una oferta de bares y terrazas que se disfrutan prácticamente todo el año bajo el sol malagueño.",
+    "barrios": [
+      "Centro Histórico",
+      "Soho",
+      "El Perchel",
+      "La Malagueta",
+      "Pedregalejo"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Málaga?",
+        "a": "El Centro Histórico de Málaga y el Soho son las zonas más animadas para el tardeo, con terrazas y bares abiertos toda la tarde."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Málaga?",
+        "a": "En Málaga el tardeo se disfruta prácticamente todo el año gracias al clima. Los horarios habituales son de 16h a 21h."
+      },
+      {
+        "q": "¿Qué hacer de tarde en Málaga?",
+        "a": "El tardeo en Málaga combina la cultura del vino de la tierra, las tapas y las terrazas al sol. En tresycuarto tienes más de 1.500 locales mapeados."
+      }
+    ]
+  },
+  "Zaragoza": {
+    "coords": {
+      "lat": 41.6488,
+      "lon": -0.8891
+    },
+    "intro": "Zaragoza tiene una tradición de tardeo arraigada en el Casco Histórico y en El Tubo, la zona de tapas más conocida de la ciudad. Cafés con solera, bares de vinos y terrazas se suceden en un ambiente tranquilo y cercano.",
+    "barrios": [
+      "El Tubo",
+      "Casco Histórico",
+      "Centro",
+      "Delicias",
+      "Las Fuentes"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Zaragoza?",
+        "a": "El Tubo y el Casco Histórico de Zaragoza son las zonas de referencia para el tardeo, con una alta concentración de bares y tapas."
+      },
+      {
+        "q": "¿Qué es El Tubo en Zaragoza?",
+        "a": "El Tubo es la zona de bares más famosa de Zaragoza, un conjunto de calles del Casco Histórico repletas de bares de tapas y raciones."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Zaragoza?",
+        "a": "En tresycuarto tenemos más de 1.000 locales mapeados en Zaragoza con dirección, horario y contacto."
+      }
+    ]
+  },
+  "Murcia": {
+    "coords": {
+      "lat": 37.9922,
+      "lon": -1.1307
+    },
+    "intro": "Murcia concentra su tardeo en el Barrio del Carmen y la Plaza de las Flores, dos de los puntos de encuentro más animados del sureste español. Con un clima cálido y una gran afición por las tapas, Murcia ofrece un tardeo auténtico y muy asequible.",
+    "barrios": [
+      "Barrio del Carmen",
+      "Plaza de las Flores",
+      "Centro",
+      "La Fama",
+      "El Ranero"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Murcia?",
+        "a": "El Barrio del Carmen y la Plaza de las Flores son los centros del tardeo en Murcia, con bares y terrazas animadas cada tarde."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Murcia?",
+        "a": "El tardeo en Murcia es especialmente activo los jueves, viernes y fines de semana a partir de las 17h."
+      }
+    ]
+  },
+  "Cádiz": {
+    "coords": {
+      "lat": 36.5271,
+      "lon": -6.2886
+    },
+    "intro": "Cádiz vive su Semana Santa como pocos lugares del mundo, y su tardeo antes y después de los desfiles es una experiencia única. El barrio del Pópulo, la Viña y el centro histórico albergan bares y tabernas donde se mezcla la tradición cofrade con el ambiente gaditano más genuino.",
+    "barrios": [
+      "Pópulo",
+      "La Viña",
+      "Centro Histórico",
+      "La Caleta",
+      "Santa María"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Cádiz?",
+        "a": "El barrio del Pópulo y La Viña son los mejores lugares para el tardeo en Cádiz, con bares tradicionales y el ambiente gaditano más genuino."
+      },
+      {
+        "q": "¿Qué tapas tomar en el tardeo de Cádiz?",
+        "a": "El tardeo gaditano va acompañado de atún de almadraba, tortillitas de camarones y chicharrones, ideales con una copa de manzanilla."
+      }
+    ]
+  },
+  "Cartagena": {
+    "coords": {
+      "lat": 37.6257,
+      "lon": -0.9966
+    },
+    "intro": "Cartagena celebra una de las Semanas Santas más espectaculares de España, declarada de Interés Turístico Internacional. Entre procesión y procesión, la Calle Mayor y el barrio de Santa Lucía ofrecen bares y tabernas donde el tardeo cartagenero se vive con pasión cofrade.",
+    "barrios": [
+      "Calle Mayor",
+      "Santa Lucía",
+      "Centro",
+      "El Ensanche",
+      "La Manga"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Cartagena?",
+        "a": "La Calle Mayor y sus alrededores son el centro del tardeo en Cartagena, especialmente durante la Semana Santa."
+      },
+      {
+        "q": "¿Por qué es famosa la Semana Santa de Cartagena?",
+        "a": "La Semana Santa de Cartagena es Interés Turístico Internacional, conocida por sus espectaculares procesiones y la rivalidad entre los grupos marrajos y californios."
+      }
+    ]
+  },
+  "Córdoba": {
+    "coords": {
+      "lat": 37.8882,
+      "lon": -4.7794
+    },
+    "intro": "Córdoba vive su Semana Santa con una solemnidad y recogimiento únicos. La Mezquita-Catedral, la Judería y el barrio de San Basilio son el escenario de procesiones milenarias, y sus calles albergan tabernas y bodegas donde el tardeo cordobés se disfruta entre el aroma del azahar.",
+    "barrios": [
+      "Judería",
+      "San Basilio",
+      "Centro Histórico",
+      "La Corredera",
+      "Cruz Conde"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Córdoba?",
+        "a": "La zona de La Corredera y el Centro Histórico de Córdoba son perfectos para el tardeo, con tabernas y bodegas tradicionales."
+      },
+      {
+        "q": "¿Qué comer en el tardeo de Córdoba?",
+        "a": "El salmorejo, el flamenquín y los chocos a la plancha son imprescindibles en el tardeo cordobés."
+      }
+    ]
+  },
+  "Cuenca": {
+    "coords": {
+      "lat": 40.0704,
+      "lon": -2.1374
+    },
+    "intro": "Cuenca celebra una de las Semanas de Música Religiosa más importantes del mundo durante la Semana Santa. La Ciudad Alta y las Casas Colgadas son el escenario de un tardeo íntimo y tranquilo en bares con vistas únicas.",
+    "barrios": [
+      "Ciudad Alta",
+      "Ciudad Baja",
+      "El Mangana",
+      "Tiradores",
+      "Buenavista"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Cuenca?",
+        "a": "La Ciudad Alta de Cuenca, junto a las Casas Colgadas, tiene bares y restaurantes con vistas espectaculares a la hoz del río Júcar."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Cuenca?",
+        "a": "En tresycuarto tienes más de 60 locales mapeados en Cuenca para disfrutar del tardeo."
+      }
+    ]
+  },
+  "Granada": {
+    "coords": {
+      "lat": 37.1773,
+      "lon": -3.5986
+    },
+    "intro": "Granada tiene una de las Semanas Santas más emocionantes de España, con procesiones que discurren bajo la Alhambra. El barrio del Realejo, Albaicín y el centro albergan bares donde el tardeo granadino se combina con la tradición de las tapas gratis con cada bebida.",
+    "barrios": [
+      "Realejo",
+      "Albaicín",
+      "Centro",
+      "Zaidín",
+      "Ronda"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Granada?",
+        "a": "El Realejo, el Albaicín y el centro de Granada son las mejores zonas para el tardeo, con bares y terrazas con vistas a los monumentos."
+      },
+      {
+        "q": "¿En qué bares de Granada sirven tapas gratis?",
+        "a": "Granada mantiene la tradición de ofrecer una tapa gratuita con cada consumición. En tresycuarto encontrarás los mejores locales de tapas."
+      }
+    ]
+  },
+  "Jerez de la Frontera": {
+    "coords": {
+      "lat": 36.6864,
+      "lon": -6.1375
+    },
+    "intro": "Jerez de la Frontera combina su Semana Santa con la tradición del jerez y la manzanilla. Las bodegas centenarias, la Calle Larga y el barrio de Santiago son el escenario de un tardeo jerezano donde el vino fino es protagonista absoluto.",
+    "barrios": [
+      "Calle Larga",
+      "Barrio de Santiago",
+      "Centro",
+      "El Arenal",
+      "San Miguel"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Jerez?",
+        "a": "La Calle Larga y el barrio de Santiago son los centros del tardeo en Jerez, con bodegas y bares donde el jerez es el protagonista."
+      },
+      {
+        "q": "¿Qué vino tomar en el tardeo de Jerez?",
+        "a": "El tardeo jerezano gira alrededor del fino, la manzanilla y el amontillado, perfectos para acompañar tapas de jamón y mariscos."
+      }
+    ]
+  },
+  "León": {
+    "coords": {
+      "lat": 42.5987,
+      "lon": -5.5671
+    },
+    "intro": "León tiene una Semana Santa de procesiones austeras y solemnes, Interés Turístico Internacional, que contrasta con el ambiente animado del Barrio Húmedo. Esta zona legendaria de tapas y vinos convierte el tardeo leonés en una experiencia única.",
+    "barrios": [
+      "Barrio Húmedo",
+      "Barrio Romántico",
+      "Centro",
+      "Ensanche",
+      "La Palomera"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en León?",
+        "a": "El Barrio Húmedo de León es el corazón del tardeo, con más de 60 bares concentrados en pocas calles que se llenan de vida."
+      },
+      {
+        "q": "¿Qué tapas hay en el Barrio Húmedo de León?",
+        "a": "En el Barrio Húmedo las tapas son gratis con cada consumición: cecina, morcilla, botillo y jamón son las más populares."
+      }
+    ]
+  },
+  "Lorca": {
+    "coords": {
+      "lat": 37.6709,
+      "lon": -1.699
+    },
+    "intro": "La Semana Santa de Lorca es única en el mundo: los bordados son Patrimonio Cultural de la Humanidad y los desfiles bíblicos y de la antigüedad son espectaculares. Entre procesión y procesión, la calle Lope Gisbert ofrece bares para el tardeo lorquino.",
+    "barrios": [
+      "Centro",
+      "Calle Lope Gisbert",
+      "San Diego",
+      "El Calvario",
+      "San Fernando"
+    ],
+    "faqs": [
+      {
+        "q": "¿Por qué es famosa la Semana Santa de Lorca?",
+        "a": "La Semana Santa de Lorca es Patrimonio Cultural de la Humanidad, famosa por sus impresionantes bordados y los desfiles con representaciones bíblicas e históricas."
+      },
+      {
+        "q": "¿Dónde tardeear en Lorca?",
+        "a": "El centro de Lorca y la calle Lope Gisbert concentran los bares y cafeterías para el tardeo."
+      }
+    ]
+  },
+  "Valladolid": {
+    "coords": {
+      "lat": 41.6523,
+      "lon": -4.7245
+    },
+    "intro": "Valladolid tiene la Semana Santa más importante de Castilla y León y una de las más relevantes de España. Sus pasos de Gregorio Fernández y Juan de Juni son obras maestras del arte, y el ambiente de tardeo en la Plaza Mayor complementa perfectamente la experiencia cofrade.",
+    "barrios": [
+      "Plaza Mayor",
+      "Zona Centro",
+      "El Val",
+      "Delicias",
+      "Huerta del Rey"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Valladolid?",
+        "a": "La Plaza Mayor de Valladolid y el centro son los epicentros del tardeo, con bares y restaurantes animados antes y después de las procesiones."
+      },
+      {
+        "q": "¿Qué comer en el tardeo de Valladolid?",
+        "a": "El lechazo asado, los vinos de la Ribera del Duero y los pinchos del centro hacen del tardeo en Valladolid una experiencia gastronómica de primer nivel."
+      }
+    ]
+  },
+  "Zamora": {
+    "coords": {
+      "lat": 41.5034,
+      "lon": -5.7447
+    },
+    "intro": "Zamora tiene la Semana Santa más antigua de España, declarada de Interés Turístico Internacional. Sus calles medievales, la Catedral Románica y el barrio de la Horta son el escenario de unas procesiones únicas, y el tardeo zamorano en las zonas de pinchos completa una visita perfecta.",
+    "barrios": [
+      "Casco Histórico",
+      "La Horta",
+      "Los Bloques",
+      "La Lana",
+      "Cabañales"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Zamora?",
+        "a": "El casco histórico de Zamora y la zona de pinchos del centro son perfectos para el tardeo durante la Semana Santa más antigua de España."
+      },
+      {
+        "q": "¿Por qué es famosa la Semana Santa de Zamora?",
+        "a": "La Semana Santa de Zamora es la más antigua de España y tiene Interés Turístico Internacional, conocida por la sobriedad y el recogimiento de sus procesiones medievales."
+      }
+    ]
+  },
+  "Albacete": {
+    "coords": {
+      "lat": 38.9942,
+      "lon": -1.8585
+    },
+    "intro": "Albacete tiene una vida de tarde animada que gira en torno al Paseo de la Feria y el Casco Antiguo. La ciudad manchega combina la tradición de los bares de vermut con una nueva generación de cafeterías y locales modernos que hacen del tardeo un plan perfecto cualquier día de la semana.",
+    "barrios": [
+      "Casco Antiguo",
+      "El Paseo",
+      "Centro",
+      "La Estrella",
+      "Feria"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Albacete?",
+        "a": "El Paseo de la Feria y el Casco Antiguo son las zonas más animadas para el tardeo en Albacete, con bares y terrazas que se llenan a partir de las 17h."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Albacete?",
+        "a": "En tresycuarto tienes cientos de locales mapeados en Albacete entre bares, cafeterías y terrazas para planificar tu tardeo."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Albacete?",
+        "a": "El tardeo en Albacete arranca habitualmente entre las 17h y las 18h, especialmente los fines de semana, y se extiende hasta las 21h."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Albacete?",
+        "a": "El gazpacho manchego, el morteruelo y un buen vino de la tierra son los acompañantes perfectos del tardeo albaceteño."
+      }
+    ]
+  },
+  "Alcalá de Henares": {
+    "coords": {
+      "lat": 40.4819,
+      "lon": -3.3647
+    },
+    "intro": "Alcalá de Henares, ciudad universitaria y Patrimonio de la Humanidad, tiene un tardeo con mucha vida gracias a su numerosa comunidad estudiantil. La Calle Mayor y los soportales del Casco Histórico albergan bares y terrazas donde el ambiente de tarde es especialmente animado los jueves y fines de semana.",
+    "barrios": [
+      "Casco Histórico",
+      "Calle Mayor",
+      "El Ensanche",
+      "Nueva Alcalá",
+      "Centro"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Alcalá de Henares?",
+        "a": "La Calle Mayor y los soportales del centro histórico de Alcalá son el escenario del tardeo, con bares y terrazas en un entorno universitario y patrimonial único."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Alcalá de Henares?",
+        "a": "Alcalá de Henares combina el ambiente universitario con un casco histórico Patrimonio de la Humanidad, lo que hace del tardeo una experiencia única entre monumentos y cultura."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Alcalá de Henares?",
+        "a": "En tresycuarto tienes locales mapeados en Alcalá de Henares para planificar tu tardeo en la ciudad natal de Cervantes."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Alcalá de Henares?",
+        "a": "El tardeo en Alcalá es especialmente activo los jueves universitarios a partir de las 17h y los fines de semana hasta las 21h."
+      }
+    ]
+  },
+  "Almería": {
+    "coords": {
+      "lat": 36.8381,
+      "lon": -2.4597
+    },
+    "intro": "Almería es la ciudad con más horas de sol de Europa y eso se nota en su cultura de tardeo. El centro histórico, el Paseo de Almería y el barrio de La Chanca ofrecen una mezcla de bares de tapas, terrazas y locales de ambiente donde el tardeo almeriense se disfruta prácticamente todo el año bajo un sol privilegiado.",
+    "barrios": [
+      "Paseo de Almería",
+      "La Chanca",
+      "Centro",
+      "El Zapillo",
+      "Cuatro Santos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Almería?",
+        "a": "El Paseo de Almería y el centro histórico son las zonas más animadas para el tardeo, con una gran concentración de bares de tapas y terrazas al sol."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Almería?",
+        "a": "Almería tiene más de 3.000 horas de sol al año, lo que convierte el tardeo en terrazas en una experiencia casi única en España durante todo el año."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Almería?",
+        "a": "En tresycuarto tienes más de 700 locales mapeados en Almería entre bares, cafeterías y terrazas para planificar tu tardeo."
+      },
+      {
+        "q": "¿Qué tapas tomar en el tardeo de Almería?",
+        "a": "En Almería las tapas son gratuitas con cada consumición: el gurullos, los salmonetes fritos y el jamón de Trevélez son imprescindibles en el tardeo almeriense."
+      }
+    ]
+  },
+  "Arona": {
+    "coords": {
+      "lat": 28.0997,
+      "lon": -16.6834
+    },
+    "intro": "Arona, en el sur de Tenerife, es el epicentro del turismo en las Islas Canarias. Los núcleos de Los Cristianos y Las Américas ofrecen un tardeo internacional y animado con bares, terrazas frente al Atlántico y un ambiente que mezcla lo local con lo cosmopolita los doce meses del año.",
+    "barrios": [
+      "Los Cristianos",
+      "Las Américas",
+      "Palm-Mar",
+      "Los Abrigos",
+      "San Miguel de Abona"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Arona?",
+        "a": "Los Cristianos y Las Américas son los centros del tardeo en Arona, con una gran oferta de bares y terrazas frente al mar abiertos todo el año."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Arona?",
+        "a": "En Arona el tardeo se puede disfrutar los 365 días del año gracias al clima canario, con temperaturas suaves que permiten estar en terraza en cualquier mes."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Arona?",
+        "a": "En tresycuarto tienes locales mapeados en Arona y el sur de Tenerife para planificar tu tardeo en el paraíso canario."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Arona?",
+        "a": "El ron miel canario, el vino de la tierra y las papas arrugadas con mojo son los imprescindibles del tardeo en el sur de Tenerife."
+      }
+    ]
+  },
+  "Ávila": {
+    "coords": {
+      "lat": 40.6564,
+      "lon": -4.6814
+    },
+    "intro": "Ávila, la ciudad amurallada más antigua de España, tiene un tardeo íntimo y con mucho sabor castellano. Los bares y mesones del centro histórico, junto a la imponente muralla medieval, ofrecen un ambiente de tardeo único donde el vino de la tierra y las yemas de Santa Teresa acompañan cada tarde.",
+    "barrios": [
+      "Casco Histórico",
+      "El Mercado Grande",
+      "San Vicente",
+      "Centro",
+      "Extramuros"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Ávila?",
+        "a": "El centro histórico intramuros de Ávila concentra los mejores bares y mesones para el tardeo, con un ambiente único junto a la muralla medieval mejor conservada de España."
+      },
+      {
+        "q": "¿Qué es especial del tardeo en Ávila?",
+        "a": "Tardeear en Ávila es hacerlo rodeado de historia: la muralla del siglo XI, las iglesias románicas y el ambiente castellano hacen de cada tarde algo memorable."
+      },
+      {
+        "q": "¿Qué comer en el tardeo de Ávila?",
+        "a": "El chuletón de Ávila, los dulces de yemas de Santa Teresa y el vino de la denominación Cebreros son los sabores auténticos del tardeo abulense."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Ávila?",
+        "a": "En tresycuarto tienes locales mapeados en Ávila para descubrir el tardeo más castellano junto a la mejor muralla medieval de España."
+      }
+    ]
+  },
+  "Badajoz": {
+    "coords": {
+      "lat": 38.8794,
+      "lon": -6.9706
+    },
+    "intro": "Badajoz, capital de Extremadura, tiene una cultura de tardeo arraigada en su casco antiguo y en las plazas del centro. La Plaza de España, el barrio de San Roque y las calles del centro histórico concentran bares y terrazas donde el tardeo extremeño se vive con mucha hospitalidad y productos de la tierra de primer nivel.",
+    "barrios": [
+      "Casco Antiguo",
+      "San Roque",
+      "Centro",
+      "La Luneta",
+      "Valdepasillas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Badajoz?",
+        "a": "La Plaza de España y el casco antiguo de Badajoz son los centros del tardeo, con bares y terrazas donde el ambiente extremeño es cálido y acogedor."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Badajoz?",
+        "a": "El jamón ibérico, los quesos de la Serena y el vino de Ribera del Guadiana son los productos estrella del tardeo en Badajoz."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Badajoz?",
+        "a": "En tresycuarto tienes más de 700 locales mapeados en Badajoz entre bares, cafeterías y terrazas para tu tardeo extremeño."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Badajoz?",
+        "a": "En Badajoz el tardeo empieza sobre las 17h-18h y los bares del centro se llenan especialmente los fines de semana y en las fiestas de San Juan."
+      }
+    ]
+  },
+  "Barakaldo": {
+    "coords": {
+      "lat": 43.2951,
+      "lon": -2.9938
+    },
+    "intro": "Barakaldo, en el Gran Bilbao, es una ciudad que ha transformado su pasado industrial en una vibrante escena de ocio y tardeo. El Casco Viejo de Barakaldo y la zona de Cruces concentran bares y locales donde se vive el txikiteo vasco con la misma pasión que en la capital vizcaína.",
+    "barrios": [
+      "Casco Viejo",
+      "Cruces",
+      "Ballonti",
+      "Kareaga",
+      "San Vicente"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Barakaldo?",
+        "a": "El Casco Viejo de Barakaldo y la zona de Cruces son los centros del tardeo, con bares de pintxos y txikiteos que recuerdan al ambiente del Casco Viejo de Bilbao."
+      },
+      {
+        "q": "¿Qué es el txikiteo en Barakaldo?",
+        "a": "El txikiteo en Barakaldo es la tradición vasca de ir de bar en bar tomando txikitos con pintxos, muy arraigada en toda la margen izquierda del Nervión."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Barakaldo?",
+        "a": "En tresycuarto tienes locales mapeados en Barakaldo para disfrutar del tardeo vasco en el Gran Bilbao."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Barakaldo?",
+        "a": "El tardeo en Barakaldo sigue el ritmo vasco: empieza sobre las 17h y los bares de pintxos se llenan especialmente los jueves, viernes y fines de semana."
+      }
+    ]
+  },
+  "Benidorm": {
+    "coords": {
+      "lat": 38.5403,
+      "lon": 0.1297
+    },
+    "intro": "Benidorm es la capital del turismo de sol y playa de la Costa Blanca y su tardeo es tan intenso como su vida nocturna. El Casco Antiguo, la Playa de Levante y el Rincón de Loix concentran bares, chiringuitos y terrazas donde el tardeo internacional y colorido de Benidorm no para nunca.",
+    "barrios": [
+      "Casco Antiguo",
+      "Rincón de Loix",
+      "Playa de Levante",
+      "Playa de Poniente",
+      "La Cala"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Benidorm?",
+        "a": "El Casco Antiguo de Benidorm, con sus terrazas con vistas al Mediterráneo, y el Rincón de Loix son las zonas más animadas para el tardeo en la capital del turismo levantino."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Benidorm?",
+        "a": "En Benidorm el tardeo es activo prácticamente todo el año, aunque la temporada alta (junio-septiembre) es cuando los bares y terrazas están en su máximo apogeo."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Benidorm?",
+        "a": "En tresycuarto tienes locales mapeados en Benidorm entre bares, chiringuitos y terrazas para planificar tu tardeo en la Costa Blanca."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Benidorm?",
+        "a": "La cerveza bien fría, el agua de Valencia y los arroces de la zona son los imprescindibles del tardeo benidormense bajo el sol mediterráneo."
+      }
+    ]
+  },
+  "Burgos": {
+    "coords": {
+      "lat": 42.344,
+      "lon": -3.697
+    },
+    "intro": "Burgos combina su imponente catedral gótica con una de las mejores escenas de tapas del norte de España. El Casco Histórico, las calles de la Paloma y San Lorenzo concentran bares donde el tardeo burgalés se vive con mucha intensidad, maridado con los mejores vinos de la Ribera del Duero.",
+    "barrios": [
+      "Casco Histórico",
+      "La Paloma",
+      "San Lorenzo",
+      "Gamonal",
+      "Centro"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Burgos?",
+        "a": "Las calles de La Paloma y San Lorenzo en el Casco Histórico de Burgos son el epicentro del tardeo, con una alta concentración de bares de tapas y vinos de la Ribera del Duero."
+      },
+      {
+        "q": "¿Qué tapas hay en el tardeo de Burgos?",
+        "a": "La morcilla de Burgos, el queso de Burgos y el lechazo asado son las tapas imprescindibles del tardeo burgalés, acompañadas de vinos de la Ribera del Duero."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Burgos?",
+        "a": "En tresycuarto tienes más de 1.500 locales mapeados en Burgos entre bares, mesones y tabernas para tu tardeo castellano."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Burgos?",
+        "a": "El tardeo en Burgos empieza sobre las 17h y el Casco Histórico se anima especialmente los fines de semana, con peregrinos del Camino de Santiago mezclados con los locales."
+      }
+    ]
+  },
+  "Cáceres": {
+    "coords": {
+      "lat": 39.4752,
+      "lon": -6.3724
+    },
+    "intro": "Cáceres, Ciudad Patrimonio de la Humanidad, tiene un tardeo de película literalmente: la ciudad monumental ha sido escenario de series y películas internacionales. Sus plazas medievales, bodegas y bares en el casco histórico ofrecen un tardeo extremeño único con productos ibéricos de primerísima calidad.",
+    "barrios": [
+      "Ciudad Monumental",
+      "Centro",
+      "El Junquillo",
+      "San Marquino",
+      "La Madrila"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Cáceres?",
+        "a": "La Ciudad Monumental de Cáceres y la Plaza Mayor son el escenario ideal para el tardeo, con bares y restaurantes en edificios medievales que crean una atmósfera única."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Cáceres?",
+        "a": "Cáceres es Patrimonio de la Humanidad y escenario de Juego de Tronos, lo que hace del tardeo en sus plazas medievales una experiencia completamente diferente."
+      },
+      {
+        "q": "¿Qué comer en el tardeo de Cáceres?",
+        "a": "El jamón ibérico de bellota, el queso de La Serena y el torrezno extremeño son los productos estrella del tardeo cacereño."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Cáceres?",
+        "a": "En tresycuarto tienes locales mapeados en Cáceres para descubrir el tardeo en una de las ciudades medievales mejor conservadas de Europa."
+      }
+    ]
+  },
+  "Ciudad Real": {
+    "coords": {
+      "lat": 38.9864,
+      "lon": -3.9272
+    },
+    "intro": "Ciudad Real, en el corazón de La Mancha, tiene un tardeo universitario y animado gracias a su campus y a una tradición manchega de bares y tabernas. La Plaza Mayor, la Calle Toledo y el barrio universitario son los puntos de encuentro de un tardeo auténtico y muy asequible.",
+    "barrios": [
+      "Plaza Mayor",
+      "Centro",
+      "Barrio Universitario",
+      "Larache",
+      "Pío XII"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Ciudad Real?",
+        "a": "La Plaza Mayor y la Calle Toledo de Ciudad Real concentran los mejores bares para el tardeo manchego, con precios muy asequibles y un ambiente universitario muy animado."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Ciudad Real?",
+        "a": "El vino de Valdepeñas, el pisto manchego y el queso de La Mancha son los imprescindibles del tardeo en Ciudad Real."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Ciudad Real?",
+        "a": "En tresycuarto tienes locales mapeados en Ciudad Real para descubrir el tardeo más auténtico de La Mancha."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Ciudad Real?",
+        "a": "El tardeo en Ciudad Real empieza sobre las 17h y los jueves universitarios son especialmente animados en las zonas de bares del centro."
+      }
+    ]
+  },
+  "Dénia": {
+    "coords": {
+      "lat": 38.8408,
+      "lon": 0.1059
+    },
+    "intro": "Dénia, capital gastronómica de la Marina Alta y Ciudad Creativa de la Gastronomía por la UNESCO, tiene un tardeo muy gastronómico y mediterráneo. El puerto, el casco antiguo y las terrazas con vistas al Mediterráneo y al castillo medieval ofrecen uno de los tardeos más auténticos de la Costa Blanca.",
+    "barrios": [
+      "Puerto",
+      "Casco Antiguo",
+      "Les Marines",
+      "El Saladar",
+      "La Pedrera"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Dénia?",
+        "a": "El puerto y el casco antiguo de Dénia son los mejores lugares para el tardeo, con bares y restaurantes especializados en gamba roja y cocina mediterránea de alta calidad."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Dénia?",
+        "a": "Dénia es Ciudad Creativa de la Gastronomía por la UNESCO, lo que hace del tardeo una experiencia gastronómica única centrada en la gamba roja y los arroces del Mediterráneo."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Dénia?",
+        "a": "En tresycuarto tienes locales mapeados en Dénia para disfrutar del tardeo más gastronómico de la Costa Blanca."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Dénia?",
+        "a": "La gamba roja de Dénia, el arroz a banda y un buen vino de la Marina Alta son los protagonistas indiscutibles del tardeo dianense."
+      }
+    ]
+  },
+  "Getafe": {
+    "coords": {
+      "lat": 40.3051,
+      "lon": -3.7328
+    },
+    "intro": "Getafe, una de las ciudades más dinámicas del sur de Madrid, tiene un tardeo con mucha personalidad en su casco urbano. La zona del Bercial, el centro y las terrazas alrededor de la Plaza Mayor ofrecen opciones para un tardeo variado y muy asequible a pocos minutos de Madrid.",
+    "barrios": [
+      "Centro",
+      "El Bercial",
+      "Juan de la Cierva",
+      "Los Molinos",
+      "La Alhóndiga"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Getafe?",
+        "a": "El centro de Getafe y la zona de El Bercial concentran los mejores bares y terrazas para el tardeo, con precios más asequibles que en Madrid capital."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Getafe?",
+        "a": "En tresycuarto tienes locales mapeados en Getafe para descubrir el tardeo en uno de los municipios más grandes del sur de Madrid."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Getafe?",
+        "a": "El tardeo en Getafe sigue el ritmo madrileño: empieza sobre las 17h-18h y se extiende hasta las 21h, especialmente los viernes y fines de semana."
+      },
+      {
+        "q": "¿Es Getafe una buena opción para tardeear cerca de Madrid?",
+        "a": "Sí, Getafe ofrece una buena alternativa al tardeo madrileño con precios más asequibles, buenas conexiones en metro y una oferta de bares y terrazas en constante crecimiento."
+      }
+    ]
+  },
+  "Girona": {
+    "coords": {
+      "lat": 41.9794,
+      "lon": 2.8214
+    },
+    "intro": "Girona, con su barrio judío medieval y el río Onyar flanqueado de casas de colores, ofrece uno de los tardeos más pintorescos de Cataluña. El Barri Vell, las Ramblas y el barrio de Pedret concentran bares y cafeterías donde el tardeo gironí mezcla la tradición catalana con la influencia europea de una ciudad universitaria y cosmopolita.",
+    "barrios": [
+      "Barri Vell",
+      "Rambla",
+      "Pedret",
+      "Santa Eugènia",
+      "Eixample"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Girona?",
+        "a": "El Barri Vell y las Ramblas de Girona son los epicentros del tardeo, con bares y terrazas en un entorno medieval único junto al río Onyar."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Girona?",
+        "a": "Girona combina un casco medieval extraordinario con una influencia europea y universitaria que da al tardeo un ambiente único, cosmopolita y muy animado."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Girona?",
+        "a": "En tresycuarto tienes locales mapeados en Girona para disfrutar del tardeo en una de las ciudades más bonitas de Cataluña."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Girona?",
+        "a": "El vermut con anchoas, el vino del Empordà y la cerveza artesanal son los compañeros perfectos del tardeo gironí en los bares del Barri Vell."
+      }
+    ]
+  },
+  "Guadalajara": {
+    "coords": {
+      "lat": 40.6322,
+      "lon": -3.167
+    },
+    "intro": "Guadalajara, a tan solo 60 km de Madrid, tiene un tardeo tranquilo y auténtico en su casco histórico. La Calle Mayor, el Palacio del Infantado y las plazas del centro albergan bares y mesones donde el tardeo alcarreño se vive sin las prisas de la capital, con mucha calidad y buenos precios.",
+    "barrios": [
+      "Casco Histórico",
+      "Calle Mayor",
+      "Centro",
+      "El Fuerte",
+      "Aguas Vivas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Guadalajara?",
+        "a": "La Calle Mayor y el entorno del Palacio del Infantado concentran los mejores bares y mesones para el tardeo en Guadalajara, con un ambiente tranquilo y auténtico."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Guadalajara?",
+        "a": "La miel de La Alcarria, los quesos de la zona y el vino de la Serranía son los sabores locales del tardeo guadalajareño."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Guadalajara?",
+        "a": "En tresycuarto tienes locales mapeados en Guadalajara para descubrir el tardeo más tranquilo y auténtico a pocos kilómetros de Madrid."
+      },
+      {
+        "q": "¿Es Guadalajara buena opción para tardeear desde Madrid?",
+        "a": "Sí, Guadalajara está a 60 km de Madrid (menos de 30 min en tren) y ofrece un tardeo mucho más tranquilo, auténtico y asequible que en la capital."
+      }
+    ]
+  },
+  "Huelva": {
+    "coords": {
+      "lat": 37.2614,
+      "lon": -6.9447
+    },
+    "intro": "Huelva, tierra de Colón y puerta de Doñana, tiene un tardeo muy marcado por la cultura andaluza del tapeo y el vino fino. La Calle Concepción, la Plaza de las Monjas y el barrio del Conquero concentran bares y tabernas donde el tardeo onubense se vive con la calidez y hospitalidad características del sur.",
+    "barrios": [
+      "Centro",
+      "El Conquero",
+      "Marismas del Odiel",
+      "La Orden",
+      "Isla Chica"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Huelva?",
+        "a": "La Calle Concepción y la Plaza de las Monjas son los centros del tardeo en Huelva, con bares y tabernas donde el jamón de Jabugo y el vino fino son protagonistas."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Huelva?",
+        "a": "El jamón de Jabugo, los chocos fritos y el vino fino de Condado de Huelva son los imprescindibles del tardeo onubense."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Huelva?",
+        "a": "En tresycuarto tienes locales mapeados en Huelva para descubrir el tardeo más auténtico de la Andalucía atlántica."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Huelva?",
+        "a": "En Huelva el tardeo empieza sobre las 17h-18h y los bares del centro se llenan especialmente los fines de semana y durante las Fiestas Colombinas en agosto."
+      }
+    ]
+  },
+  "Huesca": {
+    "coords": {
+      "lat": 42.1362,
+      "lon": -0.4085
+    },
+    "intro": "Huesca, puerta a los Pirineos aragoneses, tiene un tardeo acogedor y muy local en su casco histórico. La Calle del Coso, la Plaza de Navarra y los bares del centro albergan un tardeo auténtico donde la tradición aragonesa del vino, el ternasco y los productos del Pirineo son los protagonistas.",
+    "barrios": [
+      "Casco Histórico",
+      "El Coso",
+      "Plaza de Navarra",
+      "Centro",
+      "San Lorenzo"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Huesca?",
+        "a": "La Calle del Coso y la Plaza de Navarra son las zonas más animadas para el tardeo en Huesca, con bares y mesones de ambiente muy local y auténtico."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Huesca?",
+        "a": "El ternasco de Aragón, las trufas del Pirineo y el vino de la Denominación de Origen Somontano son los productos estrella del tardeo oscense."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Huesca?",
+        "a": "En tresycuarto tienes locales mapeados en Huesca para descubrir el tardeo más auténtico de la capital del Pirineo aragonés."
+      },
+      {
+        "q": "¿Qué hacer en Huesca de tarde?",
+        "a": "Además del tardeo en los bares del casco histórico, Huesca es el punto de partida ideal para excursiones a Ordesa y el Pirineo aragonés."
+      }
+    ]
+  },
+  "Jaén": {
+    "coords": {
+      "lat": 37.7796,
+      "lon": -3.7849
+    },
+    "intro": "Jaén, la capital mundial del aceite de oliva, tiene un tardeo muy andaluz en su casco histórico. La Catedral, la Madraza y el barrio de La Magdalena concentran bares y mesones donde el tardeo jiennense se vive con las mejores tapas de caza, el aceite de oliva virgen extra y los vinos de la tierra.",
+    "barrios": [
+      "Casco Histórico",
+      "La Magdalena",
+      "San Ildefonso",
+      "Barrios Altos",
+      "Centro"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Jaén?",
+        "a": "El entorno de la Catedral y el barrio de La Magdalena son los mejores lugares para el tardeo en Jaén, con tabernas donde el aceite de oliva y las tapas de caza son protagonistas."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Jaén?",
+        "a": "Jaén es la capital mundial del aceite de oliva y eso se nota en su tardeo: las tapas se elaboran con el mejor AOVE y la cocina tradicional jiennense es de altísima calidad."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Jaén?",
+        "a": "En tresycuarto tienes más de 800 locales mapeados en Jaén entre bares, tabernas y mesones para tu tardeo andaluz."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Jaén?",
+        "a": "La pipirrana, el andrajos con liebre y el espárrago silvestre con aceite de oliva virgen extra son tapas imprescindibles del tardeo jiennense."
+      }
+    ]
+  },
+  "La Coruña": {
+    "coords": {
+      "lat": 43.3623,
+      "lon": -8.4115
+    },
+    "intro": "La Coruña, la ciudad de cristal por sus famosas galerías, tiene uno de los tardeos más animados de Galicia. La Calle Estrecha, la zona de la Pescadería y el barrio de la Ciudad Vieja concentran bares y marisquerías donde el pulpo, los mejillones y el albariño hacen del tardeo coruñés una experiencia gastronómica de primer nivel.",
+    "barrios": [
+      "Ciudad Vieja",
+      "Pescadería",
+      "Ensanche",
+      "Monte Alto",
+      "Agra del Orzán"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en La Coruña?",
+        "a": "La zona de la Pescadería y la Ciudad Vieja de La Coruña son los epicentros del tardeo, con bares y marisquerías donde el marisco gallego y el albariño son protagonistas."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de La Coruña?",
+        "a": "El pulpo a feira, los mejillones al vapor, las navajas a la plancha y el albariño son los imprescindibles del tardeo coruñés."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en La Coruña?",
+        "a": "En tresycuarto tienes locales mapeados en La Coruña para descubrir el tardeo más atlántico y gastronómico de Galicia."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en La Coruña?",
+        "a": "El tardeo en La Coruña empieza sobre las 17h-18h y los bares de la Pescadería se llenan especialmente los fines de semana."
+      }
+    ]
+  },
+  "Las Palmas": {
+    "coords": {
+      "lat": 28.1235,
+      "lon": -15.4363
+    },
+    "intro": "Las Palmas de Gran Canaria combina el ambiente cosmopolita de la capital canaria con un tardeo muy activo en el barrio de Vegueta, la Playa de Las Canteras y la zona de Triana. El clima eterno de la isla hace del tardeo en terrazas un placer que se disfruta los 365 días del año.",
+    "barrios": [
+      "Vegueta",
+      "Triana",
+      "Las Canteras",
+      "Mesa y López",
+      "Guanarteme"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Las Palmas?",
+        "a": "El barrio de Vegueta, la zona de Triana y el Paseo de Las Canteras son los epicentros del tardeo en Las Palmas, con bares y terrazas animadas todo el año."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Las Palmas?",
+        "a": "En Las Palmas el tardeo se disfruta los 365 días del año gracias al clima canario, con temperaturas que oscilan entre los 18 y los 28 grados durante todo el año."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Las Palmas?",
+        "a": "En tresycuarto tienes más de 470 locales mapeados en Las Palmas de Gran Canaria para planificar tu tardeo canario."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Las Palmas?",
+        "a": "El ron miel, el vino de Las Palmas y las papas arrugadas con mojo son los imprescindibles del tardeo grancanario."
+      }
+    ]
+  },
+  "Leganés": {
+    "coords": {
+      "lat": 40.3284,
+      "lon": -3.7635
+    },
+    "intro": "Leganés, municipio del sur de Madrid con universidad propia, tiene un tardeo variado y muy activo. El centro urbano y la zona universitaria concentran bares y locales donde el tardeo leganense mezcla el ambiente estudiantil con la tradición de barrio madrileño.",
+    "barrios": [
+      "Centro",
+      "Zarzaquemada",
+      "El Carrascal",
+      "San Nicasio",
+      "Vereda de Estudiantes"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Leganés?",
+        "a": "El centro de Leganés y la zona universitaria concentran los mejores bares para el tardeo, con un ambiente muy activo gracias a la Universidad Carlos III."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Leganés?",
+        "a": "En tresycuarto tienes locales mapeados en Leganés para descubrir el tardeo en uno de los municipios más grandes del sur de Madrid."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Leganés?",
+        "a": "El tardeo en Leganés arranca sobre las 17h-18h y es especialmente animado los jueves universitarios y fines de semana."
+      },
+      {
+        "q": "¿Es Leganés buena opción para tardeear cerca de Madrid?",
+        "a": "Sí, Leganés ofrece precios más asequibles que Madrid capital con buenas conexiones en metro y una oferta de bares variada gracias a su comunidad universitaria."
+      }
+    ]
+  },
+  "Lleida": {
+    "coords": {
+      "lat": 41.6176,
+      "lon": 0.62
+    },
+    "intro": "Lleida, capital de la provincia homónima catalana, tiene un tardeo muy arraigado en su casco antiguo bajo la imponente Seu Vella. La Rambla de Ferran, el barrio del Canyeret y las terrazas del centro concentran bares y cafeterías donde el tardeo lleidatà combina la tradición catalana con los productos de la huerta leridana.",
+    "barrios": [
+      "Casco Antiguo",
+      "Rambla de Ferran",
+      "El Canyeret",
+      "Cappont",
+      "Balàfia"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Lleida?",
+        "a": "La Rambla de Ferran y el Casco Antiguo de Lleida son las zonas más animadas para el tardeo, con bares y terrazas bajo la impresionante Seu Vella."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Lleida?",
+        "a": "Los caracoles a la llauna, las frutas de la huerta leridana y el vino de Costers del Segre son los protagonistas del tardeo en Lleida."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Lleida?",
+        "a": "En tresycuarto tienes más de 660 locales mapeados en Lleida para descubrir el tardeo más auténtico de la Cataluña interior."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Lleida?",
+        "a": "El tardeo en Lleida empieza sobre las 17h-18h y los bares del casco antiguo se animan especialmente los fines de semana."
+      }
+    ]
+  },
+  "Logroño": {
+    "coords": {
+      "lat": 42.465,
+      "lon": -2.4456
+    },
+    "intro": "Logroño es la capital mundial del vino Rioja y eso lo convierte en uno de los mejores destinos de tardeo de España. La Calle Laurel y la Calle San Juan, conocidas como el sendero de los elefantes, concentran decenas de bares de pintxos y vinos donde el tardeo riojano es una institución.",
+    "barrios": [
+      "Calle Laurel",
+      "Casco Antiguo",
+      "Espolón",
+      "El Cubo",
+      "Yagüe"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Logroño?",
+        "a": "La Calle Laurel y la Calle San Juan son el epicentro del tardeo en Logroño, con decenas de bares de pintxos especializados donde cada uno tiene su tapa estrella."
+      },
+      {
+        "q": "¿Qué es el tardeo en la Calle Laurel de Logroño?",
+        "a": "La Calle Laurel es el corazón del tardeo riojano: una calle peatonal repleta de bares especializados en pintxos únicos, cada uno con su receta secreta maridada con vino Rioja."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Logroño?",
+        "a": "En tresycuarto tienes más de 260 locales mapeados en Logroño para planificar tu tardeo en la capital del vino Rioja."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Logroño?",
+        "a": "El vino Rioja, el champiñón al ajillo de la Calle Laurel y las croquetas son imprescindibles. Cada bar tiene su pintxo estrella que lo hace diferente."
+      }
+    ]
+  },
+  "Lugo": {
+    "coords": {
+      "lat": 43.0097,
+      "lon": -7.5567
+    },
+    "intro": "Lugo, la única ciudad del mundo con una muralla romana completamente intacta declarada Patrimonio de la Humanidad, tiene un tardeo íntimo y muy auténtico en su centro histórico. Las tapas gratuitas con cada consumición y los buenos vinos de la Ribeira Sacra hacen del tardeo lucense una experiencia gastronómica muy valorada.",
+    "barrios": [
+      "Casco Histórico",
+      "A Tinería",
+      "Ronda de la Muralla",
+      "Centro",
+      "As Mercedes"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Lugo?",
+        "a": "El casco histórico de Lugo, intramuros de la muralla romana, concentra los mejores bares para el tardeo gallego, con tapas gratuitas y vinos de la Ribeira Sacra."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Lugo?",
+        "a": "Lugo mantiene la tradición gallega de la tapa gratuita con cada consumición, lo que hace el tardeo especialmente asequible en uno de los centros históricos más bonitos de Galicia."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Lugo?",
+        "a": "En tresycuarto tienes más de 700 locales mapeados en Lugo para descubrir el tardeo dentro de la muralla romana más completa del mundo."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Lugo?",
+        "a": "El pulpo a feira, la empanada gallega, los pimientos de Padrón y el vino de la Ribeira Sacra son imprescindibles en el tardeo lucense."
+      }
+    ]
+  },
+  "Móstoles": {
+    "coords": {
+      "lat": 40.3228,
+      "lon": -3.8642
+    },
+    "intro": "Móstoles, uno de los municipios más grandes de la Comunidad de Madrid, tiene un tardeo muy variado en su amplio centro urbano. La zona de La Cañada, el centro y los bares del casco urbano ofrecen opciones para todos los gustos con precios muy asequibles respecto a Madrid capital.",
+    "barrios": [
+      "Centro",
+      "La Cañada",
+      "Pradillo",
+      "Villafontana",
+      "Parque Coimbra"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Móstoles?",
+        "a": "El centro de Móstoles y la zona de La Cañada concentran los mejores bares para el tardeo, con precios más asequibles que en Madrid capital."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Móstoles?",
+        "a": "En tresycuarto tienes locales mapeados en Móstoles para descubrir el tardeo en el segundo municipio más poblado de la Comunidad de Madrid."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Móstoles?",
+        "a": "El tardeo en Móstoles sigue el ritmo madrileño, arrancando sobre las 17h-18h, con especial animación los viernes y fines de semana."
+      },
+      {
+        "q": "¿Es Móstoles buena opción para tardeear cerca de Madrid?",
+        "a": "Sí, Móstoles está muy bien comunicada con Madrid en metro y cercanías, y ofrece una gran variedad de bares con precios más asequibles que en la capital."
+      }
+    ]
+  },
+  "Oviedo": {
+    "coords": {
+      "lat": 43.3614,
+      "lon": -5.8593
+    },
+    "intro": "Oviedo, capital del Principado de Asturias, tiene uno de los tardeos más animados del norte de España. El Bulevar de El Fontán, la Calle de Gascona (conocida como el Bulevar de la Sidra) y el casco histórico concentran sidrerías, tabernas y bares donde el tardeo asturiano se vive con mucha intensidad.",
+    "barrios": [
+      "El Fontán",
+      "Gascona",
+      "Casco Histórico",
+      "Ciudad Naranco",
+      "El Cristo"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Oviedo?",
+        "a": "La Calle de Gascona (Bulevar de la Sidra) y El Fontán son el corazón del tardeo en Oviedo, con sidrerías tradicionales donde el escanciado de sidra es todo un ritual."
+      },
+      {
+        "q": "¿Qué es el Bulevar de la Sidra en Oviedo?",
+        "a": "La Calle Gascona de Oviedo es conocida como el Bulevar de la Sidra, una calle peatonal con decenas de sidrerías donde se escancia la sidra natural asturiana y se tapea con los mejores productos de la región."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Oviedo?",
+        "a": "En tresycuarto tienes locales mapeados en Oviedo para descubrir el tardeo asturiano en la ciudad donde la sidra es protagonista."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Oviedo?",
+        "a": "La sidra natural asturiana escanciada, el queso Cabrales, la fabada asturiana y el cachopo son imprescindibles del tardeo ovetense."
+      }
+    ]
+  },
+  "Palencia": {
+    "coords": {
+      "lat": 42.0096,
+      "lon": -4.5288
+    },
+    "intro": "Palencia, conocida como la bella desconocida por su impresionante patrimonio poco conocido, tiene un tardeo tranquilo y muy auténtico en su casco histórico. La Calle Mayor, la Catedral y los bares del centro ofrecen un tardeo castellano sin masificación con excelentes productos locales.",
+    "barrios": [
+      "Casco Histórico",
+      "Calle Mayor",
+      "El Cristo",
+      "La Puebla",
+      "Allende el Río"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Palencia?",
+        "a": "La Calle Mayor y el entorno de la Catedral de Palencia concentran los mejores bares para el tardeo, en un ambiente tranquilo y muy auténtico sin masificación turística."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Palencia?",
+        "a": "Palencia es la bella desconocida de Castilla: un patrimonio histórico impresionante con muy pocos turistas, lo que hace del tardeo una experiencia auténtica y sin aglomeraciones."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Palencia?",
+        "a": "En tresycuarto tienes locales mapeados en Palencia para descubrir el tardeo más auténtico de la meseta castellana."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Palencia?",
+        "a": "El lechazo asado, el vino de Cigales y los quesos de la zona son los sabores más auténticos del tardeo palentino."
+      }
+    ]
+  },
+  "Palma": {
+    "coords": {
+      "lat": 39.5696,
+      "lon": 2.6502
+    },
+    "intro": "Palma de Mallorca combina el encanto mediterráneo con un tardeo cosmopolita y muy activo. El barrio de Santa Catalina, el Paseo del Born y el casco antiguo concentran bares, terrazas y locales de ambiente donde el tardeo palmesano mezcla lo local con lo internacional bajo el sol de las Baleares.",
+    "barrios": [
+      "Santa Catalina",
+      "El Born",
+      "Casco Antiguo",
+      "La Lonja",
+      "El Terreno"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Palma?",
+        "a": "Santa Catalina y El Born son los epicentros del tardeo en Palma, con una gran concentración de bares de moda, terrazas y locales gastronómicos muy animados a partir de las 17h."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Palma?",
+        "a": "En Palma el tardeo es activo todo el año, aunque la temporada alta (mayo-octubre) es cuando Santa Catalina y el casco antiguo están en su máximo esplendor."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Palma?",
+        "a": "En tresycuarto tienes locales mapeados en Palma de Mallorca para planificar tu tardeo en la capital balear."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Palma?",
+        "a": "La ensaïmada, el vino de Binissalem y el gin tonic con hierbas mallorquinas son los imprescindibles del tardeo palmesano."
+      }
+    ]
+  },
+  "Pontevedra": {
+    "coords": {
+      "lat": 42.4336,
+      "lon": -8.648
+    },
+    "intro": "Pontevedra es considerada una de las ciudades más habitables de España gracias a su casco histórico peatonal y su excelente calidad de vida. Las Ruinas de San Domingos, la Plaza de la Herrería y el barrio del Burgo concentran bares y locales donde el tardeo pontevedrés se vive con mucha calma y con los mejores vinos Albariño.",
+    "barrios": [
+      "Casco Histórico",
+      "Plaza de la Herrería",
+      "El Burgo",
+      "A Parda",
+      "Mollabao"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Pontevedra?",
+        "a": "El casco histórico peatonal de Pontevedra, con las plazas de la Herrería y la Leña, es el escenario del tardeo más tranquilo y agradable de Galicia."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Pontevedra?",
+        "a": "Pontevedra tiene el centro histórico peatonal más grande de España, lo que hace del tardeo una experiencia única sin coches, con las mejores terrazas y un ambiente muy relajado."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Pontevedra?",
+        "a": "En tresycuarto tienes locales mapeados en Pontevedra para descubrir el tardeo en la ciudad más peatonal de España."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Pontevedra?",
+        "a": "El Albariño de las Rías Baixas, el pulpo a feira, los mejillones y la empanada gallega son imprescindibles del tardeo pontevedrés."
+      }
+    ]
+  },
+  "Salamanca": {
+    "coords": {
+      "lat": 40.9701,
+      "lon": -5.6635
+    },
+    "intro": "Salamanca, la ciudad dorada por su piedra de Villamayor, tiene uno de los tardeos más animados de España gracias a su enorme comunidad universitaria. La Plaza Mayor, la Calle Rúa y el barrio universitario concentran bares y mesones donde el tardeo salmantino mezcla siglos de tradición con la energía de una ciudad universitaria internacional.",
+    "barrios": [
+      "Plaza Mayor",
+      "Barrio Universitario",
+      "Calle Rúa",
+      "San Juan",
+      "Tejares"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Salamanca?",
+        "a": "La Plaza Mayor y el barrio universitario de Salamanca son los epicentros del tardeo, con bares y mesones llenos de estudiantes de todo el mundo y la magia de la ciudad dorada de fondo."
+      },
+      {
+        "q": "¿Por qué es famoso el tardeo en Salamanca?",
+        "a": "Salamanca tiene una de las universidades más antiguas del mundo y una Plaza Mayor considerada la más bella de España, lo que hace del tardeo una experiencia histórica y muy animada."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Salamanca?",
+        "a": "En tresycuarto tienes locales mapeados en Salamanca para descubrir el tardeo en la ciudad universitaria más internacional de España."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Salamanca?",
+        "a": "El hornazo, el farinato y los buenos vinos de Rueda son los sabores del tardeo salmantino más auténtico."
+      }
+    ]
+  },
+  "Santa Cruz de Tenerife": {
+    "coords": {
+      "lat": 28.4636,
+      "lon": -16.2518
+    },
+    "intro": "Santa Cruz de Tenerife, capital del archipiélago canario, tiene un tardeo muy activo y cosmopolita. La Rambla del General Franco, el barrio de García Escámez y el centro histórico concentran bares, terrazas y locales donde el tardeo chicharrero se vive con la alegría y calidez características de las Islas Canarias.",
+    "barrios": [
+      "Rambla",
+      "García Escámez",
+      "Centro",
+      "Añaza",
+      "Las Delicias"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Santa Cruz de Tenerife?",
+        "a": "La Rambla del General Franco y el barrio de García Escámez son los centros del tardeo en Santa Cruz, con bares y terrazas donde el ambiente canario es muy animado."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Santa Cruz de Tenerife?",
+        "a": "En Santa Cruz de Tenerife el tardeo se puede disfrutar todo el año gracias al clima canario, aunque el Carnaval de febrero es la época más especial."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Santa Cruz de Tenerife?",
+        "a": "En tresycuarto tienes locales mapeados en Santa Cruz de Tenerife para planificar tu tardeo en la capital de Canarias."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Santa Cruz?",
+        "a": "El ron miel canario, el vino del Valle de la Orotava y las papas arrugadas con mojo picón son imprescindibles del tardeo chicharrero."
+      }
+    ]
+  },
+  "Santa Pola": {
+    "coords": {
+      "lat": 38.1878,
+      "lon": -0.5573
+    },
+    "intro": "Santa Pola, municipio costero de la provincia de Alicante, tiene un tardeo muy marinero y mediterráneo. El puerto pesquero, el paseo marítimo y el casco urbano concentran bares y restaurantes donde el tardeo santapolero se disfruta con el mejor marisco fresco y las vistas al Mediterráneo y a la isla de Tabarca.",
+    "barrios": [
+      "Puerto",
+      "Paseo Marítimo",
+      "Centro",
+      "Gran Alacant",
+      "Playa de Levante"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Santa Pola?",
+        "a": "El puerto pesquero y el paseo marítimo de Santa Pola son los mejores lugares para el tardeo, con bares y restaurantes de marisco fresco con vistas al Mediterráneo."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Santa Pola?",
+        "a": "Las quisquillas, los langostinos frescos del puerto y el arroz con bogavante son imprescindibles del tardeo en Santa Pola."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Santa Pola?",
+        "a": "En tresycuarto tienes locales mapeados en Santa Pola para disfrutar del tardeo más marinero de la Costa Blanca."
+      },
+      {
+        "q": "¿Cuándo es el mejor momento para tardeear en Santa Pola?",
+        "a": "Santa Pola tiene tardeo activo todo el año, aunque la temporada de verano es cuando el paseo marítimo y las terrazas están en su máximo esplendor."
+      }
+    ]
+  },
+  "Santander": {
+    "coords": {
+      "lat": 43.4623,
+      "lon": -3.8099
+    },
+    "intro": "Santander, capital de Cantabria y ciudad balneario por excelencia, tiene un tardeo muy animado en su casco histórico y en la zona de El Sardinero. La Calle Hernán Cortés, la Plaza Porticada y los bares del mercado de la Esperanza concentran rabas, anchoas y vinos de la tierra en un tardeo que huele a mar Cantábrico.",
+    "barrios": [
+      "Centro",
+      "El Sardinero",
+      "Cuatro Caminos",
+      "Calle Hernán Cortés",
+      "El Alta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Santander?",
+        "a": "La Calle Hernán Cortés y el mercado de la Esperanza son los centros del tardeo en Santander, con bares especializados en rabas, anchoas y vermut de barril."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Santander?",
+        "a": "Las rabas (calamares fritos), las anchoas del Cantábrico en conserva y el orujo de Cantabria son los imprescindibles del tardeo santanderino."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Santander?",
+        "a": "En tresycuarto tienes locales mapeados en Santander para descubrir el tardeo más atlántico de la costa cantábrica."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Santander?",
+        "a": "El tardeo en Santander empieza sobre las 17h-18h y los bares del centro se llenan especialmente los fines de semana y en verano cuando la ciudad se llena de visitantes."
+      }
+    ]
+  },
+  "Segovia": {
+    "coords": {
+      "lat": 40.9429,
+      "lon": -4.1088
+    },
+    "intro": "Segovia, con su acueducto romano y su Alcázar de cuento de hadas, tiene un tardeo íntimo y muy gastronómico. La Plaza Mayor, la Calle Judería y los mesones del casco histórico ofrecen un tardeo medieval donde el cochinillo asado segoviano y el vino de Rueda son los protagonistas absolutos.",
+    "barrios": [
+      "Casco Histórico",
+      "Plaza Mayor",
+      "Calle Judería",
+      "El Salvador",
+      "San Lorenzo"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Segovia?",
+        "a": "La Plaza Mayor y los mesones del casco histórico de Segovia son el escenario del tardeo, con una atmósfera medieval única junto al Acueducto Romano y el Alcázar."
+      },
+      {
+        "q": "¿Qué comer en el tardeo de Segovia?",
+        "a": "El cochinillo asado segoviano, el ponche segoviano y el judión de La Granja son los platos estrella del tardeo en Segovia, maridados con vino de Rueda."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Segovia?",
+        "a": "En tresycuarto tienes locales mapeados en Segovia para descubrir el tardeo más histórico junto al acueducto romano mejor conservado del mundo."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Segovia?",
+        "a": "Tardeear en Segovia es hacerlo en una ciudad Patrimonio de la Humanidad, rodeado de monumentos romanos, medievales y renacentistas, con una gastronomía de altísimo nivel."
+      }
+    ]
+  },
+  "Soria": {
+    "coords": {
+      "lat": 41.764,
+      "lon": -2.4653
+    },
+    "intro": "Soria, la capital de provincia más pequeña de España, tiene un tardeo íntimo, auténtico y sin masificación. La Calle del Collado, la Plaza Mayor y los bares del centro ofrecen un tardeo soriano muy local donde los sorianos disfrutan de sus tradiciones con una hospitalidad difícil de encontrar en otras ciudades.",
+    "barrios": [
+      "Calle del Collado",
+      "Plaza Mayor",
+      "Centro",
+      "El Ferial",
+      "Las Casas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Soria?",
+        "a": "La Calle del Collado y la Plaza Mayor de Soria concentran los mejores bares para el tardeo, en un ambiente muy local y auténtico sin masificación turística."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Soria?",
+        "a": "Soria es la capital de provincia menos poblada de España y eso hace del tardeo una experiencia muy auténtica y local, lejos del turismo masivo."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Soria?",
+        "a": "En tresycuarto tienes locales mapeados en Soria para descubrir el tardeo más auténtico y sin masificación de Castilla."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Soria?",
+        "a": "Las setas y hongos del campo soriano, el lechazo asado y el vino de la Ribera del Duero son los sabores del tardeo en Soria."
+      }
+    ]
+  },
+  "Tarragona": {
+    "coords": {
+      "lat": 41.1189,
+      "lon": 1.2445
+    },
+    "intro": "Tarragona, antigua capital de la Hispania romana, tiene un tardeo con mucha historia y ambiente mediterráneo. El Casco Antiguo, la Rambla Nova y el barrio del Serrallo concentran bares y restaurantes donde el tardeo tarragonino combina el patrimonio romano con la vida de tarde mediterránea de la Costa Daurada.",
+    "barrios": [
+      "Casco Antiguo",
+      "Rambla Nova",
+      "El Serrallo",
+      "El Lleó",
+      "Part Alta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Tarragona?",
+        "a": "La Rambla Nova y el barrio del Serrallo son los centros del tardeo en Tarragona, con bares y restaurantes de marisco fresco y ambiente mediterráneo."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Tarragona?",
+        "a": "Tarragona es una ciudad romana Patrimonio de la Humanidad, lo que hace del tardeo una experiencia única entre anfiteatros, murallas y acueductos romanos."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Tarragona?",
+        "a": "En tresycuarto tienes locales mapeados en Tarragona para descubrir el tardeo en la antigua capital de la Hispania romana."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Tarragona?",
+        "a": "El vermut con anchoas, el romesco, la calçotada y el vino de la DOC Tarragona son los imprescindibles del tardeo tarragonino."
+      }
+    ]
+  },
+  "Teruel": {
+    "coords": {
+      "lat": 40.3456,
+      "lon": -1.1065
+    },
+    "intro": "Teruel, la ciudad del amor y de los amantes medievales, tiene un tardeo muy auténtico en su casco histórico mudéjar declarado Patrimonio de la Humanidad. La Plaza del Torico, el barrio del Ensanche y los bares del centro ofrecen un tardeo tranquilo donde el jamón de Teruel DOP es el protagonista absoluto.",
+    "barrios": [
+      "Plaza del Torico",
+      "Casco Histórico",
+      "El Ensanche",
+      "Arrabal",
+      "Las Viñas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Teruel?",
+        "a": "La Plaza del Torico y el casco histórico de Teruel son el corazón del tardeo, con bares donde el jamón de Teruel DOP y los vinos de la tierra son protagonistas en un ambiente muy local."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Teruel?",
+        "a": "Teruel tiene el casco histórico mudéjar más importante de España, declarado Patrimonio de la Humanidad, lo que hace del tardeo una experiencia única entre torres medievales únicas en el mundo."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Teruel?",
+        "a": "En tresycuarto tienes locales mapeados en Teruel para descubrir el tardeo más auténtico en la ciudad mudéjar de los amantes."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Teruel?",
+        "a": "El jamón de Teruel DOP, la trufa negra del Maestrazgo y el melocotón de Calanda son los sabores que definen el tardeo turolense."
+      }
+    ]
+  },
+  "Toledo": {
+    "coords": {
+      "lat": 39.8628,
+      "lon": -4.0273
+    },
+    "intro": "Toledo, la ciudad de las tres culturas, tiene un tardeo marcado por su impresionante patrimonio histórico y su identidad única. El barrio judío, la Judería y la Calle Comercio concentran bares y mesones donde el tardeo toledano se vive rodeado de historia, con el mazapán y los vinos de La Mancha como señas de identidad.",
+    "barrios": [
+      "Judería",
+      "Casco Histórico",
+      "Calle Comercio",
+      "La Antequeruela",
+      "San Martín"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Toledo?",
+        "a": "La Judería y la Calle Comercio de Toledo concentran los mejores bares y mesones para el tardeo, en un entorno medieval único declarado Patrimonio de la Humanidad."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Toledo?",
+        "a": "Toledo es la ciudad donde convivieron durante siglos las culturas cristiana, judía y árabe, y esa herencia se nota en su gastronomía y en el ambiente del tardeo en sus calles medievales."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Toledo?",
+        "a": "En tresycuarto tienes locales mapeados en Toledo para descubrir el tardeo en la ciudad de las tres culturas."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Toledo?",
+        "a": "El mazapán de Toledo, el venado en escabeche y el vino de La Mancha son los sabores que definen el tardeo en la antigua capital imperial española."
+      }
+    ]
+  },
+  "Torrevieja": {
+    "coords": {
+      "lat": 37.9784,
+      "lon": -0.6863
+    },
+    "intro": "Torrevieja, conocida por sus lagunas saladas de color rosa y su microclima privilegiado, tiene un tardeo muy mediterráneo y multicultural. El paseo marítimo, el Parque de las Naciones y el centro concentran bares y terrazas donde el tardeo torrevejense mezcla lo local con una comunidad internacional muy diversa.",
+    "barrios": [
+      "Paseo Marítimo",
+      "Parque de las Naciones",
+      "Centro",
+      "Los Balcones",
+      "La Mata"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Torrevieja?",
+        "a": "El paseo marítimo y el Parque de las Naciones de Torrevieja son los centros del tardeo, con bares y terrazas frente al Mediterráneo con un ambiente muy variado e internacional."
+      },
+      {
+        "q": "¿Cuándo es el tardeo en Torrevieja?",
+        "a": "En Torrevieja el tardeo es activo todo el año gracias a su microclima privilegiado, con más de 320 días de sol al año y temperaturas muy suaves."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Torrevieja?",
+        "a": "En tresycuarto tienes locales mapeados en Torrevieja para planificar tu tardeo junto a las famosas lagunas rosas de la Costa Blanca."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Torrevieja?",
+        "a": "La cerveza bien fría, el arroz caldoso y los productos de la huerta murciana son los compañeros del tardeo en Torrevieja."
+      }
+    ]
+  },
+  "Vitoria": {
+    "coords": {
+      "lat": 42.8467,
+      "lon": -2.6716
+    },
+    "intro": "Vitoria-Gasteiz, Capital Verde Europea y una de las ciudades con mayor calidad de vida de España, tiene un tardeo muy animado en su casco medieval y en el Ensanche. El Casco Viejo, la Calle Cuchillería y la Plaza de España concentran bares de pintxos y txikiteos donde el tardeo vitoriano se vive con la misma pasión que en el resto del País Vasco.",
+    "barrios": [
+      "Casco Medieval",
+      "Calle Cuchillería",
+      "Ensanche",
+      "Salburua",
+      "Zabalgana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Vitoria?",
+        "a": "El Casco Medieval y la Calle Cuchillería de Vitoria-Gasteiz son el epicentro del tardeo, con bares de pintxos y txikiteos en un entorno medieval muy bien conservado."
+      },
+      {
+        "q": "¿Por qué es especial el tardeo en Vitoria?",
+        "a": "Vitoria es Capital Verde Europea y una de las ciudades más habitables de España, lo que hace del tardeo una experiencia en una ciudad muy agradable, limpia y con una excelente oferta de bares de pintxos."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Vitoria?",
+        "a": "En tresycuarto tienes locales mapeados en Vitoria-Gasteiz para descubrir el tardeo en la capital del País Vasco."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Vitoria?",
+        "a": "Los pintxos de la Calle Cuchillería, el txakoli alavés y la cerveza artesanal local son los imprescindibles del tardeo vitoriano."
+      }
+    ]
+  }
+}
