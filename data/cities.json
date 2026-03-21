@@ -8,8 +8,16 @@
     "nombre": "Alcalá de Henares"
   },
   {
+    "slug": "algeciras",
+    "nombre": "Algeciras"
+  },
+  {
     "slug": "almeria",
     "nombre": "Almería"
+  },
+  {
+    "slug": "altea",
+    "nombre": "Altea"
   },
   {
     "slug": "arona",
@@ -66,6 +74,10 @@
   {
     "slug": "cuenca",
     "nombre": "Cuenca"
+  },
+  {
+    "slug": "cullera",
+    "nombre": "Cullera"
   },
   {
     "slug": "denia",
@@ -164,12 +176,20 @@
     "nombre": "Palma"
   },
   {
+    "nombre": "Pamplona",
+    "slug": "pamplona"
+  },
+  {
     "slug": "pontevedra",
     "nombre": "Pontevedra"
   },
   {
     "slug": "salamanca",
     "nombre": "Salamanca"
+  },
+  {
+    "slug": "san-sebastian",
+    "nombre": "San Sebastián"
   },
   {
     "slug": "santa-cruz-de-tenerife",
@@ -218,6 +238,10 @@
   {
     "slug": "valladolid",
     "nombre": "Valladolid"
+  },
+  {
+    "slug": "vinaros",
+    "nombre": "Vinaròs"
   },
   {
     "slug": "vitoria",

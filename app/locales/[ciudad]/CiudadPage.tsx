@@ -22,8 +22,27 @@ type CiudadInfo = {
 };
 const CIUDAD_CONTENT = ciudadContentData as Record<string, CiudadInfo>;
 
-// Las 8 ciudades con más locales para el selector
-const CIUDADES_PRINCIPALES = (citiesData as { slug: string; nombre: string }[]).slice(0, 8).map(c => c.nombre);
+// Calcula las N ciudades más cercanas a una ciudad dada usando coordenadas de ciudad-content.json
+function ciudadesCercanas(nombreActual: string, n = 5): string[] {
+  const coords = (CIUDAD_CONTENT[nombreActual] as CiudadInfo | undefined)?.coords;
+  if (!coords) {
+    // Sin coordenadas: devolver las primeras N ciudades (fallback)
+    return (citiesData as { nombre: string }[]).filter(c => c.nombre !== nombreActual).slice(0, n).map(c => c.nombre);
+  }
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const distancia = (lat2: number, lon2: number) => {
+    const dLat = toRad(lat2 - coords.lat);
+    const dLon = toRad(lon2 - coords.lon);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(coords.lat)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+    return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  };
+  return (citiesData as { nombre: string }[])
+    .filter(c => c.nombre !== nombreActual && (CIUDAD_CONTENT[c.nombre] as CiudadInfo | undefined)?.coords)
+    .map(c => ({ nombre: c.nombre, dist: distancia((CIUDAD_CONTENT[c.nombre] as CiudadInfo).coords!.lat, (CIUDAD_CONTENT[c.nombre] as CiudadInfo).coords!.lon) }))
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, n)
+    .map(c => c.nombre);
+}
 
 function ciudadSlug(ciudad: string): string {
   return ciudad
@@ -58,6 +77,10 @@ type Local = {
 };
 
 type WeatherDay = { time: string; temperature_2m_max: number; weathercode: number };
+type EventoGeo = { id: string; nombre: string; tipo: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; descripcion: string };
+
+const TIPO_ICON_EV: Record<string, string> = { procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵", festival: "🎪", deporte: "⚽", escena: "🎭", mercado: "🛍️", otro: "📅" };
+const MESES_EV = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
 const LIMIT = 24;
 
@@ -77,6 +100,18 @@ export default function CiudadPage({ slug }: { slug: string }) {
   const [weather, setWeather] = useState<WeatherDay[] | null>(null);
   const [email, setEmail] = useState("");
   const [subscribeStatus, setSubscribeStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
+  const [eventos, setEventos] = useState<EventoGeo[]>([]);
+  const [cercanas, setCercanas] = useState<string[]>([]);
+
+  // Ciudades cercanas: calcular solo en cliente para evitar mismatch SSR
+  useEffect(() => {
+    setCercanas(ciudadesCercanas(nombreCiudad, 5));
+  }, [nombreCiudad]);
+
+  useEffect(() => {
+    fetch(`/api/eventos?ciudad=${encodeURIComponent(nombreCiudad)}&limit=5`)
+      .then(r => r.json()).then(d => setEventos(d.eventos || [])).catch(() => {});
+  }, [nombreCiudad]);
 
   // Tiempo meteorológico
   useEffect(() => {
@@ -183,13 +218,17 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
       </div>
 
-      {/* Selector de ciudades principales */}
+      {/* Selector de ciudades cercanas */}
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem", padding: "0.75rem 1.5rem 0" }}>
-        {CIUDADES_PRINCIPALES.map(c => (
+        <a href={`/locales/${slug}`} style={{
+          fontSize: "0.8rem", fontWeight: 600, padding: "0.3rem 0.8rem", borderRadius: "999px",
+          background: "#7C3AED", color: "white",
+          border: "1.5px solid transparent", textDecoration: "none",
+        }}>{nombreCiudad}</a>
+        {cercanas.map(c => (
           <a key={c} href={`/locales/${ciudadSlug(c)}`} style={{
             fontSize: "0.8rem", fontWeight: 600, padding: "0.3rem 0.8rem", borderRadius: "999px",
-            background: c === nombreCiudad ? "#7C3AED" : "#EDE9FE",
-            color: c === nombreCiudad ? "white" : "#7C3AED",
+            background: "#EDE9FE", color: "#7C3AED",
             border: "1.5px solid transparent", textDecoration: "none",
           }}>{c}</a>
         ))}
@@ -352,6 +391,36 @@ export default function CiudadPage({ slug }: { slug: string }) {
         {/* Mapa */}
         {!loading && locales.length > 0 && (
           <MapaLocales locales={locales} ciudad={nombreCiudad} />
+        )}
+
+        {/* Eventos próximos en esta ciudad */}
+        {eventos.length > 0 && (
+          <div style={{ background: "white", borderRadius: "1.25rem", border: "1px solid #F5E6D3", padding: "1.25rem", marginBottom: "1.5rem" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.85rem" }}>
+              <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#1C1917" }}>📅 Próximos eventos en {nombreCiudad}</h3>
+              <a href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>Ver todos →</a>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {eventos.map(ev => {
+                const d = new Date(ev.fecha + "T12:00:00");
+                const fechaEs = `${d.getDate()} de ${MESES_EV[d.getMonth()]}`;
+                return (
+                  <div key={ev.id} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.65rem 0.75rem", borderRadius: "0.75rem", background: "#FFF8EF" }}>
+                    <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>{TIPO_ICON_EV[ev.tipo] || "📅"}</div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#1C1917" }}>{ev.nombre}</div>
+                      <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                        <span>📅 {fechaEs}</span>
+                        {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
+                        {ev.direccion && <span>📍 {ev.direccion}</span>}
+                      </div>
+                      {ev.descripcion && <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>{ev.descripcion}</p>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         )}
 
         {/* Grid de locales */}
