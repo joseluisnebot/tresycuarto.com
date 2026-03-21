@@ -1,4 +1,8 @@
-const CIUDADES = ["Madrid","Barcelona","Valencia","Sevilla","Bilbao","Málaga","Zaragoza","Murcia"];
+const CIUDADES = [
+  "Madrid","Barcelona","Valencia","Sevilla","Bilbao","Málaga","Zaragoza","Murcia",
+  "Cádiz","Cartagena","Córdoba","Cuenca","Granada","Jerez de la Frontera",
+  "León","Lorca","Valladolid","Zamora",
+];
 
 export async function onRequestGet() {
   const hoy = new Date().toISOString().split("T")[0];
