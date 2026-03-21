@@ -1746,32 +1746,5 @@
         "a": "Los pintxos de la Calle Cuchillería, el txakoli alavés y la cerveza artesanal local son los imprescindibles del tardeo vitoriano."
       }
     ]
-  },
-  "Pamplona": {
-    "coords": {
-      "lat": 42.8125,
-      "lon": -1.6458
-    },
-    "intro": "Pamplona, capital de Navarra, es conocida mundialmente por los Sanfermines, pero también tiene una vibrante escena de tardeo en su casco viejo. Los bares y cafeterías del Casco Antiguo y la zona de la Navarrería son el punto de encuentro perfecto para el ocio de media tarde.",
-    "barrios": [
-      "Casco Antiguo",
-      "Navarrería",
-      "Ensanche",
-      "San Juan"
-    ],
-    "faqs": [
-      {
-        "q": "¿Dónde tardear en Pamplona?",
-        "a": "El Casco Antiguo de Pamplona, especialmente la zona de la Navarrería y el Paseo de Sarasate, concentra los mejores bares y terrazas para el tardeo. El Ensanche también ofrece una gran variedad de locales."
-      },
-      {
-        "q": "¿Cuál es el mejor barrio para el tardeo en Pamplona?",
-        "a": "El Casco Antiguo es el epicentro del tardeo en Pamplona, con una gran densidad de bares, cafeterías y terrazas a un paso unos de otros."
-      },
-      {
-        "q": "¿Hay terrazas para tardear en Pamplona?",
-        "a": "Sí, especialmente en primavera y verano. El Paseo de Sarasate y la Plaza del Castillo son los puntos favoritos para disfrutar de la tarde al aire libre en Pamplona."
-      }
-    ]
   }
 }
