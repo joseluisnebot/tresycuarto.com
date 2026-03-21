@@ -77,7 +77,9 @@ type Local = {
 };
 
 type WeatherDay = { time: string; temperature_2m_max: number; weathercode: number };
-type EventoGeo = { id: string; nombre: string; tipo: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; descripcion: string };
+type EventoGeo = { id: string; nombre: string; tipo: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; descripcion: string; radio_m?: number };
+type LocalEvento = { id: string; nombre: string; tipo: string; direccion: string | null; horario: string | null; terraza: number; web: string | null; instagram: string | null; lat: number | null; lon: number | null; distancia_m: number };
+type EventoFiltro = { evento: EventoGeo; locales: LocalEvento[]; lat: number; lon: number; radio: number };
 
 const TIPO_ICON_EV: Record<string, string> = { procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵", festival: "🎪", deporte: "⚽", escena: "🎭", mercado: "🛍️", otro: "📅" };
 const MESES_EV = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
@@ -102,6 +104,19 @@ export default function CiudadPage({ slug }: { slug: string }) {
   const [subscribeStatus, setSubscribeStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
   const [eventos, setEventos] = useState<EventoGeo[]>([]);
   const [cercanas, setCercanas] = useState<string[]>([]);
+  const [eventoFiltro, setEventoFiltro] = useState<EventoFiltro | null>(null);
+  const [loadingEvento, setLoadingEvento] = useState<string | null>(null);
+
+  async function seleccionarEvento(ev: EventoGeo) {
+    if (eventoFiltro?.evento.id === ev.id) { setEventoFiltro(null); return; }
+    setLoadingEvento(ev.id);
+    try {
+      const d = await fetch(`/api/eventos/${ev.id}/locales`).then(r => r.json());
+      if (d.locales && d.evento) {
+        setEventoFiltro({ evento: ev, locales: d.locales, lat: d.evento.lat, lon: d.evento.lon, radio: d.evento.radio_m ?? 400 });
+      }
+    } finally { setLoadingEvento(null); }
+  }
 
   // Ciudades cercanas: calcular solo en cliente para evitar mismatch SSR
   useEffect(() => {
@@ -389,8 +404,12 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
 
         {/* Mapa */}
-        {!loading && locales.length > 0 && (
-          <MapaLocales locales={locales} ciudad={nombreCiudad} />
+        {!loading && (locales.length > 0 || eventoFiltro) && (
+          <MapaLocales
+            locales={eventoFiltro ? eventoFiltro.locales : locales}
+            ciudad={nombreCiudad}
+            eventoPin={eventoFiltro ? { lat: eventoFiltro.lat, lon: eventoFiltro.lon, radio: eventoFiltro.radio, nombre: eventoFiltro.evento.nombre } : null}
+          />
         )}
 
         {/* Eventos próximos en esta ciudad */}
@@ -400,15 +419,27 @@ export default function CiudadPage({ slug }: { slug: string }) {
               <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#1C1917" }}>📅 Próximos eventos en {nombreCiudad}</h3>
               <a href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>Ver todos →</a>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {eventos.map(ev => {
                 const d = new Date(ev.fecha + "T12:00:00");
                 const fechaEs = `${d.getDate()} de ${MESES_EV[d.getMonth()]}`;
+                const activo = eventoFiltro?.evento.id === ev.id;
                 return (
-                  <div key={ev.id} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.65rem 0.75rem", borderRadius: "0.75rem", background: "#FFF8EF" }}>
-                    <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>{TIPO_ICON_EV[ev.tipo] || "📅"}</div>
+                  <div key={ev.id}
+                    onClick={() => seleccionarEvento(ev)}
+                    style={{
+                      display: "flex", gap: "0.75rem", alignItems: "flex-start",
+                      padding: "0.65rem 0.75rem", borderRadius: "0.75rem", cursor: "pointer",
+                      background: activo ? "#EDE9FE" : "#FFF8EF",
+                      border: `1.5px solid ${activo ? "#7C3AED" : "transparent"}`,
+                      transition: "background 0.15s, border-color 0.15s",
+                    }}
+                  >
+                    <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>
+                      {loadingEvento === ev.id ? "⏳" : (TIPO_ICON_EV[ev.tipo] || "📅")}
+                    </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#1C1917" }}>{ev.nombre}</div>
+                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: activo ? "#7C3AED" : "#1C1917" }}>{ev.nombre}</div>
                       <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                         <span>📅 {fechaEs}</span>
                         {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
@@ -416,6 +447,9 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       </div>
                       {ev.descripcion && <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>{ev.descripcion}</p>}
                     </div>
+                    <span style={{ fontSize: "0.72rem", color: activo ? "#7C3AED" : "#A8A29E", fontWeight: 600, whiteSpace: "nowrap", paddingTop: "0.2rem" }}>
+                      {activo ? "↑ ocultar" : "ver locales ↓"}
+                    </span>
                   </div>
                 );
               })}
@@ -423,8 +457,67 @@ export default function CiudadPage({ slug }: { slug: string }) {
           </div>
         )}
 
+        {/* Grid de locales — evento filtrado */}
+        {eventoFiltro && (
+          <>
+            <div style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              background: "#EDE9FE", borderRadius: "0.75rem", padding: "0.6rem 1rem",
+              marginBottom: "1rem", gap: "0.75rem",
+            }}>
+              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#7C3AED" }}>
+                📅 {eventoFiltro.evento.nombre} — {eventoFiltro.locales.filter(l => (l.distancia_m ?? -1) >= 0).length > 0
+                  ? `${eventoFiltro.locales.length} locales en radio de ${eventoFiltro.radio}m`
+                  : `Locales en ${nombreCiudad} (sin dirección concreta)`}
+              </span>
+              <button onClick={() => setEventoFiltro(null)} style={{
+                padding: "0.3rem 0.75rem", borderRadius: "999px", border: "1.5px solid #7C3AED",
+                background: "white", color: "#7C3AED", fontWeight: 700, fontSize: "0.78rem", cursor: "pointer", whiteSpace: "nowrap",
+              }}>Todos los locales ×</button>
+            </div>
+            <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
+              {eventoFiltro.locales.map(local => (
+                <a key={local.id} href={`/locales/${local.id}`} style={{
+                  textDecoration: "none", color: "inherit",
+                  background: "white", borderRadius: "1.25rem",
+                  border: "1px solid #DDD6FE", padding: "1.25rem",
+                  display: "flex", flexDirection: "column", gap: "0.4rem",
+                  transition: "box-shadow 0.15s, transform 0.15s",
+                }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
+                >
+                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", alignItems: "center" }}>
+                    <span style={{
+                      fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                      color: "#FB923C", background: "#FEF0DC", padding: "0.25rem 0.6rem", borderRadius: "999px",
+                    }}>
+                      {TIPO_LABEL[local.tipo] || "Local"}
+                    </span>
+                    {local.terraza === 1 && (
+                      <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#059669", background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>☀️ Terraza</span>
+                    )}
+                    {(local.distancia_m ?? -1) >= 0 && (
+                      <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px", marginLeft: "auto" }}>
+                        {local.distancia_m}m
+                      </span>
+                    )}
+                  </div>
+                  <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>{local.nombre}</h2>
+                  {local.direccion && (
+                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>📍 {local.direccion}</p>
+                  )}
+                  {local.horario && (
+                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>🕒 {local.horario}</p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
         {/* Grid de locales */}
-        {!loading && locales.length > 0 && (
+        {!loading && locales.length > 0 && !eventoFiltro && (
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (

@@ -21,7 +21,7 @@ export async function onRequestGet(context) {
 
   // Locales del matching
   const { results: locales } = await env.DB.prepare(`
-    SELECT l.id, l.nombre, l.tipo, l.direccion, l.horario, l.terraza, l.web, l.instagram, el.distancia_m
+    SELECT l.id, l.nombre, l.tipo, l.direccion, l.horario, l.terraza, l.web, l.instagram, l.lat, l.lon, el.distancia_m
     FROM eventos_geo_locales el
     JOIN locales l ON l.id = el.local_id
     WHERE el.evento_id = ?
