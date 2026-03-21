@@ -353,12 +353,15 @@ def insertar_evento(ev, dry_run=False):
     if direccion == "null":
         direccion = None
 
-    # Geocodificar: primero la dirección específica, luego la ciudad como fallback
-    lat, lon = None, None
-    if direccion:
-        lat, lon = geocodificar(f"{direccion}, {ev['ciudad']}")
+    # Coordenadas: usar las del evento si las provee la fuente (ej. Madrid Open Data)
+    lat = ev.get("_lat") or None
+    lon = ev.get("_lon") or None
+    # Si no, geocodificar: primero dirección específica, luego ciudad como fallback
     if not lat:
-        lat, lon = geocodificar(ev["ciudad"])
+        if direccion:
+            lat, lon = geocodificar(f"{direccion}, {ev['ciudad']}")
+        if not lat:
+            lat, lon = geocodificar(ev["ciudad"])
     if not lat:
         return False, "sin coordenadas"
 
@@ -465,20 +468,21 @@ def procesar_madrid(fuente, dry_run=False):
         if fecha_raw and "T" in fecha_raw:
             hora = fecha_raw[11:16]  # "2026-04-01T18:30:00" → "18:30"
 
-        # Dirección: location.streetAddress o location.name
-        location = item.get("location", {}) or item.get("address", {}) or {}
-        if isinstance(location, str):
-            direccion = location[:150]
-        else:
-            street = location.get("streetAddress", "") or ""
-            locality = location.get("addressLocality", "") or ""
-            loc_name = location.get("name", "") or item.get("venue", "") or ""
-            parts = [p for p in [loc_name, street] if p]
-            direccion = ", ".join(parts)[:150] if parts else None
+        # Coordenadas específicas del venue (Madrid Open Data las provee)
+        location = item.get("location", {}) or {}
+        ev_lat = location.get("latitude") or None
+        ev_lon = location.get("longitude") or None
+
+        # Nombre del venue y dirección
+        ev_location_name = (item.get("event-location", "") or "").strip()
+        address = item.get("address", {}) or {}
+        street = address.get("streetAddress", "") or "" if isinstance(address, dict) else ""
+        direccion = ev_location_name or (street[:150] if street else None)
 
         ev = {"nombre": nombre, "ciudad": "Madrid", "fecha": fecha,
               "hora_inicio": hora, "direccion": direccion or None,
-              "tipo": tipo, "descripcion": desc}
+              "tipo": tipo, "descripcion": desc,
+              "_lat": ev_lat, "_lon": ev_lon}
         ok, motivo = insertar_evento(ev, dry_run)
         if ok:
             insertados += 1

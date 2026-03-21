@@ -209,10 +209,98 @@ def run_forward(dry_run=False):
     return actualizados
 
 
+OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_MODEL = "qwen2.5-coder:7b"
+
+
+def ollama_extract_venue(nombre, ciudad, descripcion):
+    """Usa Ollama para extraer el nombre del venue/lugar del evento."""
+    prompt = f"""Extrae SOLO el nombre del lugar, sala, teatro, centro cultural o dirección donde se celebra este evento en {ciudad}, España.
+Responde ÚNICAMENTE con el nombre del lugar (ej: "Teatro Liceo", "Centro Sociocultural Alfonso XII", "Plaza Mayor").
+Si no hay información de lugar específico en el texto, responde exactamente: NO.
+
+Evento: {nombre}
+Descripción: {descripcion or ""}
+
+Lugar:"""
+    payload = json.dumps({
+        "model": OLLAMA_MODEL,
+        "prompt": prompt,
+        "stream": False,
+        "options": {"temperature": 0, "num_predict": 30},
+    }).encode()
+    req = urllib.request.Request(OLLAMA_URL, data=payload, method="POST")
+    req.add_header("Content-Type", "application/json")
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            resp = json.loads(r.read())
+        venue = resp.get("response", "").strip().strip('"').strip("'")
+        if not venue or venue.upper() == "NO" or len(venue) < 3:
+            return None
+        # Descartar respuestas genéricas o de ciudad
+        genericos = {"no", "ninguno", "sin especificar", "no especificado", ciudad.lower(), "españa"}
+        if venue.lower() in genericos:
+            return None
+        return venue
+    except Exception as e:
+        print(f"    [ollama error] {e}")
+        return None
+
+
+def run_from_desc(dry_run=False):
+    """Extrae venue de la descripción con Ollama y geocodifica."""
+    print("\n── GEOCODING DESDE DESCRIPCIÓN (Ollama + Nominatim) ──")
+    eventos = d1_query(
+        "SELECT id, nombre, ciudad, lat, lon, descripcion FROM eventos_geo "
+        "WHERE direccion IS NULL AND lat IS NOT NULL AND activo = 1 "
+        "AND fecha >= date('now') ORDER BY fecha"
+    )
+    # Solo los que tienen centroide (son los que necesitan mejora)
+    candidatos = [
+        ev for ev in eventos
+        if not tiene_coords_especificas(ev["ciudad"], ev["lat"], ev["lon"])
+    ]
+    print(f"  {len(candidatos)} eventos con centroide de ciudad candidatos")
+
+    actualizados = 0
+    sin_venue = 0
+    sin_geocode = 0
+
+    for ev in candidatos:
+        venue = ollama_extract_venue(ev["nombre"], ev["ciudad"], ev["descripcion"])
+        if not venue:
+            sin_venue += 1
+            continue
+
+        lat, lon = nominatim_forward(venue, ev["ciudad"])
+        if not lat:
+            # Intentar solo con el venue sin ciudad
+            lat, lon = nominatim_forward(f"{venue}, {ev['ciudad']}, España", "")
+        if not lat:
+            sin_geocode += 1
+            print(f"  ? {ev['nombre'][:40]} → venue: '{venue}' → sin coords")
+            continue
+
+        direccion_rev = nominatim_reverse(lat, lon) or venue
+        print(f"  ✓ {ev['nombre'][:40]} → '{venue}' → {direccion_rev}")
+        if not dry_run:
+            d1_query(
+                "UPDATE eventos_geo SET lat = ?, lon = ?, direccion = ? WHERE id = ?",
+                [lat, lon, direccion_rev, ev["id"]]
+            )
+        actualizados += 1
+
+    print(f"\n  Resultado desc: {actualizados} actualizados, "
+          f"{sin_venue} sin venue en descripción, "
+          f"{sin_geocode} venue encontrado pero no geocodificado")
+    return actualizados
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--reverse", action="store_true", help="Solo reverse geocoding")
     parser.add_argument("--forward", action="store_true", help="Solo forward geocoding")
+    parser.add_argument("--from-desc", action="store_true", help="Extraer venue de descripción con Ollama")
     parser.add_argument("--dry-run", action="store_true", help="Sin escribir en D1")
     args = parser.parse_args()
 
@@ -220,13 +308,15 @@ if __name__ == "__main__":
     if args.dry_run:
         print("  MODO DRY-RUN — no se escribe en D1")
 
-    do_reverse = args.reverse or not args.forward
-    do_forward = args.forward or not args.reverse
-
-    total = 0
-    if do_reverse:
-        total += run_reverse(dry_run=args.dry_run)
-    if do_forward:
-        total += run_forward(dry_run=args.dry_run)
+    if args.from_desc:
+        total = run_from_desc(dry_run=args.dry_run)
+    else:
+        do_reverse = args.reverse or not args.forward
+        do_forward = args.forward or not args.reverse
+        total = 0
+        if do_reverse:
+            total += run_reverse(dry_run=args.dry_run)
+        if do_forward:
+            total += run_forward(dry_run=args.dry_run)
 
     print(f"\n=== Total actualizados: {total} ===")
