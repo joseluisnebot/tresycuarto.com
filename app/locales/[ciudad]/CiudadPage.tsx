@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useTurnstile } from "../../components/useTurnstile";
 import citiesData from "../../../data/cities.json";
 import ciudadContentData from "../../../data/ciudad-content.json";
+import rutasData from "../../../data/rutas.json";
 import dynamic from "next/dynamic";
 
 const MapaLocales = dynamic(() => import("./MapaLocales"), { ssr: false });
@@ -21,6 +22,13 @@ type CiudadInfo = {
   faqs?: { q: string; a: string }[];
 };
 const CIUDAD_CONTENT = ciudadContentData as Record<string, CiudadInfo>;
+
+type RutaInfo = { slug: string; titulo: string; barrio: string; duracion: string; mejor_dia: string };
+const RUTAS_POR_CIUDAD: Record<string, RutaInfo[]> = {};
+for (const r of rutasData as (RutaInfo & { ciudad: string })[]) {
+  if (!RUTAS_POR_CIUDAD[r.ciudad]) RUTAS_POR_CIUDAD[r.ciudad] = [];
+  RUTAS_POR_CIUDAD[r.ciudad].push(r);
+}
 
 // Calcula las N ciudades más cercanas a una ciudad dada usando coordenadas de ciudad-content.json
 function ciudadesCercanas(nombreActual: string, n = 5): string[] {
@@ -74,6 +82,10 @@ type Local = {
   direccion: string; horario: string | null; telefono: string | null;
   web: string | null; instagram: string | null; terraza: number;
   lat: number | null; lon: number | null; descripcion: string | null;
+  rating: number | null; rating_count: number | null;
+  photo_url: string | null; price_level: string | null;
+  horario_google: string | null; descripcion_google: string | null;
+  live_music: number; outdoor_seating: number;
 };
 
 type WeatherDay = { time: string; temperature_2m_max: number; weathercode: number };
@@ -117,6 +129,30 @@ export default function CiudadPage({ slug }: { slug: string }) {
       }
     } finally { setLoadingEvento(null); }
   }
+
+  async function seleccionarEventoPorId(id: string) {
+    setLoadingEvento(id);
+    try {
+      const d = await fetch(`/api/eventos/${id}/locales`).then(r => r.json());
+      if (d.locales && d.evento) {
+        const ev: EventoGeo = {
+          id: d.evento.id, nombre: d.evento.nombre, tipo: d.evento.tipo || "otro",
+          ciudad: d.evento.ciudad || nombreCiudad, fecha: d.evento.fecha || "",
+          hora_inicio: d.evento.hora_inicio, direccion: d.evento.direccion,
+          descripcion: d.evento.descripcion || "", radio_m: d.evento.radio_m,
+        };
+        setEventoFiltro({ evento: ev, locales: d.locales, lat: d.evento.lat, lon: d.evento.lon, radio: d.evento.radio_m ?? 400 });
+      }
+    } finally { setLoadingEvento(null); }
+  }
+
+  // Auto-seleccionar evento si viene ?evento=ID en la URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const eventoId = params.get("evento");
+    if (eventoId) seleccionarEventoPorId(eventoId);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Ciudades cercanas: calcular solo en cliente para evitar mismatch SSR
   useEffect(() => {
@@ -524,40 +560,65 @@ export default function CiudadPage({ slug }: { slug: string }) {
                 <a key={local.id} href={`/locales/${local.id}`} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
-                  border: "1px solid #F5E6D3", padding: "1.25rem",
-                  display: "flex", flexDirection: "column", gap: "0.4rem",
+                  border: "1px solid #F5E6D3", overflow: "hidden",
+                  display: "flex", flexDirection: "column",
                   transition: "box-shadow 0.15s, transform 0.15s",
                 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
                 >
-                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
-                    <span style={{
-                      fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
-                      color: "#FB923C", background: "#FEF0DC", padding: "0.25rem 0.6rem", borderRadius: "999px",
-                    }}>
-                      {TIPO_LABEL[local.tipo] || "Local"}
-                    </span>
-                    {local.terraza === 1 && (
+                  {/* Foto */}
+                  {local.photo_url && (
+                    <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
+                      <img src={local.photo_url} alt={local.nombre} loading="lazy"
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                  )}
+                  <div style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
+                    <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", alignItems: "center" }}>
                       <span style={{
-                        fontSize: "0.68rem", fontWeight: 700, color: "#059669",
-                        background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px",
-                      }}>☀️ Terraza</span>
+                        fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                        color: "#FB923C", background: "#FEF0DC", padding: "0.25rem 0.6rem", borderRadius: "999px",
+                      }}>
+                        {TIPO_LABEL[local.tipo] || "Local"}
+                      </span>
+                      {(local.terraza === 1 || local.outdoor_seating === 1) && (
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#059669", background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>☀️ Terraza</span>
+                      )}
+                      {local.live_music === 1 && (
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>🎵 Música</span>
+                      )}
+                      {local.price_level && (
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#78716C", marginLeft: "auto" }}>{local.price_level}</span>
+                      )}
+                    </div>
+                    <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>
+                      {local.nombre}
+                    </h2>
+                    {local.rating && local.rating > 0 && (
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
+                        <span style={{ color: "#F59E0B", fontSize: "0.82rem" }}>{"★".repeat(Math.round(local.rating))}{"☆".repeat(5 - Math.round(local.rating))}</span>
+                        <span style={{ fontWeight: 700, fontSize: "0.82rem", color: "#1C1917" }}>{local.rating.toFixed(1)}</span>
+                        {local.rating_count && <span style={{ fontSize: "0.75rem", color: "#A8A29E" }}>({local.rating_count.toLocaleString("es-ES")})</span>}
+                      </div>
+                    )}
+                    {local.descripcion_google && (
+                      <p style={{ fontSize: "0.78rem", color: "#78716C", margin: 0, lineHeight: 1.5,
+                        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                        {local.descripcion_google}
+                      </p>
+                    )}
+                    {local.direccion && (
+                      <p style={{ fontSize: "0.78rem", color: "#A8A29E", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        📍 {local.direccion}
+                      </p>
+                    )}
+                    {(local.horario || local.horario_google) && (
+                      <p style={{ fontSize: "0.78rem", color: "#A8A29E", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        🕒 {local.horario || local.horario_google?.split(" | ")[0]}
+                      </p>
                     )}
                   </div>
-                  <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>
-                    {local.nombre}
-                  </h2>
-                  {local.direccion && (
-                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      📍 {local.direccion}
-                    </p>
-                  )}
-                  {local.horario && (
-                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      🕒 {local.horario}
-                    </p>
-                  )}
                 </a>
               ))}
             </div>
@@ -582,6 +643,31 @@ export default function CiudadPage({ slug }: { slug: string }) {
               )}
             </div>
           </>
+        )}
+
+        {/* Rutas de tardeo */}
+        {RUTAS_POR_CIUDAD[nombreCiudad] && !noData && offset === 0 && (
+          <div style={{ marginTop: "2.5rem" }}>
+            <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1rem", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
+              🗺️ Rutas de tardeo en {nombreCiudad}
+            </h2>
+            <div style={{ display: "grid", gap: "0.75rem", gridTemplateColumns: "repeat(auto-fill, minmax(220px,1fr))" }}>
+              {RUTAS_POR_CIUDAD[nombreCiudad].map(ruta => (
+                <Link key={ruta.slug} href={`/rutas/${ruta.slug}`} style={{
+                  textDecoration: "none", background: "white", borderRadius: "1rem",
+                  border: "1px solid #F5E6D3", padding: "1rem 1.1rem", display: "block",
+                }}>
+                  <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#A78BFA", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.3rem" }}>
+                    {ruta.barrio}
+                  </div>
+                  <div style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.9rem", lineHeight: 1.3, marginBottom: "0.4rem" }}>
+                    {ruta.titulo}
+                  </div>
+                  <div style={{ fontSize: "0.78rem", color: "#A8A29E" }}>⏱ {ruta.duracion} · {ruta.mejor_dia}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
         )}
 
         {/* FAQs */}
