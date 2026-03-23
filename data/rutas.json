@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "tardeo-malasana-madrid",
+    "titulo": "Ruta de tardeo por Malasaña",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Malasaña",
+    "intro": "Malasaña es el corazón del tardeo madrileño. Sus calles empedradas, los bares con mesas en la acera y la mezcla de vecinos de toda la vida con gente joven hacen de este barrio el escenario perfecto para empezar la tarde con calma y acabarla con plan. Esta ruta te lleva de la Plaza del Dos de Mayo hasta la calle San Andrés siguiendo el ritmo natural del barrio: vermut, cañas y copa de después.",
+    "duracion": "3-4 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza del Dos de Mayo",
+        "descripcion": "El epicentro del barrio. Los bares de la plaza sacan sus terrazas desde el mediodía. Pide un vermut de grifo con aceitunas y observa cómo el tardeo de Malasaña empieza a calentarse. La energía aquí es única: vecinos, turistas y la bohemia del barrio conviviendo en perfecta armonía.",
+        "tipo": "Aperitivo",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle del Pez",
+        "descripcion": "Una de las calles más animadas del tardeo madrileño. Bares pequeños con mucha personalidad, música a volumen moderado y precios razonables. Perfecta para una segunda ronda antes de comer o para un pincho rápido entre copa y copa.",
+        "tipo": "Cañas y tapas",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Manuela Malasaña",
+        "descripcion": "La calle que da nombre al barrio es el centro neurálgico del tardeo tardío. Aquí los locales tienen más ambiente nocturno desde las 17:00, con DJs en algunos y terrazas abarrotadas. Si el tiempo acompaña, la terraza de cualquier bar de esta calle con el sol de tarde es uno de los planes de ocio más agradables de Madrid.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle San Andrés y alrededores",
+        "descripcion": "La parte más tranquila y con más encanto de Malasaña. Bares de barrio con mesas de madera, vino natural y una carta de raciones más elaborada. Ideal para cerrar la ruta con algo de comer y una última copa antes de decidir si la noche sigue o se queda en eso, un tardeo perfecto.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Los sábados desde las 13:00 es el momento álgido — llega antes de las 14:00 si quieres terraza",
+      "Evita los domingos por la noche, el barrio se vacía pronto",
+      "Muchos bares no tienen web ni reservas — es cultura de pasear y entrar donde haya ambiente"
+    ],
+    "seo_keywords": ["tardeo Malasaña", "bares Malasaña tarde", "ruta tardeo Madrid centro", "qué hacer tarde Malasaña"]
+  },
+  {
+    "slug": "tardeo-la-latina-madrid",
+    "titulo": "Ruta de tardeo por La Latina",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "La Latina",
+    "intro": "La Latina es el barrio del tardeo dominical por excelencia en Madrid. Alrededor de la Cava Baja y la Plaza de la Paja, el domingo se convierte en una fiesta continua que empieza con el vermut y no para hasta la madrugada. Esta ruta sigue el recorrido clásico del barrio: desde los pinchos vascos de la Cava Baja hasta las terrazas frente al Jardín del Príncipe Anglona.",
+    "duracion": "3-4 horas",
+    "distancia": "0,9 km",
+    "mejor_dia": "Domingo desde las 12:30",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Cava Baja",
+        "descripcion": "La calle más famosa del tardeo madrileño. Docenas de bares de pinchos vascos, tabernas con historia y locales modernos conviven en apenas 300 metros. El domingo es el día grande: la calle se llena desde las 13:00 y el ambiente es imposible de replicar. Pide el pintxo de la casa donde veas más gente y acierta seguro.",
+        "tipo": "Pintxos y vermut",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza de la Paja",
+        "descripcion": "Una de las plazas más bonitas de Madrid, rodeada de bares con terraza y con vistas a los tejados del Madrid medieval. El ritmo aquí es más pausado que en la Cava Baja, ideal para una segunda ronda más tranquila. Si el sol da en la plaza, es uno de los mejores tardeos de la ciudad.",
+        "tipo": "Terrazas al sol",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Almendro",
+        "descripcion": "Paralela a la Cava Baja pero más tranquila, la calle Almendro tiene algunos de los mejores bares de La Latina con menos aglomeración. Perfecta si la Cava está hasta arriba y buscas sitio para sentarte con calma a tomar algo.",
+        "tipo": "Cañas y tapas",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Cava Alta y El Rastro",
+        "descripcion": "Los domingos El Rastro llena toda la zona de gente que acaba el mercado con hambre y sed. La Cava Alta tiene tabernas de toda la vida donde se mezclan vendedores del Rastro, turistas y vecinos de barrio. El ambiente aquí es auténticamente madrileño y difícilmente repetible.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El domingo es el día de La Latina — cualquier otro día el ambiente baja mucho",
+      "Llega antes de las 13:30 los domingos si quieres mesa en terraza",
+      "El Rastro cierra a las 15:00 — a partir de ahí el tardeo se dispara"
+    ],
+    "seo_keywords": ["tardeo La Latina Madrid", "bares La Latina domingo", "Cava Baja tardeo", "ruta tardeo La Latina"]
+  },
+  {
+    "slug": "tardeo-lavapies-madrid",
+    "titulo": "Ruta de tardeo por Lavapiés",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Lavapiés",
+    "intro": "Lavapiés es el barrio más multicultural de Madrid y eso se nota en su tardeo. Bares de vinos naturales conviven con tetería marroquíes, tabernas de toda la vida y bares de copas con DJs underground. La Plaza de Lavapiés y sus calles adyacentes ofrecen uno de los tardeos más auténticos y asequibles de la ciudad, lejos del turismo de masa del centro.",
+    "duracion": "3-4 horas",
+    "distancia": "1,0 km",
+    "mejor_dia": "Viernes tarde desde las 17:00 o sábado",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza de Lavapiés",
+        "descripcion": "El corazón del barrio. La plaza tiene una energía especial: vecinos de todas las procedencias, artistas, trabajadores y estudiantes conviven en las terrazas de los bares de alrededor. El tardeo aquí empieza tranquilo y va subiendo de temperatura a medida que avanza la tarde. El bar de la esquina con más gente suele ser la mejor opción.",
+        "tipo": "Terrazas y vermut",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Argumosa",
+        "descripcion": "La calle más de moda de Lavapiés. Una hilera de bares con terraza en plena calle, vinos naturales y una clientela joven y alternativa. El ambiente es relajado pero con mucha energía. Perfecta para una segunda parada con algo de comer: muchos bares tienen raciones de calidad a precios de barrio.",
+        "tipo": "Vinos y raciones",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Tribulete y alrededores",
+        "descripcion": "La zona más underground del tardeo lavapiesiño. Bares pequeños con música en directo los fines de semana, mucho vino natural y mezcal, y una clientela muy definida. Si buscas algo diferente al tardeo de siempre, esta es tu calle.",
+        "tipo": "Ambiente alternativo",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Embajadores",
+        "descripcion": "Para cerrar la ruta, la calle Embajadores ofrece bares más clásicos de barrio mezclados con algunos locales modernos. Precio bajo, sin pretensiones y con el mejor ambiente de barrio auténtico de Madrid. Aquí el tardeo puede fácilmente convertirse en noche.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lavapiés es más de viernes y sábado por la tarde — los domingos está más tranquilo",
+      "Los precios son notablemente más bajos que en Malasaña o Chueca",
+      "Hay mucha música en directo los fines de semana — busca carteles en las puertas"
+    ],
+    "seo_keywords": ["tardeo Lavapiés Madrid", "bares Lavapiés tarde", "vinos naturales Lavapiés", "ruta tardeo Lavapiés"]
+  },
+  {
+    "slug": "tardeo-chueca-madrid",
+    "titulo": "Ruta de tardeo por Chueca",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Chueca",
+    "intro": "Chueca es el barrio más festivo de Madrid y su tardeo lo refleja. La Plaza de Chueca y las calles que la rodean ofrecen uno de los ambientes más animados de la ciudad desde las 16:00, con terrazas siempre llenas, bares con música y una energía contagiosa. Esta ruta te lleva por los mejores locales del barrio para un tardeo que casi seguro acaba en noche.",
+    "duracion": "3-4 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Sábado desde las 16:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza de Chueca",
+        "descripcion": "El epicentro. La plaza es uno de los puntos de encuentro más icónicos de Madrid, con terrazas a rebosar desde media tarde. El ambiente es festivo y abierto, la música suena desde los bares y la gente se congrega aquí antes de decidir adónde seguir. Empieza aquí, siéntate en cualquier terraza y deja que el barrio te enganche.",
+        "tipo": "Terrazas y cócteles",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Hortaleza",
+        "descripcion": "Una de las principales arterias del tardeo de Chueca. Bares de cócteles, pubs con ambiente y locales temáticos se suceden a lo largo de la calle. El nivel de los cócteles aquí es notablemente más alto que en otros barrios — los bartenders de Chueca saben lo que hacen.",
+        "tipo": "Cócteles",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Pelayo y Augusto Figueroa",
+        "descripcion": "Las calles más comerciales de Chueca se transforman por la tarde en una sucesión de bares animados. Mezcla de bares de copas, cafeterías reconvertidas y pequeños locales con DJ. El ambiente aquí empieza a subir de intensidad a partir de las 18:00.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Libertad",
+        "descripcion": "Para cerrar la ruta, la calle Libertad tiene algunos de los mejores bares de Chueca con menos turismo y más vecinos del barrio. Aquí el tardeo puede alargarse fácilmente hasta la madrugada — muchos bares abren hasta las 3:00 los fines de semana.",
+        "tipo": "Cierre y noche",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Los sábados son los mejores días — el barrio está en su máximo esplendor",
+      "Reserva mesa en terraza si vas en grupo de más de 4 personas",
+      "El tardeo de Chueca es de los más caros de Madrid — cuenta con 15-20€ por persona"
+    ],
+    "seo_keywords": ["tardeo Chueca Madrid", "bares Chueca tarde", "Plaza de Chueca tardeo", "ruta tardeo Chueca"]
+  }
+]
