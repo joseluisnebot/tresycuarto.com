@@ -520,6 +520,8 @@ function renderLocal(local) {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
     name: local.nombre,
+    image: local.photo_url || undefined,
+    description: local.descripcion_google || undefined,
     address: local.direccion ? {
       "@type": "PostalAddress",
       streetAddress: local.direccion,
@@ -530,6 +532,13 @@ function renderLocal(local) {
     telephone: local.telefono || undefined,
     url: local.web || undefined,
     openingHours: local.horario || undefined,
+    priceRange: local.price_level || undefined,
+    aggregateRating: (local.rating && local.rating > 0) ? {
+      "@type": "AggregateRating",
+      ratingValue: local.rating,
+      reviewCount: local.rating_count || 1,
+      bestRating: 5,
+    } : undefined,
     geo: local.lat ? {
       "@type": "GeoCoordinates",
       latitude: local.lat,
@@ -557,13 +566,13 @@ function renderLocal(local) {
   <meta name="description" content="${escHtml(desc)}" />
   <meta property="og:title" content="${escHtml(local.nombre)} — ${escHtml(local.ciudad)} | tresycuarto" />
   <meta property="og:description" content="${escHtml(desc)}" />
-  <meta property="og:image" content="${local.foto_perfil ? escHtml(local.foto_perfil) : `https://tresycuarto.com/og/${ciudadSlug(local.ciudad)}.png`}" />
+  <meta property="og:image" content="${local.photo_url || local.foto_perfil || `https://tresycuarto.com/og/${ciudadSlug(local.ciudad)}.png`}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="place" />
   <meta property="og:site_name" content="tresycuarto" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="${local.foto_perfil ? escHtml(local.foto_perfil) : `https://tresycuarto.com/og/${ciudadSlug(local.ciudad)}.png`}" />
+  <meta name="twitter:image" content="${local.photo_url || local.foto_perfil || `https://tresycuarto.com/og/${ciudadSlug(local.ciudad)}.png`}" />
   <link rel="canonical" href="https://tresycuarto.com/locales/${local.id}" />
   ${commonHeadLinks()}
   <script type="application/ld+json">${schema}</script>
@@ -587,15 +596,48 @@ function renderLocal(local) {
     .back { display: inline-flex; align-items: center; gap: 0.4rem; color: #78716C; font-size: 0.875rem; text-decoration: none; margin-top: 2rem; }
     .back:hover { color: #FB923C; }
     footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: #A8A29E; border-top: 1px solid #F5E6D3; margin-top: 2rem; }
+    .photo-header { width: 100%; height: 220px; object-fit: cover; border-radius: 1.25rem; margin-bottom: 1.5rem; display: block; }
+    .rating-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 0.05em; }
+    .rating-num { font-weight: 700; font-size: 1rem; color: #1C1917; }
+    .rating-count { font-size: 0.85rem; color: #78716C; }
+    .price-badge { display: inline-block; font-size: 0.8rem; font-weight: 700; color: #059669; background: #ECFDF5; padding: 0.2rem 0.6rem; border-radius: 999px; }
+    .feature-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .feature-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 999px; }
+    .badge-terraza { background: #FEF9C3; color: #92400E; }
+    .badge-musica { background: #EDE9FE; color: #5B21B6; }
+    .descripcion { font-size: 0.95rem; color: #44403C; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
+    .horario-list { font-size: 0.9rem; color: #1C1917; line-height: 1.8; }
   </style>
 </head>
 <body>
   ${commonNavHtml()}
 
   <div class="container">
+
+    ${local.photo_url ? `<img src="${escHtml(local.photo_url)}" alt="${escHtml(local.nombre)}" class="photo-header" loading="lazy" />` : ""}
+
     <div class="badge">${escHtml(tipoLabel(local.tipo))}</div>
     <h1>${escHtml(local.nombre)}</h1>
     <div class="ciudad">📍 ${escHtml(local.ciudad)}</div>
+
+    ${(local.rating && local.rating > 0) || local.price_level ? `
+    <div class="rating-row">
+      ${(local.rating && local.rating > 0) ? `
+        <span class="stars">${"★".repeat(Math.min(5, Math.round(local.rating)))}${"☆".repeat(Math.max(0, 5 - Math.round(local.rating)))}</span>
+        <span class="rating-num">${local.rating.toFixed(1)}</span>
+        ${local.rating_count ? `<span class="rating-count">(${local.rating_count.toLocaleString("es-ES")} reseñas)</span>` : ""}
+      ` : ""}
+      ${local.price_level ? `<span class="price-badge">${escHtml(local.price_level)}</span>` : ""}
+    </div>` : ""}
+
+    ${(local.outdoor_seating || local.terraza || local.live_music) ? `
+    <div class="feature-badges">
+      ${(local.outdoor_seating || local.terraza) ? `<span class="feature-badge badge-terraza">☀️ Terraza</span>` : ""}
+      ${local.live_music ? `<span class="feature-badge badge-musica">🎵 Música en directo</span>` : ""}
+    </div>` : ""}
+
+    ${local.descripcion_google ? `<p class="descripcion">"${escHtml(local.descripcion_google)}"</p>` : ""}
 
     <div class="card">
       ${local.direccion ? `
@@ -607,12 +649,14 @@ function renderLocal(local) {
         </div>
       </div>` : ""}
 
-      ${local.horario ? `
+      ${(local.horario || local.horario_google) ? `
       <div class="row">
         <span class="icon">🕒</span>
         <div>
           <div class="label">Horario</div>
-          <div class="value">${escHtml(local.horario)}</div>
+          ${local.horario_google ? `
+          <div class="horario-list">${local.horario_google.split(" | ").map(d => `<div>${escHtml(d)}</div>`).join("")}</div>
+          ` : `<div class="value">${escHtml(local.horario)}</div>`}
         </div>
       </div>` : ""}
 
@@ -625,14 +669,6 @@ function renderLocal(local) {
         </div>
       </div>` : ""}
 
-      ${local.terraza ? `
-      <div class="row">
-        <span class="icon">☀️</span>
-        <div>
-          <div class="label">Terraza</div>
-          <div class="value">Sí, tiene terraza</div>
-        </div>
-      </div>` : ""}
 
       ${local.web ? `
       <div class="row">
