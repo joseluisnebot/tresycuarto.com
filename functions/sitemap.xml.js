@@ -3,7 +3,7 @@ const CIUDADES = [
 ];
 
 const TIPOS_SLUG = ["bares", "pubs", "cafeterias", "terrazas", "tardeo", "planes-tarde", "terraza-tarde"];
-const RUTAS_SLUGS = ["tardeo-malasana-madrid", "tardeo-la-latina-madrid", "tardeo-lavapies-madrid", "tardeo-chueca-madrid"];
+const RUTAS_SLUGS = ["tardeo-malasana-madrid", "tardeo-la-latina-madrid", "tardeo-lavapies-madrid", "tardeo-chueca-madrid", "tardeo-gracia-barcelona", "tardeo-el-born-barcelona", "tardeo-ruzafa-valencia", "tardeo-el-carmen-valencia", "tardeo-triana-sevilla", "tardeo-alameda-sevilla"];
 const CIUDAD_SLUGS = ["albacete", "alcala-de-henares", "algeciras", "almeria", "altea", "arona", "avila", "badajoz", "barakaldo", "barcelona", "benidorm", "bilbao", "burgos", "caceres", "cadiz", "cartagena", "ciudad-real", "cordoba", "cuenca", "cullera", "denia", "getafe", "girona", "granada", "guadalajara", "huelva", "huesca", "jaen", "jerez-de-la-frontera", "la-coruna", "las-palmas", "leganes", "leon", "lleida", "logrono", "lorca", "lugo", "madrid", "malaga", "mostoles", "murcia", "oviedo", "palencia", "palma", "pontevedra", "salamanca", "san-sebastian", "santa-cruz-de-tenerife", "santa-pola", "santander", "segovia", "sevilla", "soria", "tarragona", "teruel", "toledo", "torrevieja", "valencia", "valladolid", "vinaros", "vitoria", "zamora", "zaragoza"];
 
 
