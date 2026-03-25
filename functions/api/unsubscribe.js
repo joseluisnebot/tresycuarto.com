@@ -10,9 +10,15 @@ export async function onRequestGet(context) {
 
   const auth = btoa(`${env.LISTMONK_API_USER}:${env.LISTMONK_API_PASS}`);
 
+  const cfAccessHeaders = {};
+  if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
+    cfAccessHeaders["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
+    cfAccessHeaders["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
+  }
+
   // Buscar suscriptor por UUID
   const searchRes = await fetch(`${LISTMONK_URL}/api/subscribers?query=uuid='${uuid}'&page=1&per_page=1`, {
-    headers: { Authorization: `Basic ${auth}` },
+    headers: { Authorization: `Basic ${auth}`, ...cfAccessHeaders },
   });
 
   if (!searchRes.ok) {
@@ -29,7 +35,7 @@ export async function onRequestGet(context) {
   // Eliminar suscriptor
   await fetch(`${LISTMONK_URL}/api/subscribers/${subscriber.id}`, {
     method: "DELETE",
-    headers: { Authorization: `Basic ${auth}` },
+    headers: { Authorization: `Basic ${auth}`, ...cfAccessHeaders },
   });
 
   return new Response(renderPage("Baja confirmada", `Hemos eliminado <strong>${subscriber.email}</strong> de nuestra lista. No recibirás más emails de tresycuarto.`), {

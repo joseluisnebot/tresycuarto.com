@@ -12,7 +12,7 @@ export async function onRequestGet(context) {
 
   // Info del evento
   const evento = await env.DB.prepare(
-    "SELECT id, nombre, ciudad, radio_m, direccion, lat, lon FROM eventos_geo WHERE id = ? AND activo = 1"
+    "SELECT id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, descripcion, radio_m, lat, lon FROM eventos_geo WHERE id = ? AND activo = 1"
   ).bind(id).first();
 
   if (!evento) {

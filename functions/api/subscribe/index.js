@@ -28,6 +28,8 @@ export async function onRequestPost(context) {
     const ok = await verifyTurnstile(cf_token || "", env.TURNSTILE_SECRET, ip);
     if (!ok) return Response.json({ error: "Verificación fallida, inténtalo de nuevo" }, { status: 403 });
   }
+  // proximamente=true cuando la ciudad no tiene datos aún
+  const proximamente = body.proximamente === true;
   const listaCiudades = ciudades?.length ? ciudades : ciudad ? [ciudad] : [];
   if (!email || listaCiudades.length === 0) {
     return Response.json({ error: "Faltan campos" }, { status: 400 });
@@ -41,11 +43,18 @@ export async function onRequestPost(context) {
 
   const auth = btoa(`${user}:${pass}`);
 
+  const cfAccessHeaders = {};
+  if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
+    cfAccessHeaders["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
+    cfAccessHeaders["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
+  }
+
   const res = await fetch(`${LISTMONK_URL}/api/subscribers`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Basic ${auth}`,
+      ...cfAccessHeaders,
     },
     body: JSON.stringify({
       email,
@@ -57,26 +66,50 @@ export async function onRequestPost(context) {
     }),
   });
 
-  // 409 = ya existe, lo tratamos como éxito
   if (!res.ok && res.status !== 409) {
     return Response.json({ error: "Error al suscribir" }, { status: 500 });
   }
 
-  // Enviar email de bienvenida solo a suscriptores nuevos
-  if (res.status !== 409) {
-    await fetch(`${LISTMONK_URL}/api/tx`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${auth}`,
-      },
-      body: JSON.stringify({
-        subscriber_email: email,
-        template_id: 4,
-        data: { ciudad: listaCiudades.join(", ") },
-      }),
-    });
+  // Si ya existía (409), actualizar sus ciudades (reemplazar, no añadir)
+  if (res.status === 409) {
+    const existing = await fetch(
+      `${LISTMONK_URL}/api/subscribers?query=${encodeURIComponent(`subscribers.email='${email}'`)}&per_page=1`,
+      { headers: { Authorization: `Basic ${auth}`, ...cfAccessHeaders } }
+    ).then(r => r.json());
+    const sub = existing?.data?.results?.[0];
+    if (sub) {
+      // replace=true → reemplaza ciudades; sin replace → añade (para nuevas suscripciones desde ciudad)
+      const replace = body.replace === true;
+      const oldCiudades = sub.attribs?.ciudades || (sub.attribs?.ciudad ? [sub.attribs.ciudad] : []);
+      const newCiudades = replace ? listaCiudades : [...new Set([...oldCiudades, ...listaCiudades])];
+      await fetch(`${LISTMONK_URL}/api/subscribers/${sub.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", Authorization: `Basic ${auth}`, ...cfAccessHeaders },
+        body: JSON.stringify({
+          email: sub.email, name: sub.name, status: sub.status,
+          lists: sub.lists?.map(l => l.id) || [LISTMONK_LIST_ID],
+          attribs: { ...sub.attribs, ciudad: newCiudades[0], ciudades: newCiudades },
+          preconfirm_subscriptions: true,
+        }),
+      });
+    }
   }
+
+  // Template 5 = ciudad próximamente | Template 4 = ciudad con datos
+  const template_id = proximamente ? 5 : 4;
+  await fetch(`${LISTMONK_URL}/api/tx`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${auth}`,
+      ...cfAccessHeaders,
+    },
+    body: JSON.stringify({
+      subscriber_email: email,
+      template_id,
+      data: { ciudad: listaCiudades.join(", ") },
+    }),
+  });
 
   return Response.json({ ok: true });
 }

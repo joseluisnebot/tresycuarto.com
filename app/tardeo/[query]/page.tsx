@@ -3,25 +3,35 @@ import { redirect } from "next/navigation";
 import cities from "../../../data/cities.json";
 import TipoEnCiudadPage from "./TipoEnCiudadPage";
 
-const TIPO_SLUG: Record<string, string> = {
+// null = todos los tipos (sin filtro de tipo en la API)
+const TIPO_SLUG: Record<string, string | null> = {
   bares: "bar",
   pubs: "pub",
   cafeterias: "cafe",
   terrazas: "biergarten",
+  "tardeo": null,
+  "planes-tarde": null,
+  "terraza-tarde": "biergarten",
 };
 
-const TIPO_LABEL: Record<string, string> = {
-  bar: "Bares",
-  pub: "Pubs",
-  cafe: "Cafeterías",
-  biergarten: "Terrazas",
+const TIPO_TITLE: Record<string, string> = {
+  bar: "Bares para el tardeo",
+  pub: "Pubs para el tardeo",
+  cafe: "Cafeterías para el tardeo",
+  biergarten: "Terrazas para el tardeo",
+  "tardeo": "Tardeo",
+  "planes-tarde": "Planes de tarde",
+  "terraza-tarde": "Terrazas para el tardeo",
 };
 
-const TIPO_DESC: Record<string, string> = {
+const TIPO_DESC_META: Record<string, string> = {
   bar: "bares para tardear",
   pub: "pubs de tarde",
   cafe: "cafeterías para el tardeo",
   biergarten: "terrazas para el tardeo",
+  "tardeo": "locales de tardeo",
+  "planes-tarde": "planes y locales para la tarde",
+  "terraza-tarde": "terrazas para el tardeo al aire libre",
 };
 
 const SLUG_A_CIUDAD = Object.fromEntries(
@@ -35,7 +45,7 @@ function parseQuery(query: string): { tipoSlug: string; ciudadSlug: string } | n
 }
 
 export function generateStaticParams() {
-  const TIPOS = ["bares", "pubs", "cafeterias", "terrazas"];
+  const TIPOS = ["bares", "pubs", "cafeterias", "terrazas", "tardeo", "planes-tarde", "terraza-tarde"];
   return (cities as { slug: string }[]).flatMap(c =>
     TIPOS.map(t => ({ query: `${t}-en-${c.slug}` }))
   );
@@ -47,19 +57,19 @@ export async function generateMetadata(
   const { query } = await params;
   const parsed = parseQuery(query);
   if (!parsed) return {};
-  const tipo = TIPO_SLUG[parsed.tipoSlug];
+  if (!(parsed.tipoSlug in TIPO_SLUG)) return {};
   const ciudad = SLUG_A_CIUDAD[parsed.ciudadSlug];
-  if (!tipo || !ciudad) return {};
+  if (!ciudad) return {};
 
-  const label = TIPO_LABEL[tipo];
-  const desc = TIPO_DESC[tipo];
+  const title = TIPO_TITLE[parsed.tipoSlug] || "Tardeo";
+  const desc = TIPO_DESC_META[parsed.tipoSlug] || "locales de tardeo";
 
   return {
-    title: `${label} para el tardeo en ${ciudad} | tresycuarto`,
-    description: `Los mejores ${desc} en ${ciudad}. Horarios, ubicación y terraza. Descubre dónde tomar algo en ${ciudad} por la tarde con tresycuarto.`,
+    title: `${title} en ${ciudad} | tresycuarto`,
+    description: `Los mejores ${desc} en ${ciudad}. Horarios, ubicación y terraza. Descubre dónde disfrutar la tarde en ${ciudad} con tresycuarto.`,
     openGraph: {
-      title: `${label} para el tardeo en ${ciudad}`,
-      description: `Descubre los mejores ${desc} en ${ciudad}. Guía completa de tardeo.`,
+      title: `${title} en ${ciudad}`,
+      description: `Guía completa de ${desc} en ${ciudad}.`,
     },
   };
 }
@@ -69,13 +79,40 @@ export default async function Page(
 ) {
   const { query } = await params;
   const parsed = parseQuery(query);
-  if (!parsed || !TIPO_SLUG[parsed.tipoSlug] || !SLUG_A_CIUDAD[parsed.ciudadSlug]) {
+  if (!parsed || !(parsed.tipoSlug in TIPO_SLUG) || !SLUG_A_CIUDAD[parsed.ciudadSlug]) {
     redirect("/");
   }
+
+  const ciudad = SLUG_A_CIUDAD[parsed!.ciudadSlug];
+  const title = TIPO_TITLE[parsed!.tipoSlug];
+  const desc = TIPO_DESC_META[parsed!.tipoSlug];
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${title} en ${ciudad}`,
+    "description": `Los mejores ${desc} en ${ciudad}. Horarios, ubicación y terraza.`,
+    "url": `https://tresycuarto.com/tardeo/${query}`,
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tresycuarto.com" },
+        { "@type": "ListItem", "position": 2, "name": ciudad, "item": `https://tresycuarto.com/locales/${parsed!.ciudadSlug}` },
+        { "@type": "ListItem", "position": 3, "name": title, "item": `https://tresycuarto.com/tardeo/${query}` },
+      ],
+    },
+  };
+
   return (
-    <TipoEnCiudadPage
-      tipoSlug={parsed!.tipoSlug}
-      ciudadSlug={parsed!.ciudadSlug}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <TipoEnCiudadPage
+        tipoSlug={parsed!.tipoSlug}
+        ciudadSlug={parsed!.ciudadSlug}
+      />
+    </>
   );
 }

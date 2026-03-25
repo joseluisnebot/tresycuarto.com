@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTurnstile } from "./components/useTurnstile";
+import citiesData from "../data/cities.json";
 
-const CIUDADES = [
-  "Madrid","Barcelona","Valencia","Sevilla",
-  "Bilbao","Málaga","Zaragoza","Murcia",
-];
+// Solo ciudades con datos reales en D1
+const CIUDADES_LIVE = (citiesData as { slug: string; nombre: string }[]).map(c => c.nombre);
 
+// Las 8 principales para el formulario de suscripción
+
+// Para el buscador: todas las ciudades de España (incluyendo próximamente)
 const TODAS_CIUDADES = [
   "Madrid","Barcelona","Valencia","Sevilla","Bilbao","Málaga","Zaragoza","Murcia",
   "Alicante","Almería","Ávila","Badajoz","Burgos","Cáceres","Cádiz","Castellón",
@@ -18,7 +20,8 @@ const TODAS_CIUDADES = [
   "Toledo","Valladolid","Vitoria","Zamora","Benidorm","Torremolinos","Marbella",
   "Fuengirola","Estepona","Gandía","Dénia","Xàbia","Cullera","Salou","Cambrils",
   "Lloret de Mar","Roses","Calpe","Altea","Torrevieja","Santa Pola","Peñíscola",
-  "Vinaròs","Benicàssim","Oropesa del Mar","Sitges","Tarragona",
+  "Vinaròs","Benicàssim","Oropesa del Mar","Sitges","Jerez de la Frontera",
+  "Cartagena","Lorca","Zamora","Cuenca","León","Cádiz","Valladolid",
 ];
 
 function ciudadSlug(ciudad: string): string {
@@ -40,12 +43,35 @@ const FEATURES = [
 
 type Status = "idle" | "loading" | "ok" | "error";
 
+type Evento = { id: string; nombre: string; tipo: string; ciudad: string; fecha: string; hora_inicio?: string; descripcion: string };
+
+const TIPO_ICON: Record<string, string> = {
+  procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵",
+  festival: "🎪", deporte: "⚽", escena: "🎭", mercado: "🛍️", otro: "📅",
+};
+const MESES_CORTO = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [ciudades, setCiudades] = useState<string[]>([]);
   const [status, setStatus] = useState<Status>("idle");
   const [busqueda, setBusqueda] = useState("");
+  const [busquedaCiudad, setBusquedaCiudad] = useState("");
+  const [showSugCiudad, setShowSugCiudad] = useState(false);
   const { containerRef, getToken } = useTurnstile();
+  const [proximosEventos, setProximosEventos] = useState<Evento[]>([]);
+
+  useEffect(() => {
+    fetch("/api/eventos?limit=6").then(r => r.json()).then(d => setProximosEventos(d.eventos || [])).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    document.querySelectorAll<HTMLElement>(".fade-up").forEach(el => {
+      el.style.animation = "none";
+      el.getBoundingClientRect();
+      el.style.animation = "";
+    });
+  }, []);
 
   function handleBuscar(e: React.FormEvent) {
     e.preventDefault();
@@ -71,7 +97,7 @@ export default function Home() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, ciudades, cf_token }),
+        body: JSON.stringify({ email, ciudades, cf_token, replace: true }),
       });
       setStatus(res.ok ? "ok" : "error");
     } catch {
@@ -124,7 +150,7 @@ export default function Home() {
           letterSpacing: "-0.04em", lineHeight: 1.1, maxWidth: "600px", color: "var(--text)",
         }}>
           Descubre dónde<br />
-          <span style={{ color: "var(--peach)" }}>tardeear</span>{" "}
+          <span style={{ color: "var(--peach)" }}>tardear</span>{" "}
           <span style={{ color: "var(--golden)" }}>en tu ciudad</span>
         </h1>
 
@@ -136,7 +162,7 @@ export default function Home() {
         </p>
 
         {/* BUSCADOR */}
-        <div style={{ width: "100%", maxWidth: "480px", position: "relative", zIndex: 30 }}>
+        <div className="fade-up delay-3" style={{ width: "100%", maxWidth: "480px", position: "relative", zIndex: 30 }}>
           <form onSubmit={handleBuscar} style={{ display: "flex", gap: "0.5rem" }}>
             <input
               type="text"
@@ -206,22 +232,67 @@ export default function Home() {
                   color: "var(--text)", fontSize: "1rem", outline: "none",
                 }}
               />
-              <div>
+              <div style={{ position: "relative" }}>
                 <p style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginBottom: "0.5rem", textAlign: "center" }}>¿En qué ciudades tardeas?</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", justifyContent: "center" }}>
-                  {CIUDADES.map(c => {
-                    const sel = ciudades.includes(c);
-                    return (
-                      <button key={c} type="button" onClick={() => toggleCiudad(c)} style={{
-                        padding: "0.4rem 0.9rem", borderRadius: "999px", fontSize: "0.85rem", fontWeight: 600,
-                        border: sel ? "none" : "1.5px solid var(--peach-soft)",
-                        background: sel ? "var(--peach)" : "white",
-                        color: sel ? "white" : "var(--text-muted)",
-                        cursor: "pointer", transition: "all 0.15s",
-                      }}>{c}</button>
-                    );
-                  })}
-                </div>
+                {/* Tags de ciudades seleccionadas */}
+                {ciudades.length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginBottom: "0.5rem" }}>
+                    {ciudades.map(c => (
+                      <span key={c} style={{
+                        display: "flex", alignItems: "center", gap: "0.3rem",
+                        padding: "0.3rem 0.75rem", borderRadius: "999px", fontSize: "0.82rem", fontWeight: 600,
+                        background: "var(--peach)", color: "white",
+                      }}>
+                        {c}
+                        <button type="button" onClick={() => toggleCiudad(c)} style={{
+                          background: "none", border: "none", color: "white", cursor: "pointer",
+                          fontSize: "0.9rem", lineHeight: 1, padding: 0, opacity: 0.8,
+                        }}>×</button>
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {/* Input búsqueda de ciudad */}
+                <input
+                  type="text"
+                  placeholder="Busca tu ciudad..."
+                  value={busquedaCiudad}
+                  onChange={e => { setBusquedaCiudad(e.target.value); setShowSugCiudad(true); }}
+                  onFocus={() => setShowSugCiudad(true)}
+                  onBlur={() => setTimeout(() => setShowSugCiudad(false), 150)}
+                  style={{
+                    width: "100%", padding: "0.75rem 1rem", borderRadius: "0.875rem",
+                    border: "1.5px solid var(--peach-soft)", background: "white",
+                    color: "var(--text)", fontSize: "0.95rem", outline: "none",
+                  }}
+                />
+                {/* Sugerencias */}
+                {showSugCiudad && busquedaCiudad.length >= 1 && (() => {
+                  const sug = CIUDADES_LIVE.filter(c =>
+                    c.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+                      .includes(busquedaCiudad.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""))
+                    && !ciudades.includes(c)
+                  );
+                  return sug.length > 0 ? (
+                    <div style={{
+                      position: "absolute", left: 0, right: 0,
+                      background: "white", borderRadius: "0.875rem", marginTop: "0.3rem",
+                      border: "1.5px solid var(--peach-soft)", overflow: "hidden",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.1)", zIndex: 20,
+                    }}>
+                      {sug.map(c => (
+                        <div key={c}
+                          onMouseDown={e => { e.preventDefault(); toggleCiudad(c); setBusquedaCiudad(""); setShowSugCiudad(false); }}
+                          style={{
+                            padding: "0.65rem 1rem", cursor: "pointer", fontSize: "0.92rem",
+                            color: "var(--text)", borderBottom: "1px solid var(--peach-soft)",
+                          }}>
+                          📍 {c}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null;
+                })()}
               </div>
               <button
                 type="submit" disabled={status === "loading"}
@@ -303,6 +374,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRÓXIMOS EVENTOS */}
+      {proximosEventos.length > 0 && (
+        <section style={{ padding: "3rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+            <div>
+              <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#FB923C", margin: "0 0 0.25rem" }}>Agenda</p>
+              <h2 style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1C1917", margin: 0, letterSpacing: "-0.02em" }}>Próximos eventos</h2>
+            </div>
+            <a href="/eventos" style={{ fontSize: "0.82rem", fontWeight: 600, color: "#FB923C", textDecoration: "none" }}>Ver todos →</a>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0.75rem" }}>
+            {proximosEventos.map(ev => {
+              const d = new Date(ev.fecha + "T12:00:00");
+              return (
+                <a key={ev.id} href={`/locales/${ciudadSlug(ev.ciudad)}`} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    background: "white", borderRadius: "1rem", border: "1px solid #F5E6D3",
+                    padding: "1rem", display: "flex", gap: "0.85rem", alignItems: "flex-start",
+                  }}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = "#FB923C")}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = "#F5E6D3")}
+                  >
+                    <div style={{ background: "#FEF0DC", borderRadius: "0.75rem", padding: "0.5rem 0.65rem", textAlign: "center", minWidth: "44px" }}>
+                      <div style={{ fontSize: "1.1rem" }}>{TIPO_ICON[ev.tipo] || "📅"}</div>
+                      <div style={{ fontSize: "0.62rem", fontWeight: 700, color: "#FB923C", lineHeight: 1.2, marginTop: "0.2rem" }}>
+                        {d.getDate()} {MESES_CORTO[d.getMonth()]}
+                      </div>
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.88rem", lineHeight: 1.3, marginBottom: "0.2rem" }}>{ev.nombre}</div>
+                      <div style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600 }}>{ev.ciudad}</div>
+                      {ev.hora_inicio && <div style={{ fontSize: "0.72rem", color: "#A8A29E", marginTop: "0.15rem" }}>🕐 {ev.hora_inicio}</div>}
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* FEATURES */}
       <section style={{ padding: "4rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
@@ -320,13 +432,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CIUDADES */}
+      {/* CIUDADES CON DATOS */}
       <section style={{ padding: "0 1.5rem 4rem", textAlign: "center" }}>
         <p style={{ fontSize: "0.7rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "1rem" }}>
-          Lanzando en
+          Disponible en
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
-          {CIUDADES.map(c => (
+          {CIUDADES_LIVE.map(c => (
             <a key={c} href={`/locales/${ciudadSlug(c)}`} style={{
               fontSize: "0.85rem", padding: "0.35rem 0.9rem", borderRadius: "999px",
               background: "var(--lavender-soft)", color: "var(--lavender)",

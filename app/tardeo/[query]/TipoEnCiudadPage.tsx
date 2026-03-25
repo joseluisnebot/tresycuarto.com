@@ -5,11 +5,15 @@ import Link from "next/link";
 import cities from "../../../data/cities.json";
 import ciudadContentData from "../../../data/ciudad-content.json";
 
-const TIPO_SLUG: Record<string, string> = {
+// tipo === null significa "todos los tipos"
+const TIPO_SLUG: Record<string, string | null> = {
   bares: "bar",
   pubs: "pub",
   cafeterias: "cafe",
   terrazas: "biergarten",
+  "tardeo": null,
+  "planes-tarde": null,
+  "terraza-tarde": "biergarten",
 };
 
 const TIPO_LABEL: Record<string, string> = {
@@ -26,11 +30,21 @@ const TIPO_PLURAL: Record<string, string> = {
   biergarten: "Terrazas",
 };
 
+// Título H1 para slugs sin tipo fijo
+const SLUG_H1: Record<string, (ciudad: string) => string> = {
+  "tardeo": (c) => `Tardeo en ${c}`,
+  "planes-tarde": (c) => `Planes de tarde en ${c}`,
+  "terraza-tarde": (c) => `Terrazas para el tardeo en ${c}`,
+};
+
 const TIPO_INTRO: Record<string, (ciudad: string) => string> = {
   bar: (c) => `Encuentra los mejores bares de ${c} para el tardeo. Desde el vermut del mediodía hasta la primera copa de la noche, estos son los bares más auténticos donde tomar algo en ${c} por la tarde.`,
   pub: (c) => `Los mejores pubs de ${c} para el tardeo. Ambiente, buena música y copas a media tarde — esta es la selección de pubs imprescindibles para el tardeo en ${c}.`,
   cafe: (c) => `Las mejores cafeterías de ${c} para un tardeo tranquilo. Si prefieres un café con leche o una tapa a media tarde antes de la noche, estas son las cafeterías más recomendadas de ${c}.`,
   biergarten: (c) => `Las mejores terrazas de ${c} para disfrutar el tardeo al aire libre. Sol, buena compañía y una copa en la mano — descubre las terrazas con más ambiente de ${c} para la tarde.`,
+  "tardeo": (c) => `Descubre los mejores locales de tardeo en ${c}: bares, pubs, cafeterías y terrazas donde disfrutar de la tarde. tresycuarto tiene mapeados todos los rincones de ${c} para que encuentres el plan perfecto a media tarde.`,
+  "planes-tarde": (c) => `¿Qué hacer por la tarde en ${c}? Desde el vermut hasta el primer cóctel de la noche, estos son los mejores planes de tarde en ${c}: terrazas con vistas, bares con buena tapa y cafeterías con encanto. Guía completa de ocio de tarde en ${c}.`,
+  "terraza-tarde": (c) => `Las mejores terrazas de ${c} para el tardeo al aire libre. Tanto si buscas una terraza para el vermut como para alargar la tarde con amigos, aquí tienes la selección más completa de terrazas y bares con terraza en ${c}.`,
 };
 
 const SLUG_A_CIUDAD = Object.fromEntries(
@@ -91,14 +105,15 @@ function ciudadesCercanas(ciudadSlugActual: string, n = 4): { nombre: string; sl
 type Local = {
   id: string; nombre: string; tipo: string; ciudad: string;
   direccion: string; horario: string | null; terraza: number;
+  rating: number | null; rating_count: number | null;
 };
 
 const LIMIT = 24;
 
 export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp }: { tipoSlug: string; ciudadSlug: string }) {
-  const tipo = TIPO_SLUG[tipoSlug] || "bar";
+  const tipo = TIPO_SLUG[tipoSlug] ?? "bar"; // null = todos los tipos
   const nombreCiudad = SLUG_A_CIUDAD[ciudadSlugProp] || ciudadSlugProp;
-  const tipoPlural = TIPO_PLURAL[tipo] || "Locales";
+  const tipoPlural = tipo ? (TIPO_PLURAL[tipo] || "Locales") : "Locales";
 
   const [locales, setLocales] = useState<Local[]>([]);
   const [total, setTotal] = useState(0);
@@ -112,7 +127,9 @@ export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp 
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&tipo=${tipo}&limit=${LIMIT}&offset=${offset}`)
+    let url = `/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&limit=${LIMIT}&offset=${offset}`;
+    if (tipo) url += `&tipo=${tipo}`;
+    fetch(url)
       .then(r => r.json())
       .then(d => { setLocales(d.locales || []); setTotal(d.total || 0); })
       .catch(() => setLocales([]))
@@ -147,11 +164,11 @@ export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp 
           padding: "0.3rem 0.9rem", fontSize: "0.78rem", fontWeight: 700,
         }}>Tardeo en {nombreCiudad}</span>
         <h1 style={{ fontSize: "clamp(1.75rem,4vw,2.75rem)", fontWeight: 900, color: "#1C1917", margin: "0.75rem 0 0.5rem", lineHeight: 1.15 }}>
-          {tipoPlural} para el tardeo<br />en {nombreCiudad}
+          {SLUG_H1[tipoSlug] ? SLUG_H1[tipoSlug](nombreCiudad) : <>{tipoPlural} para el tardeo<br />en {nombreCiudad}</>}
         </h1>
         {!loading && total > 0 && (
           <p style={{ color: "#78716C", fontSize: "1rem", margin: 0 }}>
-            {total.toLocaleString("es-ES")} {tipoPlural.toLowerCase()} mapeados
+            {total.toLocaleString("es-ES")} {tipo ? tipoPlural.toLowerCase() : "locales"} mapeados
           </p>
         )}
       </div>
@@ -164,7 +181,7 @@ export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp 
           padding: "1.25rem 1.5rem", color: "#57534E", fontSize: "0.95rem",
           lineHeight: 1.7, marginBottom: "1.5rem",
         }}>
-          {TIPO_INTRO[tipo]?.(nombreCiudad)}
+          {(TIPO_INTRO[tipoSlug] || TIPO_INTRO[tipo || ""])?.(nombreCiudad)}
         </p>
 
         {/* Filtros rápidos — otros tipos en esta ciudad */}
@@ -237,6 +254,13 @@ export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp 
                   <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>
                     {local.nombre}
                   </h2>
+                  {local.rating && local.rating > 0 && (
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
+                      <span style={{ color: "#F59E0B", fontSize: "0.82rem" }}>{"★".repeat(Math.round(local.rating))}{"☆".repeat(5 - Math.round(local.rating))}</span>
+                      <span style={{ fontWeight: 700, fontSize: "0.82rem", color: "#1C1917" }}>{local.rating.toFixed(1)}</span>
+                      {local.rating_count && <span style={{ fontSize: "0.75rem", color: "#A8A29E" }}>({local.rating_count.toLocaleString("es-ES")})</span>}
+                    </div>
+                  )}
                   {local.direccion && (
                     <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       📍 {local.direccion}

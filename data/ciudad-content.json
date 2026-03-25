@@ -1743,7 +1743,167 @@
       },
       {
         "q": "¿Qué tomar en el tardeo de Vitoria?",
-        "a": "Los pintxos de la Calle Cuchillería, el txakoli alavés y la cerveza artesanal local son los imprescindibles del tardeo vitoriano."
+        "a": "Los pintxos de la Cuchillería, el txakoli alavés y la cerveza artesanal local son los imprescindibles del tardeo vitoriano."
+      }
+    ]
+  },
+  "Algeciras": {
+    "coords": {
+      "lat": 36.1408,
+      "lon": -5.4526
+    },
+    "intro": "Algeciras, puerta de Europa y cruce de culturas entre el Mediterráneo y el Atlántico, tiene un tardeo con mucho carácter andaluz. El centro histórico y el Paseo de la Conferencia concentran los bares de tapas y terrazas donde locales y viajeros se mezclan con el telón de fondo del Estrecho de Gibraltar y el perfil de Marruecos en el horizonte.",
+    "barrios": [
+      "Centro",
+      "El Rinconcillo",
+      "Pescadores",
+      "La Bajadilla",
+      "Carteya"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardear en Algeciras?",
+        "a": "El centro histórico de Algeciras y el Paseo de la Conferencia son los mejores puntos para el tardeo, con bares de tapas, terrazas con vistas al Estrecho y un ambiente muy andaluz y cosmopolita."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Algeciras?",
+        "a": "Las frituras de pescado del Estrecho, el atún rojo de almadraba, el mosto de la comarca y la cerveza bien fría son los protagonistas del tardeo algecireño."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Algeciras?",
+        "a": "El tardeo en Algeciras arranca a partir de las 17h los fines de semana, con ambiente en terrazas hasta bien entrada la noche gracias al clima suave del Campo de Gibraltar."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Algeciras?",
+        "a": "En tresycuarto tienes locales mapeados en Algeciras para descubrir el tardeo en la puerta de Europa, con vistas únicas al Estrecho de Gibraltar."
+      }
+    ]
+  },
+  "Altea": {
+    "coords": {
+      "lat": 38.5994,
+      "lon": -0.0506
+    },
+    "intro": "Altea es uno de los pueblos más bonitos de la Costa Blanca, con su casco histórico de casitas blancas y cúpulas azules encaramado sobre el Mediterráneo. El tardeo alteano combina las terrazas con vistas al mar del paseo marítimo con los bares con encanto del casco antiguo, creando una experiencia que mezcla sabor local, arte y brisa mediterránea.",
+    "barrios": [
+      "Casco Antiguo",
+      "La Roda",
+      "Cap Negret",
+      "El Albir",
+      "Altea Hills"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardear en Altea?",
+        "a": "El paseo marítimo de La Roda y el casco antiguo de Altea son los mejores lugares para el tardeo, con terrazas frente al Mediterráneo y bares con mucho encanto entre callejuelas empedradas."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Altea?",
+        "a": "La coca de dacsa, el arroz a banda, el pulpo a la brasa y los vinos de la Marina Alta acompañados de una buena horchata fresca son los sabores del tardeo en Altea."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Altea?",
+        "a": "En Altea el tardeo es especialmente agradable a partir de las 17h, cuando el calor baja y las terrazas junto al mar se llenan de ambiente hasta el atardecer."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Altea?",
+        "a": "En tresycuarto tienes locales mapeados en Altea para disfrutar del tardeo en uno de los pueblos con más encanto de la Costa Blanca valenciana."
+      }
+    ]
+  },
+  "Cullera": {
+    "coords": {
+      "lat": 39.1637,
+      "lon": -0.2525
+    },
+    "intro": "Cullera, con su castillo árabe asomado al Mediterráneo y sus kilómetros de playas y dunas, tiene un tardeo muy valenciano que vive entre el paseo marítimo y el casco urbano junto al río Júcar. En verano las terrazas se desbordan con el ambiente de la playa, mientras en el resto del año los bares del centro y el puerto fluvial son el escenario del tardeo cullerense.",
+    "barrios": [
+      "Centro",
+      "Playa de Cullera",
+      "El Marenyet",
+      "Bega",
+      "El Estany"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardear en Cullera?",
+        "a": "El paseo marítimo, el puerto fluvial del Júcar y el centro urbano de Cullera son los mejores puntos para el tardeo, con terrazas frente al mar y bares con mucho ambiente local."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Cullera?",
+        "a": "La paella valenciana, el arròs a banda, las anguilas del Júcar y la horchata de chufa son los grandes protagonistas del tardeo en Cullera."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Cullera?",
+        "a": "El tardeo en Cullera arranca a las 16h-17h, con más ambiente los fines de semana y en temporada estival, cuando las terrazas de playa se llenan hasta la hora de cenar."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Cullera?",
+        "a": "En tresycuarto tienes locales mapeados en Cullera para planificar tu tardeo junto al Mediterráneo y las orillas del río Júcar."
+      }
+    ]
+  },
+  "San Sebastián": {
+    "coords": {
+      "lat": 43.3183,
+      "lon": -1.9812
+    },
+    "intro": "San Sebastián es la capital mundial del pintxo y una de las ciudades con mayor densidad de bares por habitante del mundo. El Parte Vieja es el corazón del tardeo donostiarra, con barras repletas de pintxos creativos, txakoli frío y una cultura del txikiteo que convierte cada tarde en una pequeña fiesta entre la Bahía de La Concha y el monte Urgull.",
+    "barrios": [
+      "Parte Vieja",
+      "Gros",
+      "Centro",
+      "Amara",
+      "Antiguo"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardear en San Sebastián?",
+        "a": "La Parte Vieja de San Sebastián es el epicentro indiscutible del tardeo, con calles como 31 de Agosto o Fermín Calbetón repletas de bares de pintxos. El barrio de Gros también tiene una oferta excelente y más tranquila."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de San Sebastián?",
+        "a": "Los pintxos creativos son la estrella absoluta: gilda, croissant de txangurro, foie a la plancha y anchoa del Cantábrico, todo regado con txakoli bien frío o una zurracapote en las fiestas."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en San Sebastián?",
+        "a": "El txikiteo donostiarra empieza a las 12h-13h y se retoma con fuerza a las 18h-19h. Los fines de semana la Parte Vieja está llena de ambiente desde mediodía hasta la madrugada."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en San Sebastián?",
+        "a": "En tresycuarto tienes locales mapeados en San Sebastián para descubrir el txikiteo en la ciudad con más bares por metro cuadrado de Europa."
+      }
+    ]
+  },
+  "Vinaròs": {
+    "coords": {
+      "lat": 40.4708,
+      "lon": 0.4746
+    },
+    "intro": "Vinaròs, la ciudad más septentrional de la Comunitat Valenciana, es conocida por sus gambas rojas de fama mundial y un tardeo tranquilo y auténtico junto al Mediterráneo. El paseo marítimo, la lonja de pescadores y el casco histórico son el escenario del tardeo vinarossenc, donde la gastronomía marinera y el ambiente local marcan el ritmo de las tardes.",
+    "barrios": [
+      "Centre Històric",
+      "El Port",
+      "La Llotja",
+      "Barri Nou",
+      "Platja Nord"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardear en Vinaròs?",
+        "a": "El paseo marítimo y los alrededores de la lonja de pescadores de Vinaròs son los mejores puntos para el tardeo, con bares de tapas marineras, terrazas frente al mar y un ambiente muy local y auténtico."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Vinaròs?",
+        "a": "Las gambas rojas de Vinaròs son leyenda, imprescindibles en cualquier tardeo. También el rap a la marinera, las cloïsses, el vino de la Terra Alta y un buen aperitivo con seques de la huerta local."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Vinaròs?",
+        "a": "El tardeo en Vinaròs es especialmente agradable a partir de las 17h, sobre todo los fines de semana y en temporada de verano, cuando el paseo marítimo se llena de vida hasta la hora de cenar."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Vinaròs?",
+        "a": "En tresycuarto tienes locales mapeados en Vinaròs para planificar tu tardeo en la ciudad de las gambas rojas, en la costa del Maestrat."
       }
     ]
   }

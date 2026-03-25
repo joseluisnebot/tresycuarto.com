@@ -247,14 +247,15 @@ Lugar:"""
         return None
 
 
-def run_from_desc(dry_run=False):
+def run_from_desc(dry_run=False, ciudad=None):
     """Extrae venue de la descripción con Ollama y geocodifica."""
     print("\n── GEOCODING DESDE DESCRIPCIÓN (Ollama + Nominatim) ──")
-    eventos = d1_query(
-        "SELECT id, nombre, ciudad, lat, lon, descripcion FROM eventos_geo "
-        "WHERE direccion IS NULL AND lat IS NOT NULL AND activo = 1 "
-        "AND fecha >= date('now') ORDER BY fecha"
-    )
+    sql = ("SELECT id, nombre, ciudad, lat, lon, descripcion FROM eventos_geo "
+           "WHERE lat IS NOT NULL AND activo = 1 AND fecha >= date('now')")
+    if ciudad:
+        sql += f" AND ciudad = '{ciudad}'"
+    sql += " ORDER BY fecha"
+    eventos = d1_query(sql)
     # Solo los que tienen centroide (son los que necesitan mejora)
     candidatos = [
         ev for ev in eventos
@@ -302,6 +303,7 @@ if __name__ == "__main__":
     parser.add_argument("--forward", action="store_true", help="Solo forward geocoding")
     parser.add_argument("--from-desc", action="store_true", help="Extraer venue de descripción con Ollama")
     parser.add_argument("--dry-run", action="store_true", help="Sin escribir en D1")
+    parser.add_argument("--ciudad", type=str, default=None, help="Filtrar por ciudad")
     args = parser.parse_args()
 
     print(f"=== geocodificar_eventos.py — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===")
@@ -309,7 +311,7 @@ if __name__ == "__main__":
         print("  MODO DRY-RUN — no se escribe en D1")
 
     if args.from_desc:
-        total = run_from_desc(dry_run=args.dry_run)
+        total = run_from_desc(dry_run=args.dry_run, ciudad=args.ciudad)
     else:
         do_reverse = args.reverse or not args.forward
         do_forward = args.forward or not args.reverse

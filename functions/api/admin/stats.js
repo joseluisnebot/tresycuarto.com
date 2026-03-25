@@ -17,6 +17,7 @@ export async function onRequestGet(context) {
     { results: geocoderRows },
     { results: b2bRows },
     { results: b2bListaRows },
+    { results: eventosPendientes },
   ] = await Promise.all([
     env.DB.prepare("SELECT ciudad, COUNT(*) as total FROM locales GROUP BY ciudad ORDER BY total DESC").all(),
     env.DB.prepare("SELECT * FROM solicitudes ORDER BY creado_en DESC LIMIT 50").all(),
@@ -51,6 +52,12 @@ export async function onRequestGet(context) {
       LEFT JOIN locales l ON l.id = ul.local_id
       ORDER BY u.created_at DESC LIMIT 20
     `).all(),
+    env.DB.prepare(`
+      SELECT id, nombre, ciudad, fecha, hora_inicio, direccion, tipo, descripcion, radio_m, dias_previos_envio, estado
+      FROM eventos_geo
+      WHERE estado IN ('pendiente', 'revision_enviada')
+      ORDER BY fecha ASC
+    `).all(),
   ]);
 
   const totalLocales = localStats.reduce((s, r) => s + r.total, 0);
@@ -63,15 +70,20 @@ export async function onRequestGet(context) {
   let suscriptoresEstaSemana = 0;
   try {
     const auth = btoa(`${env.LISTMONK_API_USER}:${env.LISTMONK_API_PASS}`);
+    const lmHeaders = { Authorization: `Basic ${auth}` };
+    if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
+      lmHeaders["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
+      lmHeaders["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
+    }
     const lmRes = await fetch("https://listmonk.tresycuarto.com/api/subscribers?page=1&per_page=100&order_by=created_at&order=DESC", {
-      headers: { Authorization: `Basic ${auth}` },
+      headers: lmHeaders,
     });
     const lmData = await lmRes.json();
     suscriptores = lmData.data?.total || 0;
     const hace7dias = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
     listaSuscriptores = (lmData.data?.results || []).map(s => ({
       email: s.email,
-      ciudad: s.attribs?.ciudad || "",
+      ciudad: s.attribs?.ciudades?.join(", ") || s.attribs?.ciudad || "",
       fecha: s.created_at?.slice(0, 10) || "",
       status: s.status,
     }));
@@ -129,6 +141,7 @@ export async function onRequestGet(context) {
     geocoder,
     b2b,
     b2bLista: b2bListaRows,
+    eventosPendientes,
   }, {
     headers: { "Cache-Control": "no-store" }
   });

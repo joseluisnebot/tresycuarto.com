@@ -9,11 +9,12 @@ const features = [
   { icon: "✅", title: "Badge verificado", desc: "Destaca en los listados con el sello de local verificado. Próximamente." },
 ];
 
-const pricing = [
-  { label: "14 días gratis", sub: "Sin tarjeta. Empieza hoy.", highlight: false },
-  { label: "9€ / mes", sub: "O 79€/año — ahorra 29€.", highlight: true },
-  { label: "Sin permanencia", sub: "Cancela cuando quieras.", highlight: false },
-];
+// PRICING — comentado durante fase de captación (activar cuando se lance el modelo freemium)
+// const pricing = [
+//   { label: "14 días gratis", sub: "Sin tarjeta. Empieza hoy.", highlight: false },
+//   { label: "9€ / mes", sub: "O 79€/año — ahorra 29€.", highlight: true },
+//   { label: "Sin permanencia", sub: "Cancela cuando quieras.", highlight: false },
+// ];
 
 export default function ParaLocales() {
   return (
@@ -21,7 +22,7 @@ export default function ParaLocales() {
 
       {/* Nav */}
       <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.5rem", borderBottom: "1px solid #F5E6D3", background: "rgba(255,248,239,0.95)" }}>
-        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.1rem", color: "#1C1917" }}>
+        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.25rem", letterSpacing: "-0.03em", color: "#1C1917" }}>
           tres<span style={{ color: "#FB923C" }}>y</span>cuarto
         </Link>
         <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
@@ -66,8 +67,13 @@ export default function ParaLocales() {
               Ver más
             </a>
           </div>
+          {/* FASE CAPTACIÓN: texto de precios comentado — descomentar al activar freemium
           <p style={{ fontSize: "0.78rem", color: "#A8A29E", marginTop: "0.75rem" }}>
             14 días gratis · Sin tarjeta de crédito · Cancela cuando quieras
+          </p>
+          */}
+          <p style={{ fontSize: "0.78rem", color: "#A8A29E", marginTop: "0.75rem" }}>
+            Gratis durante la fase de lanzamiento
           </p>
         </div>
 
@@ -87,7 +93,7 @@ export default function ParaLocales() {
           </div>
         </div>
 
-        {/* Pricing */}
+        {/* PRICING — comentado durante fase de captación (descomentar cuando se lance freemium)
         <div style={{ background: "white", borderRadius: "1.5rem", border: "1px solid #F5E6D3", padding: "2.5rem", marginBottom: "4rem", textAlign: "center" }}>
           <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#1C1917", marginBottom: "0.5rem" }}>Precio claro y justo</h2>
           <p style={{ color: "#78716C", fontSize: "0.9rem", marginBottom: "2rem" }}>Sin sorpresas. Sin letra pequeña.</p>
@@ -104,6 +110,7 @@ export default function ParaLocales() {
             ))}
           </div>
         </div>
+        */}
 
         {/* CTA final */}
         <div style={{ textAlign: "center" }}>

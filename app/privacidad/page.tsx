@@ -13,7 +13,7 @@ export default function Privacidad() {
         borderBottom: "1px solid #F5E6D3", background: "rgba(255,248,239,0.95)",
         position: "sticky", top: 0,
       }}>
-        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.1rem", color: "#1C1917" }}>
+        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.25rem", letterSpacing: "-0.03em", color: "#1C1917" }}>
           tres<span style={{ color: "#FB923C" }}>y</span>cuarto
         </Link>
       </nav>

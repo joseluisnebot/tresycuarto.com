@@ -34,6 +34,6 @@ export async function onRequestGet(context) {
     offset,
     locales: results,
   }, {
-    headers: { "Cache-Control": "public, max-age=3600" }
+    headers: { "Cache-Control": "public, max-age=300, stale-while-revalidate=3600" }
   });
 }

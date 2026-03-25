@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 
 SMTP_HOST  = "smtp-relay.brevo.com"
 SMTP_PORT  = 587
-SMTP_USER  = "a420de001@smtp-brevo.com"
+SMTP_USER  = "hola@tresycuarto.com"
 SMTP_PASS  = os.environ.get("BREVO_SMTP_KEY", "")
 NOTIFY_TO  = "joseluisnebot@gmail.com"
 

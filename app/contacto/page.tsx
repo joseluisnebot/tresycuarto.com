@@ -6,7 +6,7 @@ export default function Contacto() {
 
       {/* Nav */}
       <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.5rem", borderBottom: "1px solid #F5E6D3", background: "rgba(255,248,239,0.95)" }}>
-        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.1rem", color: "#1C1917" }}>
+        <Link href="/" style={{ textDecoration: "none", fontWeight: 800, fontSize: "1.25rem", letterSpacing: "-0.03em", color: "#1C1917" }}>
           tres<span style={{ color: "#FB923C" }}>y</span>cuarto
         </Link>
         <Link href="/faq" style={{ textDecoration: "none", fontSize: "0.85rem", color: "#78716C", fontWeight: 600 }}>

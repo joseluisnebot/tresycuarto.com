@@ -6,6 +6,7 @@ import Link from "next/link";
 type Suscriptor = { email: string; ciudad: string; fecha: string; status: string };
 type Visita = { dimensions: { date: string }; sum: { pageViews: number }; uniq: { uniques: number } };
 type Calidad = { ciudad: string; total: number; con_dir: number; con_ig: number; con_web: number; con_tel: number };
+type EventoGeo = { id: number; nombre: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; tipo: string; descripcion: string; radio_m?: number; dias_previos_envio?: number; estado: string };
 type Stats = {
   suscriptores: number;
   suscriptoresEstaSemana: number;
@@ -22,6 +23,7 @@ type Stats = {
   geocoder: { total: number; con_dir: number; pendientes: number };
   b2b: { total: number; verificados: number; esta_semana: number };
   b2bLista: { email: string; slug: string; plan: string; verified: number; created_at: string; nombre: string; ciudad: string; tipo: string }[];
+  eventosPendientes: EventoGeo[];
 };
 
 const card: React.CSSProperties = {
@@ -49,6 +51,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [accionando, setAccionando] = useState<number | null>(null);
+  const [accionandoEvento, setAccionandoEvento] = useState<number | null>(null);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
   const tokenRef = useRef("");
 
@@ -62,6 +65,17 @@ export default function Dashboard() {
     }, 30000);
     return () => clearInterval(interval);
   }, [token]);
+
+  async function accionarEvento(id: number, accion: "aprobar" | "rechazar") {
+    setAccionandoEvento(id);
+    await fetch(`/api/admin/evento?token=${encodeURIComponent(token)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, accion }),
+    });
+    await refresh();
+    setAccionandoEvento(null);
+  }
 
   async function accionarSolicitud(id: number, accion: "aceptar" | "descartar") {
     setAccionando(id);
@@ -146,6 +160,7 @@ export default function Dashboard() {
             { label: "Conversión", value: stats.conversion ? `${stats.conversion}%` : "—", sub: "visitas ES → suscriptor", color: "#059669", bg: "#D1FAE5" },
             { label: "Solicitudes", value: stats.totalSolicitudes, sub: "pendientes de revisión", color: "#F59E0B", bg: "#FEF3C7" },
             { label: "Locales B2B", value: stats.b2b?.total ?? 0, sub: `+${stats.b2b?.esta_semana ?? 0} esta semana`, color: "#E1306C", bg: "#FCE7F3" },
+            { label: "Eventos pendientes", value: stats.eventosPendientes?.length ?? 0, sub: "esperan aprobación", color: "#7C3AED", bg: "#EDE9FE" },
           ].map(s => (
             <div key={s.label} style={{ ...card, textAlign: "center" }}>
               <div style={{ fontSize: "2rem", fontWeight: 900, color: s.color }}>{s.value}</div>
@@ -343,6 +358,55 @@ export default function Dashboard() {
               </table>
             )
           }
+        </div>
+
+        {/* Eventos pendientes de aprobación */}
+        <div style={card}>
+          <p style={{ fontWeight: 700, marginBottom: "1rem", color: "#1C1917" }}>
+            Eventos pendientes{" "}
+            {(!stats.eventosPendientes?.length) && <span style={{ color: "#A8A29E", fontWeight: 400 }}>— ninguno pendiente</span>}
+          </p>
+          {(stats.eventosPendientes || []).map((ev) => {
+            const fecha = new Date(ev.fecha + "T12:00:00");
+            const fechaEs = fecha.toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+            const diasPrevios = ev.dias_previos_envio ?? 2;
+            const fechaEnvio = new Date(fecha);
+            fechaEnvio.setDate(fechaEnvio.getDate() - diasPrevios);
+            const fechaEnvioEs = fechaEnvio.toLocaleDateString("es-ES", { day: "numeric", month: "long" });
+            const tipoIcon: Record<string, string> = { procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵", festival: "🎪", deporte: "⚽", escena: "🎭", evento: "📅" };
+            const icon = tipoIcon[ev.tipo] || "📅";
+            return (
+              <div key={ev.id} style={{ padding: "1rem", borderRadius: "0.875rem", background: "#F5F3FF", border: "1px solid #DDD6FE", marginBottom: "0.75rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "0.5rem" }}>
+                  <div>
+                    <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.95rem" }}>{icon} {ev.nombre}</span>
+                    <span style={{ marginLeft: "0.5rem", fontSize: "0.72rem", color: "#7C3AED", background: "#EDE9FE", padding: "0.2rem 0.5rem", borderRadius: "999px" }}>{ev.ciudad}</span>
+                    <span style={{ marginLeft: "0.4rem", fontSize: "0.72rem", color: "#78716C", background: "#F5F3FF", border: "1px solid #DDD6FE", padding: "0.2rem 0.5rem", borderRadius: "999px" }}>{ev.tipo}</span>
+                  </div>
+                </div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginTop: "0.6rem", fontSize: "0.82rem", color: "#57534E" }}>
+                  <span>📅 {fechaEs}</span>
+                  {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
+                  {ev.direccion && <span>📍 {ev.direccion}</span>}
+                  {ev.radio_m && <span>📡 {ev.radio_m}m de radio</span>}
+                  <span style={{ color: "#A78BFA" }}>✉️ Newsletter el {fechaEnvioEs}</span>
+                </div>
+                {ev.descripcion && (
+                  <p style={{ marginTop: "0.5rem", fontSize: "0.8rem", color: "#78716C", fontStyle: "italic", lineHeight: 1.5 }}>&ldquo;{ev.descripcion}&rdquo;</p>
+                )}
+                <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.75rem" }}>
+                  <button onClick={() => accionarEvento(ev.id, "aprobar")} disabled={accionandoEvento === ev.id}
+                    style={{ padding: "0.4rem 1rem", borderRadius: "0.6rem", border: "none", cursor: "pointer", background: "#D1FAE5", color: "#059669", fontWeight: 700, fontSize: "0.8rem" }}>
+                    {accionandoEvento === ev.id ? "..." : "✓ Aprobar newsletter"}
+                  </button>
+                  <button onClick={() => accionarEvento(ev.id, "rechazar")} disabled={accionandoEvento === ev.id}
+                    style={{ padding: "0.4rem 1rem", borderRadius: "0.6rem", border: "none", cursor: "pointer", background: "#FEE2E2", color: "#DC2626", fontWeight: 700, fontSize: "0.8rem" }}>
+                    {accionandoEvento === ev.id ? "..." : "✕ Rechazar"}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Solicitudes */}
