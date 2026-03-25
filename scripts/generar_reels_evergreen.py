@@ -163,10 +163,11 @@ def descargar_foto(url):
     """
     global _places_calls
 
-    # Sustituir clave antigua por la activa
-    old_key = "GOOGLE_API_KEY_REDACTED"
+    # Sustituir cualquier key embebida en la URL por la activa (las URLs en D1 pueden tener claves antiguas)
+    import re
     new_key = os.environ["GOOGLE_PLACES_API_KEY"]
-    url = url.replace(old_key, new_key)
+    url = re.sub(r'[&?]key=[^&]*', '', url).rstrip('?&')
+    url += ('&' if '?' in url else '?') + f'key={new_key}'
 
     # Clave de caché: hash de la URL (sin la API key para que sea estable)
     import hashlib
