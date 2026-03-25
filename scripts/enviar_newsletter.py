@@ -84,20 +84,20 @@ def generar_html_digest(eventos):
             desc += "…"
 
         bloques += f"""
-<tr><td style="padding:0 0 16px;">
+<tr><td style="padding:0 0 12px;">
 <table width="100%" cellpadding="0" cellspacing="0"
-  style="border:1px solid #F5E6D3;border-radius:12px;overflow:hidden;">
-<tr><td style="background:#1E0A2E;padding:20px 24px;">
-  <p style="margin:0 0 6px;font-size:11px;font-weight:700;color:#A78BFA;text-transform:uppercase;letter-spacing:0.12em;">
+  style="border:1px solid #F5E6D3;border-radius:12px;overflow:hidden;background:#ffffff;">
+<tr><td style="padding:20px 24px;">
+  <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#FB923C;text-transform:uppercase;letter-spacing:0.1em;">
     {icon} {fecha_es} &middot; {ev['ciudad']}
   </p>
-  <p style="margin:0 0 8px;font-size:17px;font-weight:800;color:#FFF8EF;line-height:1.3;">
+  <p style="margin:0 0 8px;font-size:17px;font-weight:800;color:#1C1917;line-height:1.3;">
     {ev['nombre']}
   </p>
-  <p style="margin:0 0 14px;font-size:13px;color:#C4B5FD;line-height:1.5;">{desc}</p>
+  <p style="margin:0 0 14px;font-size:13px;color:#78716C;line-height:1.6;">{desc}</p>
   <a href="{BASE_URL}/locales/{ciudad_slug}?evento={ev['id']}"
-     style="display:inline-block;background:#FB923C;color:#1C1917;font-weight:700;
-            font-size:13px;text-decoration:none;padding:8px 18px;border-radius:8px;">
+     style="display:inline-block;background:#FB923C;color:#ffffff;font-weight:700;
+            font-size:13px;text-decoration:none;padding:9px 20px;border-radius:8px;">
     Ver locales cercanos &rarr;
   </a>
 </td></tr>
@@ -111,50 +111,60 @@ def generar_html_digest(eventos):
     return f"""<table width="100%" cellpadding="0" cellspacing="0"
   style="background:#FFF8EF;padding:32px 0;font-family:'Helvetica Neue',Arial,sans-serif;">
 <tr><td align="center">
-<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+<table width="600" cellpadding="0" cellspacing="0"
+  style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;border:1px solid #F5E6D3;">
 
-<tr><td style="background:#1C1917;border-radius:16px 16px 0 0;padding:24px 32px;">
+<!-- HEADER -->
+<tr><td style="padding:24px 32px;border-bottom:1px solid #F5E6D3;">
 <table width="100%" cellpadding="0" cellspacing="0"><tr>
-<td><span style="font-size:20px;font-weight:800;color:#FB923C;letter-spacing:-0.03em;">tresycuarto</span></td>
-<td align="right"><span style="font-size:11px;color:#78716C;">Planes de hoy</span></td>
+<td>
+  <span style="font-size:22px;font-weight:900;color:#1C1917;letter-spacing:-0.03em;">tres</span><span style="font-size:22px;font-weight:900;color:#FB923C;letter-spacing:-0.03em;">y</span><span style="font-size:22px;font-weight:900;color:#1C1917;letter-spacing:-0.03em;">cuarto</span>
+</td>
+<td align="right">
+  <span style="font-size:11px;color:#A8A29E;font-weight:500;">Planes de hoy · 15:15</span>
+</td>
 </tr></table>
 </td></tr>
 
-<tr><td style="background:#292524;padding:28px 32px 20px;">
-<h1 style="margin:0 0 6px;font-size:22px;font-weight:800;color:#FFF8EF;">
-  📅 {n} plan{'es' if n > 1 else ''} en {ciudades_str}
+<!-- INTRO -->
+<tr><td style="padding:28px 32px 8px;">
+<h1 style="margin:0 0 6px;font-size:21px;font-weight:800;color:#1C1917;">
+  {n} plan{'es' if n > 1 else ''} en {ciudades_str}
 </h1>
-<p style="margin:0;font-size:14px;color:#A8A29E;">
+<p style="margin:0;font-size:14px;color:#78716C;line-height:1.5;">
   Esto es lo que viene en tu ciudad. Apúntalo ya.
 </p>
 </td></tr>
 
-<tr><td style="background:#ffffff;padding:24px 32px 8px;">
+<!-- EVENTOS -->
+<tr><td style="padding:16px 32px 8px;">
 <table width="100%" cellpadding="0" cellspacing="0">
 {bloques}
 </table>
 </td></tr>
 
-<tr><td style="background:#FFF8EF;border-top:1px solid #F5E6D3;padding:24px 32px;text-align:center;">
-<table cellpadding="0" cellspacing="0" align="center"><tr>
-<td style="background:#1C1917;border-radius:8px;padding:12px 24px;">
-<a href="{BASE_URL}" style="color:#FFF8EF;font-weight:700;font-size:14px;text-decoration:none;">
+<!-- CTA -->
+<tr><td style="padding:16px 32px 28px;text-align:center;">
+<a href="{BASE_URL}"
+   style="display:inline-block;background:#FB923C;color:#ffffff;font-weight:700;
+          font-size:14px;text-decoration:none;padding:12px 28px;border-radius:8px;">
   Explorar todas las ciudades &rarr;
 </a>
-</td></tr></table>
 </td></tr>
 
-<tr><td style="background:#1C1917;border-radius:0 0 16px 16px;padding:20px 32px;">
+<!-- FOOTER -->
+<tr><td style="padding:20px 32px;border-top:1px solid #F5E6D3;background:#FFF8EF;border-radius:0 0 16px 16px;">
 <table width="100%" cellpadding="0" cellspacing="0"><tr>
 <td>
-  <span style="font-size:15px;font-weight:800;color:#FB923C;">tresycuarto</span><br>
-  <span style="font-size:11px;color:#78716C;">
-    <a href="{BASE_URL}" style="color:#78716C;">tresycuarto.com</a> &middot; Planes de tarde en España
+  <span style="font-size:13px;font-weight:800;color:#1C1917;">tresycuarto</span><br>
+  <span style="font-size:11px;color:#A8A29E;">
+    <a href="{BASE_URL}" style="color:#A8A29E;text-decoration:none;">tresycuarto.com</a>
+    &middot; Cada día a las 15:15
   </span>
 </td>
 <td align="right" style="vertical-align:middle;">
   <a href="{BASE_URL}/api/unsubscribe"
-     style="font-size:11px;color:#57534E;text-decoration:none;">Cancelar suscripci&oacute;n</a>
+     style="font-size:11px;color:#A8A29E;text-decoration:none;">Cancelar suscripci&oacute;n</a>
 </td>
 </tr></table>
 </td></tr>
