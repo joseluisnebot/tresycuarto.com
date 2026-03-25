@@ -133,10 +133,33 @@ def extraer_datos(place):
 # ── Main ──────────────────────────────────────────────────────────────────────
 where_ciudad = f"AND ciudad='{args.ciudad}'" if args.ciudad else ""
 
+# Ciudades prioritarias: Semana Santa + ciudades con muchos eventos
+# Se procesan antes que el resto para tener fotos cuando más tráfico hay
+PRIORIDAD_SQL = """
+    CASE ciudad
+        WHEN 'Sevilla'              THEN 1
+        WHEN 'Malaga'               THEN 2
+        WHEN 'Málaga'               THEN 2
+        WHEN 'Cadiz'                THEN 3
+        WHEN 'Cádiz'                THEN 3
+        WHEN 'Jerez de la Frontera' THEN 4
+        WHEN 'Cordoba'              THEN 5
+        WHEN 'Córdoba'              THEN 5
+        WHEN 'Granada'              THEN 6
+        WHEN 'Valencia'             THEN 7
+        WHEN 'Barcelona'            THEN 8
+        WHEN 'Madrid'               THEN 9
+        WHEN 'Murcia'               THEN 10
+        WHEN 'Vinaros'              THEN 11
+        WHEN 'Vinaròs'              THEN 11
+        ELSE 99
+    END
+"""
+
 locales = d1(
     f"SELECT id, nombre, ciudad, direccion FROM locales "
     f"WHERE rating IS NULL {where_ciudad} "
-    f"ORDER BY ciudad, nombre LIMIT {LIMITE_DIARIO}"
+    f"ORDER BY {PRIORIDAD_SQL}, ciudad, nombre LIMIT {LIMITE_DIARIO}"
 )
 
 total = len(locales)
