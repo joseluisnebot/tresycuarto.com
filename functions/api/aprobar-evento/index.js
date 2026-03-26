@@ -132,7 +132,10 @@ function buildNewsletterHtml(evento, locales) {
   const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
   const fechaEs = `${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
   const icon = evento.tipo === "procesion" ? "⛪" : evento.tipo === "futbol" ? "⚽" : "🎵";
-  const ciudadSlug = evento.ciudad.toLowerCase().replace(/ /g, "-");
+  const ciudadSlug = evento.ciudad.toLowerCase()
+    .replace(/á/g,"a").replace(/é/g,"e").replace(/í/g,"i").replace(/ó/g,"o").replace(/ú/g,"u")
+    .replace(/ü/g,"u").replace(/ñ/g,"n")
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
   const sinUbicacion = locales.some(l => (l.distancia_m ?? -1) < 0);
   const tarjetas = locales.map((l, i) => {

@@ -7,7 +7,8 @@ export async function onRequestGet(context) {
   if (ciudad) {
     const slug = ciudad.toLowerCase()
       .replace(/á/g,"a").replace(/é/g,"e").replace(/í/g,"i").replace(/ó/g,"o").replace(/ú/g,"u")
-      .replace(/ü/g,"u").replace(/ñ/g,"n");
+      .replace(/ü/g,"u").replace(/ñ/g,"n")
+      .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
     return Response.redirect(`https://tresycuarto.com/locales/${slug}`, 301);
   }
 
