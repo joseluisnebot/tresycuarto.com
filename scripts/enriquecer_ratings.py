@@ -138,20 +138,22 @@ where_ciudad = f"AND ciudad='{args.ciudad}'" if args.ciudad else ""
 PRIORIDAD_SQL = """
     CASE ciudad
         WHEN 'Sevilla'              THEN 1
-        WHEN 'Malaga'               THEN 2
         WHEN 'Málaga'               THEN 2
-        WHEN 'Cadiz'                THEN 3
         WHEN 'Cádiz'                THEN 3
         WHEN 'Jerez de la Frontera' THEN 4
-        WHEN 'Cordoba'              THEN 5
         WHEN 'Córdoba'              THEN 5
         WHEN 'Granada'              THEN 6
-        WHEN 'Valencia'             THEN 7
-        WHEN 'Barcelona'            THEN 8
-        WHEN 'Madrid'               THEN 9
-        WHEN 'Murcia'               THEN 10
-        WHEN 'Vinaros'              THEN 11
-        WHEN 'Vinaròs'              THEN 11
+        WHEN 'Valladolid'           THEN 7
+        WHEN 'Zamora'               THEN 8
+        WHEN 'León'                 THEN 9
+        WHEN 'Cuenca'               THEN 10
+        WHEN 'Cartagena'            THEN 11
+        WHEN 'Lorca'                THEN 12
+        WHEN 'Murcia'               THEN 13
+        WHEN 'Valencia'             THEN 14
+        WHEN 'Barcelona'            THEN 15
+        WHEN 'Madrid'               THEN 16
+        WHEN 'Vinaròs'              THEN 17
         ELSE 99
     END
 """

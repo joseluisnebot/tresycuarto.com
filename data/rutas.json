@@ -44,7 +44,12 @@
       "Evita los domingos por la noche, el barrio se vacía pronto",
       "Muchos bares no tienen web ni reservas — es cultura de pasear y entrar donde haya ambiente"
     ],
-    "seo_keywords": ["tardeo Malasaña", "bares Malasaña tarde", "ruta tardeo Madrid centro", "qué hacer tarde Malasaña"]
+    "seo_keywords": [
+      "tardeo Malasaña",
+      "bares Malasaña tarde",
+      "ruta tardeo Madrid centro",
+      "qué hacer tarde Malasaña"
+    ]
   },
   {
     "slug": "tardeo-la-latina-madrid",
@@ -91,7 +96,12 @@
       "Llega antes de las 13:30 los domingos si quieres mesa en terraza",
       "El Rastro cierra a las 15:00 — a partir de ahí el tardeo se dispara"
     ],
-    "seo_keywords": ["tardeo La Latina Madrid", "bares La Latina domingo", "Cava Baja tardeo", "ruta tardeo La Latina"]
+    "seo_keywords": [
+      "tardeo La Latina Madrid",
+      "bares La Latina domingo",
+      "Cava Baja tardeo",
+      "ruta tardeo La Latina"
+    ]
   },
   {
     "slug": "tardeo-lavapies-madrid",
@@ -138,7 +148,12 @@
       "Los precios son notablemente más bajos que en Malasaña o Chueca",
       "Hay mucha música en directo los fines de semana — busca carteles en las puertas"
     ],
-    "seo_keywords": ["tardeo Lavapiés Madrid", "bares Lavapiés tarde", "vinos naturales Lavapiés", "ruta tardeo Lavapiés"]
+    "seo_keywords": [
+      "tardeo Lavapiés Madrid",
+      "bares Lavapiés tarde",
+      "vinos naturales Lavapiés",
+      "ruta tardeo Lavapiés"
+    ]
   },
   {
     "slug": "tardeo-chueca-madrid",
@@ -185,7 +200,12 @@
       "Reserva mesa en terraza si vas en grupo de más de 4 personas",
       "El tardeo de Chueca es de los más caros de Madrid — cuenta con 15-20€ por persona"
     ],
-    "seo_keywords": ["tardeo Chueca Madrid", "bares Chueca tarde", "Plaza de Chueca tardeo", "ruta tardeo Chueca"]
+    "seo_keywords": [
+      "tardeo Chueca Madrid",
+      "bares Chueca tarde",
+      "Plaza de Chueca tardeo",
+      "ruta tardeo Chueca"
+    ]
   },
   {
     "slug": "tardeo-gracia-barcelona",
@@ -198,13 +218,46 @@
     "distancia": "1,0 km",
     "mejor_dia": "Sábado o domingo desde las 13:00",
     "paradas": [
-      { "numero": 1, "nombre": "Plaza de la Virreina", "descripcion": "El punto de partida perfecto. La Virreina tiene una energía especial los fines de semana: terrazas de bares de barrio con vermut de grifo, gente con perros, familias y grupos de amigos. Es el epicentro del tardeo de Gràcia y el mejor sitio para empezar con calma antes de que el barrio se despierte del todo.", "tipo": "Vermut y aperitivo", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 2, "nombre": "Plaza del Sol", "descripcion": "La plaza más animada de Gràcia. El sol de tarde da de lleno en las terrazas y el ambiente va subiendo de intensidad a medida que avanza la tarde. Bares con cañas a buen precio, mucha gente joven y una energía que no encontrarás en otras zonas de Barcelona.", "tipo": "Cañas y sol", "tiempo_hasta_siguiente": "3 min a pie" },
-      { "numero": 3, "nombre": "Calle Verdi y alrededores", "descripcion": "La calle más de moda de Gràcia tiene bares de vinos naturales, locales de cócteles de autor y cafeterías reconvertidas. El ambiente es más alternativo que en las plazas pero igual de agradable.", "tipo": "Vinos y cócteles", "tiempo_hasta_siguiente": "5 min a pie" },
-      { "numero": 4, "nombre": "Plaza de la Fontana", "descripcion": "Para cerrar la ruta, la Plaza de la Fontana es el punto de encuentro de los vecinos de toda la vida del barrio. Menos turismo que en la Virreina o el Sol, precios más razonables y un ambiente 100% barcelonés.", "tipo": "Cierre de tarde", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Plaza de la Virreina",
+        "descripcion": "El punto de partida perfecto. La Virreina tiene una energía especial los fines de semana: terrazas de bares de barrio con vermut de grifo, gente con perros, familias y grupos de amigos. Es el epicentro del tardeo de Gràcia y el mejor sitio para empezar con calma antes de que el barrio se despierte del todo.",
+        "tipo": "Vermut y aperitivo",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza del Sol",
+        "descripcion": "La plaza más animada de Gràcia. El sol de tarde da de lleno en las terrazas y el ambiente va subiendo de intensidad a medida que avanza la tarde. Bares con cañas a buen precio, mucha gente joven y una energía que no encontrarás en otras zonas de Barcelona.",
+        "tipo": "Cañas y sol",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Verdi y alrededores",
+        "descripcion": "La calle más de moda de Gràcia tiene bares de vinos naturales, locales de cócteles de autor y cafeterías reconvertidas. El ambiente es más alternativo que en las plazas pero igual de agradable.",
+        "tipo": "Vinos y cócteles",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Plaza de la Fontana",
+        "descripcion": "Para cerrar la ruta, la Plaza de la Fontana es el punto de encuentro de los vecinos de toda la vida del barrio. Menos turismo que en la Virreina o el Sol, precios más razonables y un ambiente 100% barcelonés.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["Los domingos el barrio está especialmente tranquilo y agradable", "Muchos bares de Gràcia no tienen reservas — llega pronto si quieres terraza en verano", "El barrio es completamente plano y muy caminable"],
-    "seo_keywords": ["tardeo Gràcia Barcelona", "bares Gràcia tarde", "ruta tardeo Barcelona", "qué hacer tarde Gràcia"]
+    "consejos": [
+      "Los domingos el barrio está especialmente tranquilo y agradable",
+      "Muchos bares de Gràcia no tienen reservas — llega pronto si quieres terraza en verano",
+      "El barrio es completamente plano y muy caminable"
+    ],
+    "seo_keywords": [
+      "tardeo Gràcia Barcelona",
+      "bares Gràcia tarde",
+      "ruta tardeo Barcelona",
+      "qué hacer tarde Gràcia"
+    ]
   },
   {
     "slug": "tardeo-el-born-barcelona",
@@ -217,13 +270,46 @@
     "distancia": "1,1 km",
     "mejor_dia": "Viernes tarde o sábado desde las 17:00",
     "paradas": [
-      { "numero": 1, "nombre": "Paseo del Born", "descripcion": "El eje central del barrio. El Paseo del Born tiene bares con terraza en ambos lados, con la antigua estación de mercado de fondo. El ambiente es cosmopolita y el nivel de los cócteles es notablemente alto.", "tipo": "Cócteles y ambiente", "tiempo_hasta_siguiente": "5 min a pie" },
-      { "numero": 2, "nombre": "Calle del Rec y Carders", "descripcion": "Las calles más características del Born tardío. Bares pequeños con mucha personalidad, música a bajo volumen y una clientela muy definida. Aquí está la esencia del tardeo de El Born.", "tipo": "Bares de barrio", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 3, "nombre": "Plaza de Santa María del Mar", "descripcion": "La catedral gótica más bella de Barcelona preside esta plaza que a partir de las 17:00 se llena de gente. Los bares de alrededor tienen terrazas con vistas a la fachada iluminada y ofrecen algunos de los mejores vinos de la ciudad.", "tipo": "Terrazas con vistas", "tiempo_hasta_siguiente": "3 min a pie" },
-      { "numero": 4, "nombre": "Calle Montcada", "descripcion": "La calle medieval más famosa de Barcelona tiene bodegas con siglos de historia donde el vino se sirve directamente del barril. Un final de ruta entre la Barcelona más auténtica y atemporal.", "tipo": "Bodegas históricas", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Paseo del Born",
+        "descripcion": "El eje central del barrio. El Paseo del Born tiene bares con terraza en ambos lados, con la antigua estación de mercado de fondo. El ambiente es cosmopolita y el nivel de los cócteles es notablemente alto.",
+        "tipo": "Cócteles y ambiente",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle del Rec y Carders",
+        "descripcion": "Las calles más características del Born tardío. Bares pequeños con mucha personalidad, música a bajo volumen y una clientela muy definida. Aquí está la esencia del tardeo de El Born.",
+        "tipo": "Bares de barrio",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza de Santa María del Mar",
+        "descripcion": "La catedral gótica más bella de Barcelona preside esta plaza que a partir de las 17:00 se llena de gente. Los bares de alrededor tienen terrazas con vistas a la fachada iluminada y ofrecen algunos de los mejores vinos de la ciudad.",
+        "tipo": "Terrazas con vistas",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Montcada",
+        "descripcion": "La calle medieval más famosa de Barcelona tiene bodegas con siglos de historia donde el vino se sirve directamente del barril. Un final de ruta entre la Barcelona más auténtica y atemporal.",
+        "tipo": "Bodegas históricas",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["El Born se llena mucho en verano — mejor ir entre semana o llegar antes de las 17:00", "Los bares del Paseo del Born son caros — cuenta con 12-15€ por copa", "La Barceloneta está a 10 minutos a pie para cerrar con una caña frente al mar"],
-    "seo_keywords": ["tardeo El Born Barcelona", "bares El Born tarde", "ruta tardeo El Born", "cócteles Born Barcelona"]
+    "consejos": [
+      "El Born se llena mucho en verano — mejor ir entre semana o llegar antes de las 17:00",
+      "Los bares del Paseo del Born son caros — cuenta con 12-15€ por copa",
+      "La Barceloneta está a 10 minutos a pie para cerrar con una caña frente al mar"
+    ],
+    "seo_keywords": [
+      "tardeo El Born Barcelona",
+      "bares El Born tarde",
+      "ruta tardeo El Born",
+      "cócteles Born Barcelona"
+    ]
   },
   {
     "slug": "tardeo-ruzafa-valencia",
@@ -236,13 +322,46 @@
     "distancia": "1,2 km",
     "mejor_dia": "Sábado o domingo desde las 13:00",
     "paradas": [
-      { "numero": 1, "nombre": "Calle Cadiz y Doctor Serrano", "descripcion": "El cruce de estas dos calles es el corazón de Ruzafa. Terrazas a rebosar, vermut de grifo y la energía característica del barrio desde primera hora de la tarde.", "tipo": "Vermut y aperitivo", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 2, "nombre": "Calle Sueca", "descripcion": "La calle más gastronómica de Ruzafa tiene bares de tapas creativas, restaurantes de fusión y locales de cócteles. La calidad aquí es alta y los precios razonables para lo que ofrecen.", "tipo": "Tapas y cócteles", "tiempo_hasta_siguiente": "3 min a pie" },
-      { "numero": 3, "nombre": "Plaza de Ruzafa", "descripcion": "La plaza del barrio es el punto de encuentro natural de los vecinos y el lugar donde el tardeo se convierte en evento social. El ambiente aquí dura hasta bien entrada la noche.", "tipo": "Terrazas y ambiente", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 4, "nombre": "Calle Puerto Rico y alrededores", "descripcion": "Los bares más nocturnos de Ruzafa con DJ desde las 19:00 y cócteles más elaborados. Si el tardeo va a convertirse en noche, aquí empieza esa transición.", "tipo": "Cierre y noche", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Calle Cadiz y Doctor Serrano",
+        "descripcion": "El cruce de estas dos calles es el corazón de Ruzafa. Terrazas a rebosar, vermut de grifo y la energía característica del barrio desde primera hora de la tarde.",
+        "tipo": "Vermut y aperitivo",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Sueca",
+        "descripcion": "La calle más gastronómica de Ruzafa tiene bares de tapas creativas, restaurantes de fusión y locales de cócteles. La calidad aquí es alta y los precios razonables para lo que ofrecen.",
+        "tipo": "Tapas y cócteles",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza de Ruzafa",
+        "descripcion": "La plaza del barrio es el punto de encuentro natural de los vecinos y el lugar donde el tardeo se convierte en evento social. El ambiente aquí dura hasta bien entrada la noche.",
+        "tipo": "Terrazas y ambiente",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Puerto Rico y alrededores",
+        "descripcion": "Los bares más nocturnos de Ruzafa con DJ desde las 19:00 y cócteles más elaborados. Si el tardeo va a convertirse en noche, aquí empieza esa transición.",
+        "tipo": "Cierre y noche",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["Ruzafa es un barrio muy caminable — todo está a menos de 15 minutos andando", "Los domingos hay mercadillo en la zona — llega antes de las 14:00 para verlo", "Los precios son más altos que en otros barrios de Valencia pero la calidad también"],
-    "seo_keywords": ["tardeo Ruzafa Valencia", "bares Ruzafa tarde", "ruta tardeo Valencia", "qué hacer tarde Ruzafa"]
+    "consejos": [
+      "Ruzafa es un barrio muy caminable — todo está a menos de 15 minutos andando",
+      "Los domingos hay mercadillo en la zona — llega antes de las 14:00 para verlo",
+      "Los precios son más altos que en otros barrios de Valencia pero la calidad también"
+    ],
+    "seo_keywords": [
+      "tardeo Ruzafa Valencia",
+      "bares Ruzafa tarde",
+      "ruta tardeo Valencia",
+      "qué hacer tarde Ruzafa"
+    ]
   },
   {
     "slug": "tardeo-el-carmen-valencia",
@@ -255,12 +374,39 @@
     "distancia": "0,9 km",
     "mejor_dia": "Viernes o sábado tarde desde las 17:00",
     "paradas": [
-      { "numero": 1, "nombre": "Torres de Serranos", "descripcion": "El punto de entrada al barrio desde el norte. Los bares alrededor de las Torres tienen terraza con vistas a las murallas medievales — uno de los escenarios más fotogénicos del tardeo valenciano.", "tipo": "Aperitivo con vistas", "tiempo_hasta_siguiente": "5 min a pie" },
-      { "numero": 2, "nombre": "Calle Alta y Baja", "descripcion": "Las dos calles más emblemáticas del Carmen corren paralelas por el corazón del barrio. Decenas de bares se suceden uno tras otro — desde los más clásicos hasta los más alternativos.", "tipo": "Bares alternativos", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 3, "nombre": "Plaza del Tossal", "descripcion": "La plaza más animada del Carmen con bares con terraza muy populares y un ambiente festivo que empieza temprano. Precios razonables y ambiente muy local.", "tipo": "Terrazas y ambiente", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Torres de Serranos",
+        "descripcion": "El punto de entrada al barrio desde el norte. Los bares alrededor de las Torres tienen terraza con vistas a las murallas medievales — uno de los escenarios más fotogénicos del tardeo valenciano.",
+        "tipo": "Aperitivo con vistas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Alta y Baja",
+        "descripcion": "Las dos calles más emblemáticas del Carmen corren paralelas por el corazón del barrio. Decenas de bares se suceden uno tras otro — desde los más clásicos hasta los más alternativos.",
+        "tipo": "Bares alternativos",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza del Tossal",
+        "descripcion": "La plaza más animada del Carmen con bares con terraza muy populares y un ambiente festivo que empieza temprano. Precios razonables y ambiente muy local.",
+        "tipo": "Terrazas y ambiente",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["El Carmen es más nocturno que Ruzafa — el tardeo empieza más tarde, sobre las 17:00-18:00", "Las calles son estrechas y empedradas — mejor con calzado cómodo", "Entre semana el barrio es más de vecinos y menos turístico"],
-    "seo_keywords": ["tardeo El Carmen Valencia", "bares El Carmen tarde", "ruta tardeo Valencia centro", "bares casco histórico Valencia"]
+    "consejos": [
+      "El Carmen es más nocturno que Ruzafa — el tardeo empieza más tarde, sobre las 17:00-18:00",
+      "Las calles son estrechas y empedradas — mejor con calzado cómodo",
+      "Entre semana el barrio es más de vecinos y menos turístico"
+    ],
+    "seo_keywords": [
+      "tardeo El Carmen Valencia",
+      "bares El Carmen tarde",
+      "ruta tardeo Valencia centro",
+      "bares casco histórico Valencia"
+    ]
   },
   {
     "slug": "tardeo-triana-sevilla",
@@ -273,13 +419,46 @@
     "distancia": "1,1 km",
     "mejor_dia": "Domingo desde las 13:00 o sábado tarde",
     "paradas": [
-      { "numero": 1, "nombre": "Calle Betis", "descripcion": "La calle más famosa de Triana discurre paralela al Guadalquivir con vistas al centro histórico de Sevilla. Sus bares de tapas y terrazas frente al agua ofrecen uno de los tardeos con más encanto de toda España. Empieza aquí con una manzanilla y unas tapas.", "tipo": "Tapas frente al río", "tiempo_hasta_siguiente": "5 min a pie" },
-      { "numero": 2, "nombre": "Plaza del Altozano", "descripcion": "El corazón de Triana. La plaza donde se juntan los vecinos del barrio y donde los sevillanos se toman el vermut del domingo. Los bares alrededor tienen tapas de calidad a precios de barrio.", "tipo": "Vermut de barrio", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 3, "nombre": "Calle San Jacinto", "descripcion": "La calle comercial de Triana se transforma por la tarde en un paseo de bares con terraza. Mezcla de locales clásicos con algunos más modernos y precios muy razonables.", "tipo": "Cañas y tapas", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 4, "nombre": "Mercado de Triana y alrededores", "descripcion": "El entorno del Mercado de Triana tiene algunos de los bares más auténticos del barrio. El mercado tiene puestos de tapas que funcionan hasta bien entrada la tarde.", "tipo": "Cierre de tarde", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Calle Betis",
+        "descripcion": "La calle más famosa de Triana discurre paralela al Guadalquivir con vistas al centro histórico de Sevilla. Sus bares de tapas y terrazas frente al agua ofrecen uno de los tardeos con más encanto de toda España. Empieza aquí con una manzanilla y unas tapas.",
+        "tipo": "Tapas frente al río",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza del Altozano",
+        "descripcion": "El corazón de Triana. La plaza donde se juntan los vecinos del barrio y donde los sevillanos se toman el vermut del domingo. Los bares alrededor tienen tapas de calidad a precios de barrio.",
+        "tipo": "Vermut de barrio",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle San Jacinto",
+        "descripcion": "La calle comercial de Triana se transforma por la tarde en un paseo de bares con terraza. Mezcla de locales clásicos con algunos más modernos y precios muy razonables.",
+        "tipo": "Cañas y tapas",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Mercado de Triana y alrededores",
+        "descripcion": "El entorno del Mercado de Triana tiene algunos de los bares más auténticos del barrio. El mercado tiene puestos de tapas que funcionan hasta bien entrada la tarde.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["El domingo es el mejor día para Triana — los sevillanos llenan el barrio desde las 13:00", "La calle Betis en verano puede estar muy concurrida — mejor en primavera u otoño", "Las tapas en Triana son gratuitas con la consumición en muchos bares"],
-    "seo_keywords": ["tardeo Triana Sevilla", "bares Triana tarde", "ruta tardeo Sevilla", "tapas Triana domingo"]
+    "consejos": [
+      "El domingo es el mejor día para Triana — los sevillanos llenan el barrio desde las 13:00",
+      "La calle Betis en verano puede estar muy concurrida — mejor en primavera u otoño",
+      "Las tapas en Triana son gratuitas con la consumición en muchos bares"
+    ],
+    "seo_keywords": [
+      "tardeo Triana Sevilla",
+      "bares Triana tarde",
+      "ruta tardeo Sevilla",
+      "tapas Triana domingo"
+    ]
   },
   {
     "slug": "tardeo-alameda-sevilla",
@@ -292,12 +471,45 @@
     "distancia": "0,8 km",
     "mejor_dia": "Sábado o domingo desde las 16:00",
     "paradas": [
-      { "numero": 1, "nombre": "Extremo sur de la Alameda", "descripcion": "Las columnas de Hércules marcan el inicio de este paseo único. Los bares del extremo sur son los más clásicos — tabernas con décadas de historia, mesas en la calle y una clientela fiel de toda la vida.", "tipo": "Tabernas clásicas", "tiempo_hasta_siguiente": "5 min a pie" },
-      { "numero": 2, "nombre": "Centro del paseo", "descripcion": "El tramo central concentra la mayor variedad de bares. Terrazas que ocupan el paseo central, música a volumen moderado y el ambiente más diverso de toda Sevilla.", "tipo": "Terrazas y ambiente", "tiempo_hasta_siguiente": "4 min a pie" },
-      { "numero": 3, "nombre": "Calles adyacentes: Amor de Dios y Peris Mencheta", "descripcion": "Las calles que rodean la Alameda tienen los bares más alternativos. Vinos naturales, cócteles de autor, música indie y flamenco conviven en estas callejuelas que a partir de las 18:00 se llenan de gente.", "tipo": "Alternativo y diverso", "tiempo_hasta_siguiente": "3 min a pie" },
-      { "numero": 4, "nombre": "Extremo norte de la Alameda", "descripcion": "El extremo más nocturno con DJ desde las 19:00 y locales que abren hasta las 3:00. Para cerrar la ruta aquí es asumir que el tardeo ya no terminará hasta bien entrada la noche.", "tipo": "Cierre y noche", "tiempo_hasta_siguiente": null }
+      {
+        "numero": 1,
+        "nombre": "Extremo sur de la Alameda",
+        "descripcion": "Las columnas de Hércules marcan el inicio de este paseo único. Los bares del extremo sur son los más clásicos — tabernas con décadas de historia, mesas en la calle y una clientela fiel de toda la vida.",
+        "tipo": "Tabernas clásicas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Centro del paseo",
+        "descripcion": "El tramo central concentra la mayor variedad de bares. Terrazas que ocupan el paseo central, música a volumen moderado y el ambiente más diverso de toda Sevilla.",
+        "tipo": "Terrazas y ambiente",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calles adyacentes: Amor de Dios y Peris Mencheta",
+        "descripcion": "Las calles que rodean la Alameda tienen los bares más alternativos. Vinos naturales, cócteles de autor, música indie y flamenco conviven en estas callejuelas que a partir de las 18:00 se llenan de gente.",
+        "tipo": "Alternativo y diverso",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Extremo norte de la Alameda",
+        "descripcion": "El extremo más nocturno con DJ desde las 19:00 y locales que abren hasta las 3:00. Para cerrar la ruta aquí es asumir que el tardeo ya no terminará hasta bien entrada la noche.",
+        "tipo": "Cierre y noche",
+        "tiempo_hasta_siguiente": null
+      }
     ],
-    "consejos": ["La Alameda es muy abierta y acogedora para todo el mundo", "Los domingos hay mercadillo de segunda mano en el paseo — llega antes de las 14:00", "En verano el calor de Sevilla es intenso — mejor esperar a las 18:00 para empezar"],
-    "seo_keywords": ["tardeo Alameda Sevilla", "bares Alameda Hércules tarde", "ruta tardeo Sevilla alternativo", "tardeo Sevilla centro"]
+    "consejos": [
+      "La Alameda es muy abierta y acogedora para todo el mundo",
+      "Los domingos hay mercadillo de segunda mano en el paseo — llega antes de las 14:00",
+      "En verano el calor de Sevilla es intenso — mejor esperar a las 18:00 para empezar"
+    ],
+    "seo_keywords": [
+      "tardeo Alameda Sevilla",
+      "bares Alameda Hércules tarde",
+      "ruta tardeo Sevilla alternativo",
+      "tardeo Sevilla centro"
+    ]
   }
 ]

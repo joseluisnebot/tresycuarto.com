@@ -23,34 +23,39 @@ type CiudadInfo = {
 };
 const CIUDAD_CONTENT = ciudadContentData as Record<string, CiudadInfo>;
 
-type RutaInfo = { slug: string; titulo: string; barrio: string; duracion: string; mejor_dia: string };
-const RUTAS_POR_CIUDAD: Record<string, RutaInfo[]> = {};
-for (const r of rutasData as (RutaInfo & { ciudad: string })[]) {
+type Ruta = {
+  slug: string;
+  titulo: string;
+  ciudad: string;
+  ciudad_slug: string;
+  barrio: string;
+  intro: string;
+  duracion: string;
+  distancia: string;
+  mejor_dia: string;
+  paradas: { numero: number; nombre: string; descripcion: string; tipo: string; tiempo_hasta_siguiente: string | null }[];
+  consejos?: string[];
+  seo_keywords?: string[];
+};
+
+// Group rutas by city name
+const RUTAS_POR_CIUDAD: Record<string, Ruta[]> = {};
+for (const r of rutasData as Ruta[]) {
   if (!RUTAS_POR_CIUDAD[r.ciudad]) RUTAS_POR_CIUDAD[r.ciudad] = [];
   RUTAS_POR_CIUDAD[r.ciudad].push(r);
 }
 
-// Calcula las N ciudades más cercanas a una ciudad dada usando coordenadas de ciudad-content.json
-function ciudadesCercanas(nombreActual: string, n = 5): string[] {
-  const coords = (CIUDAD_CONTENT[nombreActual] as CiudadInfo | undefined)?.coords;
-  if (!coords) {
-    // Sin coordenadas: devolver las primeras N ciudades (fallback)
-    return (citiesData as { nombre: string }[]).filter(c => c.nombre !== nombreActual).slice(0, n).map(c => c.nombre);
-  }
-  const toRad = (d: number) => (d * Math.PI) / 180;
-  const distancia = (lat2: number, lon2: number) => {
-    const dLat = toRad(lat2 - coords.lat);
-    const dLon = toRad(lon2 - coords.lon);
-    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(coords.lat)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
-    return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  };
-  return (citiesData as { nombre: string }[])
-    .filter(c => c.nombre !== nombreActual && (CIUDAD_CONTENT[c.nombre] as CiudadInfo | undefined)?.coords)
-    .map(c => ({ nombre: c.nombre, dist: distancia((CIUDAD_CONTENT[c.nombre] as CiudadInfo).coords!.lat, (CIUDAD_CONTENT[c.nombre] as CiudadInfo).coords!.lon) }))
-    .sort((a, b) => a.dist - b.dist)
-    .slice(0, n)
-    .map(c => c.nombre);
-}
+const DIAS = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
+const TIPO_LABEL: Record<string, string> = {
+  bar: "Bar", pub: "Pub", cafe: "Cafetería", biergarten: "Terraza",
+};
+
+const TIPO_EVENTO_ICON: Record<string, string> = {
+  procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵",
+  festival: "🎪", deporte: "⚽", escena: "🎭", mercado: "🛍️", otro: "📅",
+};
 
 function ciudadSlug(ciudad: string): string {
   return ciudad
@@ -58,7 +63,31 @@ function ciudadSlug(ciudad: string): string {
     .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-const WMO_ICON: Record<number, string> = {};
+function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 12742;
+  const toRad = (d: number) => d * Math.PI / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function getCiudadesCercanas(ciudad: string, n = 5): string[] {
+  const coords = CIUDAD_CONTENT[ciudad]?.coords;
+  if (!coords) {
+    return (citiesData as { nombre: string }[]).filter(c => c.nombre !== ciudad).slice(0, n).map(c => c.nombre);
+  }
+  return (citiesData as { nombre: string }[])
+    .filter(c => c.nombre !== ciudad && CIUDAD_CONTENT[c.nombre]?.coords)
+    .map(c => ({
+      nombre: c.nombre,
+      dist: haversineKm(coords.lat, coords.lon, CIUDAD_CONTENT[c.nombre]!.coords!.lat, CIUDAD_CONTENT[c.nombre]!.coords!.lon),
+    }))
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, n)
+    .map(c => c.nombre);
+}
+
 function wmoIcon(code: number): string {
   if (code === 0) return "☀️";
   if (code <= 2) return "🌤️";
@@ -71,30 +100,33 @@ function wmoIcon(code: number): string {
   return "⛈️";
 }
 
-const DIAS = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
-
-const TIPO_LABEL: Record<string, string> = {
-  bar: "Bar", pub: "Pub", cafe: "Cafetería", biergarten: "Terraza",
-};
-
 type Local = {
   id: string; nombre: string; tipo: string; ciudad: string;
-  direccion: string; horario: string | null; telefono: string | null;
-  web: string | null; instagram: string | null; terraza: number;
-  lat: number | null; lon: number | null; descripcion: string | null;
-  rating: number | null; rating_count: number | null;
-  photo_url: string | null; price_level: string | null;
-  horario_google: string | null; descripcion_google: string | null;
-  live_music: number; outdoor_seating: number;
+  direccion: string; horario: string | null; horario_google: string | null;
+  telefono: string | null; web: string | null; instagram: string | null;
+  terraza: number; outdoor_seating?: number; live_music?: number;
+  lat: number | null; lon: number | null;
+  descripcion: string | null; descripcion_google?: string | null;
+  photo_url?: string | null; rating?: number | null; rating_count?: number | null;
+  price_level?: string | null;
+};
+
+type Evento = {
+  id: number; nombre: string; tipo: string; ciudad: string;
+  fecha: string; hora_inicio: string | null; direccion: string | null;
+  descripcion: string | null; lat: number | null; lon: number | null;
+  radio_m: number | null;
+};
+
+type EventoSeleccionado = {
+  evento: Evento;
+  locales: Local[];
+  lat: number | null;
+  lon: number | null;
+  radio: number;
 };
 
 type WeatherDay = { time: string; temperature_2m_max: number; weathercode: number };
-type EventoGeo = { id: string; nombre: string; tipo: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; descripcion: string; radio_m?: number };
-type LocalEvento = { id: string; nombre: string; tipo: string; direccion: string | null; horario: string | null; terraza: number; web: string | null; instagram: string | null; lat: number | null; lon: number | null; distancia_m: number };
-type EventoFiltro = { evento: EventoGeo; locales: LocalEvento[]; lat: number; lon: number; radio: number };
-
-const TIPO_ICON_EV: Record<string, string> = { procesion: "⛪", feria: "🎡", concierto: "🎵", música: "🎵", festival: "🎪", deporte: "⚽", escena: "🎭", mercado: "🛍️", otro: "📅" };
-const MESES_EV = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
 const LIMIT = 24;
 
@@ -106,7 +138,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
 
   const [locales, setLocales] = useState<Local[]>([]);
   const [total, setTotal] = useState(0);
-  const [totalCiudad, setTotalCiudad] = useState<number | null>(null); // total sin filtrar
+  const [totalCiudad, setTotalCiudad] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
   const [filtroTipo, setFiltroTipo] = useState("");
@@ -114,57 +146,75 @@ export default function CiudadPage({ slug }: { slug: string }) {
   const [weather, setWeather] = useState<WeatherDay[] | null>(null);
   const [email, setEmail] = useState("");
   const [subscribeStatus, setSubscribeStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
-  const [eventos, setEventos] = useState<EventoGeo[]>([]);
-  const [cercanas, setCercanas] = useState<string[]>([]);
-  const [eventoFiltro, setEventoFiltro] = useState<EventoFiltro | null>(null);
-  const [loadingEvento, setLoadingEvento] = useState<string | null>(null);
+  const [eventos, setEventos] = useState<Evento[]>([]);
+  const [ciudadesCercanas, setCiudadesCercanas] = useState<string[]>([]);
+  const [eventoSeleccionado, setEventoSeleccionado] = useState<EventoSeleccionado | null>(null);
+  const [cargandoEventoId, setCargandoEventoId] = useState<number | null>(null);
 
-  async function seleccionarEvento(ev: EventoGeo) {
-    if (eventoFiltro?.evento.id === ev.id) { setEventoFiltro(null); return; }
-    setLoadingEvento(ev.id);
+  async function handleClickEvento(evento: Evento) {
+    if (eventoSeleccionado?.evento.id === evento.id) {
+      setEventoSeleccionado(null);
+      return;
+    }
+    setCargandoEventoId(evento.id);
     try {
-      const d = await fetch(`/api/eventos/${ev.id}/locales`).then(r => r.json());
-      if (d.locales && d.evento) {
-        setEventoFiltro({ evento: ev, locales: d.locales, lat: d.evento.lat, lon: d.evento.lon, radio: d.evento.radio_m ?? 400 });
+      const r = await fetch(`/api/eventos/${evento.id}/locales`).then(r => r.json());
+      if (r.locales && r.evento) {
+        setEventoSeleccionado({
+          evento,
+          locales: r.locales,
+          lat: r.evento.lat,
+          lon: r.evento.lon,
+          radio: r.evento.radio_m ?? 400,
+        });
       }
-    } finally { setLoadingEvento(null); }
+    } finally {
+      setCargandoEventoId(null);
+    }
   }
 
   async function seleccionarEventoPorId(id: string) {
-    setLoadingEvento(id);
+    setCargandoEventoId(Number(id));
     try {
-      const d = await fetch(`/api/eventos/${id}/locales`).then(r => r.json());
-      if (d.locales && d.evento) {
-        const ev: EventoGeo = {
-          id: d.evento.id, nombre: d.evento.nombre, tipo: d.evento.tipo || "otro",
-          ciudad: d.evento.ciudad || nombreCiudad, fecha: d.evento.fecha || "",
-          hora_inicio: d.evento.hora_inicio, direccion: d.evento.direccion,
-          descripcion: d.evento.descripcion || "", radio_m: d.evento.radio_m,
+      const r = await fetch(`/api/eventos/${id}/locales`).then(r => r.json());
+      if (r.locales && r.evento) {
+        const evt: Evento = {
+          id: r.evento.id, nombre: r.evento.nombre,
+          tipo: r.evento.tipo || "otro", ciudad: r.evento.ciudad || nombreCiudad,
+          fecha: r.evento.fecha || "", hora_inicio: r.evento.hora_inicio,
+          direccion: r.evento.direccion, descripcion: r.evento.descripcion || "",
+          radio_m: r.evento.radio_m, lat: r.evento.lat, lon: r.evento.lon,
         };
-        setEventoFiltro({ evento: ev, locales: d.locales, lat: d.evento.lat, lon: d.evento.lon, radio: d.evento.radio_m ?? 400 });
+        setEventoSeleccionado({
+          evento: evt, locales: r.locales,
+          lat: r.evento.lat, lon: r.evento.lon, radio: r.evento.radio_m ?? 400,
+        });
       }
-    } finally { setLoadingEvento(null); }
+    } finally {
+      setCargandoEventoId(null);
+    }
   }
 
-  // Auto-seleccionar evento si viene ?evento=ID en la URL
+  // Auto-select event from URL ?evento=ID
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const eventoId = params.get("evento");
+    const eventoId = new URLSearchParams(window.location.search).get("evento");
     if (eventoId) seleccionarEventoPorId(eventoId);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Ciudades cercanas: calcular solo en cliente para evitar mismatch SSR
+  // Nearby cities by haversine
   useEffect(() => {
-    setCercanas(ciudadesCercanas(nombreCiudad, 5));
+    setCiudadesCercanas(getCiudadesCercanas(nombreCiudad, 5));
   }, [nombreCiudad]);
 
+  // Load upcoming events for this city
   useEffect(() => {
     fetch(`/api/eventos?ciudad=${encodeURIComponent(nombreCiudad)}&limit=5`)
-      .then(r => r.json()).then(d => setEventos(d.eventos || [])).catch(() => {});
+      .then(r => r.json())
+      .then(d => setEventos(d.eventos || []))
+      .catch(() => {});
   }, [nombreCiudad]);
 
-  // Tiempo meteorológico
+  // Weather
   useEffect(() => {
     const coords = content?.coords;
     if (!coords) return;
@@ -182,7 +232,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
       .catch(() => {});
   }, [content]);
 
-  // Total sin filtrar (solo al montar, para saber si la ciudad tiene datos)
+  // Total sin filtrar
   useEffect(() => {
     fetch(`/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&limit=1&offset=0`)
       .then(r => r.json())
@@ -269,18 +319,16 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
       </div>
 
-      {/* Selector de ciudades cercanas */}
+      {/* Ciudades cercanas por proximidad */}
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.4rem", padding: "0.75rem 1.5rem 0" }}>
         <a href={`/locales/${slug}`} style={{
           fontSize: "0.8rem", fontWeight: 600, padding: "0.3rem 0.8rem", borderRadius: "999px",
-          background: "#7C3AED", color: "white",
-          border: "1.5px solid transparent", textDecoration: "none",
+          background: "#7C3AED", color: "white", border: "1.5px solid transparent", textDecoration: "none",
         }}>{nombreCiudad}</a>
-        {cercanas.map(c => (
+        {ciudadesCercanas.map(c => (
           <a key={c} href={`/locales/${ciudadSlug(c)}`} style={{
             fontSize: "0.8rem", fontWeight: 600, padding: "0.3rem 0.8rem", borderRadius: "999px",
-            background: "#EDE9FE", color: "#7C3AED",
-            border: "1.5px solid transparent", textDecoration: "none",
+            background: "#EDE9FE", color: "#7C3AED", border: "1.5px solid transparent", textDecoration: "none",
           }}>{c}</a>
         ))}
       </div>
@@ -309,7 +357,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           </div>
         )}
 
-        {/* Filtros — visibles siempre que la ciudad tenga datos */}
+        {/* Filtros */}
         {!noData && totalCiudad !== null && totalCiudad > 0 && (
           <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
             {(["", "bar", "pub", "cafe"] as const).map(t => (
@@ -333,7 +381,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           </div>
         )}
 
-        {/* Sin resultados con filtro activo */}
+        {/* Sin resultados con filtro */}
         {sinResultadosFiltro && (
           <div style={{ textAlign: "center", padding: "3rem 1rem", color: "#78716C" }}>
             <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>🔍</div>
@@ -363,7 +411,6 @@ export default function CiudadPage({ slug }: { slug: string }) {
             <p style={{ color: "#78716C", maxWidth: "400px", margin: "0.5rem auto 1.5rem", lineHeight: 1.6 }}>
               Estamos mapeando los mejores locales de tardeo en {nombreCiudad}. Déjanos tu email y te avisamos cuando estén listos.
             </p>
-
             {subscribeStatus === "ok" ? (
               <div style={{
                 background: "#F0FDF4", border: "1.5px solid #86EFAC", borderRadius: "1rem",
@@ -440,51 +487,70 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
 
         {/* Mapa */}
-        {!loading && (locales.length > 0 || eventoFiltro) && (
+        {!loading && (locales.length > 0 || eventoSeleccionado) && (
           <MapaLocales
-            locales={eventoFiltro ? eventoFiltro.locales : locales}
+            locales={eventoSeleccionado ? eventoSeleccionado.locales : locales}
             ciudad={nombreCiudad}
-            eventoPin={eventoFiltro ? { lat: eventoFiltro.lat, lon: eventoFiltro.lon, radio: eventoFiltro.radio, nombre: eventoFiltro.evento.nombre } : null}
+            eventoPin={eventoSeleccionado ? {
+              lat: eventoSeleccionado.lat,
+              lon: eventoSeleccionado.lon,
+              radio: eventoSeleccionado.radio,
+              nombre: eventoSeleccionado.evento.nombre,
+            } : null}
           />
         )}
 
-        {/* Eventos próximos en esta ciudad */}
+        {/* Eventos próximos */}
         {eventos.length > 0 && (
-          <div style={{ background: "white", borderRadius: "1.25rem", border: "1px solid #F5E6D3", padding: "1.25rem", marginBottom: "1.5rem" }}>
+          <div style={{
+            background: "white", borderRadius: "1.25rem", border: "1px solid #F5E6D3",
+            padding: "1.25rem", marginBottom: "1.5rem",
+          }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.85rem" }}>
-              <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#1C1917" }}>📅 Próximos eventos en {nombreCiudad}</h3>
-              <a href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>Ver todos →</a>
+              <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#1C1917" }}>
+                📅 Próximos eventos en {nombreCiudad}
+              </h3>
+              <a href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>
+                Ver todos →
+              </a>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {eventos.map(ev => {
-                const d = new Date(ev.fecha + "T12:00:00");
-                const fechaEs = `${d.getDate()} de ${MESES_EV[d.getMonth()]}`;
-                const activo = eventoFiltro?.evento.id === ev.id;
+              {eventos.map(evento => {
+                const fecha = new Date(evento.fecha + "T12:00:00");
+                const fechaStr = `${fecha.getDate()} de ${MESES[fecha.getMonth()]}`;
+                const seleccionado = eventoSeleccionado?.evento.id === evento.id;
                 return (
-                  <div key={ev.id}
-                    onClick={() => seleccionarEvento(ev)}
+                  <div
+                    key={evento.id}
+                    onClick={() => handleClickEvento(evento)}
                     style={{
                       display: "flex", gap: "0.75rem", alignItems: "flex-start",
                       padding: "0.65rem 0.75rem", borderRadius: "0.75rem", cursor: "pointer",
-                      background: activo ? "#EDE9FE" : "#FFF8EF",
-                      border: `1.5px solid ${activo ? "#7C3AED" : "transparent"}`,
+                      background: seleccionado ? "#EDE9FE" : "#FFF8EF",
+                      border: `1.5px solid ${seleccionado ? "#7C3AED" : "transparent"}`,
                       transition: "background 0.15s, border-color 0.15s",
                     }}
                   >
                     <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>
-                      {loadingEvento === ev.id ? "⏳" : (TIPO_ICON_EV[ev.tipo] || "📅")}
+                      {cargandoEventoId === evento.id ? "⏳" : (TIPO_EVENTO_ICON[evento.tipo] || "📅")}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: activo ? "#7C3AED" : "#1C1917" }}>{ev.nombre}</div>
-                      <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                        <span>📅 {fechaEs}</span>
-                        {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
-                        {ev.direccion && <span>📍 {ev.direccion}</span>}
+                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: seleccionado ? "#7C3AED" : "#1C1917" }}>
+                        {evento.nombre}
                       </div>
-                      {ev.descripcion && <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>{ev.descripcion}</p>}
+                      <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                        <span>📅 {fechaStr}</span>
+                        {evento.hora_inicio && <span>🕐 {evento.hora_inicio}</span>}
+                        {evento.direccion && <span>📍 {evento.direccion}</span>}
+                      </div>
+                      {evento.descripcion && (
+                        <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>
+                          {evento.descripcion}
+                        </p>
+                      )}
                     </div>
-                    <span style={{ fontSize: "0.72rem", color: activo ? "#7C3AED" : "#A8A29E", fontWeight: 600, whiteSpace: "nowrap", paddingTop: "0.2rem" }}>
-                      {activo ? "↑ ocultar" : "ver locales ↓"}
+                    <span style={{ fontSize: "0.72rem", color: seleccionado ? "#7C3AED" : "#A8A29E", flexShrink: 0, paddingTop: "0.1rem" }}>
+                      {seleccionado ? "Ver locales →" : "Locales →"}
                     </span>
                   </div>
                 );
@@ -493,85 +559,25 @@ export default function CiudadPage({ slug }: { slug: string }) {
           </div>
         )}
 
-        {/* Grid de locales — evento filtrado */}
-        {eventoFiltro && (
-          <>
-            <div style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              background: "#EDE9FE", borderRadius: "0.75rem", padding: "0.6rem 1rem",
-              marginBottom: "1rem", gap: "0.75rem",
-            }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#7C3AED" }}>
-                📅 {eventoFiltro.evento.nombre} — {eventoFiltro.locales.filter(l => (l.distancia_m ?? -1) >= 0).length > 0
-                  ? `${eventoFiltro.locales.length} locales en radio de ${eventoFiltro.radio}m`
-                  : `Locales en ${nombreCiudad} (sin dirección concreta)`}
-              </span>
-              <button onClick={() => setEventoFiltro(null)} style={{
-                padding: "0.3rem 0.75rem", borderRadius: "999px", border: "1.5px solid #7C3AED",
-                background: "white", color: "#7C3AED", fontWeight: 700, fontSize: "0.78rem", cursor: "pointer", whiteSpace: "nowrap",
-              }}>Todos los locales ×</button>
-            </div>
-            <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
-              {eventoFiltro.locales.map(local => (
-                <a key={local.id} href={`/locales/${local.id}`} style={{
-                  textDecoration: "none", color: "inherit",
-                  background: "white", borderRadius: "1.25rem",
-                  border: "1px solid #DDD6FE", padding: "1.25rem",
-                  display: "flex", flexDirection: "column", gap: "0.4rem",
-                  transition: "box-shadow 0.15s, transform 0.15s",
-                }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
-                >
-                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", alignItems: "center" }}>
-                    <span style={{
-                      fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
-                      color: "#FB923C", background: "#FEF0DC", padding: "0.25rem 0.6rem", borderRadius: "999px",
-                    }}>
-                      {TIPO_LABEL[local.tipo] || "Local"}
-                    </span>
-                    {local.terraza === 1 && (
-                      <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#059669", background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>☀️ Terraza</span>
-                    )}
-                    {(local.distancia_m ?? -1) >= 0 && (
-                      <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px", marginLeft: "auto" }}>
-                        {local.distancia_m}m
-                      </span>
-                    )}
-                  </div>
-                  <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>{local.nombre}</h2>
-                  {local.direccion && (
-                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>📍 {local.direccion}</p>
-                  )}
-                  {local.horario && (
-                    <p style={{ fontSize: "0.8rem", color: "#78716C", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>🕒 {local.horario}</p>
-                  )}
-                </a>
-              ))}
-            </div>
-          </>
-        )}
-
         {/* Grid de locales */}
-        {!loading && locales.length > 0 && !eventoFiltro && (
+        {!loading && locales.length > 0 && (
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (
                 <a key={local.id} href={`/locales/${local.id}`} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
-                  border: "1px solid #F5E6D3", overflow: "hidden",
+                  border: "1px solid #F5E6D3",
                   display: "flex", flexDirection: "column",
+                  overflow: "hidden",
                   transition: "box-shadow 0.15s, transform 0.15s",
                 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
                 >
-                  {/* Foto */}
                   {local.photo_url && (
                     <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
-                      <img src={local.photo_url} alt={local.nombre} loading="lazy"
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={local.photo_url} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                   )}
                   <div style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
@@ -583,13 +589,19 @@ export default function CiudadPage({ slug }: { slug: string }) {
                         {TIPO_LABEL[local.tipo] || "Local"}
                       </span>
                       {(local.terraza === 1 || local.outdoor_seating === 1) && (
-                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#059669", background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>☀️ Terraza</span>
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#059669", background: "#D1FAE5", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>
+                          ☀️ Terraza
+                        </span>
                       )}
                       {local.live_music === 1 && (
-                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>🎵 Música</span>
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>
+                          🎵 Música
+                        </span>
                       )}
                       {local.price_level && (
-                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#78716C", marginLeft: "auto" }}>{local.price_level}</span>
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#78716C", marginLeft: "auto" }}>
+                          {local.price_level}
+                        </span>
                       )}
                     </div>
                     <h2 style={{ fontWeight: 700, color: "#1C1917", fontSize: "1rem", margin: 0, lineHeight: 1.3 }}>
@@ -597,14 +609,20 @@ export default function CiudadPage({ slug }: { slug: string }) {
                     </h2>
                     {local.rating && local.rating > 0 && (
                       <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
-                        <span style={{ color: "#F59E0B", fontSize: "0.82rem" }}>{"★".repeat(Math.round(local.rating))}{"☆".repeat(5 - Math.round(local.rating))}</span>
+                        <span style={{ color: "#F59E0B", fontSize: "0.82rem" }}>
+                          {"★".repeat(Math.round(local.rating))}{"☆".repeat(5 - Math.round(local.rating))}
+                        </span>
                         <span style={{ fontWeight: 700, fontSize: "0.82rem", color: "#1C1917" }}>{local.rating.toFixed(1)}</span>
-                        {local.rating_count && <span style={{ fontSize: "0.75rem", color: "#A8A29E" }}>({local.rating_count.toLocaleString("es-ES")})</span>}
+                        {local.rating_count && (
+                          <span style={{ fontSize: "0.75rem", color: "#A8A29E" }}>({local.rating_count.toLocaleString("es-ES")})</span>
+                        )}
                       </div>
                     )}
                     {local.descripcion_google && (
-                      <p style={{ fontSize: "0.78rem", color: "#78716C", margin: 0, lineHeight: 1.5,
-                        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                      <p style={{
+                        fontSize: "0.78rem", color: "#78716C", margin: 0, lineHeight: 1.5,
+                        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                      } as React.CSSProperties}>
                         {local.descripcion_google}
                       </p>
                     )}
@@ -663,7 +681,9 @@ export default function CiudadPage({ slug }: { slug: string }) {
                   <div style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.9rem", lineHeight: 1.3, marginBottom: "0.4rem" }}>
                     {ruta.titulo}
                   </div>
-                  <div style={{ fontSize: "0.78rem", color: "#A8A29E" }}>⏱ {ruta.duracion} · {ruta.mejor_dia}</div>
+                  <div style={{ fontSize: "0.78rem", color: "#A8A29E" }}>
+                    ⏱ {ruta.duracion} · {ruta.mejor_dia}
+                  </div>
                 </Link>
               ))}
             </div>

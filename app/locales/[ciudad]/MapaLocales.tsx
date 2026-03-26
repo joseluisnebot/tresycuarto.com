@@ -12,13 +12,6 @@ type LocalPin = {
   direccion?: string | null;
 };
 
-type EventoPin = {
-  lat: number;
-  lon: number;
-  radio: number;
-  nombre: string;
-};
-
 const TIPO_COLOR: Record<string, string> = {
   bar: "#FB923C",
   pub: "#A78BFA",
@@ -26,21 +19,22 @@ const TIPO_COLOR: Record<string, string> = {
   biergarten: "#34D399",
 };
 
-export default function MapaLocales({ locales, eventoPin, ciudad }: { locales: LocalPin[]; eventoPin?: EventoPin | null; ciudad: string }) {
+type EventoPin = {
+  lat: number | null;
+  lon: number | null;
+  radio: number;
+  nombre: string;
+} | null;
+
+export default function MapaLocales({ locales, eventoPin = null }: { locales: LocalPin[]; ciudad: string; eventoPin?: EventoPin }) {
   const mapRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mapInstanceRef = useRef<any>(null);
 
-  // Filtrar solo pins dentro de España (incluyendo Canarias y Baleares)
-  // Descarta coordenadas erróneas de ciudades homónimas en Latinoamérica u otros países
-  const pins = locales.filter(l =>
-    l.lat && l.lon &&
-    l.lat >= 27.5 && l.lat <= 43.9 &&
-    l.lon >= -18.2 && l.lon <= 4.5
-  );
+  const pins = locales.filter(l => l.lat && l.lon);
 
   useEffect(() => {
-    if (!mapRef.current || (pins.length === 0 && !eventoPin)) return;
+    if (!mapRef.current || pins.length === 0) return;
 
     // Limpiar mapa anterior si existe
     if (mapInstanceRef.current) {
@@ -65,31 +59,6 @@ export default function MapaLocales({ locales, eventoPin, ciudad }: { locales: L
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 19,
       }).addTo(map);
-
-      // Pin y círculo del evento si viene filtrado
-      if (eventoPin) {
-        const evIcon = L.divIcon({
-          className: "",
-          html: `<div style="
-            width:36px;height:36px;border-radius:50%;
-            background:#7C3AED;border:3px solid white;
-            box-shadow:0 3px 10px rgba(124,58,237,0.5);
-            display:flex;align-items:center;justify-content:center;
-            font-size:16px;line-height:1;
-          ">📅</div>`,
-          iconSize: [36, 36],
-          iconAnchor: [18, 18],
-          popupAnchor: [0, -20],
-        });
-        L.marker([eventoPin.lat, eventoPin.lon], { icon: evIcon })
-          .addTo(map)
-          .bindPopup(`<div style="font-family:Inter,sans-serif;font-weight:700;font-size:0.9rem;color:#1C1917">${eventoPin.nombre}</div><div style="font-size:0.75rem;color:#7C3AED">Radio: ${eventoPin.radio}m</div>`, { maxWidth: 220 });
-        L.circle([eventoPin.lat, eventoPin.lon], {
-          radius: eventoPin.radio,
-          color: "#7C3AED", fillColor: "#7C3AED", fillOpacity: 0.08,
-          weight: 2, dashArray: "6 4",
-        }).addTo(map);
-      }
 
       pins.forEach(local => {
         const color = TIPO_COLOR[local.tipo] || "#FB923C";
@@ -124,14 +93,26 @@ export default function MapaLocales({ locales, eventoPin, ciudad }: { locales: L
           .bindPopup(popup, { maxWidth: 240 });
       });
 
-      if (eventoPin) {
-        map.setView([eventoPin.lat, eventoPin.lon], 15);
-      } else {
-        map.fitBounds(
-          L.latLngBounds(pins.map(p => [p.lat, p.lon] as [number, number])),
-          { padding: [32, 32], maxZoom: 15 }
-        );
+      if (eventoPin && eventoPin.lat && eventoPin.lon) {
+        L.circle([eventoPin.lat as number, eventoPin.lon as number], {
+          radius: eventoPin.radio,
+          color: "#7C3AED", fillColor: "#A78BFA", fillOpacity: 0.08,
+          weight: 2, dashArray: "6 4",
+        }).addTo(map);
+        const evIcon = L.divIcon({
+          className: "",
+          html: '<div style="font-size:1.6rem;line-height:1">&#x1F4C5;</div>',
+          iconSize: [32, 32], iconAnchor: [16, 32],
+        });
+        L.marker([eventoPin.lat as number, eventoPin.lon as number], { icon: evIcon })
+          .addTo(map)
+          .bindPopup('<b>' + eventoPin.nombre + '</b>', { maxWidth: 240 });
       }
+
+      map.fitBounds(
+        L.latLngBounds(pins.map(p => [p.lat, p.lon] as [number, number])),
+        { padding: [32, 32], maxZoom: 15 }
+      );
     });
 
     return () => {
@@ -143,7 +124,7 @@ export default function MapaLocales({ locales, eventoPin, ciudad }: { locales: L
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locales, eventoPin]);
 
-  if (pins.length === 0 && !eventoPin) return null;
+  if (pins.length === 0) return null;
 
   return (
     <div style={{
@@ -164,7 +145,7 @@ export default function MapaLocales({ locales, eventoPin, ciudad }: { locales: L
         fontSize: "0.75rem", fontWeight: 600, color: "#78716C",
         border: "1px solid #F5E6D3",
       }}>
-        {eventoPin ? `${pins.length} locales · radio ${eventoPin.radio}m` : `${pins.length} locales en el mapa`}
+        {pins.length} locales en el mapa
       </div>
     </div>
   );
