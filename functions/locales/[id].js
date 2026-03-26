@@ -759,6 +759,12 @@ export async function onRequestGet(context) {
     "SELECT * FROM locales WHERE id = ? LIMIT 1"
   ).bind(id).all();
 
+  // Si tiene slug, redirigir a la URL limpia permanentemente
+  if (results.length && results[0].slug) {
+    const cSlug = ciudadSlug(results[0].ciudad);
+    return Response.redirect(`https://tresycuarto.com/locales/${cSlug}/${results[0].slug}`, 301);
+  }
+
   if (!results.length) {
     // Si el slug no parece un ID de OSM, probablemente es una ciudad sin datos aún
     const esCiudad = !id.startsWith("osm_") && !id.includes("_node_") && !id.includes("_way_") && !id.includes("_relation_");
