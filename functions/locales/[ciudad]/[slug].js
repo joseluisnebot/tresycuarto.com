@@ -200,8 +200,14 @@ function renderLocal(local, ciudadSlug) {
 
 export async function onRequestGet(context) {
   const { env, params } = context;
-  const ciudadSlug = params.ciudad;
-  const slug       = params.slug;
+  const rawCiudad = params.ciudad;
+  const slug      = params.slug;
+
+  // Normalizar: si el param llega con espacios (%20) redirigir a la URL limpia con guiones
+  const ciudadSlug = rawCiudad.replace(/\s+/g, "-");
+  if (ciudadSlug !== rawCiudad) {
+    return Response.redirect(`https://tresycuarto.com/locales/${ciudadSlug}/${slug}`, 301);
+  }
 
   const ciudad = CIUDAD_MAP[ciudadSlug];
   if (!ciudad) {
