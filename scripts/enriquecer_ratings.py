@@ -76,6 +76,8 @@ FIELD_MASK = ",".join([
     "places.websiteUri",
     "places.nationalPhoneNumber",
     "places.location",
+    "places.goodForGroups",
+    "places.allowsDogs",
 ])
 
 def buscar_en_google(nombre, ciudad, direccion=None):
@@ -136,6 +138,8 @@ def extraer_datos(place):
         "descripcion_google": desc,
         "outdoor_seating":  1 if place.get("outdoorSeating") else 0,
         "live_music":       1 if place.get("liveMusic") else 0,
+        "good_for_groups":  1 if place.get("goodForGroups") else 0,
+        "allows_dogs":      1 if place.get("allowsDogs") else 0,
         "lat":              lat,
         "lon":              lon,
         "web":              place.get("websiteUri"),
@@ -202,6 +206,7 @@ for i, local in enumerate(locales):
                photo_url=?, price_level=?,
                horario_google=?, descripcion_google=?,
                outdoor_seating=?, live_music=?,
+               good_for_groups=?, allows_dogs=?,
                lat=?, lon=?,
                web=?, telefono=?
                WHERE id=?""",
@@ -210,6 +215,7 @@ for i, local in enumerate(locales):
                 datos["photo_url"], datos["price_level"],
                 datos["horario_google"], datos["descripcion_google"],
                 datos["outdoor_seating"], datos["live_music"],
+                datos["good_for_groups"], datos["allows_dogs"],
                 datos["lat"], datos["lon"],
                 web_update, telefono_update,
                 local["id"],
