@@ -105,6 +105,7 @@ type Local = {
   direccion: string; horario: string | null; horario_google: string | null;
   telefono: string | null; web: string | null; instagram: string | null;
   terraza: number; outdoor_seating?: number; live_music?: number;
+  good_for_groups?: number | null; allows_dogs?: number | null;
   lat: number | null; lon: number | null;
   descripcion: string | null; descripcion_google?: string | null;
   photo_url?: string | null; rating?: number | null; rating_count?: number | null;
@@ -596,6 +597,16 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       {local.live_music === 1 && (
                         <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED", background: "#EDE9FE", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>
                           🎵 Música
+                        </span>
+                      )}
+                      {local.good_for_groups === 1 && (
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#0369A1", background: "#E0F2FE", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>
+                          👥 Para grupos
+                        </span>
+                      )}
+                      {local.allows_dogs === 1 && (
+                        <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#92400E", background: "#FEF3C7", padding: "0.25rem 0.6rem", borderRadius: "999px" }}>
+                          🐾 Pet-friendly
                         </span>
                       )}
                       {local.price_level && (
