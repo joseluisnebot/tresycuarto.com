@@ -9,6 +9,8 @@ Enriquece locales con datos de Google Places API:
   - descripción editorial
   - terraza confirmada (outdoor_seating)
   - música en directo (live_music)
+  - coordenadas reales (lat/lon) — corrige coords incorrectas de OSM
+  - web y teléfono (si el local no los tiene ya)
 
 LÍMITE FIJO: 500 locales/día → siempre dentro del crédito gratuito de Google ($200/mes).
 NUNCA modificar LIMITE_DIARIO sin autorización expresa.
@@ -73,6 +75,7 @@ FIELD_MASK = ",".join([
     "places.liveMusic",
     "places.websiteUri",
     "places.nationalPhoneNumber",
+    "places.location",
 ])
 
 def buscar_en_google(nombre, ciudad, direccion=None):
@@ -118,6 +121,11 @@ def extraer_datos(place):
     # Descripción editorial
     desc = place.get("editorialSummary", {}).get("text")
 
+    # Coordenadas reales de Google (más fiables que OSM para ciudades homónimas)
+    location = place.get("location", {})
+    lat = location.get("latitude")
+    lon = location.get("longitude")
+
     return {
         "rating":           place.get("rating"),
         "rating_count":     place.get("userRatingCount"),
@@ -128,6 +136,10 @@ def extraer_datos(place):
         "descripcion_google": desc,
         "outdoor_seating":  1 if place.get("outdoorSeating") else 0,
         "live_music":       1 if place.get("liveMusic") else 0,
+        "lat":              lat,
+        "lon":              lon,
+        "web":              place.get("websiteUri"),
+        "telefono":         place.get("nationalPhoneNumber"),
     }
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -159,8 +171,8 @@ PRIORIDAD_SQL = """
 """
 
 locales = d1(
-    f"SELECT id, nombre, ciudad, direccion FROM locales "
-    f"WHERE rating IS NULL {where_ciudad} "
+    f"SELECT id, nombre, ciudad, direccion, lat, web, telefono FROM locales "
+    f"WHERE (rating IS NULL OR lat IS NULL) {where_ciudad} "
     f"ORDER BY {PRIORIDAD_SQL}, ciudad, nombre LIMIT {LIMITE_DIARIO}"
 )
 
@@ -180,18 +192,26 @@ for i, local in enumerate(locales):
         if datos["rating"] is None:
             datos["rating"] = 0
 
+        # Solo sobreescribir web/telefono si el local no los tiene ya
+        web_update      = datos["web"]      if not local.get("web")      else local["web"]
+        telefono_update = datos["telefono"] if not local.get("telefono") else local["telefono"]
+
         d1(
             """UPDATE locales SET
                rating=?, rating_count=?, google_place_id=?,
                photo_url=?, price_level=?,
                horario_google=?, descripcion_google=?,
-               outdoor_seating=?, live_music=?
+               outdoor_seating=?, live_music=?,
+               lat=?, lon=?,
+               web=?, telefono=?
                WHERE id=?""",
             [
                 datos["rating"], datos["rating_count"], datos["google_place_id"],
                 datos["photo_url"], datos["price_level"],
                 datos["horario_google"], datos["descripcion_google"],
                 datos["outdoor_seating"], datos["live_music"],
+                datos["lat"], datos["lon"],
+                web_update, telefono_update,
                 local["id"],
             ]
         )
@@ -201,7 +221,8 @@ for i, local in enumerate(locales):
         photo = "📷" if datos["photo_url"] else ""
         hours = "🕒" if datos["horario_google"] else ""
         desc  = "📝" if datos["descripcion_google"] else ""
-        print(f"  ✓ {local['nombre'][:35]:35s} {stars} {price} {photo}{hours}{desc}")
+        coords = "📍" if datos["lat"] else ""
+        print(f"  ✓ {local['nombre'][:35]:35s} {stars} {price} {photo}{hours}{desc}{coords}")
         ok += 1
     else:
         # Marcar como procesado (sin resultado) para no volver a intentar
