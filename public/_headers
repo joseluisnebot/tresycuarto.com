@@ -1,0 +1,4 @@
+# Bloquear indexación en previews de Cloudflare Pages (*.tresycuarto.pages.dev)
+# Solo tresycuarto.com (dominio producción) debe ser indexado por Google
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
