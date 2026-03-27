@@ -563,6 +563,52 @@ def evento_existe(ev_id):
     return len(rows) > 0
 
 
+# Palabras que bloquean SALVO que aparezca alguna palabra de contexto positivo cerca
+PALABRAS_SENSIBLES = [
+    # Duelo / muerte
+    "funeral", "entierro", "velatorio", "defunción", "difunto", "luto",
+    # Violencia / conflicto
+    "maltrato", "tortura", "terrorismo",
+    # Sexual explícito
+    "erótico", "erotico", "stripper", "prostitu", "escort",
+    # Drogas
+    "marihuana", "cocaína", "heroína", "narcotráfico",
+    # Político extremo
+    "nazi", "neonazi", "fascist",
+    # Religioso ofensivo
+    "blasfem", "sacrilegio",
+]
+
+# Estas palabras anulan el bloqueo (contexto educativo/preventivo/conmemorativo)
+CONTEXTO_POSITIVO = [
+    "contra", "prevención", "prevencion", "sensibilización", "sensibilizacion",
+    "educación", "educacion", "charla", "taller", "exposición", "exposicion",
+    "conmemoración", "conmemoracion", "homenaje", "memoria", "historia",
+    "conferencia", "debate", "jornada",
+]
+
+def es_contenido_sensible(nombre, descripcion=""):
+    """
+    Devuelve (bloquear, revisar, palabra):
+    - (True, False, palabra)  → bloquear directamente
+    - (False, True, palabra)  → insertar pero notificar para revisión
+    - (False, False, None)    → ok, sin problema
+    """
+    texto = (nombre + " " + (descripcion or "")).lower()
+    hay_contexto = any(c in texto for c in CONTEXTO_POSITIVO)
+    for palabra in PALABRAS_SENSIBLES:
+        if palabra in texto:
+            if hay_contexto:
+                return False, True, palabra   # contexto positivo → insertar pero avisar
+            else:
+                return True, False, palabra   # sin contexto → bloquear
+    return False, False, None
+
+
+# Lista global de eventos que necesitan revisión (se llena durante el scraper)
+EVENTOS_REVISION = []
+
+
 def insertar_evento(ev, dry_run=False):
     ev_id = "ev_" + hashlib.md5(
         f"{ev['nombre']}_{ev['ciudad']}_{ev['fecha']}".encode()
@@ -570,6 +616,17 @@ def insertar_evento(ev, dry_run=False):
 
     if evento_existe(ev_id):
         return False, "ya existe"
+
+    # Filtro de contenido sensible
+    bloquear, revisar, palabra = es_contenido_sensible(ev["nombre"], ev.get("descripcion", ""))
+    if bloquear:
+        return False, f"contenido sensible ({palabra})"
+    if revisar:
+        EVENTOS_REVISION.append({
+            "id": ev_id, "nombre": ev["nombre"], "ciudad": ev.get("ciudad", ""),
+            "fecha": ev.get("fecha", ""), "palabra": palabra,
+            "descripcion": ev.get("descripcion", "")[:150],
+        })
 
     # Deduplicación semántica — evita eventos muy similares aunque tengan distinto ID
     if es_duplicado_semantico(ev["nombre"], ev["ciudad"], ev["fecha"]):
@@ -615,7 +672,7 @@ def insertar_evento(ev, dry_run=False):
         INSERT OR IGNORE INTO eventos_geo
           (id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, lat, lon,
            radio_m, descripcion, activo, estado, dias_previos_envio)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'pendiente', ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'aprobado', ?)
     """, [ev_id, ev["nombre"], tipo, ev["ciudad"], ev["fecha"],
           hora, direccion, lat, lon, radio, desc, dias])
     return True, "insertado"
@@ -807,6 +864,62 @@ def enviar_resumen(resultados, total, dry_run):
         print(f"  [email error] {e}")
 
 
+def enviar_alerta_revision(eventos):
+    """Manda un email con los eventos que necesitan revisión por posible controversia."""
+    fecha = datetime.now().strftime("%d/%m/%Y %H:%M")
+    filas = ""
+    for ev in eventos:
+        rechazar_url = f"https://tresycuarto.com/api/eventos/rechazar?id={ev['id']}&token=admin"
+        filas += f"""<tr>
+          <td style="padding:10px 12px;border-bottom:1px solid #E7E5E4;">
+            <strong>{ev['nombre']}</strong><br>
+            <span style="font-size:12px;color:#78716C;">{ev['ciudad']} · {ev['fecha']} · palabra detectada: <em>{ev['palabra']}</em></span><br>
+            <span style="font-size:12px;color:#A8A29E;">{ev['descripcion']}</span>
+          </td>
+          <td style="padding:10px 12px;border-bottom:1px solid #E7E5E4;text-align:center;white-space:nowrap;">
+            <a href="{rechazar_url}" style="background:#EF4444;color:white;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;">Rechazar</a>
+          </td>
+        </tr>"""
+
+    html = f"""<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head>
+<body style="font-family:'Helvetica Neue',Arial,sans-serif;background:#F5F0E8;padding:32px;">
+<table width="600" style="max-width:600px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;">
+  <tr><td style="background:#1C1917;padding:24px 32px;">
+    <span style="font-size:20px;font-weight:800;color:#FB923C;letter-spacing:-0.03em;">tresycuarto</span>
+    <span style="font-size:12px;color:#78716C;margin-left:12px;">Revisión de contenido · {fecha}</span>
+  </td></tr>
+  <tr><td style="padding:28px 32px;">
+    <h2 style="margin:0 0 8px;font-size:20px;color:#1C1917;">⚠️ {len(eventos)} evento(s) para revisar</h2>
+    <p style="color:#78716C;margin:0 0 24px;font-size:14px;">
+      Estos eventos se han publicado automáticamente pero contienen palabras que podrían ser sensibles en un contexto diferente. Pulsa "Rechazar" si no te parece apropiado.
+    </p>
+    <table width="100%" style="border-collapse:collapse;font-size:14px;">
+      <tbody>{filas}</tbody>
+    </table>
+  </td></tr>
+  <tr><td style="background:#1C1917;padding:18px 32px;text-align:center;">
+    <span style="font-size:11px;color:#57534E;">tresycuarto.com · Cada día a las 15:15</span>
+  </td></tr>
+</table>
+</body></html>"""
+
+    msg = MIMEMultipart("alternative")
+    msg["From"]    = "tresycuarto <hola@tresycuarto.com>"
+    msg["To"]      = NOTIFY_TO
+    msg["Subject"] = f"⚠️ {len(eventos)} evento(s) para revisar — tresycuarto"
+    msg.attach(MIMEText(html, "html"))
+
+    try:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as s:
+            s.starttls()
+            s.login(SMTP_USER, SMTP_PASS)
+            s.send_message(msg)
+        print(f"  Alerta revisión enviada: {len(eventos)} evento(s)")
+    except Exception as e:
+        print(f"  [email error alerta] {e}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--comunidad", help="ID de comunidad específica")
@@ -855,6 +968,11 @@ def main():
 
     # Enviar resumen por email (siempre, no solo en dry-run)
     enviar_resumen(resultados, total, args.dry_run)
+
+    # Alerta de revisión solo si hay eventos con posible controversia
+    if EVENTOS_REVISION and not args.dry_run:
+        print(f"\n⚠ {len(EVENTOS_REVISION)} evento(s) con posible controversia — enviando alerta...")
+        enviar_alerta_revision(EVENTOS_REVISION)
 
 
 if __name__ == "__main__":
