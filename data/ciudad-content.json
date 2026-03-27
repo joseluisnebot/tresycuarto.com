@@ -1882,5 +1882,33 @@
         "a": "El txikiteo es la tradición navarra de ir de bar en bar tomando txikitos (vasos pequeños de vino) acompañados de pinchos, muy popular en el tardeo pamplonés."
       }
     ]
+  },
+  "girona": {
+    "coords": {
+      "lat": 41.9794,
+      "lon": 2.8214
+    },
+    "intro": "Girona destila encanto medieval en cada rincón. Su casco antiguo, declarado conjunto histórico, invita a recorrer callejuelas empedradas antes de instalarse en una terraza junto al río Onyar. El tardeo girondí combina la tradición catalana con una escena gastronómica en auge.",
+    "barrios": [
+      "Barri Vell",
+      "Mercadal",
+      "Vila-roja",
+      "Montilivi",
+      "Eixample"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Girona?",
+        "a": "El Barri Vell y el entorno de la Rambla de la Llibertat concentran los mejores bares y terrazas para el tardeo en Girona."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Girona?",
+        "a": "La combinación de patrimonio medieval, gastronomía catalana de nivel y un ambiente tranquilo hacen del tardeo en Girona una experiencia única."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Girona?",
+        "a": "Generalmente entre las 17h y las 20h, cuando terrazas y bares del centro histórico se llenan de locales y visitantes."
+      }
+    ]
   }
 }
