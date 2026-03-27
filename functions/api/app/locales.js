@@ -1,6 +1,6 @@
 import CITIES from "../../../data/cities.json";
 
-const SLUG_TO_CIUDAD = Object.fromEntries(CITIES.map(c => [c.slug, c.name]));
+const SLUG_TO_CIUDAD = Object.fromEntries(CITIES.map(c => [c.slug, c.nombre]));
 const CORS = { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" };
 
 export async function onRequestGet({ request, env }) {
