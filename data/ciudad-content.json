@@ -1910,5 +1910,33 @@
         "a": "Generalmente entre las 17h y las 20h, cuando terrazas y bares del centro histórico se llenan de locales y visitantes."
       }
     ]
+  },
+  "arona": {
+    "coords": {
+      "lat": 28.0997,
+      "lon": -16.6847
+    },
+    "intro": "Arona, en el sur de Tenerife, combina el ambiente internacional de Los Cristianos y Las Américas con rincones más tranquilos en el interior. Su tardeo va desde terrazas con vistas al Atlántico hasta bares de tapas donde la animación se alarga hasta bien entrada la noche.",
+    "barrios": [
+      "Los Cristianos",
+      "Playa de las Américas",
+      "Costa del Silencio",
+      "El Médano",
+      "Guaza"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Arona?",
+        "a": "Los Cristianos y Playa de las Américas concentran la mayor oferta de bares, terrazas y locales de ocio para el tardeo en Arona."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Arona?",
+        "a": "El clima suave todo el año permite disfrutar de terrazas al aire libre en cualquier época, con vistas al Atlántico y ambiente internacional."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Arona?",
+        "a": "Gracias al clima canario, el tardeo en Arona puede empezar desde las 16h y prolongarse sin frío hasta las 21h o más."
+      }
+    ]
   }
 }
