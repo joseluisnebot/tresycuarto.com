@@ -14,7 +14,7 @@ export async function onRequestGet({ request, env }) {
 
   const { results: eventos } = await env.DB.prepare(
     `SELECT id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, descripcion, lat, lon
-     FROM eventos WHERE fecha >= ? ${where}
+     FROM eventos_geo WHERE estado='aprobado' AND fecha >= ? ${where}
      ORDER BY fecha ASC, hora_inicio ASC LIMIT 50`
   ).bind(...params).all();
 
