@@ -31,7 +31,7 @@ MODEL_ENRICH  = "mistral:7b"          # mejorar descripciones en español
 MODEL_EMBED   = "nomic-embed-text"    # embeddings para deduplicación
 
 HOY    = datetime.now().strftime("%Y-%m-%d")
-LIMITE = (datetime.now() + timedelta(days=180)).strftime("%Y-%m-%d")
+LIMITE = (datetime.now() + timedelta(days=365)).strftime("%Y-%m-%d")
 
 # ── Fuentes por comunidad autónoma ─────────────────────────────────────────
 FUENTES = [
@@ -102,7 +102,7 @@ FUENTES = [
         "id": "valencia",
         "nombre": "Turisme Comunitat Valenciana",
         "url": "https://www.comunitatvalenciana.com/es/eventos",
-        "ciudades": ["Valencia", "Alicante", "Castellón", "Benidorm", "Dénia"],
+        "ciudades": ["Valencia", "Alicante", "Castellón", "Benidorm", "Dénia", "Vinaròs", "Vinaros"],
         "encoding": "utf-8",
     },
     {
@@ -110,6 +110,13 @@ FUENTES = [
         "nombre": "Agenda Visit Valencia",
         "url": "https://www.visitvalencia.com/agenda-valencia",
         "ciudades": ["Valencia"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "vinaros_agenda",
+        "nombre": "Agenda Vinaròs",
+        "url": "https://www.vinaros.es/es/contenido/agenda-vinaros/agenda",
+        "ciudades": ["Vinaròs"],
         "encoding": "utf-8",
     },
     # Madrid
@@ -129,6 +136,230 @@ FUENTES = [
                      "Jerez de la Frontera", "Valladolid", "Zamora", "León",
                      "Murcia", "Cartagena", "Lorca", "Cuenca", "Toledo",
                      "Valencia", "Alicante", "Madrid", "Salamanca", "Burgos"],
+        "encoding": "utf-8",
+    },
+    # Cataluña
+    {
+        "id": "girona_agenda",
+        "nombre": "Agenda Girona",
+        "url": "https://www.girona.cat/cultura/cat/agenda.php",
+        "ciudades": ["Girona"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "tarragona_agenda",
+        "nombre": "Agenda Tarragona",
+        "url": "https://www.tarragona.cat/cultura/agenda",
+        "ciudades": ["Tarragona"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "lleida_agenda",
+        "nombre": "Agenda Lleida",
+        "url": "https://www.paeria.cat/cat/activitats/agenda.asp",
+        "ciudades": ["Lleida"],
+        "encoding": "iso-8859-1",
+    },
+    {
+        "id": "barcelona_agenda",
+        "nombre": "Agenda Barcelona",
+        "url": "https://www.barcelona.cat/barcelonacultura/es/agenda",
+        "ciudades": ["Barcelona"],
+        "encoding": "utf-8",
+    },
+    # País Vasco
+    {
+        "id": "bilbao_agenda",
+        "nombre": "Agenda Bilbao",
+        "url": "https://www.bilbaoturismo.net/BilbaoTurismo/es/agenda",
+        "ciudades": ["Bilbao"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "donostia_agenda",
+        "nombre": "Agenda San Sebastián",
+        "url": "https://www.donostia.eus/ataria/es/web/turismoa/agenda",
+        "ciudades": ["San Sebastián"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "vitoria_agenda",
+        "nombre": "Agenda Vitoria",
+        "url": "https://www.vitoria-gasteiz.org/we001/was/we001Action.do?idioma=es&accion=ficha&uid=u_agenda_inicio",
+        "ciudades": ["Vitoria"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "barakaldo_agenda",
+        "nombre": "Agenda Barakaldo",
+        "url": "https://www.barakaldo.org/es/agenda",
+        "ciudades": ["Barakaldo"],
+        "encoding": "utf-8",
+    },
+    # Galicia
+    {
+        "id": "galicia",
+        "nombre": "Turismo Galicia",
+        "url": "https://www.turismo.gal/que-facer/agenda",
+        "ciudades": ["La Coruña", "Pontevedra", "Lugo"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "coruna_agenda",
+        "nombre": "Agenda A Coruña",
+        "url": "https://www.coruna.gal/ocio/es/agenda",
+        "ciudades": ["La Coruña"],
+        "encoding": "utf-8",
+    },
+    # Aragón
+    {
+        "id": "aragon",
+        "nombre": "Turismo Aragón",
+        "url": "https://www.turismodearagon.com/agenda/",
+        "ciudades": ["Zaragoza", "Huesca", "Teruel"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "zaragoza_agenda",
+        "nombre": "Agenda Zaragoza",
+        "url": "https://www.zaragoza.es/sede/portal/cultura/agenda",
+        "ciudades": ["Zaragoza"],
+        "encoding": "utf-8",
+    },
+    # Asturias
+    {
+        "id": "asturias",
+        "nombre": "Turismo Asturias",
+        "url": "https://www.turismoasturias.es/descubre/cultura/agenda",
+        "ciudades": ["Oviedo"],
+        "encoding": "utf-8",
+    },
+    # Cantabria
+    {
+        "id": "cantabria",
+        "nombre": "Turismo Cantabria",
+        "url": "https://www.turismodecantabria.com/disfrutala/agenda",
+        "ciudades": ["Santander"],
+        "encoding": "utf-8",
+    },
+    # La Rioja
+    {
+        "id": "larioja",
+        "nombre": "Turismo La Rioja",
+        "url": "https://lariojaturismo.com/comunidad/larioja/agenda",
+        "ciudades": ["Logroño"],
+        "encoding": "utf-8",
+    },
+    # Navarra
+    {
+        "id": "navarra",
+        "nombre": "Turismo Navarra",
+        "url": "https://www.visitnavarra.es/es/agenda",
+        "ciudades": ["Pamplona"],
+        "encoding": "utf-8",
+    },
+    # Extremadura
+    {
+        "id": "extremadura",
+        "nombre": "Turismo Extremadura",
+        "url": "https://turismoextremadura.com/es/agenda/",
+        "ciudades": ["Badajoz", "Cáceres"],
+        "encoding": "utf-8",
+    },
+    # Canarias
+    {
+        "id": "canarias",
+        "nombre": "Turismo Canarias",
+        "url": "https://www.turismodecanarias.com/islas-canarias-espana/agenda-eventos/",
+        "ciudades": ["Santa Cruz de Tenerife", "Las Palmas", "Arona"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "arona_agenda",
+        "nombre": "Agenda Arona",
+        "url": "https://www.arona.org/es/agenda",
+        "ciudades": ["Arona"],
+        "encoding": "utf-8",
+    },
+    # Baleares
+    {
+        "id": "baleares",
+        "nombre": "Turismo Baleares",
+        "url": "https://www.illesbalears.travel/es/agenda",
+        "ciudades": ["Palma"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "palma_agenda",
+        "nombre": "Agenda Palma",
+        "url": "https://www.palma.cat/portal/es/agenda.page",
+        "ciudades": ["Palma"],
+        "encoding": "utf-8",
+    },
+    # Madrid — área metropolitana
+    {
+        "id": "alcala_agenda",
+        "nombre": "Agenda Alcalá de Henares",
+        "url": "https://www.ayto-alcaladehenares.es/es/cultura/agenda",
+        "ciudades": ["Alcalá de Henares"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "getafe_agenda",
+        "nombre": "Agenda Getafe",
+        "url": "https://www.getafe.es/es/agenda",
+        "ciudades": ["Getafe"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "leganes_agenda",
+        "nombre": "Agenda Leganés",
+        "url": "https://www.leganes.org/portal/es/agenda",
+        "ciudades": ["Leganés"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "mostoles_agenda",
+        "nombre": "Agenda Móstoles",
+        "url": "https://www.mostoles.es/es/agenda",
+        "ciudades": ["Móstoles"],
+        "encoding": "utf-8",
+    },
+    # Andalucía — extra
+    {
+        "id": "algeciras_agenda",
+        "nombre": "Agenda Algeciras",
+        "url": "https://www.algeciras.es/es/agenda",
+        "ciudades": ["Algeciras"],
+        "encoding": "utf-8",
+    },
+    # Valencia — ciudades extra
+    {
+        "id": "altea_agenda",
+        "nombre": "Agenda Altea",
+        "url": "https://www.altea.es/es/agenda",
+        "ciudades": ["Altea"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "cullera_agenda",
+        "nombre": "Agenda Cullera",
+        "url": "https://www.cullera.es/va/agenda",
+        "ciudades": ["Cullera"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "santapola_agenda",
+        "nombre": "Agenda Santa Pola",
+        "url": "https://www.santapola.es/es/agenda",
+        "ciudades": ["Santa Pola"],
+        "encoding": "utf-8",
+    },
+    {
+        "id": "torrevieja_agenda",
+        "nombre": "Agenda Torrevieja",
+        "url": "https://www.torrevieja.es/es/agenda",
+        "ciudades": ["Torrevieja"],
         "encoding": "utf-8",
     },
 ]
@@ -187,7 +418,7 @@ Month codes: ENE=01 FEB=02 MAR=03 ABR=04 MAY=05 JUN=06 JUL=07 AGO=08 SEP=09 OCT=
 Rules:
 - Only include events from these cities (match nearby villages to nearest city): {ciudades_str}
 - Only dates between {HOY} and {LIMITE}
-- Use start date if range given
+- Use END date if range given (e.g. "09/03/2026 - 29/03/2026" → use 2026-03-29)
 - tipo must be one of: procesion, feria, festival, concierto, mercado, exposicion, deporte, otro
 - descripcion max 150 chars
 - hora_inicio: time in HH:MM format if mentioned, else null
@@ -203,13 +434,13 @@ TEXT:
         "model": MODEL_EXTRACT,
         "prompt": prompt,
         "stream": False,
-        "options": {"temperature": 0.1, "num_predict": 2000}
+        "options": {"temperature": 0.1, "num_predict": 3000}
     }).encode()
 
     req = urllib.request.Request(OLLAMA_URL, data=payload, method="POST")
     req.add_header("Content-Type", "application/json")
     try:
-        with urllib.request.urlopen(req, timeout=120) as r:
+        with urllib.request.urlopen(req, timeout=300) as r:
             resp = json.loads(r.read())
         raw = resp.get("response", "").strip()
         # Extraer JSON del response (puede venir con texto antes/después)
@@ -410,6 +641,7 @@ def procesar_fuente(fuente, dry_run=False):
     eventos = ollama_extract(texto, fuente["ciudades"])
     print(f"  Ollama extrajo {len(eventos)} eventos candidatos")
 
+    DESDE = (datetime.now() - timedelta(days=60)).strftime("%Y-%m-%d")
     insertados = 0
     for ev in eventos:
         if not all(k in ev for k in ("nombre", "ciudad", "fecha", "tipo")):
@@ -419,7 +651,7 @@ def procesar_fuente(fuente, dry_run=False):
             datetime.strptime(ev["fecha"], "%Y-%m-%d")
         except ValueError:
             continue
-        if ev["fecha"] < HOY or ev["fecha"] > LIMITE:
+        if ev["fecha"] < DESDE or ev["fecha"] > LIMITE:
             continue
 
         ok, motivo = insertar_evento(ev, dry_run)
