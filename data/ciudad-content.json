@@ -566,32 +566,28 @@
   "Arona": {
     "coords": {
       "lat": 28.0997,
-      "lon": -16.6834
+      "lon": -16.6847
     },
-    "intro": "Arona, en el sur de Tenerife, es el epicentro del turismo en las Islas Canarias. Los núcleos de Los Cristianos y Las Américas ofrecen un tardeo internacional y animado con bares, terrazas frente al Atlántico y un ambiente que mezcla lo local con lo cosmopolita los doce meses del año.",
+    "intro": "Arona, en el sur de Tenerife, combina el ambiente internacional de Los Cristianos y Las Américas con rincones más tranquilos en el interior. Su tardeo va desde terrazas con vistas al Atlántico hasta bares de tapas donde la animación se alarga hasta bien entrada la noche.",
     "barrios": [
       "Los Cristianos",
-      "Las Américas",
-      "Palm-Mar",
-      "Los Abrigos",
-      "San Miguel de Abona"
+      "Playa de las Américas",
+      "Costa del Silencio",
+      "El Médano",
+      "Guaza"
     ],
     "faqs": [
       {
         "q": "¿Dónde tardeear en Arona?",
-        "a": "Los Cristianos y Las Américas son los centros del tardeo en Arona, con una gran oferta de bares y terrazas frente al mar abiertos todo el año."
+        "a": "Los Cristianos y Playa de las Américas concentran la mayor oferta de bares, terrazas y locales de ocio para el tardeo en Arona."
       },
       {
-        "q": "¿Cuándo es el tardeo en Arona?",
-        "a": "En Arona el tardeo se puede disfrutar los 365 días del año gracias al clima canario, con temperaturas suaves que permiten estar en terraza en cualquier mes."
+        "q": "¿Qué hace especial el tardeo en Arona?",
+        "a": "El clima suave todo el año permite disfrutar de terrazas al aire libre en cualquier época, con vistas al Atlántico y ambiente internacional."
       },
       {
-        "q": "¿Cuántos locales de tardeo hay en Arona?",
-        "a": "En tresycuarto tienes locales mapeados en Arona y el sur de Tenerife para planificar tu tardeo en el paraíso canario."
-      },
-      {
-        "q": "¿Qué tomar en el tardeo de Arona?",
-        "a": "El ron miel canario, el vino de la tierra y las papas arrugadas con mojo son los imprescindibles del tardeo en el sur de Tenerife."
+        "q": "¿A qué hora empieza el tardeo en Arona?",
+        "a": "Gracias al clima canario, el tardeo en Arona puede empezar desde las 16h y prolongarse sin frío hasta las 21h o más."
       }
     ]
   },
@@ -888,30 +884,26 @@
       "lat": 41.9794,
       "lon": 2.8214
     },
-    "intro": "Girona, con su barrio judío medieval y el río Onyar flanqueado de casas de colores, ofrece uno de los tardeos más pintorescos de Cataluña. El Barri Vell, las Ramblas y el barrio de Pedret concentran bares y cafeterías donde el tardeo gironí mezcla la tradición catalana con la influencia europea de una ciudad universitaria y cosmopolita.",
+    "intro": "Girona destila encanto medieval en cada rincón. Su casco antiguo, declarado conjunto histórico, invita a recorrer callejuelas empedradas antes de instalarse en una terraza junto al río Onyar. El tardeo girondí combina la tradición catalana con una escena gastronómica en auge.",
     "barrios": [
       "Barri Vell",
-      "Rambla",
-      "Pedret",
-      "Santa Eugènia",
+      "Mercadal",
+      "Vila-roja",
+      "Montilivi",
       "Eixample"
     ],
     "faqs": [
       {
         "q": "¿Dónde tardeear en Girona?",
-        "a": "El Barri Vell y las Ramblas de Girona son los epicentros del tardeo, con bares y terrazas en un entorno medieval único junto al río Onyar."
+        "a": "El Barri Vell y el entorno de la Rambla de la Llibertat concentran los mejores bares y terrazas para el tardeo en Girona."
       },
       {
-        "q": "¿Por qué es especial el tardeo en Girona?",
-        "a": "Girona combina un casco medieval extraordinario con una influencia europea y universitaria que da al tardeo un ambiente único, cosmopolita y muy animado."
+        "q": "¿Qué hace especial el tardeo en Girona?",
+        "a": "La combinación de patrimonio medieval, gastronomía catalana de nivel y un ambiente tranquilo hacen del tardeo en Girona una experiencia única."
       },
       {
-        "q": "¿Cuántos locales de tardeo hay en Girona?",
-        "a": "En tresycuarto tienes locales mapeados en Girona para disfrutar del tardeo en una de las ciudades más bonitas de Cataluña."
-      },
-      {
-        "q": "¿Qué tomar en el tardeo de Girona?",
-        "a": "El vermut con anchoas, el vino del Empordà y la cerveza artesanal son los compañeros perfectos del tardeo gironí en los bares del Barri Vell."
+        "q": "¿A qué hora empieza el tardeo en Girona?",
+        "a": "Generalmente entre las 17h y las 20h, cuando terrazas y bares del centro histórico se llenan de locales y visitantes."
       }
     ]
   },
@@ -1880,62 +1872,6 @@
       {
         "q": "¿Cuál es la tradición del txikiteo en Pamplona?",
         "a": "El txikiteo es la tradición navarra de ir de bar en bar tomando txikitos (vasos pequeños de vino) acompañados de pinchos, muy popular en el tardeo pamplonés."
-      }
-    ]
-  },
-  "girona": {
-    "coords": {
-      "lat": 41.9794,
-      "lon": 2.8214
-    },
-    "intro": "Girona destila encanto medieval en cada rincón. Su casco antiguo, declarado conjunto histórico, invita a recorrer callejuelas empedradas antes de instalarse en una terraza junto al río Onyar. El tardeo girondí combina la tradición catalana con una escena gastronómica en auge.",
-    "barrios": [
-      "Barri Vell",
-      "Mercadal",
-      "Vila-roja",
-      "Montilivi",
-      "Eixample"
-    ],
-    "faqs": [
-      {
-        "q": "¿Dónde tardeear en Girona?",
-        "a": "El Barri Vell y el entorno de la Rambla de la Llibertat concentran los mejores bares y terrazas para el tardeo en Girona."
-      },
-      {
-        "q": "¿Qué hace especial el tardeo en Girona?",
-        "a": "La combinación de patrimonio medieval, gastronomía catalana de nivel y un ambiente tranquilo hacen del tardeo en Girona una experiencia única."
-      },
-      {
-        "q": "¿A qué hora empieza el tardeo en Girona?",
-        "a": "Generalmente entre las 17h y las 20h, cuando terrazas y bares del centro histórico se llenan de locales y visitantes."
-      }
-    ]
-  },
-  "arona": {
-    "coords": {
-      "lat": 28.0997,
-      "lon": -16.6847
-    },
-    "intro": "Arona, en el sur de Tenerife, combina el ambiente internacional de Los Cristianos y Las Américas con rincones más tranquilos en el interior. Su tardeo va desde terrazas con vistas al Atlántico hasta bares de tapas donde la animación se alarga hasta bien entrada la noche.",
-    "barrios": [
-      "Los Cristianos",
-      "Playa de las Américas",
-      "Costa del Silencio",
-      "El Médano",
-      "Guaza"
-    ],
-    "faqs": [
-      {
-        "q": "¿Dónde tardeear en Arona?",
-        "a": "Los Cristianos y Playa de las Américas concentran la mayor oferta de bares, terrazas y locales de ocio para el tardeo en Arona."
-      },
-      {
-        "q": "¿Qué hace especial el tardeo en Arona?",
-        "a": "El clima suave todo el año permite disfrutar de terrazas al aire libre en cualquier época, con vistas al Atlántico y ambiente internacional."
-      },
-      {
-        "q": "¿A qué hora empieza el tardeo en Arona?",
-        "a": "Gracias al clima canario, el tardeo en Arona puede empezar desde las 16h y prolongarse sin frío hasta las 21h o más."
       }
     ]
   }
