@@ -196,7 +196,8 @@ def main():
         fecha_evento = datetime.strptime(ev["fecha"], "%Y-%m-%d")
         dias_previos = ev.get("dias_previos_envio") or 2
         fecha_envio  = fecha_evento - timedelta(days=int(dias_previos))
-        if fecha_envio.strftime("%Y-%m-%d") == hoy:
+        # Enviar si fecha_envio es hoy O si ya pasó pero el evento aún no ha ocurrido
+        if fecha_envio.strftime("%Y-%m-%d") <= hoy:
             eventos_hoy.append(ev)
 
     if not eventos_hoy:
