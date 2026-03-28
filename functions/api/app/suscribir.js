@@ -3,6 +3,42 @@ const CORS = {
   "Content-Type": "application/json",
 };
 
+const LISTMONK_URL  = "https://listmonk.tresycuarto.com";
+const LISTMONK_USER = "tresycuarto";
+const LISTMONK_PASS = "uGsFIP9aSpVW3ctCu6Ju32Hh5Jlhvbhl";
+const LISTMONK_LIST = 3;
+
+async function listmonkRequest(method, path, body) {
+  const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
+  const res = await fetch(`${LISTMONK_URL}${path}`, {
+    method,
+    headers: { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  return res.ok ? res.json() : null;
+}
+
+async function syncListmonk(email, ciudades) {
+  // Buscar suscriptor existente
+  const search = await listmonkRequest("GET", `/api/subscribers?query=email%3D'${encodeURIComponent(email)}'&per_page=1`);
+  const existing = search?.data?.results?.[0];
+
+  if (existing) {
+    // Actualizar atributos manteniendo los existentes
+    const attribs = { ...(existing.attribs || {}), ciudades };
+    await listmonkRequest("PUT", `/api/subscribers/${existing.id}`, {
+      email, name: existing.name || email.split("@")[0],
+      lists: [LISTMONK_LIST], attribs, status: "enabled",
+    });
+  } else {
+    // Crear nuevo suscriptor
+    await listmonkRequest("POST", "/api/subscribers", {
+      email, name: email.split("@")[0],
+      lists: [LISTMONK_LIST], attribs: { ciudades }, status: "enabled",
+      preconfirm_subscriptions: true,
+    });
+  }
+}
 
 async function sendWelcome(email, ciudad, brevoKey) {
   const body = {
@@ -17,15 +53,9 @@ async function sendWelcome(email, ciudad, brevoKey) {
   <p style="color:#57534E;line-height:1.6;margin:0 0 16px">
     Ya eres parte de tresycuarto. Te avisaremos de los mejores planes${ciudad ? ` en <strong>${ciudad}</strong>` : ""} para que no te pierdas nada.
   </p>
-  <p style="color:#57534E;line-height:1.6;margin:0 0 24px">
-    Mientras tanto, explora los mejores locales de tardeo en España:
-  </p>
   <a href="https://tresycuarto.com" style="display:inline-block;background:#FB923C;color:white;font-weight:700;padding:12px 24px;border-radius:12px;text-decoration:none">
     Ver locales →
   </a>
-  <p style="color:#A8A29E;font-size:0.78rem;margin-top:32px">
-    Si no solicitaste este email, ignóralo. <a href="https://tresycuarto.com" style="color:#A8A29E">tresycuarto.com</a>
-  </p>
 </div>
 </body></html>`,
   };
@@ -48,20 +78,48 @@ export async function onRequestPost({ request, env, ctx }) {
     return Response.json({ error: "Email no válido" }, { status: 400, headers: CORS });
   }
 
+  email = email.toLowerCase().trim();
   const now = new Date().toISOString();
-  try {
-    await env.DB.prepare(
-      "INSERT INTO leads_app (email, ciudad, fuente, created_at) VALUES (?, ?, 'app', ?)"
-    ).bind(email.toLowerCase().trim(), ciudad || null, now).run();
-  } catch (e) {
-    if (e.message?.includes("UNIQUE")) {
-      return Response.json({ ok: true, msg: "Ya estás suscrito" }, { headers: CORS });
+
+  // Buscar si ya existe el email
+  const existing = await env.DB.prepare(
+    "SELECT email, ciudades, ciudad FROM leads_app WHERE email=?"
+  ).bind(email).first();
+
+  let ciudadesActuales = [];
+  let esNuevo = false;
+
+  if (existing) {
+    // Parsear ciudades existentes
+    if (existing.ciudades) {
+      try { ciudadesActuales = JSON.parse(existing.ciudades); } catch { ciudadesActuales = []; }
+    } else if (existing.ciudad) {
+      ciudadesActuales = [existing.ciudad];
     }
-    return Response.json({ error: "Error al guardar" }, { status: 500, headers: CORS });
+    // Añadir nueva ciudad si no está ya
+    if (ciudad && !ciudadesActuales.includes(ciudad)) {
+      ciudadesActuales.push(ciudad);
+    }
+    await env.DB.prepare(
+      "UPDATE leads_app SET ciudades=?, ciudad=? WHERE email=?"
+    ).bind(JSON.stringify(ciudadesActuales), ciudadesActuales[0] || null, email).run();
+  } else {
+    esNuevo = true;
+    ciudadesActuales = ciudad ? [ciudad] : [];
+    await env.DB.prepare(
+      "INSERT INTO leads_app (email, ciudad, ciudades, fuente, created_at) VALUES (?, ?, ?, 'app', ?)"
+    ).bind(email, ciudad || null, JSON.stringify(ciudadesActuales), now).run();
   }
 
-  await sendWelcome(email, ciudad, env.BREVO_API_KEY);
-  return Response.json({ ok: true }, { headers: CORS });
+  // Sincronizar con Listmonk (fire and forget)
+  ctx.waitUntil(syncListmonk(email, ciudadesActuales));
+
+  // Enviar bienvenida solo si es nuevo
+  if (esNuevo) {
+    ctx.waitUntil(sendWelcome(email, ciudad, env.BREVO_API_KEY));
+  }
+
+  return Response.json({ ok: true, ciudades: ciudadesActuales }, { headers: CORS });
 }
 
 export async function onRequestOptions() {
