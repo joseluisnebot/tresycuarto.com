@@ -9,13 +9,17 @@ const LISTMONK_PASS = "uGsFIP9aSpVW3ctCu6Ju32Hh5Jlhvbhl";
 const LISTMONK_LIST = 3;
 
 async function listmonkRequest(method, path, body) {
-  const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
-  const res = await fetch(`${LISTMONK_URL}${path}`, {
-    method,
-    headers: { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  return res.ok ? res.json() : null;
+  try {
+    const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
+    const res = await fetch(`${LISTMONK_URL}${path}`, {
+      method,
+      headers: { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (!res.ok) return null;
+    const text = await res.text();
+    try { return JSON.parse(text); } catch { return null; }
+  } catch { return null; }
 }
 
 async function syncListmonk(email, ciudades) {
@@ -107,7 +111,7 @@ export async function onRequestPost({ request, env, ctx }) {
     esNuevo = true;
     ciudadesActuales = ciudad ? [ciudad] : [];
     await env.DB.prepare(
-      "INSERT INTO leads_app (email, ciudad, ciudades, fuente, created_at) VALUES (?, ?, ?, 'app', ?)"
+      "INSERT INTO leads_app (email, ciudad, ciudades, created_at) VALUES (?, ?, ?, ?)"
     ).bind(email, ciudad || null, JSON.stringify(ciudadesActuales), now).run();
   }
 
