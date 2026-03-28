@@ -36,7 +36,7 @@ async function syncListmonk(email, ciudades, env) {
   }, env);
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   let email, ciudad;
   try {
     ({ email, ciudad } = await request.json());
@@ -71,7 +71,7 @@ export async function onRequestPost({ request, env }) {
     "UPDATE leads_app SET ciudades=?, ciudad=? WHERE email=?"
   ).bind(JSON.stringify(ciudadesActuales), ciudadesActuales[0] || null, email).run();
 
-  syncListmonk(email, ciudadesActuales, env).catch(() => {});
+  waitUntil(syncListmonk(email, ciudadesActuales, env).catch(() => {}));
 
   return Response.json({ ok: true, ciudades: ciudadesActuales }, { headers: CORS });
 }

@@ -75,7 +75,7 @@ async function sendWelcome(email, ciudad, brevoKey) {
   });
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   let email, ciudad;
   try {
     ({ email, ciudad } = await request.json());
@@ -120,12 +120,12 @@ export async function onRequestPost({ request, env }) {
     ).bind(email, ciudad || null, JSON.stringify(ciudadesActuales), now).run();
   }
 
-  // Sincronizar con Listmonk (fire and forget)
-  syncListmonk(email, ciudadesActuales, env).catch(() => {});
+  // Sincronizar con Listmonk (waitUntil para que no se mate al enviar respuesta)
+  waitUntil(syncListmonk(email, ciudadesActuales, env).catch(() => {}));
 
   // Enviar bienvenida solo si es nuevo
   if (esNuevo) {
-    sendWelcome(email, ciudad, env.BREVO_API_KEY).catch(() => {});
+    waitUntil(sendWelcome(email, ciudad, env.BREVO_API_KEY).catch(() => {}));
   }
 
   return Response.json({ ok: true, ciudades: ciudadesActuales }, { headers: CORS });
