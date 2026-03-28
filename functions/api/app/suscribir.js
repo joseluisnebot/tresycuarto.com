@@ -8,12 +8,17 @@ const LISTMONK_USER = "tresycuarto";
 const LISTMONK_PASS = "uGsFIP9aSpVW3ctCu6Ju32Hh5Jlhvbhl";
 const LISTMONK_LIST = 3;
 
-async function listmonkRequest(method, path, body) {
+async function listmonkRequest(method, path, body, env) {
   try {
     const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
+    const headers = { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" };
+    if (env?.CF_ACCESS_CLIENT_ID) {
+      headers["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
+      headers["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
+    }
     const res = await fetch(`${LISTMONK_URL}${path}`, {
       method,
-      headers: { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" },
+      headers,
       body: body ? JSON.stringify(body) : undefined,
     });
     if (!res.ok) return null;
@@ -22,9 +27,9 @@ async function listmonkRequest(method, path, body) {
   } catch { return null; }
 }
 
-async function syncListmonk(email, ciudades) {
+async function syncListmonk(email, ciudades, env) {
   // Buscar suscriptor existente
-  const search = await listmonkRequest("GET", `/api/subscribers?query=email%3D'${encodeURIComponent(email)}'&per_page=1`);
+  const search = await listmonkRequest("GET", `/api/subscribers?query=email%3D'${encodeURIComponent(email)}'&per_page=1`, null, env);
   const existing = search?.data?.results?.[0];
 
   if (existing) {
@@ -33,14 +38,14 @@ async function syncListmonk(email, ciudades) {
     await listmonkRequest("PUT", `/api/subscribers/${existing.id}`, {
       email, name: existing.name || email.split("@")[0],
       lists: [LISTMONK_LIST], attribs, status: "enabled",
-    });
+    }, env);
   } else {
     // Crear nuevo suscriptor
     await listmonkRequest("POST", "/api/subscribers", {
       email, name: email.split("@")[0],
       lists: [LISTMONK_LIST], attribs: { ciudades }, status: "enabled",
       preconfirm_subscriptions: true,
-    });
+    }, env);
   }
 }
 
@@ -116,7 +121,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Sincronizar con Listmonk (fire and forget)
-  syncListmonk(email, ciudadesActuales).catch(() => {});
+  syncListmonk(email, ciudadesActuales, env).catch(() => {});
 
   // Enviar bienvenida solo si es nuevo
   if (esNuevo) {
