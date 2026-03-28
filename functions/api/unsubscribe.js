@@ -32,11 +32,18 @@ export async function onRequestGet(context) {
     return new Response(renderPage("Ya dado de baja", "Esta dirección no está en nuestra lista."), { headers: { "Content-Type": "text/html" } });
   }
 
-  // Eliminar suscriptor
+  // Eliminar suscriptor de Listmonk
   await fetch(`${LISTMONK_URL}/api/subscribers/${subscriber.id}`, {
     method: "DELETE",
     headers: { Authorization: `Basic ${auth}`, ...cfAccessHeaders },
   });
+
+  // Eliminar de D1 leads_app
+  try {
+    await env.DB.prepare("DELETE FROM leads_app WHERE email=?")
+      .bind(subscriber.email.toLowerCase().trim())
+      .run();
+  } catch { /* silencioso */ }
 
   return new Response(renderPage("Baja confirmada", `Hemos eliminado <strong>${subscriber.email}</strong> de nuestra lista. No recibirás más emails de tresycuarto.`), {
     headers: { "Content-Type": "text/html" },

@@ -95,6 +95,32 @@ export async function onRequestPost(context) {
     }
   }
 
+  // Sincronizar con D1 leads_app
+  try {
+    const emailNorm = email.toLowerCase().trim();
+    const existing_d1 = await env.DB.prepare(
+      "SELECT email, ciudades, ciudad FROM leads_app WHERE email=?"
+    ).bind(emailNorm).first();
+
+    if (existing_d1) {
+      let ciudadesActuales = [];
+      if (existing_d1.ciudades) {
+        try { ciudadesActuales = JSON.parse(existing_d1.ciudades); } catch { ciudadesActuales = []; }
+      } else if (existing_d1.ciudad) {
+        ciudadesActuales = [existing_d1.ciudad];
+      }
+      const replace = body.replace === true;
+      const newCiudades = replace ? listaCiudades : [...new Set([...ciudadesActuales, ...listaCiudades])];
+      await env.DB.prepare(
+        "UPDATE leads_app SET ciudades=?, ciudad=? WHERE email=?"
+      ).bind(JSON.stringify(newCiudades), newCiudades[0] || null, emailNorm).run();
+    } else {
+      await env.DB.prepare(
+        "INSERT INTO leads_app (email, ciudad, ciudades, created_at) VALUES (?, ?, ?, ?)"
+      ).bind(emailNorm, listaCiudades[0] || null, JSON.stringify(listaCiudades), new Date().toISOString()).run();
+    }
+  } catch { /* silencioso */ }
+
   // Template 5 = ciudad próximamente | Template 4 = ciudad con datos
   const template_id = proximamente ? 5 : 4;
   await fetch(`${LISTMONK_URL}/api/tx`, {
