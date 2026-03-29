@@ -33,6 +33,17 @@ out body;
 out skel qt;
 """
 
+QUERY_TEMPLATE_BBOX = """
+[out:json][timeout:120];
+(
+  node[amenity~"^(bar|cafe|pub|biergarten)$"]({bbox});
+  way[amenity~"^(bar|cafe|pub|biergarten)$"]({bbox});
+);
+out body;
+>;
+out skel qt;
+"""
+
 
 def consultar_overpass(ciudad: str, reintentos: int = 3) -> dict:
     query = QUERY_TEMPLATE.format(ciudad=ciudad)

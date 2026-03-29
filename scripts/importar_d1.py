@@ -24,6 +24,16 @@ CIUDADES = {
     "zaragoza": "Zaragoza",
     "murcia": "Murcia",
     "malaga": "Málaga",
+    "cadiz": "Cádiz",
+    "cartagena": "Cartagena",
+    "cordoba": "Córdoba",
+    "cuenca": "Cuenca",
+    "granada": "Granada",
+    "jerez_de_la_frontera": "Jerez de la Frontera",
+    "leon": "León",
+    "lorca": "Lorca",
+    "valladolid": "Valladolid",
+    "zamora": "Zamora",
 }
 
 def ejecutar_sql(sql: str, params: list) -> dict:

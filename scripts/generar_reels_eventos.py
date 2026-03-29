@@ -796,11 +796,61 @@ def main():
     print(f"Llamadas Google Places: {_places_calls} / {MAX_PLACES_CALLS}")
 
     if generados:
-        print("\n— Añade esto a la QUEUE de instagram_publisher.py —\n")
-        for g in generados:
-            caption = g["caption"].replace('"', '\\"')
-            print(f'    ("{g["file"]}",')
-            print(f'     "{caption}"),\n')
+        subidos = subir_y_encolar(generados)
+        print(f"\n{subidos}/{len(generados)} reels subidos a R2 y encolados para Instagram.")
+
+
+def subir_y_encolar(generados):
+    """Sube cada reel a R2 y lo añade a instagram_queue.json."""
+    import subprocess, json as _json
+    QUEUE_FILE = Path("/root/scripts/instagram_queue.json")
+    CF_TOKEN   = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+    CF_ACCOUNT = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")
+
+    try:
+        data = _json.loads(QUEUE_FILE.read_text())
+    except Exception:
+        data = {"pending": []}
+    existing = {item["filename"] for item in data.get("pending", [])}
+
+    subidos = 0
+    for g in generados:
+        filename = g["file"]
+        r2_key   = f"eventos/{filename}"
+        local    = OUTPUT_DIR / filename
+
+        if not local.exists():
+            print(f"  SKIP (no existe): {filename}")
+            continue
+
+        if r2_key in existing:
+            print(f"  SKIP (ya encolado): {r2_key}")
+            subidos += 1
+            continue
+
+        # Subir a R2
+        env = {**os.environ, "CLOUDFLARE_API_TOKEN": CF_TOKEN, "CLOUDFLARE_ACCOUNT_ID": CF_ACCOUNT}
+        result = subprocess.run(
+            ["npx", "wrangler", "r2", "object", "put",
+             f"tresycuarto-media/{r2_key}",
+             "--file", str(local),
+             "--content-type", "video/mp4",
+             "--remote"],
+            capture_output=True, text=True, timeout=120, env=env
+        )
+        if result.returncode != 0:
+            print(f"  ERROR subiendo {filename}: {result.stderr[-200:]}")
+            continue
+
+        # Encolar con URL completa (R2 tiene custom domain media.tresycuarto.com)
+        video_url = f"https://media.tresycuarto.com/{r2_key}"
+        data["pending"].append({"filename": r2_key, "url": video_url, "caption": g["caption"]})
+        QUEUE_FILE.write_text(_json.dumps(data, indent=2, ensure_ascii=False))
+        existing.add(r2_key)
+        print(f"  ✓ Subido y encolado: {r2_key}")
+        subidos += 1
+
+    return subidos
 
 
 if __name__ == "__main__":

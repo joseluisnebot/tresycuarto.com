@@ -12,8 +12,9 @@ Enriquece locales con datos de Google Places API:
   - coordenadas reales (lat/lon) — corrige coords incorrectas de OSM
   - web y teléfono (si el local no los tiene ya)
 
-LÍMITE FIJO: 500 locales/día → siempre dentro del crédito gratuito de Google ($200/mes).
-NUNCA modificar LIMITE_DIARIO sin autorización expresa.
+LÍMITE FIJO: 150 locales/día (30 por ciudad × 5 ciudades) → dentro del crédito gratuito ($200/mes).
+Distribuye equitativamente entre las 5 ciudades con más locales sin enriquecer.
+NUNCA modificar POR_CIUDAD sin autorización expresa.
 
 Cron: 0 4 * * * python3 /root/tresycuarto-sync/scripts/enriquecer_ratings.py
 """
@@ -32,8 +33,9 @@ D1_URL          = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d
 PLACES_URL      = "https://places.googleapis.com/v1/places:searchText"
 PHOTO_BASE      = "https://places.googleapis.com/v1/{name}/media?maxWidthPx=600&key=" + GOOGLE_KEY
 
-# LÍMITE DE SEGURIDAD — NO CAMBIAR. 500/día = siempre dentro del crédito gratuito.
-LIMITE_DIARIO   = 500
+# LÍMITE DE SEGURIDAD — NO CAMBIAR. 30/ciudad × 5 ciudades = 150/día máximo.
+POR_CIUDAD      = 30
+NUM_CIUDADES    = 5
 
 PRICE_LABEL = {
     "PRICE_LEVEL_FREE":          "Gratis",
@@ -147,43 +149,35 @@ def extraer_datos(place):
     }
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-where_ciudad = f"AND ciudad='{args.ciudad}'" if args.ciudad else ""
+# Si se pasa --ciudad, procesar solo esa ciudad con POR_CIUDAD locales
+if args.ciudad:
+    ciudades_a_procesar = [args.ciudad]
+    print(f"Modo ciudad única: {args.ciudad} ({POR_CIUDAD} locales)")
+else:
+    # Seleccionar las NUM_CIUDADES ciudades con más locales sin enriquecer
+    top = d1(
+        f"SELECT ciudad, COUNT(*) as pendientes FROM locales "
+        f"WHERE rating IS NULL "
+        f"GROUP BY ciudad ORDER BY pendientes DESC LIMIT {NUM_CIUDADES}"
+    )
+    ciudades_a_procesar = [r["ciudad"] for r in top]
+    print(f"Top {NUM_CIUDADES} ciudades con más pendientes: {', '.join(ciudades_a_procesar)}")
+    print(f"Plan: {POR_CIUDAD} locales/ciudad = {POR_CIUDAD * len(ciudades_a_procesar)} llamadas hoy")
 
-# Ciudades prioritarias: Semana Santa + ciudades con muchos eventos
-# Se procesan antes que el resto para tener fotos cuando más tráfico hay
-PRIORIDAD_SQL = """
-    CASE ciudad
-        WHEN 'Sevilla'              THEN 1
-        WHEN 'Málaga'               THEN 2
-        WHEN 'Cádiz'                THEN 3
-        WHEN 'Jerez de la Frontera' THEN 4
-        WHEN 'Córdoba'              THEN 5
-        WHEN 'Granada'              THEN 6
-        WHEN 'Valladolid'           THEN 7
-        WHEN 'Zamora'               THEN 8
-        WHEN 'León'                 THEN 9
-        WHEN 'Cuenca'               THEN 10
-        WHEN 'Cartagena'            THEN 11
-        WHEN 'Lorca'                THEN 12
-        WHEN 'Murcia'               THEN 13
-        WHEN 'Valencia'             THEN 14
-        WHEN 'Barcelona'            THEN 15
-        WHEN 'Madrid'               THEN 16
-        WHEN 'Vinaròs'              THEN 17
-        ELSE 99
-    END
-"""
-
-locales = d1(
-    f"SELECT id, nombre, ciudad, direccion, lat, web, telefono FROM locales "
-    f"WHERE (rating IS NULL OR lat IS NULL) {where_ciudad} "
-    f"ORDER BY {PRIORIDAD_SQL}, ciudad, nombre LIMIT {LIMITE_DIARIO}"
-)
+# Cargar locales: POR_CIUDAD por cada ciudad seleccionada
+locales = []
+for ciudad in ciudades_a_procesar:
+    lote = d1(
+        f"SELECT id, nombre, ciudad, direccion, lat, web, telefono FROM locales "
+        f"WHERE rating IS NULL AND ciudad=? "
+        f"ORDER BY nombre LIMIT {POR_CIUDAD}",
+        [ciudad]
+    )
+    print(f"  {ciudad}: {len(lote)} locales")
+    locales.extend(lote)
 
 total = len(locales)
-print(f"{total} locales a procesar (límite fijo: {LIMITE_DIARIO}/día)")
-if args.ciudad:
-    print(f"Filtrando por ciudad: {args.ciudad}")
+print(f"Total a procesar hoy: {total}")
 
 ok, sin_resultado, errores = 0, 0, 0
 
@@ -242,4 +236,4 @@ for i, local in enumerate(locales):
         print(f"  ── {i+1}/{total} | con datos: {ok} | sin resultado: {sin_resultado} ──")
 
 print(f"\n✓ {ok} enriquecidos | {sin_resultado} sin resultado | {errores} errores")
-print(f"  Peticiones Google usadas hoy: {ok + sin_resultado} / {LIMITE_DIARIO}")
+print(f"  Peticiones Google usadas hoy: {ok + sin_resultado} / {POR_CIUDAD * len(ciudades_a_procesar)}")

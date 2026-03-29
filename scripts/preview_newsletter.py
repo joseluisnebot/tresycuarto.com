@@ -58,7 +58,7 @@ API_URL    = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/d1/dat
 
 SMTP_HOST  = "smtp-relay.brevo.com"
 SMTP_PORT  = 587
-SMTP_USER  = "a420de001@smtp-brevo.com"
+SMTP_USER  = "hola@tresycuarto.com"
 SMTP_PASS  = os.environ.get("BREVO_SMTP_KEY", "")
 FROM_EMAIL = "tresycuarto <hola@tresycuarto.com>"
 REVIEW_TO  = "joseluisnebot@gmail.com"

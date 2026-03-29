@@ -576,11 +576,20 @@ export default function CiudadPage({ slug }: { slug: string }) {
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ""; (e.currentTarget as HTMLElement).style.transform = ""; }}
                 >
-                  {local.photo_url && (
-                    <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
-                      <img src={local.photo_url} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                    </div>
-                  )}
+                  {(() => {
+                    const PLACEHOLDER: Record<string, string> = {
+                      bar: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/bar.jpg",
+                      pub: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/pub.jpg",
+                      cafe: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/cafe.jpg",
+                      biergarten: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/biergarten.jpg",
+                    };
+                    const imgSrc = local.photo_url || PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"];
+                    return (
+                      <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
+                        <img src={imgSrc} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      </div>
+                    );
+                  })()}
                   <div style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.4rem", flex: 1 }}>
                     <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", alignItems: "center" }}>
                       <span style={{
