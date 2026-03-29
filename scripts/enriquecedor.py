@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Agente enriquecedor: busca Instagram, web, teléfono, horario y terraza de locales.
+Agente enriquecedor: busca Instagram, web, teléfono, horario, terraza y foto de locales.
 Usa DuckDuckGo (sin API key) con rate limiting para no ser bloqueado.
-Si el local ya tiene web, la scrapea para extraer teléfono, horario y terraza.
+Si el local ya tiene web, la scrapea para extraer teléfono, horario, terraza y og:image.
+Las fotos se suben a Cloudflare R2.
 
 Uso:
     python3 enriquecedor.py --ciudad Madrid --limite 5   # prueba
@@ -14,6 +15,8 @@ import argparse
 import json
 import os
 import re
+import subprocess
+import tempfile
 import time
 import urllib.parse
 import urllib.request
@@ -23,6 +26,8 @@ CLOUDFLARE_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "WCvwZkoXOw_qE6onJ
 CLOUDFLARE_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_API = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/d1/database/{DB_ID}/query"
+R2_BUCKET = "tresycuarto-media"
+R2_PUBLIC = "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev"
 
 HEADERS_D1 = {
     "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",
@@ -148,6 +153,79 @@ def scrape_web(url: str) -> str:
         return ""
 
 
+RE_OG_IMAGE = re.compile(
+    r'<meta[^>]+(?:property=["\']og:image["\']|name=["\']twitter:image["\'])[^>]+content=["\']([^"\']+)["\']'
+    r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property=["\']og:image["\']|name=["\']twitter:image["\'])',
+    re.IGNORECASE
+)
+RE_IMG_SRC = re.compile(r'<img[^>]+src=["\']([^"\']+\.(?:jpg|jpeg|png|webp))["\']', re.IGNORECASE)
+EXCLUIR_IMG = {"logo", "icon", "favicon", "banner", "sprite", "pixel", "tracking", "1x1", "avatar", "badge"}
+
+
+def extraer_og_image(html: str, base_url: str) -> str | None:
+    """Extrae og:image o twitter:image del HTML. Devuelve URL absoluta o None."""
+    m = RE_OG_IMAGE.search(html)
+    if m:
+        url = m.group(1) or m.group(2)
+        if url and url.startswith("http"):
+            return url
+        if url and url.startswith("/"):
+            from urllib.parse import urlparse
+            p = urlparse(base_url)
+            return f"{p.scheme}://{p.netloc}{url}"
+    # Fallback: primera img grande que no sea logo/icono
+    for src in RE_IMG_SRC.findall(html):
+        if not any(k in src.lower() for k in EXCLUIR_IMG):
+            if src.startswith("http"):
+                return src
+    return None
+
+
+def descargar_imagen(url: str) -> tuple[bytes, str] | None:
+    """Descarga una imagen. Devuelve (bytes, ext) o None si falla."""
+    try:
+        req = urllib.request.Request(url)
+        req.add_header("User-Agent", HEADERS_WEB["User-Agent"])
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            ct = resp.headers.get("Content-Type", "")
+            if not ct.startswith("image/"):
+                return None
+            data = resp.read(5_000_000)  # máx 5MB
+            if len(data) < 5000:  # muy pequeña = probablemente icono
+                return None
+            ext = "jpg" if "jpeg" in ct or "jpg" in ct else ct.split("/")[-1].split(";")[0].strip()
+            if ext not in ("jpg", "jpeg", "png", "webp"):
+                ext = "jpg"
+            return data, ext
+    except Exception:
+        return None
+
+
+def subir_foto_r2(local_id: str, data: bytes, ext: str) -> str | None:
+    """Sube imagen a R2 y devuelve la URL pública."""
+    key = f"fotos/{local_id}.{ext}"
+    with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False) as f:
+        f.write(data)
+        tmp_path = f.name
+    try:
+        env = os.environ.copy()
+        env["CLOUDFLARE_API_TOKEN"] = CLOUDFLARE_API_TOKEN
+        env["CLOUDFLARE_ACCOUNT_ID"] = CLOUDFLARE_ACCOUNT_ID
+        result = subprocess.run(
+            ["npx", "--yes", "wrangler", "r2", "object", "put",
+             f"{R2_BUCKET}/{key}", "--file", tmp_path,
+             "--content-type", f"image/{ext}"],
+            capture_output=True, text=True, env=env, timeout=60
+        )
+        if result.returncode == 0:
+            return f"{R2_PUBLIC}/{key}"
+        return None
+    except Exception:
+        return None
+    finally:
+        os.unlink(tmp_path)
+
+
 def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
     nombre = local["nombre"]
     ciudad = local["ciudad"]
@@ -204,6 +282,20 @@ def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
         if detectar_terraza(texto_check):
             cambios["terraza"] = 1
 
+    # Foto: buscar og:image en la web del local
+    if not local.get("photo_url") and html_web and web_url:
+        img_url = extraer_og_image(html_web, web_url)
+        if img_url:
+            resultado = descargar_imagen(img_url)
+            if resultado:
+                data, ext = resultado
+                if not dry_run:
+                    r2_url = subir_foto_r2(local["id"], data, ext)
+                    if r2_url:
+                        cambios["photo_url"] = r2_url
+                else:
+                    cambios["photo_url"] = f"[dry-run] {img_url}"
+
     return cambios
 
 
@@ -227,19 +319,20 @@ def main():
     print(f"\n=== Agente enriquecedor — {args.ciudad} [{modo}] ===")
 
     locales = d1_query(
-        "SELECT id, nombre, ciudad, instagram, web, telefono, horario, terraza FROM locales "
+        "SELECT id, nombre, ciudad, instagram, web, telefono, horario, terraza, photo_url FROM locales "
         "WHERE ciudad = ? AND ("
         "  instagram IS NULL OR instagram = '' OR"
         "  web IS NULL OR web = '' OR"
         "  telefono IS NULL OR telefono = '' OR"
         "  horario IS NULL OR horario = '' OR"
-        "  terraza IS NULL"
+        "  terraza IS NULL OR"
+        "  photo_url IS NULL"
         ") ORDER BY nombre LIMIT ?",
         [args.ciudad, args.limite]
     )
 
     print(f"  Locales a enriquecer: {len(locales)}")
-    encontrados = {"instagram": 0, "web": 0, "telefono": 0, "horario": 0, "terraza": 0}
+    encontrados = {"instagram": 0, "web": 0, "telefono": 0, "horario": 0, "terraza": 0, "photo_url": 0}
 
     for i, local in enumerate(locales, 1):
         print(f"  [{i}/{len(locales)}] {local['nombre']}", end=" ", flush=True)
