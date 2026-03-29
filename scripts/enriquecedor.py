@@ -158,8 +158,15 @@ RE_OG_IMAGE = re.compile(
     r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property=["\']og:image["\']|name=["\']twitter:image["\'])',
     re.IGNORECASE
 )
-RE_IMG_SRC = re.compile(r'<img[^>]+src=["\']([^"\']+\.(?:jpg|jpeg|png|webp))["\']', re.IGNORECASE)
-EXCLUIR_IMG = {"logo", "icon", "favicon", "banner", "sprite", "pixel", "tracking", "1x1", "avatar", "badge"}
+# Solo JPG/WEBP en fallback — los PNG suelen ser gráficos/iconos, no fotos reales
+RE_IMG_SRC = re.compile(r'<img[^>]+src=["\']([^"\']+\.(?:jpg|jpeg|webp))["\']', re.IGNORECASE)
+EXCLUIR_IMG = {
+    "logo", "icon", "favicon", "banner", "sprite", "pixel", "tracking", "1x1", "avatar", "badge",
+    "placeholder", "default", "noimage", "no-image", "generic", "stock",
+    "cerveza", "ceveza", "copa", "vino", "tenedor", "plato", "comida", "bebida",
+    "bg", "background", "pattern", "texture", "kit-digital", "footer", "header",
+}
+FOTO_MIN_BYTES = 30_000  # mínimo 30KB — descarta iconos y clipart
 
 
 def extraer_og_image(html: str, base_url: str) -> str | None:
@@ -191,7 +198,7 @@ def descargar_imagen(url: str) -> tuple[bytes, str] | None:
             if not ct.startswith("image/"):
                 return None
             data = resp.read(5_000_000)  # máx 5MB
-            if len(data) < 5000:  # muy pequeña = probablemente icono
+            if len(data) < FOTO_MIN_BYTES:  # muy pequeña = probablemente icono/clipart
                 return None
             ext = "jpg" if "jpeg" in ct or "jpg" in ct else ct.split("/")[-1].split(";")[0].strip()
             if ext not in ("jpg", "jpeg", "png", "webp"):
