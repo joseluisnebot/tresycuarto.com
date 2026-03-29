@@ -214,7 +214,7 @@ def subir_foto_r2(local_id: str, data: bytes, ext: str) -> str | None:
         result = subprocess.run(
             ["npx", "--yes", "wrangler", "r2", "object", "put",
              f"{R2_BUCKET}/{key}", "--file", tmp_path,
-             "--content-type", f"image/{ext}"],
+             "--content-type", f"image/{ext}", "--remote"],
             capture_output=True, text=True, env=env, timeout=60
         )
         if result.returncode == 0:
