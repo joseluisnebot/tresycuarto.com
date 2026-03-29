@@ -586,7 +586,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                     const imgSrc = local.photo_url || PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"];
                     return (
                       <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
-                        <img src={imgSrc} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <img src={imgSrc} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.currentTarget as HTMLImageElement).src = PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"]; }} />
                       </div>
                     );
                   })()}
