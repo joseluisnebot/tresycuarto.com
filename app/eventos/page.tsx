@@ -22,10 +22,6 @@ const TIPO_ICON: Record<string, string> = {
   exposicion: "🖼️", evento: "📅", otro: "📅",
 };
 
-const TIPO_LABEL: Record<string, string> = {
-  bar: "Bar", pub: "Pub", cafe: "Cafetería", biergarten: "Terraza",
-};
-
 const MESES = ["enero","febrero","marzo","abril","mayo","junio",
                "julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
@@ -98,26 +94,13 @@ function LocalesPanel({ eventoId, radio }: { eventoId: string; radio?: number })
           </a>
         ))}
       </div>
-      <a href={`/locales/${ciudadSlug(locales[0]?.id?.split("_")[0] ?? "")}`} style={{ display: "none" }} />
     </div>
   );
 }
 
-export default function EventosPage() {
-  const [eventos, setEventos] = useState<Evento[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [ciudad, setCiudad] = useState("");
-  const [expandido, setExpandido] = useState<string | null>(null);
-
-  const ciudades = (citiesData as { nombre: string }[]).map(c => c.nombre);
-
-  useEffect(() => {
-    setLoading(true);
-    const url = ciudad ? `/api/eventos?limit=50&ciudad=${encodeURIComponent(ciudad)}` : "/api/eventos?limit=50";
-    fetch(url).then(r => r.json()).then(d => { setEventos(d.eventos || []); setLoading(false); });
-  }, [ciudad]);
-
-  // Agrupar por mes
+function GrupoEventos({ eventos, expandido, setExpandido, opacidad }: {
+  eventos: Evento[]; expandido: string | null; setExpandido: (id: string | null) => void; opacidad?: boolean;
+}) {
   const porMes: Record<string, Evento[]> = {};
   for (const ev of eventos) {
     const d = new Date(ev.fecha + "T12:00:00");
@@ -125,6 +108,94 @@ export default function EventosPage() {
     if (!porMes[key]) porMes[key] = [];
     porMes[key].push(ev);
   }
+
+  return (
+    <>
+      {Object.entries(porMes).map(([key, evs]) => {
+        const [year, mes] = key.split("-").map(Number);
+        return (
+          <div key={key} style={{ marginBottom: "2rem" }}>
+            <h2 style={{ fontSize: "0.78rem", fontWeight: 700, color: opacidad ? "#C4B5A5" : "#A8A29E", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
+              {MESES[mes]} {year}
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              {evs.map(ev => {
+                const abierto = expandido === ev.id;
+                return (
+                  <div key={ev.id}
+                    onClick={() => setExpandido(abierto ? null : ev.id)}
+                    style={{
+                      background: opacidad ? "#FDFAF7" : "white",
+                      borderRadius: "1rem",
+                      border: `1px solid ${abierto ? "#FB923C" : "#F5E6D3"}`,
+                      padding: "1rem 1.25rem", cursor: "pointer",
+                      transition: "border-color 0.15s",
+                      opacity: opacidad ? 0.75 : 1,
+                    }}
+                    onMouseEnter={e => { if (!abierto) (e.currentTarget as HTMLElement).style.borderColor = "#FDBA74"; }}
+                    onMouseLeave={e => { if (!abierto) (e.currentTarget as HTMLElement).style.borderColor = "#F5E6D3"; }}
+                  >
+                    <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                      <div style={{ minWidth: "48px", textAlign: "center", paddingTop: "0.1rem" }}>
+                        <div style={{ fontSize: "1.4rem", lineHeight: 1, filter: opacidad ? "grayscale(0.5)" : "none" }}>{TIPO_ICON[ev.tipo] || "📅"}</div>
+                        <div style={{ fontSize: "0.7rem", color: "#A8A29E", marginTop: "0.25rem", fontWeight: 600 }}>
+                          {fechaLarga(ev.fecha)}
+                        </div>
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.2rem" }}>
+                          <span style={{ fontWeight: 700, color: opacidad ? "#78716C" : "#1C1917", fontSize: "0.95rem" }}>{ev.nombre}</span>
+                          <span style={{ fontSize: "0.72rem", background: "#FEF0DC", color: "#FB923C", borderRadius: "999px", padding: "0.15rem 0.5rem", fontWeight: 600, whiteSpace: "nowrap" }}>{ev.ciudad}</span>
+                          {opacidad && <span style={{ fontSize: "0.68rem", background: "#F5F5F4", color: "#A8A29E", borderRadius: "999px", padding: "0.15rem 0.5rem", fontWeight: 600 }}>Pasado</span>}
+                        </div>
+                        {ev.descripcion && (
+                          <p style={{ margin: "0 0 0.35rem", fontSize: "0.82rem", color: "#78716C", lineHeight: 1.5 }}>{ev.descripcion}</p>
+                        )}
+                        <div style={{ display: "flex", gap: "0.75rem", fontSize: "0.75rem", color: "#A8A29E", flexWrap: "wrap", alignItems: "center" }}>
+                          {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
+                          {ev.direccion && <span>📍 {ev.direccion}</span>}
+                          <span style={{ color: "#FB923C", fontWeight: 600 }}>
+                            {abierto ? "Ocultar locales ↑" : "Ver locales cercanos ↓"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {abierto && (
+                      <div onClick={e => e.stopPropagation()}>
+                        <LocalesPanel eventoId={ev.id} radio={ev.radio_m} />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+export default function EventosPage() {
+  const [eventos, setEventos] = useState<Evento[]>([]);
+  const [pasados, setPasados] = useState<Evento[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [ciudad, setCiudad] = useState("");
+  const [expandido, setExpandido] = useState<string | null>(null);
+  const [mostrarHistorial, setMostrarHistorial] = useState(false);
+
+  const ciudades = (citiesData as { nombre: string }[]).map(c => c.nombre);
+
+  useEffect(() => {
+    setLoading(true);
+    const url = ciudad ? `/api/eventos?limit=50&ciudad=${encodeURIComponent(ciudad)}` : "/api/eventos?limit=50";
+    fetch(url).then(r => r.json()).then(d => {
+      setEventos(d.eventos || []);
+      setPasados(d.pasados || []);
+      setLoading(false);
+    });
+  }, [ciudad]);
 
   return (
     <main style={{ background: "#FFF8EF", minHeight: "100vh" }}>
@@ -171,70 +242,35 @@ export default function EventosPage() {
           </div>
         )}
 
-        {/* Eventos agrupados por mes */}
-        {Object.entries(porMes).map(([key, evs]) => {
-          const [year, mes] = key.split("-").map(Number);
-          const mesNombre = MESES[mes];
-          return (
-            <div key={key} style={{ marginBottom: "2rem" }}>
-              <h2 style={{ fontSize: "0.78rem", fontWeight: 700, color: "#A8A29E", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
-                {mesNombre} {year}
-              </h2>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                {evs.map(ev => {
-                  const abierto = expandido === ev.id;
-                  return (
-                    <div key={ev.id}
-                      onClick={() => setExpandido(abierto ? null : ev.id)}
-                      style={{
-                        background: "white", borderRadius: "1rem",
-                        border: `1px solid ${abierto ? "#FB923C" : "#F5E6D3"}`,
-                        padding: "1rem 1.25rem", cursor: "pointer",
-                        transition: "border-color 0.15s",
-                      }}
-                      onMouseEnter={e => { if (!abierto) (e.currentTarget as HTMLElement).style.borderColor = "#FDBA74"; }}
-                      onMouseLeave={e => { if (!abierto) (e.currentTarget as HTMLElement).style.borderColor = "#F5E6D3"; }}
-                    >
-                      <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
-                        {/* Icono + fecha */}
-                        <div style={{ minWidth: "48px", textAlign: "center", paddingTop: "0.1rem" }}>
-                          <div style={{ fontSize: "1.4rem", lineHeight: 1 }}>{TIPO_ICON[ev.tipo] || "📅"}</div>
-                          <div style={{ fontSize: "0.7rem", color: "#A8A29E", marginTop: "0.25rem", fontWeight: 600 }}>
-                            {fechaLarga(ev.fecha)}
-                          </div>
-                        </div>
-                        {/* Contenido */}
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.2rem" }}>
-                            <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.95rem" }}>{ev.nombre}</span>
-                            <span style={{ fontSize: "0.72rem", background: "#FEF0DC", color: "#FB923C", borderRadius: "999px", padding: "0.15rem 0.5rem", fontWeight: 600, whiteSpace: "nowrap" }}>{ev.ciudad}</span>
-                          </div>
-                          {ev.descripcion && (
-                            <p style={{ margin: "0 0 0.35rem", fontSize: "0.82rem", color: "#78716C", lineHeight: 1.5 }}>{ev.descripcion}</p>
-                          )}
-                          <div style={{ display: "flex", gap: "0.75rem", fontSize: "0.75rem", color: "#A8A29E", flexWrap: "wrap", alignItems: "center" }}>
-                            {ev.hora_inicio && <span>🕐 {ev.hora_inicio}</span>}
-                            {ev.direccion && <span>📍 {ev.direccion}</span>}
-                            <span style={{ color: "#FB923C", fontWeight: 600 }}>
-                              {abierto ? "Ocultar locales ↑" : "Ver locales cercanos ↓"}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+        {/* Próximos eventos */}
+        {!loading && eventos.length > 0 && (
+          <GrupoEventos eventos={eventos} expandido={expandido} setExpandido={setExpandido} />
+        )}
 
-                      {/* Panel de locales expandible */}
-                      {abierto && (
-                        <div onClick={e => e.stopPropagation()}>
-                          <LocalesPanel eventoId={ev.id} radio={ev.radio_m} />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+        {/* Historial de eventos pasados */}
+        {!loading && pasados.length > 0 && (
+          <div style={{ marginTop: "1rem" }}>
+            <button
+              onClick={() => setMostrarHistorial(v => !v)}
+              style={{
+                background: "none", border: "1px solid #E7D9CE", borderRadius: "0.75rem",
+                padding: "0.6rem 1.25rem", cursor: "pointer", fontSize: "0.82rem",
+                color: "#A8A29E", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem",
+              }}
+            >
+              🕐 {mostrarHistorial ? "Ocultar" : "Ver"} historial de eventos recientes ({pasados.length})
+            </button>
+
+            {mostrarHistorial && (
+              <div style={{ marginTop: "1.25rem" }}>
+                <p style={{ fontSize: "0.78rem", color: "#C4B5A5", marginBottom: "1rem" }}>
+                  Eventos de los últimos 60 días — historial para consulta
+                </p>
+                <GrupoEventos eventos={pasados} expandido={expandido} setExpandido={setExpandido} opacidad />
               </div>
-            </div>
-          );
-        })}
+            )}
+          </div>
+        )}
       </div>
     </main>
   );
