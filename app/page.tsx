@@ -32,6 +32,7 @@ type Status = "idle" | "loading" | "ok" | "error";
 type Evento = {
   id: number; nombre: string; tipo: string; ciudad: string;
   fecha: string; hora_inicio: string | null;
+  descripcion?: string; direccion?: string;
 };
 
 export default function Home() {
@@ -390,6 +391,17 @@ export default function Home() {
                         {evento.nombre}
                       </div>
                       <div style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600 }}>{evento.ciudad}</div>
+                      {evento.descripcion && (
+                        <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.25rem", lineHeight: 1.45,
+                          overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" as const }}>
+                          {evento.descripcion}
+                        </div>
+                      )}
+                      {evento.direccion && (
+                        <div style={{ fontSize: "0.7rem", color: "#A8A29E", marginTop: "0.2rem", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          📍 {evento.direccion}
+                        </div>
+                      )}
                       {evento.hora_inicio && (
                         <div style={{ fontSize: "0.72rem", color: "#A8A29E", marginTop: "0.15rem" }}>🕐 {evento.hora_inicio}</div>
                       )}
