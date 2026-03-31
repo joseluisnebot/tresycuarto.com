@@ -3,6 +3,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import citiesData from "../../data/cities.json";
+import eventosDestacados from "../../data/eventos-destacados.json";
+
+const DESTACADOS = (eventosDestacados as { slug: string; nombre: string; ciudad: string; fecha_inicio: string; fecha_fin: string; tipo: string; descripcion_corta: string }[])
+  .filter(e => {
+    const fin = new Date(e.fecha_fin + "T23:59:59");
+    return fin >= new Date();
+  });
+
+const TIPO_ICON_D: Record<string, string> = {
+  procesion: "⛪", feria: "🎡", deporte: "⚽", concierto: "🎵", festival: "🎪", otro: "📅",
+};
+
+const MESES_C = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 
 type Evento = {
   id: string; nombre: string; tipo: string; ciudad: string;
@@ -218,6 +231,49 @@ export default function EventosPage() {
             Procesiones, ferias, conciertos y más — los mejores momentos para salir
           </p>
         </div>
+
+        {/* Eventos destacados */}
+        {DESTACADOS.length > 0 && (
+          <div style={{ marginBottom: "2.5rem" }}>
+            <p style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#FB923C", margin: "0 0 0.6rem" }}>Destacados</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.75rem" }}>
+              {DESTACADOS.map(ev => {
+                const d = new Date(ev.fecha_inicio + "T12:00:00");
+                const df = new Date(ev.fecha_fin + "T12:00:00");
+                const mismaFecha = ev.fecha_inicio === ev.fecha_fin;
+                return (
+                  <Link key={ev.slug} href={`/eventos/${ev.slug}`} style={{ textDecoration: "none" }}>
+                    <div style={{
+                      background: "white", borderRadius: "1rem", border: "1px solid #F5E6D3",
+                      padding: "1rem 1.1rem", display: "flex", gap: "0.85rem", alignItems: "flex-start",
+                      transition: "border-color 0.15s",
+                    }}
+                      onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "#FB923C"}
+                      onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "#F5E6D3"}
+                    >
+                      <div style={{ background: "#FEF0DC", borderRadius: "0.75rem", padding: "0.5rem 0.6rem", textAlign: "center", minWidth: "44px", flexShrink: 0 }}>
+                        <div style={{ fontSize: "1.1rem" }}>{TIPO_ICON_D[ev.tipo] || "📅"}</div>
+                        <div style={{ fontSize: "0.58rem", fontWeight: 700, color: "#FB923C", lineHeight: 1.2, marginTop: "0.2rem" }}>
+                          {d.getDate()} {MESES_C[d.getMonth()]}
+                          {!mismaFecha && <>–{df.getDate()} {MESES_C[df.getMonth()]}</>}
+                        </div>
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.88rem", lineHeight: 1.3, marginBottom: "0.25rem" }}>{ev.nombre}</div>
+                        <div style={{ fontSize: "0.72rem", color: "#FB923C", fontWeight: 600, marginBottom: "0.3rem" }}>{ev.ciudad}</div>
+                        <div style={{ fontSize: "0.75rem", color: "#78716C", lineHeight: 1.45,
+                          overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" as const }}>
+                          {ev.descripcion_corta}
+                        </div>
+                        <div style={{ marginTop: "0.5rem", fontSize: "0.72rem", color: "#FB923C", fontWeight: 700 }}>Ver bares cerca →</div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Filtro ciudad */}
         <div style={{ marginBottom: "1.5rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
