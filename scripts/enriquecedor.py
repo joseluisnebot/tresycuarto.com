@@ -258,9 +258,9 @@ def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
     # Determinar URL web a usar (ya existente o recién encontrada)
     web_url = local.get("web") or cambios.get("web")
 
-    # Scrape web del local para teléfono, horario y terraza
+    # Scrape web del local para teléfono, horario, terraza y foto
     html_web = ""
-    if web_url and (not local.get("telefono") or not local.get("horario") or not local.get("terraza")):
+    if web_url and (not local.get("telefono") or not local.get("horario") or not local.get("terraza") or not local.get("photo_url")):
         html_web = scrape_web(web_url)
         time.sleep(3)
 

@@ -109,7 +109,7 @@ type Local = {
   lat: number | null; lon: number | null;
   descripcion: string | null; descripcion_google?: string | null;
   photo_url?: string | null; rating?: number | null; rating_count?: number | null;
-  price_level?: string | null;
+  price_level?: string | null; slug?: string | null;
 };
 
 type Evento = {
@@ -517,9 +517,9 @@ export default function CiudadPage({ slug }: { slug: string }) {
               <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#1C1917" }}>
                 📅 Próximos eventos en {nombreCiudad}
               </h3>
-              <a href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>
+              <Link href="/eventos" style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, textDecoration: "none" }}>
                 Ver todos →
-              </a>
+              </Link>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {eventos.map(evento => {
@@ -571,7 +571,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (
-                <a key={local.id} href={`/locales/${local.id}`} style={{
+                <a key={local.id} href={local.slug && local.rating && local.photo_url ? `/locales/${slug}/${local.slug}` : `/locales/${slug}`} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
                   border: "1px solid #F5E6D3",
