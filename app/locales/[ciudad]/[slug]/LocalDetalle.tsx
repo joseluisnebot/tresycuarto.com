@@ -164,7 +164,7 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
               {cercanos.map((c) => (
                 <a
                   key={c.id}
-                  href={c.slug ? `/locales/${ciudadSlug}/${c.slug}` : `/locales/${ciudadSlug}`}
+                  href={c.slug && c.rating && c.photo_url ? `/locales/${ciudadSlug}/${c.slug}` : `/locales/${ciudadSlug}`}
                   style={{ textDecoration: "none", background: "#fff", borderRadius: "10px", overflow: "hidden", border: "1px solid #e7e5e4" }}
                 >
                   <div style={{ height: "100px", overflow: "hidden" }}>
