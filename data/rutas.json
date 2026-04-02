@@ -511,5 +511,182 @@
       "ruta tardeo Sevilla alternativo",
       "tardeo Sevilla centro"
     ]
+  },
+  {
+    "slug": "tardeo-centro-albacete",
+    "titulo": "Ruta de tardeo por el Centro de Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Centro",
+    "intro": "Albacete tiene uno de los tardeos más auténticos de Castilla-La Mancha. Su centro concentra bares con mucha personalidad, precios muy razonables y un ambiente que mezcla a parroquianos de toda la vida con gente joven. La ruta arranca en el Paseo de la Cuba, baja por las calles del centro histórico y termina en la zona de la Calle Zapateros, donde el tardeo puede alargarse sin que nadie te mire mal.",
+    "duracion": "3-4 horas",
+    "distancia": "1,5 km",
+    "mejor_dia": "Sábado desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Luzia — Paseo de la Cuba 33",
+        "descripcion": "El arranque perfecto. Luzia es uno de los locales mejor valorados de Albacete con casi 80 reseñas a 4.9 estrellas. Terraza en el Paseo de la Cuba, café con leche o vermut según la hora, y la energía tranquila del inicio del tardeo manchego.",
+        "tipo": "Aperitivo",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "ARNICA — Plaza de la Constitución",
+        "descripcion": "La plaza principal de Albacete con uno de sus bares más queridos. ARNICA tiene 100 reseñas a 4.8 estrellas y es el lugar donde los albaceteños se ven antes de decidir qué hacer con la tarde. Pide una caña y escucha las conversaciones: aquí el tardeo tiene otro ritmo.",
+        "tipo": "Cañas y ambiente",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "El Olivo — Calle Zapateros 17",
+        "descripcion": "139 reseñas y 4.8 estrellas no mienten. El Olivo es un clásico del centro con raciones generosas y buen vino manchego. La calle Zapateros en horas de tardeo tiene un ambiente de barrio que cuesta encontrar en ciudades más grandes.",
+        "tipo": "Tapas y vino",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Detroit — Calle Baños 13",
+        "descripcion": "El punto de inflexión entre el tardeo y la noche. Detroit tiene 299 reseñas y es uno de los pubs más populares del centro. Música, buena selección de cervezas y un ambiente que se calienta a medida que avanza la tarde.",
+        "tipo": "Pub y copas",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Jamaica — Pasaje Federico Ozanan",
+        "descripcion": "El cierre inevitable de cualquier ruta por Albacete. Con 6.355 reseñas es el bar más reseñado de la ciudad y uno de los más populares de toda la provincia. Un clásico absoluto que no falla.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El centro de Albacete se recorre fácilmente a pie — aparca en el Paseo de la Cuba y no muevas el coche",
+      "Los sábados el tardeo arranca antes aquí que en otras ciudades, desde las 12:30 ya hay ambiente",
+      "La Feria de Albacete en septiembre multiplica por diez el ambiente de cualquier ruta"
+    ],
+    "seo_keywords": [
+      "tardeo Albacete",
+      "bares Albacete centro tarde",
+      "ruta tardeo Albacete",
+      "qué hacer tarde Albacete"
+    ]
+  },
+  {
+    "slug": "tardeo-cañadio-santander",
+    "titulo": "Ruta de tardeo por Cañadío y el Centro de Santander",
+    "ciudad": "Santander",
+    "ciudad_slug": "santander",
+    "barrio": "Cañadío / Centro",
+    "intro": "Santander tiene uno de los ambientes de tarde más agradables del norte. La Plaza de Cañadío y las calles que la rodean concentran bares con mucha personalidad, buena sidra y una clientela fiel que convierte el tardeo en un ritual social. El viento del Cantábrico y la luz de la tarde le dan un carácter único que no encontrarás en ninguna otra ciudad.",
+    "duracion": "3-4 horas",
+    "distancia": "1,3 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Sin Prisa — Calle de Cádiz",
+        "descripcion": "El nombre lo dice todo. Sin Prisa es uno de los locales más buscados en Google cuando alguien quiere tardeo en Santander. Café de calidad, ambiente tranquilo y la actitud relajada del norte. El mejor arranque para una tarde sin plan fijo.",
+        "tipo": "Café y aperitivo",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Hijos de Adán — Calle Daoíz y Velarde",
+        "descripcion": "Un bar con nombre propio y carácter propio. Hijos de Adán forma parte del circuito de tardeo del centro santanderino con su oferta de cervezas artesanas y tapas que justifican parar aquí más de lo previsto.",
+        "tipo": "Cervezas artesanas",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Barraquito — Calle Gravina 13",
+        "descripcion": "Un pub del centro con el ambiente más informal de la ruta. Barraquito tiene el punto justo entre bar de barrio y local con ambiente, ideal para la pausa de mitad de tarde cuando el grupo ya está en modo tardeo total.",
+        "tipo": "Pub",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cervezas DouGall's — Calle San Celedonio 41",
+        "descripcion": "La cervecería artesana de referencia en Santander. DouGall's tiene sus propias cervezas y un ambiente de pub clásico que encaja perfectamente en el tramo final del tardeo. Amplia selección de grifos y buena compañía garantizada.",
+        "tipo": "Cervecería artesana",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Sala Rocambole — Calle Hernán Cortés 35",
+        "descripcion": "El final de la ruta con un punto cultural. Sala Rocambole es un local único en Santander con programación de música en directo y exposiciones. El cierre perfecto para un tardeo que quiere ir un paso más allá de la caña de rigor.",
+        "tipo": "Bar cultural / directo",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Santander tiene el tardeo más animado entre octubre y mayo — en verano la gente se va a El Sardinero",
+      "La zona de Cañadío y Calle Vargas tiene bares muy buenos que no aparecen en guías turísticas",
+      "Muchos locales del centro hacen pintxos los fines de semana al mediodía — aprovéchalo como aperitivo"
+    ],
+    "seo_keywords": [
+      "tardeo Santander",
+      "bares Santander tarde",
+      "ruta tardeo Santander centro",
+      "Cañadío Santander bares"
+    ]
+  },
+  {
+    "slug": "tardeo-el-tubo-zaragoza",
+    "titulo": "Ruta de tardeo por El Tubo de Zaragoza",
+    "ciudad": "Zaragoza",
+    "ciudad_slug": "zaragoza",
+    "barrio": "El Tubo / Casco Histórico",
+    "intro": "El Tubo es la zona de tapeo y tardeo más famosa de Zaragoza. Un laberinto de callejuelas en el Casco Histórico donde los bares se suceden sin interrupción y la tradición del vermut convive con los cócteles y las cervezas artesanas. Zaragoza tiene fama de ciudad de paso, pero quien se queda un tardeo en El Tubo entiende por qué sus vecinos no tienen prisa en irse.",
+    "duracion": "3-4 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Sábado desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Pasión — Calle Mayor",
+        "descripcion": "En plena Calle Mayor, La Pasión es el arranque ideal para el tardeo en El Tubo. Café de especialidad y ambiente tranquilo para empezar la tarde con calma antes de que el ritmo del barrio se acelere. Uno de los favoritos de los zaragozanos para el primer café de la tarde.",
+        "tipo": "Café y aperitivo",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "9 Bis — Calle Estébanes 2",
+        "descripcion": "En el corazón de El Tubo. 9 Bis tiene el encanto de los bares que no necesitan anunciarse — los conoce quien los conoce y quien los conoce vuelve. Vinos, vermut y la energía del Casco Histórico a pleno rendimiento.",
+        "tipo": "Vermut y vinos",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Señorita Smith — Calle Casto Méndez Núñez 18",
+        "descripcion": "El local con más personalidad de la ruta. Señorita Smith es uno de los bares más buscados en Google para el tardeo en Zaragoza, con un estilo propio y una carta de cócteles que invita a quedarse más de lo previsto.",
+        "tipo": "Cócteles y copas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Teatro Inevitable — Calle Santa Teresa de Jesús",
+        "descripcion": "Un bar con alma de teatro en pleno Casco Histórico. Teatro Inevitable tiene el ambiente más singular de la ruta: decoración sorprendente, buena música y una selección de bebidas que va más allá de la caña habitual.",
+        "tipo": "Bar de ambiente",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar Olímpico — Plaza San Pedro Nolasco",
+        "descripcion": "El cierre de la ruta en una plaza con mucho encanto. Bar Olímpico es un clásico del Casco Histórico donde el tardeo se convierte en noche sin que nadie lo decida conscientemente. Aquí el tiempo pasa de otra manera.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El Tubo está pensado para perderse — no sigas el GPS, explora las callejuelas adyacentes",
+      "Los bares de El Tubo suelen tener tapas gratuitas con la consumición en fin de semana",
+      "La Basílica del Pilar está a 10 minutos a pie — combínalo con una visita si llegas pronto"
+    ],
+    "seo_keywords": [
+      "tardeo Zaragoza",
+      "El Tubo Zaragoza bares",
+      "ruta tardeo Zaragoza",
+      "tapas tardeo Zaragoza centro"
+    ]
   }
 ]
