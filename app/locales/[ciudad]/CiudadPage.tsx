@@ -571,7 +571,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (
-                <a key={local.id} href={local.slug && local.rating && local.photo_url ? `/locales/${slug}/${local.slug}` : `/locales/${slug}`} style={{
+                <a key={local.id} href={local.slug && local.rating && local.photo_url ? `/locales/${slug}/${local.slug}` : undefined} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
                   border: "1px solid #F5E6D3",
