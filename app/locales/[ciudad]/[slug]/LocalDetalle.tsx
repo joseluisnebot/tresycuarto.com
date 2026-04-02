@@ -146,6 +146,34 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
           )}
         </div>
 
+        {/* CTA Propietario */}
+        <div style={{ background: "#fff", border: "1.5px dashed #F59E0B", borderRadius: "14px", padding: "1.5rem", marginBottom: "2rem" }}>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+            <span style={{ fontSize: "2rem", lineHeight: 1 }}>🏪</span>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 800, fontSize: "1rem", color: "#1C1917", marginBottom: "0.4rem" }}>
+                ¿Eres el propietario de {local.nombre}?
+              </div>
+              <p style={{ margin: "0 0 0.75rem", fontSize: "0.85rem", color: "#78716c", lineHeight: 1.5 }}>
+                Reclama tu ficha gratis y gestiona tu presencia en tresycuarto.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1rem" }}>
+                {["📸 Subir fotos", "🕐 Actualizar horarios", "📅 Publicar eventos", "🎵 Añadir servicios"].map(item => (
+                  <span key={item} style={{ fontSize: "0.75rem", background: "#FEF0DC", color: "#FB923C", borderRadius: "999px", padding: "0.2rem 0.7rem", fontWeight: 600 }}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href={`/unete?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}`}
+                style={{ display: "inline-block", background: "#F59E0B", color: "#fff", borderRadius: "999px", padding: "0.55rem 1.4rem", textDecoration: "none", fontWeight: 700, fontSize: "0.875rem" }}
+              >
+                Reclamar esta ficha →
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Back to city */}
         <Link
           href={`/locales/${ciudadSlug}`}
@@ -164,7 +192,7 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
               {cercanos.map((c) => (
                 <a
                   key={c.id}
-                  href={c.slug && c.rating && c.photo_url ? `/locales/${ciudadSlug}/${c.slug}` : `/locales/${ciudadSlug}`}
+                  href={c.slug && c.rating ? `/locales/${ciudadSlug}/${c.slug}` : `/locales/${ciudadSlug}`}
                   style={{ textDecoration: "none", background: "#fff", borderRadius: "10px", overflow: "hidden", border: "1px solid #e7e5e4" }}
                 >
                   <div style={{ height: "100px", overflow: "hidden" }}>
