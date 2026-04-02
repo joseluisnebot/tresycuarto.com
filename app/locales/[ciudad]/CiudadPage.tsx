@@ -571,7 +571,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (
-                <a key={local.id} href={local.slug && local.rating && local.photo_url ? `/locales/${slug}/${local.slug}` : undefined} style={{
+                <a key={local.id} href={local.slug && local.rating ? `/locales/${slug}/${local.slug}` : undefined} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
                   border: "1px solid #F5E6D3",
@@ -661,6 +661,22 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       <p style={{ fontSize: "0.78rem", color: "#A8A29E", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         🕒 {local.horario || local.horario_google?.split(" | ")[0]}
                       </p>
+                    )}
+                    {(local.lat && local.lon) && (
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${local.lat},${local.lon}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={e => e.stopPropagation()}
+                        style={{
+                          marginTop: "auto", paddingTop: "0.5rem",
+                          display: "inline-flex", alignItems: "center", gap: "0.3rem",
+                          fontSize: "0.75rem", fontWeight: 600, color: "#FB923C",
+                          textDecoration: "none",
+                        }}
+                      >
+                        🗺️ Cómo llegar
+                      </a>
                     )}
                   </div>
                 </a>
