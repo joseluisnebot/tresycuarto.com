@@ -6,3 +6,4 @@ logs/
 .vercel/
 .claude/
 .wrangler/
+data/locales-seo.json
