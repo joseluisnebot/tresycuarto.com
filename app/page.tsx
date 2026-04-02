@@ -1,6 +1,7 @@
 "use client";
 import citiesData from "./../data/cities.json";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { useTurnstile } from "./components/useTurnstile";
 
 const TODAS_CIUDADES = (citiesData as { nombre: string }[]).map(c => c.nombre);
@@ -363,7 +364,7 @@ export default function Home() {
               <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#FB923C", margin: "0 0 0.25rem" }}>Agenda</p>
               <h2 style={{ fontSize: "1.4rem", fontWeight: 900, color: "#1C1917", margin: 0, letterSpacing: "-0.02em" }}>Próximos eventos</h2>
             </div>
-            <a href="/eventos" style={{ fontSize: "0.82rem", fontWeight: 600, color: "#FB923C", textDecoration: "none" }}>Ver todos →</a>
+            <Link href="/eventos" style={{ fontSize: "0.82rem", fontWeight: 600, color: "#FB923C", textDecoration: "none" }}>Ver todos →</Link>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0.75rem" }}>
             {eventos.map(evento => {
