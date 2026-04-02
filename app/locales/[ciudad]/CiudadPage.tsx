@@ -141,7 +141,13 @@ export default function CiudadPage({ slug }: { slug: string }) {
   const [total, setTotal] = useState(0);
   const [totalCiudad, setTotalCiudad] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(() => {
+    if (typeof window !== "undefined") {
+      const p = new URLSearchParams(window.location.search).get("p");
+      if (p) return (parseInt(p, 10) - 1) * LIMIT;
+    }
+    return 0;
+  });
   const [filtroTipo, setFiltroTipo] = useState("");
   const [filtroTerraza, setFiltroTerraza] = useState(false);
   const [weather, setWeather] = useState<WeatherDay[] | null>(null);
@@ -664,7 +670,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
             {/* Paginación */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginTop: "2rem" }}>
               {offset > 0 && (
-                <button onClick={() => setOffset(Math.max(0, offset - LIMIT))} style={{
+                <button onClick={() => { const np = Math.max(0, offset - LIMIT); setOffset(np); const p = Math.floor(np/LIMIT)+1; window.history.replaceState(null,"",p===1?window.location.pathname:`?p=${p}`); window.scrollTo(0,0); }} style={{
                   padding: "0.6rem 1.5rem", borderRadius: "0.75rem", border: "1.5px solid #F5E6D3",
                   background: "white", color: "#78716C", fontWeight: 600, cursor: "pointer",
                 }}>← Anterior</button>
@@ -673,7 +679,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                 Página {Math.floor(offset / LIMIT) + 1} de {Math.ceil(total / LIMIT)}
               </span>
               {offset + LIMIT < total && (
-                <button onClick={() => setOffset(offset + LIMIT)} style={{
+                <button onClick={() => { const np = offset + LIMIT; setOffset(np); window.history.replaceState(null,"",`?p=${Math.floor(np/LIMIT)+1}`); window.scrollTo(0,0); }} style={{
                   padding: "0.6rem 1.5rem", borderRadius: "0.75rem", border: "none",
                   background: "linear-gradient(135deg,#FB923C,#F59E0B)", color: "white",
                   fontWeight: 700, cursor: "pointer",

@@ -19,6 +19,7 @@
     "/dashboard/",
     "/local",
     "/local/*",
+    "/locales/*/*",
     "/locales/albacete/",
     "/locales/alcala-de-henares/",
     "/locales/algeciras/",
