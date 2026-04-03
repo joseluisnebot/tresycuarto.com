@@ -47,6 +47,7 @@ const PLACEHOLDER: Record<string, string> = {
 export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciudadSlug: string }) {
   const [cercanos, setCercanos] = useState<LocalCercano[]>([]);
   const [claimed, setClaimed] = useState<boolean | null>(null);
+  const [coords, setCoords] = useState<{ lat: number; lon: number } | null>(null);
 
   useEffect(() => {
     fetch(`/api/locales?ciudad=${encodeURIComponent(local.ciudad)}&limite=6`)
@@ -61,7 +62,12 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
   useEffect(() => {
     fetch(`/api/app/local?ciudad=${encodeURIComponent(ciudadSlug)}&slug=${encodeURIComponent(local.slug)}`)
       .then((r) => r.json())
-      .then((d) => { if (d.local) setClaimed(d.local.claimed === 1); })
+      .then((d) => {
+        if (d.local) {
+          setClaimed(d.local.claimed === 1);
+          if (d.local.lat && d.local.lon) setCoords({ lat: d.local.lat, lon: d.local.lon });
+        }
+      })
       .catch(() => {});
   }, [ciudadSlug, local.slug]);
 
@@ -153,6 +159,33 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
             </div>
           )}
         </div>
+
+        {/* Mapa + Cómo llegar */}
+        {coords && (
+          <div style={{ marginBottom: "2rem" }}>
+            <div style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid #e7e5e4", marginBottom: "0.75rem", height: "220px" }}>
+              <iframe
+                title={`Mapa de ${local.nombre}`}
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${coords.lon - 0.005},${coords.lat - 0.005},${coords.lon + 0.005},${coords.lat + 0.005}&layer=mapnik&marker=${coords.lat},${coords.lon}`}
+                style={{ width: "100%", height: "100%", border: "none" }}
+                loading="lazy"
+              />
+            </div>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${coords.lat},${coords.lon}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                background: "#FB923C", color: "#fff", borderRadius: "999px",
+                padding: "0.55rem 1.4rem", textDecoration: "none",
+                fontWeight: 700, fontSize: "0.875rem",
+              }}
+            >
+              🗺️ Cómo llegar
+            </a>
+          </div>
+        )}
 
         {/* CTA Propietario */}
         {claimed === true && (
