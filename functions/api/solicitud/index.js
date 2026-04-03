@@ -7,21 +7,25 @@ export async function onRequestPost(context) {
   }
 
   const { nombre, ciudad, direccion, telefono, web, instagram, tiktok, horario, tipo,
-          terraza, descripcion, contacto_email, contacto_nombre } = body;
+          terraza, descripcion, contacto_email, contacto_nombre,
+          local_id, tipo_solicitud } = body;
 
   if (!nombre || !ciudad || !contacto_email) {
     return Response.json({ error: "Faltan campos obligatorios" }, { status: 400 });
   }
 
+  const esClaim = tipo_solicitud === "claim";
+
   // Guardar en D1
   await env.DB.prepare(`
     INSERT INTO solicitudes
-      (nombre, ciudad, direccion, telefono, web, instagram, tiktok, horario, tipo, terraza, descripcion, contacto_email, contacto_nombre)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      (nombre, ciudad, direccion, telefono, web, instagram, tiktok, horario, tipo, terraza, descripcion, contacto_email, contacto_nombre, local_id, tipo_solicitud)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).bind(
     nombre, ciudad, direccion || null, telefono || null, web || null,
     instagram || null, tiktok || null, horario || null, tipo || "bar",
-    terraza ? 1 : 0, descripcion || null, contacto_email, contacto_nombre || null
+    terraza ? 1 : 0, descripcion || null, contacto_email, contacto_nombre || null,
+    local_id || null, tipo_solicitud || "nuevo"
   ).run();
 
   if (env.BREVO_API_KEY) {
@@ -56,14 +60,15 @@ export async function onRequestPost(context) {
       body: JSON.stringify({
         sender: { name: "tresycuarto", email: "hola@tresycuarto.com" },
         to: [{ email: "JoseluisNebot@gmail.com", name: "Jose Luis" }],
-        subject: `Nuevo local: ${nombre} (${ciudad})`,
+        subject: esClaim ? `🔑 Claim ficha: ${nombre} (${ciudad})` : `Nuevo local: ${nombre} (${ciudad})`,
         htmlContent: `
           <div style="font-family:sans-serif;max-width:520px;margin:0 auto;color:#1C1917">
-            <h2>Nuevo local solicitado</h2>
+            <h2>${esClaim ? "🔑 Solicitud de claim de ficha existente" : "Nuevo local solicitado"}</h2>
             <ul>
+              ${esClaim ? `<li><strong>Local ID:</strong> ${local_id}</li>` : ""}
               <li><strong>Local:</strong> ${nombre}</li>
               <li><strong>Ciudad:</strong> ${ciudad}</li>
-              <li><strong>Tipo:</strong> ${tipo}</li>
+              ${!esClaim ? `<li><strong>Tipo:</strong> ${tipo}</li>` : ""}
               <li><strong>Dirección:</strong> ${direccion || "—"}</li>
               <li><strong>Instagram:</strong> ${instagram || "—"}</li>
               <li><strong>TikTok:</strong> ${tiktok || "—"}</li>
@@ -72,6 +77,7 @@ export async function onRequestPost(context) {
               <li><strong>Contacto:</strong> ${contacto_nombre || "—"} — ${contacto_email}</li>
             </ul>
             ${descripcion ? `<p><strong>Descripción:</strong> ${descripcion}</p>` : ""}
+            ${esClaim ? `<p><a href="https://tresycuarto.com/locales/-/${local_id}">Ver ficha →</a></p>` : ""}
           </div>
         `,
       }),
