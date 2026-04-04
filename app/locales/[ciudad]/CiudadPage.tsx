@@ -680,7 +680,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                           onClick={e => e.stopPropagation()}
                           style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "0.75rem", fontWeight: 600, color: "#A78BFA", textDecoration: "none" }}
                         >
-                          🏪 ¿Eres el dueño?
+                          🏪 ¿Eres el propietario?
                         </a>
                       )}
                     </div>
