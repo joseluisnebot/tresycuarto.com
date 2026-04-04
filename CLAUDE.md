@@ -38,7 +38,7 @@ Al añadir una ciudad nueva, siempre los 3:
 ```bash
 cd /root/tresycuarto-sync
 npm run build
-export CLOUDFLARE_API_TOKEN=KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix
+export CLOUDFLARE_API_TOKEN=<ver CLAUDE.md en /root>
 export CLOUDFLARE_ACCOUNT_ID=0c4d9c91bb0f3a4c905545ecc158ec65
 npx wrangler pages deploy out --project-name=tresycuarto --branch=main
 ```
