@@ -21,6 +21,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@cloudflare/puppeteer": "^1.0.6",
     "@eslint/eslintrc": "^3",
     "@opennextjs/cloudflare": "^1.17.1",
     "@tailwindcss/postcss": "^4",
