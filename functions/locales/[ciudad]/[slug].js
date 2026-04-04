@@ -191,14 +191,14 @@ function renderLocal(local, ciudadSlug) {
     </div>` : ""}
 
     ${local.claimed === 1 ? `
-    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:14px;padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:0.75rem">
+    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:14px;padding:1rem 1.5rem;margin-top:1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:0.75rem">
       <span style="font-size:1.5rem">✅</span>
       <div>
         <div style="font-weight:700;color:#166534;font-size:0.9rem">Local verificado</div>
         <div style="font-size:0.8rem;color:#4ade80">Este local ha sido reclamado y verificado por su propietario.</div>
       </div>
     </div>` : `
-    <div style="background:#fff;border:1.5px dashed #F59E0B;border-radius:14px;padding:1.5rem;margin-bottom:2rem">
+    <div style="background:#fff;border:1.5px dashed #F59E0B;border-radius:14px;padding:1.5rem;margin-top:1.5rem;margin-bottom:2rem">
       <div style="display:flex;gap:1rem;align-items:flex-start">
         <span style="font-size:2rem;line-height:1">🏪</span>
         <div style="flex:1">
