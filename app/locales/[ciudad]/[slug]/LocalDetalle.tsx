@@ -18,7 +18,6 @@ type Local = {
   instagram: string | null;
   web: string | null;
   telefono: string | null;
-  descripcion: string | null;
 };
 
 type LocalCercano = {
@@ -92,28 +91,16 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
 
       <main style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem 1rem" }}>
         {/* Hero photo */}
-        <div style={{ borderRadius: "12px", overflow: "hidden", marginBottom: "1.5rem", height: "280px",
-          background: local.photo_url ? undefined : "linear-gradient(135deg, #FEF0DC 0%, #FFF8EF 50%, #EDE9FE 100%)",
-          display: "flex", alignItems: "center", justifyContent: "center" }}>
-          {local.photo_url ? (
+        {local.photo_url && (
+          <div style={{ borderRadius: "12px", overflow: "hidden", marginBottom: "1.5rem", height: "280px" }}>
             <img
               src={local.photo_url}
               alt={local.nombre}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              onError={(e) => {
-                const img = e.currentTarget as HTMLImageElement;
-                img.style.display = "none";
-                if (img.parentElement) {
-                  img.parentElement.style.background = "linear-gradient(135deg, #FEF0DC 0%, #FFF8EF 50%, #EDE9FE 100%)";
-                }
-              }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
-          ) : (
-            <span style={{ fontSize: "4rem", opacity: 0.4 }}>
-              {local.tipo === "cafe" ? "☕" : local.tipo === "pub" ? "🍺" : local.tipo === "nightclub" ? "🎵" : "🥂"}
-            </span>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Header */}
         <div style={{ marginBottom: "1.5rem" }}>
@@ -132,11 +119,6 @@ export default function LocalDetalle({ local, ciudadSlug }: { local: Local; ciud
           <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#1C1917", margin: "0 0 0.5rem" }}>
             {local.nombre}
           </h1>
-          {local.descripcion && (
-            <p style={{ color: "#57534e", margin: "0 0 0.5rem", fontSize: "0.95rem", lineHeight: 1.6 }}>
-              {local.descripcion}
-            </p>
-          )}
           {local.direccion && (
             <p style={{ color: "#78716c", margin: "0", fontSize: "0.95rem" }}>
               📍 {local.direccion}, {local.ciudad}
