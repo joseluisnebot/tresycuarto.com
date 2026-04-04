@@ -190,6 +190,28 @@ function renderLocal(local, ciudadSlug) {
         style="width:100%;height:280px;border:none;display:block" loading="lazy" title="Mapa de ${esc(local.nombre)}"></iframe>
     </div>` : ""}
 
+    ${local.claimed === 1 ? `
+    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:14px;padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:0.75rem">
+      <span style="font-size:1.5rem">✅</span>
+      <div>
+        <div style="font-weight:700;color:#166534;font-size:0.9rem">Local verificado</div>
+        <div style="font-size:0.8rem;color:#4ade80">Este local ha sido reclamado y verificado por su propietario.</div>
+      </div>
+    </div>` : `
+    <div style="background:#fff;border:1.5px dashed #F59E0B;border-radius:14px;padding:1.5rem;margin-bottom:2rem">
+      <div style="display:flex;gap:1rem;align-items:flex-start">
+        <span style="font-size:2rem;line-height:1">🏪</span>
+        <div style="flex:1">
+          <div style="font-weight:800;font-size:1rem;color:#1C1917;margin-bottom:0.4rem">¿Eres el propietario de ${esc(local.nombre)}?</div>
+          <p style="margin:0 0 0.75rem;font-size:0.85rem;color:#78716c;line-height:1.5">Reclama tu ficha gratis y gestiona tu presencia en tresycuarto.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem">
+            ${["📸 Subir fotos","🕐 Actualizar horarios","📅 Publicar eventos","🎵 Añadir servicios"].map(i=>`<span style="font-size:0.75rem;background:#FEF0DC;color:#FB923C;border-radius:999px;padding:0.2rem 0.7rem;font-weight:600">${i}</span>`).join("")}
+          </div>
+          <a href="/unete?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}" style="display:inline-block;background:#F59E0B;color:#fff;border-radius:999px;padding:0.55rem 1.4rem;text-decoration:none;font-weight:700;font-size:0.875rem">Reclamar esta ficha →</a>
+        </div>
+      </div>
+    </div>`}
+
     <a href="${ciudadUrl}" class="back">← Ver más locales en ${esc(local.ciudad)}</a>
   </div>
 
