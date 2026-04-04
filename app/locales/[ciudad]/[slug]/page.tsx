@@ -17,6 +17,7 @@ type LocalSeo = {
   instagram: string | null;
   web: string | null;
   telefono: string | null;
+  descripcion: string | null;
 };
 
 const LOCALES_MAP = new Map<string, LocalSeo>(
@@ -50,7 +51,9 @@ export async function generateMetadata({
 
   const tipo = TIPO_LABEL[local.tipo ?? ""] || "Local";
   const title = `${local.nombre} — ${tipo} de tardeo en ${local.ciudad} | tresycuarto`;
-  const description = `${local.nombre} en ${local.ciudad}${local.direccion ? `, ${local.direccion}` : ""}. ${local.rating ? `Valoración ${local.rating}/5. ` : ""}Horarios y más info en tresycuarto.com`;
+  const description = local.descripcion
+    ? `${local.descripcion.slice(0, 155)}`
+    : `${local.nombre} en ${local.ciudad}${local.direccion ? `, ${local.direccion}` : ""}. ${local.rating ? `Valoración ${local.rating}/5. ` : ""}Horarios y más info en tresycuarto.com`;
 
   return {
     title,
