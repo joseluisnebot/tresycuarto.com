@@ -10,3 +10,6 @@ database_id = "458672aa-392f-4767-8d2b-926406628ba0"
 [[r2_buckets]]
 binding = "MEDIA"
 bucket_name = "tresycuarto-media"
+
+[browser]
+binding = "MYBROWSER"

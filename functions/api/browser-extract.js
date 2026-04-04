@@ -8,6 +8,8 @@
  * Requiere binding MYBROWSER configurado en Cloudflare Pages settings.
  */
 
+// @cloudflare/puppeteer es un módulo nativo del runtime de Cloudflare Workers
+// No se instala como npm package — se resuelve en runtime
 import puppeteer from "@cloudflare/puppeteer";
 
 const SECRET_TOKEN = "tc_browser_2026";
