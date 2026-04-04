@@ -1,4 +1,4 @@
-const CACHE = 'tresycuarto-v5';
+const CACHE = 'tresycuarto-v6';
 
 self.addEventListener('install', event => {
   event.waitUntil(self.skipWaiting());
