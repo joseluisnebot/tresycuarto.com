@@ -105,11 +105,13 @@ export async function onRequestGet(context) {
       // Horario: selectores CSS
       if (!r.horario) {
         for (const sel of selectors) {
-          const el = document.querySelector(sel);
-          if (el?.innerText?.length > 5 && el.innerText.length < 200) {
-            r.horario = el.innerText.trim().slice(0, 200);
-            break;
-          }
+          try {
+            const el = document.querySelector(sel);
+            if (el?.innerText?.length > 5 && el.innerText.length < 200) {
+              r.horario = el.innerText.trim().slice(0, 200);
+              break;
+            }
+          } catch {}
         }
       }
 
