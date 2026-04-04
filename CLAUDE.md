@@ -52,11 +52,12 @@ npx wrangler pages deploy out --project-name=tresycuarto --branch=main
 - Guía completa: `STYLE.md` — leer SIEMPRE antes de tocar cualquier componente visual
 
 ## REGLA DE ESTILO — Nunca romper el diseño
-1. **Antes de editar cualquier archivo TSX/CSS**: leer `STYLE.md`
-2. **No cambiar** colores, tipografía, bordes, espaciados ni shadows que no estén en el diff solicitado
+1. **Antes de editar cualquier archivo TSX/CSS/JS/HTML**: leer el fichero completo con Read tool. Sin excepción.
+2. **No cambiar** colores, tipografía, bordes, espaciados, shadows, botones, layout ni información que no estén en el diff solicitado
 3. **Verificación obligatoria** tras cada cambio visual: `npm run build` debe pasar sin errores
-4. **Si el cambio es solo funcional** (lógica, datos, API): no tocar ningún `style={{...}}`
+4. **Si el cambio es solo funcional** (lógica, datos, API): no tocar ningún `style={{...}}` ni clases CSS
 5. **Si el usuario no pide cambio visual**: asumir que el estilo actual es correcto y preservarlo al 100%
+6. **Scope mínimo**: modificar ÚNICAMENTE lo que se pidió. Nada más. Cualquier "mejora" no solicitada está prohibida.
 
 ## GitHub
 - Repo: joseluisnebot/tresycuarto.com
