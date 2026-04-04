@@ -584,10 +584,10 @@ export default function CiudadPage({ slug }: { slug: string }) {
                 >
                   {(() => {
                     const PLACEHOLDER: Record<string, string> = {
-                      bar: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/bar.jpg",
-                      pub: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/pub.jpg",
-                      cafe: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/cafe.jpg",
-                      biergarten: "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/biergarten.jpg",
+                      bar: "https://media.tresycuarto.com/placeholders/bar.jpg",
+                      pub: "https://media.tresycuarto.com/placeholders/pub.jpg",
+                      cafe: "https://media.tresycuarto.com/placeholders/cafe.jpg",
+                      biergarten: "https://media.tresycuarto.com/placeholders/biergarten.jpg",
                     };
                     const imgSrc = local.photo_url || PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"];
                     return (

@@ -27,7 +27,7 @@ CLOUDFLARE_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4
 DB_ID = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_API = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/d1/database/{DB_ID}/query"
 R2_BUCKET = "tresycuarto-media"
-R2_PUBLIC = "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev"
+R2_PUBLIC = "https://media.tresycuarto.com"
 
 HEADERS_D1 = {
     "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",

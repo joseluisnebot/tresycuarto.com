@@ -618,7 +618,7 @@ function renderLocal(local) {
 
     ${(() => {
       const tipoFoto = ['pub','cafe','biergarten'].includes(local.tipo) ? local.tipo : 'bar';
-      const placeholder = `https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev/placeholders/${tipoFoto}.jpg`;
+      const placeholder = `https://media.tresycuarto.com/placeholders/${tipoFoto}.jpg`;
       const src = local.photo_url ? escHtml(local.photo_url) : placeholder;
       return `<img src="${src}" alt="${escHtml(local.nombre)}" class="photo-header" loading="lazy" onerror="this.src='${placeholder}';this.onerror=null;" />`;
     })()}

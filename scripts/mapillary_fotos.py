@@ -9,7 +9,7 @@ from pathlib import Path
 
 MAPILLARY_TOKEN = "MLY|26676068378748306|aaba4434f5814003d00437af9479c302"
 R2_BUCKET = "tresycuarto-media"
-R2_PUBLIC = "https://pub-f315142d515a4a21824503bd20f56ad3.r2.dev"
+R2_PUBLIC = "https://media.tresycuarto.com"
 RADIO_GRADOS = 0.0003  # ~33 metros
 MIN_BYTES = 20_000     # mínimo 20KB
 MAX_POR_CIUDAD = 200   # locales a procesar por ejecución
