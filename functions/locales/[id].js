@@ -575,6 +575,7 @@ function renderLocal(local) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${local.photo_url || local.foto_perfil || `https://tresycuarto.com/og/${ciudadSlug(local.ciudad)}.png`}" />
   <link rel="canonical" href="https://tresycuarto.com/locales/${local.id}" />
+  <meta name="robots" content="noindex, follow" />
   ${commonHeadLinks()}
   <script type="application/ld+json">${schema}</script>
   <script type="application/ld+json">${breadcrumb}</script>
