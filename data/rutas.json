@@ -796,5 +796,113 @@
       "Barrenkale bares",
       "que hacer tarde Bilbao"
     ]
+  },
+  {
+    "slug": "tardeo-soho-malaga",
+    "titulo": "Ruta de tardeo por El Soho y el Centro",
+    "ciudad": "Málaga",
+    "ciudad_slug": "malaga",
+    "barrio": "El Soho",
+    "intro": "Málaga tiene el tardeo más mediterráneo de Andalucía. Sol hasta las 20:00, terrazas en calles empedradas y una mezcla de malagueños de toda la vida con el turismo que ha transformado el centro en los últimos años. El Soho, el barrio de los murales y las galerías, es el epicentro del tardeo moderno malagueño: calle Trinidad Grund y Calle Beatas concentran bares de vermut, cervezas artesanas y terrazas cuidadas que conviven con el ambiente más castizo de Calle Granada y Alcazabilla, junto a la Alcazaba.",
+    "duracion": "3-4 horas",
+    "distancia": "1,3 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle Trinidad Grund — El Soho",
+        "descripcion": "El corazón del tardeo moderno malagueño. En menos de 200 metros se acumulan La Bella Julieta, Santa Coffee Roaster, Grand Café Gezellig, Cervecería Mapamundi y La Fábrica. Terrazas con diseño cuidado, cervezas artesanas y vermut junto a los murales de street art que dan identidad al barrio. El ambiente es joven, tranquilo a primera hora y va animándose según avanza la tarde.",
+        "tipo": "Vermut y terrazas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Beatas",
+        "descripcion": "La transición entre El Soho y el Málaga más castizo. La Destilería, Rocking Beatas y Taberna Andaluza La Gloria son locales con mucha personalidad: mezcla de tapas, vino malagueño y clientela variada. Las terrazas de Beatas tienen el encanto de una calle estrecha con ambiente de barrio que el turismo aún no ha absorbido del todo.",
+        "tipo": "Tapas y vino",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Granada",
+        "descripcion": "El eje comercial del centro histórico se convierte por las tardes en una de las calles más animadas de Málaga. Cónico, Granada 44, La Campana y varios cafés con terraza reciben a quien llega de visitar el Museo Picasso o la Alcazaba. El ambiente aquí es más mixto: turistas, familias y malagueños conviviendo en la misma calle, todos con algo en la mano.",
+        "tipo": "Cañas y ambiente",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Alcazabilla",
+        "descripcion": "El cierre perfecto con vistas a la Alcazaba. Tiffany's y Café Negro, ambos en Alcazabilla, tienen la terraza con la mejor panorámica del tardeo malagueño: la muralla árabe de fondo y el sol cayendo por el oeste. Ideal para la última copa de la tarde antes de que el centro se transforme en noche.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El sol de tarde en Málaga es agradable incluso en invierno — las terrazas de Trinidad Grund funcionan todo el año",
+      "Aparca en el parking del Muelle Uno y entra al centro a pie: el casco histórico es casi completamente peatonal",
+      "Los domingos por la mañana (12:00-14:00) Calle Beatas y Trinidad Grund son mucho más tranquilas y agradables que los sábados",
+      "La Alcazaba y el Teatro Romano cierran a las 18:00-20:00 según temporada — si quieres combinar cultura y tardeo, empieza por ahí"
+    ],
+    "seo_keywords": [
+      "tardeo Málaga",
+      "bares Málaga tarde",
+      "ruta tardeo Málaga centro",
+      "El Soho Málaga bares",
+      "que hacer tarde Málaga"
+    ]
+  },
+  {
+    "slug": "tardeo-rua-real-coruna",
+    "titulo": "Ruta de tardeo por la Rúa Real y el Orzán",
+    "ciudad": "La Coruña",
+    "ciudad_slug": "la-coruna",
+    "barrio": "Rúa Real / Orzán",
+    "intro": "La Coruña tiene el tardeo más atlántico de España. El viento, la luz plateada y la Rúa Real — una de las calles de bares más largas y densas de Galicia — hacen de A Coruña una ciudad donde el tardeo es cultura popular arraigada. La ruta empieza en el Andén de Riazor con vistas al Atlántico, sigue por el eje de la Rúa Real con sus decenas de bares encadenados y termina en el Orzán, el barrio de la noche coruñesa, que ya a las 18:00 empieza a despertar.",
+    "duracion": "3-4 horas",
+    "distancia": "1,5 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Andén de Riazor",
+        "descripcion": "El punto de partida más espectacular del tardeo coruñés. Playa Club y Atlántico 57 tienen terraza frente a la playa de Riazor con vistas al Atlántico. El primer vino del día o la primera cerveza con el sonido de las olas de fondo es uno de esos momentos que definen lo que es el tardeo en el norte de España: sin prisa, con frío justo o mucho sol según el día, y con la sensación de estar exactamente donde debes estar.",
+        "tipo": "Aperitivo con vistas",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Rúa Real — tramo central",
+        "descripcion": "La columna vertebral del tardeo coruñés. Entre el número 1 y el 100 de la Rúa Real se acumulan Café-Bar El Puente, O Chocolate, Stollen, A Raiola, Ciaboga, Hemingway y una docena más. Bares de toda la vida con madera oscura, clientela fija y una cultura del vino y el chupito que es puramente gallega. La calle es peatonal en muchos tramos y en tarde de buen tiempo la gente se derrama a las aceras.",
+        "tipo": "Vino y tapas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Rúa Real — tramo alto",
+        "descripcion": "El segundo acto de la Rúa Real, con más concentración de pubs y ambiente más animado. Derby Café, Vinoteca Las Barricas, Bla Bla y Hemingway en el número 55 son paradas obligadas. La clientela va siendo más joven según se sube en la numeración y el ambiente va calentando. A estas alturas de la ruta el tardeo ya está en plena marcha.",
+        "tipo": "Cañas y pubs",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Pasadizo do Orzán",
+        "descripcion": "El remate del tardeo coruñés. El Cortijo y Hangar son los locales más conocidos del Orzán, el barrio que conecta el tardeo con la noche. El Pasadizo es estrecho y oscuro, con una concentración de pubs que a las 19:00-20:00 ya no deja pasar. Si el tardeo se convierte en noche, ya estás en el sitio correcto para que eso ocurra.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "En A Coruña siempre puede llover — lleva algo de abrigo aunque el día empiece bien",
+      "La Rúa Real es muy larga: no intentes recorrerla entera, elige tramos y quédate donde haya ambiente",
+      "Los domingos hay más ambiente familiar en Riazor por la mañana — los sábados el Orzán es más intenso",
+      "Si puedes, combina la ruta con el paseo marítimo: de Riazor al Orzán hay solo 20 minutos caminando junto al mar"
+    ],
+    "seo_keywords": [
+      "tardeo A Coruña",
+      "bares La Coruña tarde",
+      "ruta tardeo Coruña",
+      "Rua Real bares Coruña",
+      "que hacer tarde A Coruña"
+    ]
   }
 ]
