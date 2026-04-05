@@ -19,7 +19,6 @@
     "/dashboard/",
     "/rutas",
     "/rutas/",
-    "/rutas/*",
     "/local",
     "/local/*",
     "/locales/albacete/",
