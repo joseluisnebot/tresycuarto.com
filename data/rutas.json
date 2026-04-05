@@ -688,5 +688,113 @@
       "ruta tardeo Zaragoza",
       "tapas tardeo Zaragoza centro"
     ]
+  },
+  {
+    "slug": "tardeo-plaza-mayor-salamanca",
+    "titulo": "Ruta de tardeo por la Plaza Mayor y el centro",
+    "ciudad": "Salamanca",
+    "ciudad_slug": "salamanca",
+    "barrio": "Centro histórico",
+    "intro": "Salamanca tiene el tardeo más universitario de España. La Plaza Mayor, considerada la más bonita del país, es el punto de arranque natural: terrazas al sol, vermut en la mano y el ambiente de una ciudad donde conviven jubilados de toda la vida con miles de estudiantes de la USAL y el IE. Esta ruta recorre el corazón monumental de Salamanca desde la Plaza Mayor hasta la Calle Van Dyck, pasando por las calles del centro histórico donde el tardeo no tiene horario fijo.",
+    "duracion": "3-4 horas",
+    "distancia": "1,4 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza Mayor",
+        "descripcion": "El epicentro de la vida social salmantina. Los bares con terraza en la plaza y en las calles adyacentes como Calle Concejo o Calle Prior se llenan desde el mediodía. El Bar Sin Problemas, directamente en la plaza, es el punto de encuentro clásico. El sol entra en la plaza por el sur toda la tarde, pide un vermut y observa el desfile de gente que es Salamanca a las 14:00.",
+        "tipo": "Vermut",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Rua Mayor y entorno universidad",
+        "descripcion": "Desde la Plaza Mayor, bajar por Rua Mayor hacia la Universidad. El ambiente universitario se nota: terrazas pequeñas, precios ajustados y música que sale por las puertas. Es la zona más histórica del recorrido, con vistas a la fachada plateresca de la Universidad en el ambiente de fondo. Aquí el tardeo tiene sabor de ciudad viva que lleva siglos haciendo lo mismo.",
+        "tipo": "Cañas",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Van Dyck",
+        "descripcion": "La calle más concurrida del tardeo salmantino. Van Dyck concentra más de quince bares y pubs en apenas 400 metros: Juana Brava Vermuteria, La Fresa, La Cata de Vinos, Meson Los Faroles, La Posada del Ermitaño, Trastero 22... El ambiente va subiendo desde las 17:00 y no para hasta la madrugada. Puedes entrar y salir de local en local sin alejarte ni cien metros. Es la versión universitaria del tardeo más puro.",
+        "tipo": "Tardeo universitario",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Salesas",
+        "descripcion": "El remate natural de Van Dyck. En Salesas, el ambiente es algo más tranquilo y los bares tienen más personalidad de local de barrio. Van Dyck 50 y Bar Churrasco son referencias clásicas de la zona. Si los conciertos del Teatro Liceo o las actuaciones del Fiesta Feten caen en este fin de semana, el cierre de la tarde aquí es especialmente animado: los asistentes acaban en los bares de la zona antes o después del espectáculo.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Van Dyck es más agradable entre semana en temporada universitaria (oct-mayo) — los fines de semana de verano baja el ambiente",
+      "La Plaza Mayor tiene terraza todo el año pero el frio salmantino puede ser considerable — lleva algo de abrigo en otoño e invierno",
+      "Si hay conciertos en el Teatro Liceo o el Auditorio, compra entradas antes: los bares de Van Dyck se llenan de asistentes al salir",
+      "Aparca fuera del centro historico — el casco antiguo es peatonal casi en su totalidad"
+    ],
+    "seo_keywords": [
+      "tardeo Salamanca",
+      "bares Salamanca tarde",
+      "ruta tardeo Salamanca centro",
+      "calle Van Dyck Salamanca",
+      "que hacer tarde Salamanca"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-viejo-bilbao",
+    "titulo": "Ruta de tardeo por el Casco Viejo",
+    "ciudad": "Bilbao",
+    "ciudad_slug": "bilbao",
+    "barrio": "Casco Viejo",
+    "intro": "El Casco Viejo de Bilbao es el barrio de tardeo más denso del Pais Vasco. Las Siete Calles, el entramado medieval que cruza el barrio de norte a sur, concentran una cantidad absurda de pubs, bares de pintxos y tabernas en apenas medio kilometro cuadrado. Barrenkale es el eje del tardeo bilbaino: a las 17:00 del sabado ya no cabe nadie mas en las aceras. Esta ruta empieza en el Arenal, recorre el corazon del Casco Viejo y termina en Askao, el otro polo del ambiente.",
+    "duracion": "3-4 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Sabado desde las 13:00 o domingo desde las 12:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza del Arenal",
+        "descripcion": "El punto de entrada al Casco Viejo desde el centro. El Meson de Luis y el cafe Amets son las referencias de la plaza. El Arenal es el lugar donde Bilbao se reune antes de entrar al barrio: familias, grupos de amigos, algun musico callejero. El ambiente es tranquilo y el primer txakoli o caña del dia se toma aqui, antes de adentrarse en las calles.",
+        "tipo": "Aperitivo",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Ledesma",
+        "descripcion": "Una de las calles de bares mas antiguas de Bilbao. Ledesma, Antomar y Bar Hipodoromo llevan decadas en la misma calle, con una clientela fiel de bilbainos de toda la vida. El ambiente aqui es mas de barrio, menos turistico que en el Casco Viejo estricto, y los precios son mas contenidos. Un buen calentamiento antes de entrar en Barrenkale.",
+        "tipo": "Pintxos y cañas",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Barrenkale",
+        "descripcion": "El corazon del tardeo bilbaino. Barrenkale concentra en menos de 300 metros bares de todos los estilos: Manolita la Primera (clasico de pintxos), Beltza (ambiente alternativo), Gure Txoko (tradicional vasca), Modesto, Zipo, Baila!... A partir de las 17:00, las puertas abiertas y la gente en la calle crean una atmosfera que no tiene paranon en el norte de España. Entra en tres o cuatro, contrasta estilos y no tengas prisa.",
+        "tipo": "Tardeo pleno",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Askao kalea",
+        "descripcion": "El remate perfecto del Casco Viejo. Askao es mas tranquila que Barrenkale pero tiene sus propios clasicos: Melchor, Los Caracoles, El Ciervo y el propio Ascao son referencias consolidadas. El ambiente es algo mas mixto en edad y el espacio en la calle es mayor, ideal para terminar la tarde con mas calma y decidir si la noche continua o se queda en un tardeo redondo.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El domingo por la mañana (12:00-14:00) es el momento mas bilbaino: vermut y pintxos antes de comer, casi sin turistas",
+      "Barrenkale se llena tanto que en verano es dificil entrar a los bares — ve antes de las 17:00 para asegurarte sitio",
+      "El metro (Casco Viejo) deja a 3 minutos del Arenal — olvidate del coche",
+      "Mezcla pintxos de pie en la barra con alguna caña sentado: el ritual bilbaino no consiste solo en beber, sino en comer mientras"
+    ],
+    "seo_keywords": [
+      "tardeo Bilbao",
+      "bares Casco Viejo Bilbao tarde",
+      "ruta tardeo Bilbao",
+      "Barrenkale bares",
+      "que hacer tarde Bilbao"
+    ]
   }
 ]
