@@ -22,11 +22,11 @@ export async function generateMetadata(
   const nombre = SLUG_A_CIUDAD[ciudad];
   if (!nombre) return {};
   return {
-    title: `Locales de tardeo en ${nombre} | tresycuarto`,
-    description: `Descubre los mejores bares, pubs y terrazas para el tardeo en ${nombre}. Horarios, ubicación y terraza. Tu guía de ocio de tarde en ${nombre}.`,
+    title: `Tardeo en ${nombre} — Bares, pubs y terrazas | tresycuarto`,
+    description: `Guía de tardeo en ${nombre}: los mejores bares, pubs y terrazas con horarios y ubicación. Descubre dónde salir de tarde en ${nombre}.`,
     openGraph: {
-      title: `Locales de tardeo en ${nombre}`,
-      description: `Guía completa de bares, pubs y terrazas para el tardeo en ${nombre}.`,
+      title: `Tardeo en ${nombre} — Bares, pubs y terrazas | tresycuarto`,
+      description: `Guía de tardeo en ${nombre}: los mejores bares, pubs y terrazas con horarios y ubicación. Descubre dónde salir de tarde en ${nombre}.`,
     },
   };
 }
