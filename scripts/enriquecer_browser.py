@@ -41,8 +41,8 @@ D1_URL  = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d1/databa
 HEADERS = {"Authorization": f"Bearer {CF_TOKEN}", "Content-Type": "application/json"}
 
 PAUSA_ENTRE_PAGINAS  = 2      # segundos entre llamadas al Worker
-LIMITE_DEFECTO       = 100    # locales por ejecución
-MAX_MINUTOS_MES      = 480    # 8h de las 10h incluidas → margen de seguridad
+LIMITE_DEFECTO       = 500    # locales por ejecución (~250 min/día → ~130h/mes, cabe en 10h si solo corre 1x/día)
+MAX_MINUTOS_MES      = 540    # 9h de las 10h incluidas → margen de seguridad de 1h ($0.09 si se pasa)
 LOG_MINUTOS_FILE     = "/root/tresycuarto-sync/logs/browser_minutos.txt"
 TIMEOUT_WORKER       = 25     # segundos para la llamada HTTP al Worker
 

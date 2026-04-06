@@ -120,15 +120,55 @@ def extraer_descripcion_web(url):
         if len(desc) > MAX_CHARS:
             desc = desc[:MAX_CHARS].rsplit(" ", 1)[0] + "..."
 
-        # Descartar descripciones genéricas / spam
+        # Descartar descripciones genéricas / spam / categoría equivocada
         BLACKLIST = [
-            "wordpress", "best theme", "followers", "following", "posts -",
-            "just another", "coming soon", "página de inicio", "home page",
+            # WordPress / templates
+            "wordpress", "best theme", "just another", "coming soon",
+            # Privacidad / legal
             "cookie", "privacy policy", "política de privacidad",
-            "404", "not found", "error",
+            # Errores
+            "404", "not found", "página no encontrada",
+            # Facebook
+            "me gusta ·", "personas han estado aquí", "personas están hablando",
+            "ve publicaciones", "fotos y mucho más en facebook",
+            # Instagram
+            "followers", "following", "posts -", "see instagram photos",
+            # Hotel / reservas
+            "book your room", "view prices", "reserve your room",
+            # Cerrado
+            "hemos cerrado", "queremos comunicarles que hemos",
+            "cerramos definitivamente", "ha cerrado sus puertas",
+            # Categorías equivocadas
+            "papelería", "ventanas y puertas", "puertas y ventanas",
+            "vapeo", "vaper", "cigarrillo electrónico",
+            "sombreros", "máscara", "disfraz",
+            "óptica", "gafas graduadas", "lentillas",
+            "uniformes", "ropa de trabajo",
+            "inmobiliaria", "alquiler de pisos",
+            "taller mecánico", "recambios",
+            "gasolinera", "repostaje",
+            "supermercado", "compra online",
+            "multicines", "cartelera",
+            "hostel", "habitaciones",
+            "factura de energía", "luz y gas",
+            "carta digital", "menú digital",
+            "linktree",
+            # Solo dirección / horarios
+            "lunes a domingo:", "lunes a viernes:",
+            "estamos en calle",
+            # Instagram que se cuela
+            "seguidores,", "seguidos,",
+            # Blogs / noticias
+            "noticias y artículos",
         ]
         desc_lower = desc.lower()
         if any(kw in desc_lower for kw in BLACKLIST):
+            return None
+
+        # Descartar texto partido (espacios entre letras: "R e s e r v a")
+        words = desc.split()
+        single_char_words = sum(1 for w in words if len(w) == 1 and w.isalpha())
+        if single_char_words > 3:
             return None
 
         return desc
