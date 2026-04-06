@@ -20,7 +20,7 @@ SMTP_USER  = "hola@tresycuarto.com"
 SMTP_PASS  = os.environ.get("BREVO_SMTP_KEY", "")
 NOTIFY_TO  = "joseluisnebot@gmail.com"
 
-API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix")
+API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID      = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_URL     = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/d1/database/{DB_ID}/query"

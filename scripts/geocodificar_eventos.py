@@ -17,7 +17,7 @@ Uso:
 import json, urllib.request, urllib.parse, time, argparse, sys, math, os
 from datetime import datetime
 
-API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix")
+API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "cfut_qTKfsExOPMBZJDjXoSCpAsJgnIEaBrJlRVtZsBE6f134a6d2")
 ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID      = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_URL     = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/d1/database/{DB_ID}/query"
