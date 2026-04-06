@@ -24,17 +24,22 @@ from datetime import datetime
 
 # ── Configuración ──────────────────────────────────────────────────────────────
 CF_ACCOUNT  = "0c4d9c91bb0f3a4c905545ecc158ec65"
-CF_TOKEN    = "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix"
+CF_TOKEN    = "cfut_qTKfsExOPMBZJDjXoSCpAsJgnIEaBrJlRVtZsBE6f134a6d2"
 DB_ID       = "458672aa-392f-4767-8d2b-926406628ba0"
-AI_MODEL    = "@cf/meta/llama-3.1-8b-instruct"
+AI_MODEL    = "@cf/meta/llama-3.2-3b-instruct"
 
 D1_URL  = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d1/database/{DB_ID}/query"
 AI_URL  = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/{AI_MODEL}"
 HEADERS = {"Authorization": f"Bearer {CF_TOKEN}", "Content-Type": "application/json"}
 
 PAUSA_ENTRE_LLAMADAS = 1.5   # segundos entre llamadas AI (evita rate limiting)
-LIMITE_DEFECTO       = 500   # locales por ejecución
+LIMITE_DEFECTO       = 300   # locales por ejecución — seguro dentro del tier gratuito (10.000 RTN/día)
 MAX_TOKENS_RESPUESTA = 120   # ~80 palabras máximo
+
+# Límite de seguridad: nunca superar este número para mantenerse en tier gratuito
+# Workers AI: 10.000 RTN/día gratis. Llama-3.2-3b consume ~2 RTN/llamada → 5.000 llamadas/día máx.
+# Con 300 locales/ejecución y 1 ejecución/día estamos muy por debajo.
+LIMITE_MAXIMO_DIARIO = 400  # límite duro — nunca procesar más aunque se pase --limite mayor
 
 TIPO_LABEL = {
     "bar": "bar", "pub": "pub", "cafe": "cafetería",
@@ -133,6 +138,11 @@ def main():
     parser.add_argument("--ciudad",  type=str, default=None,           help="Procesar solo esta ciudad")
     parser.add_argument("--dry-run", action="store_true",              help="No guardar en D1")
     args = parser.parse_args()
+
+    # Límite duro para no superar tier gratuito de Workers AI (10.000 RTN/día)
+    if args.limite > LIMITE_MAXIMO_DIARIO:
+        log.warning(f"Límite {args.limite} supera el máximo diario seguro ({LIMITE_MAXIMO_DIARIO}). Ajustando.")
+        args.limite = LIMITE_MAXIMO_DIARIO
 
     log.info(f"=== Inicio generar_descripciones | limite={args.limite} ciudad={args.ciudad or 'todas'} dry-run={args.dry_run} ===")
 
