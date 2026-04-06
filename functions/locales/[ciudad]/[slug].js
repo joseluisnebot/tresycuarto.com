@@ -33,8 +33,19 @@ function tipoLabel(tipo) {
 function renderLocal(local, ciudadSlug) {
   const canonicalUrl = `https://tresycuarto.com/locales/${ciudadSlug}/${esc(local.slug)}`;
   const ciudadUrl    = `https://tresycuarto.com/locales/${ciudadSlug}`;
-  const desc = local.descripcion_google
-    || `${local.nombre} en ${local.ciudad}. ${local.tipo ? tipoLabel(local.tipo) : "Local"} de tardeo${local.direccion ? ` en ${local.direccion}` : ""}.`;
+  // Descripción SEO enriquecida con datos reales para mejorar CTR
+  const tieneTerraza = local.outdoor_seating || local.terraza;
+  const ratingStr    = (local.rating && local.rating > 0) ? `⭐ ${Number(local.rating).toFixed(1)}` : null;
+  const terrazaStr   = tieneTerraza ? "Terraza ☀️" : null;
+  const horarioStr   = local.horario ? "Horario disponible" : null;
+
+  const descParts = [
+    `${tipoLabel(local.tipo || "bar")} en ${local.ciudad}`,
+    local.direccion || null,
+    [terrazaStr, ratingStr, horarioStr].filter(Boolean).join(" · ") || null,
+    "Ver fotos y cómo llegar.",
+  ].filter(Boolean);
+  const desc = local.descripcion_google || descParts.join(". ");
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
@@ -75,7 +86,10 @@ function renderLocal(local, ciudadSlug) {
   });
 
   const ogImage = local.photo_url || `https://tresycuarto.com/og-default.png`;
-  const title   = `${local.nombre} — ${local.ciudad} | horario, fotos y opiniones | tresycuarto`;
+  // Title SEO con datos clave para mejorar CTR en Google
+  const titleRating  = (local.rating && local.rating > 0) ? ` ⭐ ${Number(local.rating).toFixed(1)}` : "";
+  const titleTerraza = (local.outdoor_seating || local.terraza) ? " · Terraza" : "";
+  const title = `${local.nombre} · ${tipoLabel(local.tipo || "bar")} en ${local.ciudad}${titleRating}${titleTerraza} | tresycuarto`;
 
   const featureBadges = [
     (local.outdoor_seating || local.terraza) ? `<span class="fbadge badge-terraza">☀️ Terraza</span>` : "",
