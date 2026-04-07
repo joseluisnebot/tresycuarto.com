@@ -312,45 +312,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEMANA SANTA */}
+      {/* FERIA DE ABRIL */}
       <section style={{
         margin: "0", padding: "3rem 1.5rem",
-        background: "linear-gradient(135deg, #1E0A2E 0%, #2D1050 60%, #1A0A28 100%)",
+        background: "linear-gradient(135deg, #7C1D1D 0%, #B91C1C 50%, #7C1D1D 100%)",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
-            <span style={{ fontSize: "1.5rem" }}>🕯️</span>
+            <span style={{ fontSize: "1.5rem" }}>💃</span>
             <span style={{
               fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
-              color: "#C084FC", background: "rgba(192,132,252,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
-              border: "1px solid rgba(192,132,252,0.3)",
-            }}>Especial Semana Santa 2026</span>
-            <span style={{ fontSize: "1.5rem" }}>🕯️</span>
+              color: "#FCA5A5", background: "rgba(252,165,165,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
+              border: "1px solid rgba(252,165,165,0.3)",
+            }}>Temporada de Ferias 2026</span>
+            <span style={{ fontSize: "1.5rem" }}>🌸</span>
           </div>
           <h2 style={{
             fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, letterSpacing: "-0.03em",
             color: "white", marginBottom: "0.6rem", lineHeight: 1.2,
           }}>
-            Tardea donde la Semana Santa<br />
-            <span style={{ color: "#C084FC" }}>es una experiencia única</span>
+            Tardea en plena feria<br />
+            <span style={{ color: "#FCA5A5" }}>de abril a junio</span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "480px", margin: "0 auto 2rem" }}>
-            Entre procesión y procesión, descubre los mejores bares y terrazas de las capitales cofrades de España.
+          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "520px", margin: "0 auto 2rem" }}>
+            Feria de Abril en Sevilla, Jerez, Córdoba y más. Los mejores bares y terrazas para el tardeo más festivo del año.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
             {[
-              ["sevilla", "Sevilla"], ["malaga", "Málaga"], ["cordoba", "Córdoba"],
-              ["granada", "Granada"], ["cadiz", "Cádiz"], ["valladolid", "Valladolid"],
-              ["zamora", "Zamora"], ["leon", "León"], ["jerez-de-la-frontera", "Jerez"],
-              ["cartagena", "Cartagena"], ["lorca", "Lorca"], ["cuenca", "Cuenca"],
+              ["sevilla", "💃 Sevilla · Feria de Abril"],
+              ["jerez-de-la-frontera", "🐎 Jerez · Feria del Caballo"],
+              ["cordoba", "🌺 Córdoba · Feria de Mayo"],
+              ["granada", "🎶 Granada"],
+              ["malaga", "🌞 Málaga"],
+              ["cadiz", "🎭 Cádiz"],
             ].map(([slug, nombre]) => (
               <a key={slug} href={`/locales/${slug}`} style={{
                 fontSize: "0.85rem", padding: "0.4rem 1rem", borderRadius: "999px",
-                background: "rgba(192,132,252,0.12)", color: "#E9D5FF",
-                fontWeight: 600, border: "1px solid rgba(192,132,252,0.25)",
+                background: "rgba(252,165,165,0.12)", color: "#FEE2E2",
+                fontWeight: 600, border: "1px solid rgba(252,165,165,0.25)",
                 textDecoration: "none",
-              }}>🕯️ {nombre}</a>
+              }}>{nombre}</a>
             ))}
           </div>
         </div>
