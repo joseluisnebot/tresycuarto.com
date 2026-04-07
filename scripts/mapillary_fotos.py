@@ -141,7 +141,7 @@ def main():
 
         r2_url = subir_foto_r2(lid, data, ext)
         if r2_url:
-            d1_query("UPDATE locales SET photo_url = ? WHERE id = ?", [r2_url, lid])
+            d1_query("UPDATE locales SET photo_url = ?, photo_source = 'mapillary' WHERE id = ?", [r2_url, lid])
             print(f"  [{i}/{len(locales)}] {nombre} → foto OK ({len(data)//1024}KB) → {r2_url.split('/')[-1]}")
             encontradas += 1
         else:

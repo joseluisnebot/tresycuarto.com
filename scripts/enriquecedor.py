@@ -290,7 +290,9 @@ def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
             cambios["terraza"] = 1
 
     # Foto: buscar og:image en la web del local
-    if not local.get("photo_url") and html_web and web_url:
+    # Sobreescribe también si la foto actual es de Mapillary (fuente inferior)
+    tiene_foto_web = local.get("photo_url") and local.get("photo_source") != "mapillary"
+    if not tiene_foto_web and html_web and web_url:
         img_url = extraer_og_image(html_web, web_url)
         if img_url:
             resultado = descargar_imagen(img_url)
@@ -300,8 +302,10 @@ def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
                     r2_url = subir_foto_r2(local["id"], data, ext)
                     if r2_url:
                         cambios["photo_url"] = r2_url
+                        cambios["photo_source"] = "web"
                 else:
                     cambios["photo_url"] = f"[dry-run] {img_url}"
+                    cambios["photo_source"] = "web"
 
     return cambios
 
@@ -326,14 +330,15 @@ def main():
     print(f"\n=== Agente enriquecedor — {args.ciudad} [{modo}] ===")
 
     locales = d1_query(
-        "SELECT id, nombre, ciudad, instagram, web, telefono, horario, terraza, photo_url FROM locales "
+        "SELECT id, nombre, ciudad, instagram, web, telefono, horario, terraza, photo_url, photo_source FROM locales "
         "WHERE ciudad = ? AND ("
         "  instagram IS NULL OR instagram = '' OR"
         "  web IS NULL OR web = '' OR"
         "  telefono IS NULL OR telefono = '' OR"
         "  horario IS NULL OR horario = '' OR"
         "  terraza IS NULL OR"
-        "  photo_url IS NULL"
+        "  photo_url IS NULL OR"
+        "  photo_source = 'mapillary'"
         ") ORDER BY nombre LIMIT ?",
         [args.ciudad, args.limite]
     )
