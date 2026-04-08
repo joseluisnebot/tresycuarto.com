@@ -304,7 +304,7 @@
       "lat": 40.0704,
       "lon": -2.1374
     },
-    "intro": "Cuenca celebra una de las Semanas de Música Religiosa más importantes del mundo durante la Semana Santa. La Ciudad Alta y las Casas Colgadas son el escenario de un tardeo íntimo y tranquilo en bares con vistas únicas.",
+    "intro": "Cuenca combina su impresionante Patrimonio de la Humanidad con una escena de tardeo auténtica y tranquila. La Ciudad Alta, entre las Casas Colgadas y la catedral gótica, ofrece terrazas con vistas únicas, mientras la Ciudad Baja concentra los bares más animados.",
     "barrios": [
       "Ciudad Alta",
       "Ciudad Baja",
@@ -314,12 +314,20 @@
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Cuenca?",
-        "a": "La Ciudad Alta de Cuenca, junto a las Casas Colgadas, tiene bares y restaurantes con vistas espectaculares a la hoz del río Júcar."
+        "q": "¿Dónde tardear en Cuenca?",
+        "a": "La Ciudad Alta tiene los bares más pintorescos con vistas a las hoces del Júcar y el Huécar. La Ciudad Baja, especialmente la calle Cervantes y alrededores, ofrece los bares más animados y asequibles."
+      },
+      {
+        "q": "¿Qué tomar en el tardeo de Cuenca?",
+        "a": "El morteruelo, el ajoarriero y el zarajos son las tapas típicas conquenses. Para beber, el vino de la DO Manchuela y la cerveza artesanal local son las opciones más populares."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Cuenca?",
+        "a": "El tardeo conquense empieza a las 13:00 con el vermut los fines de semana y retoma por la tarde de 18:00 a 21:00, especialmente en verano en las terrazas de la Ciudad Alta."
       },
       {
         "q": "¿Cuántos locales de tardeo hay en Cuenca?",
-        "a": "En tresycuarto tienes más de 60 locales mapeados en Cuenca para disfrutar del tardeo."
+        "a": "En tresycuarto encontrarás todos los bares y terrazas de tardeo de Cuenca, tanto en la Ciudad Alta como en la Ciudad Baja, con horarios y valoraciones."
       }
     ]
   },
@@ -400,7 +408,7 @@
       "lat": 37.6709,
       "lon": -1.699
     },
-    "intro": "La Semana Santa de Lorca es única en el mundo: los bordados son Patrimonio Cultural de la Humanidad y los desfiles bíblicos y de la antigüedad son espectaculares. Entre procesión y procesión, la calle Lope Gisbert ofrece bares para el tardeo lorquino.",
+    "intro": "Lorca, ciudad del sureste murciano, tiene un tardeo concentrado en su centro histórico y sus calles peatonales. Sus bares de tapas, terrazas y cervecerías artesanales hacen de la tarde lorquina un plan perfecto cualquier día de la semana.",
     "barrios": [
       "Centro",
       "Calle Lope Gisbert",
@@ -410,12 +418,20 @@
     ],
     "faqs": [
       {
-        "q": "¿Por qué es famosa la Semana Santa de Lorca?",
-        "a": "La Semana Santa de Lorca es Patrimonio Cultural de la Humanidad, famosa por sus impresionantes bordados y los desfiles con representaciones bíblicas e históricas."
+        "q": "¿Dónde tardear en Lorca?",
+        "a": "El centro histórico de Lorca, especialmente la calle Lope Gisbert y los alrededores de la Plaza de España, concentra los mejores bares de tapas y terrazas para el tardeo."
       },
       {
-        "q": "¿Dónde tardeear en Lorca?",
-        "a": "El centro de Lorca y la calle Lope Gisbert concentran los bares y cafeterías para el tardeo."
+        "q": "¿Qué tomar en el tardeo de Lorca?",
+        "a": "La tapa murciana es protagonista: marinera, croquetas y embutidos ibéricos acompañan una buena caña o un vino de la Región de Murcia."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Lorca?",
+        "a": "Los bares de Lorca se llenan a partir de las 13:00 los fines de semana para el vermut, y por la tarde de 18:00 a 21:00 es el momento de las terrazas."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Lorca?",
+        "a": "En tresycuarto tenemos mapeados los bares, pubs y terrazas de Lorca para que encuentres el mejor sitio donde tardear en la ciudad."
       }
     ]
   },
@@ -1792,20 +1808,30 @@
       "lat": 38.5999,
       "lon": -0.0478
     },
-    "intro": "Altea, con su casco antiguo blanco y sus vistas al Mediterráneo, es uno de los destinos de tardeo más pintorescos de la Costa Blanca. Sus terrazas con vistas al mar, los bares del pueblo viejo y el ambiente tranquilo hacen del tardeo alteano algo especial.",
+    "intro": "Altea es uno de los pueblos más bonitos de la Costa Blanca, con su casco antiguo de calles empedradas y cúpulas azules. Sus terrazas con vistas al Mediterráneo y los bares del puerto son el escenario perfecto para un tardeo pausado y con encanto.",
     "barrios": [
       "Casco Antiguo",
       "Puerto",
-      "Playa"
+      "Playa",
+      "L'Olla",
+      "Cap Negret"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Altea?",
-        "a": "El casco antiguo de Altea, con sus calles empedradas y terrazas con vistas al mar, es el mejor lugar para el tardeo en la Costa Blanca."
+        "q": "¿Dónde tardear en Altea?",
+        "a": "El casco antiguo de Altea, con sus calles de piedra y terrazas con vistas al mar, es el lugar más especial para el tardeo. El puerto deportivo ofrece bares más modernos frente al Mediterráneo."
       },
       {
-        "q": "¿Cuándo es mejor el tardeo en Altea?",
-        "a": "Altea tiene buen clima casi todo el año. La primavera y el verano son la mejor época para disfrutar sus terrazas mediterráneas."
+        "q": "¿Qué tomar en el tardeo de Altea?",
+        "a": "El café con leche en las terrazas del casco antiguo, el vino de la Marina Alta y los pinchos de pulpo o atún son los favoritos de locales y visitantes en Altea."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Altea?",
+        "a": "Las terrazas de Altea se llenan a partir de las 12:30 en fin de semana y los bares del casco antiguo son especialmente animados de 18:00 a 20:30 con el sol de atardecer."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Altea?",
+        "a": "En tresycuarto encontrarás los mejores bares, cafeterías y terrazas de tardeo de Altea, perfectos para disfrutar del ambiente mediterráneo del pueblo."
       }
     ]
   },
@@ -1814,20 +1840,30 @@
       "lat": 39.1671,
       "lon": -0.2535
     },
-    "intro": "Cullera, ciudad marinera de la Comunitat Valenciana, combina playa, montaña y gastronomía. Su paseo marítimo, el puerto pesquero y el casco urbano ofrecen una variada oferta de bares y terrazas para el tardeo en familia o con amigos.",
+    "intro": "Cullera, a orillas del Mediterráneo valenciano, mezcla el ambiente playero con la gastronomía marinera. Su paseo marítimo, el puerto pesquero y las calles del centro ofrecen terrazas perfectas para el tardeo con vistas al mar y arroces frescos.",
     "barrios": [
       "Paseo Marítimo",
       "Puerto",
-      "Centro"
+      "Centro",
+      "Marenyet",
+      "Bega"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Cullera?",
-        "a": "El paseo marítimo y el puerto de Cullera son los puntos de referencia para el tardeo, con terrazas y bares con vistas al mar."
+        "q": "¿Dónde tardear en Cullera?",
+        "a": "El paseo marítimo y el puerto son los puntos clave del tardeo en Cullera, con terrazas frente al mar. El centro histórico tiene bares más tranquilos y auténticos para tomar el vermut."
       },
       {
-        "q": "¿Qué hacer en Cullera por la tarde?",
-        "a": "Además de los bares y terrazas, Cullera ofrece paseos por su castillo y miradores con vistas espectaculares para el tardeo."
+        "q": "¿Qué tomar en el tardeo de Cullera?",
+        "a": "El arroz a banda, el pescado fresco y los boquerones en vinagre son las tapas de referencia. Para beber, la cerveza bien fría y la horchata valenciana en verano son imprescindibles."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Cullera?",
+        "a": "En verano el tardeo en Cullera empieza a las 12:00 y se alarga hasta la hora de la cena. En temporada baja los bares se animan a partir de las 13:00 los fines de semana."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Cullera?",
+        "a": "En tresycuarto tenemos mapeados los principales bares y terrazas de tardeo de Cullera para que aproveches al máximo tu visita a la ciudad."
       }
     ]
   },
@@ -1836,20 +1872,30 @@
       "lat": 43.3183,
       "lon": -1.9812
     },
-    "intro": "San Sebastián, capital gastronómica del País Vasco, tiene una de las escenas de tardeo más sofisticadas de España. La Parte Vieja, el Bulevar y Gros concentran los mejores bares de pintxos y terrazas para disfrutar las tardes donostiarras.",
+    "intro": "San Sebastián tiene una de las escenas de pintxos y tardeo más reconocidas del mundo. La Parte Vieja concentra un sinfín de bares donde el ritual de ir de pintxo en pintxo con txakoli o sidra es una experiencia única que los donostiarras practican a diario.",
     "barrios": [
       "Parte Vieja",
       "Gros",
-      "Centro"
+      "Centro",
+      "Amara",
+      "Egia"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en San Sebastián?",
-        "a": "La Parte Vieja es el epicentro del tardeo en San Sebastián, con cientos de bares de pintxos y terrazas perfectas para la tarde."
+        "q": "¿Dónde tardear en San Sebastián?",
+        "a": "La Parte Vieja es el corazón del tardeo donostiarra, con calles como 31 de Agosto y la Plaza de la Constitución repletas de bares de pintxos. El barrio de Gros ofrece una alternativa más tranquila y local."
       },
       {
-        "q": "¿Qué son los pintxos en el tardeo?",
-        "a": "Los pintxos son la versión vasca de las tapas y son el protagonista del tardeo donostiarra, especialmente en los bares de la Parte Vieja."
+        "q": "¿Qué tomar en el tardeo de San Sebastián?",
+        "a": "El txakoli, la sidra y el vermut son las bebidas de referencia. Los pintxos de anchoa, gilda, bacalao al pil-pil y hongos son imprescindibles en cualquier barra donostiarra."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en San Sebastián?",
+        "a": "El tardeo donostiarra arranca a las 12:00 los fines de semana con el vermut y los pintxos, y se extiende hasta las 15:00. Por la tarde retoma a partir de las 19:00 antes de la cena."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en San Sebastián?",
+        "a": "En tresycuarto encontrarás los mejores bares de pintxos y tardeo de San Sebastián, con valoraciones y horarios para planificar tu ruta."
       }
     ]
   },
@@ -1858,20 +1904,30 @@
       "lat": 42.8125,
       "lon": -1.6458
     },
-    "intro": "Pamplona, ciudad de los Sanfermines, tiene una vida nocturna y de tardeo muy animada. El Casco Antiguo y el Ensanche concentran los mejores bares y terrazas para el tardeo navarro, con una tradición de txikiteo y vermut muy arraigada.",
+    "intro": "Pamplona combina la energía de sus famosos Sanfermines con una escena de tardeo activa todo el año. El Casco Antiguo concentra los mejores bares de pinchos y cerveza artesanal, mientras el Ensanche ofrece terrazas más tranquilas para disfrutar del vermut navarro.",
     "barrios": [
       "Casco Antiguo",
       "Ensanche",
-      "San Juan"
+      "San Juan",
+      "Rochapea",
+      "Chantrea"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Pamplona?",
-        "a": "El Casco Antiguo de Pamplona es el corazón del tardeo, con decenas de bares de txikiteo y terrazas perfectas para la tarde."
+        "q": "¿Dónde tardear en Pamplona?",
+        "a": "El Casco Antiguo es el epicentro del tardeo pamplonés, especialmente las calles San Nicolás, Estafeta y la Plaza del Castillo. El Ensanche ofrece bares más tranquilos con buenas terrazas."
       },
       {
-        "q": "¿Cuál es la tradición del txikiteo en Pamplona?",
-        "a": "El txikiteo es la tradición navarra de ir de bar en bar tomando txikitos (vasos pequeños de vino) acompañados de pinchos, muy popular en el tardeo pamplonés."
+        "q": "¿Qué tomar en el tardeo de Pamplona?",
+        "a": "El vino de Navarra y el pacharán son imprescindibles. Los pinchos de bacalao, champiñón y morcilla son la tapa clásica para acompañar la caña o el txakoli."
+      },
+      {
+        "q": "¿A qué hora es el tardeo en Pamplona?",
+        "a": "El tardeo empieza a partir de las 13:00 los fines de semana con el vermut, y se alarga hasta las 20:00. Entre semana los bares del Casco Antiguo se llenan a partir de las 18:00."
+      },
+      {
+        "q": "¿Cuántos locales de tardeo hay en Pamplona?",
+        "a": "En tresycuarto tenemos mapeados los principales bares, pubs y cafeterías de tardeo de Pamplona, con horarios y valoraciones actualizadas."
       }
     ]
   }

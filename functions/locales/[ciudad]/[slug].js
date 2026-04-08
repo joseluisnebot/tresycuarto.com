@@ -61,11 +61,12 @@ function renderLocal(local, ciudadSlug) {
     url: local.web || canonicalUrl,
     openingHours: local.horario || undefined,
     priceRange: local.price_level || undefined,
-    aggregateRating: (local.rating && local.rating > 0) ? {
+    aggregateRating: (local.rating && local.rating > 0 && local.rating_count >= 5) ? {
       "@type": "AggregateRating",
-      ratingValue: local.rating,
-      reviewCount: local.rating_count || 1,
+      ratingValue: Number(local.rating).toFixed(1),
+      reviewCount: local.rating_count,
       bestRating: 5,
+      worstRating: 1,
     } : undefined,
     geo: (local.lat && local.lon) ? {
       "@type": "GeoCoordinates",
