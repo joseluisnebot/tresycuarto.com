@@ -339,7 +339,7 @@ def main():
         "  terraza IS NULL OR"
         "  photo_url IS NULL OR"
         "  photo_source = 'mapillary'"
-        ") ORDER BY nombre LIMIT ?",
+        ") ORDER BY (SELECT COUNT(*) FROM locales l2 WHERE l2.ciudad = locales.ciudad) ASC, nombre LIMIT ?",
         [args.ciudad, args.limite]
     )
 

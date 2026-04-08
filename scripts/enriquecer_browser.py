@@ -146,7 +146,14 @@ def main():
     if args.ciudad:
         sql += " AND ciudad = ?"
         params.append(args.ciudad)
-    sql += f" ORDER BY rating DESC NULLS LAST LIMIT {args.limite}"
+    # Priorizar ciudades pequeñas — menos competencia en Google, posición 1 más fácil
+    sql += f"""
+        ORDER BY (
+            SELECT COUNT(*) FROM locales l2
+            WHERE l2.ciudad = locales.ciudad
+        ) ASC,
+        rating DESC NULLS LAST
+        LIMIT {args.limite}"""
 
     locales = d1_query(sql, params if params else None)
     log.info(f"Locales a procesar: {len(locales)}")
