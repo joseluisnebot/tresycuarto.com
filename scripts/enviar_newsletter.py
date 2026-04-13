@@ -7,7 +7,7 @@ Reemplaza el antiguo sistema de campañas Listmonk y el email semanal del vierne
 
 Cron: 15 15 * * *
 """
-import json, urllib.request, os, base64
+import json, urllib.request, os, base64, unicodedata
 from datetime import datetime, timedelta
 
 API_TOKEN  = os.environ["CLOUDFLARE_API_TOKEN"]
@@ -78,7 +78,8 @@ def generar_html_digest(eventos):
         fecha = datetime.strptime(ev["fecha"], "%Y-%m-%d")
         fecha_es = f"{fecha.day} de {MESES[fecha.month-1]}"
         icon = ICONS.get(ev["tipo"], "📅")
-        ciudad_slug = ev["ciudad"].lower().replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n").replace(" ","-")
+        ciudad_slug = unicodedata.normalize("NFD", ev["ciudad"].lower())
+        ciudad_slug = "".join(c for c in ciudad_slug if unicodedata.category(c) != "Mn").replace("ñ","n").replace(" ","-").replace("·","")
         desc = (ev.get("descripcion") or "")[:160]
         if len(ev.get("descripcion") or "") > 160:
             desc += "…"
