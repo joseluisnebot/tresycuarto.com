@@ -1930,5 +1930,173 @@
         "a": "En tresycuarto tenemos mapeados los principales bares, pubs y cafeterías de tardeo de Pamplona, con horarios y valoraciones actualizadas."
       }
     ]
+  },
+  "Alicante": {
+    "coords": {
+      "lat": 38.3452,
+      "lon": -0.4815
+    },
+    "intro": "Alicante tiene un tardeo con sabor mediterráneo. Entre las 16h y las 21h, el Barrio de Santa Cruz, el Casco Antiguo y el paseo de la Explanada se llenan de terrazas animadas, bares de tapas y vermutería con vistas al mar. El tardeo alicantino mezcla tradición levantina con ambiente costero.",
+    "barrios": [
+      "Barrio de Santa Cruz",
+      "Casco Antiguo",
+      "Explanada",
+      "El Pla",
+      "Carolinas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Alicante?",
+        "a": "Los mejores lugares para tardeear en Alicante son el Barrio de Santa Cruz, la Explanada y el Casco Antiguo, con terrazas abiertas desde las 16h y ambiente mediterráneo."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Alicante?",
+        "a": "El tardeo en Alicante empieza sobre las 16h y se alarga hasta las 21h, especialmente en verano cuando las terrazas aprovechan las tardes cálidas."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Alicante?",
+        "a": "El tardeo alicantino destaca por su ambiente mediterráneo, las terrazas frente al mar y la mezcla de locales tradicionales con bares modernos en el Casco Antiguo."
+      }
+    ]
+  },
+  "Vigo": {
+    "coords": {
+      "lat": 42.2314,
+      "lon": -8.7124
+    },
+    "intro": "Vigo tiene uno de los tardeos más animados de Galicia. Las Rúas del Casco Vello, la zona de Urzaiz y el Barrio del Berbés concentran bares de pinchos, pulperías y tabernas donde el tardeo vigués se alarga entre el mar y la montaña.",
+    "barrios": [
+      "Casco Vello",
+      "Urzaiz",
+      "Berbés",
+      "Gran Vía",
+      "Travesas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Vigo?",
+        "a": "El Casco Vello y la zona de Urzaiz son los epicentros del tardeo en Vigo, con decenas de bares, tabernas y terrazas abiertas desde las 16h."
+      },
+      {
+        "q": "¿Qué se toma en el tardeo en Vigo?",
+        "a": "En el tardeo vigués no pueden faltar los pinchos, el pulpo y el vino de Rías Baixas. Las rúas del Casco Vello concentran los mejores bares de tapas."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Vigo?",
+        "a": "El tardeo en Vigo arranca sobre las 16h y se alarga hasta las 20-21h, con la zona de Urzaiz y el Casco Vello como principales animadores."
+      }
+    ]
+  },
+  "Gijón": {
+    "coords": {
+      "lat": 43.5322,
+      "lon": -5.6611
+    },
+    "intro": "Gijón combina tradición asturiana y ambiente costero en su tardeo. El Barrio de Cimadevilla, la Plaza Mayor y la zona de El Centro concentran sidrerías, cafés y bares de tapas donde tardeear con vistas al Cantábrico.",
+    "barrios": [
+      "Cimadevilla",
+      "Plaza Mayor",
+      "El Centro",
+      "La Arena",
+      "Laviada"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Gijón?",
+        "a": "El barrio de Cimadevilla y la zona del Centro son los mejores lugares para tardeear en Gijón, con sidrerías, bares de tapas y terrazas abiertas desde las 16h."
+      },
+      {
+        "q": "¿Qué se toma en el tardeo en Gijón?",
+        "a": "La sidra asturiana es la protagonista del tardeo en Gijón, acompañada de tapas tradicionales como el cachopo, las fabes y el queso asturiano."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Gijón?",
+        "a": "El tardeo gijonés empieza sobre las 16h y se alarga hasta las 20-21h, especialmente animado en los alrededores de Cimadevilla y la Plaza Mayor."
+      }
+    ]
+  },
+  "Hospitalet de Llobregat": {
+    "coords": {
+      "lat": 41.3597,
+      "lon": 2.1
+    },
+    "intro": "Hospitalet de Llobregat, pegada a Barcelona, tiene su propio tardeo con carácter. La zona del Centre, el Barrio de Santa Eulàlia y la Rambla Just Oliveras concentran bares, cafeterías y terrazas donde los vecinos tardeean a su ritmo, lejos del bullicio barcelonés.",
+    "barrios": [
+      "Centre",
+      "Santa Eulàlia",
+      "Collblanc",
+      "La Torrassa",
+      "Pubilla Cases"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Hospitalet de Llobregat?",
+        "a": "La zona del Centre y la Rambla Just Oliveras son los principales focos del tardeo en Hospitalet, con bares y terrazas abiertos desde las 16h."
+      },
+      {
+        "q": "¿Es bueno el tardeo en Hospitalet de Llobregat?",
+        "a": "Sí, Hospitalet tiene una escena de tardeo activa con buena relación calidad-precio, ideal para quienes buscan una alternativa más tranquila y local al bullicio de Barcelona."
+      },
+      {
+        "q": "¿Cómo llegar al tardeo en Hospitalet de Llobregat?",
+        "a": "Hospitalet está muy bien comunicada con Barcelona por metro (líneas L1, L5 y L9), lo que facilita combinar el tardeo en ambas ciudades."
+      }
+    ]
+  },
+  "Badalona": {
+    "coords": {
+      "lat": 41.4469,
+      "lon": 2.247
+    },
+    "intro": "Badalona tiene un tardeo con sabor mediterráneo a pocos minutos de Barcelona. El Casco Antiguo, el paseo marítimo y la zona del Mercat concentran bares, terrazas y locales donde disfrutar del tardeo badalonés con vistas al mar.",
+    "barrios": [
+      "Casco Antiguo",
+      "Paseo Marítimo",
+      "Sant Roc",
+      "Llefià",
+      "Artigas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Badalona?",
+        "a": "El Casco Antiguo y el paseo marítimo de Badalona son los mejores lugares para tardeear, con bares de tapas y terrazas abiertas desde las 16h con vistas al mar."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Badalona?",
+        "a": "Badalona combina ambiente de barrio auténtico con proximidad al mar. Sus terrazas frente al Mediterráneo y sus bares tradicionales hacen el tardeo especial."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Badalona?",
+        "a": "El tardeo en Badalona arranca sobre las 16h y se alarga hasta las 20-21h, con el paseo marítimo como principal escenario en los meses de buen tiempo."
+      }
+    ]
+  },
+  "Elche": {
+    "coords": {
+      "lat": 38.2669,
+      "lon": -0.6983
+    },
+    "intro": "Elche, ciudad de palmeras y patrimonio de la Humanidad, tiene un tardeo tranquilo y auténtico. El Casco Histórico, la zona del Raval y los alrededores del Palmeral concentran bares tradicionales, cafeterías y terrazas donde los ilicitanos tardeean a la sombra de las palmeras.",
+    "barrios": [
+      "Casco Histórico",
+      "Raval",
+      "El Palmeral",
+      "Carrús",
+      "El Pla"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Elche?",
+        "a": "El Casco Histórico y la zona del Palmeral son los mejores lugares para tardeear en Elche, con bares tradicionales y terrazas a la sombra de las palmeras desde las 16h."
+      },
+      {
+        "q": "¿Qué se toma en el tardeo en Elche?",
+        "a": "En el tardeo en Elche destacan las tapas levantinas, el arroz y los vinos de la comarca. La zona del Casco Histórico tiene los mejores bares de tapas tradicionales."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Elche?",
+        "a": "El tardeo en Elche comienza sobre las 16h y se alarga hasta las 20-21h, especialmente animado en el Casco Histórico y alrededores del Palmeral."
+      }
+    ]
   }
 }

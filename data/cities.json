@@ -12,6 +12,10 @@
     "nombre": "Algeciras"
   },
   {
+    "slug": "alicante",
+    "nombre": "Alicante"
+  },
+  {
     "slug": "almeria",
     "nombre": "Almería"
   },
@@ -30,6 +34,10 @@
   {
     "slug": "badajoz",
     "nombre": "Badajoz"
+  },
+  {
+    "slug": "badalona",
+    "nombre": "Badalona"
   },
   {
     "slug": "barakaldo",
@@ -88,6 +96,10 @@
     "nombre": "Getafe"
   },
   {
+    "slug": "gijon",
+    "nombre": "Gijón"
+  },
+  {
     "slug": "girona",
     "nombre": "Girona"
   },
@@ -98,6 +110,10 @@
   {
     "slug": "guadalajara",
     "nombre": "Guadalajara"
+  },
+  {
+    "slug": "hospitalet-de-llobregat",
+    "nombre": "Hospitalet de Llobregat"
   },
   {
     "slug": "huelva",
@@ -246,6 +262,14 @@
   {
     "slug": "vitoria",
     "nombre": "Vitoria"
+  },
+  {
+    "slug": "elche",
+    "nombre": "Elche"
+  },
+  {
+    "slug": "vigo",
+    "nombre": "Vigo"
   },
   {
     "slug": "zamora",

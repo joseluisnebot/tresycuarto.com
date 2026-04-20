@@ -17,8 +17,6 @@
     "/unete/",
     "/dashboard",
     "/dashboard/",
-    "/rutas",
-    "/rutas/",
     "/local",
     "/local/*",
     "/locales/albacete/",
@@ -95,6 +93,12 @@
     "/*.png",
     "/*.svg",
     "/*.txt",
-    "/*.json"
+    "/*.json",
+    "/locales/alicante/",
+    "/locales/vigo/",
+    "/locales/gijon/",
+    "/locales/hospitalet-de-llobregat/",
+    "/locales/badalona/",
+    "/locales/elche/"
   ]
 }
