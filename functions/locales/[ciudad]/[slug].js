@@ -19,6 +19,8 @@ const CIUDAD_MAP = {
   "soria":"Soria","tarragona":"Tarragona","teruel":"Teruel","toledo":"Toledo",
   "torrevieja":"Torrevieja","valencia":"Valencia","valladolid":"Valladolid",
   "vinaros":"Vinaròs","vitoria":"Vitoria","zamora":"Zamora","zaragoza":"Zaragoza",
+  "alicante":"Alicante","vigo":"Vigo","gijon":"Gijón",
+  "hospitalet-de-llobregat":"Hospitalet de Llobregat","badalona":"Badalona","elche":"Elche",
 };
 
 function esc(s) {
@@ -256,7 +258,41 @@ export async function onRequestGet(context) {
   ).bind(slug, ciudad).all();
 
   if (!results || results.length === 0) {
-    return Response.redirect(`https://tresycuarto.com/locales/${ciudadSlug}`, 302);
+    const ciudadNombre = ciudad || ciudadSlug;
+    const ciudadUrl = `https://tresycuarto.com/locales/${ciudadSlug}`;
+    return new Response(`<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Local no encontrado | tresycuarto</title>
+  <meta name="robots" content="noindex"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',-apple-system,sans-serif;background:#FFF8EF;color:#1C1917;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+    nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:1rem 1.5rem;border-bottom:1px solid #F5E6D3;background:rgba(255,248,239,0.95);backdrop-filter:blur(8px)}
+    .logo{font-weight:900;font-size:1.1rem;color:#1C1917;text-decoration:none}
+    .logo span{color:#FB923C}
+    .container{max-width:480px;text-align:center;margin-top:4rem}
+    .emoji{font-size:4rem;margin-bottom:1rem}
+    h1{font-size:1.8rem;font-weight:900;margin-bottom:.75rem}
+    p{color:#78716C;line-height:1.6;margin-bottom:1.75rem}
+    .btn{display:inline-block;background:#FB923C;color:#fff;border-radius:999px;padding:.65rem 1.5rem;text-decoration:none;font-weight:700;font-size:.9rem}
+    .btn:hover{background:#EA7C22}
+  </style>
+</head>
+<body>
+  <nav><a href="/" class="logo">tres<span>y</span>cuarto</a></nav>
+  <div class="container">
+    <div class="emoji">🔍</div>
+    <h1>Local no encontrado</h1>
+    <p>Este local ya no está disponible o ha cambiado de dirección. Descubre otros locales de tardeo en ${esc(ciudadNombre)}.</p>
+    <a href="${ciudadUrl}" class="btn">Ver locales en ${esc(ciudadNombre)} →</a>
+  </div>
+</body>
+</html>`, { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } });
   }
 
   return new Response(renderLocal(results[0], ciudadSlug), {

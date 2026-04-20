@@ -12,7 +12,8 @@ const CIUDAD_SLUGS = [
   "mostoles","murcia","oviedo","palencia","palma","pamplona","pontevedra","salamanca",
   "san-sebastian","santa-cruz-de-tenerife","santa-pola","santander","segovia","sevilla",
   "soria","tarragona","teruel","toledo","torrevieja","valencia","valladolid","vinaros",
-  "vitoria","zamora","zaragoza"
+  "vitoria","zamora","zaragoza",
+  "alicante","vigo","gijon","hospitalet-de-llobregat","badalona","elche"
 ];
 
 const CIUDAD_TO_SLUG = {
@@ -33,6 +34,8 @@ const CIUDAD_TO_SLUG = {
   "Soria":"soria","Tarragona":"tarragona","Teruel":"teruel","Toledo":"toledo",
   "Torrevieja":"torrevieja","Valencia":"valencia","Valladolid":"valladolid",
   "Vinaròs":"vinaros","Vitoria":"vitoria","Zamora":"zamora","Zaragoza":"zaragoza",
+  "Alicante":"alicante","Vigo":"vigo","Gijón":"gijon",
+  "Hospitalet de Llobregat":"hospitalet-de-llobregat","Badalona":"badalona","Elche":"elche",
 };
 
 export async function onRequestGet(context) {
