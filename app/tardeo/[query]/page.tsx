@@ -64,12 +64,16 @@ export async function generateMetadata(
   const title = TIPO_TITLE[parsed.tipoSlug] || "Tardeo";
   const desc = TIPO_DESC_META[parsed.tipoSlug] || "locales de tardeo";
 
+  const canonicalUrl = `https://tresycuarto.com/tardeo/${query}/`;
+
   return {
     title: `${title} en ${ciudad} | tresycuarto`,
     description: `Los mejores ${desc} en ${ciudad}. Horarios, ubicación y terraza. Descubre dónde disfrutar la tarde en ${ciudad} con tresycuarto.`,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: `${title} en ${ciudad}`,
       description: `Guía completa de ${desc} en ${ciudad}.`,
+      url: canonicalUrl,
     },
   };
 }
@@ -87,18 +91,19 @@ export default async function Page(
   const title = TIPO_TITLE[parsed!.tipoSlug];
   const desc = TIPO_DESC_META[parsed!.tipoSlug];
 
+  const pageUrl = `https://tresycuarto.com/tardeo/${query}/`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": `${title} en ${ciudad}`,
     "description": `Los mejores ${desc} en ${ciudad}. Horarios, ubicación y terraza.`,
-    "url": `https://tresycuarto.com/tardeo/${query}`,
+    "url": pageUrl,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tresycuarto.com" },
         { "@type": "ListItem", "position": 2, "name": ciudad, "item": `https://tresycuarto.com/locales/${parsed!.ciudadSlug}` },
-        { "@type": "ListItem", "position": 3, "name": title, "item": `https://tresycuarto.com/tardeo/${query}` },
+        { "@type": "ListItem", "position": 3, "name": title, "item": pageUrl },
       ],
     },
   };
