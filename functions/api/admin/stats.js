@@ -18,6 +18,7 @@ export async function onRequestGet(context) {
     { results: b2bRows },
     { results: b2bListaRows },
     { results: eventosPendientes },
+    { results: emailsPersonales },
   ] = await Promise.all([
     env.DB.prepare("SELECT ciudad, COUNT(*) as total FROM locales GROUP BY ciudad ORDER BY total DESC").all(),
     env.DB.prepare("SELECT * FROM solicitudes ORDER BY creado_en DESC LIMIT 50").all(),
@@ -57,6 +58,15 @@ export async function onRequestGet(context) {
       FROM eventos_geo
       WHERE estado IN ('pendiente', 'revision_enviada')
       ORDER BY fecha ASC
+    `).all(),
+    env.DB.prepare(`
+      SELECT id, nombre, ciudad, tipo, email_personal, web, instagram, slug, rating
+      FROM locales
+      WHERE email_personal IS NOT NULL AND email_personal != ''
+        AND claimed = 0
+        AND (email_outreach_sent IS NULL OR email_outreach_sent = 0)
+      ORDER BY rating DESC NULLS LAST
+      LIMIT 50
     `).all(),
   ]);
 
@@ -142,6 +152,7 @@ export async function onRequestGet(context) {
     b2b,
     b2bLista: b2bListaRows,
     eventosPendientes,
+    emailsPersonales,
   }, {
     headers: { "Cache-Control": "no-store" }
   });

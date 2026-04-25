@@ -7,6 +7,8 @@ type Suscriptor = { email: string; ciudad: string; fecha: string; status: string
 type Visita = { dimensions: { date: string }; sum: { pageViews: number }; uniq: { uniques: number } };
 type Calidad = { ciudad: string; total: number; con_dir: number; con_ig: number; con_web: number; con_tel: number };
 type EventoGeo = { id: number; nombre: string; ciudad: string; fecha: string; hora_inicio?: string; direccion?: string; tipo: string; descripcion: string; radio_m?: number; dias_previos_envio?: number; estado: string };
+type EmailPersonal = { id: string; nombre: string; ciudad: string; tipo: string; email_personal: string; web: string | null; instagram: string | null; slug: string | null; rating: number | null };
+
 type Stats = {
   suscriptores: number;
   suscriptoresEstaSemana: number;
@@ -24,6 +26,7 @@ type Stats = {
   b2b: { total: number; verificados: number; esta_semana: number };
   b2bLista: { email: string; slug: string; plan: string; verified: number; created_at: string; nombre: string; ciudad: string; tipo: string }[];
   eventosPendientes: EventoGeo[];
+  emailsPersonales: EmailPersonal[];
 };
 
 const card: React.CSSProperties = {
@@ -52,6 +55,7 @@ export default function Dashboard() {
   const [error, setError] = useState("");
   const [accionando, setAccionando] = useState<number | null>(null);
   const [accionandoEvento, setAccionandoEvento] = useState<number | null>(null);
+  const [accionandoEmail, setAccionandoEmail] = useState<string | null>(null);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
   const tokenRef = useRef("");
 
@@ -75,6 +79,17 @@ export default function Dashboard() {
     });
     await refresh();
     setAccionandoEvento(null);
+  }
+
+  async function gestionarEmailPersonal(localId: string, accion: "aprobar" | "descartar") {
+    setAccionandoEmail(localId);
+    await fetch(`/api/admin/email-personal?token=${encodeURIComponent(token)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ local_id: localId, accion }),
+    });
+    await refresh();
+    setAccionandoEmail(null);
   }
 
   async function accionarSolicitud(id: number, accion: "aceptar" | "descartar") {
@@ -408,6 +423,46 @@ export default function Dashboard() {
             );
           })}
         </div>
+
+        {/* Emails personales pendientes de revisión */}
+        {(stats.emailsPersonales?.length > 0) && (
+          <div style={card}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <p style={{ fontWeight: 700, color: "#1C1917", margin: 0 }}>
+                📬 Emails dudosos — revisar manualmente
+                <span style={{ marginLeft: "0.5rem", fontSize: "0.78rem", color: "#78716C", fontWeight: 400 }}>({stats.emailsPersonales.length} pendientes)</span>
+              </p>
+              <span style={{ fontSize: "0.72rem", color: "#78716C", background: "#FEF3C7", padding: "0.25rem 0.75rem", borderRadius: "999px" }}>
+                ✓ Aprobar → pasa a outreach automático · ✕ Descartar → no contactar
+              </span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {stats.emailsPersonales.map((ep) => (
+                <div key={ep.id} style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem 1rem", borderRadius: "0.875rem", background: "#FFFBF5", border: "1px solid #F5E6D3", flexWrap: "wrap" }}>
+                  <div style={{ flex: 1, minWidth: "180px" }}>
+                    <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.9rem" }}>{ep.nombre}</span>
+                    <span style={{ marginLeft: "0.4rem", fontSize: "0.72rem", color: "#FB923C", background: "#FEF0DC", padding: "0.15rem 0.5rem", borderRadius: "999px" }}>{ep.ciudad}</span>
+                  </div>
+                  <a href={`mailto:${ep.email_personal}`} style={{ color: "#7C3AED", fontSize: "0.85rem", textDecoration: "none", fontWeight: 600 }}>
+                    ✉️ {ep.email_personal}
+                  </a>
+                  {ep.web && <a href={ep.web} target="_blank" rel="noreferrer" style={{ fontSize: "0.78rem", color: "#0EA5E9", textDecoration: "none" }}>🌐 web</a>}
+                  {ep.instagram && <a href={`https://instagram.com/${ep.instagram}`} target="_blank" rel="noreferrer" style={{ fontSize: "0.78rem", color: "#E1306C", textDecoration: "none" }}>📸 @{ep.instagram}</a>}
+                  <div style={{ display: "flex", gap: "0.4rem", marginLeft: "auto" }}>
+                    <button onClick={() => gestionarEmailPersonal(ep.id, "aprobar")} disabled={accionandoEmail === ep.id}
+                      style={{ padding: "0.35rem 0.85rem", borderRadius: "0.5rem", border: "none", cursor: "pointer", background: "#D1FAE5", color: "#059669", fontWeight: 700, fontSize: "0.78rem" }}>
+                      {accionandoEmail === ep.id ? "..." : "✓ Aprobar"}
+                    </button>
+                    <button onClick={() => gestionarEmailPersonal(ep.id, "descartar")} disabled={accionandoEmail === ep.id}
+                      style={{ padding: "0.35rem 0.85rem", borderRadius: "0.5rem", border: "none", cursor: "pointer", background: "#FEE2E2", color: "#DC2626", fontWeight: 700, fontSize: "0.78rem" }}>
+                      {accionandoEmail === ep.id ? "..." : "✕ Descartar"}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Solicitudes */}
         <div style={card}>
