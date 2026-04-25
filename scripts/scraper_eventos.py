@@ -563,6 +563,40 @@ def evento_existe(ev_id):
     return len(rows) > 0
 
 
+def evento_solapado_en_db(nombre, ciudad, fecha):
+    """
+    Devuelve True si ya existe en D1 un evento aprobado con la misma ciudad
+    y fecha (±7 días) cuyo nombre comparte al menos 3 palabras significativas.
+    Protege los eventos curados (cal_*) frente a duplicados del scraper.
+    """
+    try:
+        from datetime import datetime, timedelta
+        d = datetime.strptime(fecha, "%Y-%m-%d")
+        fecha_min = (d - timedelta(days=7)).strftime("%Y-%m-%d")
+        fecha_max = (d + timedelta(days=7)).strftime("%Y-%m-%d")
+        rows = d1_query(
+            "SELECT nombre FROM eventos_geo WHERE ciudad = ? AND fecha BETWEEN ? AND ? AND estado = 'aprobado'",
+            [ciudad, fecha_min, fecha_max]
+        )
+        if not rows:
+            return False
+        # Normalizar: minúsculas, quitar tildes básicas, dividir en palabras >=4 letras
+        import unicodedata
+        def normalizar(s):
+            s = unicodedata.normalize("NFD", s.lower())
+            s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+            return set(w for w in s.split() if len(w) >= 4)
+        palabras_nuevo = normalizar(nombre)
+        for row in rows:
+            palabras_existente = normalizar(row["nombre"])
+            comunes = palabras_nuevo & palabras_existente
+            if len(comunes) >= 2:
+                return True
+        return False
+    except Exception:
+        return False
+
+
 # Palabras que bloquean SALVO que aparezca alguna palabra de contexto positivo cerca
 PALABRAS_SENSIBLES = [
     # Duelo / muerte
@@ -616,6 +650,10 @@ def insertar_evento(ev, dry_run=False):
 
     if evento_existe(ev_id):
         return False, "ya existe"
+
+    # Protección fiestas curadas: no insertar si ya existe evento aprobado similar en DB
+    if evento_solapado_en_db(ev["nombre"], ev.get("ciudad", ""), ev.get("fecha", "")):
+        return False, "solapado con evento curado"
 
     # Filtro de contenido sensible
     bloquear, revisar, palabra = es_contenido_sensible(ev["nombre"], ev.get("descripcion", ""))
