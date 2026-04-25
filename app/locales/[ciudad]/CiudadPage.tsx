@@ -662,17 +662,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                         🕒 {local.horario || local.horario_google?.split(" | ")[0]}
                       </p>
                     )}
-                    <div style={{ marginTop: "auto", paddingTop: "0.5rem", display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
-                      {!local.slug && (
-                        <a
-                          href={`/unete?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}`}
-                          onClick={e => e.stopPropagation()}
-                          style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "0.75rem", fontWeight: 600, color: "#A78BFA", textDecoration: "none" }}
-                        >
-                          🏪 ¿Eres el propietario?
-                        </a>
-                      )}
-                    </div>
+                    <div style={{ marginTop: "auto", paddingTop: "0.5rem" }} />
                   </div>
                 </a>
               ))}
