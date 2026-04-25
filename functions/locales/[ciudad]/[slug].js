@@ -21,6 +21,8 @@ const CIUDAD_MAP = {
   "vinaros":"Vinaròs","vitoria":"Vitoria","zamora":"Zamora","zaragoza":"Zaragoza",
   "alicante":"Alicante","vigo":"Vigo","gijon":"Gijón",
   "hospitalet-de-llobregat":"Hospitalet de Llobregat","badalona":"Badalona","elche":"Elche",
+  "sabadell":"Sabadell","terrassa":"Terrassa","alcorcon":"Alcorcón","fuenlabrada":"Fuenlabrada",
+  "mataro":"Mataró","reus":"Reus","manresa":"Manresa","castello-de-la-plana":"Castelló de la Plana",
 };
 
 function esc(s) {

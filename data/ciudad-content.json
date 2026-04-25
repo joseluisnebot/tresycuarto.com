@@ -2098,5 +2098,293 @@
         "a": "El tardeo en Elche comienza sobre las 16h y se alarga hasta las 20-21h, especialmente animado en el Casco Histórico y alrededores del Palmeral."
       }
     ]
+  },
+  "sabadell": {
+    "coords": {
+      "lat": 41.5432,
+      "lon": 2.1094
+    },
+    "intro": "Sabadell és una de les ciutats més dinàmiques del Vallès Occidental, amb una escena de tardeo que combina bars de tota la vida amb locals moderns al centre. El carrer de la Creu Gran i la plaça del Doctor Robert concentren els millors llocs per gaudir de la tarda.",
+    "barrios": [
+      "Centre",
+      "Gràcia",
+      "Can Rull",
+      "La Creu de Barberà",
+      "Nord"
+    ],
+    "faqs": [
+      {
+        "q": "On és la zona de bares de Sabadell?",
+        "a": "El centre de Sabadell, especialment la plaça del Doctor Robert i el carrer de la Creu Gran, concentra la major part dels bars i locals d'oci de la ciutat."
+      },
+      {
+        "q": "Té Sabadell terrasses a l'exterior?",
+        "a": "Sí, especialment als carrers del centre i als voltants de la plaça del Doctor Robert hi ha moltes terrasses molt concorregudes a la tarda."
+      },
+      {
+        "q": "Quina és la millor hora per al tardeo a Sabadell?",
+        "a": "De 17:00 a 21:00 és el moment àlgid del tardeo a Sabadell, quan les terrasses s'omplen i l'ambient és més animat."
+      },
+      {
+        "q": "Hi ha bars amb música en viu a Sabadell?",
+        "a": "Sí, Sabadell té una tradició musical important i alguns locals ofereixen concerts i música en viu els caps de setmana."
+      },
+      {
+        "q": "Com arribar al centre de Sabadell en transport públic?",
+        "a": "Sabadell disposa de dues línies de FGC (S2 i S1) i diverses línies de bus que connecten amb Barcelona i els municipis veïns."
+      }
+    ]
+  },
+  "terrassa": {
+    "coords": {
+      "lat": 41.5631,
+      "lon": 2.0089
+    },
+    "intro": "Terrassa, capital del Vallès Occidental, té una vida de tardeo concentrada al seu centre historic i als voltants de la plaça de la Llibertat. La ciudad combina bars tradicionals amb locals de moda que fan del tardeo una experiència única.",
+    "barrios": [
+      "Centre",
+      "Sant Pere Nord",
+      "Ca n'Anglada",
+      "Vallparadís",
+      "Can Palet"
+    ],
+    "faqs": [
+      {
+        "q": "On fer tardeo a Terrassa?",
+        "a": "El centre de Terrassa, especialment la plaça de la Llibertat i els carrers adjacents, és el punt neuràlgic del tardeo amb una gran varietat de bars i locals."
+      },
+      {
+        "q": "Hi ha zones de terrasses a Terrassa?",
+        "a": "Sí, la plaça de la Llibertat i la Rambla d'Ègara tenen bones terrasses per gaudir de la tarda."
+      },
+      {
+        "q": "Com moure's per Terrassa?",
+        "a": "Terrassa té línies de bus urbà i estació de FGC (S1, S2, S5 i S55) que connecten amb Barcelona en uns 40 minuts."
+      },
+      {
+        "q": "Hi ha concerts o música en directe a Terrassa?",
+        "a": "Terrassa té una activa escena musical i alguns bars del centre ofereixen música en viu els divendres i dissabtes."
+      },
+      {
+        "q": "Quin és l'ambient del tardeo a Terrassa?",
+        "a": "Terrassa té un tardeo variat, amb bars tradicionals per als més clàssics i locals moderns per als que busquen un ambient més jove."
+      }
+    ]
+  },
+  "alcorcon": {
+    "coords": {
+      "lat": 40.3494,
+      "lon": -3.8319
+    },
+    "intro": "Alcorcón és un dels municipis més populars de l'àrea metropolitana de Madrid per al tardeo. El centre comercial i la zona del carrer Primero de Mayo concentren una oferta variada de bars, pubs i cafeteries perfectes per a la tarde.",
+    "barrios": [
+      "Centro",
+      "El Torcal",
+      "Los Rosales",
+      "Parque Lisboa",
+      "El Sector III"
+    ],
+    "faqs": [
+      {
+        "q": "On fer tardeo a Alcorcón?",
+        "a": "El centre d'Alcorcón, especialment el carrer Primero de Mayo i els seus voltants, concentra la majoria dels bars i locals d'oci."
+      },
+      {
+        "q": "Com arribar a Alcorcón des de Madrid?",
+        "a": "Alcorcón té estació de metro (línia 10) i diverses línies d'autobús que connecten amb Madrid en menys de 30 minuts."
+      },
+      {
+        "q": "Hi ha terrasses a Alcorcón?",
+        "a": "Sí, especialment a la zona del centre hi ha terrasses molt concorregudes durant els mesos càlids."
+      },
+      {
+        "q": "Quin tipus de locals hi ha a Alcorcón?",
+        "a": "A Alcorcón trobaràs una combinació de bars tradicionals espanyols, cafeteries modernes i pubs amb música per a tots els gustos."
+      },
+      {
+        "q": "Hi ha locals de música en viu a Alcorcón?",
+        "a": "Sí, alguns pubs i bars del centre d'Alcorcón ofereixen música en directe els caps de setmana."
+      }
+    ]
+  },
+  "fuenlabrada": {
+    "coords": {
+      "lat": 40.2842,
+      "lon": -3.7947
+    },
+    "intro": "Fuenlabrada és un dels municipis més grans de la Comunitat de Madrid, amb una zona de tardeo activa al seu centre. El carrer Real i els voltants de la plaça Constitución concentren bars i locals on els habitants disfruten de la tarda.",
+    "barrios": [
+      "Centro",
+      "La Loranca",
+      "El Molino",
+      "Parque Miraflores",
+      "Los Castillos"
+    ],
+    "faqs": [
+      {
+        "q": "On és la zona de bares de Fuenlabrada?",
+        "a": "El centre de Fuenlabrada, al voltant del carrer Real i la plaça de la Constitución, és el cor del tardeo local."
+      },
+      {
+        "q": "Com arribar a Fuenlabrada des de Madrid?",
+        "a": "Fuenlabrada disposa de tres estacions de Cercanías (línia C-5) i diverses línies d'autobús interurbà que connecten amb Madrid en uns 40 minuts."
+      },
+      {
+        "q": "Hi ha terrasses a Fuenlabrada?",
+        "a": "Sí, la plaça de la Constitució i altres zones del centre tenen terrasses molt populars a la primavera i l'estiu."
+      },
+      {
+        "q": "Quin ambient té el tardeo a Fuenlabrada?",
+        "a": "El tardeo a Fuenlabrada és tranquil i familiar, amb bars tradicionals i una clientela habitual que crea un ambient molt agradable."
+      },
+      {
+        "q": "Hi ha opcions de oci nocturn a Fuenlabrada?",
+        "a": "Sí, tot i que és més coneguda per l'oci de tarda, Fuenlabrada té alguns pubs i bars amb ambient nocturn al seu centre."
+      }
+    ]
+  },
+  "mataro": {
+    "coords": {
+      "lat": 41.5388,
+      "lon": 2.4445
+    },
+    "intro": "Mataró, capital del Maresme, és una ciutat mediterrània amb un tardeo molt animat al seu centre historiec. La Rambla i els carrers del centre vell concentren bars, terrasses i locals amb molt ambient, especialment els caps de setmana.",
+    "barrios": [
+      "Centre",
+      "Cerdanyola",
+      "El Palau",
+      "Les Cinc Sènies",
+      "Rocafonda"
+    ],
+    "faqs": [
+      {
+        "q": "On fer tardeo a Mataró?",
+        "a": "La Rambla de Mataró i el centre historic, especialment els carrers de Sant Josep i Sant Cristòfor, concentren la major part dels bars i terrasses."
+      },
+      {
+        "q": "Com arribar a Mataró des de Barcelona?",
+        "a": "Mataró és accessible en Rodalies (línia R1) en uns 35-40 minuts des de Barcelona Sants, i per l'autovia C-32."
+      },
+      {
+        "q": "Hi ha bones terrasses a Mataró?",
+        "a": "Sí, Mataró té una bona oferta de terrasses, especialment a la Rambla i als carrers del centre, molt populars a la primavera i l'estiu gràcies al clima mediterrani."
+      },
+      {
+        "q": "Quin és l'ambient del tardeo a Mataró?",
+        "a": "Mataró té un ambient mediterrani i relaxat, amb bars tradicionals i moderns que conviden a gaudir de la tarda amb una cervesa o un vermut."
+      },
+      {
+        "q": "Hi ha locals de música a Mataró?",
+        "a": "Sí, alguns bars i pubs del centre de Mataró ofereixen música en directe i DJ sets els caps de setmana."
+      }
+    ]
+  },
+  "reus": {
+    "coords": {
+      "lat": 41.1544,
+      "lon": 1.1043
+    },
+    "intro": "Reus, ciutat de l'arquitecte Antoni Gaudí i capital del Baix Camp, té una escena de tardeo molt viva al seu centre historiec. El Mercadal i els carrers del centre vell concentren bars i terrasses on es viu el tardeo amb molta intensitat.",
+    "barrios": [
+      "Centre",
+      "El Carme",
+      "Mas Pellicer",
+      "Nou Cambrils",
+      "Barri dels Mestres"
+    ],
+    "faqs": [
+      {
+        "q": "On és la zona de bars de Reus?",
+        "a": "El centre de Reus, especialment la plaça del Mercadal i els carrers del centre historiec, concentra la millor oferta de bars i terrasses de la ciutat."
+      },
+      {
+        "q": "Com arribar a Reus?",
+        "a": "Reus té estació de Rodalies (línia R14/R15) que connecta amb Tarragona, i l'aeroport de Reus és a uns 3 km del centre."
+      },
+      {
+        "q": "Hi ha terrasses a Reus?",
+        "a": "Sí, la plaça del Mercadal i altres places del centre de Reus estan plenes de terrasses molt concorregudes durant els mesos càlids."
+      },
+      {
+        "q": "Quin és l'ambient del tardeo a Reus?",
+        "a": "Reus té un tardeo animat i mediterrani, amb bars tradicionals i moderns que creen un ambient molt viu especialment els divendres i dissabtes."
+      },
+      {
+        "q": "Hi ha activitats culturals lligades al tardeo a Reus?",
+        "a": "Sí, Reus combina una oferta cultural important (teatre, música) amb el tardeo, i molts bars del centre estan situats prop dels principals espais culturals."
+      }
+    ]
+  },
+  "manresa": {
+    "coords": {
+      "lat": 41.7248,
+      "lon": 1.8243
+    },
+    "intro": "Manresa, capital del Bages, és una ciutat amb una vida de tardeo concentrada al seu centre historiec. La zona al voltant de la Seu i el carrer del Born concentra bars i terasses que fan del tardeo manresà una experiència autèntica.",
+    "barrios": [
+      "Centre",
+      "Vic-Remei",
+      "Barri Antic",
+      "Sagrada Família",
+      "Sant Pau"
+    ],
+    "faqs": [
+      {
+        "q": "On fer tardeo a Manresa?",
+        "a": "El centre de Manresa, especialment el carrer del Born i els voltants de la plaça de la Reforma, concentra la major part dels bars i locals d'oci."
+      },
+      {
+        "q": "Com arribar a Manresa des de Barcelona?",
+        "a": "Manresa és accessible en tren des de Barcelona (FGC línia R5) en uns 70 minuts, i per autopista (C-55) en uns 50 minuts."
+      },
+      {
+        "q": "Hi ha terrasses a Manresa?",
+        "a": "Sí, la plaça de la Reforma i altres places del centre de Manresa tenen terrasses molt populars durant els mesos càlids."
+      },
+      {
+        "q": "Quin és l'ambient del tardeo a Manresa?",
+        "a": "Manresa té un tardeo tranquil i autèntic, amb bars tradicionals catalans i una clientela local que crea un ambient molt agradable."
+      },
+      {
+        "q": "Hi ha concerts o esdeveniments als bars de Manresa?",
+        "a": "Sí, alguns locals del centre de Manresa organitzen concerts i esdeveniments culturals que s'integren perfectament amb el tardeo."
+      }
+    ]
+  },
+  "castello-de-la-plana": {
+    "coords": {
+      "lat": 39.9864,
+      "lon": -0.0513
+    },
+    "intro": "Castelló de la Plana és la capital de la província de Castelló i té una de les millors escenes de tardeo del llevant espanyol. La Plaça Major i els carrers del centre vell concentren bars, terrasses i locals amb molt ambient, especialment durant les Festes de la Magdalena.",
+    "barrios": [
+      "Centro",
+      "El Ravalet",
+      "Grapa",
+      "Tombatossals",
+      "Lledoner"
+    ],
+    "faqs": [
+      {
+        "q": "On fer tardeo a Castelló de la Plana?",
+        "a": "La Plaça Major de Castelló i els carrers del centre vell, especialment el carrer Enmig, concentren la millor oferta de bars i terrasses de la ciutat."
+      },
+      {
+        "q": "Com arribar a Castelló de la Plana?",
+        "a": "Castelló té estació de tren AVE i Rodalies que connecta amb València en uns 25 minuts, i amb Madrid en menys de 2 hores."
+      },
+      {
+        "q": "Hi ha terrasses a Castelló?",
+        "a": "Sí, Castelló té una gran tradició de terrasses, especialment a la Plaça Major i els carrers del centre, molt populars gràcies al seu clima mediterrani."
+      },
+      {
+        "q": "Quin és l'ambient del tardeo a Castelló?",
+        "a": "Castelló té un tardeo molt mediterrani i animat, amb una barreja de bars tradicionals valencians i locals moderns que fan el tardeo molt especial."
+      },
+      {
+        "q": "Quan és la millor època per visitar Castelló?",
+        "a": "Les Festes de la Magdalena (març) són l'època més animada, però Castelló té bon ambient de tardeo tot l'any gràcies al seu clima."
+      }
+    ]
   }
 }

@@ -8,6 +8,10 @@
     "nombre": "Alcalá de Henares"
   },
   {
+    "slug": "alcorcon",
+    "nombre": "Alcorcón"
+  },
+  {
     "slug": "algeciras",
     "nombre": "Algeciras"
   },
@@ -72,6 +76,10 @@
     "nombre": "Cartagena"
   },
   {
+    "slug": "castello-de-la-plana",
+    "nombre": "Castelló de la Plana"
+  },
+  {
     "slug": "ciudad-real",
     "nombre": "Ciudad Real"
   },
@@ -90,6 +98,14 @@
   {
     "slug": "denia",
     "nombre": "Dénia"
+  },
+  {
+    "slug": "elche",
+    "nombre": "Elche"
+  },
+  {
+    "slug": "fuenlabrada",
+    "nombre": "Fuenlabrada"
   },
   {
     "slug": "getafe",
@@ -172,6 +188,14 @@
     "nombre": "Málaga"
   },
   {
+    "slug": "manresa",
+    "nombre": "Manresa"
+  },
+  {
+    "slug": "mataro",
+    "nombre": "Mataró"
+  },
+  {
     "slug": "mostoles",
     "nombre": "Móstoles"
   },
@@ -198,6 +222,14 @@
   {
     "slug": "pontevedra",
     "nombre": "Pontevedra"
+  },
+  {
+    "slug": "reus",
+    "nombre": "Reus"
+  },
+  {
+    "slug": "sabadell",
+    "nombre": "Sabadell"
   },
   {
     "slug": "salamanca",
@@ -236,6 +268,10 @@
     "nombre": "Tarragona"
   },
   {
+    "slug": "terrassa",
+    "nombre": "Terrassa"
+  },
+  {
     "slug": "teruel",
     "nombre": "Teruel"
   },
@@ -256,20 +292,16 @@
     "nombre": "Valladolid"
   },
   {
+    "slug": "vigo",
+    "nombre": "Vigo"
+  },
+  {
     "slug": "vinaros",
     "nombre": "Vinaròs"
   },
   {
     "slug": "vitoria",
     "nombre": "Vitoria"
-  },
-  {
-    "slug": "elche",
-    "nombre": "Elche"
-  },
-  {
-    "slug": "vigo",
-    "nombre": "Vigo"
   },
   {
     "slug": "zamora",
