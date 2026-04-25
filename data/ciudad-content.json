@@ -2386,5 +2386,293 @@
         "a": "Castellón tiene estación AVE y de cercanías con conexiones frecuentes con Valencia (25 min) y Madrid (menos de 2h), y está bien comunicada por la AP-7."
       }
     ]
+  },
+  "Gandia": {
+    "coords": {
+      "lat": 38.9681,
+      "lon": -0.1827
+    },
+    "intro": "Gandia tiene uno de los tardeos más animados de la Costa Blanca. El centro histórico, la Calle Mayor y el barrio de la playa concentran bares de tapas, terrazas y locales con mucho ambiente donde disfrutar las tardes entre semana y los fines de semana.",
+    "barrios": [
+      "Centre",
+      "Grau de Gandia",
+      "Marxuquera",
+      "Beniopa",
+      "La Drova"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Gandia?",
+        "a": "El centro histórico y la zona del Grau de Gandia concentran los mejores bares y terrazas para el tardeo, con opciones para todos los gustos cerca del mar."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Gandia?",
+        "a": "Gandia combina la cultura del tardeo mediterráneo con la proximidad a la playa, con terrazas abiertas casi todo el año y un ambiente muy animado en verano."
+      },
+      {
+        "q": "¿A qué hora empieza el tardeo en Gandia?",
+        "a": "El tardeo en Gandia empieza a partir de las 13-14h los fines de semana, con vermut y tapas, y se extiende hasta las 21h especialmente en la zona del Grau."
+      },
+      {
+        "q": "¿Tiene terrazas Gandia?",
+        "a": "Sí, Gandia tiene una gran oferta de terrazas tanto en el centro como en la zona de playa, disfrutables durante la mayor parte del año gracias al clima mediterráneo."
+      },
+      {
+        "q": "¿Cómo llegar a Gandia?",
+        "a": "Gandia tiene estación de cercanías conectada con Valencia en unos 60 minutos, y está a 65 km de Valencia por la AP-7."
+      }
+    ]
+  },
+  "Torrent": {
+    "coords": {
+      "lat": 39.4338,
+      "lon": -0.4655
+    },
+    "intro": "Torrent es una de las ciudades más grandes del área metropolitana de Valencia y tiene una escena de tardeo muy activa en su centro. La Plaza Mayor, la Avenida al Vedat y las calles del casco urbano concentran bares de tapas, terrazas y locales con mucho ambiente.",
+    "barrios": [
+      "Centre",
+      "L'Alter",
+      "Masies",
+      "El Vedat",
+      "Rambleta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Torrent?",
+        "a": "La Plaza Mayor y las calles del centro de Torrent son el punto de referencia del tardeo, con bares de tapas y terrazas muy concurridas los fines de semana."
+      },
+      {
+        "q": "¿Qué ambiente tiene el tardeo en Torrent?",
+        "a": "Torrent tiene un tardeo de ciudad dormitorio muy animado, con bares tradicionales y locales modernos que se llenan de vecinos los fines de semana."
+      },
+      {
+        "q": "¿Cómo llegar a Torrent?",
+        "a": "Torrent está comunicada con Valencia por metro (línea 1) en unos 20 minutos, y por la CV-36 en coche a solo 15 minutos del centro de Valencia."
+      },
+      {
+        "q": "¿Tiene terrazas Torrent?",
+        "a": "Sí, el centro de Torrent cuenta con buenas terrazas en sus plazas y calles principales, muy activas en primavera y verano."
+      },
+      {
+        "q": "¿Cuál es la zona de bares de Torrent?",
+        "a": "El entorno de la Plaza Mayor y la Avenida al Vedat concentran la mayor oferta de bares y terrazas para el tardeo en Torrent."
+      }
+    ]
+  },
+  "Orihuela": {
+    "coords": {
+      "lat": 38.0849,
+      "lon": -0.9435
+    },
+    "intro": "Orihuela es una ciudad histórica con un tardeo muy arraigado en su casco antiguo. Las calles de la Manzana, la Plaza de la Soledad y el entorno de la Catedral concentran bares tradicionales, tabernas y terrazas donde disfrutar las tardes con un ambiente auténtico.",
+    "barrios": [
+      "Casco Histórico",
+      "El Escorratel",
+      "La Aparecida",
+      "Los Huertos",
+      "Molins"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Orihuela?",
+        "a": "El casco histórico de Orihuela, especialmente las calles alrededor de la Catedral y la Plaza de la Soledad, concentra los mejores bares tradicionales para el tardeo."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Orihuela?",
+        "a": "Orihuela tiene un tardeo muy auténtico y de sabor local, con tabernas históricas en el casco antiguo que conservan la tradición del vermut y las tapas alicantinas."
+      },
+      {
+        "q": "¿Tiene terrazas Orihuela?",
+        "a": "Sí, el casco histórico y las plazas de Orihuela ofrecen buenas terrazas, especialmente agradables en primavera y otoño con el clima del interior alicantino."
+      },
+      {
+        "q": "¿Cómo llegar a Orihuela?",
+        "a": "Orihuela tiene estación de AVE y cercanías con conexiones a Murcia (20 min) y Alicante (35 min), y está comunicada por la A-7 y la N-340."
+      },
+      {
+        "q": "¿Cuál es la mejor época para el tardeo en Orihuela?",
+        "a": "La primavera y el otoño son las mejores épocas para el tardeo en Orihuela, cuando el clima es suave y las terrazas del casco histórico tienen el mejor ambiente."
+      }
+    ]
+  },
+  "Alcoy": {
+    "coords": {
+      "lat": 38.6985,
+      "lon": -0.4753
+    },
+    "intro": "Alcoy tiene un tardeo con mucho carácter en su centro histórico. La Plaza de España, el Partidor y las calles de la zona peatonal concentran bares de toda la vida, vermutería y locales con ambiente donde disfrutar las tardes al ritmo de la música y la tradición alcoyense.",
+    "barrios": [
+      "Centre",
+      "Batoi",
+      "El Preventori",
+      "La Zona Norte",
+      "Benimarfull"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Alcoy?",
+        "a": "La Plaza de España y el entorno del Partidor son el corazón del tardeo en Alcoy, con bares tradicionales y terrazas que se animan especialmente los fines de semana."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Alcoy?",
+        "a": "Alcoy tiene una larga tradición de vermut y tapas en su casco histórico, con una cultura de bares muy arraigada que cobra especial protagonismo durante las Fiestas de Moros y Cristianos."
+      },
+      {
+        "q": "¿Tiene terrazas Alcoy?",
+        "a": "Sí, la Plaza de España y varias calles del centro cuentan con terrazas animadas, aunque el clima de interior hace que la temporada de terraza sea más limitada que en la costa."
+      },
+      {
+        "q": "¿Cómo llegar a Alcoy?",
+        "a": "Alcoy está a 55 km de Alicante y 90 km de Valencia por la A-7 y la CV-80. No tiene tren directo, pero hay autobuses frecuentes desde Alicante."
+      },
+      {
+        "q": "¿Cuándo es la mejor época para visitar Alcoy?",
+        "a": "Las Fiestas de Moros y Cristianos (abril) son la época más animada para visitar Alcoy, con el tardeo en pleno apogeo y ambiente festivo en toda la ciudad."
+      }
+    ]
+  },
+  "Mérida": {
+    "coords": {
+      "lat": 38.9165,
+      "lon": -6.3438
+    },
+    "intro": "Mérida, capital de Extremadura y ciudad declarada Patrimonio de la Humanidad, tiene un tardeo muy especial entre ruinas romanas y bares de tapas. La calle John Lennon, la Plaza de España y el entorno del Teatro Romano concentran la mejor oferta para disfrutar las tardes extremeñas.",
+    "barrios": [
+      "Centro",
+      "Nueva Ciudad",
+      "El Vivero",
+      "Jardines de Mérida",
+      "Cerro del Calvario"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Mérida?",
+        "a": "La calle John Lennon y la Plaza de España son el epicentro del tardeo en Mérida, con bares de tapas extremeñas, vermutería y terrazas con vistas al patrimonio romano."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Mérida?",
+        "a": "El tardeo en Mérida es único por combinar la gastronomía extremeña (jamón, queso, migas) con el ambiente histórico de una ciudad con 2.000 años de historia y Patrimonio Mundial."
+      },
+      {
+        "q": "¿Tiene terrazas Mérida?",
+        "a": "Sí, Mérida cuenta con excelentes terrazas en la Plaza de España y alrededores, especialmente animadas en primavera y verano con el turismo cultural."
+      },
+      {
+        "q": "¿Cómo llegar a Mérida?",
+        "a": "Mérida tiene estación de tren con conexiones a Madrid (3h) y Badajoz (30 min), y está comunicada por la A-5 y la A-66 con el resto de España."
+      },
+      {
+        "q": "¿Cuál es la mejor época para el tardeo en Mérida?",
+        "a": "La primavera y el otoño son ideales para el tardeo en Mérida, cuando el Festival de Teatro Clásico anima la ciudad y el clima es perfecto para las terrazas."
+      }
+    ]
+  },
+  "Molina de Segura": {
+    "coords": {
+      "lat": 38.0614,
+      "lon": -1.2106
+    },
+    "intro": "Molina de Segura es una de las ciudades más dinámicas de la Región de Murcia, con una escena de tardeo muy activa en su centro. La Plaza del Ayuntamiento, la Calle Mayor y la zona peatonal concentran bares de tapas, terrazas y locales con mucho ambiente.",
+    "barrios": [
+      "Centro",
+      "La Torrealta",
+      "Urbanización La Quinta",
+      "Los Conejos",
+      "El Llano"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Molina de Segura?",
+        "a": "La Plaza del Ayuntamiento y la zona peatonal del centro son los puntos de referencia del tardeo en Molina, con bares de tapas murcianas y terrazas muy animadas."
+      },
+      {
+        "q": "¿Qué ambiente tiene el tardeo en Molina de Segura?",
+        "a": "Molina tiene un tardeo muy animado y familiar, con bares de tapas a buen precio y un ambiente relajado típico de las ciudades murcianas."
+      },
+      {
+        "q": "¿Cómo llegar a Molina de Segura?",
+        "a": "Molina de Segura está a solo 10 km de Murcia capital por la A-30, comunicada también por autobús urbano y líneas de cercanías con la capital regional."
+      },
+      {
+        "q": "¿Tiene terrazas Molina de Segura?",
+        "a": "Sí, el centro de Molina cuenta con buenas terrazas en sus plazas y calles peatonales, muy activas los fines de semana de primavera y verano."
+      },
+      {
+        "q": "¿Cuál es la zona de bares en Molina de Segura?",
+        "a": "La zona peatonal alrededor de la Plaza del Ayuntamiento concentra la mayor oferta de bares y terrazas para el tardeo en Molina de Segura."
+      }
+    ]
+  },
+  "Vélez-Málaga": {
+    "coords": {
+      "lat": 36.7811,
+      "lon": -4.0997
+    },
+    "intro": "Vélez-Málaga es la capital de la comarca de la Axarquía y tiene un tardeo con mucho sabor andaluz. El casco histórico, la Plaza de las Carmelitas y las calles del centro concentran bares de tapas, tabernas tradicionales y terrazas donde disfrutar las tardes malagueñas.",
+    "barrios": [
+      "Centro Histórico",
+      "Torre del Mar",
+      "Caleta de Vélez",
+      "El Trapiche",
+      "Cajiz"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Vélez-Málaga?",
+        "a": "El casco histórico de Vélez-Málaga y la Plaza de las Carmelitas son los puntos de referencia del tardeo, con bares de tapas y tabernas tradicionales de la Axarquía."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Vélez-Málaga?",
+        "a": "El tardeo en Vélez-Málaga destaca por la gastronomía de la Axarquía, con tapas de pescado, vinos moscateles y un ambiente andaluz muy auténtico a precio asequible."
+      },
+      {
+        "q": "¿Tiene terrazas Vélez-Málaga?",
+        "a": "Sí, tanto el centro histórico como la zona costera de Torre del Mar ofrecen excelentes terrazas, disfrutables casi todo el año gracias al clima mediterráneo."
+      },
+      {
+        "q": "¿Cómo llegar a Vélez-Málaga?",
+        "a": "Vélez-Málaga está a 35 km de Málaga por la A-7, y tiene buenas conexiones en autobús con la capital. El aeropuerto de Málaga queda a 40 minutos."
+      },
+      {
+        "q": "¿Cuál es la mejor época para el tardeo en Vélez-Málaga?",
+        "a": "El tardeo en Vélez-Málaga es bueno todo el año, pero la primavera y el verano son especialmente animados en la zona costera de Torre del Mar."
+      }
+    ]
+  },
+  "Linares": {
+    "coords": {
+      "lat": 38.0938,
+      "lon": -3.6368
+    },
+    "intro": "Linares es una ciudad con gran tradición industrial y minera en la provincia de Jaén, y tiene un tardeo muy arraigado en su centro. La Plaza del Ayuntamiento, la Calle Cervantes y las calles del casco histórico concentran bares de tapas, tabernas y locales con ambiente.",
+    "barrios": [
+      "Centro",
+      "San José",
+      "La Estación",
+      "La Paz",
+      "El Carmen"
+    ],
+    "faqs": [
+      {
+        "q": "¿Dónde tardeear en Linares?",
+        "a": "La Plaza del Ayuntamiento y la Calle Cervantes son el corazón del tardeo en Linares, con bares de tapas jiennenses y tabernas tradicionales muy animadas los fines de semana."
+      },
+      {
+        "q": "¿Qué hace especial el tardeo en Linares?",
+        "a": "El tardeo en Linares destaca por las tapas gratuitas con cada consumición, una tradición muy arraigada en toda la provincia de Jaén que hace el tardeo muy asequible."
+      },
+      {
+        "q": "¿Tiene terrazas Linares?",
+        "a": "Sí, Linares cuenta con terrazas en su Plaza Mayor y calles principales, más activas en primavera y verano con el buen clima del interior andaluz."
+      },
+      {
+        "q": "¿Cómo llegar a Linares?",
+        "a": "Linares tiene estación de AVE (Linares-Baeza) con conexiones a Madrid (2h) y a Jaén (30 min), y está comunicada por la A-4 y la N-322."
+      },
+      {
+        "q": "¿Cuál es la mejor época para el tardeo en Linares?",
+        "a": "La primavera y el otoño son ideales para el tardeo en Linares, cuando el clima es más suave y las terrazas del centro tienen el mejor ambiente."
+      }
+    ]
   }
 }

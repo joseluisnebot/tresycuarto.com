@@ -14,7 +14,8 @@ const CIUDAD_SLUGS = [
   "soria","tarragona","teruel","toledo","torrevieja","valencia","valladolid","vinaros",
   "vitoria","zamora","zaragoza",
   "alicante","vigo","gijon","hospitalet-de-llobregat","badalona","elche",
-  "sabadell","terrassa","alcorcon","fuenlabrada","mataro","reus","manresa","castello-de-la-plana"
+  "sabadell","terrassa","alcorcon","fuenlabrada","mataro","reus","manresa","castello-de-la-plana",
+  "gandia","torrent","orihuela","alcoy","merida","molina-de-segura","velez-malaga","linares"
 ];
 
 const CIUDAD_TO_SLUG = {
@@ -39,6 +40,8 @@ const CIUDAD_TO_SLUG = {
   "Hospitalet de Llobregat":"hospitalet-de-llobregat","Badalona":"badalona","Elche":"elche",
   "Sabadell":"sabadell","Terrassa":"terrassa","Alcorcón":"alcorcon","Fuenlabrada":"fuenlabrada",
   "Mataró":"mataro","Reus":"reus","Manresa":"manresa","Castelló de la Plana":"castello-de-la-plana",
+  "Gandia":"gandia","Torrent":"torrent","Orihuela":"orihuela","Alcoy":"alcoy",
+  "Mérida":"merida","Molina de Segura":"molina-de-segura","Vélez-Málaga":"velez-malaga","Linares":"linares",
 };
 
 export async function onRequestGet(context) {

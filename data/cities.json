@@ -12,6 +12,10 @@
     "nombre": "Alcorcón"
   },
   {
+    "slug": "alcoy",
+    "nombre": "Alcoy"
+  },
+  {
     "slug": "algeciras",
     "nombre": "Algeciras"
   },
@@ -108,6 +112,10 @@
     "nombre": "Fuenlabrada"
   },
   {
+    "slug": "gandia",
+    "nombre": "Gandia"
+  },
+  {
     "slug": "getafe",
     "nombre": "Getafe"
   },
@@ -164,6 +172,10 @@
     "nombre": "León"
   },
   {
+    "slug": "linares",
+    "nombre": "Linares"
+  },
+  {
     "slug": "lleida",
     "nombre": "Lleida"
   },
@@ -196,12 +208,24 @@
     "nombre": "Mataró"
   },
   {
+    "slug": "merida",
+    "nombre": "Mérida"
+  },
+  {
+    "slug": "molina-de-segura",
+    "nombre": "Molina de Segura"
+  },
+  {
     "slug": "mostoles",
     "nombre": "Móstoles"
   },
   {
     "slug": "murcia",
     "nombre": "Murcia"
+  },
+  {
+    "slug": "orihuela",
+    "nombre": "Orihuela"
   },
   {
     "slug": "oviedo",
@@ -280,6 +304,10 @@
     "nombre": "Toledo"
   },
   {
+    "slug": "torrent",
+    "nombre": "Torrent"
+  },
+  {
     "slug": "torrevieja",
     "nombre": "Torrevieja"
   },
@@ -290,6 +318,10 @@
   {
     "slug": "valladolid",
     "nombre": "Valladolid"
+  },
+  {
+    "slug": "velez-malaga",
+    "nombre": "Vélez-Málaga"
   },
   {
     "slug": "vigo",

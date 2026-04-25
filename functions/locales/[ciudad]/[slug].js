@@ -23,6 +23,8 @@ const CIUDAD_MAP = {
   "hospitalet-de-llobregat":"Hospitalet de Llobregat","badalona":"Badalona","elche":"Elche",
   "sabadell":"Sabadell","terrassa":"Terrassa","alcorcon":"Alcorcón","fuenlabrada":"Fuenlabrada",
   "mataro":"Mataró","reus":"Reus","manresa":"Manresa","castello-de-la-plana":"Castelló de la Plana",
+  "gandia":"Gandia","torrent":"Torrent","orihuela":"Orihuela","alcoy":"Alcoy",
+  "merida":"Mérida","molina-de-segura":"Molina de Segura","velez-malaga":"Vélez-Málaga","linares":"Linares",
 };
 
 function esc(s) {
