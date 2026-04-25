@@ -21,9 +21,12 @@ import logging
 from datetime import datetime
 
 # ── Configuración ──────────────────────────────────────────────────────────────
-CF_ACCOUNT  = "0c4d9c91bb0f3a4c905545ecc158ec65"
-CF_TOKEN    = "cfut_qTKfsExOPMBZJDjXoSCpAsJgnIEaBrJlRVtZsBE6f134a6d2"
+CF_ACCOUNT  = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
+CF_TOKEN    = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 DB_ID       = "458672aa-392f-4767-8d2b-926406628ba0"
+
+if not CF_TOKEN:
+    raise SystemExit("ERROR: CLOUDFLARE_API_TOKEN no definido")
 
 D1_URL    = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d1/database/{DB_ID}/query"
 D1_HEADERS = {"Authorization": f"Bearer {CF_TOKEN}", "Content-Type": "application/json"}
@@ -128,12 +131,16 @@ def generar_descripcion(local):
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(description="Genera descripciones de locales con Ollama local (gratis)")
-    parser.add_argument("--limite",  type=int, default=LIMITE_DEFECTO, help="Máx. locales a procesar")
-    parser.add_argument("--ciudad",  type=str, default=None,           help="Procesar solo esta ciudad")
-    parser.add_argument("--dry-run", action="store_true",              help="No guardar en D1")
+    parser.add_argument("--limite",    type=int, default=LIMITE_DEFECTO, help="Máx. locales a procesar")
+    parser.add_argument("--ciudad",    type=str, default=None,           help="Procesar solo esta ciudad")
+    parser.add_argument("--dry-run",   action="store_true",              help="No guardar en D1")
+    parser.add_argument("--hora-fin",  type=int, default=None,           help="Parar a esta hora UTC (ej: 6 para las 6:00 UTC = 8:00 CEST)")
     args = parser.parse_args()
 
-    log.info(f"=== Inicio generar_descripciones (Ollama local) | limite={args.limite} ciudad={args.ciudad or 'todas'} dry-run={args.dry_run} ===")
+    from datetime import datetime
+    hora_fin = args.hora_fin  # hora UTC en la que parar
+
+    log.info(f"=== Inicio generar_descripciones (Ollama local) | limite={args.limite} ciudad={args.ciudad or 'todas'} hora-fin={hora_fin or 'sin límite'} ===")
 
     # Obtener locales sin descripción
     sql = """
@@ -163,6 +170,11 @@ def main():
     errores = 0
 
     for i, local in enumerate(locales, 1):
+        # Parar si hemos llegado a la hora límite
+        if hora_fin is not None and datetime.utcnow().hour >= hora_fin:
+            log.info(f"Hora límite UTC {hora_fin}:00 alcanzada. Parando ({ok} generadas).")
+            break
+
         try:
             descripcion = generar_descripcion(local)
 
