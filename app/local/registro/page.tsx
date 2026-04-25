@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTurnstile } from "../../components/useTurnstile";
 
 const CIUDADES = ["Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao", "Málaga", "Zaragoza", "Murcia"];
@@ -19,8 +19,12 @@ type LocalResult = {
 
 type Step = "buscar" | "nuevo_local" | "cuenta";
 
-export default function LocalRegistro() {
+function LocalRegistroForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const preLocalId = searchParams.get("local_id") || "";
+  const preEmail   = searchParams.get("email") || "";
+
   const [step, setStep] = useState<Step>("buscar");
 
   // Búsqueda
@@ -29,6 +33,21 @@ export default function LocalRegistro() {
   const [resultados, setResultados] = useState<LocalResult[]>([]);
   const [buscando, setBuscando] = useState(false);
   const [localSeleccionado, setLocalSeleccionado] = useState<LocalResult | null>(null);
+
+  // Pre-cargar local desde URL (enlace de aprobación)
+  useEffect(() => {
+    if (!preLocalId) return;
+    fetch(`/api/local/buscar?id=${encodeURIComponent(preLocalId)}`)
+      .then(r => r.json())
+      .then(data => {
+        const local = data.results?.[0];
+        if (local && !local.claimed) {
+          setLocalSeleccionado(local);
+          setStep("cuenta");
+        }
+      })
+      .catch(() => {});
+  }, [preLocalId]);
 
   // Nuevo local
   const [nuevoNombre, setNuevoNombre] = useState("");
@@ -40,7 +59,7 @@ export default function LocalRegistro() {
   const [nuevoInstagram, setNuevoInstagram] = useState("");
 
   // Cuenta
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(preEmail);
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [enviando, setEnviando] = useState(false);
@@ -297,5 +316,13 @@ export default function LocalRegistro() {
       )}
 
     </main>
+  );
+}
+
+export default function LocalRegistro() {
+  return (
+    <Suspense>
+      <LocalRegistroForm />
+    </Suspense>
   );
 }
