@@ -563,6 +563,41 @@ def evento_existe(ev_id):
     return len(rows) > 0
 
 
+# Fiestas con fechas fijas conocidas: si el scraper extrae una con fecha fuera
+# del rango correcto, se descarta para evitar contaminación de la agenda.
+# Formato: (fragmento_nombre, mes_correcto_min, mes_correcto_max)
+FIESTAS_FECHA_FIJA = [
+    ("carnaval",        1, 3),   # enero-marzo
+    ("semana santa",    3, 4),   # marzo-abril
+    ("feria de abril",  4, 5),   # abril-mayo
+    ("feria del caballo", 4, 6), # abril-junio
+    ("mayo cordobés",   5, 6),   # mayo-junio
+    ("corpus christi",  5, 7),   # mayo-julio
+    ("san fermín",      7, 7),   # julio
+    ("tomatina",        8, 9),   # agosto
+    ("feria de málaga", 8, 9),   # agosto
+    ("fiestas del pilar", 10, 10), # octubre
+]
+
+def fecha_plausible(nombre, fecha):
+    """Devuelve False si el nombre corresponde a una fiesta conocida pero la fecha
+    está en un mes incorrecto — probable alucinación del LLM."""
+    import unicodedata
+    def norm(s):
+        s = unicodedata.normalize("NFD", s.lower())
+        return "".join(c for c in s if unicodedata.category(c) != "Mn")
+    nombre_n = norm(nombre)
+    try:
+        mes = int(fecha[5:7])
+    except Exception:
+        return True
+    for fragmento, mes_min, mes_max in FIESTAS_FECHA_FIJA:
+        if norm(fragmento) in nombre_n:
+            if not (mes_min <= mes <= mes_max):
+                return False
+    return True
+
+
 def evento_solapado_en_db(nombre, ciudad, fecha):
     """
     Devuelve True si ya existe en D1 un evento aprobado con la misma ciudad
@@ -650,6 +685,10 @@ def insertar_evento(ev, dry_run=False):
 
     if evento_existe(ev_id):
         return False, "ya existe"
+
+    # Fecha plausible para fiestas con mes conocido
+    if not fecha_plausible(ev["nombre"], ev.get("fecha", "")):
+        return False, "fecha implausible para fiesta conocida"
 
     # Protección fiestas curadas: no insertar si ya existe evento aprobado similar en DB
     if evento_solapado_en_db(ev["nombre"], ev.get("ciudad", ""), ev.get("fecha", "")):
