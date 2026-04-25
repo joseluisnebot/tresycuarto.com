@@ -27,6 +27,9 @@ export async function onRequestGet() {
     ...CIUDADES.map(c =>
       `<url><loc>https://tresycuarto.com/locales/${c.slug}</loc><changefreq>daily</changefreq><priority>0.8</priority><lastmod>${hoy}</lastmod></url>`
     ),
+    ...CIUDADES.map(c =>
+      `<url><loc>https://tresycuarto.com/agenda/${c.slug}</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>${hoy}</lastmod></url>`
+    ),
   ].join("\n  ");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
