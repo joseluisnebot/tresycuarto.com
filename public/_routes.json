@@ -30,6 +30,6 @@
     "/*.svg",
     "/*.txt",
     "/*.json",
-    "/locales/*"
+    "/locales"
   ]
 }
