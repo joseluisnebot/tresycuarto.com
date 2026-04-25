@@ -97,10 +97,19 @@ COORDS = {
     "Benidorm":              (38.5397, -0.1332),
     "Denia":                 (38.8430, 0.1060),
     "Cullera":               (39.1714, -0.2525),
+    "Gijón":                 (43.5460, -5.6615),
     "Zamora":                (41.5032, -5.7460),
     "Cartagena":             (37.6049, -0.9902),
     "Almería":               (36.8381, -2.4597),
     "Jaén":                  (37.7796, -3.7849),
+    "Albacete":              (38.9942, -1.8585),
+    "Gandía":                (38.9671, -0.1826),
+    "Sagunto":               (39.6837, -0.2726),
+    "Alzira":                (39.1496, -0.4340),
+    "Berga":                 (42.1005, 1.8447),
+    "Villena":               (38.6344, -0.8657),
+    "Elda":                  (38.4784, -0.7950),
+    "Ontinyent":             (38.8215, -0.6069),
 }
 
 # ── Cálculo de Pascua (algoritmo de Butcher) ──────────────────────────────────
@@ -397,6 +406,243 @@ def generar_fiestas(anio: int):
             "fecha": str(date(anio, 8, 14)),
             "tipo": "cultura",
             "descripcion_extra": "drama sacro medieval, Patrimonio UNESCO, Basílica de Santa María",
+        },
+
+        # ── FIESTAS NUEVAS ────────────────────────────────────────────────────
+
+        # Semana Santa — más ciudades
+        *[
+            {
+                "nombre": f"Semana Santa {ciudad}",
+                "ciudad": ciudad,
+                "fecha": str(p - timedelta(days=7)),
+                "tipo": "procesion",
+                "descripcion_extra": "procesiones, pasos, cofradías, tradición religiosa",
+            }
+            for ciudad in ["Salamanca", "Burgos", "León", "Logroño", "Oviedo",
+                           "Alicante", "Barcelona", "Bilbao", "Zaragoza"]
+        ],
+
+        # Mayo Cordobés — Cruces de Mayo (1-3 mayo) + Patios (segunda quincena)
+        {
+            "nombre": "Cruces de Mayo — Córdoba",
+            "ciudad": "Córdoba",
+            "fecha": str(date(anio, 5, 1)),
+            "tipo": "festival",
+            "descripcion_extra": "cruces florales, flores, flamenco, concurso de cruces, ambiente festivo",
+        },
+        {
+            "nombre": "Festival de los Patios de Córdoba",
+            "ciudad": "Córdoba",
+            "fecha": str(date(anio, 5, 7)),
+            "tipo": "cultura",
+            "descripcion_extra": "patios floridos, Patrimonio UNESCO, geranios, visitas guiadas, arquitectura andaluza",
+        },
+
+        # Sant Jordi — Barcelona (23 abril)
+        {
+            "nombre": "Sant Jordi — Día del Libro y la Rosa",
+            "ciudad": "Barcelona",
+            "fecha": str(date(anio, 4, 23)),
+            "tipo": "cultura",
+            "descripcion_extra": "rosas, libros, Ramblas, tradición catalana, parejas, regalos",
+        },
+
+        # Día de San Isidro — Madrid (15 mayo)
+        {
+            "nombre": "Fiestas de San Isidro — Madrid",
+            "ciudad": "Madrid",
+            "fecha": str(date(anio, 5, 15)),
+            "tipo": "festival",
+            "descripcion_extra": "chulapos, chotis, verbena, pradera de San Isidro, bocadillo de calamares",
+        },
+
+        # Orgullo de Madrid — último sábado de junio / primera semana julio
+        {
+            "nombre": "Madrid Orgullo — World Pride",
+            "ciudad": "Madrid",
+            "fecha": str(date(anio, 6, 27)),
+            "tipo": "festival",
+            "descripcion_extra": "desfile del orgullo, conciertos, Chueca, ambiente festivo, diversidad",
+        },
+
+        # Feria de Albacete — segunda semana septiembre
+        {
+            "nombre": "Feria de Albacete",
+            "ciudad": "Albacete",
+            "fecha": str(date(anio, 9, 7)),
+            "tipo": "feria",
+            "descripcion_extra": "una de las ferias más antiguas de España, recinto ferial, conciertos, tradición",
+        },
+
+        # Feria de Valladolid — segunda semana septiembre
+        {
+            "nombre": "Feria y Fiestas de la Virgen de San Lorenzo — Valladolid",
+            "ciudad": "Valladolid",
+            "fecha": str(date(anio, 9, 7)),
+            "tipo": "feria",
+            "descripcion_extra": "feria, festejos taurinos, conciertos, tapas, vino de Castilla",
+        },
+
+        # Feria de Salamanca — segunda semana septiembre
+        {
+            "nombre": "Feria de Salamanca",
+            "ciudad": "Salamanca",
+            "fecha": str(date(anio, 9, 8)),
+            "tipo": "feria",
+            "descripcion_extra": "feria charra, ambiente universitario, conciertos, tapas, Plaza Mayor",
+        },
+
+        # Feria de Jaén — octubre
+        {
+            "nombre": "Feria de San Lucas — Jaén",
+            "ciudad": "Jaén",
+            "fecha": str(date(anio, 10, 18)),
+            "tipo": "feria",
+            "descripcion_extra": "feria patronal, casetas, flamenco, aceite de oliva, tradición jiennense",
+        },
+
+        # Fiestas de Gracia — Málaga (agosto)
+        {
+            "nombre": "Feria del Centro — Málaga",
+            "ciudad": "Málaga",
+            "fecha": str(date(anio, 8, 12)),
+            "tipo": "feria",
+            "descripcion_extra": "feria de día en calle Larios, pescaíto frito, vino, flamenco, terrazas",
+        },
+
+        # Carnaval — más ciudades
+        *[
+            {
+                "nombre": f"Carnaval de {ciudad}",
+                "ciudad": ciudad,
+                "fecha": str(carnaval_inicio),
+                "tipo": "feria",
+                "descripcion_extra": "disfraces, comparsas, desfile, fiesta callejera",
+            }
+            for ciudad in ["Madrid", "Barcelona", "Valencia", "Las Palmas", "Vigo"]
+        ],
+
+        # Fallas — más ciudades
+        *[
+            {
+                "nombre": f"Fallas de {ciudad}",
+                "ciudad": ciudad,
+                "fecha": str(date(anio, 3, 15)),
+                "tipo": "festival",
+                "descripcion_extra": "fallas, mascletàs, cremà, petardos, falleras",
+            }
+            for ciudad in ["Gandía", "Sagunto", "Alzira"]
+        ],
+
+        # La Patum de Berga — Corpus Christi
+        {
+            "nombre": "La Patum de Berga",
+            "ciudad": "Berga",
+            "fecha": str(p + timedelta(days=60)),
+            "tipo": "festival",
+            "descripcion_extra": "Patrimonio UNESCO, gegants, plens de fuego, tabal, tradición medieval catalana",
+        },
+
+        # Semana Donostiarra (San Sebastián) — 20 enero
+        {
+            "nombre": "Tamborrada de San Sebastián",
+            "ciudad": "San Sebastián",
+            "fecha": str(date(anio, 1, 20)),
+            "tipo": "festival",
+            "descripcion_extra": "20 horas de tambores, sociedades gastronómicas, fiesta más popular de Donostia",
+        },
+
+        # Verbena de San Antonio — Madrid (13 junio)
+        {
+            "nombre": "Verbena de San Antonio — Madrid",
+            "ciudad": "Madrid",
+            "fecha": str(date(anio, 6, 13)),
+            "tipo": "festival",
+            "descripcion_extra": "verbena, chulapos, baile, ermita de San Antonio de la Florida, tradición madrileña",
+        },
+
+        # Moros y Cristianos — más ciudades
+        {
+            "nombre": "Moros y Cristianos de Villena",
+            "ciudad": "Villena",
+            "fecha": str(date(anio, 9, 5)),
+            "tipo": "festival",
+            "descripcion_extra": "desfiles, batallas, pólvora, trajes históricos, fiesta de interés turístico",
+        },
+        {
+            "nombre": "Moros y Cristianos de Elda",
+            "ciudad": "Elda",
+            "fecha": str(date(anio, 6, 1)),
+            "tipo": "festival",
+            "descripcion_extra": "desfiles, batallas, pólvora, trajes históricos, fiesta patronal",
+        },
+        {
+            "nombre": "Moros y Cristianos de Ontinyent",
+            "ciudad": "Ontinyent",
+            "fecha": str(date(anio, 8, 7)),
+            "tipo": "festival",
+            "descripcion_extra": "desfiles, batallas, pólvora, trajes históricos, fiesta patronal valenciana",
+        },
+
+        # Noche de San Juan — más ciudades
+        *[
+            {
+                "nombre": f"Noche de San Juan — {ciudad}",
+                "ciudad": ciudad,
+                "fecha": str(date(anio, 6, 23)),
+                "tipo": "festival",
+                "descripcion_extra": "hogueras, fuegos, playa, peticiones, noche mágica de verano",
+            }
+            for ciudad in ["Madrid", "Sevilla", "Málaga", "Bilbao", "Zaragoza", "Salamanca"]
+        ],
+
+        # Fiesta de la Vendimia — La Rioja (septiembre)
+        {
+            "nombre": "Fiesta de la Vendimia — La Rioja",
+            "ciudad": "Logroño",
+            "fecha": str(date(anio, 9, 25)),
+            "tipo": "gastronomia",
+            "descripcion_extra": "pisada de uvas, bodegas, vino de La Rioja, degustaciones, tradición vitivinícola",
+        },
+
+        # Oktoberfest Zaragoza — octubre
+        {
+            "nombre": "Fiestas del Pilar — Ofrenda de Flores",
+            "ciudad": "Zaragoza",
+            "fecha": str(date(anio, 10, 11)),
+            "tipo": "festival",
+            "descripcion_extra": "ofrenda a la Virgen del Pilar, flores, trajes regionales, Basílica del Pilar",
+        },
+
+        # Día de los Muertos — Todos los Santos
+        {
+            "nombre": "Magosto y Castañada — Galicia y Cataluña",
+            "ciudad": "Santiago de Compostela",
+            "fecha": str(date(anio, 11, 1)),
+            "tipo": "cultura",
+            "descripcion_extra": "castañas asadas, magosto, tradición celta, otoño en Galicia",
+        },
+
+        # Navidad — Feria de Navidad
+        *[
+            {
+                "nombre": f"Mercado de Navidad — {ciudad}",
+                "ciudad": ciudad,
+                "fecha": str(date(anio, 12, 8)),
+                "tipo": "mercado",
+                "descripcion_extra": "mercado navideño, artesanía, belenes, luces, ambiente familiar",
+            }
+            for ciudad in ["Madrid", "Barcelona", "Zaragoza", "Bilbao", "Sevilla"]
+        ],
+
+        # Nochebuena y Navidad
+        {
+            "nombre": "Nochebuena y Belenes de Córdoba",
+            "ciudad": "Córdoba",
+            "fecha": str(date(anio, 12, 24)),
+            "tipo": "cultura",
+            "descripcion_extra": "belenes monumentales, zambombas flamencas, fiesta familiar, cante navideño",
         },
     ]
 
