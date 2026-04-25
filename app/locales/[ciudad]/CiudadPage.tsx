@@ -712,7 +712,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
 
         {/* Rutas de tardeo */}
-        {RUTAS_POR_CIUDAD[nombreCiudad] && !noData && offset === 0 && (
+        {RUTAS_POR_CIUDAD[nombreCiudad] && !noData && (
           <div style={{ marginTop: "2.5rem" }}>
             <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1rem", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
               🗺️ Rutas de tardeo en {nombreCiudad}
@@ -739,7 +739,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
         )}
 
         {/* FAQs */}
-        {content?.faqs && !noData && offset === 0 && (
+        {content?.faqs && !noData && (
           <div style={{ marginTop: "2.5rem" }}>
             <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1rem", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
               Preguntas frecuentes sobre el tardeo en {nombreCiudad}
