@@ -9,6 +9,7 @@ Uso:
     python3 importar_locales.py --all   (todas las ciudades de cities.json)
 """
 
+import os
 import sys, os, json, time, argparse, requests
 from datetime import datetime
 from pathlib import Path

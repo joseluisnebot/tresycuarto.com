@@ -19,6 +19,7 @@ Uso:
   python3 generar_reels_eventos.py --ciudad Sevilla
   python3 generar_reels_eventos.py --evento ID   # evento concreto por ID
 """
+import os
 import json, urllib.request, os, argparse, subprocess, tempfile, shutil, asyncio, random, re
 from pathlib import Path
 from datetime import datetime, timedelta

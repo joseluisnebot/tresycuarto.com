@@ -7,6 +7,7 @@ Reemplaza el antiguo sistema de campañas Listmonk y el email semanal del vierne
 
 Cron: 15 15 * * *
 """
+import os
 import json, urllib.request, os, base64, unicodedata
 from datetime import datetime, timedelta
 

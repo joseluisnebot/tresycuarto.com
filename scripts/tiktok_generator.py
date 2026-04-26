@@ -4,6 +4,7 @@ Genera vídeos TikTok/Reels 9:16 para eventos + locales cercanos.
 Sin IA — Python + Pillow + ffmpeg.
 Uso: python3 tiktok_generator.py [--evento ID] [--todos] [--dias 90]
 """
+import os
 import json, urllib.request, os, argparse, subprocess, tempfile, shutil, math
 OLLAMA_URL    = "http://localhost:11434/api/generate"
 MODEL_HASHTAG = "mistral:7b"

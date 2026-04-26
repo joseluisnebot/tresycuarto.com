@@ -3,6 +3,7 @@
 Carga los eventos de Semana Santa 2026 en D1.
 Cada evento = una procesión con punto de referencia (salida/recorrido principal).
 """
+import os
 import json, urllib.request, os
 
 API_TOKEN  = os.environ["CLOUDFLARE_API_TOKEN"]

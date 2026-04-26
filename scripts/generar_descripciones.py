@@ -13,6 +13,7 @@ Uso:
 Cron sugerido: 0 6 * * * (cada mañana, tras el enriquecedor)
 """
 
+import os
 import requests
 import json
 import time

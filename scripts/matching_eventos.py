@@ -4,6 +4,7 @@ Matching geoespacial: para cada evento próximo encuentra los locales más cerca
 Guarda resultados en tabla evento_locales.
 Uso: python3 matching_eventos.py [--dias 14]
 """
+import os
 import json, math, urllib.request, os, sys, argparse
 from datetime import datetime, timedelta
 

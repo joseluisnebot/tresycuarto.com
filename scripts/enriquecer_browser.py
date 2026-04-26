@@ -32,7 +32,7 @@ from datetime import datetime
 
 # ── Configuración ──────────────────────────────────────────────────────────────
 CF_ACCOUNT   = "0c4d9c91bb0f3a4c905545ecc158ec65"
-CF_TOKEN     = "cfut_qTKfsExOPMBZJDjXoSCpAsJgnIEaBrJlRVtZsBE6f134a6d2"
+CF_TOKEN     = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 DB_ID        = "458672aa-392f-4767-8d2b-926406628ba0"
 WORKER_URL   = "https://tresycuarto.com"
 WORKER_TOKEN = "tc_browser_2026"

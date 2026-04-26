@@ -6,6 +6,7 @@ Genera imágenes para Instagram:
 Sin IA — plantillas Pillow.
 Uso: python3 instagram_generator.py [--evento ID] [--todos] [--tipo carrusel|post]
 """
+import os
 import json, urllib.request, os, argparse
 from datetime import datetime, timedelta
 from pathlib import Path

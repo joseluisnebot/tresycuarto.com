@@ -11,6 +11,7 @@ Flujo de estados:
 Uso: python3 preview_newsletter.py [--dias-preview 5]
 Cron: cada día a las 9:15 — busca eventos que estén a exactamente N días
 """
+import os
 import json, urllib.request, os, sys, argparse, smtplib, secrets
 from datetime import datetime, timedelta
 from email.mime.multipart import MIMEMultipart

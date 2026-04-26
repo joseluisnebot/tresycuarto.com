@@ -16,6 +16,7 @@ Uso:
 
 Cron: manual o semanal según necesidad
 """
+import os
 import json, urllib.request, os, argparse, subprocess, tempfile, shutil, asyncio, random
 from pathlib import Path
 from io import BytesIO

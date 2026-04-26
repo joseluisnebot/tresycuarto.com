@@ -19,6 +19,7 @@ NUNCA modificar POR_CIUDAD sin autorización expresa.
 Cron: 0 4 * * * python3 /root/tresycuarto-sync/scripts/enriquecer_ratings.py
 """
 
+import os
 import sys, os, json, time, requests, argparse
 from datetime import datetime
 

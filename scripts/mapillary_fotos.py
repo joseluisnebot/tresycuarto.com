@@ -14,7 +14,7 @@ RADIO_GRADOS = 0.0003  # ~33 metros
 MIN_BYTES = 20_000     # mínimo 20KB
 MAX_POR_CIUDAD = 200   # locales a procesar por ejecución
 
-CF_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "cfut_qTKfsExOPMBZJDjXoSCpAsJgnIEaBrJlRVtZsBE6f134a6d2")
+CF_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 CF_ACCOUNT = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID = "458672aa-392f-4767-8d2b-926406628ba0"
 

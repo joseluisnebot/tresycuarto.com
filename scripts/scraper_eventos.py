@@ -8,6 +8,7 @@ Uso:
   python3 scraper_eventos.py --comunidad andalucia
   python3 scraper_eventos.py --dry-run        # no inserta en D1
 """
+import os
 import json, urllib.request, urllib.parse, os, sys, argparse, hashlib, time, re, smtplib
 from datetime import datetime, timedelta
 from email.mime.text import MIMEText
