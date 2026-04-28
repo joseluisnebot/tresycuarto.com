@@ -312,45 +312,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FERIA DE ABRIL */}
+      {/* SAN ISIDRO & FERIAS DE MAYO */}
       <section style={{
         margin: "0", padding: "3rem 1.5rem",
-        background: "linear-gradient(135deg, #7C1D1D 0%, #B91C1C 50%, #7C1D1D 100%)",
+        background: "linear-gradient(135deg, #064E3B 0%, #065F46 50%, #064E3B 100%)",
         textAlign: "center",
       }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
-            <span style={{ fontSize: "1.5rem" }}>💃</span>
+            <span style={{ fontSize: "1.5rem" }}>🌼</span>
             <span style={{
               fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
-              color: "#FCA5A5", background: "rgba(252,165,165,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
-              border: "1px solid rgba(252,165,165,0.3)",
-            }}>Temporada de Ferias 2026</span>
-            <span style={{ fontSize: "1.5rem" }}>🌸</span>
+              color: "#6EE7B7", background: "rgba(110,231,183,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
+              border: "1px solid rgba(110,231,183,0.3)",
+            }}>Mayo en España · 2026</span>
+            <span style={{ fontSize: "1.5rem" }}>🐎</span>
           </div>
           <h2 style={{
             fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, letterSpacing: "-0.03em",
             color: "white", marginBottom: "0.6rem", lineHeight: 1.2,
           }}>
-            Tardea en plena feria<br />
-            <span style={{ color: "#FCA5A5" }}>de abril a junio</span>
+            San Isidro y Ferias de Mayo<br />
+            <span style={{ color: "#6EE7B7" }}>el mejor mes para tardear</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "520px", margin: "0 auto 2rem" }}>
-            Feria de Abril en Sevilla, Jerez, Córdoba y más. Los mejores bares y terrazas para el tardeo más festivo del año.
+            Verbenas de San Isidro en Madrid, Feria del Caballo en Jerez y Feria de Mayo en Córdoba. Terrazas, patios y tardeos de primavera.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
             {[
-              ["sevilla", "💃 Sevilla · Feria de Abril"],
+              ["madrid", "🌼 Madrid · San Isidro"],
               ["jerez-de-la-frontera", "🐎 Jerez · Feria del Caballo"],
               ["cordoba", "🌺 Córdoba · Feria de Mayo"],
+              ["sevilla", "💃 Sevilla"],
               ["granada", "🎶 Granada"],
-              ["malaga", "🌞 Málaga"],
               ["cadiz", "🎭 Cádiz"],
             ].map(([slug, nombre]) => (
               <a key={slug} href={`/locales/${slug}`} style={{
                 fontSize: "0.85rem", padding: "0.4rem 1rem", borderRadius: "999px",
-                background: "rgba(252,165,165,0.12)", color: "#FEE2E2",
-                fontWeight: 600, border: "1px solid rgba(252,165,165,0.25)",
+                background: "rgba(110,231,183,0.1)", color: "#D1FAE5",
+                fontWeight: 600, border: "1px solid rgba(110,231,183,0.25)",
                 textDecoration: "none",
               }}>{nombre}</a>
             ))}
