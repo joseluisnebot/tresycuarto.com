@@ -30,8 +30,6 @@
     "/*.svg",
     "/*.txt",
     "/*.json",
-    "/locales",
-    "/agenda",
-    "/agenda/*"
+    "/locales/*"
   ]
 }
