@@ -547,7 +547,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       </div>
                       <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                         <span>📅 {fechaStr}</span>
-                        {evento.hora_inicio && <span>🕐 {evento.hora_inicio}</span>}
+                        <span>🕐 {evento.hora_inicio || "Consultar horario"}</span>
                         {evento.direccion && <span>📍 {evento.direccion}</span>}
                       </div>
                       {evento.descripcion && (
