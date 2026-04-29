@@ -904,5 +904,421 @@
       "Rua Real bares Coruña",
       "que hacer tarde A Coruña"
     ]
+  },
+  {
+    "slug": "tardeo-acueducto-segovia",
+    "titulo": "Ruta de tardeo por el Acueducto y el Centro de Segovia",
+    "ciudad": "Segovia",
+    "ciudad_slug": "segovia",
+    "barrio": "Centro histórico",
+    "intro": "Segovia tiene uno de los tardeos más bonitos de Castilla. Con el Acueducto romano como telón de fondo y calles medievales declaradas Patrimonio de la Humanidad, el tardeo aquí tiene una escenografía inigualable. La Plaza Mayor, la calle Infanta Isabel y los callejones del casco histórico concentran bares con mucho carácter donde los segovianos disfrutan de la tarde sin el ritmo frenético de las grandes ciudades.",
+    "duracion": "3-4 horas",
+    "distancia": "1,3 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza del Azoguejo — bajo el Acueducto",
+        "descripcion": "El tardeo de Segovia empieza inevitablemente aquí. Las terrazas de la Plaza del Azoguejo tienen el Acueducto romano a escala real encima: 28 metros de arcos de granito sin argamasa que llevan dos mil años en pie. Pide el vermut o una caña y dedica los primeros minutos a simplemente mirarlo. Pocos arranques de tardeo tienen esta perspectiva.",
+        "tipo": "Aperitivo con vistas",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Infanta Isabel",
+        "descripcion": "El eje del tardeo segoviano. La calle Infanta Isabel concentra bares de toda la vida con terrazas que ocupan las aceras adoquinadas. Ambiente tranquilo, precios de ciudad media y una clientela que mezcla segovianos de barrio con los turistas que han bajado del Alcázar. Los bares de pintxos del tramo central son especialmente buenos.",
+        "tipo": "Pintxos y cañas",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza Mayor de Segovia",
+        "descripcion": "La Plaza Mayor de Segovia, con la Catedral gótica presidiendo uno de los lados, es uno de los espacios más impresionantes para sentarse con una copa. Las terrazas de los bares que rodean la plaza se llenan los fines de semana desde las 16:00 con el sol de tarde dando en la fachada de la Catedral. El ambiente es relajado y el precio de las consumiciones sigue siendo razonable.",
+        "tipo": "Terrazas con vistas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calles de la Judería — Juan Bravo",
+        "descripcion": "Los callejones que bajan desde la Plaza Mayor hacia la Judería medieval tienen tabernas y bares escondidos que los turistas raramente encuentran. Aquí el tardeo es 100% de segovianos: vino de Rueda, queso castellano y conversaciones sin reloj. El mejor cierre para una tarde entre piedras medievales.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El cochinillo y el cordero son la seña de identidad gastronómica — si quedas con gente a comer antes del tardeo, elige uno de los asadores de la Plaza Mayor",
+      "El casco histórico es completamente peatonal y en cuesta — calzado cómodo imprescindible",
+      "Los fines de semana de puente Segovia se llena de madrileños — mejor llegar antes de las 13:00 para terraza"
+    ],
+    "seo_keywords": [
+      "tardeo Segovia",
+      "bares Segovia tarde",
+      "ruta tardeo Segovia centro",
+      "qué hacer tarde Segovia"
+    ]
+  },
+  {
+    "slug": "tardeo-centro-valladolid",
+    "titulo": "Ruta de tardeo por el Centro de Valladolid",
+    "ciudad": "Valladolid",
+    "ciudad_slug": "valladolid",
+    "barrio": "Centro",
+    "intro": "Valladolid es una de las ciudades con la cultura del tardeo más arraigada de Castilla. El centro histórico concentra tabernas con décadas de historia, bares de vermut con tapas generosas y locales más modernos que han sabido mantener el espíritu de barrio. La calle Correos, la Plaza Mayor y las calles que rodean la Catedral forman el corazón de un tardeo que los vallisoletanos llevan practicando generaciones.",
+    "duracion": "3-4 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Mesón Rina — Calle Correos",
+        "descripcion": "El bar más buscado en Google para el tardeo en Valladolid. Mesón Rina tiene una clientela fiel de décadas y una carta de tapas que justifica volver cada semana. El ambiente a mediodía del sábado es el más auténtico del tardeo castellano: familias, grupos de amigos y el murmullo de las conversaciones que se mezclan con el olor del guiso del día.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza Mayor de Valladolid",
+        "descripcion": "Una de las plazas mayores más grandes de España, con soportales en los cuatro lados y bares que sacan terraza los días de sol. El ambiente del sábado al mediodía es el más representativo de Valladolid: familias paseando, grupos tomando el aperitivo y la vida de ciudad media a velocidad razonable.",
+        "tipo": "Aperitivo en terraza",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Calixto Fernández de la Torre y alrededores",
+        "descripcion": "El tramo más animado del tardeo vallisoletano en el entorno de la Catedral. Bares de cañas, tabernas con pinchos y algún local más moderno conviven en estas calles adoquinadas. El ambiente es más de barrio que en la Plaza Mayor y los precios más contenidos.",
+        "tipo": "Cañas y pinchos",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Churrería La Taza — Zona de la Universidad",
+        "descripcion": "El cierre dulce y clásico del tardeo vallisoletano. La Taza es una referencia para los churros con chocolate de media tarde, el momento de transición entre el aperitivo y la copa de después. El entorno de la Universidad tiene varios bares con ambiente más joven para quien quiera alargar la tarde.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Los pinchos en Valladolid son gratuitos con la consumición en muchos bares del centro — pregunta antes de pedir",
+      "La Plaza Mayor tiene aparcamiento subterráneo — deja el coche ahí y no lo muevas en todo el día",
+      "La Semana Internacional de Cine de Valladolid (Seminci, octubre) llena la ciudad — reserva con antelación"
+    ],
+    "seo_keywords": [
+      "tardeo Valladolid",
+      "bares Valladolid tarde",
+      "ruta tardeo Valladolid centro",
+      "qué hacer tarde Valladolid"
+    ]
+  },
+  {
+    "slug": "tardeo-centro-burgos",
+    "titulo": "Ruta de tardeo por el Centro de Burgos",
+    "ciudad": "Burgos",
+    "ciudad_slug": "burgos",
+    "barrio": "Centro histórico",
+    "intro": "Burgos tiene el tardeo más castellano y más honesto de la meseta norte. La ciudad de El Cid, con la Catedral gótica más impresionante de España como fondo permanente, concentra en sus calles del centro una cultura de bares y pinchos que no tiene nada que envidiar a las ciudades vascas. La calle Lain Calvo y la plaza de Santo Domingo son el eje de un tardeo con mucho carácter y precios de ciudad interior.",
+    "duracion": "3-4 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Sábado desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Octopus Bar — Zona Centro",
+        "descripcion": "Uno de los bares más buscados en Google para el tardeo en Burgos. Octopus Bar tiene una oferta de cervezas artesanas y tapas que lo han convertido en referencia del tardeo moderno burgalés. El ambiente mezcla gente joven con veteranos del barrio que llevan años viniendo. Un arranque de tarde que ya marca el tono.",
+        "tipo": "Cervezas y tapas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Lain Calvo",
+        "descripcion": "El eje del tardeo burgalés. La calle Lain Calvo concentra una densidad de bares que rivaliza con las mejores calles de pinchos del País Vasco. Bar La Picara, con sus montaditos y su ambiente inconfundible, es la parada obligada. El sábado al mediodía la calle no tiene huecos libres en las barras.",
+        "tipo": "Pinchos y vermut",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza de Santo Domingo y Calle Diego Porcelos",
+        "descripcion": "La plaza más animada del tardeo burgalés tiene bares con terraza y vistas a la vida del centro histórico. A partir de aquí, la calle Diego Porcelos y las callejuelas adyacentes tienen tabernas de toda la vida donde el vino de Ribera del Duero se sirve a precio de barrio.",
+        "tipo": "Terrazas y vino",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Entorno de la Catedral — Calle Fernán González",
+        "descripcion": "El cierre de la ruta bajo la Catedral más bonita de España. Los bares de la calle Fernán González y la Plaza de Santa María tienen el privilegio de tener las agujas góticas como decoración de fondo. El ambiente es más tranquilo que en Lain Calvo pero la panorámica lo compensa con creces.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Los pinchos en Burgos son de los mejores de Castilla — pide los de la barra, no los de carta",
+      "El frío burgalés es real incluso en primavera — las terrazas tienen braseros pero lleva algo de abrigo",
+      "La Catedral de Burgos cierra a las 19:30 — si quieres visitarla, hazlo antes de empezar la ruta"
+    ],
+    "seo_keywords": [
+      "tardeo Burgos",
+      "bares Burgos tarde",
+      "ruta tardeo Burgos centro",
+      "pinchos Burgos tarde"
+    ]
+  },
+  {
+    "slug": "tardeo-realejo-granada",
+    "titulo": "Ruta de tardeo por el Realejo y el Centro de Granada",
+    "ciudad": "Granada",
+    "ciudad_slug": "granada",
+    "barrio": "Realejo / Centro",
+    "intro": "Granada es la ciudad española donde el tardeo viene con tapa gratis incluida. Por ley no escrita, cada copa trae consigo una ración de algo: jamón, patatas bravas, croquetas o el plato del día según el bar. El Realejo, el barrio histórico judío al pie de la Alhambra, y las calles del centro concentran los mejores bares de esta tradición. El tardeo en Granada no se hace con prisa: aquí se viene a quedarse.",
+    "duracion": "3-4 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Cualquier día desde las 13:00 — la tapa gratis funciona todos los días",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Campo del Príncipe — El Realejo",
+        "descripcion": "La plaza más bonita del tardeo granadino. El Campo del Príncipe tiene bares con terraza en sus cuatro lados, la estatua del Cristo de los Faroles en el centro y las murallas de la Alhambra asomando por encima de los tejados. El primer vermut aquí, con tapa incluida, es el inicio perfecto para un tardeo que promete ser largo.",
+        "tipo": "Vermut con tapa",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Navas",
+        "descripcion": "El corazón del tardeo de tapas en Granada. La calle Navas es la referencia histórica: bares estrechos, barras llenas y tapas que van mejorando a medida que avanzan las rondas. Bar Aliatar, La Gran Taberna y Bodegas Castañeda son paradas obligadas. La regla es simple: cuanto más consumes, más elaborada es la tapa.",
+        "tipo": "Tapas gratis",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaza de la Trinidad",
+        "descripcion": "La plaza universitaria por excelencia de Granada. Terrazas llenas de estudiantes de la UGR, precios muy contenidos y un ambiente que mezcla los bares clásicos de la plaza con locales más alternativos en las calles adyacentes. El Café Lucky, con sus tostadas y sus cañas a buen precio, es uno de los locales favoritos del barrio.",
+        "tipo": "Terrazas universitarias",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Elvira y Plaza Nueva",
+        "descripcion": "El remate del tardeo granadino en la arteria que une el centro con el Albaicín. Los bares de la calle Elvira tienen el ambiente más diverso: desde las teterías marroquíes hasta los pubs más clásicos. La Plaza Nueva, al pie de la cuesta que sube a la Alhambra, es el punto donde el tardeo se convierte en noche sin que nadie lo haya decidido.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "En Granada la tapa es gratis con cada consumición — nunca pagues por la tapa, forma parte de la cultura local",
+      "El Albaicín está a 15 minutos a pie desde la Plaza Nueva — combínalo con el tardeo si tienes energía",
+      "Los bares de calle Navas se llenan desde las 13:30 los fines de semana — llega pronto si quieres sitio en la barra"
+    ],
+    "seo_keywords": [
+      "tardeo Granada",
+      "bares Granada tarde",
+      "ruta tardeo Granada tapas gratis",
+      "qué hacer tarde Granada"
+    ]
+  },
+  {
+    "slug": "tardeo-juderia-cordoba",
+    "titulo": "Ruta de tardeo por la Judería y el Centro de Córdoba",
+    "ciudad": "Córdoba",
+    "ciudad_slug": "cordoba",
+    "barrio": "Judería / Centro",
+    "intro": "Córdoba tiene el tardeo más andaluz y más cálido de España. Sus patios floridos, las callecitas blancas de la Judería y la Mezquita-Catedral como referencia permanente crean un escenario sin igual. El tardeo cordobés se practica con manzanilla, tapas de salmorejo y la conversación lenta del sur. Las calles de la Judería y el entorno de la Plaza de las Tendillas concentran los mejores bares para una tarde que no tiene prisa en acabar.",
+    "duracion": "3-4 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Taberna Casa Pepe de la Judería",
+        "descripcion": "Una de las tabernas más antiguas de Córdoba, con bodega, patio interior y la mejor selección de vinos de la ciudad. Las tapas de salmorejo y el rabo de toro son la carta de presentación de un local que lleva décadas siendo referencia. El ambiente a mediodía del sábado es el más auténtico del tardeo cordobés.",
+        "tipo": "Taberna y vermut",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calleja de las Flores y Mezquita",
+        "descripcion": "La Calleja de las Flores, con la torre de la Mezquita al fondo, es la postal más famosa de Córdoba. Los bares que rodean la Mezquita tienen terrazas donde el tardeo se mezcla con la historia. No es el tardeo más auténtico, pero la escenografía no tiene parangón en España.",
+        "tipo": "Terrazas con historia",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Sociedad de Plateros — Plaza de San Agustín",
+        "descripcion": "El bar más veterano del tardeo cordobés. La Sociedad de Plateros lleva abierta desde 1872 y sus patios interiores son declarados Bien de Interés Cultural. Manzanilla del grifo, montaditos de lomo y el murmullo de las conversaciones bajo los naranjos. Aquí el tiempo no pasa igual.",
+        "tipo": "Patio histórico",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Plaza de las Tendillas y Calle Cruz Conde",
+        "descripcion": "El corazón comercial de Córdoba se transforma por la tarde en el epicentro del tardeo más moderno de la ciudad. La calle Cruz Conde tiene bares más actuales con cócteles y cervezas artesanas que conviven con las tabernas clásicas. El cierre perfecto de un tardeo que ha ido de lo histórico a lo contemporáneo.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El Festival de los Patios (mayo) hace de Córdoba una ciudad diferente — el tardeo se extiende por patios privados abiertos al público",
+      "El calor cordobés en verano es extremo — mejor tardeo de otoño a primavera",
+      "La Mezquita cierra a las 19:00 — si quieres visitarla, hazlo antes de empezar la ruta del tardeo"
+    ],
+    "seo_keywords": [
+      "tardeo Córdoba",
+      "bares Córdoba tarde",
+      "ruta tardeo Córdoba centro",
+      "tabernas Córdoba judería"
+    ]
+  },
+  {
+    "slug": "tardeo-santa-eulalia-murcia",
+    "titulo": "Ruta de tardeo por Santa Eulalia y el Centro de Murcia",
+    "ciudad": "Murcia",
+    "ciudad_slug": "murcia",
+    "barrio": "Santa Eulalia / Centro",
+    "intro": "Murcia tiene el tardeo más desconocido y más sorprendente del Levante. Una ciudad que vive hacia adentro, con plazas y calles peatonales que en tarde de sábado se llenan de murcianos que practican el tardeo con la misma intensidad que cualquier gran ciudad. El entorno de la Catedral, el barrio de Santa Eulalia y el Paseo del Malecón concentran los mejores bares de una ciudad que guarda sus secretos para quien se atreve a buscarlos.",
+    "duracion": "3-4 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Sábado desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza de las Flores y Catedral",
+        "descripcion": "El corazón del tardeo murciano. La Plaza de las Flores, con la fachada barroca de la Catedral de fondo, tiene terrazas que se llenan desde el mediodía. El ambiente es el más fotogénico de Murcia: familias, grupos de amigos y la vida de una ciudad del sur que sabe tomarse su tiempo.",
+        "tipo": "Vermut y terrazas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Barrio de Santa Eulalia",
+        "descripcion": "El barrio más de moda del tardeo murciano. Santa Eulalia tiene calles peatonales con bares que han renovado su oferta sin perder el espíritu de barrio: vinos de la Región de Murcia, tapas de verduras de la huerta y un ambiente que mezcla generaciones. Cafélab y los locales de la calle Polo de Medina son las referencias.",
+        "tipo": "Tapas y vino regional",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Platería y entorno",
+        "descripcion": "Las calles del centro histórico murciano tienen tabernas de toda la vida con bodegas en el sótano y tapas que justifican el desvío. El ambiente es más tranquilo que en Santa Eulalia pero igualmente auténtico. Los bares de la calle Trapería y sus paralelas son el Murcia que los murcianos conocen y los turistas raramente encuentran.",
+        "tipo": "Tabernas históricas",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Paseo del Malecón",
+        "descripcion": "El cierre más refrescante del tardeo murciano. El Paseo del Malecón junto al río Segura tiene bares con terraza y vistas al agua que a partir de las 18:00 se convierten en el lugar de encuentro de los murcianos que buscan el tardeo al aire libre. En primavera y otoño, con el sol cayendo sobre el río, es uno de los finales de tarde más agradables del Levante.",
+        "tipo": "Cierre al aire libre",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Murcia tiene el mejor pimiento asado de España — búscalo en los bares de Santa Eulalia como tapa",
+      "En verano el tardeo empieza tarde en Murcia, sobre las 19:00 — el calor aplaza todo",
+      "El Bando de la Huerta (Semana Santa) convierte Murcia en una fiesta continua — tardeo de altura"
+    ],
+    "seo_keywords": [
+      "tardeo Murcia",
+      "bares Murcia tarde",
+      "ruta tardeo Murcia centro",
+      "Santa Eulalia Murcia bares"
+    ]
+  },
+  {
+    "slug": "tardeo-santa-catalina-palma",
+    "titulo": "Ruta de tardeo por Santa Catalina y La Lonja",
+    "ciudad": "Palma",
+    "ciudad_slug": "palma",
+    "barrio": "Santa Catalina / La Lonja",
+    "intro": "Palma tiene el tardeo más mediterráneo de las islas. El barrio de Santa Catalina, con su mercado y sus calles de bares, y La Lonja, con el edificio gótico más bonito de Mallorca como fondo, forman el dúo perfecto para un tardeo que empieza con vermut al sol y puede acabar con los primeros farolillos de la noche encendidos. Lejos del turismo masivo de la Platja de Palma, aquí se viene a vivir Mallorca de verdad.",
+    "duracion": "3-4 horas",
+    "distancia": "1,0 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Mercado de Santa Catalina",
+        "descripcion": "El mercado más animado de Palma tiene puestos de tapas y bares dentro y fuera que funcionan desde el mediodía. La mezcla de palmesanos haciendo la compra con gente de tardeo que aprovecha los puestos de jamón y queso es una de las escenas más auténticas de la ciudad. El primer vermut aquí, al sol del Mediterráneo, no tiene precio.",
+        "tipo": "Vermut y mercado",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Fábrica y calles de Santa Catalina",
+        "descripcion": "El corazón del tardeo de Santa Catalina. La calle Fábrica y sus transversales concentran bares con terraza, restaurantes de fusión y locales de cócteles que han transformado el barrio en la zona más de moda de Palma. El ambiente es joven, internacional y con mucho diseño, pero sin perder el carácter de barrio de pescadores que fue.",
+        "tipo": "Cócteles y ambiente",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "La Lonja — Plaza de La Lonja",
+        "descripcion": "La Lonja gótica del siglo XV preside esta plaza que a partir de las 17:00 se convierte en el epicentro del tardeo histórico de Palma. Los bares alrededor de la plaza tienen terrazas donde el sol de Mallorca se refleja en la piedra dorada del edificio. Bar Nicolás, con su clientela fiel de toda la vida, es la referencia de la plaza.",
+        "tipo": "Terrazas históricas",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Paseo del Born y Calle Apuntadores",
+        "descripcion": "El cierre del tardeo palmesano en el paseo más elegante de la ciudad. El Born tiene bares con terraza en los dos lados del paseo arbolado. La calle Apuntadores, que baja hacia La Lonja, concentra algunos de los locales nocturnos más conocidos de Palma: de aquí el tardeo puede saltar fácilmente a la noche.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Santa Catalina se llena de turistas en julio y agosto — mejor tardeo en temporada baja o entre semana",
+      "El Mercado de Santa Catalina cierra a las 14:30 los sábados — llega antes si quieres combinarlo",
+      "Palma tiene la mejor ensaimada del mundo — el desayuno o merienda en una cafetería local es obligatorio"
+    ],
+    "seo_keywords": [
+      "tardeo Palma",
+      "bares Palma tarde",
+      "ruta tardeo Palma Mallorca",
+      "Santa Catalina Palma bares"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-viejo-pontevedra",
+    "titulo": "Ruta de tardeo por el Casco Viejo de Pontevedra",
+    "ciudad": "Pontevedra",
+    "ciudad_slug": "pontevedra",
+    "barrio": "Casco Vello",
+    "intro": "Pontevedra tiene el casco histórico más bonito de Galicia y uno de los mejores tardeos del norte de España. La ciudad se hizo peatonal hace veinte años y eso ha creado algo único: un centro histórico sin coches donde las plazas y las calles de granito son el espacio natural del tardeo. La Plaza de la Herrería, la Praza da Verdura y los soportales medievales forman el escenario de un tardeo que los pontevedreses practican con orgullo.",
+    "duracion": "3-4 horas",
+    "distancia": "1,0 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza de la Herrería",
+        "descripcion": "El punto de encuentro del tardeo pontevedrés. La Plaza de la Herrería tiene soportales en tres lados donde los bares sacan las mesas independientemente del tiempo. El primer albariño del día aquí, bajo los arcos de granito, es la introducción perfecta al tardeo gallego: sin prisa, con buena compañía y con la mejor materia prima del mundo.",
+        "tipo": "Albariño y aperitivo",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar Laura — Praza da Verdura",
+        "descripcion": "Bar Laura Zamans es el local más buscado en Google para el tardeo en Pontevedra. La Praza da Verdura, con su mercado histórico reconvertido, tiene una concentración de bares que a mediodía del sábado no da para más. El ambiente es 100% pontevedrés: familias, grupos de amigos de toda la vida y el ritmo pausado del oeste gallego.",
+        "tipo": "Tapas y vino gallego",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Princesa y alrededores",
+        "descripcion": "Las calles de granito del Casco Vello tienen tabernas con bóveda de piedra donde el tiempo parece detenerse. Los bares de la calle Princesa y sus paralelas sirven pulpo a la gallega, empanada y raxo con un vaso de ribeiro que cuesta la mitad que en cualquier ciudad grande. El tardeo más auténtico de Pontevedra está aquí, lejos de las rutas turísticas.",
+        "tipo": "Pulpo y ribeiro",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Alameda y Paseo de la Herrería",
+        "descripcion": "El cierre tranquilo del tardeo pontevedrés. La Alameda, el parque que bordea el casco histórico, tiene algunos bares con terraza frente a los árboles centenarios. El ambiente es más familiar y el ritmo baja una marcha — el final perfecto para una tarde que ha ido de las plazas medievales al verde atlántico.",
+        "tipo": "Cierre de tarde",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Pontevedra es completamente peatonal en el casco histórico — el plan ideal es llegar en tren y no necesitar coche en todo el día",
+      "El albariño y el ribeiro son los vinos locales — pide siempre el vino de la casa y acierta",
+      "El Camino de Santiago pasa por Pontevedra — hay peregrinos en los bares todo el año, lo que añade un punto especial al ambiente"
+    ],
+    "seo_keywords": [
+      "tardeo Pontevedra",
+      "bares Pontevedra tarde",
+      "ruta tardeo Pontevedra casco histórico",
+      "qué hacer tarde Pontevedra"
+    ]
   }
 ]
