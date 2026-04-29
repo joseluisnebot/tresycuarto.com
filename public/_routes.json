@@ -19,6 +19,8 @@
     "/dashboard/",
     "/local",
     "/local/*",
+    "/locales/*",
+    "/rutas/*",
     "/_next/*",
     "/icon.svg",
     "/icon-192.png",
@@ -29,7 +31,6 @@
     "/*.png",
     "/*.svg",
     "/*.txt",
-    "/*.json",
-    "/locales/*"
+    "/*.json"
   ]
 }
