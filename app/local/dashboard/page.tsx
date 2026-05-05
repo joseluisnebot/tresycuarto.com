@@ -33,7 +33,25 @@ type UserData = {
   verified: boolean;
   local: Local;
   locales: LocalOption[];
+  theme: string | null;
 };
+
+const COLORES: Record<string, { hex: string; nombre: string }> = {
+  naranja: { hex: "#FB923C", nombre: "Naranja" },
+  dorado:  { hex: "#F59E0B", nombre: "Dorado"  },
+  verde:   { hex: "#10B981", nombre: "Verde"   },
+  azul:    { hex: "#3B82F6", nombre: "Azul"    },
+  morado:  { hex: "#8B5CF6", nombre: "Morado"  },
+  rosa:    { hex: "#EC4899", nombre: "Rosa"    },
+  rojo:    { hex: "#EF4444", nombre: "Rojo"    },
+  oscuro:  { hex: "#292524", nombre: "Oscuro"  },
+};
+
+const TEMPLATES: { id: string; nombre: string; desc: string; icon: string }[] = [
+  { id: "minimalista", nombre: "Minimalista", desc: "Foto + links + mapa", icon: "✦" },
+  { id: "completo",    nombre: "Completo",    desc: "Todo visible",        icon: "◈" },
+  { id: "restaurante", nombre: "Restaurante", desc: "Carta destacada",     icon: "🍽️" },
+];
 
 const inputStyle: React.CSSProperties = {
   width: "100%", padding: "0.8rem 1rem", borderRadius: "0.75rem",
@@ -105,6 +123,13 @@ export default function LocalDashboard() {
   const [guardandoRedes, setGuardandoRedes] = useState(false);
   const [redesGuardadas, setRedesGuardadas] = useState(false);
 
+  // Tema / web propia
+  const [temaColor, setTemaColor] = useState("naranja");
+  const [temaTemplate, setTemaTemplate] = useState("completo");
+  const [temaSections, setTemaSections] = useState<string[]>(["galeria", "eventos", "mapa"]);
+  const [guardandoTema, setGuardandoTema] = useState(false);
+  const [temaGuardado, setTemaGuardado] = useState(false);
+
   // Stats
   type StatDia = { dimensions: { date: string }; uniq: { uniques: number } };
   const [statsData, setStatsData] = useState<{ visitas: StatDia[]; totalVisitas: number; visitasHoy: number } | null>(null);
@@ -140,6 +165,14 @@ export default function LocalDashboard() {
         }
         setRedes(redesData);
         setSlugForm(data.slug || "");
+        if (data.theme) {
+          try {
+            const t = JSON.parse(data.theme);
+            if (t.color) setTemaColor(t.color);
+            if (t.template) setTemaTemplate(t.template);
+            if (t.sections) setTemaSections(t.sections);
+          } catch {}
+        }
         setFotoPerfil(data.local?.foto_perfil || null);
         setFotos(data.local?.fotos ? JSON.parse(data.local.fotos) : []);
         const mu = data.local?.menu_url || null;
@@ -293,6 +326,22 @@ export default function LocalDashboard() {
     );
     setNuevaRedValor("");
     setMostrarFormRed(false);
+  }
+
+  async function guardarTema() {
+    setGuardandoTema(true);
+    await fetch("/api/local/tema", {
+      method: "PUT",
+      headers: authHeaders({ "Content-Type": "application/json" }),
+      body: JSON.stringify({ color: temaColor, template: temaTemplate, sections: temaSections }),
+    });
+    setGuardandoTema(false);
+    setTemaGuardado(true);
+    setTimeout(() => setTemaGuardado(false), 3000);
+  }
+
+  function toggleSection(s: string) {
+    setTemaSections(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
   }
 
   function handleLogout() {
@@ -496,6 +545,84 @@ export default function LocalDashboard() {
           <p style={{ fontSize: "0.78rem", color: "#A8A29E", marginTop: "0.6rem" }}>
             Ponlo en la bio de tu Instagram para que tus seguidores encuentren todo tu info.
           </p>
+        </div>
+
+        {/* Tu página web */}
+        <div style={cardStyle}>
+          <p style={{ fontWeight: 700, color: "#1C1917", marginBottom: "1rem" }}>🌐 Tu página web</p>
+
+          {/* URL subdominio */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+            <a
+              href={`https://${userData.slug}.tresycuarto.com`} target="_blank" rel="noopener"
+              style={{ flex: 1, padding: "0.75rem 1rem", background: "#FEF0DC", borderRadius: "0.75rem", color: "#FB923C", fontWeight: 700, textDecoration: "none", fontSize: "0.9rem", wordBreak: "break-all" }}
+            >
+              {userData.slug}.tresycuarto.com
+            </a>
+            <button
+              onClick={() => navigator.clipboard.writeText(`https://${userData.slug}.tresycuarto.com`)}
+              style={{ padding: "0.75rem 1rem", background: "#1C1917", color: "white", borderRadius: "0.75rem", border: "none", cursor: "pointer", fontWeight: 700, fontSize: "0.85rem", whiteSpace: "nowrap" }}
+            >
+              Copiar
+            </button>
+          </div>
+
+          {/* Selector de plantilla */}
+          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: "#78716C", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.6rem" }}>Plantilla</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.6rem", marginBottom: "1.25rem" }}>
+            {TEMPLATES.map(t => (
+              <button
+                key={t.id} onClick={() => setTemaTemplate(t.id)}
+                style={{
+                  padding: "0.85rem 0.5rem", borderRadius: "0.875rem", cursor: "pointer", textAlign: "center",
+                  border: temaTemplate === t.id ? `2px solid ${COLORES[temaColor]?.hex || "#FB923C"}` : "1.5px solid #F5E6D3",
+                  background: temaTemplate === t.id ? "#FEF0DC" : "white",
+                  transition: "all 0.15s",
+                }}
+              >
+                <div style={{ fontSize: "1.4rem", marginBottom: "0.25rem" }}>{t.icon}</div>
+                <div style={{ fontWeight: 700, fontSize: "0.82rem", color: "#1C1917" }}>{t.nombre}</div>
+                <div style={{ fontSize: "0.7rem", color: "#78716C", marginTop: "0.15rem" }}>{t.desc}</div>
+              </button>
+            ))}
+          </div>
+
+          {/* Selector de color */}
+          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: "#78716C", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.6rem" }}>Color</p>
+          <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
+            {Object.entries(COLORES).map(([key, c]) => (
+              <button
+                key={key} onClick={() => setTemaColor(key)} title={c.nombre}
+                style={{
+                  width: "36px", height: "36px", borderRadius: "50%", background: c.hex, border: "none", cursor: "pointer",
+                  outline: temaColor === key ? `3px solid ${c.hex}` : "3px solid transparent",
+                  outlineOffset: "2px", transition: "outline 0.15s", boxShadow: "0 1px 4px rgba(0,0,0,0.15)",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Secciones visibles */}
+          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: "#78716C", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.6rem" }}>Secciones visibles</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginBottom: "1.25rem" }}>
+            {[
+              { id: "galeria", label: "📸 Galería de fotos" },
+              { id: "eventos", label: "📅 Próximos eventos" },
+              { id: "mapa",    label: "📍 Mapa de ubicación" },
+            ].map(s => (
+              <label key={s.id} style={{ display: "flex", alignItems: "center", gap: "0.75rem", cursor: "pointer", padding: "0.5rem 0.75rem", borderRadius: "0.6rem", background: temaSections.includes(s.id) ? "#FEF0DC" : "#FAFAF9", border: "1px solid #F5E6D3" }}>
+                <input type="checkbox" checked={temaSections.includes(s.id)} onChange={() => toggleSection(s.id)} style={{ width: "16px", height: "16px", cursor: "pointer", accentColor: COLORES[temaColor]?.hex || "#FB923C" }} />
+                <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "#1C1917" }}>{s.label}</span>
+              </label>
+            ))}
+          </div>
+
+          <button onClick={guardarTema} disabled={guardandoTema} style={{
+            width: "100%", padding: "0.9rem", borderRadius: "0.875rem", border: "none", cursor: "pointer", fontWeight: 800, fontSize: "0.95rem", color: "white",
+            background: temaGuardado ? "linear-gradient(135deg,#059669,#10B981)" : `linear-gradient(135deg,${COLORES[temaColor]?.hex || "#FB923C"},${COLORES[temaColor]?.hex || "#FB923C"}CC)`,
+          }}>
+            {guardandoTema ? "Guardando..." : temaGuardado ? "✓ Diseño guardado" : "Guardar diseño"}
+          </button>
         </div>
 
         {/* Formulario editar perfil */}

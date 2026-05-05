@@ -50,7 +50,7 @@ export async function onRequestGet(context) {
   ).bind(user.id).all();
 
   const local = results[0] || null;
-  return Response.json({ local, plan: user.plan, trial_inicio: user.trial_inicio, plan_expires: user.plan_expires || null, slug: user.slug, verified: user.verified === 1, locales: userLocales });
+  return Response.json({ local, plan: user.plan, trial_inicio: user.trial_inicio, plan_expires: user.plan_expires || null, slug: user.slug, verified: user.verified === 1, locales: userLocales, theme: user.theme || null });
 }
 
 export async function onRequestPut(context) {
