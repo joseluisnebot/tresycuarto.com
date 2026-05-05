@@ -61,7 +61,7 @@ export async function onRequestPut(context) {
   let body;
   try { body = await request.json(); } catch { return Response.json({ error: "JSON inválido" }, { status: 400 }); }
 
-  const ALLOWED = ["nombre", "descripcion", "telefono", "web", "instagram", "horario", "terraza", "redes"];
+  const ALLOWED = ["nombre", "descripcion", "telefono", "web", "instagram", "horario", "terraza", "redes", "direccion"];
   const updates = [];
   const values = [];
 
@@ -76,6 +76,24 @@ export async function onRequestPut(context) {
 
   values.push(user.local_id);
   await env.DB.prepare(`UPDATE locales SET ${updates.join(", ")} WHERE id = ?`).bind(...values).run();
+
+  // Geocodificar dirección si cambió
+  if (body.direccion) {
+    try {
+      const { results: localRow } = await env.DB.prepare("SELECT ciudad FROM locales WHERE id = ?").bind(user.local_id).all();
+      const ciudad = localRow[0]?.ciudad || "";
+      const query = encodeURIComponent(`${body.direccion}, ${ciudad}, España`);
+      const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1`, {
+        headers: { "User-Agent": "tresycuarto.com/1.0 (hola@tresycuarto.com)" },
+      });
+      const geoData = await geoRes.json();
+      if (geoData.length > 0) {
+        const lat = parseFloat(geoData[0].lat);
+        const lon = parseFloat(geoData[0].lon);
+        await env.DB.prepare("UPDATE locales SET lat = ?, lon = ? WHERE id = ?").bind(lat, lon, user.local_id).run();
+      }
+    } catch { /* geocodificación no crítica */ }
+  }
 
   // Si cambia el slug
   if (body.slug && body.slug !== user.slug) {

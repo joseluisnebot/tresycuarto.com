@@ -20,6 +20,8 @@ type Local = {
   descripcion: string | null;
   foto_perfil: string | null;
   slug: string | null;
+  lat: number | null;
+  lon: number | null;
 };
 
 type LocalOption = { local_id: string; slug: string; nombre: string; ciudad: string };
@@ -155,6 +157,7 @@ export default function LocalDashboard() {
           web: data.local?.web || "",
           horario: data.local?.horario || "",
           terraza: data.local?.terraza,
+          direccion: data.local?.direccion || "",
         });
         // Cargar redes sociales (con backward compat del campo instagram)
         let redesData: { red: string; valor: string }[] = [];
@@ -639,6 +642,22 @@ export default function LocalDashboard() {
                 <label style={{ fontSize: "0.78rem", fontWeight: 600, color: "#78716C", display: "block", marginBottom: "0.3rem" }}>Teléfono</label>
                 <input style={inputStyle} type="tel" placeholder="612345678" value={form.telefono || ""} onChange={e => setForm(f => ({ ...f, telefono: e.target.value }))} />
               </div>
+            </div>
+
+            <div>
+              <label style={{ fontSize: "0.78rem", fontWeight: 600, color: "#78716C", display: "block", marginBottom: "0.3rem" }}>
+                Dirección
+                {userData.local?.lat && userData.local?.lon
+                  ? <span style={{ marginLeft: "0.5rem", color: "#059669", fontSize: "0.72rem" }}>✓ Ubicación en mapa</span>
+                  : form.direccion ? <span style={{ marginLeft: "0.5rem", color: "#F59E0B", fontSize: "0.72rem" }}>Se geocodificará al guardar</span> : null
+                }
+              </label>
+              <input
+                style={inputStyle}
+                placeholder="Calle Ejemplo 12, piso 1"
+                value={form.direccion || ""}
+                onChange={e => setForm(f => ({ ...f, direccion: e.target.value }))}
+              />
             </div>
 
             <div>
