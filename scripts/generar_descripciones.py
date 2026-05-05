@@ -138,8 +138,18 @@ def main():
     parser.add_argument("--hora-fin",  type=int, default=None,           help="Parar a esta hora UTC (ej: 6 para las 6:00 UTC = 8:00 CEST)")
     args = parser.parse_args()
 
-    from datetime import datetime
+    from datetime import datetime, timedelta
     hora_fin = args.hora_fin  # hora UTC en la que parar
+
+    # Calcular stop_time al arrancar para manejar cruce de medianoche correctamente
+    # (el cron arranca a las 23:00 CEST = 21:00 UTC, debe correr hasta las 06:00 UTC del día siguiente)
+    if hora_fin is not None:
+        now = datetime.utcnow()
+        stop_time = now.replace(hour=hora_fin, minute=0, second=0, microsecond=0)
+        if stop_time <= now:
+            stop_time += timedelta(days=1)
+    else:
+        stop_time = None
 
     log.info(f"=== Inicio generar_descripciones (Ollama local) | limite={args.limite} ciudad={args.ciudad or 'todas'} hora-fin={hora_fin or 'sin límite'} ===")
 
@@ -172,7 +182,7 @@ def main():
 
     for i, local in enumerate(locales, 1):
         # Parar si hemos llegado a la hora límite
-        if hora_fin is not None and datetime.utcnow().hour >= hora_fin:
+        if stop_time is not None and datetime.utcnow() >= stop_time:
             log.info(f"Hora límite UTC {hora_fin}:00 alcanzada. Parando ({ok} generadas).")
             break
 
