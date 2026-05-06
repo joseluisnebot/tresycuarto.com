@@ -66,7 +66,7 @@ function buildRoutes(cities) {
     "/local", "/local/*",
   ];
 
-  const cityExcludes = cities.map(c => `/locales/${c.slug}/`);
+  const cityExcludes = ["/locales/*", "/rutas/*"];
 
   const assetExcludes = [
     "/_next/*",
