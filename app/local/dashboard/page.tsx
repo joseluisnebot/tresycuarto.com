@@ -49,11 +49,108 @@ const COLORES: Record<string, { hex: string; nombre: string }> = {
   oscuro:  { hex: "#292524", nombre: "Oscuro"  },
 };
 
-const TEMPLATES: { id: string; nombre: string; desc: string; icon: string }[] = [
-  { id: "minimalista", nombre: "Minimalista", desc: "Foto + links + mapa", icon: "✦" },
-  { id: "completo",    nombre: "Completo",    desc: "Todo visible",        icon: "◈" },
-  { id: "restaurante", nombre: "Restaurante", desc: "Carta destacada",     icon: "🍽️" },
+const TEMPLATES: { id: string; nombre: string; desc: string }[] = [
+  { id: "minimalista", nombre: "Minimalista", desc: "Foto + links + mapa" },
+  { id: "completo",    nombre: "Completo",    desc: "Todo visible"        },
+  { id: "restaurante", nombre: "Restaurante", desc: "Carta destacada"     },
 ];
+
+function TemplatePreview({ id, color }: { id: string; color: string }) {
+  const c = color; // color primario
+  const gray = "#E2E8F0";
+  const grayDark = "#CBD5E1";
+  const white = "white";
+
+  if (id === "minimalista") return (
+    <svg viewBox="0 0 100 138" style={{ width: "100%", display: "block" }}>
+      <rect width="100" height="138" fill="#FAFAF9" rx="4"/>
+      {/* foto perfil */}
+      <circle cx="50" cy="22" r="13" fill={gray}/>
+      <circle cx="50" cy="22" r="13" fill="none" stroke={c} strokeWidth="2"/>
+      {/* nombre */}
+      <rect x="28" y="40" width="44" height="5" rx="2.5" fill={grayDark}/>
+      {/* subtítulo */}
+      <rect x="33" y="49" width="34" height="3.5" rx="1.75" fill={gray}/>
+      {/* horario */}
+      <rect x="36" y="55" width="28" height="3" rx="1.5" fill={gray} opacity="0.7"/>
+      {/* links */}
+      <rect x="10" y="63" width="80" height="12" rx="6" fill={gray}/>
+      <rect x="22" y="67" width="30" height="4" rx="2" fill={grayDark}/>
+      <rect x="10" y="79" width="80" height="12" rx="6" fill={gray}/>
+      <rect x="22" y="83" width="35" height="4" rx="2" fill={grayDark}/>
+      <rect x="10" y="95" width="80" height="12" rx="6" fill={gray}/>
+      <rect x="22" y="99" width="25" height="4" rx="2" fill={grayDark}/>
+      {/* mapa */}
+      <rect x="10" y="112" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
+      <circle cx="50" cy="122" r="4" fill={c}/>
+      <polygon points="50,117 46,124 54,124" fill={c}/>
+    </svg>
+  );
+
+  if (id === "completo") return (
+    <svg viewBox="0 0 100 155" style={{ width: "100%", display: "block" }}>
+      <rect width="100" height="155" fill="#FAFAF9" rx="4"/>
+      {/* foto perfil */}
+      <circle cx="50" cy="18" r="11" fill={gray}/>
+      <circle cx="50" cy="18" r="11" fill="none" stroke={c} strokeWidth="2"/>
+      {/* nombre */}
+      <rect x="29" y="32" width="42" height="5" rx="2.5" fill={grayDark}/>
+      <rect x="34" y="40" width="32" height="3" rx="1.5" fill={gray}/>
+      {/* descripción */}
+      <rect x="12" y="47" width="76" height="3" rx="1.5" fill={gray} opacity="0.6"/>
+      <rect x="16" y="52" width="68" height="3" rx="1.5" fill={gray} opacity="0.4"/>
+      {/* links */}
+      <rect x="10" y="59" width="80" height="10" rx="5" fill={gray}/>
+      <rect x="22" y="62.5" width="28" height="3" rx="1.5" fill={grayDark}/>
+      <rect x="10" y="72" width="80" height="10" rx="5" fill={gray}/>
+      <rect x="22" y="75.5" width="33" height="3" rx="1.5" fill={grayDark}/>
+      {/* galería 3 fotos */}
+      <rect x="10" y="86" width="24" height="22" rx="3" fill={gray}/>
+      <rect x="38" y="86" width="24" height="22" rx="3" fill={gray}/>
+      <rect x="66" y="86" width="24" height="22" rx="3" fill={gray}/>
+      {/* título sección */}
+      <rect x="10" y="82" width="18" height="2.5" rx="1.25" fill={gray} opacity="0.8"/>
+      {/* eventos */}
+      <rect x="10" y="112" width="80" height="11" rx="3" fill={gray} opacity="0.6"/>
+      <rect x="13" y="115.5" width="30" height="3" rx="1.5" fill={grayDark}/>
+      <rect x="72" y="115" width="15" height="4" rx="2" fill={c} opacity="0.5"/>
+      {/* mapa */}
+      <rect x="10" y="127" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
+      <circle cx="50" cy="137" r="3.5" fill={c}/>
+      <polygon points="50,132.5 46.5,138.5 53.5,138.5" fill={c}/>
+    </svg>
+  );
+
+  // restaurante
+  return (
+    <svg viewBox="0 0 100 155" style={{ width: "100%", display: "block" }}>
+      <rect width="100" height="155" fill="#FAFAF9" rx="4"/>
+      {/* hero imagen */}
+      <rect x="0" y="0" width="100" height="38" rx="4" fill={gray}/>
+      <rect x="0" y="18" width="100" height="20" fill="black" opacity="0.25" rx="0"/>
+      {/* nombre sobre hero */}
+      <rect x="12" y="22" width="46" height="5" rx="2.5" fill={white} opacity="0.9"/>
+      <rect x="16" y="30" width="32" height="3" rx="1.5" fill={white} opacity="0.65"/>
+      {/* botón carta destacado */}
+      <rect x="10" y="44" width="80" height="14" rx="7" fill={c}/>
+      <rect x="28" y="48.5" width="10" height="4" rx="2" fill={white} opacity="0.7"/>
+      <rect x="42" y="48.5" width="28" height="4" rx="2" fill={white} opacity="0.9"/>
+      {/* galería grande */}
+      <rect x="10" y="64" width="24" height="26" rx="3" fill={gray}/>
+      <rect x="38" y="64" width="24" height="26" rx="3" fill={gray}/>
+      <rect x="66" y="64" width="24" height="26" rx="3" fill={gray}/>
+      {/* links */}
+      <rect x="10" y="95" width="80" height="10" rx="5" fill={gray}/>
+      <rect x="22" y="98.5" width="28" height="3" rx="1.5" fill={grayDark}/>
+      <rect x="10" y="108" width="80" height="10" rx="5" fill={gray}/>
+      <rect x="22" y="111.5" width="22" height="3" rx="1.5" fill={grayDark}/>
+      {/* mapa */}
+      <rect x="10" y="122" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
+      <circle cx="50" cy="132" r="3.5" fill={c}/>
+      <polygon points="50,127.5 46.5,133.5 53.5,133.5" fill={c}/>
+    </svg>
+  );
+}
 
 const inputStyle: React.CSSProperties = {
   width: "100%", padding: "0.8rem 1rem", borderRadius: "0.75rem",
@@ -571,23 +668,35 @@ export default function LocalDashboard() {
           </div>
 
           {/* Selector de plantilla */}
-          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: "#78716C", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.6rem" }}>Plantilla</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.6rem", marginBottom: "1.25rem" }}>
-            {TEMPLATES.map(t => (
-              <button
-                key={t.id} onClick={() => setTemaTemplate(t.id)}
-                style={{
-                  padding: "0.85rem 0.5rem", borderRadius: "0.875rem", cursor: "pointer", textAlign: "center",
-                  border: temaTemplate === t.id ? `2px solid ${COLORES[temaColor]?.hex || "#FB923C"}` : "1.5px solid #F5E6D3",
-                  background: temaTemplate === t.id ? "#FEF0DC" : "white",
-                  transition: "all 0.15s",
-                }}
-              >
-                <div style={{ fontSize: "1.4rem", marginBottom: "0.25rem" }}>{t.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: "0.82rem", color: "#1C1917" }}>{t.nombre}</div>
-                <div style={{ fontSize: "0.7rem", color: "#78716C", marginTop: "0.15rem" }}>{t.desc}</div>
-              </button>
-            ))}
+          <p style={{ fontSize: "0.78rem", fontWeight: 700, color: "#78716C", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.75rem" }}>Plantilla</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
+            {TEMPLATES.map(t => {
+              const selected = temaTemplate === t.id;
+              const primaryColor = COLORES[temaColor]?.hex || "#FB923C";
+              return (
+                <button
+                  key={t.id} onClick={() => setTemaTemplate(t.id)}
+                  style={{
+                    padding: "0", borderRadius: "0.875rem", cursor: "pointer", textAlign: "center",
+                    border: selected ? `2.5px solid ${primaryColor}` : "2px solid #F5E6D3",
+                    background: "white", overflow: "hidden",
+                    boxShadow: selected ? `0 4px 16px ${primaryColor}33` : "0 1px 4px rgba(0,0,0,0.05)",
+                    transition: "all 0.15s", outline: "none",
+                    display: "flex", flexDirection: "column",
+                  }}
+                >
+                  {/* Miniatura SVG */}
+                  <div style={{ padding: "0.5rem 0.5rem 0", background: selected ? `${primaryColor}0D` : "#FAFAF9" }}>
+                    <TemplatePreview id={t.id} color={primaryColor} />
+                  </div>
+                  {/* Etiqueta */}
+                  <div style={{ padding: "0.5rem 0.25rem 0.6rem", borderTop: selected ? `1px solid ${primaryColor}33` : "1px solid #F5E6D3", background: selected ? `${primaryColor}0D` : "white" }}>
+                    <div style={{ fontWeight: 700, fontSize: "0.8rem", color: selected ? primaryColor : "#1C1917" }}>{t.nombre}</div>
+                    <div style={{ fontSize: "0.67rem", color: "#A8A29E", marginTop: "0.1rem" }}>{t.desc}</div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
           {/* Selector de color */}
