@@ -21,6 +21,7 @@
     "/local/*",
     "/locales/*",
     "/rutas/*",
+    "/terrazas/*",
     "/_next/*",
     "/icon.svg",
     "/icon-192.png",

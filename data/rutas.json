@@ -1320,5 +1320,701 @@
       "ruta tardeo Pontevedra casco histórico",
       "qué hacer tarde Pontevedra"
     ]
+  },
+  {
+    "slug": "tardeo-huertas-madrid",
+    "titulo": "Ruta de tardeo por Huertas, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Huertas",
+    "intro": "Huertas es un barrio madrileño con una atmósfera única, donde la vida nocturna está plenamente activa y diversa. Aunque es un barrio con una mezcla de casas y edificios modernos, se siente más tranquilo y acogedor que muchos otros del centro de la ciudad.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Bota",
+        "descripcion": "Un lugar con un ambiente acogedor y una amplia variedad de cervezas y vinos.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Cocina del Pato",
+        "descripcion": "Una cafetería que ofrece un ambiente cálido y una gran variedad de comidas y bebidas.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "La Puerta del Sol",
+        "descripcion": "Un pub tradicional con una gran variedad de cervezas y una atmósfera nocturna vibrante.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "La Fonda",
+        "descripcion": "Un bar con un ambiente relajado y una amplia selección de cervezas y vinos.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Terraza",
+        "descripcion": "Una terraza con vistas panorámicas y un ambiente agradable para disfrutar de una pinta y un rato.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva un par de botellas de agua para mantener hidratado.",
+      "Verifica el clima antes de salir.",
+      "Reserva con anticipación si vas a visitar varios lugares"
+    ],
+    "seo_keywords": [
+      "tardeo huertas",
+      "bares huertas madrid",
+      "tardeo madrid"
+    ]
+  },
+  {
+    "slug": "tardeo-arguelles-madrid",
+    "titulo": "Ruta de tardeo por Argüelles, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Argüelles",
+    "intro": "El barrio de Argüelles ofrece un ambiente vibrante y lleno de vida nocturna, perfecto para una tardeo agradable. En esta ruta, descubrirás algunas de las mejores bares y cafés de la zona.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar El Cuartel",
+        "descripcion": "Un bar histórico con un ambiente sofisticado y una gran variedad de cervezas artesanales.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café de la Condesa",
+        "descripcion": "Una cafetería elegante con una gran variedad de café y té artesanal.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Pub The Plough",
+        "descripcion": "Un pub con un ambiente acogedor y una gran selección de cervezas.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar El Faro",
+        "descripcion": "Un bar con una gran variedad de cervezas y una terraza panorámica.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraza El Cuartel",
+        "descripcion": "La terraza del bar El Cuartel ofrece una vista panorámica de la zona.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva ropa cómoda y calzado cómodo",
+      "Reserva un lugar en el bar El Cuartel si es posible",
+      "Verifica si la terraza del El Cuartel está abierta"
+    ],
+    "seo_keywords": [
+      "tardeo argüelles",
+      "bares argüelles madrid",
+      "tardeo madrid"
+    ]
+  },
+  {
+    "slug": "tardeo-chamberi-madrid",
+    "titulo": "Ruta de tardeo por Chamberí, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Chamberí",
+    "intro": "En Chamberí, Madrid, la noche se extiende más allá de las horas convencionales, ofreciendo una sinfonía de bares, cafeterías y terrazas que encantan a los amantes de la vida nocturna. La zona es especialmente atractiva el sábado por la tarde, cuando el ambiente se llena de energía y diversión.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar 36",
+        "descripcion": "Bar popular conocido por su excelente música y ambiente familiar.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café El Pardo",
+        "descripcion": "Cafetería que ofrece una buena mezcla de café, té y snacks.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "The Red Barn",
+        "descripcion": "Pub con un ambiente tradicional y una variedad de cervezas artesanales.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar El Cielo",
+        "descripcion": "Bar con una terraza exterior que ofrece vistas panorámicas de la zona.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraça El Cielo",
+        "descripcion": "Terraza ubicada en la parte superior del bar El Cielo, ideal para disfrutar de una bebida mientras se disfruta de la ciudad.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva agua, ya que puede ser húmedo debido a la lluvia que a menudo cae en la zona.",
+      "Reserva tu mesa de antemano, especialmente los fines de semana.",
+      "Lleva un par de luces de cebolla para tu caminata por la zona, ya que puede ser oscura a la tarde si no hay luna"
+    ],
+    "seo_keywords": [
+      "tardeo chamberí",
+      "bares chamberí madrid",
+      "tardeo madrid"
+    ]
+  },
+  {
+    "slug": "tardeo-raval-barcelona",
+    "titulo": "Ruta de tardeo por El Raval, Barcelona",
+    "ciudad": "Barcelona",
+    "ciudad_slug": "barcelona",
+    "barrio": "El Raval",
+    "intro": "El Raval es un barrio vibrante y animado en el centro de Barcelona, donde los locales y turistas pueden disfrutar de una variedad de bares, cafés y terrazas que ofrecen un ambiente agradable y rico en cultura. Esta ruta te permitirá recorrer los mejores lugares para un tardeo en este barrio.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El Raval",
+        "descripcion": "El punto de partida en El Raval, donde puedes encontrar una variedad de opciones, desde bares hasta terrazas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Síndrome",
+        "descripcion": "Este bar es conocido por su ambiente agradable y su excelente servicio, perfecto para un aperitivo antes de continuar.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "El Alemán",
+        "descripcion": "Un bar tradicional con un ambiente acogedor y una amplia variedad de bebidas y comidas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "La Terraza de la Placa",
+        "descripcion": "Esta terraza es ideal para disfrutar de un café o una bebida mientras disfrutas de la vista panorámica de El Raval.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Gata",
+        "descripcion": "Un bar con un ambiente sofisticado y una gran variedad de cervezas artesanales y vinos.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva ropa cómoda y cómoda, ya que podrás desplazarte de un bar a otro.",
+      "Revisa los horarios de apertura de cada lugar antes de empezar tu ruta.",
+      "Recuerda que puede haber largas filas en algunos lugares populares, especialmente los fines de semana."
+    ],
+    "seo_keywords": [
+      "tardeo el raval",
+      "bares el raval barcelona",
+      "tardeo barcelona"
+    ]
+  },
+  {
+    "slug": "tardeo-eixample-barcelona",
+    "titulo": "Ruta de tardeo por el Eixample, Barcelona",
+    "ciudad": "Barcelona",
+    "ciudad_slug": "barcelona",
+    "barrio": "Eixample",
+    "intro": "En el Eixample, Barcelona, las noches de tarde se vuelven mágicas con su mezcla única de historia, cultura y gastronomía. Las calles repletas de charla, música y luz hacen de este barrio un destino perfecto para un tardeo relajante y divertido.",
+    "duracion": "2-3 horas",
+    "distancia": "3.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Gaudí",
+        "descripcion": "Un lugar icónico donde puedes disfrutar de una cerveza mientras miras el famoso escultor de Gaudí. La terraza ofrece una vista panorámica del barrio.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café del Bósforo",
+        "descripcion": "Este café histórico es perfecto para una taza de café caliente o un aperitivo mientras disfrutas de la vida en el barrio.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar Tres Naves",
+        "descripcion": "Una barra tradicional con una amplia selección de cervezas y una atmósfera acogedora. Ideal para conversar y disfrutar de un coctel bien servido.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar El Raval",
+        "descripcion": "Un lugar divertido y animado, perfecto para charlar con amigos o disfrutar de una cerveza mientras miras la vida pasar por la calle.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraza El Raval",
+        "descripcion": "La mejor vista del barrio, disfruta de una bebida mientras te relajas y disfrutas de la vida nocturna en el Eixample.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva un par de pares de zapatillas cómodas ya que caminarás por varias calles.",
+      "Asegúrate de probar la tapas locales como el pa amb tomate o la pa amb saffrona.",
+      "Si estás visitando durante el verano, recuerda llevar protector solar y agua para mantenerte fresco."
+    ],
+    "seo_keywords": [
+      "tardeo eixample",
+      "bares eixample barcelona",
+      "tardeo barcelona"
+    ]
+  },
+  {
+    "slug": "tardeo-santa-cruz-sevilla",
+    "titulo": "Ruta de tardeo por Santa Cruz, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Santa Cruz",
+    "intro": "Santa Cruz es un barrio vibrante de Sevilla conocido por su ambiente nocturno diverso y sus numerosos locales de bar y café. El tardeo aquí es una experiencia única, combinando el bullicio de los bares con la tranquilidad de algunas terrazas y cafés. Ideal para disfrutar de una cena en compañía o simplemente perder la cuenta de las horas.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Casa del Pío",
+        "descripcion": "Un bar tradicional con una gran variedad de cervezas artesanales y un ambiente acogedor.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Marmolada",
+        "descripcion": "Una cafetería agradable con una amplia oferta de café y postres, ideal para un descanso rápido.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "El Bar Pintxo",
+        "descripcion": "Un pub especializado en pintxos, ofreciendo una selección de barros elaborados.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "La Terraza de El Corte Inglés",
+        "descripcion": "Una terraza cómoda y acogedora, perfecta para disfrutar del sol mientras bebes un cóctel.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      },
+      {
+        "numero": 5,
+        "nombre": "La Casa de las Artesanías",
+        "descripcion": "Un bar que combina el arte con el vino, ofreciendo una amplia selección de vinos artesanales.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Llega temprano para disfrutar de las mejores ofertas nocturnas.",
+      "No dudes en probar diferentes tipos de bebidas, ya sea cerveza, vino o cóctel.",
+      "Recuerda que en días festivos puede haber más gente y el tráfico puede aumentar, así que planifica tu ruta con anticipación."
+    ],
+    "seo_keywords": [
+      "tardeo santa cruz",
+      "bares santa cruz sevilla",
+      "tardeo sevilla"
+    ]
+  },
+  {
+    "slug": "tardeo-benimaclet-valencia",
+    "titulo": "Ruta de tardeo por Benimaclet, Valencia",
+    "ciudad": "Valencia",
+    "ciudad_slug": "valencia",
+    "barrio": "Benimaclet",
+    "intro": "Benimaclet es un barrio vibrante de Valencia conocido por su diversidad cultural y su encanto nocturno. Aquí encontrarás una variedad de bares, cafeterías y terrazas donde puedes disfrutar de una buena ronda y una buena comida.",
+    "duracion": "2-3 horas",
+    "distancia": "2.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Casa del Vino",
+        "descripcion": "Un lugar ideal para comenzar la tarde con una buena ronda de vinos y tapas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café de la Mar",
+        "descripcion": "Un café tranquilo donde puedes disfrutar de un café y un croissant mientras te preparas para la siguiente parada.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "La Cava",
+        "descripcion": "Un pub conocido por su ambiente acogedor y su oferta de cervezas.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bodega del Buey",
+        "descripcion": "Un bar con una decoración única y una buena ronda de vinos.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraza del Amor",
+        "descripcion": "Una terraza perfecta para terminar la tarde al aire libre mientras disfrutas de una buena comida.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva un par de paseos de vino",
+      "Prueba el café local",
+      "No te olvides de tomar un helado"
+    ],
+    "seo_keywords": [
+      "tardeo benimaclet",
+      "bares benimaclet valencia",
+      "tardeo valencia"
+    ]
+  },
+  {
+    "slug": "tardeo-albaisin-granada",
+    "titulo": "Ruta de tardeo por el Albaicín, Granada",
+    "ciudad": "Granada",
+    "ciudad_slug": "granada",
+    "barrio": "Albaicín",
+    "intro": "El Albaicín, una zona histórica de Granada, es ideal para un tardeo relajado con una mezcla de bares, cafés y terrazas. El ambiente es acogedor y las vistas panorámicas hacen que este lugar sea perfecto para disfrutar de la ciudad en la tarde.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar de la Alpujarra",
+        "descripcion": "Un popular bar tradicional de la zona con una amplia selección de cervezas y tapas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café del Barrio",
+        "descripcion": "Un espacio acogedor con una terraza donde puedes disfrutar de una taza de café mientras observas la vida de la calle.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Pub El Albaicín",
+        "descripcion": "Un pub con una atmósfera cómoda y una amplia selección de cervezas.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar la Casa de la Musa",
+        "descripcion": "Un bar tradicional conocido por su música y comida tradicional.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraza de la Casa de la Musa",
+        "descripcion": "Una terraza panorámica donde puedes disfrutar de una bebida mientras observas la ciudad.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva agua para mantenerse hidratado",
+      "Reserva en los bares si es posible para evitar largas filas",
+      "Aprovecha la música tradicional de la zona"
+    ],
+    "seo_keywords": [
+      "tardeo albaicín",
+      "bares albaicín granada",
+      "tardeo granada"
+    ]
+  },
+  {
+    "slug": "tardeo-centro-malaga",
+    "titulo": "Ruta de tardeo por el Centro de Málaga",
+    "ciudad": "Málaga",
+    "ciudad_slug": "malaga",
+    "barrio": "Centro Histórico",
+    "intro": "En el Centro Histórico de Málaga, la tarde es un momento de relajación y descubrimiento, donde las calles estrechas y los patios acogedores ofrecen una atmósfera ideal para disfrutar de una buena cerveza o un delicioso postre. Ideal para un tardeo tranquilo.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El Farolito",
+        "descripcion": "El Farolito es un popular bar que ofrece una vista panorámica de la ciudad desde su terraza.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "El Muelle de la Sierpe",
+        "descripcion": "Este lugar ofrece una mezcla de bar y pub con una atmósfera casual y acogedora.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "La Taberna de los Cebolleros",
+        "descripcion": "La Taberna de los Cebolleros es una cafetería con una cocina tradicional andaluza, perfecta para una buena taza de té o café.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "El Candelabro",
+        "descripcion": "El Candelabro es un bar que ofrece una variedad de cervezas y una atmósfera relajada.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "El Cielo",
+        "descripcion": "El Cielo es una terraza que ofrece una vista aérea de la ciudad con una buena atmósfera para disfrutar de una cerveza fresca.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva agua para evitar la sequía durante el tardeo",
+      "Comienza con algo ligero antes de entrar en las horas más tardías",
+      "Reserva una mesa en tus favoritos si lo planeas repetir"
+    ],
+    "seo_keywords": [
+      "tardeo centro histórico",
+      "bares centro histórico málaga",
+      "tardeo málaga"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-viejo-pamplona",
+    "titulo": "Ruta de tardeo por el Casco Viejo de Pamplona",
+    "ciudad": "Pamplona",
+    "ciudad_slug": "pamplona",
+    "barrio": "Casco Viejo",
+    "intro": "El Casco Viejo de Pamplona es un entorno histórico lleno de vida nocturna, donde los bares y restaurantes ofrecen una amplia gama de opciones culinarias y ambientales. En esta ruta de tardeo, descubrirás algunas de las mejores opciones para una noche divertida.",
+    "duracion": "2-3 horas",
+    "distancia": "2.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Casa de la Música",
+        "descripcion": "Es uno de los lugares más populares para una cena en el casco viejo, conocido por su excelente comida y ambiente acogedor.",
+        "tipo": "restaurante",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar El Ciprés",
+        "descripcion": "Un bar tradicional con un excelente servicio y una variedad de cervezas artesanales.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Café La Cucharada",
+        "descripcion": "Ideal para una pausa entre comidas o simplemente para tomar un café mientras disfrutas del ambiente.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar El Faro",
+        "descripcion": "Un bar con una amplia selección de cervezas y un ambiente que se adapta a cualquier ocasión.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar El Cielo",
+        "descripcion": "La ruta termina en uno de los lugares más emblemáticos del casco viejo, con una vista panorámica de la ciudad.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Llega temprano para evitar la multitud en los lugares más populares.",
+      "Reserva en los lugares que normalmente están llenos para evitar largas colas.",
+      "Disfruta de la vida nocturna en el casco viejo, pero no olvides que la ciudad tiene más atrações fuera del casco viejo para el día siguiente."
+    ],
+    "seo_keywords": [
+      "tardeo casco viejo",
+      "bares casco viejo pamplona",
+      "tardeo pamplona"
+    ]
+  },
+  {
+    "slug": "tardeo-parte-vieja-san-sebastian",
+    "titulo": "Ruta de tardeo por la Parte Vieja de San Sebastián",
+    "ciudad": "San Sebastián",
+    "ciudad_slug": "san-sebastian",
+    "barrio": "Parte Vieja",
+    "intro": "La Parte Vieja de San Sebastián es el corazón histórico de la ciudad, donde la vida nocturna se vive intensamente. La zona es conocida por sus numerosos bares, cafés y terrazas que ofrecen una atmosfera única a principios de la tarde.",
+    "duracion": "2-3 horas",
+    "distancia": "1.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El Bodegón",
+        "descripcion": "Un bodegón tradicional con una variedad de vinos y cervezas de alta calidad.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Casa del Conde",
+        "descripcion": "Cafetería con una excelente selección de café y postres.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "El Cincuenta",
+        "descripcion": "Un pub con una gran variedad de cervezas y cenas a menudo con ofertas especiales.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "La Almendra",
+        "descripcion": "Bares de música y tertulia ideal para charlar y escuchar música.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "El Bicentenario",
+        "descripcion": "Terraza con vista al puerto y una atmosfera relajada ideal para disfrutar del paseo.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Asegúrate de reservar en los bares de música si planeas ir a una tertulia.",
+      "Lleva un par de botellas de agua por si la temperatura sube.",
+      "Pruébalo en diferentes bares para encontrar tu preferida."
+    ],
+    "seo_keywords": [
+      "tardeo parte vieja",
+      "bares parte vieja san sebastián",
+      "tardeo san sebastián"
+    ]
+  },
+  {
+    "slug": "tardeo-bulevar-oviedo",
+    "titulo": "Ruta de tardeo por El Bulevar de Oviedo",
+    "ciudad": "Oviedo",
+    "ciudad_slug": "oviedo",
+    "barrio": "El Bulevar",
+    "intro": "El Bulevar es un barrio animado de Oviedo donde la vida nocturna se extiende hasta tarde. Aproximadamente, las calles de este barrio están llenas de bares, cafeterías y terrazas donde los residentes y turistas disfrutan de una copa de vino y un rincón tranquilo hasta la hora de la salida.",
+    "duracion": "2-3 horas",
+    "distancia": "2.5 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar de la Luna",
+        "descripcion": "El Bar de la Luna es el punto de encuentro principal del barrio. Es conocido por su ambiente acogedor y su gran variedad de bebidas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Cafetería El Cielo",
+        "descripcion": "Cafetería El Cielo ofrece un lugar tranquilo para una taza de café y un pastel. Es perfecto para relajarse antes de continuar el tardeo.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Pub El Faro",
+        "descripcion": "El Faro es una pub con un ambiente tradicional donde puedes disfrutar de cervezas y platos caseros.",
+        "tipo": "pub",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar El Océano",
+        "descripcion": "El Océano es otro bar muy popular que ofrece una gran variedad de bebidas y un ambiente relajado.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Terraza El Sol",
+        "descripcion": "Para terminar el tardeo, Terraza El Sol es un lugar ideal para disfrutar de una cerveza al aire libre mientras disfrutas de la vista panorámica de la ciudad.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva agua ya que el ambiente puede ser bastante cálido.",
+      "Reserva un lugar anticipadamente en los bares más populares.",
+      "Asegúrate de tener suficiente dinero en efectivo ya que muchas tiendas solo aceptan pagos en efectivo."
+    ],
+    "seo_keywords": [
+      "tardeo el bulevar",
+      "bares el bulevar oviedo",
+      "tardeo oviedo"
+    ]
   }
 ]
