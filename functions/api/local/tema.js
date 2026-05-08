@@ -17,7 +17,7 @@ async function getAuthUser(env, request) {
 }
 
 const COLORES_VALIDOS = ["naranja", "dorado", "verde", "azul", "morado", "rosa", "rojo", "oscuro"];
-const TEMPLATES_VALIDOS = ["minimalista", "completo", "restaurante"];
+const TEMPLATES_VALIDOS = ["bold", "fresh", "elegante", "minimalista", "completo", "restaurante"];
 const SECTIONS_VALIDAS = ["galeria", "eventos", "mapa"];
 
 export async function onRequestGet(context) {
