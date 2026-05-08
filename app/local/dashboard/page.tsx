@@ -279,8 +279,9 @@ export default function LocalDashboard() {
         if (data.theme) {
           try {
             const t = JSON.parse(data.theme);
+            const ALIAS: Record<string, string> = { minimalista: "bold", completo: "fresh", restaurante: "elegante" };
             if (t.color) setTemaColor(t.color);
-            if (t.template) setTemaTemplate(t.template);
+            if (t.template) setTemaTemplate(ALIAS[t.template] || t.template);
             if (t.sections) setTemaSections(t.sections);
           } catch {}
         }
