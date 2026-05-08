@@ -50,104 +50,115 @@ const COLORES: Record<string, { hex: string; nombre: string }> = {
 };
 
 const TEMPLATES: { id: string; nombre: string; desc: string }[] = [
-  { id: "minimalista", nombre: "Minimalista", desc: "Foto + links + mapa" },
-  { id: "completo",    nombre: "Completo",    desc: "Todo visible"        },
-  { id: "restaurante", nombre: "Restaurante", desc: "Carta destacada"     },
+  { id: "bold",     nombre: "Bold",     desc: "Oscuro e impactante" },
+  { id: "fresh",    nombre: "Fresh",    desc: "Claro y cercano"     },
+  { id: "elegante", nombre: "Elegante", desc: "Premium y espaciado" },
 ];
 
 function TemplatePreview({ id, color }: { id: string; color: string }) {
-  const c = color; // color primario
+  const c = color;
   const gray = "#E2E8F0";
-  const grayDark = "#CBD5E1";
-  const white = "white";
+  const grayMid = "#CBD5E1";
 
-  if (id === "minimalista") return (
-    <svg viewBox="0 0 100 138" style={{ width: "100%", display: "block" }}>
-      <rect width="100" height="138" fill="#FAFAF9" rx="4"/>
-      {/* foto perfil */}
-      <circle cx="50" cy="22" r="13" fill={gray}/>
-      <circle cx="50" cy="22" r="13" fill="none" stroke={c} strokeWidth="2"/>
-      {/* nombre */}
-      <rect x="28" y="40" width="44" height="5" rx="2.5" fill={grayDark}/>
-      {/* subtítulo */}
-      <rect x="33" y="49" width="34" height="3.5" rx="1.75" fill={gray}/>
-      {/* horario */}
-      <rect x="36" y="55" width="28" height="3" rx="1.5" fill={gray} opacity="0.7"/>
-      {/* links */}
-      <rect x="10" y="63" width="80" height="12" rx="6" fill={gray}/>
-      <rect x="22" y="67" width="30" height="4" rx="2" fill={grayDark}/>
-      <rect x="10" y="79" width="80" height="12" rx="6" fill={gray}/>
-      <rect x="22" y="83" width="35" height="4" rx="2" fill={grayDark}/>
-      <rect x="10" y="95" width="80" height="12" rx="6" fill={gray}/>
-      <rect x="22" y="99" width="25" height="4" rx="2" fill={grayDark}/>
-      {/* mapa */}
-      <rect x="10" y="112" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
-      <circle cx="50" cy="122" r="4" fill={c}/>
-      <polygon points="50,117 46,124 54,124" fill={c}/>
-    </svg>
-  );
-
-  if (id === "completo") return (
+  // BOLD — fondo oscuro, hero grande, tipografía dominante
+  if (id === "bold") return (
     <svg viewBox="0 0 100 155" style={{ width: "100%", display: "block" }}>
-      <rect width="100" height="155" fill="#FAFAF9" rx="4"/>
-      {/* foto perfil */}
-      <circle cx="50" cy="18" r="11" fill={gray}/>
-      <circle cx="50" cy="18" r="11" fill="none" stroke={c} strokeWidth="2"/>
-      {/* nombre */}
-      <rect x="29" y="32" width="42" height="5" rx="2.5" fill={grayDark}/>
-      <rect x="34" y="40" width="32" height="3" rx="1.5" fill={gray}/>
+      {/* fondo oscuro */}
+      <rect width="100" height="155" fill="#0D1117" rx="4"/>
+      {/* hero foto con overlay */}
+      <rect x="0" y="0" width="100" height="70" fill="#1F2937" rx="4"/>
+      <rect x="0" y="0" width="100" height="70" fill="url(#grad1)" rx="0"/>
+      <defs><linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0D1117" stopOpacity="0.1"/><stop offset="100%" stopColor="#0D1117" stopOpacity="0.9"/></linearGradient></defs>
+      {/* badge tipo */}
+      <rect x="10" y="44" width="22" height="6" rx="3" fill={c}/>
+      {/* nombre grande */}
+      <rect x="10" y="53" width="65" height="8" rx="2" fill="white" opacity="0.9"/>
+      <rect x="10" y="64" width="40" height="4" rx="2" fill="white" opacity="0.4"/>
+      {/* separador */}
+      <rect x="0" y="74" width="100" height="1" fill="#1F2937"/>
       {/* descripción */}
-      <rect x="12" y="47" width="76" height="3" rx="1.5" fill={gray} opacity="0.6"/>
-      <rect x="16" y="52" width="68" height="3" rx="1.5" fill={gray} opacity="0.4"/>
-      {/* links */}
-      <rect x="10" y="59" width="80" height="10" rx="5" fill={gray}/>
-      <rect x="22" y="62.5" width="28" height="3" rx="1.5" fill={grayDark}/>
-      <rect x="10" y="72" width="80" height="10" rx="5" fill={gray}/>
-      <rect x="22" y="75.5" width="33" height="3" rx="1.5" fill={grayDark}/>
-      {/* galería 3 fotos */}
-      <rect x="10" y="86" width="24" height="22" rx="3" fill={gray}/>
-      <rect x="38" y="86" width="24" height="22" rx="3" fill={gray}/>
-      <rect x="66" y="86" width="24" height="22" rx="3" fill={gray}/>
-      {/* título sección */}
-      <rect x="10" y="82" width="18" height="2.5" rx="1.25" fill={gray} opacity="0.8"/>
-      {/* eventos */}
-      <rect x="10" y="112" width="80" height="11" rx="3" fill={gray} opacity="0.6"/>
-      <rect x="13" y="115.5" width="30" height="3" rx="1.5" fill={grayDark}/>
-      <rect x="72" y="115" width="15" height="4" rx="2" fill={c} opacity="0.5"/>
-      {/* mapa */}
-      <rect x="10" y="127" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
-      <circle cx="50" cy="137" r="3.5" fill={c}/>
-      <polygon points="50,132.5 46.5,138.5 53.5,138.5" fill={c}/>
+      <rect x="10" y="80" width="80" height="3" rx="1.5" fill="#334155"/>
+      <rect x="10" y="86" width="60" height="3" rx="1.5" fill="#334155"/>
+      {/* links oscuros */}
+      <rect x="10" y="95" width="80" height="11" rx="3" fill={c}/>
+      <rect x="18" y="98.5" width="30" height="4" rx="2" fill="white" opacity="0.9"/>
+      <rect x="10" y="110" width="80" height="11" rx="3" fill="#1F2937"/>
+      <rect x="18" y="113.5" width="35" height="4" rx="2" fill="#475569"/>
+      <rect x="10" y="125" width="80" height="11" rx="3" fill="#1F2937"/>
+      <rect x="18" y="128.5" width="25" height="4" rx="2" fill="#475569"/>
+      {/* mapa oscuro */}
+      <rect x="10" y="140" width="80" height="11" rx="3" fill="#161B22" opacity="0.8"/>
+      <circle cx="50" cy="145.5" r="3" fill={c}/>
     </svg>
   );
 
-  // restaurante
+  // FRESH — fondo claro, foto circular, tarjetas con sombra
+  if (id === "fresh") return (
+    <svg viewBox="0 0 100 155" style={{ width: "100%", display: "block" }}>
+      <rect width="100" height="155" fill="white" rx="4"/>
+      {/* header degradado */}
+      <rect x="0" y="0" width="100" height="65" fill={c} opacity="0.08" rx="4"/>
+      {/* foto circular */}
+      <circle cx="50" cy="22" r="14" fill={gray}/>
+      <circle cx="50" cy="22" r="14" fill="none" stroke={c} strokeWidth="2.5"/>
+      {/* nombre */}
+      <rect x="25" y="40" width="50" height="7" rx="3.5" fill="#1C1917" opacity="0.8"/>
+      <rect x="30" y="51" width="40" height="4" rx="2" fill={gray}/>
+      {/* badge horario */}
+      <rect x="28" y="58" width="44" height="6" rx="3" fill="white"/>
+      <rect x="28" y="58" width="44" height="6" rx="3" fill="none" stroke={gray} strokeWidth="1"/>
+      <rect x="34" y="60.5" width="32" height="3" rx="1.5" fill={grayMid}/>
+      {/* links con sombra visual */}
+      <rect x="10" y="70" width="80" height="12" rx="6" fill="white"/>
+      <rect x="10" y="70" width="80" height="12" rx="6" fill="none" stroke="#F1F5F9" strokeWidth="1.5"/>
+      <rect x="22" y="74" width="28" height="4" rx="2" fill={grayMid}/>
+      <rect x="10" y="86" width="80" height="12" rx="6" fill={c}/>
+      <rect x="22" y="90" width="22" height="4" rx="2" fill="white" opacity="0.9"/>
+      <rect x="10" y="102" width="80" height="12" rx="6" fill="white"/>
+      <rect x="10" y="102" width="80" height="12" rx="6" fill="none" stroke="#F1F5F9" strokeWidth="1.5"/>
+      <rect x="22" y="106" width="33" height="4" rx="2" fill={grayMid}/>
+      {/* galería */}
+      <rect x="10" y="120" width="24" height="20" rx="3" fill={gray}/>
+      <rect x="38" y="120" width="24" height="20" rx="3" fill={gray}/>
+      <rect x="66" y="120" width="24" height="20" rx="3" fill={gray}/>
+      {/* mapa */}
+      <rect x="10" y="144" width="80" height="8" rx="3" fill={gray} opacity="0.6"/>
+      <circle cx="50" cy="148" r="2.5" fill={c}/>
+    </svg>
+  );
+
+  // ELEGANTE — hero foto full, serif, mucho espacio
   return (
     <svg viewBox="0 0 100 155" style={{ width: "100%", display: "block" }}>
-      <rect width="100" height="155" fill="#FAFAF9" rx="4"/>
-      {/* hero imagen */}
-      <rect x="0" y="0" width="100" height="38" rx="4" fill={gray}/>
-      <rect x="0" y="18" width="100" height="20" fill="black" opacity="0.25" rx="0"/>
-      {/* nombre sobre hero */}
-      <rect x="12" y="22" width="46" height="5" rx="2.5" fill={white} opacity="0.9"/>
-      <rect x="16" y="30" width="32" height="3" rx="1.5" fill={white} opacity="0.65"/>
-      {/* botón carta destacado */}
-      <rect x="10" y="44" width="80" height="14" rx="7" fill={c}/>
-      <rect x="28" y="48.5" width="10" height="4" rx="2" fill={white} opacity="0.7"/>
-      <rect x="42" y="48.5" width="28" height="4" rx="2" fill={white} opacity="0.9"/>
-      {/* galería grande */}
-      <rect x="10" y="64" width="24" height="26" rx="3" fill={gray}/>
-      <rect x="38" y="64" width="24" height="26" rx="3" fill={gray}/>
-      <rect x="66" y="64" width="24" height="26" rx="3" fill={gray}/>
-      {/* links */}
-      <rect x="10" y="95" width="80" height="10" rx="5" fill={gray}/>
-      <rect x="22" y="98.5" width="28" height="3" rx="1.5" fill={grayDark}/>
-      <rect x="10" y="108" width="80" height="10" rx="5" fill={gray}/>
-      <rect x="22" y="111.5" width="22" height="3" rx="1.5" fill={grayDark}/>
-      {/* mapa */}
-      <rect x="10" y="122" width="80" height="20" rx="4" fill={gray} opacity="0.7"/>
-      <circle cx="50" cy="132" r="3.5" fill={c}/>
-      <polygon points="50,127.5 46.5,133.5 53.5,133.5" fill={c}/>
+      <rect width="100" height="155" fill="white" rx="4"/>
+      {/* hero full width */}
+      <rect x="0" y="0" width="100" height="50" fill={gray} rx="4"/>
+      <rect x="0" y="25" width="100" height="25" fill="black" opacity="0.35"/>
+      {/* tipo pequeño */}
+      <rect x="10" y="28" width="28" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      {/* nombre serif grande */}
+      <rect x="10" y="34" width="62" height="8" rx="1" fill="white" opacity="0.95"/>
+      {/* info rápida barra */}
+      <rect x="0" y="50" width="100" height="14" fill="white"/>
+      <rect x="0" y="63" width="100" height="1" fill="#F3F4F6"/>
+      <rect x="8" y="54" width="30" height="3" rx="1.5" fill={grayMid}/>
+      <rect x="8" y="59" width="20" height="2.5" rx="1.25" fill={gray}/>
+      <rect x="52" y="54" width="25" height="3" rx="1.5" fill={grayMid}/>
+      <rect x="52" y="59" width="18" height="2.5" rx="1.25" fill={gray}/>
+      {/* CTA carta */}
+      <rect x="10" y="68" width="80" height="13" rx="3" fill={c}/>
+      <rect x="22" y="72" width="38" height="5" rx="2.5" fill="white" opacity="0.9"/>
+      {/* descripción */}
+      <rect x="10" y="88" width="80" height="3" rx="1.5" fill="#E5E7EB"/>
+      <rect x="10" y="93" width="65" height="3" rx="1.5" fill="#E5E7EB"/>
+      <rect x="10" y="98" width="72" height="3" rx="1.5" fill="#E5E7EB"/>
+      {/* galería 2 col */}
+      <rect x="10" y="107" width="37" height="28" rx="3" fill={gray}/>
+      <rect x="53" y="107" width="37" height="28" rx="3" fill={gray}/>
+      {/* contacto líneas */}
+      <rect x="10" y="140" width="80" height="2" rx="1" fill="#F3F4F6"/>
+      <rect x="10" y="146" width="55" height="3" rx="1.5" fill={gray}/>
+      <rect x="10" y="151" width="40" height="3" rx="1.5" fill={gray}/>
     </svg>
   );
 }
