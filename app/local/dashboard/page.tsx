@@ -316,7 +316,7 @@ export default function LocalDashboard() {
   async function subirFoto(file: File, tipo: "perfil" | "galeria") {
     setSubiendoFoto(true);
     try {
-      const compressed = await imageCompression(file, { maxSizeMB: 1, maxWidthOrHeight: 1200, useWebWorker: true, fileType: "image/webp" });
+      const compressed = await imageCompression(file, { maxSizeMB: 0.5, maxWidthOrHeight: 1200, useWebWorker: true, fileType: "image/webp" });
       const fd = new FormData();
       fd.append("file", compressed, `foto.webp`);
       fd.append("tipo", tipo);

@@ -58,7 +58,7 @@ export async function onRequestPost(context) {
   const tipo = formData.get("tipo") || "galeria"; // "perfil" | "galeria"
 
   if (!file || typeof file === "string") return Response.json({ error: "Falta el archivo" }, { status: 400 });
-  if (file.size > 5 * 1024 * 1024) return Response.json({ error: "Máximo 5MB por foto" }, { status: 400 });
+  if (file.size > 2 * 1024 * 1024) return Response.json({ error: "Máximo 2MB por foto" }, { status: 400 });
   if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
     return Response.json({ error: "Solo se aceptan JPG, PNG o WebP" }, { status: 400 });
   }
