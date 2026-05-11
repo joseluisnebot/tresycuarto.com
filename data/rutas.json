@@ -2016,5 +2016,63 @@
       "bares el bulevar oviedo",
       "tardeo oviedo"
     ]
+  },
+  {
+    "slug": "tardeo-rambla-nova-tarragona",
+    "titulo": "Ruta de tardeo por la Rambla Nova, Tarragona",
+    "ciudad": "Tarragona",
+    "ciudad_slug": "tarragona",
+    "barrio": "Rambla Nova",
+    "intro": "La Rambla Nova de Tarragona es un barrio vibrante y lleno de vida nocturna. Desde las calles repletas de bares y cafés hasta la música que llena el aire, este lugar es perfecto para un tardeo animado.",
+    "duracion": "2-3 horas",
+    "distancia": "1.2 km",
+    "mejor_dia": "Sábados y domingos por la tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Terraza",
+        "descripcion": "Una terraza con vistas panorámicas de la ciudad.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café del Bar",
+        "descripcion": "Un café acogedor con un amplio menú.",
+        "tipo": "cafetería",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar Amic",
+        "descripcion": "Un bar con un ambiente acogedor y una buena selección de cervezas.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bistrot del Poble",
+        "descripcion": "Un bistrot con comidas caseras y un ambiente familiar.",
+        "tipo": "bar",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Terraza del Bósquet",
+        "descripcion": "Una terraza tranquila y elegante con vistas a la ciudad.",
+        "tipo": "terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Lleva agua, ya que puede ser húmedo por la lluvia.",
+      "Reserva en los bares populares para evitar la espera.",
+      "Disfruta de la música y la energía de la Rambla Nova"
+    ],
+    "seo_keywords": [
+      "tardeo tarragona",
+      "bares rambla nova tarragona",
+      "tardeo tarragona centro"
+    ]
   }
 ]
