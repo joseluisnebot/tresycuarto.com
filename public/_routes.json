@@ -19,7 +19,6 @@
     "/dashboard/",
     "/local",
     "/local/*",
-    "/locales/*",
     "/rutas/*",
     "/_next/*",
     "/icon.svg",
