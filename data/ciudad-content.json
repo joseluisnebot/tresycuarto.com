@@ -356,28 +356,40 @@
     ]
   },
   "Jerez de la Frontera": {
-    "coords": {
-      "lat": 36.6864,
-      "lon": -6.1375
-    },
-    "intro": "Jerez de la Frontera combina su Semana Santa con la tradición del jerez y la manzanilla. Las bodegas centenarias, la Calle Larga y el barrio de Santiago son el escenario de un tardeo jerezano donde el vino fino es protagonista absoluto.",
+    "intro": "Explora el encantador tardeo en Jerez de la Frontera, una ciudad andaluza que combina tradición y modernidad. Descubre bares sofisticados, un ambiente acogedor y horarios que van desde la tarde hasta la medianoche. Jerez es el hogar del vino de Jerez, la manzanilla y la Semana Santa, pero el tardeo es una de sus actividades más populares. Visita los barrios de La Giralda, El Triunvirato y La Alcazaba para experimentar la música, la comida y la cultura nocturna de esta encantadora ciudad.",
     "barrios": [
-      "Calle Larga",
-      "Barrio de Santiago",
-      "Centro",
-      "El Arenal",
-      "San Miguel"
+      "La Giralda",
+      "El Triunvirato",
+      "La Alcazaba",
+      "El Bulevar",
+      "La Serranía"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Jerez?",
-        "a": "La Calle Larga y el barrio de Santiago son los centros del tardeo en Jerez, con bodegas y bares donde el jerez es el protagonista."
+        "q": "¿Cuál es la mejor zona de tardeo en Jerez de la Frontera?",
+        "a": "La mejor zona para el tardeo en Jerez de la Frontera es La Giralda, conocida por sus bares sofisticados y un ambiente acogedor."
       },
       {
-        "q": "¿Qué vino tomar en el tardeo de Jerez?",
-        "a": "El tardeo jerezano gira alrededor del fino, la manzanilla y el amontillado, perfectos para acompañar tapas de jamón y mariscos."
+        "q": "¿A qué hora empieza el tardeo en Jerez de la Frontera?",
+        "a": "El tardeo en Jerez de la Frontera generalmente comienza a partir de las 18:00 horas y puede continuar hasta la medianoche."
+      },
+      {
+        "q": "¿Qué tipo de bares hay en Jerez de la Frontera?",
+        "a": "En Jerez de la Frontera puedes encontrar bares de jazz, rock, flamenco y música clásica, ofreciendo una variedad de estilos y géneros."
+      },
+      {
+        "q": "¿Hay terrazas para el tardeo en Jerez de la Frontera?",
+        "a": "Sí, Jerez de la Frontera tiene muchas terrazas donde puedes disfrutar de la música y la comida al aire libre, especialmente en los barrios de La Giralda y El Triunvirato."
+      },
+      {
+        "q": "¿Cuánto cuesta el tardeo en Jerez de la Frontera?",
+        "a": "El precio del tardeo en Jerez de la Frontera puede variar según el bar y la calidad de la música. Generalmente, las tarifas rondan los 10-20 euros por entrada, pero puede ser más caro en los bares más populares o de mayor prestigio."
       }
-    ]
+    ],
+    "coords": {
+      "lat": 36.6864,
+      "lon": -6.1375
+    }
   },
   "León": {
     "coords": {
@@ -1116,36 +1128,40 @@
     ]
   },
   "Leganés": {
-    "coords": {
-      "lat": 40.3284,
-      "lon": -3.7635
-    },
-    "intro": "Leganés, municipio del sur de Madrid con universidad propia, tiene un tardeo variado y muy activo. El centro urbano y la zona universitaria concentran bares y locales donde el tardeo leganense mezcla el ambiente estudiantil con la tradición de barrio madrileño.",
+    "intro": "Leganés, con su universidad pública y su vibrante vida nocturna, es el destino perfecto para el tardeo. Aunque el centro de la ciudad puede ser un poco despejado, en las calles de los barrios de San Sebastián, La Cuesta y La Morería se encuentran numerosos bares que ofrecen una atmósfera animada y una variedad de opciones. El tardeo en Leganés generalmente comienza a las 18:00 horas y puede durar hasta la medianoche, con una gran concentración de universitarios y familias disfrutando de la música, la comida y el buen rato.",
     "barrios": [
-      "Centro",
-      "Zarzaquemada",
-      "El Carrascal",
-      "San Nicasio",
-      "Vereda de Estudiantes"
+      "San Sebastián",
+      "La Cuesta",
+      "La Morería",
+      "Barrio del Pilar",
+      "La Latina"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Leganés?",
-        "a": "El centro de Leganés y la zona universitaria concentran los mejores bares para el tardeo, con un ambiente muy activo gracias a la Universidad Carlos III."
+        "q": "¿Cuál es la mejor zona de tardeo en Leganés?",
+        "a": "La Cuesta y San Sebastián son las zonas más populares para el tardeo debido a su gran oferta de bares y su ambiente animado."
       },
       {
-        "q": "¿Cuántos locales de tardeo hay en Leganés?",
-        "a": "En tresycuarto tienes locales mapeados en Leganés para descubrir el tardeo en uno de los municipios más grandes del sur de Madrid."
+        "q": "¿A qué hora empieza el tardeo en Leganés?",
+        "a": "El tardeo en Leganés generalmente comienza a las 18:00 horas."
       },
       {
-        "q": "¿A qué hora es el tardeo en Leganés?",
-        "a": "El tardeo en Leganés arranca sobre las 17h-18h y es especialmente animado los jueves universitarios y fines de semana."
+        "q": "¿Qué tipo de bares hay en Leganés?",
+        "a": "En Leganés se pueden encontrar bares de todo tipo, desde bares de studentes hasta bares para adultos y bares que ofrecen una amplia gama de comidas y bebidas."
       },
       {
-        "q": "¿Es Leganés buena opción para tardeear cerca de Madrid?",
-        "a": "Sí, Leganés ofrece precios más asequibles que Madrid capital con buenas conexiones en metro y una oferta de bares variada gracias a su comunidad universitaria."
+        "q": "¿Hay terrazas para el tardeo en Leganés?",
+        "a": "Sí, muchas de las terrazas de los bares en Leganés están abiertas hasta tarde, lo que permite disfrutar del aire fresco mientras se disfruta de una cerveza o una comida."
+      },
+      {
+        "q": "¿Cuánto cuesta el tardeo en Leganés?",
+        "a": "El costo del tardeo en Leganés puede variar dependiendo del bar y la bebida. Bares populares suelen tener precios medios, pero hay opciones más económicas disponibles."
       }
-    ]
+    ],
+    "coords": {
+      "lat": 40.3284,
+      "lon": -3.7635
+    }
   },
   "Lleida": {
     "coords": {
@@ -1532,36 +1548,40 @@
     ]
   },
   "Segovia": {
-    "coords": {
-      "lat": 40.9429,
-      "lon": -4.1088
-    },
-    "intro": "Segovia, con su acueducto romano y su Alcázar de cuento de hadas, tiene un tardeo íntimo y muy gastronómico. La Plaza Mayor, la Calle Judería y los mesones del casco histórico ofrecen un tardeo medieval donde el cochinillo asado segoviano y el vino de Rueda son los protagonistas absolutos.",
+    "intro": "El tardeo en Segovia, la encantadora ciudad castellana, es una experiencia inolvidable que combina cultura, gastronomía y convivencia. En esta ciudad rica en historia y encanto, puedes disfrutar de un ambiente agradable, típicamente con música clásica, durante horas. Segovia es famosa por su acueducto romano, su cochinillo asado y su tardeo íntimo y gastronómico. La ciudad ofrece una amplia gama de bares donde puedes degustar una variedad de platos y bebidas mientras disfrutas de la compañía de amigos y conocidos. El tardeo en Segovia es una oportunidad única para experimentar la vida nocturna de esta hermosa ciudad, disfrutando de su rica cultura y tradición gastronómica.",
     "barrios": [
-      "Casco Histórico",
-      "Plaza Mayor",
-      "Calle Judería",
-      "El Salvador",
-      "San Lorenzo"
+      "La Sombra",
+      "La Cuesta",
+      "El Retiro",
+      "La Cuesta del Águila",
+      "La Puerta del Águila"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Segovia?",
-        "a": "La Plaza Mayor y los mesones del casco histórico de Segovia son el escenario del tardeo, con una atmósfera medieval única junto al Acueducto Romano y el Alcázar."
+        "q": "¿Cuál es la mejor zona de tardeo en Segovia?",
+        "a": "La mejor zona de tardeo en Segovia es La Sombra, conocida por su ambiente tranquilo y acogedor, que ofrece una gran variedad de bares y discotecas para todos los gustos."
       },
       {
-        "q": "¿Qué comer en el tardeo de Segovia?",
-        "a": "El cochinillo asado segoviano, el ponche segoviano y el judión de La Granja son los platos estrella del tardeo en Segovia, maridados con vino de Rueda."
+        "q": "¿A qué hora empieza el tardeo en Segovia?",
+        "a": "El tardeo en Segovia generalmente comienza a partir de las 19:00 horas y puede continuar hasta la madrugada, dependiendo del bar y la temporada."
       },
       {
-        "q": "¿Cuántos locales de tardeo hay en Segovia?",
-        "a": "En tresycuarto tienes locales mapeados en Segovia para descubrir el tardeo más histórico junto al acueducto romano mejor conservado del mundo."
+        "q": "¿Qué tipo de bares hay en Segovia?",
+        "a": "En Segovia puedes encontrar una variedad de bares, desde bares de discoteca hasta bares íntimos y bares de cocina tradicional, ofreciendo una experiencia única para todos los gustos."
       },
       {
-        "q": "¿Por qué es especial el tardeo en Segovia?",
-        "a": "Tardeear en Segovia es hacerlo en una ciudad Patrimonio de la Humanidad, rodeado de monumentos romanos, medievales y renacentistas, con una gastronomía de altísimo nivel."
+        "q": "¿Hay terrazas para el tardeo en Segovia?",
+        "a": "Sí, muchas de las bares en Segovia tienen terrazas donde puedes disfrutar de la noche al aire libre, especialmente en los meses de verano."
+      },
+      {
+        "q": "¿Cuánto cuesta el tardeo en Segovia?",
+        "a": "El precio del tardeo en Segovia puede variar significativamente dependiendo del bar, la temporada y el tipo de bebida o comida que elijas. Puedes esperar un precio promedio de entre 10 y 30 euros por persona, pero hay opciones más económicas y más costosas disponibles."
       }
-    ]
+    ],
+    "coords": {
+      "lat": 40.9429,
+      "lon": -4.1088
+    }
   },
   "Soria": {
     "coords": {
@@ -1756,30 +1776,40 @@
     ]
   },
   "Vinaròs": {
-    "coords": {
-      "lat": 40.471,
-      "lon": 0.4746
-    },
-    "intro": "Vinaròs es una ciudad marinera del norte de Castellón con una animada escena de tardeo. Sus terrazas frente al puerto, los bares del centro histórico y la tradición gambera hacen de Vinaròs un destino perfecto para disfrutar de las tardes mediterráneas.",
+    "intro": "Vinaròs, una ciudad costera encantadora en el norte de Castellón, es el parque perfecto para un tardeo relajante. Con su encantador puerto, bares de lujo y terrazas al aire libre, Vinaròs ofrece una experiencia única que combina el océano y la gastronomía local. La ciudad se llena de vida desde las 18:00 hasta las 24:00, con numerosos bares que proporcionan un ambiente acogedor y sofisticado. Su ubicación privilegiada junto al Mediterráneo y su oferta de terrazas al aire libre hacen de Vinaròs un destino ideal para un tardeo agradable y memorable.",
     "barrios": [
-      "Puerto",
-      "Centro histórico",
-      "Paseo Colón"
+      "Barrio del puerto",
+      "Barrio de la costa",
+      "Barrio de la ciudad",
+      "Barrio de la bahía",
+      "Barrio de las terrazas"
     ],
     "faqs": [
       {
-        "q": "¿Dónde tardeear en Vinaròs?",
-        "a": "El centro histórico y el paseo marítimo de Vinaròs concentran los mejores bares y terrazas para el tardeo, con ambiente familiar y marinero."
+        "q": "¿Cuál es la mejor zona de tardeo en Vinaròs?",
+        "a": "La mejor zona para el tardeo en Vinaròs es el Barrio del puerto, conocido por su ambiente acogedor y una gran variedad de bares y terrazas al aire libre."
       },
       {
-        "q": "¿Qué bares hay en Vinaròs?",
-        "a": "En tresycuarto tienes mapeados más de 28 locales en Vinaròs entre bares, pubs y cafeterías, muchos con terraza y vistas al mar."
+        "q": "¿A qué hora empieza el tardeo en Vinaròs?",
+        "a": "El tardeo en Vinaròs comienza a las 18:00 y continúa hasta las 24:00, ofreciendo una gran variedad de opciones para disfrutar."
       },
       {
-        "q": "¿Cuándo es la mejor época para el tardeo en Vinaròs?",
-        "a": "Vinaròs tiene buen clima casi todo el año. La primavera y el verano son la mejor época para disfrutar las terrazas del puerto."
+        "q": "¿Qué tipo de bares hay en Vinaròs?",
+        "a": "Vinaròs cuenta con una amplia gama de bares, desde bares tradicionales hasta bares de lujo y bares con un enfoque en el océano."
+      },
+      {
+        "q": "¿Hay terrazas para el tardeo en Vinaròs?",
+        "a": "Sí, Vinaròs ofrece numerosas terrazas al aire libre donde puedes disfrutar de la brisa marina mientras te relajas y disfrutas de una copa."
+      },
+      {
+        "q": "¿Cuánto cuesta el tardeo en Vinaròs?",
+        "a": "El precio del tardeo en Vinaròs varía según el bar y la bebida. En promedio, puedes esperar pagar entre 10-30 euros por una copa de vino tinto o blanco, pero los precios pueden variar significativamente según la zona y la calidad de la bebida."
       }
-    ]
+    ],
+    "coords": {
+      "lat": 40.471,
+      "lon": 0.4746
+    }
   },
   "Algeciras": {
     "coords": {
