@@ -33,7 +33,7 @@ function esc(s) {
 }
 
 function tipoLabel(tipo) {
-  return { bar:"Bar", cafe:"Cafetería", pub:"Pub", biergarten:"Terraza" }[tipo] || "Local";
+  return { bar:"Bar", cafe:"Cafetería", pub:"Bar", biergarten:"Terraza" }[tipo] || "Local";
 }
 
 function renderLocal(local, ciudadSlug) {
@@ -94,7 +94,7 @@ function renderLocal(local, ciudadSlug) {
 
   const ogImage = local.photo_url || `https://tresycuarto.com/og-default.png`;
   // Title SEO con datos clave para mejorar CTR en Google
-  const titleRating  = (local.rating && local.rating > 0) ? ` ⭐ ${Number(local.rating).toFixed(1)}` : "";
+  const titleRating  = (local.rating && local.rating >= 4.0) ? ` ⭐ ${Number(local.rating).toFixed(1)}` : "";
   const titleTerraza = (local.outdoor_seating || local.terraza) ? " · Terraza" : "";
   const title = `${local.nombre} · ${tipoLabel(local.tipo || "bar")} en ${local.ciudad}${titleRating}${titleTerraza} | tresycuarto`;
 
