@@ -186,7 +186,7 @@ function renderLocal(local, ciudadSlug) {
     </div>` : ""}
 
     ${featureBadges ? `<div class="feature-badges">${featureBadges}</div>` : ""}
-    ${local.descripcion_google ? `<p class="descripcion">"${esc(local.descripcion_google)}"</p>` : ""}
+    ${(local.descripcion_google || local.descripcion) ? `<p class="descripcion">${esc(local.descripcion_google || local.descripcion)}</p>` : ""}
 
     <div class="card">
       ${local.direccion ? `<div class="row"><span class="icon">🗺️</span><div><div class="label">Dirección</div><div class="value">${esc(local.direccion)}${local.codigo_postal?`, ${esc(local.codigo_postal)}`:""}</div></div></div>` : ""}
