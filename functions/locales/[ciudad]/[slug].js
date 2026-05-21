@@ -51,7 +51,7 @@ function renderLocal(local, ciudadSlug) {
     [terrazaStr, ratingStr, horarioStr].filter(Boolean).join(" · ") || null,
     "Ver fotos y cómo llegar.",
   ].filter(Boolean);
-  const desc = local.descripcion_google || descParts.join(". ");
+  const desc = local.descripcion_google || local.descripcion || descParts.join(". ");
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
