@@ -3814,5 +3814,362 @@
       "bares centro lugo",
       "tardeo lugo centro"
     ]
+  },
+  {
+    "slug": "tardeo-centro-denia",
+    "titulo": "Ruta de tardeo por el centro y el puerto de Dénia",
+    "ciudad": "Dénia",
+    "ciudad_slug": "denia",
+    "barrio": "Centro y Puerto",
+    "intro": "Dénia tiene uno de los tardeos más mediterráneos de la Comunitat Valenciana. Con el castillo árabe como telón de fondo, el puerto pesquero y las terrazas frente al mar, el tardeo aquí combina lo mejor del interior y la costa. La calle Marqués de Campo y el paseo marítimo concentran bares donde los deniers disfrutan de la tarde con gambas rojas y buena compañía.",
+    "duracion": "3-4 horas",
+    "distancia": "1,8 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle Marqués de Campo — el eje del tardeo",
+        "descripcion": "El tardeo de Dénia arranca en la calle Marqués de Campo, la arteria principal del casco urbano. Las terrazas se despliegan bajo los naranjos y las palmeras con un ambiente relajado que mezcla residentes y visitantes. Pide el vermut o las famosas croquetas de gambas rojas de Dénia para empezar bien la tarde.",
+        "tipo": "Aperitivo bajo los naranjos",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza del Consell — corazón del casco histórico",
+        "descripcion": "La Plaza del Consell es el punto de encuentro de los deniers en la tarde. Rodeada de edificios históricos y con bares de toda la vida, tiene ese ambiente de pueblo grande donde todo el mundo se conoce. Las tapas de la zona son generosas y los precios siguen siendo los de siempre.",
+        "tipo": "Tapas y ambiente local",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Puerto pesquero de Dénia",
+        "descripcion": "El puerto de Dénia es el gran escenario del tardeo marinero. Las terrazas frente a los barcos pesqueros sirven las mejores gambas rojas de la costa — un producto tan local que tiene denominación de origen. Con vistas al Montgó y al Mediterráneo, es el lugar perfecto para el vermut de las 14:00 o la cerveza del atardecer.",
+        "tipo": "Mariscos y vistas al mar",
+        "tiempo_hasta_siguiente": "10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Paseo marítimo — cierre con puesta de sol",
+        "descripcion": "El tardeo de Dénia cierra como pocos: frente al Mediterráneo, con el sol cayendo sobre el cap de Sant Antoni. Los bares del paseo marítimo tienen terrazas orientadas al oeste perfectas para la última copa del atardecer. El ambiente es tranquilo y la vista, gratuita.",
+        "tipo": "Cierre al atardecer",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Las gambas rojas de Dénia son el producto estrella — pídelas a la plancha en cualquier bar del puerto",
+      "En verano el paseo marítimo se llena a partir de las 20:00 — para tardeo tranquilo mejor ir antes de las 18:00",
+      "El casco histórico y el puerto se comunican por calles peatonales — perfecto para ir a pie"
+    ],
+    "seo_keywords": [
+      "tardeo Dénia",
+      "bares Dénia tarde",
+      "ruta tardeo Dénia centro",
+      "qué hacer tarde Dénia",
+      "tardeo en Dénia"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-antiguo-cuenca",
+    "titulo": "Ruta de tardeo por las Casas Colgadas y el casco antiguo de Cuenca",
+    "ciudad": "Cuenca",
+    "ciudad_slug": "cuenca",
+    "barrio": "Casco antiguo",
+    "intro": "Cuenca tiene el tardeo más vertical de España. Con las Casas Colgadas literalmente suspendidas sobre el barranco del Huécar y calles medievales declaradas Patrimonio de la Humanidad, tomarse algo aquí es una experiencia que va mucho más allá de la copa. La calle Colmillo, las tabernas de la Plaza Mayor y los miradores naturales hacen de Cuenca un destino de tardeo único en su género.",
+    "duracion": "3 horas",
+    "distancia": "1,2 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza Mayor — el aperitivo con Catedral",
+        "descripcion": "La Plaza Mayor de Cuenca, presidida por la Catedral gótica, es el punto de inicio obligatorio. Las terrazas de los bares que rodean la plaza tienen vistas directas a la fachada más singular de la arquitectura religiosa española. Un vermut aquí, con el sol de tarde dando en los arbotantes de piedra, vale el viaje.",
+        "tipo": "Aperitivo con vistas a la Catedral",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Colmillo — la calle de los bares",
+        "descripcion": "La calle Colmillo y las callejuelas adyacentes concentran la mayoría de bares del casco antiguo de Cuenca. Tabernas de piedra con techo bajo, vino de la Manchuela y tapas de caza y queso manchego. El ambiente es íntimo y completamente local — muy pocos turistas llegan hasta aquí.",
+        "tipo": "Tapas y vino local",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Mirador de las Casas Colgadas",
+        "descripcion": "A mitad del tardeo, el mirador frente a las Casas Colgadas es una parada obligatoria. Desde aquí se ve la imagen más icónica de Cuenca: los edificios medievales colgados literalmente sobre el abismo del barranco. Hay un pequeño bar en el puente de San Pablo perfecto para la segunda ronda con esta vista.",
+        "tipo": "Copa con vistas únicas",
+        "tiempo_hasta_siguiente": "8 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Hoz del Huécar — cierre al atardecer",
+        "descripcion": "El mejor cierre del tardeo conquense es bajar al mirador de la Hoz del Huécar cuando el sol empieza a caer. Los colores del barranco al atardecer son de otro mundo. Algunos bares del casco bajo tienen terrazas con estas vistas — la última copa aquí es el mejor recuerdo que te llevas de Cuenca.",
+        "tipo": "Cierre en el barranco",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El casco antiguo está en cuesta constante — calzado cómodo imprescindible",
+      "Algunos bares del casco antiguo abren solo fines de semana — mejor llamar antes si vas entre semana",
+      "El morteruelo y el zarajos son los platos locales más auténticos — pruébalos antes del tardeo"
+    ],
+    "seo_keywords": [
+      "tardeo Cuenca",
+      "bares Cuenca casco antiguo",
+      "ruta tardeo Cuenca",
+      "qué hacer tarde Cuenca",
+      "tardeo en Cuenca"
+    ]
+  },
+  {
+    "slug": "tardeo-centro-avila",
+    "titulo": "Ruta de tardeo por las murallas y el centro de Ávila",
+    "ciudad": "Ávila",
+    "ciudad_slug": "avila",
+    "barrio": "Centro histórico amurallado",
+    "intro": "Ávila tiene el tardeo más recogido de Castilla. Dentro de las murallas medievales mejor conservadas de Europa, el ritmo de la tarde es pausado, los precios son razonables y el ambiente es auténtico de ciudad de interior. La calle del Lomo, la Plaza de la Victoria y los bares pegados a la muralla hacen de Ávila una pequeña joya del tardeo castellano.",
+    "duracion": "2-3 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza de la Victoria — el centro del tardeo",
+        "descripcion": "La Plaza de la Victoria, conocida popularmente como la Plaza Chica, es el punto de encuentro de los abulenses en la tarde. Terrazas animadas, precios de ciudad de interior y una clientela que mezcla todas las edades. El vermut o la caña de bienvenida aquí tienen toda la tranquilidad del mundo.",
+        "tipo": "Aperitivo en la plaza",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle del Lomo y calle Reyes Católicos",
+        "descripcion": "El eje de bares más animado de Ávila. La calle del Lomo y las calles perpendiculares concentran tabernas de piedra con suelo de barro cocido donde los abulenses llevan décadas tapando. Las tapas de judías del Barco y los embutidos ibéricos son el acompañamiento perfecto para la segunda ronda.",
+        "tipo": "Tapas castellanas",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Paseo de las Murallas — copa con vista",
+        "descripcion": "El tardeo en Ávila tiene un escenario que pocas ciudades pueden igualar: la muralla medieval que rodea completamente el casco histórico. Algunos bares tienen terrazas que dan directamente a los lienzos de piedra. Con las torres iluminadas al atardecer, es una de las imágenes más bonitas del tardeo castellano.",
+        "tipo": "Copa junto a la muralla",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Puerta del Alcázar — cierre con historia",
+        "descripcion": "El cierre del tardeo abulense es en la Puerta del Alcázar, uno de los accesos más imponentes de la muralla. Los bares de los alrededores tienen terrazas donde se mezcla el ambiente de fin de tarde con la piedra medieval de fondo. El mejor cierre posible para una tarde dentro de las murallas.",
+        "tipo": "Cierre histórico",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Las yemas de Santa Teresa son el dulce local por excelencia — llévate una caja",
+      "La muralla de Ávila se puede recorrer por encima — combínalo con el tardeo si llegas antes de las 20:00",
+      "En invierno Ávila hace mucho frío — los bares de interior son la opción más cómoda"
+    ],
+    "seo_keywords": [
+      "tardeo Ávila",
+      "bares Ávila tarde",
+      "ruta tardeo Ávila",
+      "qué hacer tarde Ávila",
+      "tardeo en Ávila"
+    ]
+  },
+  {
+    "slug": "tardeo-el-born-barcelona",
+    "titulo": "Ruta de tardeo por El Born y Sant Pere de Barcelona",
+    "ciudad": "Barcelona",
+    "ciudad_slug": "barcelona",
+    "barrio": "El Born / Sant Pere",
+    "intro": "El Born es el barrio con el tardeo más cool de Barcelona. A medio camino entre la Barceloneta y el Gòtic, El Born concentra una mezcla única de bares de diseño, tabernas medievales, terrasses con encanto y una clientela cosmopolita que sabe disfrutar de la tarde. El Passeig del Born, el Mercat de Santa Caterina y las calles del entorno son el escenario perfecto para el mejor tardeo barcelonés.",
+    "duracion": "3-4 horas",
+    "distancia": "1,5 km",
+    "mejor_dia": "Sábado desde las 13:00 o jueves-viernes a partir de las 19:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Passeig del Born — la terrassa del barri",
+        "descripcion": "El Passeig del Born es el salón del barrio. Un paseo arbolado rodeado de bares históricos y modernos con terrazas que se llenan desde las 13:00 los fines de semana. El ambiente es animado sin ser ruidoso, la clientela es internacional y local a partes iguales, y los cócteles de los bares del paseo son de los mejores del barrio.",
+        "tipo": "Aperitivo en el passeig",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Carrer del Rec y calles medievales",
+        "descripcion": "El Carrer del Rec y el laberinto de callejuelas medievales que lo rodean tienen el tardeo más auténtico del Born. Bares en edificios del siglo XIV con suelos de piedra y techos altos, mezclados con locales de diseño reciente. La mezcla funciona perfectamente y el ambiente de las 17:00 del sábado aquí es de lo mejor de Barcelona.",
+        "tipo": "Bares medievales con ambiente",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Plaça de Santa Maria del Mar",
+        "descripcion": "La Plaça de Santa Maria del Mar, con la basílica gótica más bella de Barcelona al fondo, es la parada más fotogénica del tardeo en El Born. Las terrazas de los bares que rodean la plaza se llenan con el sol de tarde dando en la piedra dorada de la fachada. Una copa aquí con esta vista es el tardeo barcelonés en estado puro.",
+        "tipo": "Copa con vistas a la basílica",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Mercat de Santa Caterina — cierre gastronómico",
+        "descripcion": "El cierre del tardeo por El Born va al entorno del Mercat de Santa Caterina, con su techo de mosaicos de colores. Los bares del entorno tienen un ambiente más tranquilo y local, perfecto para la última copa antes de pasar a la cena. El contraste entre el tardeo animado del Born y la calma de este rincón es el mejor final posible.",
+        "tipo": "Cierre tranquilo",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El Born es uno de los barrios más seguros de Barcelona para el tardeo pero hay carteristas en las zonas más turísticas — atención a las pertenencias",
+      "Los jueves por la noche El Born tiene casi el mismo ambiente que el fin de semana",
+      "El Mercat del Born (ahora espacio cultural) tiene exposiciones gratuitas — combínalo con la ruta"
+    ],
+    "seo_keywords": [
+      "tardeo El Born Barcelona",
+      "bares El Born tarde",
+      "ruta tardeo Born",
+      "qué hacer tarde El Born",
+      "tardeo en el Born Barcelona"
+    ]
+  },
+  {
+    "slug": "tardeo-malasana-madrid",
+    "titulo": "Ruta de tardeo por Malasaña y el Dos de Mayo de Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Malasaña",
+    "intro": "Malasaña es el barrio más auténtico del tardeo madrileño. Con la Plaza del Dos de Mayo como epicentro y calles llenas de bares de toda la vida mezclados con los locales más molones de la ciudad, Malasaña tiene ese carácter de barrio de verdad que ya no se encuentra en muchos sitios de Madrid. Sin el postureo de Chueca ni las masas de La Latina, el tardeo por Malasaña es el Madrid más real.",
+    "duracion": "3-4 horas",
+    "distancia": "1,6 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00, o jueves a partir de las 19:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza del Dos de Mayo — el corazón del barrio",
+        "descripcion": "El tardeo de Malasaña empieza invariablemente en la Plaza del Dos de Mayo. El monumento a los héroes del levantamiento de 1808 preside una plaza que los madrileños del barrio han convertido en su salón particular. Las terrazas de los bares de alrededor se llenan desde las 12:00 los fines de semana con un ambiente que mezcla familias, jóvenes y veteranos del barrio.",
+        "tipo": "Aperitivo en la plaza",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle del Pez y calle Manuela Malasaña",
+        "descripcion": "El eje de bares más interesante de Malasaña. La calle del Pez y la calle Manuela Malasaña concentran tabernas de toda la vida junto a bares de nueva generación que han respetado el espíritu del barrio. El ambiente es desenfadado y auténtico, con precios que todavía recuerdan que esto es Madrid de barrio, no Madrid de turistas.",
+        "tipo": "Bares de barrio auténticos",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Fuencarral y los locales de diseño",
+        "descripcion": "El tramo de Fuencarral entre la Gran Vía y Malasaña tiene algunos de los bares de diseño más interesantes de Madrid. Sin perder el sabor de barrio, estos locales mezclan carta de autor con precios razonables y una decoración que vale la pena. La hora de las 18:00-20:00 aquí es especialmente animada.",
+        "tipo": "Bares con diseño y carta",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Plaza de San Ildefonso — el cierre más animado",
+        "descripcion": "El cierre del tardeo por Malasaña es en la Plaza de San Ildefonso, uno de los espacios más animados del barrio a partir de las 20:00. Las terrazas de los bares que dan a la plaza se llenan con el ambiente de fin de tarde y las primeras luces de la noche. El mejor cierre del tardeo madrileño más auténtico.",
+        "tipo": "Cierre animado",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Malasaña es el barrio más auténtico de Madrid — evita los bares más turísticos de la calle Fuencarral y métete por las calles interiores",
+      "Los domingos por la mañana el Rastro está a 10 minutos — combínalo con el tardeo de mediodía",
+      "El parking en Malasaña es complicado — metro Tribunal o Noviciado son las mejores opciones"
+    ],
+    "seo_keywords": [
+      "tardeo Malasaña Madrid",
+      "bares Malasaña tarde",
+      "ruta tardeo Malasaña",
+      "qué hacer tarde Malasaña",
+      "tardeo malasaña"
+    ]
+  },
+  {
+    "slug": "tardeo-paseo-maritimo-torrevieja",
+    "titulo": "Ruta de tardeo por el paseo marítimo y el centro de Torrevieja",
+    "ciudad": "Torrevieja",
+    "ciudad_slug": "torrevieja",
+    "barrio": "Centro y Paseo Marítimo",
+    "intro": "Torrevieja tiene uno de los tardeos más mediterráneos del sur de Alicante. Con el paseo marítimo frente al Mediterráneo, las lagunas salinas de fondo y una ciudad con mucho carácter propio, el tardeo aquí combina el ambiente de ciudad costera con precios muy razonables. La zona del puerto, la calle Ramón Gallud y el paseo marítimo son los tres escenarios del mejor tardeo de la Vega Baja.",
+    "duracion": "2-3 horas",
+    "distancia": "1,4 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Puerto de Torrevieja — aperitivo marinero",
+        "descripcion": "El tardeo de Torrevieja arranca en el puerto, con los barcos pesqueros y las embarcaciones de recreo como telón de fondo. Los bares del entorno del puerto sirven los mejores mariscos de la zona a precios de mercado local. Las gambas y los langostinos del Mar Menor son el aperitivo perfecto para empezar la tarde.",
+        "tipo": "Aperitivo marinero",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Ramón Gallud — el eje del tardeo",
+        "descripcion": "La calle Ramón Gallud y las calles perpendiculares son el corazón del tardeo en Torrevieja. Bares de toda la vida con terrazas animadas, precios de ciudad de interior de costa y una clientela que mezcla residentes de toda la vida con los miles de europeos del norte que han elegido Torrevieja como segunda residencia.",
+        "tipo": "Tapas y ambiente local",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Paseo marítimo — la copa con el Mediterráneo",
+        "descripcion": "El paseo marítimo de Torrevieja es el gran escenario del tardeo a partir de las 18:00. Las terrazas frente al mar se llenan con el ambiente de fin de tarde y las primeras luces del atardecer sobre el Mediterráneo. Con las lagunas rosadas de las salinas al fondo en los días claros, la vista es única.",
+        "tipo": "Copa frente al mar",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Las lagunas salinas de Torrevieja son un espacio natural único — visítalas antes o después del tardeo",
+      "En verano el paseo marítimo se llena a partir de las 21:00 — para tardeo tranquilo mejor antes de las 19:00",
+      "El Mercado Municipal tiene productos locales frescos — ideal para comprar algo antes del tardeo"
+    ],
+    "seo_keywords": [
+      "tardeo Torrevieja",
+      "bares Torrevieja tarde",
+      "ruta tardeo Torrevieja",
+      "qué hacer tarde Torrevieja",
+      "tardeo en Torrevieja"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-historico-soria",
+    "titulo": "Ruta de tardeo por el casco histórico de Soria",
+    "ciudad": "Soria",
+    "ciudad_slug": "soria",
+    "barrio": "Casco histórico",
+    "intro": "Soria tiene el tardeo más tranquilo y auténtico de Castilla y León. La ciudad menos masificada de España ofrece un tardeo sin aglomeraciones, con bares de toda la vida, precios imbatibles y la amabilidad característica de sus gentes. El Collado, la Plaza Mayor y el Parque de la Dehesa son los escenarios de un tardeo que va a su ritmo, sin prisa y con mucho carácter.",
+    "duracion": "2-3 horas",
+    "distancia": "1,0 km",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle El Collado — la calle peatonal del tardeo",
+        "descripcion": "El Collado es la arteria principal del tardeo soriano. Esta calle peatonal concentra la mayoría de bares y cafeterías del centro con terrazas que se animan desde las 12:00 los fines de semana. El ambiente es completamente local — en Soria el turismo todavía no ha llegado a los niveles de otras ciudades castellanas y eso se nota en el precio y en la autenticidad.",
+        "tipo": "Aperitivo en la peatonal",
+        "tiempo_hasta_siguiente": "5 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza Mayor de Soria",
+        "descripcion": "La Plaza Mayor de Soria, presidida por el Ayuntamiento y rodeada de porches históricos, es el corazón del tardeo soriano. Las terrazas bajo los soportales son perfectas para cualquier época del año — en verano dan sombra y en otoño protegen del viento. Los pinchos de la zona son abundantes y baratos: en Soria la tapa todavía acompaña a la caña.",
+        "tipo": "Pinchos bajo los soportales",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Parque de la Dehesa — copa junto al Duero",
+        "descripcion": "El cierre del tardeo soriano es en el Parque de la Dehesa, a orillas del río Duero. En primavera y verano, los bares del parque tienen terrazas con vistas directas al río y a los chopos que Machado cantó en sus poemas. Una copa aquí, con el sonido del Duero de fondo, es el mejor final para un tardeo sin artificios.",
+        "tipo": "Cierre junto al Duero",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "En Soria la tapa gratuita con la consumición todavía existe en muchos bares — pregunta siempre",
+      "El yacimiento de Numancia está a 7 km — combínalo con el tardeo si llegas por la mañana",
+      "Soria es la capital de provincia menos poblada de España — el ambiente de los bares es íntimo y muy local"
+    ],
+    "seo_keywords": [
+      "tardeo Soria",
+      "bares Soria tarde",
+      "ruta tardeo Soria",
+      "qué hacer tarde Soria",
+      "tardeo en Soria"
+    ]
   }
 ]
