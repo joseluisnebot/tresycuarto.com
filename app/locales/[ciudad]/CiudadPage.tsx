@@ -526,94 +526,85 @@ export default function CiudadPage({ slug }: { slug: string }) {
                 const fecha = new Date(evento.fecha + "T12:00:00");
                 const fechaStr = `${fecha.getDate()} de ${MESES[fecha.getMonth()]}`;
                 const seleccionado = eventoSeleccionado?.evento.id === evento.id;
+                const localesEvento = seleccionado ? eventoSeleccionado!.locales : [];
                 return (
                   <div
                     key={evento.id}
                     onClick={() => handleClickEvento(evento)}
                     style={{
-                      display: "flex", gap: "0.75rem", alignItems: "flex-start",
-                      padding: "0.65rem 0.75rem", borderRadius: "0.75rem", cursor: "pointer",
-                      background: seleccionado ? "#EDE9FE" : "#FFF8EF",
-                      border: `1.5px solid ${seleccionado ? "#7C3AED" : "transparent"}`,
-                      transition: "background 0.15s, border-color 0.15s",
+                      borderRadius: "0.75rem", cursor: "pointer",
+                      background: "white",
+                      border: `1px solid ${seleccionado ? "#FB923C" : "#F5E6D3"}`,
+                      padding: "0.75rem",
+                      transition: "border-color 0.15s",
                     }}
                   >
-                    <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>
-                      {cargandoEventoId === evento.id ? "⏳" : (TIPO_EVENTO_ICON[evento.tipo] || "📅")}
-                    </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.88rem", color: seleccionado ? "#7C3AED" : "#1C1917" }}>
-                        {evento.nombre}
+                    <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                      <div style={{ fontSize: "1.3rem", lineHeight: 1, paddingTop: "0.1rem" }}>
+                        {cargandoEventoId === evento.id ? "⏳" : (TIPO_EVENTO_ICON[evento.tipo] || "📅")}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                        <span>📅 {fechaStr}</span>
-                        <span>🕐 {evento.hora_inicio || "Consultar horario"}</span>
-                        {evento.direccion && <span>📍 {evento.direccion}</span>}
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#1C1917" }}>
+                          {evento.nombre}
+                        </div>
+                        <div style={{ fontSize: "0.75rem", color: "#78716C", marginTop: "0.15rem", display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
+                          <span>📅 {fechaStr}</span>
+                          {evento.hora_inicio && <span>🕐 {evento.hora_inicio}</span>}
+                          {evento.direccion && <span>📍 {evento.direccion}</span>}
+                          <span style={{ color: "#FB923C", fontWeight: 600 }}>
+                            {seleccionado ? "Ocultar locales ↑" : "Ver locales cercanos ↓"}
+                          </span>
+                        </div>
+                        {evento.descripcion && (
+                          <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>
+                            {evento.descripcion}
+                          </p>
+                        )}
                       </div>
-                      {evento.descripcion && (
-                        <p style={{ margin: "0.25rem 0 0", fontSize: "0.78rem", color: "#A8A29E", lineHeight: 1.4 }}>
-                          {evento.descripcion}
-                        </p>
-                      )}
                     </div>
-                    <span style={{ fontSize: "0.72rem", color: seleccionado ? "#7C3AED" : "#A8A29E", flexShrink: 0, paddingTop: "0.1rem" }}>
-                      {seleccionado ? "Ver locales →" : "Locales →"}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
 
-        {/* Locales cercanos al evento seleccionado */}
-        {eventoSeleccionado && eventoSeleccionado.locales.length > 0 && (
-          <div style={{
-            background: "white", borderRadius: "1.25rem",
-            border: "1px solid #F5E6D3", padding: "1.25rem", marginBottom: "1.5rem",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-              <p style={{ margin: 0, fontSize: "0.75rem", color: "#A8A29E", fontWeight: 600 }}>
-                {eventoSeleccionado.locales.length} locales a ≤{eventoSeleccionado.radio}m · {eventoSeleccionado.evento.nombre}
-              </p>
-              <button
-                onClick={() => setEventoSeleccionado(null)}
-                style={{ background: "none", border: "none", cursor: "pointer", fontSize: "0.78rem", color: "#A8A29E", fontWeight: 600, padding: "0.2rem 0.4rem" }}
-              >
-                ✕
-              </button>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-              {eventoSeleccionado.locales.map((l, i) => (
-                <a
-                  key={l.id}
-                  href={l.slug ? `/locales/${ciudadSlug(l.ciudad || nombreCiudad)}/${l.slug}` : undefined}
-                  style={{
-                    textDecoration: "none", display: "flex", gap: "0.75rem", alignItems: "center",
-                    background: i === 0 ? "#FFF8EF" : "transparent",
-                    borderRadius: "0.6rem", padding: "0.5rem 0.6rem",
-                    border: i === 0 ? "1px solid #F5E6D3" : "none",
-                  }}
-                >
-                  <span style={{
-                    fontSize: "0.68rem", fontWeight: 700, color: "#FB923C",
-                    background: "#FEF0DC", borderRadius: "999px", padding: "0.2rem 0.5rem",
-                    whiteSpace: "nowrap", minWidth: "40px", textAlign: "center",
-                  }}>
-                    {l.distancia_m != null ? `${l.distancia_m}m` : "ciudad"}
-                  </span>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.88rem" }}>{l.nombre}</span>
-                    {(l.terraza === 1 || l.outdoor_seating === 1) && <span style={{ marginLeft: "0.4rem", fontSize: "0.7rem", color: "#059669" }}>☀️</span>}
-                    {l.direccion && (
-                      <div style={{ fontSize: "0.75rem", color: "#A8A29E", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                        📍 {l.direccion}
+                    {seleccionado && localesEvento.length > 0 && (
+                      <div onClick={e => e.stopPropagation()} style={{ marginTop: "0.75rem", borderTop: "1px solid #F5E6D3", paddingTop: "0.75rem" }}>
+                        <p style={{ margin: "0 0 0.6rem", fontSize: "0.75rem", color: "#A8A29E", fontWeight: 600 }}>
+                          {localesEvento.length} locales a ≤{eventoSeleccionado!.radio}m del evento
+                        </p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                          {localesEvento.map((l, i) => (
+                            <a
+                              key={l.id}
+                              href={l.slug ? `/locales/${ciudadSlug(l.ciudad || nombreCiudad)}/${l.slug}` : undefined}
+                              style={{
+                                textDecoration: "none", display: "flex", gap: "0.75rem", alignItems: "center",
+                                background: i === 0 ? "#FFF8EF" : "transparent",
+                                borderRadius: "0.6rem", padding: "0.5rem 0.6rem",
+                                border: i === 0 ? "1px solid #F5E6D3" : "none",
+                              }}
+                            >
+                              <span style={{
+                                fontSize: "0.68rem", fontWeight: 700, color: "#FB923C",
+                                background: "#FEF0DC", borderRadius: "999px", padding: "0.2rem 0.5rem",
+                                whiteSpace: "nowrap", minWidth: "40px", textAlign: "center",
+                              }}>
+                                {l.distancia_m != null ? `${l.distancia_m}m` : "ciudad"}
+                              </span>
+                              <div style={{ flex: 1, minWidth: 0 }}>
+                                <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.88rem" }}>{l.nombre}</span>
+                                {(l.terraza === 1 || l.outdoor_seating === 1) && <span style={{ marginLeft: "0.4rem", fontSize: "0.7rem", color: "#059669" }}>☀️</span>}
+                                {l.direccion && (
+                                  <div style={{ fontSize: "0.75rem", color: "#A8A29E", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                    📍 {l.direccion}
+                                  </div>
+                                )}
+                              </div>
+                              <span style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, whiteSpace: "nowrap" }}>→</span>
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
-                  <span style={{ fontSize: "0.75rem", color: "#FB923C", fontWeight: 600, whiteSpace: "nowrap" }}>→</span>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
