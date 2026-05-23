@@ -109,7 +109,7 @@ type Local = {
   lat: number | null; lon: number | null;
   descripcion: string | null; descripcion_google?: string | null;
   photo_url?: string | null; rating?: number | null; rating_count?: number | null;
-  price_level?: string | null; slug?: string | null;
+  price_level?: string | null; slug?: string | null; distancia_m?: number | null;
 };
 
 type Evento = {
@@ -562,6 +562,58 @@ export default function CiudadPage({ slug }: { slug: string }) {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* Locales cercanos al evento seleccionado */}
+        {eventoSeleccionado && eventoSeleccionado.locales.length > 0 && (
+          <div style={{
+            background: "#EDE9FE", borderRadius: "1.25rem",
+            border: "1.5px solid #7C3AED", padding: "1.25rem", marginBottom: "1.5rem",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.85rem" }}>
+              <h3 style={{ margin: 0, fontWeight: 800, fontSize: "0.95rem", color: "#5B21B6" }}>
+                🎯 Locales cerca de: {eventoSeleccionado.evento.nombre}
+              </h3>
+              <button
+                onClick={() => setEventoSeleccionado(null)}
+                style={{ background: "none", border: "none", cursor: "pointer", fontSize: "0.78rem", color: "#7C3AED", fontWeight: 600, padding: "0.2rem 0.5rem" }}
+              >
+                ✕ Cerrar
+              </button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              {eventoSeleccionado.locales.map((l, i) => (
+                <a
+                  key={l.id}
+                  href={l.slug ? `/locales/${ciudadSlug(l.ciudad || nombreCiudad)}/${l.slug}` : undefined}
+                  style={{
+                    textDecoration: "none", display: "flex", gap: "0.75rem", alignItems: "center",
+                    background: i === 0 ? "#F5F3FF" : "white",
+                    borderRadius: "0.75rem", padding: "0.6rem 0.75rem",
+                    border: `1px solid ${i === 0 ? "#7C3AED" : "#DDD6FE"}`,
+                  }}
+                >
+                  <span style={{
+                    fontSize: "0.68rem", fontWeight: 700, color: "#7C3AED",
+                    background: "#EDE9FE", borderRadius: "999px", padding: "0.2rem 0.5rem",
+                    whiteSpace: "nowrap", minWidth: "40px", textAlign: "center",
+                  }}>
+                    {l.distancia_m != null ? `${l.distancia_m}m` : "cerca"}
+                  </span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <span style={{ fontWeight: 700, color: "#1C1917", fontSize: "0.88rem" }}>{l.nombre}</span>
+                    {(l.terraza === 1 || l.outdoor_seating === 1) && <span style={{ marginLeft: "0.4rem", fontSize: "0.7rem" }}>☀️</span>}
+                    {l.direccion && (
+                      <div style={{ fontSize: "0.75rem", color: "#A8A29E", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        📍 {l.direccion}
+                      </div>
+                    )}
+                  </div>
+                  <span style={{ fontSize: "0.75rem", color: "#7C3AED", fontWeight: 600, whiteSpace: "nowrap" }}>→</span>
+                </a>
+              ))}
             </div>
           </div>
         )}
