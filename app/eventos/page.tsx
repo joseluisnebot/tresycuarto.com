@@ -24,9 +24,9 @@ type Evento = {
 };
 
 type Local = {
-  id: string; nombre: string; tipo: string; direccion: string | null;
-  horario: string | null; terraza: number; web: string | null;
-  instagram: string | null; distancia_m: number;
+  id: string; nombre: string; tipo: string; ciudad: string; slug: string | null;
+  direccion: string | null; horario: string | null; terraza: number;
+  web: string | null; instagram: string | null; distancia_m: number;
 };
 
 const TIPO_ICON: Record<string, string> = {
@@ -81,7 +81,7 @@ function LocalesPanel({ eventoId, radio }: { eventoId: string; radio?: number })
       </p>
       <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
         {locales.map((l, i) => (
-          <a key={l.id} href={`/locales/${l.id}`} style={{
+          <a key={l.id} href={l.slug && l.ciudad ? `/locales/${ciudadSlug(l.ciudad)}/${l.slug}` : `/locales/${ciudadSlug(l.ciudad || "")}`} style={{
             textDecoration: "none", display: "flex", gap: "0.75rem", alignItems: "center",
             background: i === 0 ? "#FFF8EF" : "transparent",
             borderRadius: "0.6rem", padding: "0.5rem 0.6rem",

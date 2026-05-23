@@ -12,8 +12,8 @@ type EventoDestacado = {
 };
 
 type Local = {
-  id: string; nombre: string; tipo: string; direccion: string | null;
-  horario: string | null; terraza: number; photo_url: string | null;
+  id: string; nombre: string; tipo: string; ciudad: string; slug: string | null;
+  direccion: string | null; horario: string | null; terraza: number; photo_url: string | null;
 };
 
 const TIPO_ICON: Record<string, string> = {
@@ -126,7 +126,7 @@ export default function EventoDetalle({ evento }: { evento: EventoDestacado }) {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "0.75rem" }}>
             {locales.map(local => (
-              <Link key={local.id} href={`/locales/${local.id}`} style={{ textDecoration: "none" }}>
+              <Link key={local.id} href={local.slug && local.ciudad ? `/locales/${local.ciudad.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-")}/${local.slug}` : `/locales/${evento.ciudad_slug}`} style={{ textDecoration: "none" }}>
                 <div style={{
                   background: "white", borderRadius: "1rem", border: "1px solid #F5E6D3",
                   overflow: "hidden", transition: "border-color 0.15s",
