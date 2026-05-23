@@ -634,6 +634,22 @@ def evento_solapado_en_db(nombre, ciudad, fecha):
 
 
 # Palabras que bloquean SALVO que aparezca alguna palabra de contexto positivo cerca
+# Ciudades válidas del site (cargadas una vez al inicio)
+import pathlib as _pathlib
+_CITIES_JSON = _pathlib.Path(__file__).parent.parent / "data" / "cities.json"
+try:
+    import json as _json
+    CIUDADES_VALIDAS = set(c["nombre"] for c in _json.loads(_CITIES_JSON.read_text()))
+except Exception:
+    CIUDADES_VALIDAS = set()
+
+# Prefijos de nombre genérico a descartar
+NOMBRES_GENERICOS = ("Varios ", "Varias ", "Múltiples ", "Multiple ", "Diverse ")
+
+# Palabras en descripción que indican contenido scrapeado erróneamente
+DESC_BROSSA = ["cookie", "aviso legal", "política de privacidad", "politica de privacidad",
+               "acepto las cookies", "configurar cookies", "cambiar los ajustes"]
+
 PALABRAS_SENSIBLES = [
     # Duelo / muerte
     "funeral", "entierro", "velatorio", "defunción", "difunto", "luto",
@@ -686,6 +702,21 @@ def insertar_evento(ev, dry_run=False):
 
     if evento_existe(ev_id):
         return False, "ya existe"
+
+    # Filtro: ciudad ha de ser del site
+    if CIUDADES_VALIDAS and ev.get("ciudad", "") not in CIUDADES_VALIDAS:
+        return False, f"ciudad no en site ({ev.get('ciudad','')})"
+
+    # Filtro: nombre genérico
+    nombre_strip = ev.get("nombre", "")
+    if any(nombre_strip.startswith(p) for p in NOMBRES_GENERICOS):
+        return False, "nombre genérico (Varios/Varias)"
+
+    # Filtro: descripció brossa (cookies, aviso legal...)
+    desc_lower = ev.get("descripcion", "").lower()
+    for palabra in DESC_BROSSA:
+        if palabra in desc_lower:
+            return False, f"descripción brossa ({palabra})"
 
     # Fecha plausible para fiestas con mes conocido
     if not fecha_plausible(ev["nombre"], ev.get("fecha", "")):
