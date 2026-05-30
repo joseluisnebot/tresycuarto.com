@@ -46,9 +46,13 @@ export default async function EventoPage({ params }: { params: Promise<{ slug: s
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
-      "@type": "City",
+      "@type": "Place",
       "name": ev.ciudad,
-      "addressCountry": "ES"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": ev.ciudad,
+        "addressCountry": "ES"
+      }
     },
     "description": ev.descripcion_corta,
     "url": `https://tresycuarto.com/eventos/${ev.slug}`,
@@ -58,15 +62,12 @@ export default async function EventoPage({ params }: { params: Promise<{ slug: s
       "name": "tresycuarto.com",
       "url": "https://tresycuarto.com"
     },
-    "performer": {
-      "@type": "PerformingGroup",
-      "name": ev.ciudad
-    },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
+      "validFrom": ev.fecha_inicio,
       "url": `https://tresycuarto.com/eventos/${ev.slug}`
     }
   };
