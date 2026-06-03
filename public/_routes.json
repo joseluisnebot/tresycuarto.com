@@ -4,7 +4,6 @@
     "/*"
   ],
   "exclude": [
-    "/",
     "/para-locales",
     "/para-locales/",
     "/faq",
