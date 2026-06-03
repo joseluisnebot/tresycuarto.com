@@ -17,7 +17,7 @@ export async function onRequestGet(context) {
   if (tipo) { sql += " AND tipo = ?"; params.push(tipo); }
   if (terraza === "1") { sql += " AND terraza = 1"; }
 
-  sql += " ORDER BY nombre LIMIT ? OFFSET ?";
+  sql += " ORDER BY claimed DESC, nombre COLLATE NOCASE LIMIT ? OFFSET ?";
   params.push(limit, offset);
 
   const { results } = await env.DB.prepare(sql).bind(...params).all();
