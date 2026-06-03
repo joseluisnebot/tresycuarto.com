@@ -286,7 +286,7 @@ function LocalRegistroForm() {
           </div>
 
           <h2 style={{ fontWeight: 800, fontSize: "1.2rem", color: "#1C1917", marginBottom: "0.35rem" }}>Crea tu cuenta</h2>
-          <p style={{ fontSize: "0.85rem", color: "#78716C", marginBottom: "1.5rem" }}>3 meses gratis · Sin tarjeta necesaria</p>
+          <p style={{ fontSize: "0.85rem", color: "#78716C", marginBottom: "1.5rem" }}>Gratis · Sin tarjeta necesaria</p>
 
           <form onSubmit={handleRegistro} style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             <div>

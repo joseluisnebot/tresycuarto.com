@@ -152,10 +152,20 @@ export async function onRequestPost(context) {
       return Response.json({ error: "La contraseña debe tener al menos 8 caracteres" }, { status: 400 });
     }
     // Verificar Turnstile en registro (no en login)
+    // Excepción: si el local ya está claimed=1, el admin aprobó el claim — no pedir captcha
     if (action !== "login" && env.TURNSTILE_SECRET) {
-      const ip = request.headers.get("CF-Connecting-IP") || "";
-      const ok = await verifyTurnstile(cf_token || "", env.TURNSTILE_SECRET, ip);
-      if (!ok) return Response.json({ error: "Verificación fallida, inténtalo de nuevo" }, { status: 403 });
+      let skipTurnstile = false;
+      if (action === "register" && local_id) {
+        const { results: claimedCheck } = await env.DB.prepare(
+          "SELECT claimed FROM locales WHERE id = ?"
+        ).bind(local_id).all();
+        if (claimedCheck.length && claimedCheck[0].claimed === 1) skipTurnstile = true;
+      }
+      if (!skipTurnstile) {
+        const ip = request.headers.get("CF-Connecting-IP") || "";
+        const ok = await verifyTurnstile(cf_token || "", env.TURNSTILE_SECRET, ip);
+        if (!ok) return Response.json({ error: "Verificación fallida, inténtalo de nuevo" }, { status: 403 });
+      }
     }
   }
 
