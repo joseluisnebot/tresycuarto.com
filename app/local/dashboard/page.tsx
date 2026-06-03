@@ -480,34 +480,7 @@ export default function LocalDashboard() {
   if (!userData) return null;
 
   const bioUrl = `https://tresycuarto.com/${userData.slug}`;
-  const TRIAL_DAYS = 14;
-  const trialExpires = userData.trial_inicio
-    ? new Date(userData.trial_inicio).getTime() + TRIAL_DAYS * 86400000
-    : Date.now();
-  const trialDias = Math.max(0, Math.ceil((trialExpires - Date.now()) / 86400000));
-
-  const planStatus: "pro" | "trial" | "free" = userData.plan === "pro"
-    ? (userData.plan_expires && new Date(userData.plan_expires) < new Date() ? "free" : "pro")
-    : (trialDias > 0 ? "trial" : "free");
-  const isPro = planStatus === "pro" || planStatus === "trial";
-
-  async function activarPlan(plan: "monthly" | "annual") {
-    try {
-      const res = await fetch("/api/local/checkout", {
-        method: "POST",
-        headers: authHeaders({ "Content-Type": "application/json" }),
-        body: JSON.stringify({ plan }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        alert("Error: " + (data.error || JSON.stringify(data)));
-      }
-    } catch (err) {
-      alert("Error de red: " + err);
-    }
-  }
+  const isPro = true;
 
   const tieneVariosLocales = userData.locales && userData.locales.length > 1;
 
@@ -587,54 +560,8 @@ export default function LocalDashboard() {
             <h1 style={{ fontWeight: 800, fontSize: "1.2rem", color: "#1C1917" }}>{userData.local.nombre}</h1>
             <p style={{ fontSize: "0.82rem", color: "#78716C" }}>{userData.local.tipo} · {userData.local.ciudad}</p>
           </div>
-          <div style={{ textAlign: "right" }}>
-            {planStatus === "pro" && (
-              <span style={{ background: "#DBEAFE", color: "#1D4ED8", borderRadius: "999px", padding: "0.25rem 0.75rem", fontSize: "0.78rem", fontWeight: 700 }}>
-                Pro ✓
-              </span>
-            )}
-            {planStatus === "trial" && (
-              <span style={{ background: "#D1FAE5", color: "#059669", borderRadius: "999px", padding: "0.25rem 0.75rem", fontSize: "0.78rem", fontWeight: 700 }}>
-                Trial · {trialDias} días
-              </span>
-            )}
-            {planStatus === "free" && (
-              <span style={{ background: "#FEE2E2", color: "#DC2626", borderRadius: "999px", padding: "0.25rem 0.75rem", fontSize: "0.78rem", fontWeight: 700 }}>
-                Trial caducado
-              </span>
-            )}
-          </div>
         </div>
 
-        {/* Card activar plan */}
-        {planStatus === "free" && (
-          <div style={{ ...cardStyle, border: "2px solid #FB923C" }}>
-            <p style={{ fontWeight: 800, color: "#1C1917", fontSize: "1.05rem", marginBottom: "0.35rem" }}>Activa tu plan Pro</p>
-            <p style={{ color: "#78716C", fontSize: "0.85rem", marginBottom: "1.25rem" }}>
-              Tu periodo de prueba ha terminado. Activa el plan Pro para seguir usando la galería de fotos, carta, eventos, QR de mesa y estadísticas.
-            </p>
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <button
-                onClick={() => activarPlan("monthly")}
-                style={{ flex: 1, minWidth: "140px", padding: "0.9rem 1rem", background: "white", border: "2px solid #FB923C", borderRadius: "0.875rem", cursor: "pointer", textAlign: "center" }}
-              >
-                <div style={{ fontWeight: 800, fontSize: "1.3rem", color: "#1C1917" }}>9€</div>
-                <div style={{ fontSize: "0.78rem", color: "#78716C" }}>al mes · sin compromiso</div>
-              </button>
-              <button
-                onClick={() => activarPlan("annual")}
-                style={{ flex: 1, minWidth: "140px", padding: "0.9rem 1rem", background: "linear-gradient(135deg,#FB923C,#F59E0B)", border: "none", borderRadius: "0.875rem", cursor: "pointer", textAlign: "center", position: "relative" }}
-              >
-                <div style={{ position: "absolute", top: "-10px", right: "10px", background: "#059669", color: "white", fontSize: "0.65rem", fontWeight: 700, borderRadius: "999px", padding: "0.15rem 0.5rem" }}>AHORRA 29€</div>
-                <div style={{ fontWeight: 800, fontSize: "1.3rem", color: "white" }}>79€</div>
-                <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.85)" }}>al año · más popular</div>
-              </button>
-            </div>
-            <p style={{ fontSize: "0.72rem", color: "#A8A29E", marginTop: "0.75rem" }}>
-              Pago seguro con Stripe · Cancela cuando quieras · Tus datos se conservan siempre
-            </p>
-          </div>
-        )}
 
         {/* Bio link */}
         <div style={cardStyle}>
