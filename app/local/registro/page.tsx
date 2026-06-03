@@ -41,7 +41,9 @@ function LocalRegistroForm() {
       .then(r => r.json())
       .then(data => {
         const local = data.results?.[0];
-        if (local && !local.claimed) {
+        // El admin marca claimed=1 al aprobar; la API de registro bloquea
+        // duplicados via usuario_locales, no via el campo claimed
+        if (local) {
           setLocalSeleccionado(local);
           setStep("cuenta");
         }
