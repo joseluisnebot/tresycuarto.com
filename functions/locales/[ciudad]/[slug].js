@@ -252,6 +252,21 @@ export async function onRequestGet(context) {
     return Response.redirect(`https://tresycuarto.com/locales/${ciudadSlug}/${slug}`, 301);
   }
 
+  // Caso especial: /locales/-/[id] — enlace interno por ID (emails, admin, claims)
+  if (ciudadSlug === "-") {
+    const { results: byId } = await env.DB.prepare(
+      "SELECT * FROM locales WHERE id = ? LIMIT 1"
+    ).bind(slug).all();
+    if (!byId || !byId.length) {
+      return new Response("Local no encontrado", { status: 404 });
+    }
+    const localById = byId[0];
+    const cs = Object.entries(CIUDAD_MAP).find(([, v]) => v === localById.ciudad)?.[0] || "-";
+    return new Response(renderLocal(localById, cs), {
+      headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=60" },
+    });
+  }
+
   const ciudad = CIUDAD_MAP[ciudadSlug];
   if (!ciudad) {
     return new Response("Ciudad no encontrada", { status: 404 });
