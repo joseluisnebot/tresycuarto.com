@@ -4,7 +4,7 @@ export async function onRequestGet(context) {
 
   // Buscar en usuario_locales (nuevo schema)
   const { results: ulRows } = await env.DB.prepare(
-    "SELECT local_id, slug FROM usuario_locales WHERE slug = ?"
+    "SELECT local_id, slug, theme FROM usuario_locales WHERE slug = ?"
   ).bind(slug).all();
 
   if (!ulRows.length) {
@@ -16,6 +16,11 @@ export async function onRequestGet(context) {
   const { results } = await env.DB.prepare(
     "SELECT nombre, tipo, ciudad, direccion, telefono, web, instagram, horario, terraza, musica, descripcion, foto_perfil, fotos, menu_url, redes FROM locales WHERE id = ?"
   ).bind(ul.local_id).all();
+  let theme = { color: "naranja", template: "fresh", sections: ["galeria", "eventos"] };
+  if (ul.theme) { try { const t = JSON.parse(ul.theme); theme = { ...theme, ...t }; } catch {} }
+  // normalize old aliases
+  const ALIAS = { minimalista: "bold", completo: "fresh", restaurante: "elegante" };
+  if (ALIAS[theme.template]) theme.template = ALIAS[theme.template];
 
   if (!results.length) {
     return new Response(notFoundHtml(), { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } });
@@ -29,12 +34,87 @@ export async function onRequestGet(context) {
     "SELECT titulo, descripcion, fecha, hora_inicio, hora_fin, precio, enlace FROM eventos WHERE local_id = ? AND fecha >= ? ORDER BY fecha ASC, hora_inicio ASC LIMIT 5"
   ).bind(ul.local_id, hoy).all();
 
-  const html = buildHtml(local, ul.slug, fotos, eventoRows);
+  const html = buildHtml(local, ul.slug, fotos, eventoRows, theme);
   return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=60" } });
 }
 
-function buildHtml(local, slug, fotos = [], eventos = []) {
+const COLORES = {
+  naranja: "#FB923C", dorado: "#F59E0B", verde: "#10B981",
+  azul: "#3B82F6", morado: "#8B5CF6", rosa: "#EC4899",
+  rojo: "#EF4444", oscuro: "#292524",
+};
+
+function getThemeCss(template, accent) {
+  if (template === "bold") return `
+    body { background: #0D1117; color: #E6EDF3; }
+    .hero { background: linear-gradient(160deg, ${accent} 0%, ${accent}bb 45%, #0D1117 100%); }
+    .hero::before { background: radial-gradient(ellipse at 25% 0%, rgba(255,255,255,0.1) 0%, transparent 55%); }
+    .hero::after { background: #0D1117; }
+    .hero-name { color: #F0F6FC; text-shadow: 0 2px 16px rgba(0,0,0,0.5); }
+    .hero-sub { color: rgba(230,237,243,0.7); }
+    .badge-terraza { background: rgba(255,255,255,0.08); color: rgba(230,237,243,0.8); border-color: rgba(255,255,255,0.15); }
+    .badge-musica  { background: rgba(167,139,250,0.15); color: #C4B5FD; border-color: rgba(167,139,250,0.3); }
+    .info-strip { background: #161B22; border-color: #30363D; box-shadow: none; }
+    .info-row { border-color: #21262D; }
+    .info-icon { opacity: 0.7; }
+    .info-text { color: #8B949E; }
+    .descripcion { color: #6E7681; }
+    .link-btn { background: #161B22; border-color: #30363D; color: #E6EDF3; box-shadow: none; }
+    .link-btn:hover { background: #1C2128; border-color: ${accent}; box-shadow: 0 0 0 1px ${accent}22; transform: translateY(-1px); }
+    .link-icon { background: #21262D; }
+    .link-arrow { color: #484F58; }
+    .link-btn:hover .link-arrow { color: ${accent}; }
+    .section-title { color: #484F58; }
+    .gallery-item { border-radius: 0.5rem; box-shadow: none; border: 1px solid #21262D; }
+    .event-card { background: #161B22; border-color: #30363D; box-shadow: none; }
+    .event-title { color: #E6EDF3; }
+    .event-desc { color: #6E7681; }
+    .event-meta { color: #484F58; }
+    .footer a { color: #30363D; }
+    .footer a span { color: ${accent}; }
+    .footer p { color: #21262D; }
+  `;
+  if (template === "elegante") return `
+    body { background: #FAFAF9; color: #1C1917; }
+    .hero { background: white; padding: 4rem 1.5rem 6rem; border-bottom: 1px solid #E7E5E4; }
+    .hero::before { display: none; }
+    .hero::after { background: #FAFAF9; }
+    .hero-name { color: #1C1917; text-shadow: none; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; }
+    .hero-sub { color: #A8A29E; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+    .badge-terraza { background: #F5F5F4; color: #78716C; border-color: #E7E5E4; backdrop-filter: none; }
+    .badge-musica  { background: #F5F5F4; color: #78716C; border-color: #E7E5E4; backdrop-filter: none; }
+    .avatar { border-color: #E7E5E4; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .avatar-placeholder { background: #F5F5F4; border-color: #E7E5E4; box-shadow: none; }
+    .info-strip { border-radius: 0; border-left: none; border-right: none; border-color: #E7E5E4;
+      margin-top: -2rem; padding: 1.25rem 1rem; box-shadow: none; }
+    .info-row { border-color: #F5F5F4; }
+    .info-text { color: #57534E; font-size: 0.85rem; }
+    .descripcion { font-style: normal; color: #78716C; padding: 1.75rem 0.5rem; font-size: 0.9rem; }
+    .link-btn { border-radius: 0.5rem; border-color: #E7E5E4; box-shadow: none; font-weight: 500; font-size: 0.9rem; }
+    .link-btn:hover { transform: none; background: #FAFAF9; box-shadow: none; border-color: ${accent}; }
+    .link-icon { background: #F5F5F4; border-radius: 0.375rem; }
+    .link-arrow { color: #D6D3D1; }
+    .link-btn:hover .link-arrow { color: ${accent}; transform: none; }
+    .section-title { color: #C7C0BA; letter-spacing: 0.12em; font-size: 0.65rem; }
+    .gallery-item { border-radius: 0.375rem; box-shadow: none; border: 1px solid #E7E5E4; }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .event-card { border-radius: 0.5rem; border-color: #E7E5E4; box-shadow: none; }
+    .event-date { background: ${accent}; border-radius: 0.5rem; }
+    .event-title { color: #1C1917; }
+    .event-desc { color: #78716C; }
+    .event-meta { color: #C7C0BA; }
+    .footer a { color: #D6D3D1; }
+    .footer a span { color: ${accent}; }
+    .footer p { color: #E7E5E4; }
+  `;
+  return ""; // fresh — base CSS handles it
+}
+
+function buildHtml(local, slug, fotos = [], eventos = [], theme = {}) {
   const esc = s => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const accent = COLORES[theme.color] || "#FB923C";
+  const tpl = theme.template || "fresh";
+  const themeCss = getThemeCss(tpl, accent);
   const links = [];
 
   if (local.menu_url) {
@@ -142,7 +222,7 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
     /* Hero */
     .hero {
       width: 100%;
-      background: linear-gradient(160deg, #FB923C 0%, #F59E0B 100%);
+      background: linear-gradient(160deg, ${accent} 0%, ${accent}dd 100%);
       padding: 3rem 1.5rem 5rem;
       text-align: center;
       position: relative;
@@ -285,7 +365,7 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
       font-size: 1.25rem;
       width: 2.2rem; height: 2.2rem;
       display: flex; align-items: center; justify-content: center;
-      background: #FEF0DC;
+      background: ${accent}18;
       border-radius: 0.6rem;
       flex-shrink: 0;
     }
@@ -331,7 +411,7 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
     }
     .event-date {
       display: flex; flex-direction: column; align-items: center;
-      background: linear-gradient(135deg, #FB923C, #F59E0B);
+      background: ${accent};
       border-radius: 0.75rem;
       padding: 0.5rem 0.7rem;
       min-width: 48px; flex-shrink: 0;
@@ -364,6 +444,8 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    /* theme overrides */
+    ${themeCss}
   </style>
 </head>
 <body>
