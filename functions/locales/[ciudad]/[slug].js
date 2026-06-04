@@ -224,7 +224,7 @@ function renderLocal(local, ciudadSlug) {
           <a href="/unete?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}" style="display:inline-block;background:#F59E0B;color:#fff;border-radius:999px;padding:0.55rem 1.4rem;text-decoration:none;font-weight:700;font-size:0.875rem">Reclamar esta ficha →</a>
         </div>
       </div>
-    </div>`}
+    </div>` : ""}
 
     <a href="${ciudadUrl}" class="back">← Ver más locales en ${esc(local.ciudad)}</a>
   </div>
