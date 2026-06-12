@@ -6,6 +6,7 @@ import CookieBanner from "./components/CookieBanner";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tresycuarto.com"),
   title: "Tres y Cuarto — El tardeo empieza aquí",
   description: "Descubre los mejores bares, terrazas y locales de tardeo en tu ciudad. La plataforma del ocio de media tarde en España.",
   manifest: "/manifest.json",

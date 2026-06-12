@@ -24,6 +24,7 @@ export async function generateMetadata(
   return {
     title: `Tardeo en ${nombre} — Bares, pubs y terrazas | tresycuarto`,
     description: `Guía de tardeo en ${nombre}: los mejores bares, pubs y terrazas con horarios y ubicación. Descubre dónde salir de tarde en ${nombre}.`,
+    alternates: { canonical: `https://tresycuarto.com/locales/${ciudad}/` },
     openGraph: {
       title: `Tardeo en ${nombre} — Bares, pubs y terrazas | tresycuarto`,
       description: `Guía de tardeo en ${nombre}: los mejores bares, pubs y terrazas con horarios y ubicación. Descubre dónde salir de tarde en ${nombre}.`,

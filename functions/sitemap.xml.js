@@ -1,7 +1,14 @@
 // Sitemap — solo páginas reales con contenido indexable.
-// - Páginas estáticas + 64 ciudades (siempre)
+// - Páginas estáticas + ciudades (siempre)
+// - Páginas de intención (alto CTR): /tardeo, /terrazas, /rutas
 // - Fichas de locales enriquecidos: slug + rating > 0 + photo_url (URLs limpias)
-// NUNCA incluir: osm_node_* directos, /tardeo/, /rutas/ inexistentes
+// NUNCA incluir: osm_node_* directos
+import CITIES from "../data/cities.json";
+import RUTAS from "../data/rutas.json";
+import TERRAZAS from "../data/terrazas-por-ciudad.json";
+
+// Mismos tipos que genera app/tardeo/[query]/generateStaticParams
+const TIPOS_TARDEO = ["bares", "pubs", "cafeterias", "terrazas", "tardeo", "planes-tarde", "terraza-tarde"];
 
 const CIUDAD_SLUGS = [
   "albacete","alcala-de-henares","algeciras","almeria","altea","arona","avila",
@@ -63,6 +70,19 @@ export async function onRequestGet(context) {
       `<url><loc>https://tresycuarto.com/locales/${CIUDAD_TO_SLUG[l.ciudad]}/${l.slug}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${hoy}</lastmod></url>`
     );
 
+  // Páginas de intención (las que mejor convierten en Search Console)
+  const urlsTardeo = CITIES.flatMap(c =>
+    TIPOS_TARDEO.map(t =>
+      `<url><loc>https://tresycuarto.com/tardeo/${t}-en-${c.slug}/</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>${hoy}</lastmod></url>`
+    )
+  );
+  const urlsTerrazas = Object.keys(TERRAZAS).map(slug =>
+    `<url><loc>https://tresycuarto.com/terrazas/${slug}/</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>${hoy}</lastmod></url>`
+  );
+  const urlsRutas = RUTAS.map(r =>
+    `<url><loc>https://tresycuarto.com/rutas/${r.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${hoy}</lastmod></url>`
+  );
+
   const urls = [
     `<url><loc>https://tresycuarto.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>${hoy}</lastmod></url>`,
     `<url><loc>https://tresycuarto.com/eventos</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>${hoy}</lastmod></url>`,
@@ -71,6 +91,9 @@ export async function onRequestGet(context) {
     ...CIUDAD_SLUGS.map(slug =>
       `<url><loc>https://tresycuarto.com/locales/${slug}</loc><changefreq>daily</changefreq><priority>0.8</priority><lastmod>${hoy}</lastmod></url>`
     ),
+    ...urlsTardeo,
+    ...urlsTerrazas,
+    ...urlsRutas,
     ...urlsLocales,
   ];
 
