@@ -84,6 +84,13 @@ def limpiar_local(elemento: dict, nodos: dict) -> dict | None:
     if not nombre:
         return None
 
+    # Saltar locales cerrados / en desuso (no ingerir bares muertos)
+    if (tags.get("disused") == "yes" or tags.get("abandoned") == "yes"
+            or tags.get("amenity") == "vacant"
+            or tags.get("opening_hours") in ("closed", "off")
+            or any(k.startswith(("disused:", "was:", "abandoned:", "removed:")) for k in tags)):
+        return None
+
     if elemento["type"] == "node":
         lat = elemento.get("lat")
         lon = elemento.get("lon")

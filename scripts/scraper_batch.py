@@ -220,6 +220,12 @@ def parsear_elementos(resultado):
         nombre = tags.get("name", "").strip()
         if not nombre:
             continue
+        # Saltar locales cerrados / en desuso (no ingerir bares muertos)
+        if (tags.get("disused") == "yes" or tags.get("abandoned") == "yes"
+                or tags.get("amenity") == "vacant"
+                or tags.get("opening_hours") in ("closed", "off")
+                or any(k.startswith(("disused:", "was:", "abandoned:", "removed:")) for k in tags)):
+            continue
         if e["type"] == "node":
             lat, lon = e.get("lat"), e.get("lon")
         else:

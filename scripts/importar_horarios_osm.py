@@ -82,11 +82,22 @@ out tags;
     return {}
 
 
+_DIAS_OSM = {"Mo": "Lun", "Tu": "Mar", "We": "Mié", "Th": "Jue", "Fr": "Vie", "Sa": "Sáb", "Su": "Dom"}
+
+
 def formatear_horario(raw):
-    raw = raw.replace("Mo", "Lun").replace("Tu", "Mar").replace("We", "Mié")
-    raw = raw.replace("Th", "Jue").replace("Fr", "Vie").replace("Sa", "Sáb").replace("Su", "Dom")
-    raw = raw.replace("off", "cerrado").replace("PH", "festivos")
-    return raw[:200]
+    """Traduce el formato opening_hours de OSM a castellano de forma robusta.
+    Usa límites de palabra para no corromper subcadenas (p.ej. 'sunset' no se toca)."""
+    if not raw:
+        return raw
+    raw = raw.strip()
+    if raw in ("24/7", "24/7 open"):
+        return "Abierto 24 h"
+    out = re.sub(r"\b(Mo|Tu|We|Th|Fr|Sa|Su)\b", lambda m: _DIAS_OSM[m.group(0)], raw)
+    out = re.sub(r"\bPH\b", "festivos", out)
+    out = re.sub(r"\boff\b", "cerrado", out)
+    out = re.sub(r"\bclosed\b", "cerrado", out, flags=re.IGNORECASE)
+    return out[:200]
 
 
 def procesar_ciudad(ciudad, dry_run):

@@ -100,7 +100,7 @@ def construir_prompt(local):
     datos = "\n".join(f"- {p}" for p in parts) if parts else "- Sin datos adicionales"
 
     return f"""Escribe una descripción breve y atractiva (máximo 60 palabras) para este {tipo} de tardeo en España.
-NO inventes datos que no aparezcan abajo. Tono cercano e informal. Sin comillas. Sin introducción.
+Usa ÚNICAMENTE los datos listados abajo. No menciones comida, bebidas, ambiente, precios, decoración ni servicios que no aparezcan. Escribe en español. Tono cercano e informal. Sin comillas. Sin introducción.
 
 Local: {local['nombre']}
 Ciudad: {local['ciudad']}
@@ -117,7 +117,7 @@ def generar_descripcion(local):
             {"role": "system", "content": "Eres un experto en ocio y tardeo en España. Escribes descripciones breves y atractivas de bares, pubs y cafeterías."},
             {"role": "user", "content": prompt},
         ],
-        "options": {"temperature": 0.7, "num_predict": MAX_TOKENS_RESPUESTA},
+        "options": {"temperature": 0.4, "num_predict": MAX_TOKENS_RESPUESTA},
         "stream": False,
     }
     r = requests.post(OLLAMA_URL, json=payload, timeout=60)
@@ -129,6 +129,22 @@ def generar_descripcion(local):
             texto = texto[len(prefix):].strip()
     return texto
 
+
+# Palabras frecuentes en inglés — si aparecen varias, el modelo se fue de idioma
+_MARCADORES_INGLES = (" the ", " and ", " with ", " here is ", " located ", " offers ", " enjoy ", " features ")
+
+
+def validar_descripcion(texto: str) -> bool:
+    """Filtra alucinaciones obvias: vacías, demasiado cortas, en inglés o con prefijos de relleno."""
+    if not texto or len(texto) < 40:
+        return False
+    t = f" {texto.lower()} "
+    if sum(1 for w in _MARCADORES_INGLES if w in t) >= 2:
+        return False  # parece inglés
+    if texto.lstrip().startswith(("Here", "I'm", "I ", "Sure", "[", "Note:", "Nota:")):
+        return False
+    return True
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(description="Genera descripciones de locales con Ollama local (gratis)")
@@ -138,13 +154,13 @@ def main():
     parser.add_argument("--hora-fin",  type=int, default=None,           help="Parar a esta hora UTC (ej: 6 para las 6:00 UTC = 8:00 CEST)")
     args = parser.parse_args()
 
-    from datetime import datetime, timedelta
+    from datetime import datetime, timedelta, timezone
     hora_fin = args.hora_fin  # hora UTC en la que parar
 
     # Calcular stop_time al arrancar para manejar cruce de medianoche correctamente
     # (el cron arranca a las 23:00 CEST = 21:00 UTC, debe correr hasta las 06:00 UTC del día siguiente)
     if hora_fin is not None:
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         stop_time = now.replace(hour=hora_fin, minute=0, second=0, microsecond=0)
         if stop_time <= now:
             stop_time += timedelta(days=1)
@@ -159,6 +175,13 @@ def main():
         FROM locales
         WHERE (descripcion IS NULL OR descripcion = '')
           AND slug IS NOT NULL AND slug != ''
+          -- Solo generar si hay >=2 señales reales (evita prosa genérica/duplicada e inventada)
+          AND ( (CASE WHEN direccion IS NOT NULL AND direccion != '' THEN 1 ELSE 0 END)
+              + (CASE WHEN horario IS NOT NULL AND horario != '' THEN 1 ELSE 0 END)
+              + (CASE WHEN terraza = 1 OR outdoor_seating = 1 THEN 1 ELSE 0 END)
+              + (CASE WHEN live_music = 1 THEN 1 ELSE 0 END)
+              + (CASE WHEN instagram IS NOT NULL AND instagram != '' THEN 1 ELSE 0 END)
+              + (CASE WHEN web IS NOT NULL AND web != '' THEN 1 ELSE 0 END) ) >= 2
     """
     params = []
     if args.ciudad:
@@ -182,15 +205,15 @@ def main():
 
     for i, local in enumerate(locales, 1):
         # Parar si hemos llegado a la hora límite
-        if stop_time is not None and datetime.utcnow() >= stop_time:
+        if stop_time is not None and datetime.now(timezone.utc) >= stop_time:
             log.info(f"Hora límite UTC {hora_fin}:00 alcanzada. Parando ({ok} generadas).")
             break
 
         try:
             descripcion = generar_descripcion(local)
 
-            if not descripcion or len(descripcion) < 10:
-                log.warning(f"  [{i}/{len(locales)}] {local['nombre']} → descripción vacía, saltando")
+            if not validar_descripcion(descripcion):
+                log.warning(f"  [{i}/{len(locales)}] {local['nombre']} → descripción inválida (vacía/inglés/corta), saltando")
                 errores += 1
                 continue
 

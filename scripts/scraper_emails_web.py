@@ -210,6 +210,9 @@ def main():
     parser = argparse.ArgumentParser(description="Scraper de emails desde webs de locales")
     parser.add_argument("--limite", type=int, default=LIMITE_DEFECTO)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--incluir-personales", action="store_true",
+                        help="RGPD: por defecto NO se almacenan emails personales (minimización de datos). "
+                             "Activar solo si hay base legal documentada.")
     args = parser.parse_args()
 
     log.info(f"=== Inicio scraper_emails_web | limite={args.limite} dry-run={args.dry_run} ===")
@@ -239,6 +242,10 @@ def main():
             emails = scrape_web(web)  # ahora devuelve lista
             email_prof, email_pers = clasificar_emails(emails if isinstance(emails, list) else ([emails] if emails else []))
 
+            # RGPD: minimización de datos. Por defecto NO almacenamos emails personales.
+            if not args.incluir_personales:
+                email_pers = None
+
             if email_prof or email_pers:
                 tag = f"prof={email_prof or '—'} | pers={email_pers or '—'}"
                 log.info(f"  [{i}/{len(locales)}] {local['nombre']} ({local['ciudad']}) → {tag}")
@@ -251,8 +258,9 @@ def main():
                     if email_pers:
                         updates.append("email_personal = ?")
                         params.append(email_pers)
-                    params.append(local["id"])
-                    d1_run(f"UPDATE locales SET {', '.join(updates)} WHERE id = ?", params)
+                    if updates:
+                        params.append(local["id"])
+                        d1_run(f"UPDATE locales SET {', '.join(updates)} WHERE id = ?", params)
                 ok += 1
             else:
                 log.info(f"  [{i}/{len(locales)}] {local['nombre']} → sin email")
