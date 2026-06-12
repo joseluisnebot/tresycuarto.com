@@ -26,13 +26,9 @@ async function getAuthUser(env, request) {
 }
 
 function isPlanActive(user) {
-  if (user.plan === "pro") {
-    if (!user.plan_expires) return true;
-    return new Date(user.plan_expires) > new Date();
-  }
-  if (!user.trial_inicio) return false;
-  const trialEnd = new Date(new Date(user.trial_inicio).getTime() + 14 * 24 * 60 * 60 * 1000);
-  return trialEnd > new Date();
+  // Modelo gratuito (decidido 2026-06-12): todas las funciones abiertas para todos.
+  // Para reactivar el freemium, restaurar la lógica de plan/trial y el botón "Hazte Pro".
+  return true;
 }
 
 export async function onRequestGet(context) {
