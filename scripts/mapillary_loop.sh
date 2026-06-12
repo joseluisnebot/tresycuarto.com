@@ -16,8 +16,8 @@ CIUDADES=(
   "Leganés" "Móstoles" "Santa Pola" "Torrevieja" "Vinaròs"
 )
 
-export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN}"
-export CLOUDFLARE_ACCOUNT_ID="0c4d9c91bb0f3a4c905545ecc158ec65"
+# Credenciales fuera del repo (CLOUDFLARE_API_TOKEN, MAPILLARY_TOKEN). Ver /root/.tresycuarto_env
+source /root/.tresycuarto_env
 
 LOG_DIR="/root/tresycuarto-sync/logs"
 SCRIPTS_DIR="/root/tresycuarto-sync/scripts"

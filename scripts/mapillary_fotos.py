@@ -7,7 +7,9 @@ Sube la imagen a Cloudflare R2 y actualiza D1.
 import os, sys, time, json, subprocess, tempfile, requests, argparse
 from pathlib import Path
 
-MAPILLARY_TOKEN = "MLY|26676068378748306|aaba4434f5814003d00437af9479c302"
+MAPILLARY_TOKEN = os.environ.get("MAPILLARY_TOKEN", "")
+if not MAPILLARY_TOKEN:
+    raise SystemExit("ERROR: MAPILLARY_TOKEN no definido (ver /root/.tresycuarto_env). Regenerar en https://www.mapillary.com/dashboard/developers")
 R2_BUCKET = "tresycuarto-media"
 R2_PUBLIC = "https://media.tresycuarto.com"
 RADIO_GRADOS = 0.0003  # ~33 metros
