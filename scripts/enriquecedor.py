@@ -18,6 +18,7 @@ import re
 import subprocess
 import tempfile
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -235,60 +236,104 @@ def subir_foto_r2(local_id: str, data: bytes, ext: str) -> str | None:
         os.unlink(tmp_path)
 
 
+# ── Verificación de coincidencia con el nombre del local ───────────────────────
+# Evita atribuir Instagram/web/teléfono de OTROS negocios: lo encontrado debe
+# contener algún token significativo del nombre del local.
+_STOPWORDS_NOMBRE = {
+    "bar", "cafe", "cafeteria", "pub", "resto", "restaurante", "restaurant",
+    "the", "los", "las", "del", "casa", "club", "lounge", "tapas", "cocktail",
+    "cerveceria", "taberna", "bodega", "meson", "pizzeria", "kiosco", "café",
+}
+
+
+def _sin_acentos(s: str) -> str:
+    s = unicodedata.normalize("NFD", s.lower())
+    return "".join(c for c in s if unicodedata.category(c) != "Mn")
+
+
+def _slug_compacto(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", _sin_acentos(s))
+
+
+def _tokens_nombre(nombre: str) -> list[str]:
+    toks = re.split(r"[^a-z0-9]+", _sin_acentos(nombre))
+    return [t for t in toks if len(t) >= 3 and t not in _STOPWORDS_NOMBRE]
+
+
+def nombre_coincide(candidato: str, nombre: str) -> bool:
+    """True si el candidato (handle IG, dominio web…) contiene un token
+    significativo del nombre del local. Conservador: si el nombre solo tiene
+    palabras genéricas/cortas, devuelve False (mejor no asignar que asignar mal)."""
+    toks = _tokens_nombre(nombre)
+    if not toks:
+        return False
+    cand = _slug_compacto(candidato)
+    return any(t in cand for t in toks)
+
+
+def texto_menciona(html: str, nombre: str) -> bool:
+    """True si el contenido de la web menciona algún token significativo del nombre."""
+    toks = _tokens_nombre(nombre)
+    if not toks:
+        return False
+    cuerpo = _slug_compacto(re.sub(r"<[^>]+>", " ", html))
+    return any(t in cuerpo for t in toks)
+
+
 def enriquecer_local(local: dict, dry_run: bool = False) -> dict:
     nombre = local["nombre"]
     ciudad = local["ciudad"]
     cambios = {}
 
-    # Buscar Instagram
+    # Instagram — solo si el handle coincide con el nombre del local
     if not local.get("instagram"):
         html = buscar_duckduckgo(f'"{nombre}" {ciudad} instagram')
         ig = extraer_instagram(html, nombre)
-        if ig:
+        if ig and nombre_coincide(ig, nombre):
             cambios["instagram"] = ig
         time.sleep(8)
 
-    # Buscar web
-    html_web_ddg = ""
+    # Web — solo si el dominio coincide con el nombre del local
+    web_descubierta = None
     if not local.get("web"):
         html_web_ddg = buscar_duckduckgo(f'"{nombre}" bar {ciudad} sitio web')
         web = extraer_web(html_web_ddg)
-        if web:
+        if web and nombre_coincide(web, nombre):
             cambios["web"] = web
+            web_descubierta = web
         time.sleep(8)
 
-    # Determinar URL web a usar (ya existente o recién encontrada)
-    web_url = local.get("web") or cambios.get("web")
+    # URL web a usar: la de confianza que ya tenía, o la descubierta+verificada
+    web_url = local.get("web") or web_descubierta
 
-    # Scrape web del local para teléfono, horario, terraza y foto
+    # Scrape de la web del local para teléfono, horario, terraza y foto
     html_web = ""
     if web_url and (not local.get("telefono") or not local.get("horario") or not local.get("terraza") or not local.get("photo_url")):
         html_web = scrape_web(web_url)
+        # Si la web la descubrimos por DDG y su contenido NO menciona el local,
+        # no es fiable: descartarla y no derivar ningún dato de ella.
+        if web_descubierta and html_web and not texto_menciona(html_web, nombre):
+            cambios.pop("web", None)
+            web_url = local.get("web")
+            html_web = ""
         time.sleep(3)
 
-    # Teléfono: primero en la web, luego en resultados DDG
-    if not local.get("telefono"):
-        tel = None
-        if html_web:
-            tel = extraer_telefono(html_web)
-        if not tel:
-            # Buscar en DDG si no tenemos web o no encontramos nada
-            html_tel = buscar_duckduckgo(f'"{nombre}" {ciudad} teléfono contacto')
-            tel = extraer_telefono(html_tel)
-            time.sleep(8)
+    # Teléfono — SOLO de la web fiable del propio local.
+    # (Se elimina el fallback de búsqueda DDG suelta, que mezclaba teléfonos ajenos.)
+    if not local.get("telefono") and html_web:
+        tel = extraer_telefono(html_web)
         if tel:
             cambios["telefono"] = tel
 
-    # Horario: de la web del local
+    # Horario: de la web fiable del local
     if not local.get("horario") and html_web:
         horario = extraer_horario(html_web)
         if horario:
             cambios["horario"] = horario
 
-    # Terraza: de la web o de snippets DDG (reutilizamos html_web_ddg si lo tenemos)
-    if not local.get("terraza"):
-        texto_check = html_web + html_web_ddg
-        if detectar_terraza(texto_check):
+    # Terraza: keyword en la web fiable del local
+    if not local.get("terraza") and html_web:
+        if detectar_terraza(html_web):
             cambios["terraza"] = 1
 
     # Foto: buscar og:image en la web del local
