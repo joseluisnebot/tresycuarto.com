@@ -4511,5 +4511,1778 @@
       "ruta tardeo Zamora",
       "qué hacer tarde en Zamora"
     ]
+  },
+  {
+    "slug": "tardeo-alfalfa-sevilla",
+    "titulo": "Ruta de tardeo por Alfalfa, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Alfalfa",
+    "intro": "Alfalfa es una de las zonas con más ambiente de tardeo de Sevilla. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Regina",
+        "descripcion": "Bar de tapas con 4,8⭐ (72 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Crapulas",
+        "descripcion": "Bar de tapas con 4,7⭐ (484 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar San Juan de la Palma",
+        "descripcion": "Bar de tapas con 4,6⭐ (419 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Previa",
+        "descripcion": "Bar de tapas con 4,5⭐ (248 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar El Comercio",
+        "descripcion": "Bar de tapas con 4,4⭐ (7430 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Alfalfa Sevilla",
+      "bares Alfalfa Sevilla tarde",
+      "ruta tardeo Alfalfa Sevilla",
+      "qué hacer tarde en Alfalfa"
+    ]
+  },
+  {
+    "slug": "tardeo-museo-sevilla",
+    "titulo": "Ruta de tardeo por Museo, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Museo",
+    "intro": "Si buscas plan de tarde en Museo (Sevilla), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Montana",
+        "descripcion": "Bar de tapas con 4,8⭐ (2241 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar Paradise",
+        "descripcion": "Bar de tapas con 4⭐ (320 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Billy Brunch",
+        "descripcion": "Cafetería con 4,8⭐ (3370 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Galería El Cine",
+        "descripcion": "Cafetería con 4,3⭐ (913 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar El Sendero",
+        "descripcion": "Pub con 4,9⭐ (64 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Museo Sevilla",
+      "bares Museo Sevilla tarde",
+      "ruta tardeo Museo Sevilla",
+      "qué hacer tarde en Museo"
+    ]
+  },
+  {
+    "slug": "tardeo-elcano-los-bermejales-sevilla",
+    "titulo": "Ruta de tardeo por Elcano-Los Bermejales, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Elcano-Los Bermejales",
+    "intro": "Si buscas plan de tarde en Elcano-Los Bermejales (Sevilla), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Café Bar El Moli",
+        "descripcion": "Bar de tapas con 4,8⭐ (3276 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Infanta Sevilla",
+        "descripcion": "Bar de tapas con 4,7⭐ (1885 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cafetería Kaldi",
+        "descripcion": "Cafetería con 4,6⭐ (167 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cafetería-Bar EME'S",
+        "descripcion": "Cafetería con 4,3⭐ (77 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Café Tartessos",
+        "descripcion": "Cafetería con 4,1⭐ (136 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Elcano-Los Bermejales Sevilla",
+      "bares Elcano-Los Bermejales Sevilla tarde",
+      "ruta tardeo Elcano-Los Bermejales Sevilla",
+      "qué hacer tarde en Elcano-Los Bermejales"
+    ]
+  },
+  {
+    "slug": "tardeo-los-remedios-sevilla",
+    "titulo": "Ruta de tardeo por Los Remedios, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Los Remedios",
+    "intro": "Tardeo por Los Remedios, en Sevilla: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El 25 Bodega",
+        "descripcion": "Bar de tapas con 4,8⭐ (603 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Salá",
+        "descripcion": "Bar de tapas con 4,7⭐ (2388 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar-Cafetería Aarón",
+        "descripcion": "Bar de tapas con 4,5⭐ (786 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar La Caprichosa",
+        "descripcion": "Bar de tapas con 4,1⭐ (222 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar El Pique",
+        "descripcion": "Bar de tapas con 4,1⭐ (136 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Los Remedios Sevilla",
+      "bares Los Remedios Sevilla tarde",
+      "ruta tardeo Los Remedios Sevilla",
+      "qué hacer tarde en Los Remedios"
+    ]
+  },
+  {
+    "slug": "tardeo-feria-sevilla",
+    "titulo": "Ruta de tardeo por Feria, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "Feria",
+    "intro": "Feria es una de las zonas con más ambiente de tardeo de Sevilla. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Doctor Bar",
+        "descripcion": "Bar de tapas con 4,8⭐ (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Checkpoint Arcadebar",
+        "descripcion": "Bar de tapas con 4,7⭐ (1183 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cervecería La Salmuera",
+        "descripcion": "Bar de tapas con 4,7⭐ (91 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "M'alegro en verte",
+        "descripcion": "Bar de tapas con 4,7⭐ (20 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar Algabeño",
+        "descripcion": "Bar de tapas con 4,6⭐ (372 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Feria Sevilla",
+      "bares Feria Sevilla tarde",
+      "ruta tardeo Feria Sevilla",
+      "qué hacer tarde en Feria"
+    ]
+  },
+  {
+    "slug": "tardeo-villacerrada-centro-albacete",
+    "titulo": "Ruta de tardeo por Villacerrada-Centro, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Villacerrada-Centro",
+    "intro": "Si buscas plan de tarde en Villacerrada-Centro (Albacete), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Liverpool",
+        "descripcion": "Bar de tapas con 4,3⭐ (1479 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "King",
+        "descripcion": "Bar de tapas con 4,3⭐ (1359 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Donde Siempre",
+        "descripcion": "Bar de tapas con 4,2⭐ (403 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Anubis Coctelería",
+        "descripcion": "Bar de tapas con 4,2⭐ (327 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Alaska",
+        "descripcion": "Bar de tapas con 4,2⭐ (165 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Villacerrada-Centro Albacete",
+      "bares Villacerrada-Centro Albacete tarde",
+      "ruta tardeo Villacerrada-Centro Albacete",
+      "qué hacer tarde en Villacerrada-Centro"
+    ]
+  },
+  {
+    "slug": "tardeo-hospital-albacete",
+    "titulo": "Ruta de tardeo por Hospital, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Hospital",
+    "intro": "Hospital es una de las zonas con más ambiente de tardeo de Albacete. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "De María",
+        "descripcion": "Bar de tapas con 4,4⭐ (180 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Raykel",
+        "descripcion": "Bar de tapas con 4,4⭐ (135 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Santi",
+        "descripcion": "Bar de tapas con 4,1⭐ (82 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "El Labrador",
+        "descripcion": "Bar de tapas con 4⭐ (501 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Míriam",
+        "descripcion": "Cafetería con 5⭐ (25 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Hospital Albacete",
+      "bares Hospital Albacete tarde",
+      "ruta tardeo Hospital Albacete",
+      "qué hacer tarde en Hospital"
+    ]
+  },
+  {
+    "slug": "tardeo-carretas-huerta-marzo-albacete",
+    "titulo": "Ruta de tardeo por Carretas-Huerta Marzo, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Carretas-Huerta Marzo",
+    "intro": "Carretas-Huerta Marzo es una de las zonas con más ambiente de tardeo de Albacete. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "80s",
+        "descripcion": "Bar de tapas con 4,9⭐ (119 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Marimandona",
+        "descripcion": "Bar de tapas con 4,5⭐ (187 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Llilas",
+        "descripcion": "Bar de tapas con 4,5⭐ (60 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Zizú",
+        "descripcion": "Bar de tapas con 4,5⭐ (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bodega La Caprichosa",
+        "descripcion": "Bar de tapas con 4,4⭐ (383 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Carretas-Huerta Marzo Albacete",
+      "bares Carretas-Huerta Marzo Albacete tarde",
+      "ruta tardeo Carretas-Huerta Marzo Albacete",
+      "qué hacer tarde en Carretas-Huerta Marzo"
+    ]
+  },
+  {
+    "slug": "tardeo-industria-albacete",
+    "titulo": "Ruta de tardeo por Industria, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Industria",
+    "intro": "Industria es una de las zonas con más ambiente de tardeo de Albacete. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Luzia",
+        "descripcion": "Bar de tapas con 4,9⭐ (77 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Zenai",
+        "descripcion": "Pub con 4,6⭐ (478 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Fútbol Base",
+        "descripcion": "Pub con 4,4⭐ (357 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Delirio",
+        "descripcion": "Pub con 4,3⭐ (920 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Osluc",
+        "descripcion": "Pub con 4,1⭐ (56 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Industria Albacete",
+      "bares Industria Albacete tarde",
+      "ruta tardeo Industria Albacete",
+      "qué hacer tarde en Industria"
+    ]
+  },
+  {
+    "slug": "tardeo-congo-albacete",
+    "titulo": "Ruta de tardeo por Congo, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Congo",
+    "intro": "Tardeo por Congo, en Albacete: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Entreamigos",
+        "descripcion": "Bar de tapas con 4,2⭐ (1377 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Titis",
+        "descripcion": "Bar de tapas con 4,2⭐ (1258 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Churrería Chocolatería Cuca",
+        "descripcion": "Cafetería con 4,6⭐ (48 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bulevar Andrea",
+        "descripcion": "Cafetería con 4,5⭐ (179 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Churrería la Caracola",
+        "descripcion": "Cafetería con 4,2⭐ (124 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Congo Albacete",
+      "bares Congo Albacete tarde",
+      "ruta tardeo Congo Albacete",
+      "qué hacer tarde en Congo"
+    ]
+  },
+  {
+    "slug": "tardeo-fatima-albacete",
+    "titulo": "Ruta de tardeo por Fátima, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Fátima",
+    "intro": "Fátima es una de las zonas con más ambiente de tardeo de Albacete. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El Pequeño Careta",
+        "descripcion": "Bar de tapas con 4,4⭐ (400 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Zayra",
+        "descripcion": "Bar de tapas con 4,3⭐ (593 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Comodín",
+        "descripcion": "Bar de tapas con 4⭐ (171 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Trios",
+        "descripcion": "Bar de tapas con 4⭐ (47 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Chocolatería El Rincón de Mirella",
+        "descripcion": "Cafetería con 4,6⭐ (510 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Fátima Albacete",
+      "bares Fátima Albacete tarde",
+      "ruta tardeo Fátima Albacete",
+      "qué hacer tarde en Fátima"
+    ]
+  },
+  {
+    "slug": "tardeo-austrias-madrid",
+    "titulo": "Ruta de tardeo por Austrias, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Austrias",
+    "intro": "Tardeo por Austrias, en Madrid: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Alchemist 1967",
+        "descripcion": "Bar de tapas con 5⭐ (427 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Barra",
+        "descripcion": "Bar de tapas con 4,5⭐ (1237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Antiguo Café Berlín",
+        "descripcion": "Cafetería con 4,5⭐ (1040 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Astoria",
+        "descripcion": "Cafetería con 4,4⭐ (114 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Gran Café de Madrid",
+        "descripcion": "Cafetería con 4,4⭐ (43 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Madrid el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Austrias Madrid",
+      "bares Austrias Madrid tarde",
+      "ruta tardeo Austrias Madrid",
+      "qué hacer tarde en Austrias"
+    ]
+  },
+  {
+    "slug": "tardeo-trafalgar-madrid",
+    "titulo": "Ruta de tardeo por Trafalgar, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Trafalgar",
+    "intro": "Tardeo por Trafalgar, en Madrid: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "80/20 Vinos Bar",
+        "descripcion": "Bar de tapas con 4,7⭐ (511 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar Amor",
+        "descripcion": "Bar de tapas con 4,6⭐ (899 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Así sí",
+        "descripcion": "Bar de tapas con 4,5⭐ (157 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cervecería Carril",
+        "descripcion": "Bar de tapas con 4,3⭐ (43 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Gato",
+        "descripcion": "Bar de tapas con 4,2⭐ (37 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Madrid el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Trafalgar Madrid",
+      "bares Trafalgar Madrid tarde",
+      "ruta tardeo Trafalgar Madrid",
+      "qué hacer tarde en Trafalgar"
+    ]
+  },
+  {
+    "slug": "tardeo-berruguete-madrid",
+    "titulo": "Ruta de tardeo por Berruguete, Madrid",
+    "ciudad": "Madrid",
+    "ciudad_slug": "madrid",
+    "barrio": "Berruguete",
+    "intro": "Si buscas plan de tarde en Berruguete (Madrid), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Baranzo",
+        "descripcion": "Bar de tapas con 4,8⭐ (3846 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar La Carreta",
+        "descripcion": "Cafetería con 4,6⭐ (50 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar La Torre",
+        "descripcion": "Cafetería con 4,4⭐ (95 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar Minuto",
+        "descripcion": "Cafetería con 4,1⭐ (454 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar El Soto",
+        "descripcion": "Pub con 4,9⭐ (38 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Madrid el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Berruguete Madrid",
+      "bares Berruguete Madrid tarde",
+      "ruta tardeo Berruguete Madrid",
+      "qué hacer tarde en Berruguete"
+    ]
+  },
+  {
+    "slug": "tardeo-el-santo-almeria",
+    "titulo": "Ruta de tardeo por El Santo, Almería",
+    "ciudad": "Almería",
+    "ciudad_slug": "almeria",
+    "barrio": "El Santo",
+    "intro": "Tardeo por El Santo, en Almería: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Barea",
+        "descripcion": "Bar de tapas con 4,2⭐ (1126 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Alcazar",
+        "descripcion": "Bar de tapas con 4,1⭐ (876 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar Habibi",
+        "descripcion": "Bar de tapas con 4,1⭐ (310 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Amorino",
+        "descripcion": "Cafetería con 4,7⭐ (1073 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Dulce Alianza",
+        "descripcion": "Cafetería con 4⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Almería el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo El Santo Almería",
+      "bares El Santo Almería tarde",
+      "ruta tardeo El Santo Almería",
+      "qué hacer tarde en El Santo"
+    ]
+  },
+  {
+    "slug": "tardeo-los-depositos-almeria",
+    "titulo": "Ruta de tardeo por Los Depósitos, Almería",
+    "ciudad": "Almería",
+    "ciudad_slug": "almeria",
+    "barrio": "Los Depósitos",
+    "intro": "Los Depósitos es una de las zonas con más ambiente de tardeo de Almería. Te proponemos 4 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Cafe MITICO",
+        "descripcion": "Cafetería con 4,7⭐ (920 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Cafe Samba Beach",
+        "descripcion": "Cafetería con 4,6⭐ (408 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cafe LABOCANA",
+        "descripcion": "Cafetería con 4,6⭐ (38 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cafe KORTY",
+        "descripcion": "Cafetería con 4,1⭐ (272 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Almería el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Los Depósitos Almería",
+      "bares Los Depósitos Almería tarde",
+      "ruta tardeo Los Depósitos Almería",
+      "qué hacer tarde en Los Depósitos"
+    ]
+  },
+  {
+    "slug": "tardeo-la-ribera-barcelona",
+    "titulo": "Ruta de tardeo por la Ribera, Barcelona",
+    "ciudad": "Barcelona",
+    "ciudad_slug": "barcelona",
+    "barrio": "la Ribera",
+    "intro": "Tardeo por la Ribera, en Barcelona: esta ruta recorre 4 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Sauvage",
+        "descripcion": "Bar de tapas con 4,2⭐ (42 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar del Pla",
+        "descripcion": "Bar de tapas con 4,2⭐ (38 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Alsur Café (El Born)",
+        "descripcion": "Cafetería con 4,2⭐ (37 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Sucre Cremat -  Autèntica Crema Catalana",
+        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Barcelona el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo la Ribera Barcelona",
+      "bares la Ribera Barcelona tarde",
+      "ruta tardeo la Ribera Barcelona",
+      "qué hacer tarde en la Ribera"
+    ]
+  },
+  {
+    "slug": "tardeo-ensanche-centro-malaga",
+    "titulo": "Ruta de tardeo por Ensanche Centro, Málaga",
+    "ciudad": "Málaga",
+    "ciudad_slug": "malaga",
+    "barrio": "Ensanche Centro",
+    "intro": "Tardeo por Ensanche Centro, en Málaga: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La Fábrica",
+        "descripcion": "Bar de tapas con 4,3⭐ (48 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Boston",
+        "descripcion": "Pub con 4,7⭐ (46 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "87 Fusión Tapas and Drinks",
+        "descripcion": "Pub con 4,3⭐ (45 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Antigua Casa de Guardia",
+        "descripcion": "Pub con 4,2⭐ (36 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "PicNic",
+        "descripcion": "Pub con 4⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Málaga el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Ensanche Centro Málaga",
+      "bares Ensanche Centro Málaga tarde",
+      "ruta tardeo Ensanche Centro Málaga",
+      "qué hacer tarde en Ensanche Centro"
+    ]
+  },
+  {
+    "slug": "tardeo-abando-bilbao",
+    "titulo": "Ruta de tardeo por Abando, Bilbao",
+    "ciudad": "Bilbao",
+    "ciudad_slug": "bilbao",
+    "barrio": "Abando",
+    "intro": "Si buscas plan de tarde en Abando (Bilbao), aquí tienes 4 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "ARVO Coffee & Plants",
+        "descripcion": "Cafetería con 4,5⭐ (46 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Rockade",
+        "descripcion": "Cafetería con 4,4⭐ (40 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Attico 14",
+        "descripcion": "Cafetería con 4,2⭐ (39 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Crazy Horse",
+        "descripcion": "Pub con 4,6⭐ (46 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Bilbao el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Abando Bilbao",
+      "bares Abando Bilbao tarde",
+      "ruta tardeo Abando Bilbao",
+      "qué hacer tarde en Abando"
+    ]
+  },
+  {
+    "slug": "tardeo-ciutat-vella-valencia",
+    "titulo": "Ruta de tardeo por Ciutat Vella, Valencia",
+    "ciudad": "Valencia",
+    "ciudad_slug": "valencia",
+    "barrio": "Ciutat Vella",
+    "intro": "Tardeo por Ciutat Vella, en Valencia: esta ruta recorre 5 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Starbucks",
+        "descripcion": "Cafetería con 4,8⭐ (47 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "News & Coffee",
+        "descripcion": "Cafetería con 4,4⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Horchatería Daniel",
+        "descripcion": "Cafetería con 4,4⭐ (43 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Café Lisboa",
+        "descripcion": "Cafetería con 4,1⭐ (38 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Emblematic",
+        "descripcion": "Cafetería con 4⭐ (33 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Valencia el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Ciutat Vella Valencia",
+      "bares Ciutat Vella Valencia tarde",
+      "ruta tardeo Ciutat Vella Valencia",
+      "qué hacer tarde en Ciutat Vella"
+    ]
+  },
+  {
+    "slug": "tardeo-arrancapins-valencia",
+    "titulo": "Ruta de tardeo por Arrancapins, Valencia",
+    "ciudad": "Valencia",
+    "ciudad_slug": "valencia",
+    "barrio": "Arrancapins",
+    "intro": "Tardeo por Arrancapins, en Valencia: esta ruta recorre 4 de los bares mejor valorados del barrio para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Casalla",
+        "descripcion": "Bar de tapas con 4,3⭐ (44 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "ROGEL",
+        "descripcion": "Cafetería con 4,3⭐ (46 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Espai Llimera",
+        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Daily Bistro",
+        "descripcion": "Cafetería con 4,2⭐ (32 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Valencia el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Arrancapins Valencia",
+      "bares Arrancapins Valencia tarde",
+      "ruta tardeo Arrancapins Valencia",
+      "qué hacer tarde en Arrancapins"
+    ]
+  },
+  {
+    "slug": "tardeo-russafa-valencia",
+    "titulo": "Ruta de tardeo por Russafa, Valencia",
+    "ciudad": "Valencia",
+    "ciudad_slug": "valencia",
+    "barrio": "Russafa",
+    "intro": "Russafa es una de las zonas con más ambiente de tardeo de Valencia. Te proponemos 4 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Vermudez",
+        "descripcion": "Bar de tapas con 4,2⭐ (36 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "The wine gallery",
+        "descripcion": "Bar de tapas con 4⭐ (43 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Coffee & Bastard Kitchen",
+        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Syra Coffee",
+        "descripcion": "Cafetería con 4⭐ (33 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Valencia el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Russafa Valencia",
+      "bares Russafa Valencia tarde",
+      "ruta tardeo Russafa Valencia",
+      "qué hacer tarde en Russafa"
+    ]
+  },
+  {
+    "slug": "tardeo-romareda-zaragoza",
+    "titulo": "Ruta de tardeo por Romareda, Zaragoza",
+    "ciudad": "Zaragoza",
+    "ciudad_slug": "zaragoza",
+    "barrio": "Romareda",
+    "intro": "Romareda es una de las zonas con más ambiente de tardeo de Zaragoza. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "El Boticario",
+        "descripcion": "Cafetería con 4,2⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "The Boss",
+        "descripcion": "Cafetería con 4,2⭐ (43 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Ibarrola",
+        "descripcion": "Cafetería con 4,2⭐ (40 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Mr. Dumbo",
+        "descripcion": "Pub con 4,2⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Malteadora",
+        "descripcion": "Pub con 4,1⭐ (33 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Zaragoza el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Romareda Zaragoza",
+      "bares Romareda Zaragoza tarde",
+      "ruta tardeo Romareda Zaragoza",
+      "qué hacer tarde en Romareda"
+    ]
+  },
+  {
+    "slug": "tardeo-magdalena-granada",
+    "titulo": "Ruta de tardeo por Magdalena, Granada",
+    "ciudad": "Granada",
+    "ciudad_slug": "granada",
+    "barrio": "Magdalena",
+    "intro": "Magdalena es una de las zonas con más ambiente de tardeo de Granada. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Contteo Pub",
+        "descripcion": "Bar de tapas con 4⭐ (35 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Qarmita Cafebreria",
+        "descripcion": "Cafetería con 4,7⭐ (50 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Alhambra",
+        "descripcion": "Cafetería con 4,4⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Dulce y Salado",
+        "descripcion": "Cafetería con 4,1⭐ (34 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Finca Coffee",
+        "descripcion": "Cafetería con 4⭐ (34 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Granada el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Magdalena Granada",
+      "bares Magdalena Granada tarde",
+      "ruta tardeo Magdalena Granada",
+      "qué hacer tarde en Magdalena"
+    ]
+  },
+  {
+    "slug": "tardeo-pajaritos-granada",
+    "titulo": "Ruta de tardeo por Pajaritos, Granada",
+    "ciudad": "Granada",
+    "ciudad_slug": "granada",
+    "barrio": "Pajaritos",
+    "intro": "Pajaritos es una de las zonas con más ambiente de tardeo de Granada. Te proponemos 4 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Cafe-Bar Mami",
+        "descripcion": "Bar de tapas con 4,5⭐ (39 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Antonio Pérez Copas",
+        "descripcion": "Bar de tapas con 4,4⭐ (45 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cafetería Amelia",
+        "descripcion": "Cafetería con 4,3⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar Los Pipos",
+        "descripcion": "Pub con 4,7⭐ (45 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Granada el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Pajaritos Granada",
+      "bares Pajaritos Granada tarde",
+      "ruta tardeo Pajaritos Granada",
+      "qué hacer tarde en Pajaritos"
+    ]
+  },
+  {
+    "slug": "tardeo-o-ensanche-la-coruna",
+    "titulo": "Ruta de tardeo por O Ensanche, La Coruña",
+    "ciudad": "La Coruña",
+    "ciudad_slug": "la-coruna",
+    "barrio": "O Ensanche",
+    "intro": "Si buscas plan de tarde en O Ensanche (La Coruña), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "CHUORE (Churros & More...)",
+        "descripcion": "Cafetería con 4,6⭐ (55 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café Casino",
+        "descripcion": "Cafetería con 4,3⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "A Taberna do Bispo",
+        "descripcion": "Pub con 4,4⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "A Taberna do Bispo",
+        "descripcion": "Pub con 4,3⭐ (40 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "A Borriquita de Belém",
+        "descripcion": "Pub con 4,2⭐ (43 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En La Coruña el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo O Ensanche La Coruña",
+      "bares O Ensanche La Coruña tarde",
+      "ruta tardeo O Ensanche La Coruña",
+      "qué hacer tarde en O Ensanche"
+    ]
+  },
+  {
+    "slug": "tardeo-distrito-i-alcala-de-henares",
+    "titulo": "Ruta de tardeo por Distrito I, Alcalá de Henares",
+    "ciudad": "Alcalá de Henares",
+    "ciudad_slug": "alcala-de-henares",
+    "barrio": "Distrito I",
+    "intro": "Distrito I es una de las zonas con más ambiente de tardeo de Alcalá de Henares. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Las Fronteras",
+        "descripcion": "Bar de tapas con 4,7⭐ (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Ruina",
+        "descripcion": "Bar de tapas con 4,6⭐ (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Marbella",
+        "descripcion": "Bar de tapas con 4,6⭐ (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Whelans Irish Pub",
+        "descripcion": "Bar de tapas con 4,5⭐ (1027 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "TDK",
+        "descripcion": "Bar de tapas con 4,4⭐ (51 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Alcalá de Henares el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Distrito I Alcalá de Henares",
+      "bares Distrito I Alcalá de Henares tarde",
+      "ruta tardeo Distrito I Alcalá de Henares",
+      "qué hacer tarde en Distrito I"
+    ]
+  },
+  {
+    "slug": "tardeo-san-isidro-alcala-de-henares",
+    "titulo": "Ruta de tardeo por San Isidro, Alcalá de Henares",
+    "ciudad": "Alcalá de Henares",
+    "ciudad_slug": "alcala-de-henares",
+    "barrio": "San Isidro",
+    "intro": "San Isidro es una de las zonas con más ambiente de tardeo de Alcalá de Henares. Te proponemos 4 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "London Bar",
+        "descripcion": "Bar de tapas con 4,2⭐ (830 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café-Bar Macondo",
+        "descripcion": "Cafetería con 4,3⭐ (1754 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Café Hemispherio",
+        "descripcion": "Cafetería con 4,1⭐ (3371 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Café-bar Teide",
+        "descripcion": "Pub con 4,5⭐ (582 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Alcalá de Henares el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo San Isidro Alcalá de Henares",
+      "bares San Isidro Alcalá de Henares tarde",
+      "ruta tardeo San Isidro Alcalá de Henares",
+      "qué hacer tarde en San Isidro"
+    ]
+  },
+  {
+    "slug": "tardeo-ensanche-santander",
+    "titulo": "Ruta de tardeo por Ensanche, Santander",
+    "ciudad": "Santander",
+    "ciudad_slug": "santander",
+    "barrio": "Ensanche",
+    "intro": "Si buscas plan de tarde en Ensanche (Santander), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Sala Niágara",
+        "descripcion": "Bar de tapas con 4⭐ (37 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Chocolateria Aliva",
+        "descripcion": "Cafetería con 4,1⭐ (43 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Wowble!",
+        "descripcion": "Cafetería con 4,1⭐ (42 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Bar Pacho",
+        "descripcion": "Pub con 4,5⭐ (45 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "La Fábrica craft bar",
+        "descripcion": "Pub con 4,3⭐ (41 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Santander el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Ensanche Santander",
+      "bares Ensanche Santander tarde",
+      "ruta tardeo Ensanche Santander",
+      "qué hacer tarde en Ensanche"
+    ]
+  },
+  {
+    "slug": "tardeo-perines-santander",
+    "titulo": "Ruta de tardeo por Perines, Santander",
+    "ciudad": "Santander",
+    "ciudad_slug": "santander",
+    "barrio": "Perines",
+    "intro": "Perines es una de las zonas con más ambiente de tardeo de Santander. Te proponemos 4 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Picos de Europa",
+        "descripcion": "Cafetería con 4,2⭐ (32 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Tintoría del Quebec",
+        "descripcion": "Pub con 4,2⭐ (42 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cervecería Ateka",
+        "descripcion": "Pub con 4,2⭐ (40 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Café&Pub La Comedia",
+        "descripcion": "Pub con 4,1⭐ (35 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Santander el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Perines Santander",
+      "bares Perines Santander tarde",
+      "ruta tardeo Perines Santander",
+      "qué hacer tarde en Perines"
+    ]
+  },
+  {
+    "slug": "tardeo-calafell-platja-tarragona",
+    "titulo": "Ruta de tardeo por Calafell Platja, Tarragona",
+    "ciudad": "Tarragona",
+    "ciudad_slug": "tarragona",
+    "barrio": "Calafell Platja",
+    "intro": "Si buscas plan de tarde en Calafell Platja (Tarragona), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Sweet Karaoke",
+        "descripcion": "Bar de tapas con 4,3⭐ (44 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Sammy’s",
+        "descripcion": "Bar de tapas con 4,3⭐ (39 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Biblioteca",
+        "descripcion": "Bar de tapas con 4,3⭐ (36 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "The Gold Harvest",
+        "descripcion": "Bar de tapas con 4,2⭐ (45 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "The New Orleans",
+        "descripcion": "Bar de tapas con 4,2⭐ (41 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Tarragona el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Calafell Platja Tarragona",
+      "bares Calafell Platja Tarragona tarde",
+      "ruta tardeo Calafell Platja Tarragona",
+      "qué hacer tarde en Calafell Platja"
+    ]
   }
 ]
