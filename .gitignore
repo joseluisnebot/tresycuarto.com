@@ -7,3 +7,5 @@ logs/
 .claude/
 .wrangler/
 data/locales-seo.json
+
+tsconfig.tsbuildinfo
