@@ -24,7 +24,9 @@ from pathlib import Path
 # ── Configuración ─────────────────────────────────────────────────────────────
 
 CF_ACCOUNT = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
-CF_TOKEN   = os.environ.get("CLOUDFLARE_API_TOKEN",  "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix")
+CF_TOKEN   = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+if not CF_TOKEN:
+    raise SystemExit("ERROR: CLOUDFLARE_API_TOKEN no definido (ver /root/.tresycuarto_env)")
 D1_DB      = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_URL     = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d1/database/{D1_DB}/query"
 

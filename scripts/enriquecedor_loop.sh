@@ -19,8 +19,8 @@ CIUDADES=(
 SCRIPTS_DIR="$(dirname "$0")"
 LOG_DIR="$SCRIPTS_DIR/../logs"
 
-export CLOUDFLARE_API_TOKEN="KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix"
-export CLOUDFLARE_ACCOUNT_ID="0c4d9c91bb0f3a4c905545ecc158ec65"
+# Credenciales fuera del repo (token master). Ver /root/.tresycuarto_env
+source /root/.tresycuarto_env
 
 mkdir -p "$LOG_DIR"
 

@@ -8,7 +8,9 @@ import os
 import json, math, urllib.request, os, sys, argparse
 from datetime import datetime, timedelta
 
-API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix")
+API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+if not API_TOKEN:
+    raise SystemExit("ERROR: CLOUDFLARE_API_TOKEN no definido (ver /root/.tresycuarto_env)")
 ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID      = "458672aa-392f-4767-8d2b-926406628ba0"
 API_URL    = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/d1/database/{DB_ID}/query"

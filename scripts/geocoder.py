@@ -20,7 +20,9 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-CF_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "KbzsvBydROCvDbDtOab3dJHV_6w5REZhPnJkheix")
+CF_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+if not CF_API_TOKEN:
+    raise SystemExit("ERROR: CLOUDFLARE_API_TOKEN no definido (ver /root/.tresycuarto_env)")
 CF_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 D1_DB_ID = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_URL = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT_ID}/d1/database/{D1_DB_ID}/query"

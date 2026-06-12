@@ -22,7 +22,9 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-CLOUDFLARE_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "WCvwZkoXOw_qE6onJYlsVrqupNoIt3msrgo2WGIM")
+CLOUDFLARE_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+if not CLOUDFLARE_API_TOKEN:
+    raise SystemExit("ERROR: CLOUDFLARE_API_TOKEN no definido (ver /root/.tresycuarto_env)")
 CLOUDFLARE_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_API = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/d1/database/{DB_ID}/query"
