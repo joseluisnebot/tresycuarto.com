@@ -193,21 +193,22 @@ function buildBold(local, fotos, redesArr, eventos, paleta, sections) {
     ? local.direccion.replace(new RegExp(`,?\\s*${local.ciudad}\\s*$`, "i"), "").trim()
     : "";
 
+  // Contacto en rejilla de iconos (firma estructural del Bold)
   const linksHtml = links.map(l => `
     <a href="${esc(l.url)}" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:0.875rem;padding:0.9rem 1rem;background:${l.cta ? accent : bg3};border-left:3px solid ${l.cta ? "transparent" : accent};border-radius:0 0.85rem 0.85rem 0;text-decoration:none;color:${l.cta ? "#fff" : "#E2E8F0"};font-size:0.92rem;font-weight:600;transition:transform .12s,background .12s"
-       onmouseover="this.style.transform='translateX(3px)'" onmouseout="this.style.transform='translateX(0)'">
-      <span style="font-size:1.15rem;flex-shrink:0;opacity:0.9">${l.icon}</span>
-      <span style="flex:1">${esc(l.label)}</span>
-      <span style="color:${l.cta?"rgba(255,255,255,0.6)":"#475569"};font-size:0.8rem">↗</span>
+       style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.45rem;padding:1.1rem 0.6rem;background:${l.cta ? accent : bg3};border:1px solid ${l.cta ? accent : "#2D3748"};border-radius:0.95rem;text-decoration:none;color:${l.cta ? "#fff" : "#E2E8F0"};text-align:center;transition:transform .12s"
+       onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+      <span style="font-size:1.55rem;line-height:1">${l.icon}</span>
+      <span style="font-size:0.72rem;font-weight:600;color:${l.cta?"rgba(255,255,255,0.95)":"#CBD5E1"};max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(l.label)}</span>
     </a>`).join("");
 
   const label = txt => `<h2 style="font-size:0.68rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#475569;margin-bottom:0.875rem;padding-left:0.25rem">${txt}</h2>`;
 
+  // Galería horizontal con scroll-snap (firma estructural del Bold)
   const galeriaHtml = sections.includes("galeria") && fotos.length ? `
     <section style="padding:2rem 0">${label("Fotos")}
-      <div style="display:grid;grid-template-columns:repeat(${fotos.length===1?1:fotos.length===2?2:3},1fr);gap:4px;border-radius:0.85rem;overflow:hidden">
-        ${fotos.map(f=>`<img src="${esc(f)}" alt="${esc(local.nombre)}" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">`).join("")}
+      <div style="display:flex;gap:0.6rem;overflow-x:auto;padding-bottom:0.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
+        ${fotos.map(f=>`<img src="${esc(f)}" alt="${esc(local.nombre)}" loading="lazy" style="height:230px;min-width:${fotos.length===1?"100%":"78%"};object-fit:cover;border-radius:0.85rem;flex-shrink:0;scroll-snap-align:center">`).join("")}
       </div>
     </section>` : "";
 
@@ -263,7 +264,7 @@ function buildBold(local, fotos, redesArr, eventos, paleta, sections) {
     ${local.descripcion?`<section style="padding:2rem 0;border-bottom:1px solid #1F2937"><p style="font-size:1rem;color:#94A3B8;line-height:1.75">${esc(local.descripcion)}</p></section>`:""}
     ${galeriaHtml}${eventosHtml}${mapaHtml}
     ${links.length?`<section style="padding:2rem 0;border-top:1px solid #1F2937">
-      ${label("Contacto & redes")}<div style="display:flex;flex-direction:column;gap:0.45rem">${linksHtml}</div>
+      ${label("Contacto & redes")}<div style="display:grid;grid-template-columns:repeat(${links.length<=2?2:3},1fr);gap:0.6rem">${linksHtml}</div>
     </section>`:""}
     <footer style="padding:2rem 0;text-align:center;border-top:1px solid #1F2937">
       <a href="https://tresycuarto.com" style="font-size:0.78rem;color:#334155;text-decoration:none;font-weight:600">tres<span style="color:${accent}">y</span>cuarto · El tardeo en España</a>
