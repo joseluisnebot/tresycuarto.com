@@ -9,3 +9,5 @@ logs/
 data/locales-seo.json
 
 tsconfig.tsbuildinfo
+__pycache__/
+*.pyc
