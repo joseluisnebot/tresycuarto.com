@@ -4171,5 +4171,345 @@
       "qué hacer tarde Soria",
       "tardeo en Soria"
     ]
+  },
+  {
+    "slug": "tardeo-alcala-de-henares-centro",
+    "titulo": "Ruta de tardeo por el centro de Alcalá de Henares",
+    "ciudad": "Alcalá de Henares",
+    "ciudad_slug": "alcala-de-henares",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Alcalá de Henares, esta ruta por el centro te lleva por 5 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Las Fronteras",
+        "descripcion": "Bar de tapas con 4,7⭐ (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "La Ruina",
+        "descripcion": "Bar de tapas con 4,6⭐ (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Marbella",
+        "descripcion": "Bar de tapas con 4,6⭐ (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Oja Cafe Bubble Tea Shop",
+        "descripcion": "Cafetería con 5⭐ (314 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "San Diego Coffee Corner",
+        "descripcion": "Cafetería con 4,7⭐ (298 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Alcalá de Henares el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Alcalá de Henares",
+      "bares Alcalá de Henares tarde",
+      "ruta tardeo Alcalá de Henares",
+      "qué hacer tarde en Alcalá de Henares"
+    ]
+  },
+  {
+    "slug": "tardeo-arona-centro",
+    "titulo": "Ruta de tardeo por el centro de Arona",
+    "ciudad": "Arona",
+    "ciudad_slug": "arona",
+    "barrio": "Centro",
+    "intro": "Una tarde por Arona da para mucho. Hemos elegido 5 de los bares mejor puntuados del centro para montar una ruta de tardeo cómoda y sin prisa, ideal para salir con amigos.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Tramps, The King of Clubs",
+        "descripcion": "Bar de tapas con 4,1⭐ (40 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Club swingers Mystique",
+        "descripcion": "Bar de tapas con 4,1⭐ (40 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Sushi Amore",
+        "descripcion": "Bar de tapas con 4,1⭐ (34 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Blend Coffee & Food",
+        "descripcion": "Cafetería con 4,6⭐ (54 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Inner you",
+        "descripcion": "Cafetería con 4,6⭐ (48 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Arona el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Arona",
+      "bares Arona tarde",
+      "ruta tardeo Arona",
+      "qué hacer tarde en Arona"
+    ]
+  },
+  {
+    "slug": "tardeo-benidorm-centro",
+    "titulo": "Ruta de tardeo por el centro de Benidorm",
+    "ciudad": "Benidorm",
+    "ciudad_slug": "benidorm",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Benidorm, esta ruta por el centro te lleva por 4 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Daynight",
+        "descripcion": "Bar de tapas con 4,1⭐ (41 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "My Bakery",
+        "descripcion": "Cafetería con 4,5⭐ (41 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cafetería Durá",
+        "descripcion": "Cafetería con 4,4⭐ (39 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Café Belroy",
+        "descripcion": "Cafetería con 4,3⭐ (47 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Benidorm el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Benidorm",
+      "bares Benidorm tarde",
+      "ruta tardeo Benidorm",
+      "qué hacer tarde en Benidorm"
+    ]
+  },
+  {
+    "slug": "tardeo-ciudad-real-centro",
+    "titulo": "Ruta de tardeo por el centro de Ciudad Real",
+    "ciudad": "Ciudad Real",
+    "ciudad_slug": "ciudad-real",
+    "barrio": "Centro",
+    "intro": "El centro de Ciudad Real es perfecto para el tardeo: terrazas, tapeo y ambiente de tarde. Te proponemos una ruta por 5 bares con muy buena valoración para aprovechar la media tarde de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar El Gordo",
+        "descripcion": "Bar de tapas con 4⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Cafetería Gran Vía",
+        "descripcion": "Cafetería con 4,1⭐ (41 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Café de la Glorieta",
+        "descripcion": "Cafetería con 4⭐ (38 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cafetería Bar La Poma",
+        "descripcion": "Cafetería con 4⭐ (34 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Pub Grandma Club Hookahs",
+        "descripcion": "Pub con 4,1⭐ (34 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Ciudad Real el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Ciudad Real",
+      "bares Ciudad Real tarde",
+      "ruta tardeo Ciudad Real",
+      "qué hacer tarde en Ciudad Real"
+    ]
+  },
+  {
+    "slug": "tardeo-getafe-centro",
+    "titulo": "Ruta de tardeo por el centro de Getafe",
+    "ciudad": "Getafe",
+    "ciudad_slug": "getafe",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Getafe, esta ruta por el centro te lleva por 4 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Toledo",
+        "descripcion": "Bar de tapas con 4⭐ (33 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Starbucks",
+        "descripcion": "Cafetería con 4,7⭐ (47 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "El Violín",
+        "descripcion": "Cafetería con 4,2⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Churrería San Segundo",
+        "descripcion": "Cafetería con 4,2⭐ (42 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Getafe el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Getafe",
+      "bares Getafe tarde",
+      "ruta tardeo Getafe",
+      "qué hacer tarde en Getafe"
+    ]
+  },
+  {
+    "slug": "tardeo-zamora-centro",
+    "titulo": "Ruta de tardeo por el centro de Zamora",
+    "ciudad": "Zamora",
+    "ciudad_slug": "zamora",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Zamora, esta ruta por el centro te lleva por 5 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa a media tarde.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Antojo Café & Bar",
+        "descripcion": "Bar de tapas con 4,4⭐ (46 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Café Loft",
+        "descripcion": "Cafetería con 4,4⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Gran Café Jalisco",
+        "descripcion": "Cafetería con 4,1⭐ (36 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Ocellum Tap Station",
+        "descripcion": "Pub con 4,1⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Bar La Plaza",
+        "descripcion": "Pub con 4⭐ (39 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Zamora el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear por el centro y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Zamora",
+      "bares Zamora tarde",
+      "ruta tardeo Zamora",
+      "qué hacer tarde en Zamora"
+    ]
   }
 ]
