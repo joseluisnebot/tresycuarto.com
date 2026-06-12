@@ -109,7 +109,36 @@ npx wrangler pages deploy out --project-name=tresycuarto --branch=main
 - Local CT: /root/tresycuarto-sync/  ← ÚNICO lugar de trabajo
 - Local VM: /home/ubuntu/tresycuarto/ ← OBSOLETO, ignorar
 
-## Estado actual (26/03/2026)
-- 64 ciudades activas con páginas, contenido y rutas configuradas
-- Fotos Google Places: 1.929/40.707 locales (cron 4:00, 500/día, prioridad Semana Santa)
-- 10 rutas de tardeo en data/rutas.json (Madrid, Barcelona, Valencia, Sevilla)
+## Credenciales de scripts/crons — `/root/.tresycuarto_env`
+**Todos los scripts y crons cargan sus credenciales de `/root/.tresycuarto_env`** (chmod 600, FUERA del repo). Contiene `CLOUDFLARE_API_TOKEN` (master), `CLOUDFLARE_ACCOUNT_ID`, `ADMIN_TOKEN`, `MAPILLARY_TOKEN`. Los `.py` hacen *fail-fast* si falta la env var; los wrappers `.sh` hacen `source /root/.tresycuarto_env`. **Nunca hardcodear tokens en el repo** (es público).
+
+### Credenciales MUERTAS (a 12/06/2026) — verificar antes de usar
+- **Mapillary**: token caducado (OAuthException) → era la mayor fuente de fotos (12.573). Regenerar en mapillary.com y pegar en `/root/.tresycuarto_env`. El loop (`mapillary_loop.sh`) no está en cron.
+- **Google Search Console + Gmail**: el proyecto GCP `gmail-api-claude-access` está deshabilitado → SA da `invalid_grant`, Gmail MCP da `disabled_client`. **Los datos de GSC llegan como CSV a `/root/inbox/`** (coger el timestamp más alto). Detalle: memoria `project_search_console.md`.
+
+## Flujo de propietario (locales)
+- **Modelo GRATUITO** (decidido 12/06/2026): todas las funciones abiertas a todos. `isPlanActive()` devuelve `true` en `functions/api/local/{fotos,menu,eventos,stats}.js`. No hay botón "Hazte Pro". Para reactivar freemium: restaurar la lógica plan/trial (comentada) + UI real + checkout Stripe (que ya existe).
+- **Claims AUTO-OTORGADOS**: al reclamar una ficha existente (`/api/solicitud`, `tipo_solicitud=claim`) se marca `claimed=1` y se envía el email de registro al instante (sin admin). Aviso a Jose Luis de cada uno. Local nuevo por solicitud → admin lo aprueba (`/api/admin/solicitud`) y entonces envía el email de registro.
+- **Verificación de email para EDITAR**: el dueño entra y ve su panel sin verificar, pero los POST/PUT/DELETE de perfil/fotos/menu/eventos/tema devuelven 403 si `verified=0`. GET abierto. Endpoint `/api/local/reenviar-verificacion` + botón en el dashboard.
+- **Plantillas de la ficha pública** (`/[slug]`, `functions/[slug].js`): 3 distintas — **Fresh** (link-in-bio, botones verticales), **Bold** (inmersiva oscura, galería horizontal + contacto en rejilla), **Elegante** (web de restaurante, serif). Helpers compartidos: `ratingStars`, `barraAcciones` (Llamar/Cómo llegar fija móvil), `shareBtn`, `jsonLd`. Color elegible por el dueño.
+
+## Eventos
+- Tabla `eventos_geo` (scraper) + `eventos` (de dueños). Scraper `scraper_eventos.py` (cron 3,15) → solo ingiere eventos **promocionables** (`es_promocionable`: descarta charlas/talleres/visitas/online; mantiene lo que atrae público). Limpieza 12/06: 500 eventos no-promocionables desactivados (`activo=0`).
+- API `/api/eventos`: filtro `?ciudad=` y **búsqueda `?q=`**; devuelve lista de ciudades con conteo. Página `/eventos`: buscador de texto + botones de ciudad dinámicos.
+
+## SEO (claves — ver memoria `project_search_console.md`)
+- **Insight GSC**: ~345k impr/3 meses, CTR 0,68%. Las búsquedas de MARCA de un bar no convierten (Google muestra la ficha del propio bar). El oro son las páginas de **intención** ("tardeo en X", rutas, ciudad): 10-19% CTR.
+- **Sitemap** (`functions/sitemap.xml.js`): incluye ciudades + fichas + `/tardeo/*` + `/terrazas/*` + `/rutas/*` (importa las fuentes JSON). **NUNCA volver a excluir tardeo/rutas.**
+- **Canonicals**: en `/locales/[ciudad]` y `/eventos` (layout). `metadataBase` en `app/layout.tsx`. tardeo/terrazas ya tenían.
+- Fichas SEO (`functions/locales/[ciudad]/[slug].js`) ya llevan JSON-LD `BarOrPub` + `aggregateRating`.
+
+## Rutas de tardeo — `scripts/generar_rutas.py`
+112 rutas (data/rutas.json). Generador de CALIDAD: paradas = **bares reales** (rating≥4, ≥20 reseñas, foto, dirección), sugerencia acorde al tipo, **sin LLM** (alucinaba). Modos:
+- `--auto` → ruta de "centro" para ciudades con ≥4 bares y sin ruta
+- `--barrios-auto` → rutas por barrio en ciudades grandes (clustering por coordenadas + nombre real del barrio por Nominatim + dedup por tokens)
+- `--ciudad "X"` / `--barrios "X"` / `--dry-run`
+Re-ejecutar cuando el enriquecedor sume rating/foto a más bares → más rutas.
+
+## Estado de datos (12/06/2026)
+- ~43.700 locales · 6% con web propia · ~30% con foto · horario 94% (OSM)
+- 539 eventos de tardeo activos · 112 rutas · 2 dueños registrados (claim auto-otorgado activo)
