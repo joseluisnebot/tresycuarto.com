@@ -22,6 +22,7 @@ SMTP_PASS  = os.environ.get("BREVO_SMTP_KEY", "")
 NOTIFY_TO  = "joseluisnebot@gmail.com"
 
 API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "0c4d9c91bb0f3a4c905545ecc158ec65")
 DB_ID      = "458672aa-392f-4767-8d2b-926406628ba0"
 D1_URL     = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/d1/database/{DB_ID}/query"
@@ -377,6 +378,47 @@ RADIO_M = {
 }
 
 
+# ── Relevancia tardeo: solo entran eventos de ocio/salir ────────────────────
+# Normalización de tipo (catalán/sinónimos → castellano canónico)
+TIPO_NORM = {
+    "teatre": "teatro", "dansa": "danza", "música": "concierto", "musica": "concierto",
+    "concert": "concierto", "cultural": "cultura", "exposicio": "exposicion",
+    "fiesta": "feria", "fiestas": "feria", "festa": "feria", "festes": "feria",
+    "gastronomía": "gastronomia", "espectacle": "otro", "xerrada": "charla",
+}
+# Tipos que SÍ son tardeo (siempre entran)
+TIPOS_TARDEO = {"feria", "festival", "concierto", "verbena", "romeria", "procesion",
+                "gastronomia", "deporte", "mercado", "fiesta mayor"}
+# Tipos que NO son tardeo (siempre fuera — ruido cultural/institucional)
+TIPOS_FUERA = {"exposicion", "visita", "visita guiada", "itinerario", "taller",
+               "charla", "xerrada", "conferencia", "presentacion", "presentación",
+               "ponencia", "teatro", "danza", "cultura", "cine", "ruta", "jornada",
+               "curso", "seminario", "cultura popular", "visita guiada"}
+# Palabras que rescatan un evento "otro"/ambiguo como tardeo
+KW_TARDEO = ["concierto", "música", "musica", "fiesta", "feria", "verbena", "festival",
+             "romería", "romeria", " dj ", "tapas", "cerveza", "vino", "gastron",
+             "en directo", "baile", "food truck", "mercadillo", "degustaci",
+             "vermut", "vermú", "cóctel", "coctel", "tardeo", "sarao", "fallas",
+             "hogueras", "moros y cristianos", "feria de", "noche", "fiesta mayor"]
+
+
+def normaliza_tipo(t):
+    t = (t or "otro").lower().strip()
+    return TIPO_NORM.get(t, t)
+
+
+def es_tardeo(nombre, tipo, descripcion=""):
+    """True si el evento encaja en una agenda de ocio/tardeo (no expos, charlas, visitas...)."""
+    t = normaliza_tipo(tipo)
+    if t in TIPOS_FUERA:
+        return False
+    if t in TIPOS_TARDEO:
+        return True
+    # Tipos ambiguos ("otro", "cultura", "evento"): decidir por palabras clave
+    texto = f" {nombre} {descripcion} ".lower()
+    return any(k in texto for k in KW_TARDEO)
+
+
 # ── Helpers HTTP ───────────────────────────────────────────────────────────
 
 def fetch(url, timeout=15, encoding="utf-8"):
@@ -712,6 +754,12 @@ def insertar_evento(ev, dry_run=False):
     if any(nombre_strip.startswith(p) for p in NOMBRES_GENERICOS):
         return False, "nombre genérico (Varios/Varias)"
 
+    # Filtro: solo eventos de tardeo/ocio (descarta expos, charlas, visitas guiadas...)
+    tipo_norm = normaliza_tipo(ev.get("tipo", "otro"))
+    if not es_tardeo(nombre_strip, tipo_norm, ev.get("descripcion", "")):
+        return False, f"no es de tardeo (tipo={tipo_norm})"
+    ev["tipo"] = tipo_norm  # normalizado para el insert
+
     # Filtro: descripció brossa (cookies, aviso legal...)
     desc_lower = ev.get("descripcion", "").lower()
     for palabra in DESC_BROSSA:
@@ -978,7 +1026,7 @@ def enviar_alerta_revision(eventos):
     fecha = datetime.now().strftime("%d/%m/%Y %H:%M")
     filas = ""
     for ev in eventos:
-        rechazar_url = f"https://tresycuarto.com/api/eventos/rechazar?id={ev['id']}&token=admin"
+        rechazar_url = f"https://tresycuarto.com/api/eventos/rechazar?id={ev['id']}&token={urllib.parse.quote(ADMIN_TOKEN)}"
         filas += f"""<tr>
           <td style="padding:10px 12px;border-bottom:1px solid #E7E5E4;">
             <strong>{ev['nombre']}</strong><br>

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import citiesData from "../../data/cities.json";
 import eventosDestacados from "../../data/eventos-destacados.json";
 
 const DESTACADOS = (eventosDestacados as { slug: string; nombre: string; ciudad: string; fecha_inicio: string; fecha_fin: string; tipo: string; descripcion_corta: string }[])
@@ -195,20 +194,30 @@ export default function EventosPage() {
   const [pasados, setPasados] = useState<Evento[]>([]);
   const [loading, setLoading] = useState(true);
   const [ciudad, setCiudad] = useState("");
+  const [busqueda, setBusqueda] = useState("");
+  const [q, setQ] = useState("");
+  const [ciudadesDisp, setCiudadesDisp] = useState<{ ciudad: string; n: number }[]>([]);
   const [expandido, setExpandido] = useState<string | null>(null);
   const [mostrarHistorial, setMostrarHistorial] = useState(false);
 
-  const ciudades = (citiesData as { nombre: string }[]).map(c => c.nombre);
+  // Debounce de la búsqueda de texto
+  useEffect(() => {
+    const t = setTimeout(() => setQ(busqueda.trim()), 350);
+    return () => clearTimeout(t);
+  }, [busqueda]);
 
   useEffect(() => {
     setLoading(true);
-    const url = ciudad ? `/api/eventos?limit=50&ciudad=${encodeURIComponent(ciudad)}` : "/api/eventos?limit=50";
-    fetch(url).then(r => r.json()).then(d => {
+    const params = new URLSearchParams({ limit: "50" });
+    if (ciudad) params.set("ciudad", ciudad);
+    if (q) params.set("q", q);
+    fetch(`/api/eventos?${params.toString()}`).then(r => r.json()).then(d => {
       setEventos(d.eventos || []);
       setPasados(d.pasados || []);
+      if (d.ciudades) setCiudadesDisp(d.ciudades);
       setLoading(false);
     });
-  }, [ciudad]);
+  }, [ciudad, q]);
 
   return (
     <main style={{ background: "#FFF8EF", minHeight: "100vh" }}>
@@ -275,18 +284,31 @@ export default function EventosPage() {
           </div>
         )}
 
-        {/* Filtro ciudad */}
-        <div style={{ marginBottom: "1.5rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-          <button onClick={() => setCiudad("")} style={{
-            padding: "0.4rem 1rem", borderRadius: "999px", border: "none", cursor: "pointer", fontWeight: 600, fontSize: "0.82rem",
-            background: !ciudad ? "#1C1917" : "#F5E6D3", color: !ciudad ? "white" : "#78716C",
-          }}>Todas las ciudades</button>
-          {["Sevilla","Madrid","Málaga","Valencia","Barcelona","Córdoba","Granada","Cádiz","Jerez de la Frontera","Valladolid","Salamanca","Murcia"].filter(c => ciudades.includes(c)).map(c => (
-            <button key={c} onClick={() => setCiudad(c === ciudad ? "" : c)} style={{
+        {/* Buscador + filtro ciudad */}
+        <div style={{ marginBottom: "1.5rem" }}>
+          <input
+            type="search"
+            value={busqueda}
+            onChange={e => setBusqueda(e.target.value)}
+            placeholder="Buscar evento o ciudad…"
+            style={{
+              width: "100%", padding: "0.7rem 1rem", borderRadius: "0.85rem",
+              border: "1.5px solid #F5E6D3", fontSize: "0.95rem", outline: "none",
+              marginBottom: "0.85rem", fontFamily: "inherit", background: "white",
+            }}
+          />
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <button onClick={() => setCiudad("")} style={{
               padding: "0.4rem 1rem", borderRadius: "999px", border: "none", cursor: "pointer", fontWeight: 600, fontSize: "0.82rem",
-              background: ciudad === c ? "#FB923C" : "#F5E6D3", color: ciudad === c ? "white" : "#78716C",
-            }}>{c}</button>
-          ))}
+              background: !ciudad ? "#1C1917" : "#F5E6D3", color: !ciudad ? "white" : "#78716C",
+            }}>Todas las ciudades</button>
+            {ciudadesDisp.slice(0, 16).map(({ ciudad: c, n }) => (
+              <button key={c} onClick={() => setCiudad(c === ciudad ? "" : c)} style={{
+                padding: "0.4rem 1rem", borderRadius: "999px", border: "none", cursor: "pointer", fontWeight: 600, fontSize: "0.82rem",
+                background: ciudad === c ? "#FB923C" : "#F5E6D3", color: ciudad === c ? "white" : "#78716C",
+              }}>{c} <span style={{ opacity: 0.55, fontWeight: 700 }}>{n}</span></button>
+            ))}
+          </div>
         </div>
 
         {loading && <p style={{ color: "#A8A29E", textAlign: "center", padding: "3rem 0" }}>Cargando eventos...</p>}
