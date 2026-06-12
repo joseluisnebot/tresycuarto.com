@@ -57,6 +57,7 @@ export async function onRequestPut(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email (revisa tu bandeja) para poder editar tu ficha." }, { status: 403 });
 
   let body;
   try { body = await request.json(); } catch { return Response.json({ error: "JSON inválido" }, { status: 400 }); }

@@ -17,7 +17,7 @@ async function getAuthUser(env, request) {
   const ul = uls[0];
 
   return {
-    id: user.id, ul_id: ul.id, email: user.email,
+    id: user.id, ul_id: ul.id, email: user.email, verified: user.verified,
     local_id: ul.local_id, slug: ul.slug,
     plan: ul.plan || "trial", trial_inicio: ul.trial_inicio, plan_expires: ul.plan_expires,
   };
@@ -46,6 +46,7 @@ export async function onRequestPost(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder subir fotos." }, { status: 403 });
 
   let formData;
   try { formData = await request.formData(); } catch { return Response.json({ error: "Formato inválido" }, { status: 400 }); }
@@ -98,6 +99,7 @@ export async function onRequestDelete(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder gestionar tus fotos." }, { status: 403 });
 
   const url = new URL(request.url).searchParams.get("url");
   if (!url) return Response.json({ error: "Falta url" }, { status: 400 });

@@ -17,7 +17,7 @@ async function getAuthUser(env, request) {
   const ul = uls[0];
 
   return {
-    id: user.id, ul_id: ul.id,
+    id: user.id, ul_id: ul.id, verified: user.verified,
     local_id: ul.local_id, slug: ul.slug,
     plan: ul.plan || "trial", trial_inicio: ul.trial_inicio, plan_expires: ul.plan_expires,
   };
@@ -34,7 +34,7 @@ export async function onRequestPost(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
-  if (!isPlanActive(user)) return Response.json({ error: "La carta requiere el plan Pro" }, { status: 403 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder subir tu carta." }, { status: 403 });
 
   let formData;
   try { formData = await request.formData(); } catch { return Response.json({ error: "Formato inválido" }, { status: 400 }); }
@@ -81,6 +81,7 @@ export async function onRequestDelete(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder gestionar tu carta." }, { status: 403 });
 
   const { results } = await env.DB.prepare("SELECT menu_url FROM locales WHERE id = ?").bind(user.local_id).all();
   const menuUrl = results[0]?.menu_url;

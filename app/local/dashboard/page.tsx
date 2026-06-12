@@ -206,6 +206,15 @@ export default function LocalDashboard() {
     setTimeout(() => setToast(""), 4000);
   }
 
+  async function reenviarVerificacion() {
+    try {
+      await fetch("/api/local/reenviar-verificacion", { method: "POST", headers: authHeaders() });
+      avisar("Te hemos reenviado el email de verificación. Revisa tu bandeja.");
+    } catch {
+      avisar("No se pudo reenviar el email. Inténtalo de nuevo.");
+    }
+  }
+
   // Fotos
   const [fotoPerfil, setFotoPerfil] = useState<string | null>(null);
   const [fotos, setFotos] = useState<string[]>([]);
@@ -571,9 +580,13 @@ export default function LocalDashboard() {
 
       {/* Banner verificación */}
       {!userData.verified && (
-        <div style={{ background: "#FEF3C7", borderBottom: "1px solid #FCD34D", padding: "0.75rem 1.5rem", textAlign: "center", fontSize: "0.85rem", color: "#92400E" }}>
-          Confirma tu email para asegurar el acceso a tu cuenta.
-          <span style={{ color: "#78716C" }}> Revisa tu bandeja de entrada en <strong>{userData.email}</strong>.</span>
+        <div style={{ background: "#FEF3C7", borderBottom: "1px solid #FCD34D", padding: "0.75rem 1.5rem", textAlign: "center", fontSize: "0.85rem", color: "#92400E", display: "flex", gap: "0.75rem", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+          <span>
+            ✉️ <strong>Confirma tu email para poder editar tu ficha.</strong> Te enviamos un enlace a <strong>{userData.email}</strong>.
+          </span>
+          <button onClick={reenviarVerificacion} style={{ background: "#92400E", color: "white", border: "none", borderRadius: "0.5rem", padding: "0.3rem 0.75rem", cursor: "pointer", fontSize: "0.78rem", fontWeight: 700, whiteSpace: "nowrap" }}>
+            Reenviar email
+          </button>
         </div>
       )}
 

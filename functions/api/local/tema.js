@@ -13,7 +13,7 @@ async function getAuthUser(env, request) {
     : await env.DB.prepare("SELECT * FROM usuario_locales WHERE usuario_id = ? LIMIT 1").bind(user.id).all();
   if (!uls.length) return null;
   const ul = uls[0];
-  return { id: user.id, ul_id: ul.id, email: user.email, local_id: ul.local_id, slug: ul.slug, plan: ul.plan || "trial" };
+  return { id: user.id, ul_id: ul.id, email: user.email, verified: user.verified, local_id: ul.local_id, slug: ul.slug, plan: ul.plan || "trial" };
 }
 
 const COLORES_VALIDOS = ["naranja", "dorado", "verde", "azul", "morado", "rosa", "rojo", "oscuro"];
@@ -40,6 +40,7 @@ export async function onRequestPut(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder cambiar el diseño." }, { status: 403 });
 
   let body;
   try { body = await request.json(); } catch { return Response.json({ error: "JSON inválido" }, { status: 400 }); }

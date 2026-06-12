@@ -17,7 +17,7 @@ async function getAuthUser(env, request) {
   const ul = uls[0];
 
   return {
-    id: user.id, ul_id: ul.id,
+    id: user.id, ul_id: ul.id, verified: user.verified,
     local_id: ul.local_id, slug: ul.slug,
     plan: ul.plan || "trial", trial_inicio: ul.trial_inicio, plan_expires: ul.plan_expires,
   };
@@ -47,7 +47,7 @@ export async function onRequestPost(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
-  if (!isPlanActive(user)) return Response.json({ error: "Los eventos requieren el plan Pro" }, { status: 403 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder publicar eventos." }, { status: 403 });
 
   let body;
   try { body = await request.json(); } catch { return Response.json({ error: "JSON inválido" }, { status: 400 }); }
@@ -67,6 +67,7 @@ export async function onRequestPut(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder editar eventos." }, { status: 403 });
 
   let body;
   try { body = await request.json(); } catch { return Response.json({ error: "JSON inválido" }, { status: 400 }); }
@@ -90,6 +91,7 @@ export async function onRequestDelete(context) {
   const { env, request } = context;
   const user = await getAuthUser(env, request);
   if (!user) return Response.json({ error: "No autorizado" }, { status: 401 });
+  if (!user.verified) return Response.json({ error: "Confirma tu email para poder gestionar eventos." }, { status: 403 });
 
   const id = new URL(request.url).searchParams.get("id");
   if (!id) return Response.json({ error: "Falta id" }, { status: 400 });
