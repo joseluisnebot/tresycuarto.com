@@ -4,7 +4,7 @@ export async function onRequestGet(context) {
   const { request, env } = context;
   const uuid = new URL(request.url).searchParams.get("uuid");
 
-  if (!uuid) {
+  if (!uuid || !/^[0-9a-fA-F-]{36}$/.test(uuid)) {
     return new Response(renderPage("Error", "Enlace inválido."), { headers: { "Content-Type": "text/html" } });
   }
 

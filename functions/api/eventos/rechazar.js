@@ -3,7 +3,7 @@ export async function onRequestGet({ request, env }) {
   const id     = url.searchParams.get("id");
   const token  = url.searchParams.get("token");
 
-  if (!id || token !== "admin") {
+  if (!id || !env.ADMIN_TOKEN || token !== env.ADMIN_TOKEN) {
     return new Response("No autorizado", { status: 403 });
   }
 

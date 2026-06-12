@@ -1,3 +1,5 @@
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
 export async function onRequestPost(context) {
   const { env, request } = context;
 
@@ -32,13 +34,13 @@ export async function onRequestPost(context) {
           body: JSON.stringify({
             sender: { name: "tresycuarto", email: "hola@tresycuarto.com" },
             to: [{ email: s.contacto_email, name: s.contacto_nombre || s.nombre }],
-            subject: `✅ Solicitud aprobada: ya puedes gestionar ${s.nombre} en tresycuarto`,
+            subject: `✅ Solicitud aprobada: ya puedes gestionar ${esc(s.nombre)} en tresycuarto`,
             htmlContent: `
               <div style="font-family:sans-serif;max-width:520px;margin:0 auto;color:#1C1917;padding:2rem">
                 <p style="font-size:1.5rem;font-weight:800">tres<span style="color:#FB923C">y</span>cuarto</p>
                 <h2 style="color:#1C1917;margin-bottom:0.5rem">¡Tu ficha ha sido aprobada! 🎉</h2>
-                <p style="color:#78716C;margin-bottom:1.5rem">Hola ${s.contacto_nombre || ""},</p>
-                <p style="color:#44403C;margin-bottom:1rem">Hemos verificado que eres el propietario de <strong>${s.nombre}</strong> en ${s.ciudad}. Ya puedes crear tu cuenta y gestionar tu ficha.</p>
+                <p style="color:#78716C;margin-bottom:1.5rem">Hola ${esc(s.contacto_nombre || "")},</p>
+                <p style="color:#44403C;margin-bottom:1rem">Hemos verificado que eres el propietario de <strong>${esc(s.nombre)}</strong> en ${esc(s.ciudad)}. Ya puedes crear tu cuenta y gestionar tu ficha.</p>
                 <p style="color:#44403C;margin-bottom:1.5rem">Con tu cuenta podrás:</p>
                 <ul style="color:#44403C;margin-bottom:1.5rem;padding-left:1.2rem;line-height:1.8">
                   <li>📸 Subir fotos de tu local</li>

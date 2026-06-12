@@ -1,18 +1,17 @@
 /**
  * browser-extract.js — Extrae datos de la web de un local usando Browser Rendering.
  *
- * GET /api/browser-extract?url=https://mibar.com&token=tc_browser_2026
+ * GET /api/browser-extract?url=https://mibar.com&token=<BROWSER_TOKEN>
  *
  * Devuelve JSON: { ok, telefono, horario, descripcion, photo_url, instagram, web }
  *
- * Requiere binding MYBROWSER configurado en Cloudflare Pages settings.
+ * Requiere binding MYBROWSER y el secret BROWSER_TOKEN configurados en Cloudflare Pages settings.
  */
 
 // @cloudflare/puppeteer es un módulo nativo del runtime de Cloudflare Workers
 // No se instala como npm package — se resuelve en runtime
 import puppeteer from "@cloudflare/puppeteer";
 
-const SECRET_TOKEN = "tc_browser_2026";
 const PAGE_TIMEOUT = 15000;
 
 const HORARIO_SELECTORS = [
@@ -26,7 +25,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
 
   const token = url.searchParams.get("token");
-  if (token !== SECRET_TOKEN) {
+  if (!env.BROWSER_TOKEN || token !== env.BROWSER_TOKEN) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 

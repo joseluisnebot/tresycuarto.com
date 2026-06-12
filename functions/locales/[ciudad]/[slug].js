@@ -248,7 +248,7 @@ export async function onRequestGet(context) {
   // Caso especial: /locales/-/[id] — enlace interno por ID (emails, admin, claims)
   if (ciudadSlug === "-") {
     const { results: byId } = await env.DB.prepare(
-      "SELECT * FROM locales WHERE id = ? LIMIT 1"
+      "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, rating, rating_count, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE id = ? LIMIT 1"
     ).bind(slug).all();
     if (!byId || !byId.length) {
       return new Response("Local no encontrado", { status: 404 });
@@ -266,7 +266,7 @@ export async function onRequestGet(context) {
   }
 
   const { results } = await env.DB.prepare(
-    "SELECT * FROM locales WHERE slug = ? AND ciudad = ? LIMIT 1"
+    "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, rating, rating_count, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE slug = ? AND ciudad = ? LIMIT 1"
   ).bind(slug, ciudad).all();
 
   if (!results || results.length === 0) {

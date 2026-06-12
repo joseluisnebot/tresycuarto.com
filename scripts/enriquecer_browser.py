@@ -35,7 +35,7 @@ CF_ACCOUNT   = "0c4d9c91bb0f3a4c905545ecc158ec65"
 CF_TOKEN     = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 DB_ID        = "458672aa-392f-4767-8d2b-926406628ba0"
 WORKER_URL   = "https://tresycuarto.com"
-WORKER_TOKEN = "tc_browser_2026"
+WORKER_TOKEN = os.environ.get("BROWSER_TOKEN", "")
 
 D1_URL  = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/d1/database/{DB_ID}/query"
 HEADERS = {"Authorization": f"Bearer {CF_TOKEN}", "Content-Type": "application/json"}

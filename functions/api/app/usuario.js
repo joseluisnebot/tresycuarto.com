@@ -4,12 +4,10 @@ const CORS = {
 };
 
 const LISTMONK_URL  = "https://listmonk.tresycuarto.com";
-const LISTMONK_USER = "tresycuarto";
-const LISTMONK_PASS = "uGsFIP9aSpVW3ctCu6Ju32Hh5Jlhvbhl";
 
-async function buscarEnListmonk(email) {
+async function buscarEnListmonk(email, env) {
   try {
-    const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
+    const auth = btoa(`${env.LISTMONK_API_USER}:${env.LISTMONK_API_PASS}`);
     const res = await fetch(
       `${LISTMONK_URL}/api/subscribers?query=email%3D'${encodeURIComponent(email)}'&per_page=1`,
       { headers: { "Authorization": `Basic ${auth}` } }
@@ -46,7 +44,7 @@ export async function onRequestGet({ request, env }) {
   }
 
   // 2. Si no está en D1, buscar en Listmonk (registrados desde la web)
-  const sub = await buscarEnListmonk(email);
+  const sub = await buscarEnListmonk(email, env);
   if (!sub) {
     return Response.json({ existe: false, ciudades: [] }, { headers: CORS });
   }

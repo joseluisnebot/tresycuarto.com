@@ -4,13 +4,11 @@ const CORS = {
 };
 
 const LISTMONK_URL  = "https://listmonk.tresycuarto.com";
-const LISTMONK_USER = "tresycuarto";
-const LISTMONK_PASS = "uGsFIP9aSpVW3ctCu6Ju32Hh5Jlhvbhl";
 const LISTMONK_LIST = 3;
 
 async function listmonkRequest(method, path, body, env) {
   try {
-    const auth = btoa(`${LISTMONK_USER}:${LISTMONK_PASS}`);
+    const auth = btoa(`${env.LISTMONK_API_USER}:${env.LISTMONK_API_PASS}`);
     const headers = { "Authorization": `Basic ${auth}`, "Content-Type": "application/json" };
     if (env?.CF_ACCESS_CLIENT_ID) {
       headers["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;

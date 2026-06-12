@@ -1,3 +1,5 @@
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -45,8 +47,8 @@ export async function onRequestPost(context) {
         htmlContent: `
           <div style="font-family:sans-serif;max-width:520px;margin:0 auto;color:#1C1917">
             <h2 style="color:#FB923C">☀️ tresycuarto</h2>
-            <p>Hola ${contacto_nombre || ""},</p>
-            <p>Hemos recibido la solicitud para <strong>${nombre}</strong> en ${ciudad}. La revisaremos en breve y te contactaremos en este email.</p>
+            <p>Hola ${esc(contacto_nombre || "")},</p>
+            <p>Hemos recibido la solicitud para <strong>${esc(nombre)}</strong> en ${esc(ciudad)}. La revisaremos en breve y te contactaremos en este email.</p>
             <p style="color:#78716C;font-size:0.9rem">El equipo de tresycuarto ☀️</p>
           </div>
         `,
@@ -60,24 +62,24 @@ export async function onRequestPost(context) {
       body: JSON.stringify({
         sender: { name: "tresycuarto", email: "hola@tresycuarto.com" },
         to: [{ email: "JoseluisNebot@gmail.com", name: "Jose Luis" }],
-        subject: esClaim ? `🔑 Claim ficha: ${nombre} (${ciudad})` : `Nuevo local: ${nombre} (${ciudad})`,
+        subject: esClaim ? `🔑 Claim ficha: ${esc(nombre)} (${esc(ciudad)})` : `Nuevo local: ${esc(nombre)} (${esc(ciudad)})`,
         htmlContent: `
           <div style="font-family:sans-serif;max-width:520px;margin:0 auto;color:#1C1917">
             <h2>${esClaim ? "🔑 Solicitud de claim de ficha existente" : "Nuevo local solicitado"}</h2>
             <ul>
-              ${esClaim ? `<li><strong>Local ID:</strong> ${local_id}</li>` : ""}
-              <li><strong>Local:</strong> ${nombre}</li>
-              <li><strong>Ciudad:</strong> ${ciudad}</li>
-              ${!esClaim ? `<li><strong>Tipo:</strong> ${tipo}</li>` : ""}
-              <li><strong>Dirección:</strong> ${direccion || "—"}</li>
-              <li><strong>Instagram:</strong> ${instagram || "—"}</li>
-              <li><strong>TikTok:</strong> ${tiktok || "—"}</li>
-              <li><strong>Web:</strong> ${web || "—"}</li>
+              ${esClaim ? `<li><strong>Local ID:</strong> ${esc(local_id)}</li>` : ""}
+              <li><strong>Local:</strong> ${esc(nombre)}</li>
+              <li><strong>Ciudad:</strong> ${esc(ciudad)}</li>
+              ${!esClaim ? `<li><strong>Tipo:</strong> ${esc(tipo)}</li>` : ""}
+              <li><strong>Dirección:</strong> ${esc(direccion || "—")}</li>
+              <li><strong>Instagram:</strong> ${esc(instagram || "—")}</li>
+              <li><strong>TikTok:</strong> ${esc(tiktok || "—")}</li>
+              <li><strong>Web:</strong> ${esc(web || "—")}</li>
               <li><strong>Terraza:</strong> ${terraza ? "Sí" : "No"}</li>
-              <li><strong>Contacto:</strong> ${contacto_nombre || "—"} — ${contacto_email}</li>
+              <li><strong>Contacto:</strong> ${esc(contacto_nombre || "—")} — ${esc(contacto_email)}</li>
             </ul>
-            ${descripcion ? `<p><strong>Descripción:</strong> ${descripcion}</p>` : ""}
-            ${esClaim ? `<p><a href="https://tresycuarto.com/locales/-/${local_id}">Ver ficha →</a></p>` : ""}
+            ${descripcion ? `<p><strong>Descripción:</strong> ${esc(descripcion)}</p>` : ""}
+            ${esClaim ? `<p><a href="https://tresycuarto.com/locales/-/${encodeURIComponent(local_id)}">Ver ficha →</a></p>` : ""}
           </div>
         `,
       }),

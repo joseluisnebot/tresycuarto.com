@@ -37,6 +37,8 @@ async function verifyTurnstile(token, secret, ip) {
   return data.success === true;
 }
 
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
 async function sendVerificationEmail(env, email, verifyToken, nombre) {
   const verifyUrl = `https://tresycuarto.com/local/verificar?token=${verifyToken}`;
   try {
@@ -51,7 +53,7 @@ async function sendVerificationEmail(env, email, verifyToken, nombre) {
           <div style="font-family:system-ui,sans-serif;max-width:500px;margin:0 auto;padding:2rem;background:#FFF8EF">
             <p style="font-size:1.5rem;font-weight:800;color:#1C1917">tres<span style="color:#FB923C">y</span>cuarto</p>
             <h2 style="color:#1C1917">Confirma tu email</h2>
-            <p style="color:#78716C">Hola, ya tienes tu cuenta de propietario para <strong>${nombre}</strong>.</p>
+            <p style="color:#78716C">Hola, ya tienes tu cuenta de propietario para <strong>${esc(nombre)}</strong>.</p>
             <p style="color:#78716C">Haz clic para confirmar tu email:</p>
             <a href="${verifyUrl}" style="display:inline-block;margin:1rem 0;padding:0.9rem 2rem;background:linear-gradient(135deg,#FB923C,#F59E0B);color:white;font-weight:700;text-decoration:none;border-radius:0.75rem">
               Confirmar email →

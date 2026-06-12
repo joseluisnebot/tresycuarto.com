@@ -11,7 +11,7 @@ export async function onRequestGet(context) {
     return Response.json({ error: "Parámetro 'ciudad' requerido" }, { status: 400 });
   }
 
-  let sql = "SELECT * FROM locales WHERE ciudad = ?";
+  let sql = "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, rating, rating_count, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE ciudad = ?";
   const params = [ciudad];
 
   if (tipo) { sql += " AND tipo = ?"; params.push(tipo); }
