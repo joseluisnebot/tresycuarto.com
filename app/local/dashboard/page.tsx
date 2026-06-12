@@ -198,7 +198,13 @@ export default function LocalDashboard() {
   const [guardando, setGuardando] = useState(false);
   const [guardado, setGuardado] = useState(false);
   const [error, setError] = useState("");
+  const [toast, setToast] = useState("");
   const [mostrarSelectorLocal, setMostrarSelectorLocal] = useState(false);
+
+  function avisar(msg: string) {
+    setToast(msg);
+    setTimeout(() => setToast(""), 4000);
+  }
 
   // Fotos
   const [fotoPerfil, setFotoPerfil] = useState<string | null>(null);
@@ -235,7 +241,7 @@ export default function LocalDashboard() {
 
   // Tema / web propia
   const [temaColor, setTemaColor] = useState("naranja");
-  const [temaTemplate, setTemaTemplate] = useState("completo");
+  const [temaTemplate, setTemaTemplate] = useState("fresh");
   const [temaSections, setTemaSections] = useState<string[]>(["galeria", "eventos", "mapa"]);
   const [guardandoTema, setGuardandoTema] = useState(false);
   const [temaGuardado, setTemaGuardado] = useState(false);
@@ -325,7 +331,11 @@ export default function LocalDashboard() {
       if (res.ok) {
         if (tipo === "perfil") setFotoPerfil(data.url);
         else setFotos(f => [...f, data.url]);
+      } else {
+        avisar(data.error || "No se pudo subir la foto");
       }
+    } catch {
+      avisar("Error de conexión al subir la foto");
     } finally { setSubiendoFoto(false); }
   }
 
@@ -346,7 +356,11 @@ export default function LocalDashboard() {
         setMenuUrl(data.url);
         QRCode.toDataURL(data.url, { width: 200, margin: 1, color: { dark: "#1C1917", light: "#FFF8EF" } })
           .then(setQrMenuDataUrl).catch(() => {});
+      } else {
+        avisar(data.error || "No se pudo subir la carta");
       }
+    } catch {
+      avisar("Error de conexión al subir la carta");
     } finally { setSubiendoMenu(false); }
   }
 
@@ -369,6 +383,8 @@ export default function LocalDashboard() {
       setEventos(ev => [...ev, { ...nuevoEvento, id: data.id, descripcion: nuevoEvento.descripcion || null, hora_inicio: nuevoEvento.hora_inicio || null, hora_fin: nuevoEvento.hora_fin || null, precio: nuevoEvento.precio || null, enlace: nuevoEvento.enlace || null }]);
       setNuevoEvento({ titulo: "", descripcion: "", fecha: "", hora_inicio: "", hora_fin: "", precio: "", enlace: "" });
       setMostrarFormEvento(false);
+    } else {
+      avisar(data.error || "No se pudo crear el evento");
     }
     setGuardandoEvento(false);
   }
@@ -533,6 +549,18 @@ export default function LocalDashboard() {
           </button>
         </div>
       </nav>
+
+      {/* Toast de aviso/error */}
+      {toast && (
+        <div style={{
+          position: "fixed", bottom: "1.25rem", left: "50%", transform: "translateX(-50%)",
+          background: "#1C1917", color: "white", padding: "0.75rem 1.25rem", borderRadius: "0.75rem",
+          fontSize: "0.85rem", fontWeight: 600, zIndex: 100, boxShadow: "0 8px 28px rgba(0,0,0,0.25)",
+          maxWidth: "90%", textAlign: "center",
+        }}>
+          {toast}
+        </div>
+      )}
 
       {/* Banner pago */}
       {typeof window !== "undefined" && new URLSearchParams(window.location.search).get("pago") === "ok" && (
