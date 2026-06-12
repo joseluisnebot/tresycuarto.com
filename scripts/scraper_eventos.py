@@ -386,20 +386,19 @@ TIPO_NORM = {
     "fiesta": "feria", "fiestas": "feria", "festa": "feria", "festes": "feria",
     "gastronomía": "gastronomia", "espectacle": "otro", "xerrada": "charla",
 }
-# Tipos que SÍ son tardeo (siempre entran)
-TIPOS_TARDEO = {"feria", "festival", "concierto", "verbena", "romeria", "procesion",
-                "gastronomia", "deporte", "mercado", "fiesta mayor"}
-# Tipos que NO son tardeo (siempre fuera — ruido cultural/institucional)
-TIPOS_FUERA = {"exposicion", "visita", "visita guiada", "itinerario", "taller",
-               "charla", "xerrada", "conferencia", "presentacion", "presentación",
-               "ponencia", "teatro", "danza", "cultura", "cine", "ruta", "jornada",
-               "curso", "seminario", "cultura popular", "visita guiada"}
-# Palabras que rescatan un evento "otro"/ambiguo como tardeo
-KW_TARDEO = ["concierto", "música", "musica", "fiesta", "feria", "verbena", "festival",
-             "romería", "romeria", " dj ", "tapas", "cerveza", "vino", "gastron",
-             "en directo", "baile", "food truck", "mercadillo", "degustaci",
-             "vermut", "vermú", "cóctel", "coctel", "tardeo", "sarao", "fallas",
-             "hogueras", "moros y cristianos", "feria de", "noche", "fiesta mayor"]
+# Criterio: mantenemos todo lo que ATRAE PÚBLICO a la calle (promociona los bares
+# cercanos vía "bares cerca"). Solo descartamos actos sin afluencia o no públicos.
+# Tipos que NO generan afluencia → fuera
+TIPOS_BLOQUEADOS = {"charla", "xerrada", "conferencia", "ponencia", "taller",
+                    "curso", "seminario", "presentacion", "presentación",
+                    "visita", "visita guiada", "itinerario", "webinar", "online"}
+# Palabras que indican acto sin afluencia / no promocionable
+KW_BLOQUEO = ["taller de", "curso de", "conferencia", "ponencia", "webinar",
+              "seminario", "presentación del libro", "presentacion del libro",
+              "ruta ornitol", "visita guiada", "itinerario", "campamento",
+              "escuela de verano", "online", "en línea", "en linea",
+              "inauguración del plafón", "jornada técnica", "jornadas técnicas",
+              "club de lectura", "cuentacuentos"]
 
 
 def normaliza_tipo(t):
@@ -407,16 +406,17 @@ def normaliza_tipo(t):
     return TIPO_NORM.get(t, t)
 
 
-def es_tardeo(nombre, tipo, descripcion=""):
-    """True si el evento encaja en una agenda de ocio/tardeo (no expos, charlas, visitas...)."""
+def es_promocionable(nombre, tipo, descripcion=""):
+    """True si el evento atrae público a la calle y puede promocionar bares cercanos.
+    Criterio amplio: por defecto SÍ; solo se descartan actos sin afluencia
+    (charlas, talleres, cursos, visitas guiadas, eventos online...)."""
     t = normaliza_tipo(tipo)
-    if t in TIPOS_FUERA:
+    if t in TIPOS_BLOQUEADOS:
         return False
-    if t in TIPOS_TARDEO:
-        return True
-    # Tipos ambiguos ("otro", "cultura", "evento"): decidir por palabras clave
     texto = f" {nombre} {descripcion} ".lower()
-    return any(k in texto for k in KW_TARDEO)
+    if any(k in texto for k in KW_BLOQUEO):
+        return False
+    return True
 
 
 # ── Helpers HTTP ───────────────────────────────────────────────────────────
@@ -754,10 +754,11 @@ def insertar_evento(ev, dry_run=False):
     if any(nombre_strip.startswith(p) for p in NOMBRES_GENERICOS):
         return False, "nombre genérico (Varios/Varias)"
 
-    # Filtro: solo eventos de tardeo/ocio (descarta expos, charlas, visitas guiadas...)
+    # Filtro: descartar solo actos sin afluencia (charlas, talleres, visitas, online).
+    # Lo demás se queda — los eventos promocionan los bares cercanos.
     tipo_norm = normaliza_tipo(ev.get("tipo", "otro"))
-    if not es_tardeo(nombre_strip, tipo_norm, ev.get("descripcion", "")):
-        return False, f"no es de tardeo (tipo={tipo_norm})"
+    if not es_promocionable(nombre_strip, tipo_norm, ev.get("descripcion", "")):
+        return False, f"sin afluencia (tipo={tipo_norm})"
     ev["tipo"] = tipo_norm  # normalizado para el insert
 
     # Filtro: descripció brossa (cookies, aviso legal...)
