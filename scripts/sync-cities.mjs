@@ -55,8 +55,11 @@ async function d1Query(sql) {
 }
 
 function buildRoutes(cities) {
+  // OJO: NUNCA excluir "/" ni "/locales/*". exclude = "no ejecutar Functions".
+  //  - "/" la sirve functions/index.js (redirect de subdominios bio) → excluirlo lo rompe.
+  //  - "/locales/[ciudad]/[slug]" es la Function de las fichas → excluir /locales/* las deja en 404.
+  // (Esto causó el bug recurrente del 404 en fichas. /rutas/* sí puede ir: son páginas SSG estáticas.)
   const staticExcludes = [
-    "/",
     "/para-locales", "/para-locales/",
     "/faq", "/faq/",
     "/contacto", "/contacto/",
@@ -66,7 +69,7 @@ function buildRoutes(cities) {
     "/local", "/local/*",
   ];
 
-  const cityExcludes = ["/locales/*", "/rutas/*"];
+  const cityExcludes = ["/rutas/*"];
 
   const assetExcludes = [
     "/_next/*",
