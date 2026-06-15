@@ -29,6 +29,30 @@ const FEATURES = [
     desc: "Dirección, Instagram, terraza, música en vivo. Todo lo que necesitas antes de salir." },
 ];
 
+// Sección estacional de la home: rota sola según el mes (no se queda vieja).
+const PAL_TEMP: Record<string, { grad: string; accent: string; chip: string }> = {
+  invierno:  { grad: "linear-gradient(135deg,#1E3A8A 0%,#1E40AF 50%,#1E3A8A 100%)", accent: "#93C5FD", chip: "147,197,253" },
+  primavera: { grad: "linear-gradient(135deg,#064E3B 0%,#065F46 50%,#064E3B 100%)", accent: "#6EE7B7", chip: "110,231,183" },
+  verano:    { grad: "linear-gradient(135deg,#9A3412 0%,#C2410C 50%,#9A3412 100%)", accent: "#FCD34D", chip: "252,211,77" },
+  otono:     { grad: "linear-gradient(135deg,#7C2D12 0%,#92400E 50%,#7C2D12 100%)", accent: "#FDBA74", chip: "253,186,116" },
+};
+const ESTACION = ["invierno","invierno","primavera","primavera","primavera","verano","verano","verano","otono","otono","otono","invierno"];
+type Temp = { badge: string; e1: string; e2: string; t1: string; t2: string; sub: string; chips: [string, string][] };
+const TEMPORADAS: Temp[] = [
+  { badge: "Enero en España", e1: "🍷", e2: "🫒", t1: "Empieza el año tardeando", t2: "vermut, tapeo y planes de invierno", sub: "Cuando aprieta el frío, el tardeo se hace en la barra: vermut de grifo, tapas calientes y buen ambiente. Encuentra tu sitio.", chips: [["madrid","🍷 Madrid"],["barcelona","🍷 Barcelona"],["valencia","🫒 Valencia"],["bilbao","🍺 Bilbao"],["zaragoza","🍷 Zaragoza"],["sevilla","☀️ Sevilla"]] },
+  { badge: "Carnaval · Febrero", e1: "🎭", e2: "🎉", t1: "Carnaval", t2: "el tardeo se disfraza", sub: "Cádiz y Tenerife se llenan de chirigotas y comparsas. Después del desfile, a tomar algo: te enseñamos dónde.", chips: [["cadiz","🎭 Cádiz · Carnaval"],["santa-cruz-de-tenerife","🎉 Tenerife · Carnaval"],["badajoz","🎭 Badajoz"],["malaga","☀️ Málaga"],["madrid","🎉 Madrid"],["sevilla","💃 Sevilla"]] },
+  { badge: "Fallas · Marzo", e1: "🔥", e2: "🎆", t1: "Fallas y primavera", t2: "arranca la temporada de terrazas", sub: "Valencia arde en Fallas y el sol vuelve a las terrazas. Pólvora, buñuelos y tardeo al aire libre.", chips: [["valencia","🔥 Valencia · Fallas"],["denia","🎆 Dénia · Fallas"],["alicante","☀️ Alicante"],["madrid","🌼 Madrid"],["barcelona","🌸 Barcelona"],["sevilla","💃 Sevilla"]] },
+  { badge: "Semana Santa y Feria · Abril", e1: "🌸", e2: "💃", t1: "Semana Santa y Feria de Abril", t2: "Andalucía en su mejor momento", sub: "Procesiones, casetas y rebujito. Sevilla, Málaga y Granada se vuelcan: encuentra dónde tardear entre fiesta y fiesta.", chips: [["sevilla","💃 Sevilla · Feria"],["malaga","⛪ Málaga"],["granada","🌸 Granada"],["cordoba","🌺 Córdoba"],["cadiz","⛪ Cádiz"],["jerez-de-la-frontera","🐎 Jerez"]] },
+  { badge: "Ferias de Mayo", e1: "🌼", e2: "🐎", t1: "San Isidro y Ferias de Mayo", t2: "el mejor mes para tardear", sub: "Verbenas de San Isidro en Madrid, Feria del Caballo en Jerez y Cruces de Mayo en Córdoba. Terrazas, patios y tardeos de primavera.", chips: [["madrid","🌼 Madrid · San Isidro"],["jerez-de-la-frontera","🐎 Jerez · Feria"],["cordoba","🌺 Córdoba · Cruces"],["sevilla","💃 Sevilla"],["granada","🎶 Granada"],["cadiz","🎭 Cádiz"]] },
+  { badge: "Hogueras de San Juan · Junio", e1: "🔥", e2: "🌊", t1: "Noche de San Juan y arranque del verano", t2: "hogueras, playa y terrazas", sub: "Las hogueras de San Juan encienden Alicante y las playas del Mediterráneo. Empieza la mejor época de terrazas: encuentra tu sitio.", chips: [["alicante","🔥 Alicante · Hogueras"],["valencia","🌊 Valencia"],["barcelona","🎶 Barcelona"],["malaga","☀️ Málaga"],["la-coruna","🔥 A Coruña · San Juan"],["santa-cruz-de-tenerife","🌊 Tenerife"]] },
+  { badge: "San Fermín · Julio", e1: "🐂", e2: "🎉", t1: "San Fermín y festivales de verano", t2: "el tardeo no para", sub: "Pamplona se viste de blanco y rojo y España se llena de festivales. Calor, terrazas y planes hasta tarde.", chips: [["pamplona","🐂 Pamplona · San Fermín"],["madrid","🎉 Madrid"],["barcelona","🎶 Barcelona"],["benidorm","🌊 Benidorm"],["valencia","☀️ Valencia"],["malaga","☀️ Málaga"]] },
+  { badge: "Ferias de Agosto", e1: "🎆", e2: "☀️", t1: "Feria de Málaga y Semana Grande", t2: "agosto es puro tardeo", sub: "Feria de Málaga, Semana Grande en Bilbao y Donostia, Tomatina en Buñol. El mes más festivo del año.", chips: [["malaga","🎆 Málaga · Feria"],["bilbao","🎉 Bilbao · Aste Nagusia"],["san-sebastian","🎆 Donostia"],["valencia","🍅 Valencia"],["alicante","☀️ Alicante"],["gijon","🌊 Gijón"]] },
+  { badge: "La Mercè y vendimia · Septiembre", e1: "🍇", e2: "🎉", t1: "La Mercè y tiempo de vendimia", t2: "el tardeo de la cosecha", sub: "Barcelona celebra La Mercè y La Rioja la vendimia. Vino nuevo, terrazas templadas y planes de tarde perfectos.", chips: [["barcelona","🎉 Barcelona · La Mercè"],["logrono","🍇 Logroño · San Mateo"],["madrid","🍷 Madrid"],["valladolid","🍷 Valladolid"],["zaragoza","🍷 Zaragoza"],["sevilla","💃 Sevilla"]] },
+  { badge: "Fiestas del Pilar · Octubre", e1: "🌺", e2: "🍂", t1: "Fiestas del Pilar y otoño", t2: "tardeo de manta y terraza", sub: "Zaragoza se vuelca con el Pilar y el otoño pinta las terrazas. Vermut y buen ambiente antes de que apriete el frío.", chips: [["zaragoza","🌺 Zaragoza · El Pilar"],["madrid","🍂 Madrid"],["barcelona","🍂 Barcelona"],["valencia","☀️ Valencia"],["bilbao","🍷 Bilbao"],["sevilla","💃 Sevilla"]] },
+  { badge: "Otoño · Noviembre", e1: "🌰", e2: "🍷", t1: "Tardeo de otoño", t2: "castañas, vino y barra", sub: "Cuando refresca, el tardeo se recoge en las barras: vino, castañas y tapeo al calor. Encuentra los mejores rincones de tu ciudad.", chips: [["madrid","🍷 Madrid"],["barcelona","🌰 Barcelona"],["bilbao","🍷 Bilbao"],["san-sebastian","🥂 Donostia"],["valencia","🍂 Valencia"],["zaragoza","🍷 Zaragoza"]] },
+  { badge: "Navidad · Diciembre", e1: "✨", e2: "🎄", t1: "Tardeo de Navidad", t2: "luces, mercadillos y planes", sub: "Luces, mercadillos y el mejor ambiente del año. Después de las compras y las luces, el plan perfecto: tardear.", chips: [["madrid","✨ Madrid"],["vigo","🎄 Vigo · Luces"],["malaga","✨ Málaga · Luces"],["barcelona","✨ Barcelona"],["sevilla","🎄 Sevilla"],["valencia","✨ Valencia"]] },
+];
+
 type Status = "idle" | "loading" | "ok" | "error";
 type Evento = {
   id: number; nombre: string; tipo: string; ciudad: string;
@@ -38,6 +62,9 @@ type Evento = {
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  // Mes de la sección estacional: se fija en el cliente para que rote solo cada mes.
+  const [mesTemp, setMesTemp] = useState<number | null>(null);
+  useEffect(() => setMesTemp(new Date().getMonth()), []);
   const [ciudades, setCiudades] = useState<string[]>([]);
   const [status, setStatus] = useState<Status>("idle");
   const [busqueda, setBusqueda] = useState("");
@@ -312,51 +339,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SAN ISIDRO & FERIAS DE MAYO */}
-      <section style={{
-        margin: "0", padding: "3rem 1.5rem",
-        background: "linear-gradient(135deg, #064E3B 0%, #065F46 50%, #064E3B 100%)",
-        textAlign: "center",
-      }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
-            <span style={{ fontSize: "1.5rem" }}>🌼</span>
-            <span style={{
-              fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
-              color: "#6EE7B7", background: "rgba(110,231,183,0.15)", padding: "0.3rem 0.9rem", borderRadius: "999px",
-              border: "1px solid rgba(110,231,183,0.3)",
-            }}>Mayo en España · 2026</span>
-            <span style={{ fontSize: "1.5rem" }}>🐎</span>
-          </div>
-          <h2 style={{
-            fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, letterSpacing: "-0.03em",
-            color: "white", marginBottom: "0.6rem", lineHeight: 1.2,
-          }}>
-            San Isidro y Ferias de Mayo<br />
-            <span style={{ color: "#6EE7B7" }}>el mejor mes para tardear</span>
-          </h2>
-          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "520px", margin: "0 auto 2rem" }}>
-            Verbenas de San Isidro en Madrid, Feria del Caballo en Jerez y Feria de Mayo en Córdoba. Terrazas, patios y tardeos de primavera.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
-            {[
-              ["madrid", "🌼 Madrid · San Isidro"],
-              ["jerez-de-la-frontera", "🐎 Jerez · Feria del Caballo"],
-              ["cordoba", "🌺 Córdoba · Feria de Mayo"],
-              ["sevilla", "💃 Sevilla"],
-              ["granada", "🎶 Granada"],
-              ["cadiz", "🎭 Cádiz"],
-            ].map(([slug, nombre]) => (
-              <a key={slug} href={`/locales/${slug}`} style={{
-                fontSize: "0.85rem", padding: "0.4rem 1rem", borderRadius: "999px",
-                background: "rgba(110,231,183,0.1)", color: "#D1FAE5",
-                fontWeight: 600, border: "1px solid rgba(110,231,183,0.25)",
-                textDecoration: "none",
-              }}>{nombre}</a>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SECCIÓN ESTACIONAL — rota sola según el mes (no se queda vieja) */}
+      {(() => {
+        const m = mesTemp ?? 5;
+        const t = TEMPORADAS[m];
+        const p = PAL_TEMP[ESTACION[m]];
+        return (
+          <section style={{ margin: "0", padding: "3rem 1.5rem", background: p.grad, textAlign: "center" }}>
+            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
+                <span style={{ fontSize: "1.5rem" }}>{t.e1}</span>
+                <span style={{
+                  fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
+                  color: p.accent, background: `rgba(${p.chip},0.15)`, padding: "0.3rem 0.9rem", borderRadius: "999px",
+                  border: `1px solid rgba(${p.chip},0.3)`,
+                }}>{t.badge}</span>
+                <span style={{ fontSize: "1.5rem" }}>{t.e2}</span>
+              </div>
+              <h2 style={{
+                fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, letterSpacing: "-0.03em",
+                color: "white", marginBottom: "0.6rem", lineHeight: 1.2,
+              }}>
+                {t.t1}<br />
+                <span style={{ color: p.accent }}>{t.t2}</span>
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "520px", margin: "0 auto 2rem" }}>
+                {t.sub}
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.5rem" }}>
+                {t.chips.map(([slug, nombre]) => (
+                  <a key={slug} href={`/locales/${slug}`} style={{
+                    fontSize: "0.85rem", padding: "0.4rem 1rem", borderRadius: "999px",
+                    background: `rgba(${p.chip},0.12)`, color: "white",
+                    fontWeight: 600, border: `1px solid rgba(${p.chip},0.28)`,
+                    textDecoration: "none",
+                  }}>{nombre}</a>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* PRÓXIMOS EVENTOS */}
       {eventos.length > 0 && (
