@@ -1,57 +1,5 @@
 [
   {
-    "slug": "tardeo-malasana-madrid",
-    "titulo": "Ruta de tardeo por Malasaña",
-    "ciudad": "Madrid",
-    "ciudad_slug": "madrid",
-    "barrio": "Malasaña",
-    "intro": "Malasaña es el corazón del tardeo madrileño. Sus calles empedradas, los bares con mesas en la acera y la mezcla de vecinos de toda la vida con gente joven hacen de este barrio el escenario perfecto para empezar la tarde con calma y acabarla con plan. Esta ruta te lleva de la Plaza del Dos de Mayo hasta la calle San Andrés siguiendo el ritmo natural del barrio: vermut, cañas y copa de después.",
-    "duracion": "3-4 horas",
-    "distancia": "1,2 km",
-    "mejor_dia": "Sábado o domingo desde las 13:00",
-    "paradas": [
-      {
-        "numero": 1,
-        "nombre": "Plaza del Dos de Mayo",
-        "descripcion": "El epicentro del barrio. Los bares de la plaza sacan sus terrazas desde el mediodía. Pide un vermut de grifo con aceitunas y observa cómo el tardeo de Malasaña empieza a calentarse. La energía aquí es única: vecinos, turistas y la bohemia del barrio conviviendo en perfecta armonía.",
-        "tipo": "Aperitivo",
-        "tiempo_hasta_siguiente": "5 min a pie"
-      },
-      {
-        "numero": 2,
-        "nombre": "Calle del Pez",
-        "descripcion": "Una de las calles más animadas del tardeo madrileño. Bares pequeños con mucha personalidad, música a volumen moderado y precios razonables. Perfecta para una segunda ronda antes de comer o para un pincho rápido entre copa y copa.",
-        "tipo": "Cañas y tapas",
-        "tiempo_hasta_siguiente": "3 min a pie"
-      },
-      {
-        "numero": 3,
-        "nombre": "Calle Manuela Malasaña",
-        "descripcion": "La calle que da nombre al barrio es el centro neurálgico del tardeo tardío. Aquí los locales tienen más ambiente nocturno desde las 17:00, con DJs en algunos y terrazas abarrotadas. Si el tiempo acompaña, la terraza de cualquier bar de esta calle con el sol de tarde es uno de los planes de ocio más agradables de Madrid.",
-        "tipo": "Copas y ambiente",
-        "tiempo_hasta_siguiente": "4 min a pie"
-      },
-      {
-        "numero": 4,
-        "nombre": "Calle San Andrés y alrededores",
-        "descripcion": "La parte más tranquila y con más encanto de Malasaña. Bares de barrio con mesas de madera, vino natural y una carta de raciones más elaborada. Ideal para cerrar la ruta con algo de comer y una última copa antes de decidir si la noche sigue o se queda en eso, un tardeo perfecto.",
-        "tipo": "Cierre de tarde",
-        "tiempo_hasta_siguiente": null
-      }
-    ],
-    "consejos": [
-      "Los sábados desde las 13:00 es el momento álgido — llega antes de las 14:00 si quieres terraza",
-      "Evita los domingos por la noche, el barrio se vacía pronto",
-      "Muchos bares no tienen web ni reservas — es cultura de pasear y entrar donde haya ambiente"
-    ],
-    "seo_keywords": [
-      "tardeo Malasaña",
-      "bares Malasaña tarde",
-      "ruta tardeo Madrid centro",
-      "qué hacer tarde Malasaña"
-    ]
-  },
-  {
     "slug": "tardeo-la-latina-madrid",
     "titulo": "Ruta de tardeo por La Latina",
     "ciudad": "Madrid",
@@ -257,58 +205,6 @@
       "bares Gràcia tarde",
       "ruta tardeo Barcelona",
       "qué hacer tarde Gràcia"
-    ]
-  },
-  {
-    "slug": "tardeo-el-born-barcelona",
-    "titulo": "Ruta de tardeo por El Born",
-    "ciudad": "Barcelona",
-    "ciudad_slug": "barcelona",
-    "barrio": "El Born",
-    "intro": "El Born es el barrio más cool de Barcelona y su tardeo lo refleja. Entre el Paseo del Born, las calles medievales y la Barceloneta a un paso, este barrio ofrece una mezcla irrepetible de bares de cócteles de autor, terrazas con encanto y locales con siglos de historia.",
-    "duracion": "3-4 horas",
-    "distancia": "1,1 km",
-    "mejor_dia": "Viernes tarde o sábado desde las 17:00",
-    "paradas": [
-      {
-        "numero": 1,
-        "nombre": "Paseo del Born",
-        "descripcion": "El eje central del barrio. El Paseo del Born tiene bares con terraza en ambos lados, con la antigua estación de mercado de fondo. El ambiente es cosmopolita y el nivel de los cócteles es notablemente alto.",
-        "tipo": "Cócteles y ambiente",
-        "tiempo_hasta_siguiente": "5 min a pie"
-      },
-      {
-        "numero": 2,
-        "nombre": "Calle del Rec y Carders",
-        "descripcion": "Las calles más características del Born tardío. Bares pequeños con mucha personalidad, música a bajo volumen y una clientela muy definida. Aquí está la esencia del tardeo de El Born.",
-        "tipo": "Bares de barrio",
-        "tiempo_hasta_siguiente": "4 min a pie"
-      },
-      {
-        "numero": 3,
-        "nombre": "Plaza de Santa María del Mar",
-        "descripcion": "La catedral gótica más bella de Barcelona preside esta plaza que a partir de las 17:00 se llena de gente. Los bares de alrededor tienen terrazas con vistas a la fachada iluminada y ofrecen algunos de los mejores vinos de la ciudad.",
-        "tipo": "Terrazas con vistas",
-        "tiempo_hasta_siguiente": "3 min a pie"
-      },
-      {
-        "numero": 4,
-        "nombre": "Calle Montcada",
-        "descripcion": "La calle medieval más famosa de Barcelona tiene bodegas con siglos de historia donde el vino se sirve directamente del barril. Un final de ruta entre la Barcelona más auténtica y atemporal.",
-        "tipo": "Bodegas históricas",
-        "tiempo_hasta_siguiente": null
-      }
-    ],
-    "consejos": [
-      "El Born se llena mucho en verano — mejor ir entre semana o llegar antes de las 17:00",
-      "Los bares del Paseo del Born son caros — cuenta con 12-15€ por copa",
-      "La Barceloneta está a 10 minutos a pie para cerrar con una caña frente al mar"
-    ],
-    "seo_keywords": [
-      "tardeo El Born Barcelona",
-      "bares El Born tarde",
-      "ruta tardeo El Born",
-      "cócteles Born Barcelona"
     ]
   },
   {
