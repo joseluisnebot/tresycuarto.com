@@ -12,7 +12,7 @@ if not MAPILLARY_TOKEN:
     raise SystemExit("ERROR: MAPILLARY_TOKEN no definido (ver /root/.tresycuarto_env). Regenerar en https://www.mapillary.com/dashboard/developers")
 R2_BUCKET = "tresycuarto-media"
 R2_PUBLIC = "https://media.tresycuarto.com"
-RADIO_GRADOS = 0.0003  # ~33 metros
+RADIO_GRADOS = 0.001   # ~110 metros (33m acertaba solo 1/8; 110m sube a ~6/8 sin alejarse de la manzana)
 MIN_BYTES = 20_000     # mínimo 20KB
 MAX_POR_CIUDAD = 200   # locales a procesar por ejecución
 
