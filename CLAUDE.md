@@ -113,7 +113,7 @@ npx wrangler pages deploy out --project-name=tresycuarto --branch=main
 **Todos los scripts y crons cargan sus credenciales de `/root/.tresycuarto_env`** (chmod 600, FUERA del repo). Contiene `CLOUDFLARE_API_TOKEN` (master), `CLOUDFLARE_ACCOUNT_ID`, `ADMIN_TOKEN`, `MAPILLARY_TOKEN`. Los `.py` hacen *fail-fast* si falta la env var; los wrappers `.sh` hacen `source /root/.tresycuarto_env`. **Nunca hardcodear tokens en el repo** (es público).
 
 ### Credenciales MUERTAS (a 12/06/2026) — verificar antes de usar
-- **Mapillary**: token caducado (OAuthException) → era la mayor fuente de fotos (12.573). Regenerar en mapillary.com y pegar en `/root/.tresycuarto_env`. El loop (`mapillary_loop.sh`) no está en cron.
+- **Mapillary**: token REGENERADO y funcionando (01/07/2026) — es la mayor fuente de fotos (12.5k+). En `/root/.tresycuarto_env` (`MAPILLARY_TOKEN`). `mapillary_fotos.py` con `RADIO_GRADOS=0.001` (~110 m; el antiguo 33 m acertaba solo 1/8). El loop (`mapillary_loop.sh`) se lanza a mano con `nohup` (NO está en cron → si el CT reinicia, relanzar). Si vuelve a dar OAuthException, regenerar en mapillary.com/dashboard/developers.
 - **Google Search Console + Gmail**: el proyecto GCP `gmail-api-claude-access` está deshabilitado → SA da `invalid_grant`, Gmail MCP da `disabled_client`. **Los datos de GSC llegan como CSV a `/root/inbox/`** (coger el timestamp más alto). Detalle: memoria `project_search_console.md`.
 
 ## Flujo de propietario (locales)
