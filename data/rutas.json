@@ -6180,5 +6180,182 @@
       "ruta tardeo Calafell Platja Tarragona",
       "qué hacer tarde en Calafell Platja"
     ]
+  },
+  {
+    "slug": "tardeo-franciscanos-albacete",
+    "titulo": "Ruta de tardeo por Franciscanos, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Franciscanos",
+    "intro": "Si buscas plan de tarde en Franciscanos (Albacete), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "el Q",
+        "descripcion": "Bar de tapas con 4,6⭐ (195 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Gazanica Gastrobar",
+        "descripcion": "Bar de tapas con 4,6⭐ (148 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Entreamigos",
+        "descripcion": "Bar de tapas con 4,4⭐ (1930 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Nazaret",
+        "descripcion": "Bar de tapas con 4,4⭐ (682 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Churrería Como Tú",
+        "descripcion": "Bar de tapas con 4,4⭐ (215 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Franciscanos Albacete",
+      "bares Franciscanos Albacete tarde",
+      "ruta tardeo Franciscanos Albacete",
+      "qué hacer tarde en Franciscanos"
+    ]
+  },
+  {
+    "slug": "tardeo-parque-sur-albacete",
+    "titulo": "Ruta de tardeo por Parque Sur, Albacete",
+    "ciudad": "Albacete",
+    "ciudad_slug": "albacete",
+    "barrio": "Parque Sur",
+    "intro": "Parque Sur es una de las zonas con más ambiente de tardeo de Albacete. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Tap Room 69",
+        "descripcion": "Bar de tapas con 4,7⭐ (201 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Titi´s",
+        "descripcion": "Bar de tapas con 4,1⭐ (237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Moga",
+        "descripcion": "Bar de tapas con 4⭐ (196 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Aroma Café",
+        "descripcion": "Cafetería con 4,4⭐ (193 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Dover",
+        "descripcion": "Cafetería con 4,2⭐ (454 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Albacete el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Parque Sur Albacete",
+      "bares Parque Sur Albacete tarde",
+      "ruta tardeo Parque Sur Albacete",
+      "qué hacer tarde en Parque Sur"
+    ]
+  },
+  {
+    "slug": "tardeo-san-bartolome-sevilla",
+    "titulo": "Ruta de tardeo por San Bartolomé, Sevilla",
+    "ciudad": "Sevilla",
+    "ciudad_slug": "sevilla",
+    "barrio": "San Bartolomé",
+    "intro": "San Bartolomé es una de las zonas con más ambiente de tardeo de Sevilla. Te proponemos 5 bares con muy buena nota, de aperitivo a última copa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Baldomero",
+        "descripcion": "Bar de tapas con 4,3⭐ (909 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Almazen Café",
+        "descripcion": "Cafetería con 4,7⭐ (1582 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Café Bar Palomo",
+        "descripcion": "Cafetería con 4,6⭐ (285 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Jester",
+        "descripcion": "Cafetería con 4,5⭐ (2794 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Cafetería-Panadería-Alimentación Alfonso",
+        "descripcion": "Cafetería con 4,5⭐ (1388 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Sevilla el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo San Bartolomé Sevilla",
+      "bares San Bartolomé Sevilla tarde",
+      "ruta tardeo San Bartolomé Sevilla",
+      "qué hacer tarde en San Bartolomé"
+    ]
   }
 ]
