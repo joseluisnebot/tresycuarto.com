@@ -1,5 +1,6 @@
 // Ficha individual de local — URL limpia para SEO
 // /locales/sevilla/bodeguita-la-reja
+import { RANKING } from "../../_ranking_whitelist.js";
 
 const CIUDAD_MAP = {
   "albacete":"Albacete","alcala-de-henares":"Alcalá de Henares","algeciras":"Algeciras",
@@ -113,7 +114,7 @@ function renderLocal(local, ciudadSlug) {
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(desc)}"/>
   <link rel="canonical" href="${canonicalUrl}"/>
-  ${(local.photo_url && local.photo_url !== "" && local.rating_count >= 20) ? "" : `<meta name="robots" content="noindex,follow"/>`}
+  ${(local.rating_count >= 20 || RANKING.has(`/locales/${ciudadSlug}/${local.slug}`)) ? "" : `<meta name="robots" content="noindex,follow"/>`}
   <meta property="og:title" content="${esc(local.nombre)} — ${esc(local.ciudad)} | tresycuarto"/>
   <meta property="og:description" content="${esc(desc)}"/>
   <meta property="og:image" content="${esc(ogImage)}"/>

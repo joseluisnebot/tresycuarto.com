@@ -6,6 +6,7 @@
 import CITIES from "../data/cities.json";
 import RUTAS from "../data/rutas.json";
 import TERRAZAS from "../data/terrazas-por-ciudad.json";
+import { RANKING } from "./_ranking_whitelist.js";
 
 // Mismos tipos que genera app/tardeo/[query]/generateStaticParams
 const TIPOS_TARDEO = ["bares", "pubs", "cafeterias", "terrazas", "tardeo", "planes-tarde", "terraza-tarde"];
@@ -60,15 +61,20 @@ export async function onRequestGet(context) {
     `SELECT ciudad, slug FROM locales
      WHERE slug IS NOT NULL AND slug != ''
        AND rating_count >= 20
-       AND photo_url IS NOT NULL
      ORDER BY ciudad, slug`
   ).all();
 
-  const urlsLocales = locales
-    .filter(l => CIUDAD_TO_SLUG[l.ciudad])
-    .map(l =>
-      `<url><loc>https://tresycuarto.com/locales/${CIUDAD_TO_SLUG[l.ciudad]}/${l.slug}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${hoy}</lastmod></url>`
-    );
+  // Fichas con >=20 reseñas + las que reciben tráfico (lista blanca), sin duplicar
+  const pathsFichas = new Set(
+    locales
+      .filter(l => CIUDAD_TO_SLUG[l.ciudad])
+      .map(l => `/locales/${CIUDAD_TO_SLUG[l.ciudad]}/${l.slug}`)
+  );
+  for (const p of RANKING) pathsFichas.add(p);
+
+  const urlsLocales = [...pathsFichas].map(p =>
+    `<url><loc>https://tresycuarto.com${p}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${hoy}</lastmod></url>`
+  );
 
   // Páginas de intención (las que mejor convierten en Search Console)
   const urlsTardeo = CITIES.flatMap(c =>
