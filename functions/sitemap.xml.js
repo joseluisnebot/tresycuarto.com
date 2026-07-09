@@ -59,7 +59,7 @@ export async function onRequestGet(context) {
   const { results: locales } = await env.DB.prepare(
     `SELECT ciudad, slug FROM locales
      WHERE slug IS NOT NULL AND slug != ''
-       AND rating IS NOT NULL AND rating > 0
+       AND rating_count >= 20
        AND photo_url IS NOT NULL
      ORDER BY ciudad, slug`
   ).all();
