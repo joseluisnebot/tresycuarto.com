@@ -6357,5 +6357,115 @@
       "ruta tardeo San Bartolomé Sevilla",
       "qué hacer tarde en San Bartolomé"
     ]
+  },
+  {
+    "slug": "tardeo-centro-vinaros",
+    "titulo": "Ruta de tardeo por el centro de Vinaròs",
+    "ciudad": "Vinaròs",
+    "ciudad_slug": "vinaros",
+    "barrio": "Centro y Passeig de Colom",
+    "intro": "Vinaròs tardea con calma de pueblo de mar. La tarde empieza en las plazas del centro con un vermut y termina en el Passeig de Colom, con la brisa del Mediterráneo y una terraza frente al puerto. Esta ruta recorre lo mejor del tardeo vinarocense en poco más de un kilómetro: de las plazas de toda la vida a la primera línea de mar, sin prisa y sin coche. El plan perfecto para un sábado por la tarde o un domingo de vermut.",
+    "duracion": "3-4 horas",
+    "distancia": "1,1 km",
+    "mejor_dia": "Domingo de vermut o sábado desde las 18:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaça de Sant Agustí — Morrison",
+        "descripcion": "El arranque clásico del tardeo vinarocense. La Plaça de Sant Agustí es punto de encuentro de toda la vida, y Morrison, con su terraza en la plaza, es de los sitios más concurridos del centro (más de 1.600 reseñas lo avalan). Un vermut o una caña aquí, mirando el ir y venir de la plaza, es la mejor forma de empezar la tarde.",
+        "tipo": "Vermut de arranque",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Carrer de Santa Magdalena — Copeta",
+        "descripcion": "La joya del tardeo de Vinaròs. Copeta es de los locales mejor valorados del pueblo (nota cercana al sobresaliente), con una terraza donde el cóctel se disfruta sin prisa. Es la parada para subir un peldaño: de la caña al combinado bien hecho, en un ambiente cálido y muy vinarocense. Si solo puedes parar en un sitio de esta ruta, que sea este.",
+        "tipo": "Cócteles con terraza",
+        "tiempo_hasta_siguiente": "5 min a pie hacia el mar"
+      },
+      {
+        "numero": 3,
+        "nombre": "Passeig de Colom — The Royal Bistro",
+        "descripcion": "Primera línea de mar. El Passeig de Colom es el paseo marítimo de Vinaròs, y The Royal Bistro tiene una de las terrazas con vistas al Mediterráneo y al puerto. Aquí el tardeo cambia de tercio: brisa salada, luz dorada de la tarde y una bebida fresca mientras pasa la gente por el paseo. El sitio para respirar mar.",
+        "tipo": "Terraza frente al mar",
+        "tiempo_hasta_siguiente": "2 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Passeig de Colom — Café Mozart / Bella Vita",
+        "descripcion": "El cierre, sin moverse del paseo. A lo largo del Passeig de Colom se suceden las terrazas —Café Mozart y Bella Vita entre las más veteranas— para alargar la tarde frente al mar. La última copa o el último café, con el rumor de las olas y el pueblo entrando en la noche. El final perfecto de un tardeo de costa.",
+        "tipo": "Cierre con brisa marina",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El domingo al mediodía es el gran día del vermut en el centro; el sábado la tarde-noche tira más hacia el paseo marítimo.",
+      "Para los amantes de la cerveza artesana, Bang Bang Cervecerías (Avinguda del País Valencià) es una gran parada alternativa cerca del centro.",
+      "En verano, llega pronto a las terrazas del Passeig de Colom: son las más codiciadas de Vinaròs al caer la tarde.",
+      "Todo el recorrido se hace a pie en poco más de un kilómetro; olvídate del coche y disfruta del paseo."
+    ],
+    "seo_keywords": [
+      "tardeo en vinaros",
+      "terrazas vinaros",
+      "donde tomar algo en vinaros",
+      "vermut vinaros",
+      "bares paseo maritimo vinaros",
+      "que hacer en vinaros por la tarde"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-historico-algeciras",
+    "titulo": "Ruta de tardeo por el casco histórico de Algeciras",
+    "ciudad": "Algeciras",
+    "ciudad_slug": "algeciras",
+    "barrio": "Casco histórico y Plaza Alta",
+    "intro": "Algeciras tardea con alma de ciudad portuaria del Estrecho: bares de toda la vida, tapa generosa y terrazas donde la tarde se alarga sin darte cuenta. Esta ruta recorre el casco histórico, del bullicio de la Calle Tarifa a la emblemática Plaza Alta, encadenando algunos de los bares mejor valorados de la ciudad. Menos de un kilómetro a pie, mucha vida de barrio y la mejor tapa del Campo de Gibraltar.",
+    "duracion": "3-4 horas",
+    "distancia": "0,9 km",
+    "mejor_dia": "Sábado al mediodía o domingo de tapeo",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle Tarifa — La Casita",
+        "descripcion": "El arranque perfecto y uno de los templos del tardeo algecireño. La Casita, en plena Calle Tarifa, es de los bares más queridos de la ciudad —más de 2.000 reseñas con una nota altísima lo dicen todo— y su terraza es punto de peregrinación para el tapeo de mediodía. Una caña, una tapa de las de verdad y a coger fuerzas para la ruta.",
+        "tipo": "Tapeo de arranque",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Plaza Alta y Calle Alfonso XI",
+        "descripcion": "El corazón de Algeciras. La Plaza Alta, con sus bancos de azulejos y sus palmeras, es el gran punto de encuentro de la ciudad, y en las calles que la rodean —como Alfonso XI— se concentran bares con terraza como Bar Coruña, Convento o La Brujidera. Una segunda ronda al ritmo de la plaza, viendo pasar a la Algeciras de siempre.",
+        "tipo": "Cañas en la plaza",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Alférez García del Valle — Bar Pepe Troya",
+        "descripcion": "Una parada de clásico indiscutible. Bar Pepe Troya es una de esas tabernas de barrio con solera y más de mil reseñas, donde la tapa manda y el ambiente es cien por cien local. El sitio para bajar el ritmo, pedir lo que recomiende la casa y sentir el tardeo auténtico del Campo de Gibraltar.",
+        "tipo": "Tapa de solera",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Rafael Argeles — Bar La Trocha",
+        "descripcion": "El cierre, con terraza y buen ambiente. Bar La Trocha es una parada muy popular para alargar la tarde con una última ronda antes de que caiga la noche. Ambiente animado, tapa generosa y el broche ideal a un tardeo por el casco viejo algecireño.",
+        "tipo": "Cierre con terraza",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "El casco histórico se recorre entero a pie en menos de un kilómetro: olvídate del coche.",
+      "La Plaza Alta es el mejor punto de referencia para orientarte entre parada y parada.",
+      "Casa Pepe (Avenida de España) es una gran alternativa si buscas una parada más cerca del paseo.",
+      "Fin de semana al mediodía es cuando el tapeo algecireño está en su mejor momento."
+    ],
+    "seo_keywords": [
+      "tardeo en algeciras",
+      "tapas algeciras",
+      "donde tomar algo en algeciras",
+      "bares casco historico algeciras",
+      "terrazas plaza alta algeciras",
+      "que hacer en algeciras por la tarde"
+    ]
   }
 ]
