@@ -21,7 +21,10 @@ export async function onRequestGet(context) {
     { results: emailsPersonales },
   ] = await Promise.all([
     env.DB.prepare("SELECT ciudad, COUNT(*) as total FROM locales GROUP BY ciudad ORDER BY total DESC").all(),
-    env.DB.prepare("SELECT * FROM solicitudes ORDER BY creado_en DESC LIMIT 50").all(),
+    // Solo las que requieren acción. Los claims auto-otorgados quedan guardados en la
+    // tabla para trazabilidad, pero no son cola de aprobación: si se "aprobaran" otra
+    // vez se reenviarían los correos al dueño.
+    env.DB.prepare("SELECT * FROM solicitudes WHERE estado = 'pendiente' ORDER BY creado_en DESC LIMIT 50").all(),
     env.DB.prepare(`
       SELECT ciudad,
         COUNT(*) as total,

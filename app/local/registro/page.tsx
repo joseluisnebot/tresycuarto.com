@@ -113,28 +113,38 @@ function LocalRegistroForm() {
     setEnviando(true);
     setError("");
 
-    const cf_token = await getToken();
+    // Si la ficha ya está reclamada, el backend no verifica Turnstile (el claim ya se
+    // otorgó). Pedir el token solo añadiría segundos de espera con el botón bloqueado,
+    // que es lo que hacía abandonar el registro cuando el captcha falla.
+    const cf_token = localSeleccionado.claimed === 1 ? "" : await getToken();
     const esNuevo = localSeleccionado.id === "__nuevo__";
     const payload = esNuevo
       ? { action: "register_new", email, password, cf_token, nombre: nuevoNombre, tipo: nuevoTipo, ciudad: nuevaCiudad, direccion: nuevaDireccion || undefined, telefono: nuevoTelefono || undefined, web: nuevoWeb || undefined, instagram: nuevoInstagram || undefined }
       : { action: "register", email, password, cf_token, local_id: localSeleccionado.id };
 
-    const res = await fetch("/api/local/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json();
+    // Sin try/catch, un fallo de red dejaba `enviando` a true para siempre: el botón
+    // se quedaba en "Registrando..." y deshabilitado hasta recargar la página.
+    try {
+      const res = await fetch("/api/local/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
 
-    if (!res.ok) {
-      setError(data.error || "Error al registrar");
+      if (!res.ok) {
+        setError(data.error || "No hemos podido completar el registro. Inténtalo de nuevo.");
+        setEnviando(false);
+        return;
+      }
+
+      localStorage.setItem("local_token", data.token);
+      localStorage.setItem("local_id", data.local_id);
+      router.push("/local/dashboard");
+    } catch {
+      setError("No hemos podido conectar. Revisa tu conexión e inténtalo de nuevo.");
       setEnviando(false);
-      return;
     }
-
-    localStorage.setItem("local_token", data.token);
-    localStorage.setItem("local_id", data.local_id);
-    router.push("/local/dashboard");
   }
 
   const cardStyle: React.CSSProperties = {

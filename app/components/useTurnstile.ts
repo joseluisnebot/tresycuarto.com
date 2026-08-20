@@ -51,13 +51,16 @@ export function useTurnstile() {
     }
   }, []);
 
+  // Espera máxima 2,5 s. Antes eran 6 s: si Turnstile fallaba (error 600010, habitual
+  // con bloqueadores o navegadores estrictos) el formulario se quedaba bloqueado sin
+  // avisar y el usuario se iba creyendo que estaba roto.
   async function getToken(): Promise<string> {
     if (tokenRef.current) return tokenRef.current;
     return new Promise(resolve => {
       let tries = 0;
       const iv = setInterval(() => {
         tries++;
-        if (tokenRef.current || tries > 60) { clearInterval(iv); resolve(tokenRef.current); }
+        if (tokenRef.current || tries > 25) { clearInterval(iv); resolve(tokenRef.current); }
       }, 100);
     });
   }

@@ -69,7 +69,34 @@ export async function onRequestPost(context) {
       return Response.json({ error: "Este local ya tiene un propietario registrado" }, { status: 409 });
     }
 
+    // Un claim otorgado y sin completar reserva la ficha 7 días. Pasado ese plazo
+    // vuelve a estar disponible, para no bloquearla si el dueño nunca se registra.
+    // Si vuelve la MISMA persona, no se bloquea: se le reenvía el enlace.
+    const { results: claimPrevio } = await env.DB.prepare(`
+      SELECT contacto_email FROM solicitudes
+      WHERE local_id = ? AND tipo_solicitud = 'claim'
+        AND creado_en > datetime('now', '-7 days')
+      ORDER BY id DESC LIMIT 1
+    `).bind(local_id).all();
+    const mismoSolicitante = claimPrevio.length &&
+      String(claimPrevio[0].contacto_email || "").toLowerCase() === String(contacto_email).toLowerCase();
+    if (claimPrevio.length && !mismoSolicitante) {
+      return Response.json({
+        error: "Otra persona ha reclamado este local hace poco. Si eres el propietario, escríbenos a hola@tresycuarto.com",
+      }, { status: 409 });
+    }
+
     await env.DB.prepare("UPDATE locales SET claimed = 1 WHERE id = ?").bind(local_id).run();
+
+    // Dejar constancia del claim: sin esto el email del dueño no queda en ninguna
+    // parte y no hay forma de saber quién reclamó qué ni de hacer seguimiento.
+    if (!mismoSolicitante) {
+      await env.DB.prepare(`
+        INSERT INTO solicitudes
+          (nombre, ciudad, contacto_email, contacto_nombre, local_id, tipo_solicitud, estado)
+        VALUES (?, ?, ?, ?, ?, 'claim', 'auto-otorgado')
+      `).bind(nombre, ciudad, contacto_email, contacto_nombre || null, local_id).run();
+    }
 
     if (brevoHeaders) {
       // Enlace de registro al propietario (acceso inmediato)

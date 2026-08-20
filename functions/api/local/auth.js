@@ -211,8 +211,13 @@ export async function onRequestPost(context) {
       "INSERT INTO usuario_locales (usuario_id, local_id, slug, trial_inicio) VALUES (?, ?, ?, datetime('now'))"
     ).bind(userId, local_id, slug).run();
 
-    // Marcar el local como claimed y guardar slug
-    await env.DB.prepare("UPDATE locales SET claimed = 1, slug = ? WHERE id = ?").bind(slug, local_id).run();
+    // Marcar el local como claimed.
+    // NO se toca `locales.slug`: ese slug es la URL pública de la ficha
+    // (/locales/<ciudad>/<slug>), ya indexada en Google y referenciada en la lista
+    // blanca de _ranking_whitelist.js. Reescribirlo aquí convertía la ficha en un 404
+    // en el momento en que el dueño se registraba. El slug de la cuenta (nombre-ciudad,
+    // usado por la página link-in-bio /<slug>) vive en usuario_locales.slug.
+    await env.DB.prepare("UPDATE locales SET claimed = 1 WHERE id = ?").bind(local_id).run();
 
     await sendVerificationEmail(env, email, verifyToken, local.nombre);
 
