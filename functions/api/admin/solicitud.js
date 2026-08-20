@@ -96,7 +96,11 @@ export async function onRequestPost(context) {
     }
   }
 
-  await env.DB.prepare("DELETE FROM solicitudes WHERE id = ?").bind(id).run();
+  // NO se borra la fila: se archiva cambiando el estado. Borrarla destruía el único
+  // registro del contacto del propietario (nombre, email, local) y ya se perdió uno así.
+  // La cola de admin solo lista estado='pendiente', así que desaparece de la vista igual.
+  await env.DB.prepare("UPDATE solicitudes SET estado = ? WHERE id = ?")
+    .bind(accion === "aceptar" ? "aprobada" : "descartada", id).run();
 
   return Response.json({ ok: true });
 }
