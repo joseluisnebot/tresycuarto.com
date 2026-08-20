@@ -65,6 +65,34 @@ async function sendVerificationEmail(env, email, verifyToken, nombre) {
   } catch { /* silencioso */ }
 }
 
+// Aviso al admin cuando un propietario COMPLETA el alta. Sin esto no había forma de
+// enterarse: solo se avisaba del claim, no del registro, que es el paso que importa.
+async function notificarAltaAdmin(env, { email, nombre, ciudad, localId, slug }) {
+  if (!env.BREVO_API_KEY) return;
+  try {
+    await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sender: { name: "tresycuarto", email: "hola@tresycuarto.com" },
+        to: [{ email: "JoseluisNebot@gmail.com", name: "Jose Luis" }],
+        subject: `🎉 Alta completada: ${esc(nombre)} (${esc(ciudad)})`,
+        htmlContent: `
+          <div style="font-family:system-ui,sans-serif;max-width:520px;margin:0 auto;color:#1C1917">
+            <h2>🎉 Un propietario ha completado el registro</h2>
+            <ul>
+              <li><strong>Local:</strong> ${esc(nombre)} (${esc(ciudad)})</li>
+              <li><strong>Email:</strong> ${esc(email)}</li>
+              <li><strong>Local ID:</strong> ${esc(localId)}</li>
+            </ul>
+            <p><a href="https://tresycuarto.com/${encodeURIComponent(slug)}">Ver su página →</a></p>
+            <p style="color:#A8A29E;font-size:0.8rem">La cuenta queda sin verificar hasta que confirme su email.</p>
+          </div>`,
+      }),
+    });
+  } catch { /* silencioso: nunca debe romper el registro */ }
+}
+
 // getAuthUser: busca sesión en usuarios + usuario_locales
 // local_id se toma de la cabecera X-Local-Id (si hay varios locales)
 async function getAuthUser(env, request) {
@@ -220,6 +248,7 @@ export async function onRequestPost(context) {
     await env.DB.prepare("UPDATE locales SET claimed = 1 WHERE id = ?").bind(local_id).run();
 
     await sendVerificationEmail(env, email, verifyToken, local.nombre);
+    await notificarAltaAdmin(env, { email, nombre: local.nombre, ciudad: local.ciudad, localId: local_id, slug });
 
     return Response.json({ ok: true, token: sessionToken, slug, local_id, email });
   }
@@ -262,6 +291,7 @@ export async function onRequestPost(context) {
     ).bind(userId, newLocalId, slug).run();
 
     await sendVerificationEmail(env, email, verifyToken, nombre);
+    await notificarAltaAdmin(env, { email, nombre, ciudad, localId: newLocalId, slug });
 
     return Response.json({ ok: true, token: sessionToken, slug, local_id: newLocalId, email });
   }
