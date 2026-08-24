@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de privacidad — Tres y Cuarto",
+  alternates: { canonical: "https://tresycuarto.com/privacidad/" },
 };
 
 export default function Privacidad() {

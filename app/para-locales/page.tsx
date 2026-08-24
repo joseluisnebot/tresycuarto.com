@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "¿Tienes un bar o cafetería? — Tres y Cuarto",
+  description: "Reclama la ficha de tu local en tresycuarto: perfil completo, enlace de bio, QR de menú, eventos y estadísticas. Gratis y sin tarjeta.",
+  alternates: { canonical: "https://tresycuarto.com/para-locales/" },
+};
 
 const features = [
   { icon: "✏️", title: "Perfil completo", desc: "Edita nombre, descripción, teléfono, web, Instagram y horario desde un panel sencillo." },

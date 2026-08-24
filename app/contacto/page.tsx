@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contacto — Tres y Cuarto",
+  description: "Escríbenos: dudas, sugerencias o si tienes un local y quieres aparecer en tresycuarto.",
+  alternates: { canonical: "https://tresycuarto.com/contacto/" },
+};
 
 export default function Contacto() {
   return (

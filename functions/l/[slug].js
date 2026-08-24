@@ -90,6 +90,9 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(local.nombre)} · tresycuarto</title>
+  <!-- /l/<slug> sirve el mismo contenido que /<slug> (el enlace de bio que se
+       publicita). Sin canonical, Google las ve como duplicadas sin version elegida. -->
+  <link rel="canonical" href="https://tresycuarto.com/${encodeURIComponent(slug)}">
   <meta name="description" content="${local.descripcion ? esc(local.descripcion) : `${esc(local.nombre)} en ${esc(local.ciudad)} — ${esc(local.tipo || "local")}`}">
   <meta property="og:title" content="${esc(local.nombre)}">
   <meta property="og:description" content="${local.descripcion ? esc(local.descripcion) : `${esc(local.tipo || "Bar")} en ${esc(local.ciudad)}`}">

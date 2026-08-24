@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Preguntas frecuentes — Tres y Cuarto",
+  description: "Dudas habituales sobre tresycuarto: qué es, cómo aparecer con tu local, cómo reclamar tu ficha y qué cuesta.",
+  alternates: { canonical: "https://tresycuarto.com/faq/" },
+};
 
 const faqs = [
   {

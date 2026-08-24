@@ -25,6 +25,7 @@ export async function generateMetadata(
       title: `Agenda de ${nombre} — Eventos y planes | tresycuarto`,
       description: `Qué hacer en ${nombre}: agenda de eventos, conciertos, ferias y planes. Actualizada cada día.`,
     },
+    alternates: { canonical: `https://tresycuarto.com/agenda/${ciudad}/` },
   };
 }
 
