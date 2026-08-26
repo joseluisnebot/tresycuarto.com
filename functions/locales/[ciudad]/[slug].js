@@ -223,7 +223,11 @@ function renderLocal(local, ciudadSlug) {
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem">
             ${["📸 Subir fotos","🕐 Actualizar horarios","📅 Publicar eventos","🎵 Añadir servicios"].map(i=>`<span style="font-size:0.75rem;background:#FEF0DC;color:#FB923C;border-radius:999px;padding:0.2rem 0.7rem;font-weight:600">${i}</span>`).join("")}
           </div>
-          <a href="/unete?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}" style="display:inline-block;background:#F59E0B;color:#fff;border-radius:999px;padding:0.55rem 1.4rem;text-decoration:none;font-weight:700;font-size:0.875rem">Reclamar esta ficha →</a>
+          <!-- Barra final obligatoria: sin ella cada ficha genera un 308 a /unete/?...
+               y Google las contaba como "Página con redirección" (una por ficha).
+               rel=nofollow: son ~24.000 URLs distintas que sirven la MISMA página;
+               no tiene sentido gastar presupuesto de rastreo en ellas. -->
+          <a href="/unete/?local=${encodeURIComponent(local.id)}&nombre=${encodeURIComponent(local.nombre)}&ciudad=${encodeURIComponent(local.ciudad)}" rel="nofollow" style="display:inline-block;background:#F59E0B;color:#fff;border-radius:999px;padding:0.55rem 1.4rem;text-decoration:none;font-weight:700;font-size:0.875rem">Reclamar esta ficha →</a>
         </div>
       </div>
     </div>` : ""}
