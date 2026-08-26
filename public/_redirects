@@ -1,7 +1,6 @@
-# www → apex. www.tresycuarto.com es dominio personalizado del proyecto Pages y
-# servía el sitio entero con 200: cada página tenía un gemelo exacto en www.
-# El canonical ya apunta al apex, pero el 301 lo elimina de raíz.
-https://www.tresycuarto.com/* https://tresycuarto.com/:splat 301
+# El redirect www → apex NO puede ir aquí: _redirects sólo hace match por ruta,
+# nunca por dominio (probado en producción: la regla con https://www... se ignora).
+# Está en functions/_middleware.js, que sí ve el host.
 
 /l/* /:splat 301
 
