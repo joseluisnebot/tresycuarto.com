@@ -1,3 +1,8 @@
+# www → apex. www.tresycuarto.com es dominio personalizado del proyecto Pages y
+# servía el sitio entero con 200: cada página tenía un gemelo exacto en www.
+# El canonical ya apunta al apex, pero el 301 lo elimina de raíz.
+https://www.tresycuarto.com/* https://tresycuarto.com/:splat 301
+
 /l/* /:splat 301
 
 /locales/osm_node_10147793149  /locales/sevilla/long-rock-sevilla  301
