@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import cities from "../../../data/cities.json";
 import ciudadContentData from "../../../data/ciudad-content.json";
@@ -110,14 +110,26 @@ type Local = {
 
 const LIMIT = 24;
 
-export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp }: { tipoSlug: string; ciudadSlug: string }) {
+export default function TipoEnCiudadPage({
+  tipoSlug,
+  ciudadSlug: ciudadSlugProp,
+  localesIniciales,
+}: {
+  tipoSlug: string;
+  ciudadSlug: string;
+  // Locales ya renderizados en el servidor (EXPERIMENTO 30/08/2026, ver page.tsx).
+  // Sin esto la página llega a Google con ~550 caracteres y la lista la pintaba
+  // solo el navegador. Si viene vacío, el comportamiento es el de siempre.
+  localesIniciales?: Local[];
+}) {
   const tipo = TIPO_SLUG[tipoSlug] ?? "bar"; // null = todos los tipos
   const nombreCiudad = SLUG_A_CIUDAD[ciudadSlugProp] || ciudadSlugProp;
   const tipoPlural = tipo ? (TIPO_PLURAL[tipo] || "Locales") : "Locales";
 
-  const [locales, setLocales] = useState<Local[]>([]);
-  const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const iniciales = localesIniciales ?? [];
+  const [locales, setLocales] = useState<Local[]>(iniciales);
+  const [total, setTotal] = useState(iniciales.length);
+  const [loading, setLoading] = useState(iniciales.length === 0);
   const [offset, setOffset] = useState(0);
   const [cercanas, setCercanas] = useState<{ nombre: string; slug: string }[]>([]);
 
@@ -125,8 +137,15 @@ export default function TipoEnCiudadPage({ tipoSlug, ciudadSlug: ciudadSlugProp 
     setCercanas(ciudadesCercanas(ciudadSlugProp, 4));
   }, [ciudadSlugProp]);
 
+  // Cuando el servidor ya mandó la primera página, igualmente se pide a la API para
+  // sincronizar (locales-seo.json es un subconjunto y la paginación debe cuadrar con
+  // /api/locales), pero SIN activar "Cargando": sustituir contenido ya visible por un
+  // spinner sería peor que no haberlo renderizado.
+  const sincronizaEnSilencio = useRef(iniciales.length > 0);
+
   useEffect(() => {
-    setLoading(true);
+    if (sincronizaEnSilencio.current) sincronizaEnSilencio.current = false;
+    else setLoading(true);
     let url = `/api/locales?ciudad=${encodeURIComponent(nombreCiudad)}&limit=${LIMIT}&offset=${offset}`;
     if (tipo) url += `&tipo=${tipo}`;
     fetch(url)

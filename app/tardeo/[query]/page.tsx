@@ -1,7 +1,52 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import cities from "../../../data/cities.json";
+import localesSeo from "../../../data/locales-seo.json";
 import TipoEnCiudadPage from "./TipoEnCiudadPage";
+
+// ─── EXPERIMENTO 30/08/2026 — renderizado en servidor en ciudades medianas ────
+// Estas páginas son el contenido con mejor conversión del sitio (CTR 6,06% frente
+// al 1,87% de las fichas) pero llegaban a Google con ~550 caracteres: la lista de
+// locales la pintaba solo el navegador.
+//
+// Hipótesis: servir la lista en el HTML sube el posicionamiento, y la subida será
+// notable en ciudades medianas (donde competimos) y nula en las grandes (donde no).
+//
+// Grupo de PRUEBA: estas 10 ciudades × 3 tipos productivos = 30 páginas.
+// Grupo de CONTROL: el resto del sitio, sin tocar. Madrid/Sevilla/Barcelona incluidas
+// a propósito: si a ellas también les subiera, la hipótesis sería falsa.
+// Medir a las 4 semanas (finales de septiembre) y decidir si se extiende.
+//
+// NO es contenido nuevo: es el mismo que ya ve el usuario, servido de otra forma.
+const CIUDADES_PRUEBA = new Set([
+  "cullera", "altea", "cuenca", "santa-pola", "vinaros",
+  "guadalajara", "segovia", "pontevedra", "torrevieja", "avila",
+]);
+const TIPOS_PRUEBA = new Set(["bares", "cafeterias", "pubs"]);
+const MAX_SERVIDOS = 24; // mismo LIMIT que usa el componente cliente
+
+type LocalSeo = {
+  id: string; nombre: string; ciudad: string; slug: string;
+  rating: number | null; rating_count: number | null;
+  horario: string | null; direccion: string | null; tipo: string | null;
+  ciudad_slug: string;
+};
+
+function localesParaPrueba(tipoSlug: string, ciudadSlug: string, tipoDb: string | null) {
+  if (!CIUDADES_PRUEBA.has(ciudadSlug) || !TIPOS_PRUEBA.has(tipoSlug)) return undefined;
+  // MISMO orden que `/api/locales` (ORDER BY claimed DESC, nombre COLLATE NOCASE):
+  // si no coincidiera, la página 2 traería locales solapados o repetidos.
+  const lista = (localesSeo as LocalSeo[])
+    .filter(l => l.ciudad_slug === ciudadSlug && (tipoDb ? l.tipo === tipoDb : true))
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" }))
+    .slice(0, MAX_SERVIDOS)
+    .map(l => ({
+      id: l.id, nombre: l.nombre, tipo: l.tipo || "bar", ciudad: l.ciudad,
+      direccion: l.direccion || "", horario: l.horario, terraza: 0,
+      rating: l.rating, rating_count: l.rating_count,
+    }));
+  return lista.length ? lista : undefined;
+}
 
 // null = todos los tipos (sin filtro de tipo en la API)
 const TIPO_SLUG: Record<string, string | null> = {
@@ -117,6 +162,7 @@ export default async function Page(
       <TipoEnCiudadPage
         tipoSlug={parsed!.tipoSlug}
         ciudadSlug={parsed!.ciudadSlug}
+        localesIniciales={localesParaPrueba(parsed!.tipoSlug, parsed!.ciudadSlug, TIPO_SLUG[parsed!.tipoSlug])}
       />
     </>
   );
