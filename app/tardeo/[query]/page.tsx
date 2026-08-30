@@ -12,17 +12,18 @@ import TipoEnCiudadPage from "./TipoEnCiudadPage";
 // Hipótesis: servir la lista en el HTML sube el posicionamiento, y la subida será
 // notable en ciudades medianas (donde competimos) y nula en las grandes (donde no).
 //
-// Grupo de PRUEBA: estas 10 ciudades × 3 tipos productivos = 30 páginas.
-// Grupo de CONTROL: el resto del sitio, sin tocar. Madrid/Sevilla/Barcelona incluidas
-// a propósito: si a ellas también les subiera, la hipótesis sería falsa.
-// Medir a las 4 semanas (finales de septiembre) y decidir si se extiende.
+// 30/08/2026 (2ª decisión): se extiende a TODAS las ciudades sin esperar las 4 semanas.
+// Que el HTML servido indexe mejor que el pintado por JS no es una hipótesis a validar,
+// y con estos volúmenes (89 impresiones en 3 meses en el grupo de prueba) la medición
+// iba a salir ruidosa igualmente. Se asume que perdemos atribución limpia: si el tráfico
+// sube en octubre no podremos separar esto de los canónicos, el 301 de www y las imágenes.
+//
+// SÍ se excluyen `planes-tarde` y `terraza-tarde`: 172 páginas que suman 42 impresiones
+// en 3 meses porque nadie busca así. Darles contenido es engordar páginas que no van a
+// posicionar, en un sitio que viene de una penalización por páginas pobres.
 //
 // NO es contenido nuevo: es el mismo que ya ve el usuario, servido de otra forma.
-const CIUDADES_PRUEBA = new Set([
-  "cullera", "altea", "cuenca", "santa-pola", "vinaros",
-  "guadalajara", "segovia", "pontevedra", "torrevieja", "avila",
-]);
-const TIPOS_PRUEBA = new Set(["bares", "cafeterias", "pubs"]);
+const TIPOS_PRUEBA = new Set(["bares", "cafeterias", "pubs", "terrazas", "tardeo"]);
 const MAX_SERVIDOS = 24; // mismo LIMIT que usa el componente cliente
 
 type LocalSeo = {
@@ -33,7 +34,7 @@ type LocalSeo = {
 };
 
 function localesParaPrueba(tipoSlug: string, ciudadSlug: string, tipoDb: string | null) {
-  if (!CIUDADES_PRUEBA.has(ciudadSlug) || !TIPOS_PRUEBA.has(tipoSlug)) return undefined;
+  if (!TIPOS_PRUEBA.has(tipoSlug)) return undefined;
   // MISMO orden que `/api/locales` (ORDER BY claimed DESC, nombre COLLATE NOCASE):
   // si no coincidiera, la página 2 traería locales solapados o repetidos.
   const lista = (localesSeo as LocalSeo[])
