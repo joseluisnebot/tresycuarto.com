@@ -37,6 +37,21 @@ function tipoLabel(tipo) {
   return { bar:"Bar", cafe:"Cafetería", pub:"Bar", biergarten:"Terraza" }[tipo] || "Local";
 }
 
+// Redimensiona vía Cloudflare Images. La foto original de R2 pesa ~160 KB y se
+// servía a tamaño completo, cuando el 93% del tráfico es móvil y la muestra a
+// ~400px: con width=400 + WebP baja a ~28 KB (-82%).
+// Cuidado con el coste: 5.000 transformaciones/mes incluidas, luego $0,50/1.000.
+// Cada combinación imagen+parámetros cuenta UNA vez al mes (después va cacheada),
+// por eso se usa UN SOLO ancho (nada de srcset, que multiplicaría el consumo) y
+// sólo en la foto principal de la ficha. 640px: 160 KB -> 65 KB (-59%), y sirve
+// tanto a móvil (93% del tráfico) como a escritorio.
+function img(url, width) {
+  if (!url) return url;
+  // Sólo nuestras propias fotos en R2; una URL externa no debe pasar por aquí.
+  if (!url.startsWith("https://media.tresycuarto.com/")) return url;
+  return `https://tresycuarto.com/cdn-cgi/image/width=${width},format=auto,quality=82/${url}`;
+}
+
 function renderLocal(local, ciudadSlug) {
   const canonicalUrl = `https://tresycuarto.com/locales/${ciudadSlug}/${esc(local.slug)}`;
   const ciudadUrl    = `https://tresycuarto.com/locales/${ciudadSlug}`;
@@ -171,7 +186,7 @@ function renderLocal(local, ciudadSlug) {
   </nav>
 
   <div class="container">
-    ${local.photo_url ? `<img src="${esc(local.photo_url)}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
+    ${local.photo_url ? `<img src="${esc(img(local.photo_url, 640))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
 
     <div class="tipo-badge">${esc(tipoLabel(local.tipo))}</div>
     <h1>${esc(local.nombre)}</h1>
@@ -231,6 +246,17 @@ function renderLocal(local, ciudadSlug) {
         </div>
       </div>
     </div>` : ""}
+
+    <!-- Captación de suscriptores. No se pone el formulario aquí: /api/subscribe exige
+         Turnstile y cargar su script en ~24.000 fichas añadiría ~80 KB de JS a las
+         páginas que más tráfico reciben (71% de los clics) y que acabamos de aligerar.
+         Se enlaza al bloque de la página de ciudad, que sí lo tiene. -->
+    <div style="margin:2rem 0 0;padding:1.1rem 1.25rem;background:#FFF8EF;border:1px solid #F5E6D3;border-radius:1rem;text-align:center">
+      <p style="margin:0 0 0.6rem;font-size:0.9rem;color:#78716C;line-height:1.5">
+        ☀️ Los mejores planes de tardeo en ${esc(local.ciudad)}, cada semana en tu correo.
+      </p>
+      <a href="${ciudadUrl}#newsletter" style="display:inline-block;background:linear-gradient(135deg,#FB923C,#F59E0B);color:#fff;border-radius:999px;padding:0.5rem 1.3rem;text-decoration:none;font-weight:700;font-size:0.85rem">Apuntarme gratis →</a>
+    </div>
 
     <a href="${ciudadUrl}" class="back">← Ver más locales en ${esc(local.ciudad)}</a>
   </div>

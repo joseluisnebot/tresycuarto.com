@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import SuscribirCiudad from "../../components/SuscribirCiudad";
 import rutas from "../../../data/rutas.json";
 
 type Parada = {
@@ -202,6 +203,8 @@ export default async function RutaPage({
               Ver todos los locales en {ruta.ciudad}
             </Link>
           </div>
+
+          <SuscribirCiudad ciudad={ruta.ciudad} />
 
         </div>
 
