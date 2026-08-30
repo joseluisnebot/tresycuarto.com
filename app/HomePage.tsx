@@ -137,9 +137,14 @@ export default function HomePage() {
         <span style={{ fontSize: "1.25rem", fontWeight: 800, letterSpacing: "-0.03em", color: "var(--text)" }}>
           tres<span style={{ color: "var(--peach)" }}>y</span>cuarto
         </span>
-        <a href="/para-locales" style={{ textDecoration: "none", fontSize: "0.85rem", fontWeight: 600, color: "#78716C", padding: "0.4rem 0.9rem", borderRadius: "0.6rem", border: "1px solid #F5E6D3", background: "white" }}>
-          Soy propietario
-        </a>
+        <span style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+          <a href="/cerca/" style={{ textDecoration: "none", fontSize: "0.85rem", fontWeight: 600, color: "#78716C", padding: "0.4rem 0.9rem", borderRadius: "0.6rem", border: "1px solid #F5E6D3", background: "white" }}>
+            📍 Cerca de mí
+          </a>
+          <a href="/para-locales" style={{ textDecoration: "none", fontSize: "0.85rem", fontWeight: 600, color: "#78716C", padding: "0.4rem 0.9rem", borderRadius: "0.6rem", border: "1px solid #F5E6D3", background: "white" }}>
+            Soy propietario
+          </a>
+        </span>
       </nav>
 
       {/* HERO */}

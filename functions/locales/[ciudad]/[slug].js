@@ -136,6 +136,11 @@ function renderLocal(local, ciudadSlug) {
   <meta property="og:type" content="place"/>
   <meta property="og:site_name" content="tresycuarto"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <!-- PWA: las fichas son el 71% de los clics y la puerta de entrada desde Google,
+       pero al servirse desde esta Function no heredaban el manifest del layout de
+       Next: no se podían instalar ni teñían la barra del navegador. ~120 bytes. -->
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#FB923C"/>
   <script type="application/ld+json">${schema}</script>
   <script type="application/ld+json">${breadcrumb}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -182,7 +187,10 @@ function renderLocal(local, ciudadSlug) {
 <body>
   <nav>
     <a href="/" class="logo">tres<span>y</span>cuarto</a>
-    <a href="${ciudadUrl}" class="back" style="margin:0">← ${esc(local.ciudad)}</a>
+    <span style="display:flex;gap:1rem;align-items:center">
+      <a href="/cerca/" class="back" style="margin:0">📍 Cerca de mí</a>
+      <a href="${ciudadUrl}" class="back" style="margin:0">← ${esc(local.ciudad)}</a>
+    </span>
   </nav>
 
   <div class="container">
