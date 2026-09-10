@@ -181,21 +181,21 @@ export async function onRequestPost(context) {
     if (password.length < 8) {
       return Response.json({ error: "La contraseña debe tener al menos 8 caracteres" }, { status: 400 });
     }
-    // Verificar Turnstile en registro (no en login)
-    // Excepción: si el local ya está claimed=1, el admin aprobó el claim — no pedir captcha
-    if (action !== "login" && env.TURNSTILE_SECRET) {
-      let skipTurnstile = false;
-      if (action === "register" && local_id) {
-        const { results: claimedCheck } = await env.DB.prepare(
-          "SELECT claimed FROM locales WHERE id = ?"
-        ).bind(local_id).all();
-        if (claimedCheck.length && claimedCheck[0].claimed === 1) skipTurnstile = true;
-      }
-      if (!skipTurnstile) {
-        const ip = request.headers.get("CF-Connecting-IP") || "";
-        const ok = await verifyTurnstile(cf_token || "", env.TURNSTILE_SECRET, ip);
-        if (!ok) return Response.json({ error: "Verificación fallida, inténtalo de nuevo" }, { status: 403 });
-      }
+    // Turnstile SOLO en `register_new` (dar de alta un local que no existe), que es
+    // el vector real de spam: crea filas nuevas en `locales`.
+    //
+    // Reclamar una ficha YA EXISTENTE (`register`) no lo exige. Motivo: el captcha
+    // aquí era protección redundante y estaba costando usuarios reales — la cuenta
+    // nace con `verified=0` y TODA edición (perfil, fotos, menú, eventos, tema)
+    // devuelve 403 hasta que el dueño confirma su email, así que un bot que se
+    // registre no puede tocar nada sin controlar ese buzón. A cambio, el 403
+    // "Verificación fallida" dejaba fuera a propietarios legítimos: es exactamente
+    // lo que reportó por email un dueño de Málaga el 10/09/2026, y encaja con que
+    // en toda la vida del proyecto no se haya registrado ni un propietario real.
+    if (action === "register_new" && env.TURNSTILE_SECRET) {
+      const ip = request.headers.get("CF-Connecting-IP") || "";
+      const ok = await verifyTurnstile(cf_token || "", env.TURNSTILE_SECRET, ip);
+      if (!ok) return Response.json({ error: "Verificación fallida, inténtalo de nuevo" }, { status: 403 });
     }
   }
 

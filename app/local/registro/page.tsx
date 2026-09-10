@@ -113,11 +113,12 @@ function LocalRegistroForm() {
     setEnviando(true);
     setError("");
 
-    // Si la ficha ya está reclamada, el backend no verifica Turnstile (el claim ya se
-    // otorgó). Pedir el token solo añadiría segundos de espera con el botón bloqueado,
-    // que es lo que hacía abandonar el registro cuando el captcha falla.
-    const cf_token = localSeleccionado.claimed === 1 ? "" : await getToken();
     const esNuevo = localSeleccionado.id === "__nuevo__";
+    // El backend solo verifica Turnstile al dar de alta un local NUEVO. Reclamar una
+    // ficha existente no lo necesita (la cuenta nace sin verificar y no puede editar
+    // nada hasta confirmar el email), así que no se pide el token: esperar por él
+    // bloqueaba el botón y, si el captcha fallaba, devolvía un 403 al propietario.
+    const cf_token = esNuevo ? await getToken() : "";
     const payload = esNuevo
       ? { action: "register_new", email, password, cf_token, nombre: nuevoNombre, tipo: nuevoTipo, ciudad: nuevaCiudad, direccion: nuevaDireccion || undefined, telefono: nuevoTelefono || undefined, web: nuevoWeb || undefined, instagram: nuevoInstagram || undefined }
       : { action: "register", email, password, cf_token, local_id: localSeleccionado.id };
