@@ -52,7 +52,7 @@ function img(url, width) {
   return `https://tresycuarto.com/cdn-cgi/image/width=${width},format=auto,quality=82/${url}`;
 }
 
-function renderLocal(local, ciudadSlug) {
+function renderLocal(local, ciudadSlug, bioSlug = null) {
   const canonicalUrl = `https://tresycuarto.com/locales/${ciudadSlug}/${esc(local.slug)}`;
   const ciudadUrl    = `https://tresycuarto.com/locales/${ciudadSlug}`;
 
@@ -189,7 +189,12 @@ function renderLocal(local, ciudadSlug) {
     .horario-list{font-size:.9rem;color:#1C1917;line-height:1.8}
     .map{margin-top:1rem;border-radius:1.25rem;overflow:hidden;border:1px solid #F5E6D3}
     .galeria{display:flex;gap:.6rem;overflow-x:auto;margin-top:1rem;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
-    .galeria img{height:160px;width:auto;border-radius:1rem;border:1px solid #F5E6D3;flex:0 0 auto;object-fit:cover}
+    .galeria img{height:160px;width:auto;border-radius:1rem;border:1px solid #F5E6D3;flex:0 0 auto;object-fit:cover;cursor:zoom-in}
+    .photo{cursor:zoom-in}
+    #visor{position:fixed;inset:0;background:rgba(28,25,23,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:1.5rem;cursor:zoom-out}
+    #visor.abierto{display:flex}
+    #visor img{max-width:100%;max-height:100%;border-radius:.75rem;box-shadow:0 10px 50px rgba(0,0,0,.5)}
+    #visor button{position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:#fff;font-size:2rem;line-height:1;cursor:pointer;padding:.25rem .6rem}
     .back{display:inline-flex;align-items:center;gap:.4rem;color:#78716C;font-size:.875rem;text-decoration:none;margin-top:2rem}
     .back:hover{color:#FB923C}
     footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#A8A29E;border-top:1px solid #F5E6D3;margin-top:2rem}
@@ -205,10 +210,10 @@ function renderLocal(local, ciudadSlug) {
   </nav>
 
   <div class="container">
-    ${fotoPrincipal ? `<img src="${esc(img(fotoPrincipal, 640))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
+    ${fotoPrincipal ? `<img src="${esc(img(fotoPrincipal, 640))}" data-full="${esc(img(fotoPrincipal, 1200))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
 
     ${galeria.length ? `<div class="galeria">${galeria.slice(0, 8).map((f, i) =>
-      `<img src="${esc(img(f, 320))}" alt="${esc(local.nombre)} — foto ${i + 1}" loading="lazy"/>`
+      `<img src="${esc(img(f, 320))}" data-full="${esc(img(f, 1200))}" alt="${esc(local.nombre)} — foto ${i + 1}" loading="lazy"/>`
     ).join("")}</div>` : ""}
 
     <div class="tipo-badge">${esc(tipoLabel(local.tipo))}</div>
@@ -242,7 +247,9 @@ function renderLocal(local, ciudadSlug) {
       ${local.telefono ? `<div class="row"><span class="icon">📞</span><div><div class="label">Teléfono</div><a class="value" href="tel:${esc(local.telefono)}">${esc(local.telefono)}</a></div></div>` : ""}
       ${local.web ? `<div class="row"><span class="icon">🌐</span><div><div class="label">Web</div><a class="value" href="${esc(local.web)}" target="_blank" rel="noopener">${esc(local.web.replace(/^https?:\/\//,""))}</a></div></div>` : ""}
       ${local.instagram ? `<div class="row"><span class="icon">📸</span><div><div class="label">Instagram</div><a class="value" href="https://instagram.com/${esc(local.instagram)}" target="_blank" rel="noopener">@${esc(local.instagram)}</a></div></div>` : ""}
+      ${local.menu_url ? `<div class="row"><span class="icon">📖</span><div><div class="label">Carta</div><a class="value" href="${esc(local.menu_url)}" target="_blank" rel="noopener">Ver la carta</a></div></div>` : ""}
       ${(local.lat && local.lon) ? `<div class="row"><span class="icon">🧭</span><div><div class="label">Cómo llegar</div><a class="value" href="https://maps.google.com/maps?daddr=${local.lat},${local.lon}" target="_blank" rel="noopener">Abrir navegación</a></div></div>` : ""}
+      ${bioSlug ? `<div class="row"><span class="icon">☀️</span><div><div class="label">Su página en tresycuarto</div><a class="value" href="/${esc(bioSlug)}">tresycuarto.com/${esc(bioSlug)}</a></div></div>` : ""}
     </div>
 
     ${(local.lat && local.lon) ? `
@@ -285,6 +292,27 @@ function renderLocal(local, ciudadSlug) {
   </div>
 
   <footer>© 2025 tresycuarto.com — Los mejores locales de tardeo en España</footer>
+
+  <!-- Visor de fotos: al pinchar cualquier imagen se abre a tamaño completo.
+       Sin librerías: ~15 líneas y se cierra con clic o con Escape. Solo se inserta
+       si la ficha tiene alguna foto. -->
+  ${(fotoPrincipal || galeria.length) ? `
+  <div id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button type="button" aria-label="Cerrar">&times;</button>
+    <img alt=""/>
+  </div>
+  <script>
+  (function(){
+    var v=document.getElementById('visor'), vi=v.querySelector('img');
+    function abrir(src,alt){ vi.src=src; vi.alt=alt||''; v.classList.add('abierto'); document.body.style.overflow='hidden'; }
+    function cerrar(){ v.classList.remove('abierto'); vi.src=''; document.body.style.overflow=''; }
+    document.querySelectorAll('.galeria img, img.photo').forEach(function(im){
+      im.addEventListener('click', function(){ abrir(im.dataset.full || im.src, im.alt); });
+    });
+    v.addEventListener('click', cerrar);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrar(); });
+  })();
+  </script>` : ""}
 </body>
 </html>`;
 }
@@ -362,7 +390,19 @@ export async function onRequestGet(context) {
 </html>`, { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } });
   }
 
-  return new Response(renderLocal(results[0], ciudadSlug), {
+  // Si el local tiene dueño registrado, su página de bio (/<slug>) es contenido
+  // propio y merece un enlace desde la ficha: es adonde apunta el QR que genera
+  // en su panel. Solo se consulta cuando claimed=1 (hoy 5 locales), así que no
+  // añade una lectura extra a las ~24.000 fichas normales.
+  let bioSlug = null;
+  if (results[0].claimed === 1) {
+    const { results: ul } = await env.DB.prepare(
+      "SELECT slug FROM usuario_locales WHERE local_id = ? LIMIT 1"
+    ).bind(results[0].id).all();
+    if (ul && ul.length) bioSlug = ul[0].slug;
+  }
+
+  return new Response(renderLocal(results[0], ciudadSlug, bioSlug), {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
