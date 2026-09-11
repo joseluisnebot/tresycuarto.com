@@ -109,6 +109,8 @@ type Local = {
   lat: number | null; lon: number | null;
   descripcion: string | null; descripcion_google?: string | null;
   photo_url?: string | null; rating?: number | null; rating_count?: number | null;
+  // Las sube el propietario: `foto_perfil` (logo o foto suya) y `fotos` (galería, JSON)
+  foto_perfil?: string | null; fotos?: string | null;
   price_level?: string | null; slug?: string | null; distancia_m?: number | null;
 };
 
@@ -632,10 +634,41 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       cafe: "https://media.tresycuarto.com/placeholders/cafe.jpg",
                       biergarten: "https://media.tresycuarto.com/placeholders/biergarten.jpg",
                     };
-                    const imgSrc = local.photo_url || PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"];
+                    // No existe un campo "logo": `foto_perfil` la usa el dueño para su
+                    // logo o para una foto, y no hay forma fiable de distinguirlos. Por eso
+                    // el fondo es siempre una FOTO (la del scraper o la primera de su
+                    // galería) y `foto_perfil` se superpone como insignia circular, que
+                    // queda bien tanto si es un logo como si es una foto.
+                    // Si sólo hay foto_perfil, se muestra centrada y SIN recortar
+                    // (object-fit:contain) para no destrozar un logo.
+                    let galeria: string[] = [];
+                    try { galeria = local.fotos ? JSON.parse(local.fotos) : []; } catch { galeria = []; }
+                    const fondo = local.photo_url || (Array.isArray(galeria) ? galeria[0] : null) || null;
+                    const insignia = local.foto_perfil && fondo ? local.foto_perfil : null;
+                    const soloLogo = !fondo && local.foto_perfil ? local.foto_perfil : null;
+                    const imgSrc = fondo || soloLogo || PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"];
                     return (
-                      <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3" }}>
-                        <img src={imgSrc} alt={local.nombre} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.currentTarget as HTMLImageElement).src = PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"]; }} />
+                      <div style={{ width: "100%", height: "140px", overflow: "hidden", background: "#F5E6D3", position: "relative" }}>
+                        <img
+                          src={imgSrc}
+                          alt={local.nombre}
+                          loading="lazy"
+                          style={{ width: "100%", height: "100%", objectFit: soloLogo ? "contain" : "cover", padding: soloLogo ? "1.25rem" : 0, background: soloLogo ? "#FFF8EF" : undefined }}
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).src = PLACEHOLDER[local.tipo] || PLACEHOLDER["bar"]; }}
+                        />
+                        {insignia && (
+                          <img
+                            src={insignia}
+                            alt=""
+                            loading="lazy"
+                            style={{
+                              position: "absolute", left: "0.6rem", bottom: "0.6rem",
+                              width: "44px", height: "44px", borderRadius: "50%",
+                              objectFit: "cover", border: "2px solid white",
+                              background: "white", boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
+                            }}
+                          />
+                        )}
                       </div>
                     );
                   })()}
