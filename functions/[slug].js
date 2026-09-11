@@ -491,3 +491,11 @@ function notFoundHtml(slug) {
     <a href="https://tresycuarto.com" style="background:#FB923C;color:white;padding:0.75rem 1.5rem;border-radius:0.75rem;font-weight:700;text-decoration:none">Explorar tresycuarto</a>
   </div></body></html>`;
 }
+
+// HEAD devolvía 404 porque sólo se exportaba onRequestGet. Lo usan verificadores de
+// enlaces, monitores de disponibilidad y algunos rastreadores: veían la página como
+// rota aunque con GET respondiera 200. Se responde con las mismas cabeceras y sin cuerpo.
+export async function onRequestHead(context) {
+  const r = await onRequestGet(context);
+  return new Response(null, { status: r.status, headers: r.headers });
+}

@@ -174,3 +174,11 @@ function buildHtml(local, slug, fotos = [], eventos = []) {
 function notFoundHtml() {
   return `<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>No encontrado · tresycuarto</title></head><body style="font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#FFF8EF;"><div style="text-align:center"><p style="font-size:3rem">🍹</p><h1 style="color:#1C1917">Local no encontrado</h1><a href="https://tresycuarto.com" style="color:#FB923C">Volver a tresycuarto</a></div></body></html>`;
 }
+
+// HEAD devolvía 404 porque sólo se exportaba onRequestGet. Lo usan verificadores de
+// enlaces, monitores de disponibilidad y algunos rastreadores: veían la página como
+// rota aunque con GET respondiera 200. Se responde con las mismas cabeceras y sin cuerpo.
+export async function onRequestHead(context) {
+  const r = await onRequestGet(context);
+  return new Response(null, { status: r.status, headers: r.headers });
+}
