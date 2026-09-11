@@ -60,10 +60,25 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   // `fotos` las sube el PROPIETARIO desde su panel. La ficha sólo leía la primera,
   // así que un dueño podía subir sus fotos y no salía ninguna (le pasó al primer
   // propietario real del proyecto). Las suyas mandan: son mejores y son suyas.
+  //
+  // No existe un campo "logo": el dueño usa `foto_perfil` para su logo o para una
+  // foto suya, y no hay forma fiable de distinguirlos. Poner ahí un logo y sacarlo
+  // a sangre como cabecera lo recortaba y quedaba ilegible. Por eso, igual que en
+  // las tarjetas del listado de ciudad:
+  //   · la CABECERA es siempre una foto de verdad (scraper o 1ª de la galería)
+  //   · `foto_perfil` va encima como insignia circular, que sirve para ambos casos
+  //   · si SÓLO hay foto_perfil, se muestra centrada y sin recortar
   let galeria = [];
   try { galeria = local.fotos ? JSON.parse(local.fotos) : []; } catch { galeria = []; }
   if (!Array.isArray(galeria)) galeria = [];
-  const fotoPrincipal = local.foto_perfil || local.photo_url || null;
+
+  const heroFoto  = local.photo_url || galeria[0] || null;
+  const insignia  = (local.foto_perfil && heroFoto) ? local.foto_perfil : null;
+  const soloLogo  = (!heroFoto && local.foto_perfil) ? local.foto_perfil : null;
+  // Si la cabecera sale de la galería, no se repite abajo
+  const galeriaRestante = (!local.photo_url && galeria.length) ? galeria.slice(1) : galeria;
+  // Para og:image y schema conviene una foto real antes que un logo
+  const fotoPrincipal = heroFoto || local.foto_perfil || null;
   // Descripción SEO enriquecida con datos reales para mejorar CTR
   const tieneTerraza = local.outdoor_seating || local.terraza;
   const ratingStr    = (local.rating && local.rating > 0) ? `⭐ ${Number(local.rating).toFixed(1)}` : null;
@@ -217,6 +232,9 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
     .evento .mes{font-size:.65rem;font-weight:700;color:#B45309;text-transform:uppercase}
     .evento .tit{font-weight:700;font-size:.95rem;color:#1C1917}
     .evento .meta{font-size:.8rem;color:#78716C;margin-top:.15rem}
+    .hero{position:relative}
+    .hero .insignia{position:absolute;left:1rem;bottom:1rem;width:66px;height:66px;border-radius:50%;object-fit:cover;border:3px solid #fff;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+    .photo.solo-logo{object-fit:contain;background:#FFF8EF;padding:1.5rem}
     .galeria{display:flex;gap:.6rem;overflow-x:auto;margin-top:1rem;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
     .galeria img{height:160px;width:auto;border-radius:1rem;border:1px solid #F5E6D3;flex:0 0 auto;object-fit:cover;cursor:zoom-in}
     .photo{cursor:zoom-in}
@@ -239,9 +257,10 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   </nav>
 
   <div class="container">
-    ${fotoPrincipal ? `<img src="${esc(img(fotoPrincipal, 640))}" data-full="${esc(img(fotoPrincipal, 1200))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
+    ${heroFoto ? `<div class="hero"><img src="${esc(img(heroFoto, 640))}" data-full="${esc(img(heroFoto, 1200))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>${insignia ? `<img src="${esc(img(insignia, 160))}" class="insignia" alt=""/>` : ""}</div>`
+      : soloLogo ? `<img src="${esc(img(soloLogo, 640))}" data-full="${esc(img(soloLogo, 1200))}" alt="${esc(local.nombre)}" class="photo solo-logo" loading="eager"/>` : ""}
 
-    ${galeria.length ? `<div class="galeria">${galeria.slice(0, 8).map((f, i) =>
+    ${galeriaRestante.length ? `<div class="galeria">${galeriaRestante.slice(0, 8).map((f, i) =>
       `<img src="${esc(img(f, 320))}" data-full="${esc(img(f, 1200))}" alt="${esc(local.nombre)} — foto ${i + 1}" loading="lazy"/>`
     ).join("")}</div>` : ""}
 
@@ -346,7 +365,7 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   <!-- Visor de fotos: al pinchar cualquier imagen se abre a tamaño completo.
        Sin librerías: ~15 líneas y se cierra con clic o con Escape. Solo se inserta
        si la ficha tiene alguna foto. -->
-  ${(fotoPrincipal || galeria.length) ? `
+  ${(heroFoto || soloLogo || galeriaRestante.length) ? `
   <div id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
     <button type="button" aria-label="Cerrar">&times;</button>
     <img alt=""/>
