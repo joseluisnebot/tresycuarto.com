@@ -45,6 +45,8 @@ function localesParaPrueba(tipoSlug: string, ciudadSlug: string, tipoDb: string 
       id: l.id, nombre: l.nombre, tipo: l.tipo || "bar", ciudad: l.ciudad,
       direccion: l.direccion || "", horario: l.horario, terraza: 0,
       rating: l.rating, rating_count: l.rating_count,
+      // Sin el slug, la tarjeta no puede construir /locales/<ciudad>/<slug>
+      slug: l.slug,
     }));
   return lista.length ? lista : undefined;
 }

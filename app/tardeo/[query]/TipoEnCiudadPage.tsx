@@ -106,7 +106,18 @@ type Local = {
   id: string; nombre: string; tipo: string; ciudad: string;
   direccion: string; horario: string | null; terraza: number;
   rating: number | null; rating_count: number | null;
+  slug?: string | null;
 };
+
+// La ficha vive en /locales/<ciudad>/<slug>. Aqui se enlazaba a /locales/<id>:
+// una URL de dos segmentos que Cloudflare trata como pagina de ciudad -> 404.
+// Mismo fallo que tenian las chinchetas del mapa (2302511). Sin slug, se usa la
+// ruta por id /locales/-/<id>, que si resuelve.
+function urlFicha(local: Local, ciudadSlug: string) {
+  return local.slug
+    ? `/locales/${ciudadSlug}/${local.slug}`
+    : `/locales/-/${encodeURIComponent(local.id)}`;
+}
 
 const LIMIT = 24;
 
@@ -246,7 +257,7 @@ export default function TipoEnCiudadPage({
           <>
             <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))" }}>
               {locales.map(local => (
-                <a key={local.id} href={`/locales/${local.id}`} style={{
+                <a key={local.id} href={urlFicha(local, ciudadSlugProp)} style={{
                   textDecoration: "none", color: "inherit",
                   background: "white", borderRadius: "1.25rem",
                   border: "1px solid #F5E6D3", padding: "1.25rem",
