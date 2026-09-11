@@ -123,6 +123,23 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   const titleTerraza = (local.outdoor_seating || local.terraza) ? " · Terraza" : "";
   const title = `${local.nombre} · ${tipoLabel(local.tipo || "bar")} en ${local.ciudad}${titleRating}${titleTerraza} | tresycuarto`;
 
+  // ¿Se indexa esta ficha? La poda del 09/07/2026 (que sacó al sitio de la
+  // penalización por contenido a escala) dejó fuera todo lo que no llegara a 20
+  // reseñas. Eso condenaba también a las fichas de locales con DUEÑO REGISTRADO,
+  // que son justo lo contrario del contenido generado en masa: las escribe una
+  // persona identificada que ha verificado su email.
+  //
+  // Se exigen las tres cosas a la vez para que la regla no sea una puerta trasera
+  // según crezcan los propietarios: dueño registrado + descripción propia + foto.
+  // Una ficha vacía creada por un bot no cumpliría, y además `register_new` sigue
+  // pidiendo captcha y verificación de email.
+  const fichaDeDueno = Boolean(bioSlug) &&
+    Boolean(local.descripcion || local.descripcion_google) &&
+    Boolean(fotoPrincipal);
+  const indexable = local.rating_count >= 20
+    || RANKING.has(`/locales/${ciudadSlug}/${local.slug}`)
+    || fichaDeDueno;
+
   const featureBadges = [
     (local.outdoor_seating || local.terraza) ? `<span class="fbadge badge-terraza">☀️ Terraza</span>` : "",
     local.live_music        ? `<span class="fbadge badge-musica">🎵 Música en directo</span>` : "",
@@ -138,7 +155,7 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(desc)}"/>
   <link rel="canonical" href="${canonicalUrl}"/>
-  ${(local.rating_count >= 20 || RANKING.has(`/locales/${ciudadSlug}/${local.slug}`)) ? "" : `<meta name="robots" content="noindex,follow"/>`}
+  ${indexable ? "" : `<meta name="robots" content="noindex,follow"/>`}
   <meta property="og:title" content="${esc(local.nombre)} — ${esc(local.ciudad)} | tresycuarto"/>
   <meta property="og:description" content="${esc(desc)}"/>
   <meta property="og:image" content="${esc(ogImage)}"/>

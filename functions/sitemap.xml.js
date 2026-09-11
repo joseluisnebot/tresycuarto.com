@@ -64,13 +64,29 @@ export async function onRequestGet(context) {
      ORDER BY ciudad, slug`
   ).all();
 
-  // Fichas con >=20 reseñas + las que reciben tráfico (lista blanca), sin duplicar
+  // Fichas de locales con DUEÑO REGISTRADO que además tienen descripción propia y
+  // foto. Mismas tres condiciones que usa la ficha para no ponerse `noindex`
+  // (ver functions/locales/[ciudad]/[slug].js): si no coincidieran, el sitemap
+  // estaría ofreciendo a Google páginas que luego le dicen que no las indexe.
+  const { results: deDuenos } = await env.DB.prepare(
+    `SELECT l.ciudad, l.slug FROM locales l
+       JOIN usuario_locales ul ON ul.local_id = l.id
+      WHERE l.slug IS NOT NULL AND l.slug != ''
+        AND l.descripcion IS NOT NULL AND l.descripcion != ''
+        AND (l.foto_perfil IS NOT NULL OR l.photo_url IS NOT NULL)`
+  ).all();
+
+  // Fichas con >=20 reseñas + las que reciben tráfico (lista blanca) + las de
+  // propietarios, sin duplicar
   const pathsFichas = new Set(
     locales
       .filter(l => CIUDAD_TO_SLUG[l.ciudad])
       .map(l => `/locales/${CIUDAD_TO_SLUG[l.ciudad]}/${l.slug}`)
   );
   for (const p of RANKING) pathsFichas.add(p);
+  for (const l of deDuenos) {
+    if (CIUDAD_TO_SLUG[l.ciudad]) pathsFichas.add(`/locales/${CIUDAD_TO_SLUG[l.ciudad]}/${l.slug}`);
+  }
 
   const urlsLocales = [...pathsFichas].map(p =>
     `<url><loc>https://tresycuarto.com${p}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${hoy}</lastmod></url>`
