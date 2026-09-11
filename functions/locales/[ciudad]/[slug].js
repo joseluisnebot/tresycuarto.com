@@ -52,7 +52,7 @@ function img(url, width) {
   return `https://tresycuarto.com/cdn-cgi/image/width=${width},format=auto,quality=82/${url}`;
 }
 
-function renderLocal(local, ciudadSlug, bioSlug = null) {
+function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   const canonicalUrl = `https://tresycuarto.com/locales/${ciudadSlug}/${esc(local.slug)}`;
   const ciudadUrl    = `https://tresycuarto.com/locales/${ciudadSlug}`;
 
@@ -188,6 +188,14 @@ function renderLocal(local, ciudadSlug, bioSlug = null) {
     a.value:hover{text-decoration:underline}
     .horario-list{font-size:.9rem;color:#1C1917;line-height:1.8}
     .map{margin-top:1rem;border-radius:1.25rem;overflow:hidden;border:1px solid #F5E6D3}
+    .eventos{margin-top:1.5rem}
+    .eventos h2{font-size:1rem;font-weight:800;margin-bottom:.75rem;letter-spacing:-.02em}
+    .evento{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border:1px solid #F5E6D3;border-radius:1rem;padding:.9rem 1rem;margin-bottom:.6rem}
+    .evento .fecha{flex:0 0 auto;text-align:center;background:#FEF0DC;border-radius:.6rem;padding:.35rem .6rem;min-width:52px}
+    .evento .dia{font-size:1.1rem;font-weight:900;color:#B45309;line-height:1}
+    .evento .mes{font-size:.65rem;font-weight:700;color:#B45309;text-transform:uppercase}
+    .evento .tit{font-weight:700;font-size:.95rem;color:#1C1917}
+    .evento .meta{font-size:.8rem;color:#78716C;margin-top:.15rem}
     .galeria{display:flex;gap:.6rem;overflow-x:auto;margin-top:1rem;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
     .galeria img{height:160px;width:auto;border-radius:1rem;border:1px solid #F5E6D3;flex:0 0 auto;object-fit:cover;cursor:zoom-in}
     .photo{cursor:zoom-in}
@@ -251,6 +259,27 @@ function renderLocal(local, ciudadSlug, bioSlug = null) {
       ${(local.lat && local.lon) ? `<div class="row"><span class="icon">🧭</span><div><div class="label">Cómo llegar</div><a class="value" href="https://maps.google.com/maps?daddr=${local.lat},${local.lon}" target="_blank" rel="noopener">Abrir navegación</a></div></div>` : ""}
       ${bioSlug ? `<div class="row"><span class="icon">☀️</span><div><div class="label">Su página en tresycuarto</div><a class="value" href="/${esc(bioSlug)}">tresycuarto.com/${esc(bioSlug)}</a></div></div>` : ""}
     </div>
+
+    ${eventos.length ? `
+    <div class="eventos">
+      <h2>📅 Próximos planes en ${esc(local.nombre)}</h2>
+      ${eventos.map(ev => {
+        const [a, m, d] = String(ev.fecha).split("-");
+        const MES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"][Number(m) - 1] || "";
+        const meta = [
+          ev.hora_inicio ? `🕒 ${esc(ev.hora_inicio)}${ev.hora_fin ? `–${esc(ev.hora_fin)}` : ""}` : null,
+          ev.precio ? `💶 ${esc(ev.precio)}` : null,
+        ].filter(Boolean).join(" · ");
+        return `<div class="evento">
+          <div class="fecha"><div class="dia">${esc(d || "")}</div><div class="mes">${MES}</div></div>
+          <div>
+            <div class="tit">${ev.enlace ? `<a href="${esc(ev.enlace)}" target="_blank" rel="noopener" style="color:inherit">${esc(ev.titulo)}</a>` : esc(ev.titulo)}</div>
+            ${ev.descripcion ? `<div class="meta">${esc(ev.descripcion)}</div>` : ""}
+            ${meta ? `<div class="meta">${meta}</div>` : ""}
+          </div>
+        </div>`;
+      }).join("")}
+    </div>` : ""}
 
     ${(local.lat && local.lon) ? `
     <div class="map">
@@ -394,15 +423,23 @@ export async function onRequestGet(context) {
   // propio y merece un enlace desde la ficha: es adonde apunta el QR que genera
   // en su panel. Solo se consulta cuando claimed=1 (hoy 5 locales), así que no
   // añade una lectura extra a las ~24.000 fichas normales.
+  // Los eventos que publica el dueño salían sólo en su página de bio, no aquí.
+  // Son contenido fresco y propio: lo mejor que puede tener una ficha.
   let bioSlug = null;
+  let eventos = [];
   if (results[0].claimed === 1) {
-    const { results: ul } = await env.DB.prepare(
-      "SELECT slug FROM usuario_locales WHERE local_id = ? LIMIT 1"
-    ).bind(results[0].id).all();
-    if (ul && ul.length) bioSlug = ul[0].slug;
+    const hoy = new Date().toISOString().slice(0, 10);
+    const [ul, ev] = await Promise.all([
+      env.DB.prepare("SELECT slug FROM usuario_locales WHERE local_id = ? LIMIT 1").bind(results[0].id).all(),
+      env.DB.prepare(
+        "SELECT titulo, descripcion, fecha, hora_inicio, hora_fin, precio, enlace FROM eventos WHERE local_id = ? AND fecha >= ? ORDER BY fecha ASC LIMIT 5"
+      ).bind(results[0].id, hoy).all(),
+    ]);
+    if (ul.results && ul.results.length) bioSlug = ul.results[0].slug;
+    eventos = ev.results || [];
   }
 
-  return new Response(renderLocal(results[0], ciudadSlug, bioSlug), {
+  return new Response(renderLocal(results[0], ciudadSlug, bioSlug, eventos), {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
