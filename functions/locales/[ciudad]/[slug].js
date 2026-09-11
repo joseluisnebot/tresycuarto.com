@@ -136,9 +136,13 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   const fichaDeDueno = Boolean(bioSlug) &&
     Boolean(local.descripcion || local.descripcion_google) &&
     Boolean(fotoPrincipal);
-  const indexable = local.rating_count >= 20
+  // `fuente='demo'` es la ficha de ejemplo que usamos para enseñar el producto:
+  // el negocio no existe y sus datos son inventados, así que NUNCA se indexa.
+  const esDemo = local.fuente === "demo";
+  const indexable = !esDemo && (
+       local.rating_count >= 20
     || RANKING.has(`/locales/${ciudadSlug}/${local.slug}`)
-    || fichaDeDueno;
+    || fichaDeDueno);
 
   const featureBadges = [
     (local.outdoor_seating || local.terraza) ? `<span class="fbadge badge-terraza">☀️ Terraza</span>` : "",
