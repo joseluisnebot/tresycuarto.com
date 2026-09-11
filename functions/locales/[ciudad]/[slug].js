@@ -55,6 +55,15 @@ function img(url, width) {
 function renderLocal(local, ciudadSlug) {
   const canonicalUrl = `https://tresycuarto.com/locales/${ciudadSlug}/${esc(local.slug)}`;
   const ciudadUrl    = `https://tresycuarto.com/locales/${ciudadSlug}`;
+
+  // Fotos. `photo_url` la rellenan el scraper y el enriquecedor; `foto_perfil` y
+  // `fotos` las sube el PROPIETARIO desde su panel. La ficha sólo leía la primera,
+  // así que un dueño podía subir sus fotos y no salía ninguna (le pasó al primer
+  // propietario real del proyecto). Las suyas mandan: son mejores y son suyas.
+  let galeria = [];
+  try { galeria = local.fotos ? JSON.parse(local.fotos) : []; } catch { galeria = []; }
+  if (!Array.isArray(galeria)) galeria = [];
+  const fotoPrincipal = local.foto_perfil || local.photo_url || null;
   // Descripción SEO enriquecida con datos reales para mejorar CTR
   const tieneTerraza = local.outdoor_seating || local.terraza;
   const ratingStr    = (local.rating && local.rating > 0) ? `⭐ ${Number(local.rating).toFixed(1)}` : null;
@@ -95,7 +104,7 @@ function renderLocal(local, ciudadSlug) {
       latitude: local.lat,
       longitude: local.lon,
     } : undefined,
-    image: local.photo_url || undefined,
+    image: fotoPrincipal || undefined,
   });
 
   const breadcrumb = JSON.stringify({
@@ -108,7 +117,7 @@ function renderLocal(local, ciudadSlug) {
     ],
   });
 
-  const ogImage = local.photo_url || `https://tresycuarto.com/og-default.png`;
+  const ogImage = fotoPrincipal || `https://tresycuarto.com/og-default.png`;
   // Title SEO con datos clave para mejorar CTR en Google
   const titleRating  = (local.rating && local.rating >= 4.0) ? ` ⭐ ${Number(local.rating).toFixed(1)}` : "";
   const titleTerraza = (local.outdoor_seating || local.terraza) ? " · Terraza" : "";
@@ -179,6 +188,8 @@ function renderLocal(local, ciudadSlug) {
     a.value:hover{text-decoration:underline}
     .horario-list{font-size:.9rem;color:#1C1917;line-height:1.8}
     .map{margin-top:1rem;border-radius:1.25rem;overflow:hidden;border:1px solid #F5E6D3}
+    .galeria{display:flex;gap:.6rem;overflow-x:auto;margin-top:1rem;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
+    .galeria img{height:160px;width:auto;border-radius:1rem;border:1px solid #F5E6D3;flex:0 0 auto;object-fit:cover}
     .back{display:inline-flex;align-items:center;gap:.4rem;color:#78716C;font-size:.875rem;text-decoration:none;margin-top:2rem}
     .back:hover{color:#FB923C}
     footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#A8A29E;border-top:1px solid #F5E6D3;margin-top:2rem}
@@ -194,7 +205,11 @@ function renderLocal(local, ciudadSlug) {
   </nav>
 
   <div class="container">
-    ${local.photo_url ? `<img src="${esc(img(local.photo_url, 640))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
+    ${fotoPrincipal ? `<img src="${esc(img(fotoPrincipal, 640))}" alt="${esc(local.nombre)}" class="photo" loading="eager"/>` : ""}
+
+    ${galeria.length ? `<div class="galeria">${galeria.slice(0, 8).map((f, i) =>
+      `<img src="${esc(img(f, 320))}" alt="${esc(local.nombre)} — foto ${i + 1}" loading="lazy"/>`
+    ).join("")}</div>` : ""}
 
     <div class="tipo-badge">${esc(tipoLabel(local.tipo))}</div>
     <h1>${esc(local.nombre)}</h1>
