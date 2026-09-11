@@ -45,6 +45,24 @@ EMAIL_PROFESSIONAL_PREFIXES = {
     "recepcion", "oficina", "bar", "cafe",
 }
 
+# Dominios y patrones que NO son un contacto del negocio: los deja cualquier web
+# hecha con Wix/Squarespace/Sentry. Se colo uno en la prueba en seco del 12/09:
+# 605a7bae...@sentry-next.wixpress.com
+DOMINIOS_TECNICOS = ("wixpress.com", "sentry.io", "sentry-next", "wordpress.com",
+                     "squarespace.com", "shopify.com", "godaddy.com", "example.com")
+PREFIJOS_TECNICOS = ("no-reply", "noreply", "donotreply", "mailer-daemon", "postmaster",
+                     "webmaster@localhost", "abuse", "root@")
+
+def es_email_valido(email):
+    e = (email or "").strip().lower()
+    if "@" not in e or " " in e: return False
+    if any(d in e for d in DOMINIOS_TECNICOS): return False
+    if any(e.startswith(p) for p in PREFIJOS_TECNICOS): return False
+    # Hashes: prefijos largos de solo hexadecimal (identificadores, no personas)
+    pref = e.split("@")[0]
+    if len(pref) >= 24 and all(c in "0123456789abcdef" for c in pref): return False
+    return True
+
 def es_email_profesional(email):
     prefijo = email.split("@")[0].lower()
     if prefijo in EMAIL_PROFESSIONAL_PREFIXES:
@@ -111,12 +129,12 @@ def construir_email(local):
     slug   = local.get("slug", "")
     cslug  = ciudad_slug(ciudad)
     url_ficha = f"https://tresycuarto.com/locales/{cslug}/{slug}"
-    url_claim = f"https://tresycuarto.com/unete?local={local['id']}&nombre={requests.utils.quote(nombre)}&ciudad={requests.utils.quote(ciudad)}"
+    url_claim = f"https://tresycuarto.com/unete/?local={local['id']}&nombre={requests.utils.quote(nombre)}&ciudad={requests.utils.quote(ciudad)}"
 
     rating_str = ""
     if local.get("rating") and float(local["rating"]) > 0:
         estrellas = "★" * min(5, round(float(local["rating"])))
-        rating_str = f"<p style='color:#78716C;font-size:0.9rem;margin:0 0 1rem'>Tu ficha tiene una valoración de <strong>{estrellas} {float(local['rating']):.1f}</strong> en nuestra plataforma.</p>"
+        rating_str = f"<p style='color:#78716C;font-size:0.9rem;margin:0 0 1rem'>Tu ficha muestra <strong>{estrellas} {float(local['rating']):.1f}</strong>, la valoración que consta en los datos públicos de tu negocio.</p>"
 
     subject = f"Hola {nombre} — tu {tipo} ya aparece en tresycuarto.com"
 
@@ -150,6 +168,11 @@ def construir_email(local):
     <li>📅 Publicar eventos y promociones</li>
     <li>📊 Ver cuánta gente visita tu ficha</li>
   </ul>
+
+  <p style="color:#44403C;line-height:1.6;margin:0 0 1.5rem">
+    Para que veas cómo queda cuando está completa, hemos preparado un ejemplo:
+    <a href="https://tresycuarto.com/bar-ejemplo-demo" style="color:#FB923C;text-decoration:none;font-weight:700">ver ficha de ejemplo →</a>
+  </p>
 
   <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
     <a href="{url_claim}" style="display:inline-block;padding:0.85rem 1.75rem;background:linear-gradient(135deg,#FB923C,#F59E0B);color:white;font-weight:700;text-decoration:none;border-radius:0.75rem;font-size:0.95rem">
@@ -195,6 +218,7 @@ def main():
     parser = argparse.ArgumentParser(description="Outreach a propietarios de locales")
     parser.add_argument("--limite", type=int, default=LIMITE_DEFECTO)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--ciudades", help="lista separada por comas; por defecto, ninguna restriccion")
     args = parser.parse_args()
 
     log.info(f"=== Inicio outreach_propietarios | limite={args.limite} dry-run={args.dry_run} ===")
@@ -206,6 +230,13 @@ def main():
     except Exception:
         pass  # Ya existe
 
+    # Filtro de ciudades: el analisis del 30/08 mostro que en las grandes (Madrid,
+    # Sevilla, Barcelona...) no competimos. Escribir alli es quemar contactos.
+    filtro_ciudades = ""
+    if args.ciudades:
+        lista = ",".join("'" + c.strip().replace("'", "''") + "'" for c in args.ciudades.split(","))
+        filtro_ciudades = f"AND ciudad IN ({lista})"
+
     locales_raw = d1_query(f"""
         SELECT id, nombre, tipo, ciudad, slug, email, rating, instagram, web
         FROM locales
@@ -213,11 +244,16 @@ def main():
           AND claimed = 0
           AND slug IS NOT NULL AND slug != ''
           AND (email_outreach_sent IS NULL OR email_outreach_sent = 0)
+          -- Solo Espana: hay ciudades homonimas en America (Merida de Mexico,
+          -- Cordoba de Argentina...) y el nombre de ciudad no las distingue.
+          AND lat BETWEEN 27 AND 44 AND lon BETWEEN -19 AND 5
+          {filtro_ciudades}
         ORDER BY rating DESC NULLS LAST
         LIMIT {args.limite * 3}
     """)
     # Filtrar solo emails profesionales (base legal B2B)
-    locales = [l for l in locales_raw if es_email_profesional(l["email"])][:args.limite]
+    locales = [l for l in locales_raw
+               if es_email_valido(l["email"]) and es_email_profesional(l["email"])][:args.limite]
     descartados = len(locales_raw) - len(locales)
     if descartados:
         log.info(f"Emails personales descartados por filtro B2B: {descartados}")
