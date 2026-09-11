@@ -500,6 +500,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
           <MapaLocales
             locales={eventoSeleccionado ? eventoSeleccionado.locales : locales}
             ciudad={nombreCiudad}
+            ciudadSlug={slug}
             eventoPin={eventoSeleccionado ? {
               lat: eventoSeleccionado.lat,
               lon: eventoSeleccionado.lon,

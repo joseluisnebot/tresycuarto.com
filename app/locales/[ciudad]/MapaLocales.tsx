@@ -10,6 +10,8 @@ type LocalPin = {
   lon: number | null;
   terraza: number;
   direccion?: string | null;
+  slug?: string | null;
+  ciudad?: string | null;
 };
 
 const TIPO_COLOR: Record<string, string> = {
@@ -26,7 +28,26 @@ type EventoPin = {
   nombre: string;
 } | null;
 
-export default function MapaLocales({ locales, eventoPin = null }: { locales: LocalPin[]; ciudad: string; eventoPin?: EventoPin }) {
+// La ficha de un local vive en /locales/<ciudad>/<slug>. El popup enlazaba a
+// /locales/<id>, que es una URL de DOS segmentos: Cloudflare la trata como página
+// de ciudad, no encuentra ninguna con ese nombre y devuelve 404. Pasaba en TODAS
+// las ciudades, porque este componente es el mismo para todas.
+// Si por lo que sea no hay slug, se usa /locales/-/<id>, la ruta por id que sí
+// resuelve la Function de ficha.
+function slugify(s: string) {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function urlFicha(local: LocalPin, ciudadSlug: string) {
+  if (!local.slug) return `/locales/-/${encodeURIComponent(local.id)}`;
+  // Al seleccionar un evento el mapa puede mostrar locales de OTRA ciudad, así que
+  // manda la del propio local; el slug de la página es sólo el respaldo.
+  const cs = local.ciudad ? slugify(local.ciudad) : ciudadSlug;
+  return `/locales/${cs}/${local.slug}`;
+}
+
+export default function MapaLocales({ locales, ciudadSlug, eventoPin = null }: { locales: LocalPin[]; ciudad: string; ciudadSlug: string; eventoPin?: EventoPin }) {
   const mapRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mapInstanceRef = useRef<any>(null);
@@ -85,7 +106,7 @@ export default function MapaLocales({ locales, eventoPin = null }: { locales: Lo
             <div style="font-weight:700;font-size:0.95rem;margin:0.4rem 0 0.2rem;color:#1C1917">${local.nombre}</div>
             ${local.direccion ? `<div style="font-size:0.78rem;color:#78716C;margin-bottom:0.4rem">📍 ${local.direccion}</div>` : ""}
             ${local.terraza ? `<div style="font-size:0.75rem;color:#059669;margin-bottom:0.4rem">☀️ Con terraza</div>` : ""}
-            <a href="/locales/${local.id}" style="display:inline-block;margin-top:0.3rem;font-size:0.8rem;font-weight:700;color:#FB923C;text-decoration:none">Ver ficha →</a>
+            <a href="${urlFicha(local, ciudadSlug)}" style="display:inline-block;margin-top:0.3rem;font-size:0.8rem;font-weight:700;color:#FB923C;text-decoration:none">Ver ficha →</a>
           </div>`;
 
         L.marker([local.lat as number, local.lon as number], { icon })
