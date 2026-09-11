@@ -1,3 +1,28 @@
+// Visor de fotos ampliadas, compartido por las tres plantillas de la página de bio
+// (fresh, bold, elegante). Se abre al pinchar cualquier imagen marcada con
+// `data-zoom` y se cierra con clic o con Escape. Sin librerías.
+const VISOR = `
+<div id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada"
+  style="position:fixed;inset:0;background:rgba(17,24,39,.93);display:none;align-items:center;justify-content:center;z-index:9999;padding:1.5rem;cursor:zoom-out">
+  <button type="button" aria-label="Cerrar" style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:#fff;font-size:2rem;line-height:1;cursor:pointer;padding:.25rem .6rem">&times;</button>
+  <img alt="" style="max-width:100%;max-height:100%;border-radius:.75rem;box-shadow:0 10px 50px rgba(0,0,0,.5)"/>
+</div>
+<script>
+(function(){
+  var v=document.getElementById('visor'), vi=v.querySelector('img');
+  function cerrar(){ v.style.display='none'; vi.src=''; document.body.style.overflow=''; }
+  document.querySelectorAll('img[data-zoom]').forEach(function(im){
+    im.style.cursor='zoom-in';
+    im.addEventListener('click', function(){
+      vi.src = im.src; vi.alt = im.alt || '';
+      v.style.display='flex'; document.body.style.overflow='hidden';
+    });
+  });
+  v.addEventListener('click', cerrar);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrar(); });
+})();
+</script>`;
+
 export async function onRequestGet(context) {
   const { env, params, request } = context;
   const slug = params.slug;
@@ -208,7 +233,7 @@ function buildBold(local, fotos, redesArr, eventos, paleta, sections) {
   const galeriaHtml = sections.includes("galeria") && fotos.length ? `
     <section style="padding:2rem 0">${label("Fotos")}
       <div style="display:flex;gap:0.6rem;overflow-x:auto;padding-bottom:0.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
-        ${fotos.map(f=>`<img src="${esc(f)}" alt="${esc(local.nombre)}" loading="lazy" style="height:230px;min-width:${fotos.length===1?"100%":"78%"};object-fit:cover;border-radius:0.85rem;flex-shrink:0;scroll-snap-align:center">`).join("")}
+        ${fotos.map(f=>`<img src="${esc(f)}" data-zoom alt="${esc(local.nombre)}" loading="lazy" style="height:230px;min-width:${fotos.length===1?"100%":"78%"};object-fit:cover;border-radius:0.85rem;flex-shrink:0;scroll-snap-align:center">`).join("")}
       </div>
     </section>` : "";
 
@@ -271,7 +296,7 @@ function buildBold(local, fotos, redesArr, eventos, paleta, sections) {
     </footer>
   </div>
   ${barraAcciones(local, accent, true)}
-</body></html>`;
+${VISOR}</body></html>`;
 }
 
 // ── TEMPLATE: FRESH ──────────────────────────────────────────────────────────
@@ -295,7 +320,7 @@ function buildFresh(local, fotos, redesArr, eventos, paleta, sections) {
     <section style="padding:2rem 1.5rem">
       <h2 style="font-size:0.72rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:1rem">Galería</h2>
       <div style="display:grid;grid-template-columns:repeat(${fotos.length===1?1:fotos.length===2?2:3},1fr);gap:0.5rem;border-radius:1.25rem;overflow:hidden">
-        ${fotos.map(f=>`<img src="${esc(f)}" alt="${esc(local.nombre)}" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;transition:transform .3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">`).join("")}
+        ${fotos.map(f=>`<img src="${esc(f)}" data-zoom alt="${esc(local.nombre)}" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;transition:transform .3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">`).join("")}
       </div>
     </section>` : "";
 
@@ -338,7 +363,7 @@ function buildFresh(local, fotos, redesArr, eventos, paleta, sections) {
     ${shareBtn(false)}
     <div style="position:relative">
       ${local.foto_perfil
-        ? `<img src="${esc(local.foto_perfil)}" alt="${esc(local.nombre)}" style="width:108px;height:108px;border-radius:50%;object-fit:cover;border:4px solid white;box-shadow:0 8px 28px rgba(17,24,39,0.18);margin-bottom:1.1rem">`
+        ? `<img src="${esc(local.foto_perfil)}" data-zoom alt="${esc(local.nombre)}" style="width:108px;height:108px;border-radius:50%;object-fit:cover;border:4px solid white;box-shadow:0 8px 28px rgba(17,24,39,0.18);margin-bottom:1.1rem">`
         : `<div style="width:108px;height:108px;border-radius:50%;background:${accent};display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin:0 auto 1.1rem;box-shadow:0 8px 28px ${accent}44">🍹</div>`}
       <h1 style="font-size:2.1rem;font-weight:900;color:#1C1917;letter-spacing:-0.03em;line-height:1.05;text-transform:capitalize">${esc(local.nombre)}</h1>
       <p style="font-size:0.9rem;color:#64748B;margin-top:0.45rem;font-weight:600;text-transform:capitalize">${esc(local.tipo||"Bar")} · ${esc(local.ciudad)}</p>
@@ -358,7 +383,7 @@ function buildFresh(local, fotos, redesArr, eventos, paleta, sections) {
     <a href="https://tresycuarto.com" style="font-size:0.8rem;color:#CBD5E1;text-decoration:none;font-weight:600">tres<span style="color:${accent}">y</span>cuarto · El tardeo en España</a>
   </footer>
   ${barraAcciones(local, accent, false)}
-</div></body></html>`;
+</div>${VISOR}</body></html>`;
 }
 
 // ── TEMPLATE: ELEGANTE ───────────────────────────────────────────────────────
@@ -381,7 +406,7 @@ function buildElegante(local, fotos, redesArr, eventos, paleta, sections) {
     <section style="padding:3rem 1.5rem">
       <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:700;color:#111827;margin-bottom:1.5rem">Imágenes</h2>
       <div style="display:grid;grid-template-columns:${fotos.length===1?"1fr":"1fr 1fr"};gap:0.75rem">
-        ${fotos.map((f,i)=>`<img src="${esc(f)}" alt="${esc(local.nombre)}" loading="lazy" style="width:100%;aspect-ratio:${fotos.length>2&&i===0?"2/1":"1"};object-fit:cover;border-radius:0.6rem">`).join("")}
+        ${fotos.map((f,i)=>`<img src="${esc(f)}" data-zoom alt="${esc(local.nombre)}" loading="lazy" style="width:100%;aspect-ratio:${fotos.length>2&&i===0?"2/1":"1"};object-fit:cover;border-radius:0.6rem">`).join("")}
       </div>
     </section>` : "";
 
@@ -420,7 +445,7 @@ function buildElegante(local, fotos, redesArr, eventos, paleta, sections) {
 </head><body><div class="wrap">
   <div style="position:relative;height:78vw;max-height:480px;min-height:300px;overflow:hidden">
     ${local.foto_perfil
-      ? `<img src="${esc(local.foto_perfil)}" alt="${esc(local.nombre)}" style="width:100%;height:100%;object-fit:cover">`
+      ? `<img src="${esc(local.foto_perfil)}" data-zoom alt="${esc(local.nombre)}" style="width:100%;height:100%;object-fit:cover">`
       : `<div style="width:100%;height:100%;background:linear-gradient(135deg,${accent}22,${accent}44);display:flex;align-items:center;justify-content:center;font-size:5rem">🍽️</div>`}
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.05) 55%)"></div>
     ${shareBtn(true)}
@@ -454,7 +479,7 @@ function buildElegante(local, fotos, redesArr, eventos, paleta, sections) {
     <a href="https://tresycuarto.com" style="font-size:0.78rem;color:#D1D5DB;text-decoration:none;font-weight:500;letter-spacing:0.03em">tres<span style="color:${accent}">y</span>cuarto · El tardeo en España</a>
   </footer>
   ${barraAcciones(local, accent, false)}
-</div></body></html>`;
+</div>${VISOR}</body></html>`;
 }
 
 function notFoundHtml(slug) {
