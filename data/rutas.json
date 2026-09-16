@@ -6467,5 +6467,123 @@
       "terrazas plaza alta algeciras",
       "que hacer en algeciras por la tarde"
     ]
+  },
+  {
+    "slug": "tardeo-casco-antiguo-teruel",
+    "titulo": "Ruta de tardeo por el casco antiguo de Teruel",
+    "ciudad": "Teruel",
+    "ciudad_slug": "teruel",
+    "barrio": "Casco antiguo",
+    "intro": "El casco viejo de Teruel cabe en un pañuelo: de la primera parada a la última hay poco más de medio kilómetro andando, y se hace entero sin prisa y sin coger el coche. Empieza en la Judería, baja por Joaquín Costa y termina en San Andrés, que es donde la tarde se alarga. Cinco paradas, ninguna a más de cuatro minutos de la anterior.",
+    "duracion": "3-4 horas",
+    "distancia": "0,6 km",
+    "mejor_dia": "Sábado desde las 18:00 o domingo de vermut",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Plaza Judería — La Judería y Estás en La Parra",
+        "descripcion": "Se arranca en la plaza de la Judería, con dos sitios en los números 1 y 2, uno enfrente del otro. Es el punto más tranquilo de la ruta y el mejor para el primer vermut, antes de que se llene el centro.",
+        "tipo": "Vermut de arranque",
+        "tiempo_hasta_siguiente": "2 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Joaquín Costa — Gran Café de Teruel, La taberna de Rokelin y Pura Cepa",
+        "descripcion": "A un par de minutos está la calle con más concentración de la ruta: tres sitios distintos en los números 22, 31 y 34. Un café histórico, una taberna y un pub, los tres en la misma calle, así que se puede cambiar de ambiente sin alejarse.",
+        "tipo": "La parada larga",
+        "tiempo_hasta_siguiente": "1 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Calle Juan Pérez — Noche y día y Las mañicas",
+        "descripcion": "Ochenta metros más allá, dos sitios de barrio en los números 4 y 7. Es la parada de transición: se toma algo rápido y se sigue.",
+        "tipo": "Parada corta",
+        "tiempo_hasta_siguiente": "4 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Calle Comandante Fortea — Don Sancho y La cantina del beso",
+        "descripcion": "Un café y un bar a dos pasos uno del otro. Buen punto para sentarse si la ruta se está alargando y toca comer algo.",
+        "tipo": "Descanso",
+        "tiempo_hasta_siguiente": "2 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Calle San Andrés — Lennon y Café Tattoo",
+        "descripcion": "El final son dos pubs en la misma calle, en los números 4 y 23. Aquí es donde el tardeo deja de serlo y se convierte en otra cosa, que es exactamente para lo que está la última parada.",
+        "tipo": "Cierre",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "La ruta entera son 638 metros de calles: se puede hacer en zapatillas y volver al principio en menos de diez minutos si una parada te convence más que las otras.",
+      "Ninguno de estos sitios tiene terraza marcada en nuestros datos, así que cuenta con estar dentro. En Teruel, en invierno, se agradece.",
+      "Es el casco antiguo: las calles son estrechas y aparcar cerca es complicado. Mejor dejar el coche fuera y entrar andando."
+    ],
+    "seo_keywords": [
+      "tardeo en Teruel",
+      "bares casco antiguo Teruel",
+      "donde tomar algo en Teruel",
+      "ruta de bares Teruel"
+    ]
+  },
+  {
+    "slug": "tardeo-puerto-santa-pola",
+    "titulo": "Ruta de tardeo del puerto de Santa Pola",
+    "ciudad": "Santa Pola",
+    "ciudad_slug": "santa-pola",
+    "barrio": "Paseo y puerto",
+    "intro": "Santa Pola se tardea andando hacia el puerto. La ruta empieza en la avenida de Blasco Ibáñez, que es donde están las terrazas, y baja hasta el Passeig del Port. Son casi tres kilómetros de paseo, con cinco zonas bien diferenciadas y más de treinta sitios donde parar por el camino.",
+    "duracion": "4-5 horas",
+    "distancia": "2,8 km",
+    "mejor_dia": "Sábado por la tarde o domingo a mediodía; en verano, entre semana también",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Avinguda de Vicente Blasco Ibáñez — las terrazas",
+        "descripcion": "Es la zona con más oferta de toda la ruta: doce sitios, y siete de ellos con terraza, que es la mayor concentración de terrazas de Santa Pola. Entre ellos el Chiringuito Azul, La Vida Bonita Beach Club, el Café de la Mar y el Café París. Si solo vas a hacer una parada, que sea ésta.",
+        "tipo": "Arranque con terraza",
+        "tiempo_hasta_siguiente": "17 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Passeig d'Adolfo Suárez — la parte de tapear",
+        "descripcion": "Diez sitios en el mismo paseo: La Taberna de Lucía, La Mala Madre, Saint James, La Esquina, el Miramar. Es la zona más variada de la ruta y donde tiene sentido pararse a comer algo antes de seguir bajando.",
+        "tipo": "Tapeo",
+        "tiempo_hasta_siguiente": "7 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Carrer Gabriel Miró — BB+ y Cafeteria Ecus",
+        "descripcion": "Un desvío corto hacia dentro, con dos sitios más tranquilos. Buen sitio para un café antes del último tramo.",
+        "tipo": "Café de media tarde",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Avinguda del Portus Illicitanus — Bitácora y Tribeca",
+        "descripcion": "Dos sitios, uno de café y otro de copa, según a qué hora llegues. Desde aquí queda el último tramo hasta el puerto, poco menos de un kilómetro.",
+        "tipo": "Parada de paso",
+        "tiempo_hasta_siguiente": "11 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Passeig del Port — Azteca, Mi Barra y Cafetería La Barca",
+        "descripcion": "El final de la ruta, ya en el paseo del puerto, con tres sitios pegados al agua. Es el cierre natural: se acaba mirando los barcos.",
+        "tipo": "Cierre junto al puerto",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Hazla en este orden y no al revés: las terrazas están al principio y el puerto al final, y así el último tramo se anda de bajada hacia el agua.",
+      "Del primer tramo al segundo hay 1,2 km, unos diecisiete minutos andando: es el único trecho largo de la ruta. A partir de ahí las paradas se encadenan cada pocos minutos.",
+      "En verano la avenida de Blasco Ibáñez se llena pronto. Si vas en temporada alta, empieza antes de las siete."
+    ],
+    "seo_keywords": [
+      "tardeo en Santa Pola",
+      "terrazas Santa Pola",
+      "donde tomar algo en Santa Pola",
+      "bares puerto Santa Pola"
+    ]
   }
 ]
