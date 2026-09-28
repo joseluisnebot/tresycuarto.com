@@ -6585,5 +6585,147 @@
       "donde tomar algo en Santa Pola",
       "bares puerto Santa Pola"
     ]
+  },
+  {
+    "slug": "tardeo-centro-castello-de-la-plana",
+    "titulo": "Ruta de tardeo por el centro de Castelló de la Plana",
+    "ciudad": "Castelló de la Plana",
+    "ciudad_slug": "castello-de-la-plana",
+    "barrio": "Centro",
+    "intro": "De las cuatro paradas de esta ruta, siete de sus trece sitios tienen terraza: es la que más se hace al aire libre de todas las que tenemos. Arranca en el Bulevard Blasco Ibáñez, cruza por Benicarló y las Adoberies y acaba en Bisbe Salinas. Kilómetro y medio en total, con saltos de seis a nueve minutos entre parada y parada.",
+    "duracion": "3-4 horas",
+    "distancia": "1,6 km",
+    "mejor_dia": "Sábado desde las 18:00; en primavera y verano, cualquier tarde",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bulevard Vicente Blasco Ibáñez — El Cafetal, El Café de Hugo, Burgy's y El Parral",
+        "descripcion": "La parada con más terraza de la ruta: tres de los cuatro sitios tienen mesas fuera, y dos de ellos comparten el número 4, uno al lado del otro. Mezcla de cafeterías y pubs, así que sirve tanto para empezar suave a media tarde como para quedarse.",
+        "tipo": "Arranque con terraza",
+        "tiempo_hasta_siguiente": "9 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Carrer de Benicarló — L'artesà, Fruit Salad y Bar Caracas",
+        "descripcion": "Dos cafeterías con terraza en los números 3 y 23, y un pub por medio. Es la parada de cambiar de ritmo: café o algo fresco antes de seguir hacia el centro.",
+        "tipo": "Café de media tarde",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Carrer de les Adoberies — Macoa Lounge, L'artesà II y Rafael Galindo",
+        "descripcion": "Tres sitios en la misma calle, incluido el segundo L'artesà. Aquí la ruta empieza a mirar hacia la copa sin dejar del todo la cafetería.",
+        "tipo": "Transición",
+        "tiempo_hasta_siguiente": "6 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Carrer del Bisbe Salinas — Off Social Club, Goliat y Bocateria Lagasca",
+        "descripcion": "El cierre: un bar, un pub y una cafetería-bocatería en los números 73 y 83. Buen sitio para comer algo tarde si la ruta se ha alargado.",
+        "tipo": "Cierre",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Es la ruta con más terrazas de todas las nuestras: siete de trece sitios. Si el día acompaña, se puede hacer entera sin entrar bajo techo.",
+      "El salto más largo son nueve minutos, entre la primera y la segunda parada. El resto se encadena en seis.",
+      "En el Bulevard hay dos sitios en el mismo número 4: si uno está lleno, el otro está literalmente al lado."
+    ],
+    "seo_keywords": [
+      "tardeo en Castelló de la Plana",
+      "terrazas Castellón",
+      "donde tomar algo en Castelló",
+      "bares centro Castellón"
+    ]
+  },
+  {
+    "slug": "tardeo-casco-viejo-palencia",
+    "titulo": "Ruta de tardeo por el casco viejo de Palencia",
+    "ciudad": "Palencia",
+    "ciudad_slug": "palencia",
+    "barrio": "Casco viejo",
+    "intro": "Esta ruta es un caso raro: dieciocho sitios en doscientos diez metros. De la primera parada a la segunda hay veintidós metros — se cruza la calle y ya estás. Alfonso VIII y Estrada concentran trece bares entre las dos, y el Paseo del Salón cierra con cinco más. Es la ruta más densa que tenemos.",
+    "duracion": "3-4 horas",
+    "distancia": "0,2 km",
+    "mejor_dia": "Jueves, viernes o sábado a partir de las 19:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle Alfonso VIII — siete bares seguidos",
+        "descripcion": "Bar Adrián, Bocados Gastrobar, El Auténtico, El Picapiedras, Ágora, Sócial y Salvaje. Siete sitios en una sola calle: es la mayor concentración de bares de toda la ruta y probablemente la razón por la que en Palencia se sale por aquí.",
+        "tipo": "Arranque",
+        "tiempo_hasta_siguiente": "1 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle Estrada — Bar Moreno, La Cripta, Novecento, Bar Zambra, Tribeca y Sabana",
+        "descripcion": "A veintidós metros, seis bares más. Entre esta calle y la anterior hay trece sitios sin moverse del sitio: se puede cambiar de bar cada ronda sin andar ni un minuto.",
+        "tipo": "La parada larga",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Paseo del Salón — Central Park, El Salón, Stella, P21 y The Lemon Society",
+        "descripcion": "Tres minutos andando y cambia el registro: dos cafeterías y tres bares en el paseo, más abierto y más tranquilo que las dos calles anteriores. Es el cierre natural de la ruta.",
+        "tipo": "Cierre",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "Doscientos diez metros de ruta entera. Es la más corta que tenemos: se puede repetir parada sin pensárselo.",
+      "Alfonso VIII y Estrada están a veintidós metros: si una está llena, la otra está cruzando.",
+      "Ninguno de estos sitios tiene terraza marcada en nuestros datos. En Palencia, en invierno, mejor así."
+    ],
+    "seo_keywords": [
+      "tardeo en Palencia",
+      "bares casco viejo Palencia",
+      "donde tomar algo en Palencia",
+      "ruta de bares Palencia"
+    ]
+  },
+  {
+    "slug": "tardeo-centro-huesca",
+    "titulo": "Ruta de tardeo por el centro de Huesca",
+    "ciudad": "Huesca",
+    "ciudad_slug": "huesca",
+    "barrio": "Centro",
+    "intro": "Quince sitios en menos de un kilómetro, repartidos en tres calles del centro de Huesca. Empieza en Padre Huesca, sigue por San Lorenzo —la calle con más bares de la ruta— y termina en el Paseo de Ramón y Cajal, que baja el ritmo con sus cafeterías. Los saltos son de tres y nueve minutos.",
+    "duracion": "3-4 horas",
+    "distancia": "0,9 km",
+    "mejor_dia": "Viernes o sábado desde las 19:00; domingo de vermut",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Calle del Padre Huesca — Bolinga, Rico rico-cu, Tomate Jamón, El Veintiuno y La Luna",
+        "descripcion": "Cinco sitios repartidos por la calle, del número 12 al 54, entre bares y pubs. El Café-cantante La Luna y El Veintiuno están casi enfrente, en los números 54 y 52.",
+        "tipo": "Arranque",
+        "tiempo_hasta_siguiente": "3 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Calle de San Lorenzo — seis bares, del número 8 al 40",
+        "descripcion": "Como quieras, El Bauti, Twister Planet, La Carpinteria, El refugio de la bohemia y Street Theatre. Es la calle con más sitios de la ruta y donde tiene sentido quedarse un rato largo.",
+        "tipo": "La parada larga",
+        "tiempo_hasta_siguiente": "9 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Paseo de Ramón y Cajal — Osca, Venus, Cafetería Iván y Orient Express",
+        "descripcion": "Tres cafeterías y un pub en el paseo; Osca y Venus comparten el número 17. El cierre es más tranquilo que las dos calles anteriores, que es justo lo que se busca al final de la tarde.",
+        "tipo": "Cierre tranquilo",
+        "tiempo_hasta_siguiente": null
+      }
+    ],
+    "consejos": [
+      "San Lorenzo es la parada donde más tiempo se pasa: seis bares en la misma calle, del 8 al 40.",
+      "El último salto son nueve minutos, el más largo de la ruta. Los demás son de tres.",
+      "Ninguno de los quince tiene terraza marcada en nuestros datos: cuenta con estar dentro."
+    ],
+    "seo_keywords": [
+      "tardeo en Huesca",
+      "bares centro Huesca",
+      "donde tomar algo en Huesca",
+      "ruta de bares Huesca"
+    ]
   }
 ]
