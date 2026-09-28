@@ -45,11 +45,20 @@ function tipoLabel(tipo) {
 // por eso se usa UN SOLO ancho (nada de srcset, que multiplicaría el consumo) y
 // sólo en la foto principal de la ficha. 640px: 160 KB -> 65 KB (-59%), y sirve
 // tanto a móvil (93% del tráfico) como a escritorio.
-function img(url, width) {
-  if (!url) return url;
-  // Sólo nuestras propias fotos en R2; una URL externa no debe pasar por aquí.
-  if (!url.startsWith("https://media.tresycuarto.com/")) return url;
-  return `https://tresycuarto.com/cdn-cgi/image/width=${width},format=auto,quality=82/${url}`;
+// ⚠️ DESACTIVADO el 28/09/2026 — la transformación costaba dinero de verdad.
+//
+// La factura de septiembre trajo 15.303 transformaciones facturables ($8,00). El
+// motivo: hay 25.148 locales con foto en media.tresycuarto.com, y cada ficha que
+// Google rastrea genera una transformación ÚNICA nueva. Encima `format=auto`
+// devuelve AVIF, WebP o JPEG según el navegador, y Cloudflare factura cada
+// formato por separado. El contador se reinicia cada mes, así que el coste no
+// era puntual: se habría quedado fijo en ~$12/mes, subiendo con el rastreo.
+//
+// A cambio, la foto principal pasa de ~49 KB a ~145 KB (el original de R2).
+// La solución buena es redimensionar AL GUARDAR, en el enriquecedor, y no al
+// servir: quita el coste y recupera el peso. Mientras tanto se sirve el original.
+function img(url, _width) {
+  return url;
 }
 
 function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
