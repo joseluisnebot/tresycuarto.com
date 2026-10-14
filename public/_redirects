@@ -4,6 +4,12 @@
 
 /l/* /:splat 301
 
+# La eñe del slug rompía la ruta: Next generaba el directorio con la ñ literal, la
+# petición llegaba percent-encoded y Pages no casaba → servía el 404 de Next con un
+# 200 (soft 404), y encima el sitemap la anunciaba. Slug renombrado sin eñe.
+/rutas/tardeo-ca%C3%B1adio-santander/  /rutas/tardeo-canadio-santander/  301
+/rutas/tardeo-cañadio-santander/  /rutas/tardeo-canadio-santander/  301
+
 /locales/osm_node_10147793149  /locales/sevilla/long-rock-sevilla  301
 /locales/osm_node_10606352638  /locales/malaga/pin-pan-pum  301
 /locales/osm_node_10655963005  /locales/valladolid/cuarto-creciente  301
