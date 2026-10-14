@@ -175,6 +175,9 @@ export default async function RutaPage({
             ))}
           </div>
 
+          {/* ALTA NEWSLETTER — justo donde acaba la ruta, antes del CTA que lleva a otra página */}
+          <SuscribirCiudad ciudad={ruta.ciudad} />
+
           {/* CONSEJOS */}
           <div style={{ background: "white", border: "1px solid #F5E6D3", borderRadius: "1.25rem", padding: "1.5rem", marginTop: "2.5rem" }}>
             <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#1C1917", marginBottom: "1rem" }}>
@@ -203,8 +206,6 @@ export default async function RutaPage({
               Ver todos los locales en {ruta.ciudad}
             </Link>
           </div>
-
-          <SuscribirCiudad ciudad={ruta.ciudad} />
 
         </div>
 
