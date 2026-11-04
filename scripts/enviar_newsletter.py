@@ -32,6 +32,24 @@ MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto",
 ICONS = {"procesion": "⛪", "futbol": "⚽", "concierto": "🎵", "festival": "🎭",
          "feria": "🎡", "deporte": "🏅", "escena": "🎭", "mercado": "🛍️"}
 
+# --- Correo de respaldo para suscriptores sin eventos --------------------------
+# Hay ciudades que captan suscriptores pero de las que el scraper no trae NUNCA
+# eventos (Soria: 0 en un mes). Antes esos suscriptores se saltaban y no recibían
+# nada en absoluto, así que la alta se perdía. Se les manda una selección de
+# locales de su ciudad, pero:
+#   - sólo UN día a la semana (DIA_RESPALDO), para no quemarlos a diario,
+#   - rotando por número de semana, para que no sea siempre la misma lista,
+#   - sin fotos, porque las transformaciones de imagen de Cloudflare se cobran.
+DIA_RESPALDO = 3          # 0=lunes … 3=jueves: llega con tiempo para el finde
+RESPALDO_N = 5            # locales por correo
+RESPALDO_ROTACION = 8     # semanas distintas antes de repetir
+
+
+def slug_ciudad(nombre):
+    s = unicodedata.normalize("NFD", (nombre or "").lower())
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return s.replace("ñ", "n").replace(" ", "-").replace("·", "")
+
 
 def d1_query(sql, params=None):
     payload = json.dumps({"sql": sql, "params": params or []}).encode()
@@ -175,6 +193,125 @@ def generar_html_digest(eventos):
 </td></tr></table>"""
 
 
+def locales_de_ciudad(ciudad, semana):
+    """Selección rotatoria de locales de una ciudad para el correo de respaldo.
+
+    Columnas explícitas a propósito: `locales` tiene columnas privadas (email,
+    email_personal, email_outreach_sent) que no deben salir nunca del script.
+    """
+    pool = RESPALDO_N * RESPALDO_ROTACION
+    filas = d1_query(
+        "SELECT nombre, tipo, rating, rating_count, terraza, slug, direccion "
+        "FROM locales "
+        "WHERE ciudad = ? AND slug IS NOT NULL AND rating IS NOT NULL "
+        "  AND rating >= 3.5 AND rating_count >= 5 "
+        "  AND (fuente IS NULL OR fuente <> 'demo') "
+        "ORDER BY rating DESC, rating_count DESC "
+        "LIMIT ?",
+        [ciudad, pool],
+    )
+    if not filas:
+        return []
+    # Rotación circular por semana: así no se manda siempre lo mismo y el correo
+    # sale completo incluso en ciudades con pocos locales (partir en bloques
+    # dejaba un último bloque de dos en Vinaròs).
+    inicio = (semana * RESPALDO_N) % len(filas)
+    rotadas = filas[inicio:] + filas[:inicio]
+    return rotadas[:RESPALDO_N]
+
+
+def generar_html_locales(ciudad, locales):
+    """Correo de respaldo: sitios de la ciudad, sin eventos y sin fotos."""
+    cslug = slug_ciudad(ciudad)
+    tarjetas = ""
+    for lo in locales:
+        nota = f"{lo['rating']:.1f}".replace(".", ",")
+        reseñas = lo.get("rating_count") or 0
+        terraza = ' &middot; <span style="color:#F59E0B;font-weight:700;">Terraza</span>' if lo.get("terraza") else ""
+        tipo = (lo.get("tipo") or "bar").capitalize()
+        direccion = (lo.get("direccion") or "")[:70]
+        tarjetas += f"""
+<tr><td style="padding:0 0 12px;">
+<table width="100%" cellpadding="0" cellspacing="0"
+  style="border:1px solid #F5E6D3;border-radius:12px;overflow:hidden;background:#ffffff;">
+<tr><td style="padding:18px 24px;">
+  <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#FB923C;text-transform:uppercase;letter-spacing:0.1em;">
+    {tipo} &middot; &#9733; {nota} ({reseñas}){terraza}
+  </p>
+  <p style="margin:0 0 6px;font-size:17px;font-weight:800;color:#1C1917;line-height:1.3;">
+    {lo['nombre']}
+  </p>
+  <p style="margin:0 0 14px;font-size:13px;color:#78716C;line-height:1.6;">{direccion}</p>
+  <a href="{BASE_URL}/locales/{cslug}/{lo['slug']}"
+     style="display:inline-block;background:#FB923C;color:#ffffff;font-weight:700;
+            font-size:13px;text-decoration:none;padding:9px 20px;border-radius:8px;">
+    Ver el sitio &rarr;
+  </a>
+</td></tr>
+</table>
+</td></tr>"""
+
+    return f"""<table width="100%" cellpadding="0" cellspacing="0"
+  style="background:#FFF8EF;padding:32px 0;font-family:'Helvetica Neue',Arial,sans-serif;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0"
+  style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;border:1px solid #F5E6D3;">
+
+<tr><td style="padding:24px 32px;border-bottom:1px solid #F5E6D3;">
+<table width="100%" cellpadding="0" cellspacing="0"><tr>
+<td>
+  <span style="font-size:22px;font-weight:900;color:#1C1917;letter-spacing:-0.03em;">tres</span><span style="font-size:22px;font-weight:900;color:#FB923C;letter-spacing:-0.03em;">y</span><span style="font-size:22px;font-weight:900;color:#1C1917;letter-spacing:-0.03em;">cuarto</span>
+</td>
+<td align="right">
+  <span style="font-size:11px;color:#A8A29E;font-weight:500;">Para el finde</span>
+</td>
+</tr></table>
+</td></tr>
+
+<tr><td style="padding:28px 32px 8px;">
+<h1 style="margin:0 0 6px;font-size:21px;font-weight:800;color:#1C1917;">
+  {len(locales)} sitios de tardeo en {ciudad}
+</h1>
+<p style="margin:0;font-size:14px;color:#78716C;line-height:1.5;">
+  Esta semana no hay nada programado en {ciudad}, así que te dejamos sitios
+  donde tardear. Si descubres uno que falte, cuéntanoslo.
+</p>
+</td></tr>
+
+<tr><td style="padding:16px 32px 8px;">
+<table width="100%" cellpadding="0" cellspacing="0">
+{tarjetas}
+</table>
+</td></tr>
+
+<tr><td style="padding:16px 32px 28px;text-align:center;">
+<a href="{BASE_URL}/locales/{cslug}/"
+   style="display:inline-block;background:#FB923C;color:#ffffff;font-weight:700;
+          font-size:14px;text-decoration:none;padding:12px 28px;border-radius:8px;">
+  Ver todo el tardeo en {ciudad} &rarr;
+</a>
+</td></tr>
+
+<tr><td style="padding:20px 32px;border-top:1px solid #F5E6D3;background:#FFF8EF;border-radius:0 0 16px 16px;">
+<table width="100%" cellpadding="0" cellspacing="0"><tr>
+<td>
+  <span style="font-size:13px;font-weight:800;color:#1C1917;">tresycuarto</span><br>
+  <span style="font-size:11px;color:#A8A29E;">
+    <a href="{BASE_URL}" style="color:#A8A29E;text-decoration:none;">tresycuarto.com</a>
+    &middot; Una vez por semana
+  </span>
+</td>
+<td align="right" style="vertical-align:middle;">
+  <a href="{BASE_URL}/api/unsubscribe"
+     style="font-size:11px;color:#A8A29E;text-decoration:none;">Cancelar suscripci&oacute;n</a>
+</td>
+</tr></table>
+</td></tr>
+
+</table>
+</td></tr></table>"""
+
+
 def notificar_admin(resumen):
     """Email de resumen diario a Jose Luis."""
     lines = "".join(f"<li>{r}</li>" for r in resumen)
@@ -202,16 +339,17 @@ def main():
         if fecha_envio.strftime("%Y-%m-%d") <= hoy:
             eventos_hoy.append(ev)
 
-    if not eventos_hoy:
-        print(f"Sin eventos programados para hoy. Nada que enviar.")
-        return
-
     # Agrupar por ciudad
     por_ciudad = {}
     for ev in eventos_hoy:
         por_ciudad.setdefault(ev["ciudad"], []).append(ev)
 
-    print(f"{len(eventos_hoy)} eventos en {len(por_ciudad)} ciudad(es): {', '.join(por_ciudad.keys())}")
+    if eventos_hoy:
+        print(f"{len(eventos_hoy)} eventos en {len(por_ciudad)} ciudad(es): {', '.join(por_ciudad.keys())}")
+    else:
+        # Antes aquí había un `return`: sin eventos no se hacía nada y los
+        # suscriptores de ciudades sin agenda no recibían nunca nada.
+        print("Sin eventos programados para hoy.")
 
     # 2. Obtener suscriptores
     suscriptores = listmonk_get_subscribers()
@@ -220,6 +358,7 @@ def main():
     # 3. Un email por suscriptor con sus eventos
     resumen = []
     emails_enviados = 0
+    sin_eventos = []   # suscriptores cuya ciudad no tiene nada hoy
 
     for sub in suscriptores:
         if sub.get("status") != "enabled":
@@ -239,6 +378,7 @@ def main():
         eventos_sub = eventos_sub[:5]
 
         if not eventos_sub:
+            sin_eventos.append((sub, ciudades))
             continue
 
         ciudades_str = " · ".join(dict.fromkeys(ev["ciudad"] for ev in eventos_sub))
@@ -254,6 +394,36 @@ def main():
             resumen.append(linea)
         except Exception as e:
             print(f"  ✗ Error enviando a {sub['email']}: {e}")
+
+    # 3b. Respaldo semanal para quien no tiene eventos en su ciudad
+    if sin_eventos:
+        hoy_dt = datetime.now()
+        es_dia = hoy_dt.weekday() == DIA_RESPALDO
+        semana = hoy_dt.isocalendar()[1]
+        if not es_dia:
+            print(f"  · {len(sin_eventos)} suscriptor(es) sin eventos — el respaldo va los jueves")
+        else:
+            for sub, ciudades in sin_eventos:
+                locales = []
+                ciudad_elegida = None
+                for ciudad in ciudades:
+                    locales = locales_de_ciudad(ciudad, semana)
+                    if locales:
+                        ciudad_elegida = ciudad
+                        break
+                if not locales:
+                    print(f"  ⚠ {sub['email']}: sin eventos y sin locales en {ciudades} — no se envía nada")
+                    continue
+                subject = f"🍹 {len(locales)} sitios de tardeo en {ciudad_elegida} — tresycuarto"
+                try:
+                    brevo_send(sub["email"], sub.get("name", ""), subject,
+                               generar_html_locales(ciudad_elegida, locales))
+                    emails_enviados += 1
+                    linea = f"{sub['email']} → respaldo: {len(locales)} locales ({ciudad_elegida})"
+                    print(f"  ✓ {linea}")
+                    resumen.append(linea)
+                except Exception as e:
+                    print(f"  ✗ Error enviando respaldo a {sub['email']}: {e}")
 
     # 4. Marcar como 'enviado' solo los eventos de ciudades con al menos un suscriptor
     ciudades_notificadas = set()
