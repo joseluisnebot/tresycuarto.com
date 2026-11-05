@@ -100,6 +100,10 @@ def main():
     parser.add_argument("--ciudad", required=True)
     parser.add_argument("--limite", type=int, default=MAX_POR_CIUDAD)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--solo-buenos", action="store_true",
+                        help="solo bares que ya cumplen el listón de las rutas "
+                             "(rating>=4 y >=20 reseñas): son los que desbloquean "
+                             "rutas nuevas, en vez de gastar cuota en locales al azar")
     args = parser.parse_args()
 
     ciudad = args.ciudad
@@ -107,14 +111,17 @@ def main():
 
     print(f"\n=== Mapillary fotos — {ciudad} {'[DRY-RUN]' if dry_run else '[PRODUCCIÓN]'} ===")
 
+    filtro = "AND rating >= 4.0 AND rating_count >= 20 " if args.solo_buenos else ""
+    orden = "rating DESC, rating_count DESC" if args.solo_buenos else "nombre"
     locales = d1_query(
         "SELECT id, nombre, lat, lon FROM locales "
         "WHERE ciudad = ? AND (photo_url IS NULL OR photo_url = '') "
-        "AND lat IS NOT NULL AND lon IS NOT NULL "
-        "ORDER BY nombre LIMIT ?",
+        f"AND lat IS NOT NULL AND lon IS NOT NULL {filtro}"
+        f"ORDER BY {orden} LIMIT ?",
         [ciudad, args.limite]
     )
-    print(f"  Locales sin foto con coordenadas: {len(locales)}")
+    etiqueta = "que ya cumplen el listón de rutas" if args.solo_buenos else "con coordenadas"
+    print(f"  Locales sin foto {etiqueta}: {len(locales)}")
 
     encontradas = 0
     for i, local in enumerate(locales, 1):
