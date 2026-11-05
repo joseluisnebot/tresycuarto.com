@@ -6727,5 +6727,168 @@
       "donde tomar algo en Huesca",
       "ruta de bares Huesca"
     ]
+  },
+  {
+    "slug": "tardeo-guadalajara-centro",
+    "titulo": "Ruta de tardeo por el centro de Guadalajara",
+    "ciudad": "Guadalajara",
+    "ciudad_slug": "guadalajara",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Guadalajara, esta ruta por el centro te lleva por 5 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Cheleros",
+        "descripcion": "Bar de tapas con 4,2⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Alas Wings",
+        "descripcion": "Bar de tapas con 4,2⭐ (32 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Taller de Espresso",
+        "descripcion": "Cafetería con 4,2⭐ (38 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "El terrible juan",
+        "descripcion": "Cafetería con 4,2⭐ (37 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 5,
+        "nombre": "Hipatia Café",
+        "descripcion": "Cafetería con 4,1⭐ (31 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Guadalajara el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo centro Guadalajara",
+      "bares el centro Guadalajara tarde",
+      "ruta tardeo el centro Guadalajara",
+      "qué hacer tarde en Guadalajara"
+    ]
+  },
+  {
+    "slug": "tardeo-caceres-centro",
+    "titulo": "Ruta de tardeo por el centro de Cáceres",
+    "ciudad": "Cáceres",
+    "ciudad_slug": "caceres",
+    "barrio": "Centro",
+    "intro": "Si buscas plan de tardeo en Cáceres, esta ruta por el centro te lleva por 4 de los bares mejor valorados de la ciudad. Vermut, cañas y buen ambiente para ir de uno a otro sin prisa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Mastropiero",
+        "descripcion": "Bar de tapas con 4,3⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Algaba",
+        "descripcion": "Cafetería con 4⭐ (32 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Le Boutique Bike",
+        "descripcion": "Cafetería con 4⭐ (27 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "La Chicha de Belona",
+        "descripcion": "Pub con 4,1⭐ (36 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Cáceres el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo centro Cáceres",
+      "bares el centro Cáceres tarde",
+      "ruta tardeo el centro Cáceres",
+      "qué hacer tarde en Cáceres"
+    ]
+  },
+  {
+    "slug": "tardeo-jerez-de-la-frontera-centro",
+    "titulo": "Ruta de tardeo por el centro de Jerez de la Frontera",
+    "ciudad": "Jerez de la Frontera",
+    "ciudad_slug": "jerez-de-la-frontera",
+    "barrio": "Centro",
+    "intro": "Una tarde por Jerez de la Frontera da para mucho. Hemos elegido 4 de los bares mejor puntuados del centro para montar una ruta de tardeo cómoda y sin prisa.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "La vermutería del Sherry",
+        "descripcion": "Bar de tapas con 4,1⭐ (42 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 2,
+        "nombre": "Coco Café",
+        "descripcion": "Cafetería con 4,1⭐ (39 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 3,
+        "nombre": "Coso",
+        "descripcion": "Cafetería con 4,1⭐ (37 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie"
+      },
+      {
+        "numero": 4,
+        "nombre": "Destraperlo Comando Cervecero",
+        "descripcion": "Pub con 4,6⭐ (56 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "tipo": "Copas y ambiente",
+        "tiempo_hasta_siguiente": ""
+      }
+    ],
+    "consejos": [
+      "En Jerez de la Frontera el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo centro Jerez de la Frontera",
+      "bares el centro Jerez de la Frontera tarde",
+      "ruta tardeo el centro Jerez de la Frontera",
+      "qué hacer tarde en Jerez de la Frontera"
+    ]
   }
 ]

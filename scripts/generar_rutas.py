@@ -68,12 +68,21 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
+# Con --sin-foto se deja de exigir que el bar tenga imagen. Es un requisito
+# ESTÉTICO: sin foto la ruta sigue siendo real (bares verídicos, bien valorados
+# y con dirección), solo se ve menos vistosa. Las notas NO se relajan nunca:
+# rating>=4.0 y rating_count>=20 son lo que separa una ruta útil del contenido
+# escalado que penalizó el June 2026 Spam Update.
+SIN_FOTO = False
+
+
 def get_bares(ciudad, n=6, con_geo=False):
     extra = "AND lat IS NOT NULL AND lon IS NOT NULL " if con_geo else ""
     lim = "" if con_geo else f"LIMIT {n}"
+    foto = "" if SIN_FOTO else "AND photo_url IS NOT NULL AND photo_url!='' "
     return d1(
         f"SELECT nombre, tipo, direccion, rating, rating_count, lat, lon FROM locales "
-        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND photo_url IS NOT NULL AND photo_url!='' "
+        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 {foto}"
         f"AND direccion IS NOT NULL {extra}"
         f"ORDER BY rating DESC, rating_count DESC {lim}", [ciudad])
 
@@ -185,7 +194,11 @@ def main():
     ap.add_argument("--barrios-auto", action="store_true")
     ap.add_argument("--max-por-ciudad", type=int, default=8)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--sin-foto", action="store_true",
+                    help="no exigir foto del bar (las notas siguen exigiéndose igual)")
     args = ap.parse_args()
+    global SIN_FOTO
+    SIN_FOTO = args.sin_foto
 
     rutas = json.loads(RUTAS_JSON.read_text())
     slugs = {r["slug"] for r in rutas}
