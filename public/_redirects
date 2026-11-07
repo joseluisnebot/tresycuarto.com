@@ -74,3 +74,26 @@
 /locales/osm_node_9235666250  /locales/valencia/liaopastel-3  301
 /locales/osm_node_9580737523  /locales/barcelona/la-casita-de-mi  301
 /locales/osm_node_9688723165  /locales/valladolid/chalco  301
+# Rutas con paradas de relleno sin bares reales suficientes (07/11/2026)
+/rutas/tardeo-las-palmas-triana/  /locales/las-palmas/  301
+/rutas/tardeo-las-palmas-triana  /locales/las-palmas/  301
+/rutas/tardeo-catedral-cadiz/  /locales/cadiz/  301
+/rutas/tardeo-catedral-cadiz  /locales/cadiz/  301
+/rutas/tardeo-casco-antiguo-cartagena/  /locales/cartagena/  301
+/rutas/tardeo-casco-antiguo-cartagena  /locales/cartagena/  301
+/rutas/tardeo-casco-historico-toledo/  /locales/toledo/  301
+/rutas/tardeo-casco-historico-toledo  /locales/toledo/  301
+/rutas/tardeo-centro-badajoz/  /locales/badajoz/  301
+/rutas/tardeo-centro-badajoz  /locales/badajoz/  301
+/rutas/tardeo-centro-huelva/  /locales/huelva/  301
+/rutas/tardeo-centro-huelva  /locales/huelva/  301
+/rutas/tardeo-centro-alicante/  /locales/alicante/  301
+/rutas/tardeo-centro-alicante  /locales/alicante/  301
+/rutas/tardeo-barrio-san-pedro-burgos/  /locales/burgos/  301
+/rutas/tardeo-barrio-san-pedro-burgos  /locales/burgos/  301
+/rutas/tardeo-delicias-zaragoza/  /locales/zaragoza/  301
+/rutas/tardeo-delicias-zaragoza  /locales/zaragoza/  301
+/rutas/tardeo-pedregalejo-malaga/  /locales/malaga/  301
+/rutas/tardeo-pedregalejo-malaga  /locales/malaga/  301
+/rutas/tardeo-barri-antic-tarragona/  /locales/tarragona/  301
+/rutas/tardeo-barri-antic-tarragona  /locales/tarragona/  301

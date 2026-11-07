@@ -109,7 +109,7 @@ def generar_html_digest(eventos):
   style="border:1px solid #F5E6D3;border-radius:12px;overflow:hidden;background:#ffffff;">
 <tr><td style="padding:20px 24px;">
   <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#FB923C;text-transform:uppercase;letter-spacing:0.1em;">
-    {icon} {fecha_es} &middot; {ev['ciudad']}
+    {icon} {fecha_es} &middot; {ev['ciudad']}{" &middot; 👨‍👩‍👧 Con niños" if ev.get("con_ninos") else ""}
   </p>
   <p style="margin:0 0 8px;font-size:17px;font-weight:800;color:#1C1917;line-height:1.3;">
     {ev['nombre']}

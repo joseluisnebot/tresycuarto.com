@@ -15,7 +15,7 @@ export async function onRequestGet(context) {
   const hoy = new Date().toISOString().slice(0, 10);
   const hace60 = new Date(Date.now() - 60 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 
-  const FIELDS = `id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, descripcion, radio_m, dias_previos_envio`;
+  const FIELDS = `id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, descripcion, radio_m, dias_previos_envio, con_ninos`;
 
   const whereFut = ["estado='aprobado'", "activo=1", "fecha >= ?"];
   const pFut = [hoy];

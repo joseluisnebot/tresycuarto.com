@@ -406,18 +406,27 @@ TIPO_NORM = {
 TIPOS_BLOQUEADOS = {"charla", "xerrada", "conferencia", "ponencia", "taller",
                     "curso", "seminario", "presentacion", "presentación",
                     "visita", "visita guiada", "itinerario", "webinar", "online",
-                    "infantil", "escolar"}
+                    "escolar"}
 # Palabras que indican acto sin afluencia / no promocionable
 KW_BLOQUEO = ["taller de", "curso de", "conferencia", "ponencia", "webinar",
               "seminario", "presentación del libro", "presentacion del libro",
               "ruta ornitol", "visita guiada", "itinerario", "campamento",
               "escuela de verano", "online", "en línea", "en linea",
               "inauguración del plafón", "jornada técnica", "jornadas técnicas",
-              "club de lectura", "cuentacuentos",
+              "club de lectura",
               # Lista de JL (07/11/2026): ni con inscripción, ni culto, ni infantil
               "inscripción previa", "inscripcion previa", "imprescindible inscripción",
-              "necesario inscribirse", "misa ", "eucaristía", "pleno municipal",
-              "títeres", "titeres", "marionetas"]
+              "necesario inscribirse", "misa ", "eucaristía", "pleno municipal"]
+
+# Infantil/familiar: solo el sábado por la tarde y con la etiqueta "con niños"
+KW_NINOS = ["cuentacuentos", "títeres", "titeres", "marionetas", "infantil", "familiar",
+            "para niños", "para niñas", "en familia", "peques"]
+
+
+def es_con_ninos(nombre, tipo, descripcion=""):
+    # Solo nombre y categoría: la descripción de un mercado navideño dice "en familia"
+    # y eso no lo convierte en actividad infantil
+    return normaliza_tipo(tipo) == "infantil" or any(k in f" {nombre} ".lower() for k in KW_NINOS)
 
 # Tipos que solo entran en algunos casos (lista de JL, 07/11/2026)
 SOLO_SI = {
@@ -435,7 +444,7 @@ def normaliza_tipo(t):
     return TIPO_NORM.get(t, t)
 
 
-def motivo_descarte(nombre, tipo, descripcion="", hora=None):
+def motivo_descarte(nombre, tipo, descripcion="", hora=None, fecha=None):
     """None si el evento es de tardeo; si no, el motivo. Aplica la lista acordada
     con JL el 07/11/2026: de tarde, abierto al público, que junte gente."""
     t = normaliza_tipo(tipo)
@@ -445,6 +454,13 @@ def motivo_descarte(nombre, tipo, descripcion="", hora=None):
     kw = next((k for k in KW_BLOQUEO if k in texto), None)
     if kw:
         return f"sin afluencia ({kw.strip()})"
+    if es_con_ninos(nombre, tipo, descripcion):
+        try:
+            sabado = datetime.strptime(fecha or "", "%Y-%m-%d").weekday() == 5
+        except ValueError:
+            sabado = False
+        if not sabado:
+            return "infantil fuera de sábado"
     if t in SOLO_SI and not any(k in texto for k in SOLO_SI[t]):
         return f"{t} sin caso de tardeo"
     # "00:00" suele ser hora desconocida, no medianoche
@@ -838,7 +854,7 @@ def insertar_evento(ev, dry_run=False):
     # Filtro: descartar solo actos sin afluencia (charlas, talleres, visitas, online).
     # Lo demás se queda — los eventos promocionan los bares cercanos.
     tipo_norm = normaliza_tipo(ev.get("tipo", "otro"))
-    motivo = motivo_descarte(nombre_strip, tipo_norm, ev.get("descripcion", ""), ev.get("hora_inicio"))
+    motivo = motivo_descarte(nombre_strip, tipo_norm, ev.get("descripcion", ""), ev.get("hora_inicio"), ev.get("fecha"))
     if motivo:
         return False, motivo
     ev["tipo"] = tipo_norm  # normalizado para el insert
@@ -911,10 +927,11 @@ def insertar_evento(ev, dry_run=False):
     d1_query("""
         INSERT OR IGNORE INTO eventos_geo
           (id, nombre, tipo, ciudad, fecha, hora_inicio, direccion, lat, lon,
-           radio_m, descripcion, activo, estado, dias_previos_envio)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'aprobado', ?)
+           radio_m, descripcion, activo, estado, dias_previos_envio, con_ninos)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 'aprobado', ?, ?)
     """, [ev_id, ev["nombre"], tipo, ev["ciudad"], ev["fecha"],
-          hora, direccion, lat, lon, radio, desc, dias])
+          hora, direccion, lat, lon, radio, desc, dias,
+          1 if es_con_ninos(ev["nombre"], tipo, desc) else 0])
     return True, "insertado"
 
 

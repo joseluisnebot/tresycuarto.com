@@ -47,7 +47,7 @@ def main():
     a = ap.parse_args()
 
     eventos = S.d1_query(
-        "SELECT id, nombre, tipo, ciudad, descripcion, hora_inicio FROM eventos_geo "
+        "SELECT id, nombre, tipo, ciudad, fecha, descripcion, hora_inicio FROM eventos_geo "
         "WHERE activo = 1 AND fecha >= date('now')")
     print(f"{len(eventos)} eventos futuros activos")
 
@@ -61,7 +61,7 @@ def main():
             if (t_new, h_new) != (tipo, hora) and (tipo == "otro" or not hora):
                 completar.append((ev, t_new, h_new))
                 tipo, hora = t_new, h_new or hora
-        m = S.motivo_descarte(ev["nombre"], tipo, ev["descripcion"] or "", hora)
+        m = S.motivo_descarte(ev["nombre"], tipo, ev["descripcion"] or "", hora, ev["fecha"])
         if m:
             desactivar.append((ev, m))
             motivos[m.split(" (")[0]] += 1
