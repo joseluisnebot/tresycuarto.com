@@ -14,3 +14,8 @@ bucket_name = "tresycuarto-media"
 
 [browser]
 binding = "MYBROWSER"
+
+# Embudo de conversión (public/m.js → functions/api/m.js); lo lee scripts/embudo.py
+[[analytics_engine_datasets]]
+binding = "EMBUDO"
+dataset = "tresycuarto_embudo"

@@ -255,6 +255,7 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
     .back:hover{color:#FB923C}
     footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#A8A29E;border-top:1px solid #F5E6D3;margin-top:2rem}
   </style>
+  <script src="/m.js" defer></script>
 </head>
 <body>
   <nav>

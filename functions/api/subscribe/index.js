@@ -1,3 +1,4 @@
+import { tipoPagina } from "../m.js";
 const LISTMONK_URL = "https://listmonk.tresycuarto.com";
 const LISTMONK_LIST_ID = 3;
 
@@ -136,6 +137,16 @@ export async function onRequestPost(context) {
       data: { ciudad: listaCiudades.join(", ") },
     }),
   });
+
+  // Embudo: el alta confirmada la apunta el servidor (no depende de /m.js)
+  if (env.EMBUDO) {
+    const origen = (() => { try { return new URL(request.headers.get("Referer") || "").pathname; } catch { return ""; } })();
+    env.EMBUDO.writeDataPoint({
+      blobs: ["alta_ok", origen, tipoPagina(origen), request.cf?.country || "", listaCiudades.join(",")],
+      doubles: [1],
+      indexes: ["alta_ok"],
+    });
+  }
 
   return Response.json({ ok: true });
 }
