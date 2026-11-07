@@ -70,6 +70,16 @@ FUENTES = [
         "encoding": "utf-8",
     },
     {
+        # Datos abiertos de la Junta: estructurado y con coordenadas, sin Ollama.
+        # Es la única fuente que trae eventos de Soria.
+        "id": "castilla_leon_opendata",
+        "nombre": "Open Data Junta CyL — agenda cultural",
+        "url": "https://analisis.datosabiertos.jcyl.es/api/explore/v2.1/catalog/datasets/eventos-de-la-agenda-cultural-categorizados-y-geolocalizados/records",
+        "ciudades": ["Valladolid", "Zamora", "León", "Salamanca", "Burgos",
+                     "Segovia", "Ávila", "Soria", "Palencia"],
+        "tipo": "json_api_jcyl",
+    },
+    {
         "id": "salamanca_agenda",
         "nombre": "Agenda Salamanca",
         "url": "https://salamanca.es/es/agenda",
@@ -517,18 +527,20 @@ def cosine(a, b):
     nb   = _math.sqrt(sum(x*x for x in b))
     return dot / (na * nb) if na and nb else 0
 
-_embed_cache = []  # lista de (texto, vector) de eventos ya insertados esta sesión
+_embed_cache = []  # lista de (ciudad, vector) de eventos ya insertados esta sesión
 
 def es_duplicado_semantico(nombre, ciudad, fecha, umbral=0.92):
-    """Devuelve True si ya existe un evento muy similar en la sesión actual."""
+    """Devuelve True si ya existe un evento muy similar en la sesión actual.
+    Solo compara dentro de la misma ciudad: una gira (mismo título en Ávila y en
+    Segovia) son dos eventos distintos."""
     clave = f"{nombre} {ciudad} {fecha}"
     vec = embedding(clave)
     if not vec:
         return False
-    for texto_prev, vec_prev in _embed_cache:
-        if cosine(vec, vec_prev) >= umbral:
+    for ciudad_prev, vec_prev in _embed_cache:
+        if ciudad_prev == ciudad and cosine(vec, vec_prev) >= umbral:
             return True
-    _embed_cache.append((clave, vec))
+    _embed_cache.append((ciudad, vec))
     return False
 
 
@@ -844,6 +856,8 @@ def procesar_fuente(fuente, dry_run=False):
     # Caso especial: API JSON de Madrid
     if fuente.get("tipo") in ("json_api", "json_api_madrid"):
         return procesar_madrid(fuente, dry_run)
+    if fuente.get("tipo") == "json_api_jcyl":
+        return procesar_jcyl(fuente, dry_run)
 
     html = fetch(fuente["url"], encoding=fuente.get("encoding", "utf-8"))
     if not html:
@@ -934,6 +948,66 @@ def procesar_madrid(fuente, dry_run=False):
         if ok:
             insertados += 1
             print(f"    OK [{motivo}] {nombre} — {fecha}")
+
+    return insertados
+
+
+def procesar_jcyl(fuente, dry_run=False):
+    """Agenda cultural de la Junta de Castilla y León (Opendatasoft, paginada).
+    La mayoría son actos de bibliotecas (clubes de lectura, idiomas...): de una
+    biblioteca solo entran teatro y música, y todo ha de empezar a partir de las 16:00."""
+    TIPO_MAP = {"Conciertos": "concierto", "Espectáculos": "otro", "Cine": "otro",
+                "Exposiciones": "exposicion", "Otros": "otro"}
+    EN_BIBLIOTECA = {"Conciertos", "Espectáculos"}
+
+    ciudades = ",".join(f'"{c}"' for c in fuente["ciudades"])
+    where = f"fecha_inicio>=now() AND nombre_localidad IN ({ciudades})"
+    items = []
+    for offset in range(0, 1000, 100):
+        qs = urllib.parse.urlencode({"where": where, "limit": 100, "offset": offset,
+                                     "order_by": "fecha_inicio"})
+        raw = fetch(f"{fuente['url']}?{qs}")
+        if not raw:
+            break
+        try:
+            pagina = json.loads(raw).get("results", [])
+        except Exception:
+            break
+        items += pagina
+        if len(pagina) < 100:
+            break
+    print(f"  {len(items)} eventos futuros en la API")
+
+    insertados = 0
+    for item in items:
+        categoria = item.get("categoria")
+        if categoria not in TIPO_MAP:
+            continue
+        if item.get("evento_biblioteca") == "SI" and categoria not in EN_BIBLIOTECA:
+            continue
+        fecha = item.get("fecha_inicio") or ""
+        if not fecha or fecha < HOY or fecha > LIMITE:
+            continue
+        # "19:30 h." → "19:30"; texto libre ("DOS SESIONES") → sin hora
+        m = re.search(r"(\d{1,2}):(\d{2})", item.get("hora_inicio") or "")
+        hora = f"{int(m.group(1)):02d}:{m.group(2)}" if m else None
+        if hora and hora < "16:00":
+            continue
+
+        desc = BeautifulSoup(item.get("descripcion") or "", "html.parser").get_text(" ", strip=True)
+        # "'Divinas palabras' (ATALAYA)" → "Divinas palabras (ATALAYA)"
+        titulo = re.sub(r"^'([^']+)'", r"\1", (item.get("titulo") or "").strip())
+        ev = {"nombre": titulo,
+              "ciudad": item.get("nombre_localidad"), "fecha": fecha,
+              "hora_inicio": hora, "direccion": item.get("lugar_celebracion") or None,
+              "tipo": TIPO_MAP[categoria], "descripcion": desc[:200],
+              "_lat": item.get("latitud"), "_lon": item.get("longitud")}
+        if not ev["nombre"]:
+            continue
+        ok, motivo = insertar_evento(ev, dry_run)
+        print(f"    {'OK' if ok else 'skip'} [{motivo}] {ev['nombre']} — {ev['ciudad']} {fecha}")
+        if ok:
+            insertados += 1
 
     return insertados
 
