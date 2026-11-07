@@ -104,6 +104,7 @@ FUENTES = [
         "url": "https://www.toledo.es/agenda/",
         "ciudades": ["Toledo"],
         "encoding": "utf-8",
+        "navegador": True,   # carga los eventos con JavaScript
     },
     # Comunitat Valenciana
     {
@@ -153,6 +154,7 @@ FUENTES = [
         "url": "https://www.girona.cat/cultura/cat/agenda.php",
         "ciudades": ["Girona"],
         "encoding": "utf-8",
+        "navegador": True,   # carga los eventos con JavaScript
     },
     {
         "id": "tarragona_agenda",
@@ -160,6 +162,7 @@ FUENTES = [
         "url": "https://www.tarragona.cat/cultura/agenda",
         "ciudades": ["Tarragona"],
         "encoding": "utf-8",
+        "navegador": True,   # carga los eventos con JavaScript
     },
     {
         "id": "lleida_agenda",
@@ -340,6 +343,7 @@ FUENTES = [
         "url": "https://www.algeciras.es/es/agenda",
         "ciudades": ["Algeciras"],
         "encoding": "utf-8",
+        "navegador": True,   # carga los eventos con JavaScript
     },
     # Valencia — ciudades extra
     {
@@ -456,6 +460,45 @@ def es_promocionable(nombre, tipo, descripcion="", hora=None):
 
 
 # ── Helpers HTTP ───────────────────────────────────────────────────────────
+
+# Browser Run (navegador real de Cloudflare, vía /api/browser-texto). Entra en las
+# 10 h/mes del plan Workers Paid; los eventos se quedan con la mitad como máximo.
+BROWSER_TOKEN = os.environ.get("BROWSER_TOKEN", "")
+BROWSER_URL = "https://tresycuarto.com/api/browser-texto"
+BROWSER_GASTO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "logs", "browser_eventos_ms.json")
+BROWSER_TOPE_MS = 5 * 3600 * 1000
+
+
+def fetch_navegador(url):
+    """Texto de la página pintada por un navegador real, o None."""
+    if not BROWSER_TOKEN:
+        return None
+    mes = datetime.now().strftime("%Y-%m")
+    try:
+        gasto = json.load(open(BROWSER_GASTO))
+    except Exception:
+        gasto = {}
+    if gasto.get(mes, 0) >= BROWSER_TOPE_MS:
+        print(f"  [navegador] tope del mes alcanzado ({gasto[mes] // 60000} min)")
+        return None
+    req = urllib.request.Request(
+        f"{BROWSER_URL}?{urllib.parse.urlencode({'url': url, 'token': BROWSER_TOKEN})}",
+        headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) scraper-tresycuarto"})
+    try:
+        with urllib.request.urlopen(req, timeout=70) as r:
+            res = json.loads(r.read())
+    except Exception as e:
+        print(f"  [navegador error] {url}: {e}")
+        return None
+    gasto[mes] = gasto.get(mes, 0) + int(res.get("ms") or 0)
+    os.makedirs(os.path.dirname(BROWSER_GASTO), exist_ok=True)
+    json.dump(gasto, open(BROWSER_GASTO, "w"))
+    if not res.get("ok"):
+        print(f"  [navegador error] {url}: {res.get('error')}")
+        return None
+    print(f"  [navegador] {len(res.get('texto', ''))} car en {res.get('ms', 0) / 1000:.1f} s")
+    return res.get("texto") or None
+
 
 def fetch(url, timeout=15, encoding="utf-8"):
     req = urllib.request.Request(url)
@@ -886,12 +929,16 @@ def procesar_fuente(fuente, dry_run=False):
     if fuente.get("tipo") == "json_api_jcyl":
         return procesar_jcyl(fuente, dry_run)
 
-    html = fetch(fuente["url"], encoding=fuente.get("encoding", "utf-8"))
-    if not html:
+    if fuente.get("navegador"):
+        texto = fetch_navegador(fuente["url"])
+    else:
+        html = fetch(fuente["url"], encoding=fuente.get("encoding", "utf-8"))
+        # 403, certificado roto o sin respuesta: segundo intento con navegador real
+        texto = html_to_text(html) if html else fetch_navegador(fuente["url"])
+    if not texto:
         print("  No se pudo descargar la página")
         return 0
 
-    texto = html_to_text(html)
     print(f"  Texto extraído: {len(texto)} chars — llamando a Ollama...")
 
     eventos = ollama_extract(texto, fuente["ciudades"])
