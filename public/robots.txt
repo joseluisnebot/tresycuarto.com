@@ -1,3 +1,16 @@
+# Herramientas SEO que rastrean miles de fichas al día y no traen visitas (07/11/2026).
+# Además están bloqueadas en el firewall de Cloudflare; esto es para las que obedecen.
+User-agent: QlyzeBot
+User-agent: SemrushBot
+User-agent: SERankingBacklinksBot
+User-agent: AhrefsBot
+User-agent: PetalBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: DataForSeoBot
+User-agent: BLEXBot
+Disallow: /
+
 User-agent: *
 Allow: /
 
