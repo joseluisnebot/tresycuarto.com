@@ -11,6 +11,16 @@ User-agent: DataForSeoBot
 User-agent: BLEXBot
 Disallow: /
 
+# Bots que entrenan IA y no traen visitas (07/11/2026). Los buscadores de IA
+# (OAI-SearchBot, ChatGPT-User, PerplexityBot) sí pueden entrar: citan y enlazan.
+User-agent: meta-externalagent
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: Amazonbot
+Disallow: /
+
 User-agent: *
 Allow: /
 
