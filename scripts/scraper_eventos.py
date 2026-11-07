@@ -387,24 +387,43 @@ RADIO_M = {
 # ── Relevancia tardeo: solo entran eventos de ocio/salir ────────────────────
 # Normalización de tipo (catalán/sinónimos → castellano canónico)
 TIPO_NORM = {
-    "teatre": "teatro", "dansa": "danza", "música": "concierto", "musica": "concierto",
-    "concert": "concierto", "cultural": "cultura", "exposicio": "exposicion",
+    "teatre": "teatro", "dansa": "teatro", "danza": "teatro", "escena": "teatro",
+    "comedia": "teatro", "magia": "teatro", "circo": "teatro", "espectacle": "teatro",
+    "música": "concierto", "musica": "concierto", "concert": "concierto",
+    "cultural": "otro", "cultura": "otro", "actividad": "otro", "evento": "otro",
+    "exposicio": "exposicion", "exposición": "exposicion",
+    "procesión": "procesion", "cinema": "cine",
     "fiesta": "feria", "fiestas": "feria", "festa": "feria", "festes": "feria",
-    "gastronomía": "gastronomia", "espectacle": "otro", "xerrada": "charla",
+    "gastronomía": "gastronomia", "xerrada": "charla",
 }
 # Criterio: mantenemos todo lo que ATRAE PÚBLICO a la calle (promociona los bares
 # cercanos vía "bares cerca"). Solo descartamos actos sin afluencia o no públicos.
 # Tipos que NO generan afluencia → fuera
 TIPOS_BLOQUEADOS = {"charla", "xerrada", "conferencia", "ponencia", "taller",
                     "curso", "seminario", "presentacion", "presentación",
-                    "visita", "visita guiada", "itinerario", "webinar", "online"}
+                    "visita", "visita guiada", "itinerario", "webinar", "online",
+                    "infantil", "escolar"}
 # Palabras que indican acto sin afluencia / no promocionable
 KW_BLOQUEO = ["taller de", "curso de", "conferencia", "ponencia", "webinar",
               "seminario", "presentación del libro", "presentacion del libro",
               "ruta ornitol", "visita guiada", "itinerario", "campamento",
               "escuela de verano", "online", "en línea", "en linea",
               "inauguración del plafón", "jornada técnica", "jornadas técnicas",
-              "club de lectura", "cuentacuentos"]
+              "club de lectura", "cuentacuentos",
+              # Lista de JL (07/11/2026): ni con inscripción, ni culto, ni infantil
+              "inscripción previa", "inscripcion previa", "imprescindible inscripción",
+              "necesario inscribirse", "misa ", "eucaristía", "pleno municipal",
+              "títeres", "titeres", "marionetas"]
+
+# Tipos que solo entran en algunos casos (lista de JL, 07/11/2026)
+SOLO_SI = {
+    "exposicion": ["inaugura"],                                   # la inauguración, no la expo
+    "cine": ["aire libre", "verano", "ciclo", "festival", "muestra"],  # no la cartelera
+    "deporte": ["carrera", "maratón", "maraton", "san silvestre", "derbi"],
+}
+HORA_MINIMA = "16:00"   # tardeo: lo que empieza antes no entra (sin hora conocida, sí)
+# Duran horas: empezar a mediodía no quita el ambiente de la tarde
+SIN_HORA_MINIMA = {"festival", "feria", "procesion", "gastronomia"}
 
 
 def normaliza_tipo(t):
@@ -412,17 +431,28 @@ def normaliza_tipo(t):
     return TIPO_NORM.get(t, t)
 
 
-def es_promocionable(nombre, tipo, descripcion=""):
-    """True si el evento atrae público a la calle y puede promocionar bares cercanos.
-    Criterio amplio: por defecto SÍ; solo se descartan actos sin afluencia
-    (charlas, talleres, cursos, visitas guiadas, eventos online...)."""
+def motivo_descarte(nombre, tipo, descripcion="", hora=None):
+    """None si el evento es de tardeo; si no, el motivo. Aplica la lista acordada
+    con JL el 07/11/2026: de tarde, abierto al público, que junte gente."""
     t = normaliza_tipo(tipo)
     if t in TIPOS_BLOQUEADOS:
-        return False
+        return f"sin afluencia (tipo={t})"
     texto = f" {nombre} {descripcion} ".lower()
-    if any(k in texto for k in KW_BLOQUEO):
-        return False
-    return True
+    kw = next((k for k in KW_BLOQUEO if k in texto), None)
+    if kw:
+        return f"sin afluencia ({kw.strip()})"
+    if t in SOLO_SI and not any(k in texto for k in SOLO_SI[t]):
+        return f"{t} sin caso de tardeo"
+    # "00:00" suele ser hora desconocida, no medianoche
+    if hora and hora[:5] not in ("null", "", "00:00") and t not in SIN_HORA_MINIMA \
+            and hora[:5] < HORA_MINIMA:
+        return f"de mañana ({hora[:5]})"
+    return None
+
+
+def es_promocionable(nombre, tipo, descripcion="", hora=None):
+    """True si el evento atrae público a la calle por la tarde (ver motivo_descarte)."""
+    return motivo_descarte(nombre, tipo, descripcion, hora) is None
 
 
 # ── Helpers HTTP ───────────────────────────────────────────────────────────
@@ -468,7 +498,7 @@ Rules:
 - Only include events from these cities (match nearby villages to nearest city): {ciudades_str}
 - Only dates between {HOY} and {LIMITE}
 - Use END date if range given (e.g. "09/03/2026 - 29/03/2026" → use 2026-03-29)
-- tipo must be one of: procesion, feria, festival, concierto, mercado, exposicion, deporte, otro
+- tipo must be one of: procesion, feria, festival, concierto, teatro, cine, gastronomia, mercado, exposicion, deporte, otro
 - descripcion max 150 chars
 - hora_inicio: time in HH:MM format if mentioned, else null
 - direccion: venue address or place name if mentioned, else null
@@ -765,8 +795,9 @@ def insertar_evento(ev, dry_run=False):
     # Filtro: descartar solo actos sin afluencia (charlas, talleres, visitas, online).
     # Lo demás se queda — los eventos promocionan los bares cercanos.
     tipo_norm = normaliza_tipo(ev.get("tipo", "otro"))
-    if not es_promocionable(nombre_strip, tipo_norm, ev.get("descripcion", "")):
-        return False, f"sin afluencia (tipo={tipo_norm})"
+    motivo = motivo_descarte(nombre_strip, tipo_norm, ev.get("descripcion", ""), ev.get("hora_inicio"))
+    if motivo:
+        return False, motivo
     ev["tipo"] = tipo_norm  # normalizado para el insert
 
     # Filtro: descripció brossa (cookies, aviso legal...)
@@ -900,10 +931,19 @@ def procesar_madrid(fuente, dry_run=False):
     except Exception:
         return 0
 
+    # Categoría real: último tramo de "@type" (…/kos/actividades/TeatroPerformance)
     TIPO_MAP = {
-        "Conciertos": "concierto", "Teatro": "otro", "Exposiciones": "exposicion",
-        "Danza": "otro", "Cine": "otro", "Deporte": "deporte",
-        "Fiestas": "feria", "Mercados": "mercado",
+        "TeatroPerformance": "teatro", "DanzaBaile": "teatro", "CircoMagia": "teatro",
+        "ComediaMonologo": "teatro", "Zarzuela": "teatro",
+        "Musica": "concierto", "JazzSoulFunkySwingReagge": "concierto", "Flamenco": "concierto",
+        "ClasicaEspanola": "concierto", "LatinaEspanola": "concierto",
+        "CineActividadesAudiovisuales": "cine", "Exposiciones": "exposicion",
+        "FiestasNavidadesReyes": "feria", "ActividadesDeportivas": "deporte",
+        "CursosTalleres": "taller", "CapacitacionDigital": "curso", "ClubesLectura": "taller",
+        "ConferenciasColoquios": "conferencia", "Historia": "conferencia", "Literatura": "conferencia",
+        "RecitalesPresentacionesActosLiterarios": "presentacion",
+        "ExcursionesItinerariosVisitas": "visita", "ItinerariosOtrasActividadesAmbientales": "itinerario",
+        "CuentacuentosTiteresMarionetas": "infantil", "ActividadesEscolares": "escolar",
     }
 
     insertados = 0
@@ -911,19 +951,16 @@ def procesar_madrid(fuente, dry_run=False):
         nombre = item.get("title", "") or item.get("dtitle", "")
         fecha_raw = item.get("dtstart", "") or item.get("startDate", "")
         desc = item.get("description", "")[:200]
-        categoria = item.get("category", [])
-        if isinstance(categoria, list):
-            categoria = categoria[0] if categoria else ""
-        tipo = TIPO_MAP.get(categoria, "otro")
+        tipo = TIPO_MAP.get((item.get("@type") or "").rsplit("/", 1)[-1], "otro")
 
         fecha = fecha_raw[:10] if fecha_raw else ""
         if not nombre or not fecha or fecha < HOY or fecha > LIMITE:
             continue
 
-        # Hora de inicio: extraer de dtstart si tiene formato datetime
-        hora = None
-        if fecha_raw and "T" in fecha_raw:
-            hora = fecha_raw[11:16]  # "2026-04-01T18:30:00" → "18:30"
+        # Hora: campo "time" ("18:00"); si falta, la de dtstart ("2027-01-27 18:00:00.0")
+        hora = (item.get("time") or "").strip()[:5] or None
+        if not hora and len(fecha_raw) >= 16 and fecha_raw[11:16] != "00:00":
+            hora = fecha_raw[11:16]
 
         # Coordenadas específicas del venue (Madrid Open Data las provee)
         location = item.get("location", {}) or {}
@@ -952,7 +989,7 @@ def procesar_jcyl(fuente, dry_run=False):
     """Agenda cultural de la Junta de Castilla y León (Opendatasoft, paginada).
     La mayoría son actos de bibliotecas (clubes de lectura, idiomas...): de una
     biblioteca solo entran teatro y música, y todo ha de empezar a partir de las 16:00."""
-    TIPO_MAP = {"Conciertos": "concierto", "Espectáculos": "otro", "Cine": "otro",
+    TIPO_MAP = {"Conciertos": "concierto", "Espectáculos": "teatro", "Cine": "cine",
                 "Exposiciones": "exposicion", "Otros": "otro"}
     EN_BIBLIOTECA = {"Conciertos", "Espectáculos"}
 
@@ -987,8 +1024,6 @@ def procesar_jcyl(fuente, dry_run=False):
         # "19:30 h." → "19:30"; texto libre ("DOS SESIONES") → sin hora
         m = re.search(r"(\d{1,2}):(\d{2})", item.get("hora_inicio") or "")
         hora = f"{int(m.group(1)):02d}:{m.group(2)}" if m else None
-        if hora and hora < "16:00":
-            continue
 
         desc = BeautifulSoup(item.get("descripcion") or "", "html.parser").get_text(" ", strip=True)
         # "'Divinas palabras' (ATALAYA)" → "Divinas palabras (ATALAYA)"
