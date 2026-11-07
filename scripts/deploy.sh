@@ -115,3 +115,11 @@ if [ "$problems" -ne 0 ]; then
   exit 1
 fi
 grn "✅ Despliegue verificado: home, ciudad y routing de fichas OK."
+
+# Avisar a Bing de las rutas nuevas (bing.py vive fuera del repo; la clave, en el
+# entorno). Nunca bloquea: el despliegue ya está verificado arriba.
+if [ -f /root/scripts/bing.py ]; then
+  [ -n "${BING_API_KEY:-}" ] || source /root/.tresycuarto_env 2>/dev/null || true
+  python3 /root/scripts/bing.py --rutas-nuevas data/rutas.json \
+    || red "  ⚠ No se pudo avisar a Bing de las rutas nuevas (el despliegue está bien)"
+fi
