@@ -9,16 +9,12 @@ Uso:
   python3 scraper_eventos.py --dry-run        # no inserta en D1
 """
 import os
-import json, urllib.request, urllib.parse, os, sys, argparse, hashlib, time, re, smtplib
+import json, urllib.request, urllib.parse, os, sys, argparse, hashlib, time, re
 from datetime import datetime, timedelta
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from bs4 import BeautifulSoup
 
-SMTP_HOST  = "smtp-relay.brevo.com"
-SMTP_PORT  = 587
-SMTP_USER  = "hola@tresycuarto.com"
-SMTP_PASS  = os.environ.get("BREVO_SMTP_KEY", "")
+# Brevo por API REST: el login SMTP daba 535 y los resúmenes no llegaban
+BREVO_KEY  = os.environ.get("BREVO_API_KEY", "")
 NOTIFY_TO  = "joseluisnebot@gmail.com"
 
 API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN", "")
@@ -1014,6 +1010,20 @@ def procesar_jcyl(fuente, dry_run=False):
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
+def brevo_send(subject, html):
+    payload = json.dumps({
+        "sender": {"name": "tresycuarto", "email": "hola@tresycuarto.com"},
+        "to": [{"email": NOTIFY_TO}],
+        "subject": subject,
+        "htmlContent": html,
+    }).encode()
+    req = urllib.request.Request("https://api.brevo.com/v3/smtp/email", data=payload, method="POST")
+    req.add_header("api-key", BREVO_KEY)
+    req.add_header("Content-Type", "application/json")
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return r.status
+
+
 def enviar_resumen(resultados, total, dry_run):
     """Envía email con resumen del scraper."""
     fecha = datetime.now().strftime("%d/%m/%Y %H:%M")
@@ -1080,17 +1090,8 @@ def enviar_resumen(resultados, total, dry_run):
 </table>
 </body></html>"""
 
-    msg = MIMEMultipart("alternative")
-    msg["From"]    = "tresycuarto <hola@tresycuarto.com>"
-    msg["To"]      = NOTIFY_TO
-    msg["Subject"] = f"Scraper semanal — {total} eventos nuevos ({fecha})"
-    msg.attach(MIMEText(html, "html"))
-
     try:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as s:
-            s.starttls()
-            s.login(SMTP_USER, SMTP_PASS)
-            s.send_message(msg)
+        brevo_send(f"Scraper semanal — {total} eventos nuevos ({fecha})", html)
         print(f"  Email resumen enviado a {NOTIFY_TO}")
     except Exception as e:
         print(f"  [email error] {e}")
@@ -1136,17 +1137,8 @@ def enviar_alerta_revision(eventos):
 </table>
 </body></html>"""
 
-    msg = MIMEMultipart("alternative")
-    msg["From"]    = "tresycuarto <hola@tresycuarto.com>"
-    msg["To"]      = NOTIFY_TO
-    msg["Subject"] = f"⚠️ {len(eventos)} evento(s) para revisar — tresycuarto"
-    msg.attach(MIMEText(html, "html"))
-
     try:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as s:
-            s.starttls()
-            s.login(SMTP_USER, SMTP_PASS)
-            s.send_message(msg)
+        brevo_send(f"⚠️ {len(eventos)} evento(s) para revisar — tresycuarto", html)
         print(f"  Alerta revisión enviada: {len(eventos)} evento(s)")
     except Exception as e:
         print(f"  [email error alerta] {e}")
