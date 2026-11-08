@@ -22,8 +22,8 @@ export async function onRequestGet({ request, env }) {
     env.DB.prepare(
       `SELECT id, nombre, tipo, ciudad, slug, direccion, horario, horario_google,
               telefono, web, instagram, terraza, outdoor_seating, live_music,
-              good_for_groups, allows_dogs, lat, lon, photo_url, rating,
-              rating_count, price_level, descripcion_google
+              good_for_groups, allows_dogs, lat, lon, photo_url, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating END AS rating,
+              CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating_count END AS rating_count, price_level, descripcion_google
        FROM locales WHERE ciudad=? ${where}
        ORDER BY rating DESC NULLS LAST, nombre LIMIT ? OFFSET ?`
     ).bind(ciudad, limit, offset).all(),

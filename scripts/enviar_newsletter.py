@@ -201,12 +201,13 @@ def locales_de_ciudad(ciudad, semana):
     """
     pool = RESPALDO_N * RESPALDO_ROTACION
     filas = d1_query(
-        "SELECT nombre, tipo, rating, rating_count, terraza, slug, direccion "
+        "SELECT nombre, tipo, rating, rating_count, terraza, slug, direccion, "
+        "  (google_place_id IS NOT NULL AND google_place_id <> '') AS nota_real "
         "FROM locales "
         "WHERE ciudad = ? AND slug IS NOT NULL AND rating IS NOT NULL "
         "  AND rating >= 3.5 AND rating_count >= 5 "
         "  AND (fuente IS NULL OR fuente <> 'demo') "
-        "ORDER BY rating DESC, rating_count DESC "
+        "ORDER BY nota_real DESC, rating DESC, rating_count DESC "
         "LIMIT ?",
         [ciudad, pool],
     )
@@ -225,8 +226,9 @@ def generar_html_locales(ciudad, locales):
     cslug = slug_ciudad(ciudad)
     tarjetas = ""
     for lo in locales:
-        nota = f"{lo['rating']:.1f}".replace(".", ",")
-        reseñas = lo.get("rating_count") or 0
+        # Solo se muestra la nota si es real (de Google); el resto eran sintéticas
+        nota = (f" &middot; &#9733; {lo['rating']:.1f}".replace(".", ",") + f" ({lo.get('rating_count') or 0} en Google)"
+                if lo.get("nota_real") else "")
         terraza = ' &middot; <span style="color:#F59E0B;font-weight:700;">Terraza</span>' if lo.get("terraza") else ""
         tipo = (lo.get("tipo") or "bar").capitalize()
         direccion = (lo.get("direccion") or "")[:70]
@@ -236,7 +238,7 @@ def generar_html_locales(ciudad, locales):
   style="border:1px solid #F5E6D3;border-radius:12px;overflow:hidden;background:#ffffff;">
 <tr><td style="padding:18px 24px;">
   <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#FB923C;text-transform:uppercase;letter-spacing:0.1em;">
-    {tipo} &middot; &#9733; {nota} ({reseñas}){terraza}
+    {tipo}{nota}{terraza}
   </p>
   <p style="margin:0 0 6px;font-size:17px;font-weight:800;color:#1C1917;line-height:1.3;">
     {lo['nombre']}

@@ -116,13 +116,9 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
     url: local.web || canonicalUrl,
     openingHours: local.horario || undefined,
     priceRange: local.price_level || undefined,
-    aggregateRating: (local.rating && local.rating > 0 && local.rating_count >= 5) ? {
-      "@type": "AggregateRating",
-      ratingValue: Number(local.rating).toFixed(1),
-      reviewCount: local.rating_count,
-      bestRating: 5,
-      worstRating: 1,
-    } : undefined,
+    // Sin aggregateRating: Google no admite valoraciones copiadas de otra web
+    // (las reales vienen de Google Places) y la mayoría de las nuestras eran
+    // sintéticas. Ver memoria project_tresycuarto_notas_inventadas (07/11/2026).
     geo: (local.lat && local.lon) ? {
       "@type": "GeoCoordinates",
       latitude: local.lat,
@@ -164,7 +160,7 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
   // el negocio no existe y sus datos son inventados, así que NUNCA se indexa.
   const esDemo = local.fuente === "demo";
   const indexable = !esDemo && (
-       local.rating_count >= 20
+       local.rating_count_bruto >= 20   // criterio de indexación previo, sin tocar
     || RANKING.has(`/locales/${ciudadSlug}/${local.slug}`)
     || fichaDeDueno);
 
@@ -283,7 +279,7 @@ function renderLocal(local, ciudadSlug, bioSlug = null, eventos = []) {
       ${(local.rating && local.rating > 0) ? `
         <span class="stars">${"★".repeat(Math.min(5,Math.round(local.rating)))}${"☆".repeat(Math.max(0,5-Math.round(local.rating)))}</span>
         <span class="rating-num">${local.rating.toFixed(1)}</span>
-        ${local.rating_count ? `<span class="rating-count">(${Number(local.rating_count).toLocaleString("es-ES")} reseñas)</span>` : ""}
+        ${local.rating_count ? `<span class="rating-count">(${Number(local.rating_count).toLocaleString("es-ES")} reseñas en Google)</span>` : ""}
       ` : ""}
       ${local.price_level ? `<span class="price">${esc(local.price_level)}</span>` : ""}
     </div>` : ""}
@@ -410,7 +406,7 @@ export async function onRequestGet(context) {
   // Caso especial: /locales/-/[id] — enlace interno por ID (emails, admin, claims)
   if (ciudadSlug === "-") {
     const { results: byId } = await env.DB.prepare(
-      "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, rating, rating_count, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE id = ? LIMIT 1"
+      "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating END AS rating, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating_count END AS rating_count, rating_count AS rating_count_bruto, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE id = ? LIMIT 1"
     ).bind(slug).all();
     if (!byId || !byId.length) {
       return new Response("Local no encontrado", { status: 404 });
@@ -428,7 +424,7 @@ export async function onRequestGet(context) {
   }
 
   const { results } = await env.DB.prepare(
-    "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, rating, rating_count, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE slug = ? AND ciudad = ? LIMIT 1"
+    "SELECT id, nombre, tipo, ciudad, lat, lon, direccion, codigo_postal, telefono, web, instagram, horario, terraza, musica, fuente, creado_en, descripcion, foto_perfil, fotos, claimed, slug, menu_url, redes, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating END AS rating, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating_count END AS rating_count, rating_count AS rating_count_bruto, google_place_id, photo_url, price_level, horario_google, descripcion_google, live_music, outdoor_seating, good_for_groups, allows_dogs, photo_source FROM locales WHERE slug = ? AND ciudad = ? LIMIT 1"
   ).bind(slug, ciudad).all();
 
   if (!results || results.length === 0) {

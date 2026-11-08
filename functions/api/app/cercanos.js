@@ -15,7 +15,7 @@ export async function onRequestGet({ request, env }) {
   const { results } = await env.DB.prepare(
     `SELECT id, nombre, tipo, ciudad, slug, direccion, horario_google, horario,
             terraza, outdoor_seating, live_music, good_for_groups, allows_dogs,
-            lat, lon, photo_url, rating, rating_count, price_level,
+            lat, lon, photo_url, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating END AS rating, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating_count END AS rating_count, price_level,
             -- Distancia aproximada en metros (Haversine simplificado)
             ROUND(111000 * SQRT(POW(lat - ?, 2) + POW((lon - ?) * 0.77, 2))) as distancia
      FROM locales

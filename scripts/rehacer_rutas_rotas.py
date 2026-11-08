@@ -66,7 +66,7 @@ def nominatim(texto):
 def bares_buenos(ciudad):
     return G.d1(
         "SELECT nombre, tipo, direccion, rating, rating_count, lat, lon, slug FROM locales "
-        "WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND lat IS NOT NULL AND slug IS NOT NULL "
+        "WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND google_place_id IS NOT NULL AND google_place_id<>'' AND lat IS NOT NULL AND slug IS NOT NULL "
         "AND direccion IS NOT NULL AND (fuente IS NULL OR fuente <> 'demo') "
         "ORDER BY rating DESC, rating_count DESC", [ciudad])
 

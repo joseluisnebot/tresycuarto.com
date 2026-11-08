@@ -1552,7 +1552,7 @@
       {
         "numero": 1,
         "nombre": "Atasca2",
-        "descripcion": "Bar de tapas con 4,8⭐ (85 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (85 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.438219,
@@ -1563,7 +1563,7 @@
       {
         "numero": 2,
         "nombre": "Al Solito Posto",
-        "descripcion": "Bar de tapas con 4,6⭐ (493 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (493 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.440897,
@@ -1574,7 +1574,7 @@
       {
         "numero": 3,
         "nombre": "Bar Armando",
-        "descripcion": "Bar de tapas con 4,5⭐ (498 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (498 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.435891,
@@ -1585,7 +1585,7 @@
       {
         "numero": 4,
         "nombre": "Atascal",
-        "descripcion": "Bar de tapas con 4,5⭐ (339 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (339 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.438231,
@@ -1596,7 +1596,7 @@
       {
         "numero": 5,
         "nombre": "Apolo",
-        "descripcion": "Bar de tapas con 4,3⭐ (11376 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (11376 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 40.434961,
@@ -2321,7 +2321,7 @@
       {
         "numero": 1,
         "nombre": "Bagels & Beers",
-        "descripcion": "Bar de tapas con 4⭐ (32 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.986532,
@@ -2332,7 +2332,7 @@
       {
         "numero": 2,
         "nombre": "La Comuna Café",
-        "descripcion": "Cafetería con 4,6⭐ (48 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.989046,
@@ -2343,7 +2343,7 @@
       {
         "numero": 3,
         "nombre": "Eat Sleep Cycle",
-        "descripcion": "Cafetería con 4,3⭐ (44 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.981666,
@@ -2354,7 +2354,7 @@
       {
         "numero": 4,
         "nombre": "L'Exquisit",
-        "descripcion": "Cafetería con 4,2⭐ (38 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.985918,
@@ -2365,7 +2365,7 @@
       {
         "numero": 5,
         "nombre": "Originem",
-        "descripcion": "Cafetería con 4,1⭐ (35 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 41.985493,
@@ -2400,7 +2400,7 @@
       {
         "numero": 1,
         "nombre": "Bar Barea",
-        "descripcion": "Bar de tapas con 4,2⭐ (1126 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (1126 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.842128,
@@ -2411,7 +2411,7 @@
       {
         "numero": 2,
         "nombre": "Bagua",
-        "descripcion": "Bar de tapas con 4,2⭐ (292 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (292 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.835782,
@@ -2422,7 +2422,7 @@
       {
         "numero": 3,
         "nombre": "Alcazar",
-        "descripcion": "Bar de tapas con 4,1⭐ (876 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (876 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.839498,
@@ -2433,7 +2433,7 @@
       {
         "numero": 4,
         "nombre": "Bar Habibi",
-        "descripcion": "Bar de tapas con 4,1⭐ (310 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (310 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.84022,
@@ -2444,7 +2444,7 @@
       {
         "numero": 5,
         "nombre": "Arcos",
-        "descripcion": "Cafetería con 5⭐ (105 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 5⭐ en Google (105 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 36.835014,
@@ -2479,7 +2479,7 @@
       {
         "numero": 1,
         "nombre": "Gastrobar Serendipia",
-        "descripcion": "Bar de tapas con 4,5⭐ (43 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.460648,
@@ -2490,7 +2490,7 @@
       {
         "numero": 2,
         "nombre": "Soriano",
-        "descripcion": "Bar de tapas con 4,1⭐ (41 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.465653,
@@ -2501,7 +2501,7 @@
       {
         "numero": 3,
         "nombre": "Tortillería La Concordia",
-        "descripcion": "Cafetería con 4⭐ (42 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.46562,
@@ -2512,7 +2512,7 @@
       {
         "numero": 4,
         "nombre": "Umm No Sólo Tapas",
-        "descripcion": "Pub con 4,5⭐ (43 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.465931,
@@ -2523,7 +2523,7 @@
       {
         "numero": 5,
         "nombre": "Parlamento",
-        "descripcion": "Pub con 4⭐ (41 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 42.466794,
@@ -2558,7 +2558,7 @@
       {
         "numero": 1,
         "nombre": "Txiki",
-        "descripcion": "Bar de tapas con 4,3⭐ (46 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.844327,
@@ -2569,7 +2569,7 @@
       {
         "numero": 2,
         "nombre": "Sutoki",
-        "descripcion": "Bar de tapas con 4,1⭐ (43 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.844367,
@@ -2580,7 +2580,7 @@
       {
         "numero": 3,
         "nombre": "El TabanKo",
-        "descripcion": "Bar de tapas con 4,1⭐ (37 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas. Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.848135,
@@ -2591,7 +2591,7 @@
       {
         "numero": 4,
         "nombre": "Plaza Café",
-        "descripcion": "Bar de tapas con 4⭐ (41 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.84427,
@@ -2602,7 +2602,7 @@
       {
         "numero": 5,
         "nombre": "Apollo",
-        "descripcion": "Bar de tapas con 4⭐ (32 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 42.847163,
@@ -2637,7 +2637,7 @@
       {
         "numero": 1,
         "nombre": "Bar Entrepeñas",
-        "descripcion": "Bar de tapas con 4,4⭐ (40 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.59712,
@@ -2648,7 +2648,7 @@
       {
         "numero": 2,
         "nombre": "La trastienda del 13",
-        "descripcion": "Cafetería con 4,2⭐ (33 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.598677,
@@ -2659,7 +2659,7 @@
       {
         "numero": 3,
         "nombre": "Café vychio13",
-        "descripcion": "Cafetería con 4⭐ (28 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 42.603144,
@@ -2752,7 +2752,7 @@
       {
         "numero": 1,
         "nombre": "Montana",
-        "descripcion": "Bar de tapas con 4⭐ (27 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.539955,
@@ -2763,7 +2763,7 @@
       {
         "numero": 2,
         "nombre": "Shanti",
-        "descripcion": "Cafetería con 4,2⭐ (34 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.536418,
@@ -2774,7 +2774,7 @@
       {
         "numero": 3,
         "nombre": "AlMercáu",
-        "descripcion": "Pub con 4,1⭐ (28 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 43.53829,
@@ -2809,7 +2809,7 @@
       {
         "numero": 1,
         "nombre": "Olibher",
-        "descripcion": "Pub con 4,2⭐ (47 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.651586,
@@ -2820,7 +2820,7 @@
       {
         "numero": 2,
         "nombre": "Barco",
-        "descripcion": "Pub con 4,1⭐ (37 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.650787,
@@ -2831,7 +2831,7 @@
       {
         "numero": 3,
         "nombre": "Café Ibérico",
-        "descripcion": "Pub con 4⭐ (42 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub. Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.649662,
@@ -2842,7 +2842,7 @@
       {
         "numero": 4,
         "nombre": "Charlies cervecería",
-        "descripcion": "Pub con 4⭐ (38 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 41.647366,
@@ -2877,7 +2877,7 @@
       {
         "numero": 1,
         "nombre": "Bilbao Urban Sagardotegi",
-        "descripcion": "Bar de tapas con 4,2⭐ (34 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.264634,
@@ -2888,7 +2888,7 @@
       {
         "numero": 2,
         "nombre": "La Olla",
-        "descripcion": "Bar de tapas con 4,1⭐ (30 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.261596,
@@ -2899,7 +2899,7 @@
       {
         "numero": 3,
         "nombre": "Sacacorchos",
-        "descripcion": "Bar de tapas con 4⭐ (36 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas. Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.264891,
@@ -2910,7 +2910,7 @@
       {
         "numero": 4,
         "nombre": "ARVO Coffee & Plants",
-        "descripcion": "Cafetería con 4,5⭐ (46 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.266408,
@@ -2921,7 +2921,7 @@
       {
         "numero": 5,
         "nombre": "La Catedral",
-        "descripcion": "Cafetería con 4,5⭐ (40 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 43.26269,
@@ -3014,7 +3014,7 @@
       {
         "numero": 1,
         "nombre": "Bacanal",
-        "descripcion": "Bar de tapas con 4,6⭐ (4882 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (4882 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.435761,
@@ -3025,7 +3025,7 @@
       {
         "numero": 2,
         "nombre": "Bar Escalera del 34",
-        "descripcion": "Bar de tapas con 4,1⭐ (998 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (998 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.434702,
@@ -3036,7 +3036,7 @@
       {
         "numero": 3,
         "nombre": "Taberna La Aliñá",
-        "descripcion": "Bar de tapas con 4,1⭐ (31 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas. Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.433673,
@@ -3047,7 +3047,7 @@
       {
         "numero": 4,
         "nombre": "Bar Rubí",
-        "descripcion": "Bar de tapas con 4⭐ (335 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (335 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.434972,
@@ -3058,7 +3058,7 @@
       {
         "numero": 5,
         "nombre": "Bar Cruz",
-        "descripcion": "Bar de tapas con 4⭐ (315 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (315 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 40.434703,
@@ -3158,7 +3158,7 @@
       {
         "numero": 1,
         "nombre": "Mesón Campeones",
-        "descripcion": "Bar de tapas con 4,8⭐ (883 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (883 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.383212,
@@ -3169,7 +3169,7 @@
       {
         "numero": 2,
         "nombre": "En'ca Omaita",
-        "descripcion": "Bar de tapas con 4,6⭐ (5471 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (5471 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.387133,
@@ -3180,7 +3180,7 @@
       {
         "numero": 3,
         "nombre": "Mr. Tritón",
-        "descripcion": "Bar de tapas con 4,6⭐ (317 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (317 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.387269,
@@ -3191,7 +3191,7 @@
       {
         "numero": 4,
         "nombre": "Bar Bimbazo",
-        "descripcion": "Bar de tapas con 4,5⭐ (109 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (109 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.377228,
@@ -3202,7 +3202,7 @@
       {
         "numero": 5,
         "nombre": "Long Rock Sevilla",
-        "descripcion": "Bar de tapas con 4,4⭐ (2243 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (2243 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 37.38673,
@@ -3237,7 +3237,7 @@
       {
         "numero": 1,
         "nombre": "Beachbol",
-        "descripcion": "Bar de tapas con 4,4⭐ (51 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.47344,
@@ -3248,7 +3248,7 @@
       {
         "numero": 2,
         "nombre": "Doux / Amer",
-        "descripcion": "Cafetería con 4,6⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.467163,
@@ -3259,7 +3259,7 @@
       {
         "numero": 3,
         "nombre": "Glasol Platja",
-        "descripcion": "Cafetería con 4,1⭐ (38 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.46726,
@@ -3270,7 +3270,7 @@
       {
         "numero": 4,
         "nombre": "Cafe Artysana - Cabanyal",
-        "descripcion": "Cafetería con 4⭐ (42 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.466022,
@@ -3281,7 +3281,7 @@
       {
         "numero": 5,
         "nombre": "Semillas",
-        "descripcion": "Cafetería con 4⭐ (26 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 39.468199,
@@ -3380,7 +3380,7 @@
       {
         "numero": 1,
         "nombre": "New class",
-        "descripcion": "Pub con 4,1⭐ (43 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.620511,
@@ -3391,7 +3391,7 @@
       {
         "numero": 2,
         "nombre": "Legend",
-        "descripcion": "Pub con 4,1⭐ (39 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.626392,
@@ -3402,7 +3402,7 @@
       {
         "numero": 3,
         "nombre": "Beat Cafè i Soul",
-        "descripcion": "Pub con 4⭐ (32 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub. Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 41.608603,
@@ -3437,7 +3437,7 @@
       {
         "numero": 1,
         "nombre": "Colón",
-        "descripcion": "Cafetería con 4,3⭐ (43 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.769341,
@@ -3448,7 +3448,7 @@
       {
         "numero": 2,
         "nombre": "Montelado",
-        "descripcion": "Cafetería con 4,2⭐ (43 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.770719,
@@ -3459,7 +3459,7 @@
       {
         "numero": 3,
         "nombre": "El Paso",
-        "descripcion": "Cafetería con 4,1⭐ (33 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.777363,
@@ -3470,7 +3470,7 @@
       {
         "numero": 4,
         "nombre": "Café del Abad",
-        "descripcion": "Cafetería con 4⭐ (43 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.769332,
@@ -3481,7 +3481,7 @@
       {
         "numero": 5,
         "nombre": "Bundesbar",
-        "descripcion": "Pub con 4,3⭐ (39 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 37.777542,
@@ -3992,7 +3992,7 @@
       {
         "numero": 1,
         "nombre": "Las Fronteras",
-        "descripcion": "Bar de tapas con 4,7⭐ (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.479233,
@@ -4003,7 +4003,7 @@
       {
         "numero": 2,
         "nombre": "La Ruina",
-        "descripcion": "Bar de tapas con 4,6⭐ (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.479932,
@@ -4014,7 +4014,7 @@
       {
         "numero": 3,
         "nombre": "Marbella",
-        "descripcion": "Bar de tapas con 4,6⭐ (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.477747,
@@ -4025,7 +4025,7 @@
       {
         "numero": 4,
         "nombre": "Oja Cafe Bubble Tea Shop",
-        "descripcion": "Cafetería con 5⭐ (314 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 5⭐ en Google (314 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.480036,
@@ -4036,7 +4036,7 @@
       {
         "numero": 5,
         "nombre": "San Diego Coffee Corner",
-        "descripcion": "Cafetería con 4,7⭐ (298 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,7⭐ en Google (298 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 40.481255,
@@ -4071,7 +4071,7 @@
       {
         "numero": 1,
         "nombre": "Tramps, The King of Clubs",
-        "descripcion": "Bar de tapas con 4,1⭐ (40 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 28.065198,
@@ -4082,7 +4082,7 @@
       {
         "numero": 2,
         "nombre": "Club swingers Mystique",
-        "descripcion": "Bar de tapas con 4,1⭐ (40 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 28.079748,
@@ -4093,7 +4093,7 @@
       {
         "numero": 3,
         "nombre": "Sushi Amore",
-        "descripcion": "Bar de tapas con 4,1⭐ (34 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas. Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 28.056703,
@@ -4104,7 +4104,7 @@
       {
         "numero": 4,
         "nombre": "Blend Coffee & Food",
-        "descripcion": "Cafetería con 4,6⭐ (54 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 28.069559,
@@ -4115,7 +4115,7 @@
       {
         "numero": 5,
         "nombre": "Inner you",
-        "descripcion": "Cafetería con 4,6⭐ (48 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 28.07973,
@@ -4150,7 +4150,7 @@
       {
         "numero": 1,
         "nombre": "Daynight",
-        "descripcion": "Bar de tapas con 4,1⭐ (41 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.539375,
@@ -4161,7 +4161,7 @@
       {
         "numero": 2,
         "nombre": "My Bakery",
-        "descripcion": "Cafetería con 4,5⭐ (41 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.54076,
@@ -4172,7 +4172,7 @@
       {
         "numero": 3,
         "nombre": "Cafetería Durá",
-        "descripcion": "Cafetería con 4,4⭐ (39 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.535719,
@@ -4183,7 +4183,7 @@
       {
         "numero": 4,
         "nombre": "Café Belroy",
-        "descripcion": "Cafetería con 4,3⭐ (47 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 38.537179,
@@ -4218,7 +4218,7 @@
       {
         "numero": 1,
         "nombre": "Bar El Gordo",
-        "descripcion": "Bar de tapas con 4⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.888561,
@@ -4229,7 +4229,7 @@
       {
         "numero": 2,
         "nombre": "Cafetería Gran Vía",
-        "descripcion": "Cafetería con 4,1⭐ (41 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.156327,
@@ -4240,7 +4240,7 @@
       {
         "numero": 3,
         "nombre": "Café de la Glorieta",
-        "descripcion": "Cafetería con 4⭐ (38 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.155139,
@@ -4251,7 +4251,7 @@
       {
         "numero": 4,
         "nombre": "Cafetería Bar La Poma",
-        "descripcion": "Cafetería con 4⭐ (34 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.152824,
@@ -4262,7 +4262,7 @@
       {
         "numero": 5,
         "nombre": "Pub Grandma Club Hookahs",
-        "descripcion": "Pub con 4,1⭐ (34 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 39.149296,
@@ -4297,7 +4297,7 @@
       {
         "numero": 1,
         "nombre": "Toledo",
-        "descripcion": "Bar de tapas con 4⭐ (33 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.304762,
@@ -4308,7 +4308,7 @@
       {
         "numero": 2,
         "nombre": "Starbucks",
-        "descripcion": "Cafetería con 4,7⭐ (47 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.272006,
@@ -4319,7 +4319,7 @@
       {
         "numero": 3,
         "nombre": "El Violín",
-        "descripcion": "Cafetería con 4,2⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.309059,
@@ -4330,7 +4330,7 @@
       {
         "numero": 4,
         "nombre": "Churrería San Segundo",
-        "descripcion": "Cafetería con 4,2⭐ (42 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 40.304872,
@@ -4365,7 +4365,7 @@
       {
         "numero": 1,
         "nombre": "Antojo Café & Bar",
-        "descripcion": "Bar de tapas con 4,4⭐ (46 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.510932,
@@ -4376,7 +4376,7 @@
       {
         "numero": 2,
         "nombre": "Café Loft",
-        "descripcion": "Cafetería con 4,4⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.50888,
@@ -4387,7 +4387,7 @@
       {
         "numero": 3,
         "nombre": "Gran Café Jalisco",
-        "descripcion": "Cafetería con 4,1⭐ (36 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.504155,
@@ -4398,7 +4398,7 @@
       {
         "numero": 4,
         "nombre": "Ocellum Tap Station",
-        "descripcion": "Pub con 4,1⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.503642,
@@ -4409,7 +4409,7 @@
       {
         "numero": 5,
         "nombre": "Bar La Plaza",
-        "descripcion": "Pub con 4⭐ (39 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 41.507531,
@@ -4444,7 +4444,7 @@
       {
         "numero": 1,
         "nombre": "Bar Regina",
-        "descripcion": "Bar de tapas con 4,8⭐ (72 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (72 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.394542,
@@ -4455,7 +4455,7 @@
       {
         "numero": 2,
         "nombre": "Crapulas",
-        "descripcion": "Bar de tapas con 4,7⭐ (484 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (484 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.391084,
@@ -4466,7 +4466,7 @@
       {
         "numero": 3,
         "nombre": "Bar San Juan de la Palma",
-        "descripcion": "Bar de tapas con 4,6⭐ (419 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (419 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.395277,
@@ -4477,7 +4477,7 @@
       {
         "numero": 4,
         "nombre": "Previa",
-        "descripcion": "Bar de tapas con 4,5⭐ (248 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (248 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.392888,
@@ -4488,7 +4488,7 @@
       {
         "numero": 5,
         "nombre": "Bar El Comercio",
-        "descripcion": "Bar de tapas con 4,4⭐ (7430 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (7430 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 37.390813,
@@ -4523,7 +4523,7 @@
       {
         "numero": 1,
         "nombre": "Montana",
-        "descripcion": "Bar de tapas con 4,8⭐ (2241 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (2241 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.390004,
@@ -4534,7 +4534,7 @@
       {
         "numero": 2,
         "nombre": "Bar Paradise",
-        "descripcion": "Bar de tapas con 4⭐ (320 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (320 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.396316,
@@ -4545,7 +4545,7 @@
       {
         "numero": 3,
         "nombre": "Billy Brunch",
-        "descripcion": "Cafetería con 4,8⭐ (3370 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,8⭐ en Google (3370 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.391863,
@@ -4556,7 +4556,7 @@
       {
         "numero": 4,
         "nombre": "Galería El Cine",
-        "descripcion": "Cafetería con 4,3⭐ (913 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,3⭐ en Google (913 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.392014,
@@ -4567,7 +4567,7 @@
       {
         "numero": 5,
         "nombre": "Bar El Sendero",
-        "descripcion": "Pub con 4,9⭐ (64 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub con 4,9⭐ en Google (64 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 37.393159,
@@ -4602,7 +4602,7 @@
       {
         "numero": 1,
         "nombre": "Café Bar El Moli",
-        "descripcion": "Bar de tapas con 4,8⭐ (3276 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (3276 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.345047,
@@ -4613,7 +4613,7 @@
       {
         "numero": 2,
         "nombre": "Infanta Sevilla",
-        "descripcion": "Bar de tapas con 4,7⭐ (1885 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (1885 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.34698,
@@ -4624,7 +4624,7 @@
       {
         "numero": 3,
         "nombre": "Cafetería Kaldi",
-        "descripcion": "Cafetería con 4,6⭐ (167 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (167 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.347555,
@@ -4635,7 +4635,7 @@
       {
         "numero": 4,
         "nombre": "Cafetería-Bar EME'S",
-        "descripcion": "Cafetería con 4,3⭐ (77 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,3⭐ en Google (77 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.347323,
@@ -4646,7 +4646,7 @@
       {
         "numero": 5,
         "nombre": "Café Tartessos",
-        "descripcion": "Cafetería con 4,1⭐ (136 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería con 4,1⭐ en Google (136 reseñas). Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 37.347812,
@@ -4681,7 +4681,7 @@
       {
         "numero": 1,
         "nombre": "El 25 Bodega",
-        "descripcion": "Bar de tapas con 4,8⭐ (603 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (603 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.375356,
@@ -4692,7 +4692,7 @@
       {
         "numero": 2,
         "nombre": "La Salá",
-        "descripcion": "Bar de tapas con 4,7⭐ (2388 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (2388 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.375302,
@@ -4703,7 +4703,7 @@
       {
         "numero": 3,
         "nombre": "Bar-Cafetería Aarón",
-        "descripcion": "Bar de tapas con 4,5⭐ (786 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (786 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.375732,
@@ -4714,7 +4714,7 @@
       {
         "numero": 4,
         "nombre": "Bar La Caprichosa",
-        "descripcion": "Bar de tapas con 4,1⭐ (222 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (222 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.374404,
@@ -4725,7 +4725,7 @@
       {
         "numero": 5,
         "nombre": "Bar El Pique",
-        "descripcion": "Bar de tapas con 4,1⭐ (136 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (136 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 37.374953,
@@ -4760,7 +4760,7 @@
       {
         "numero": 1,
         "nombre": "Doctor Bar",
-        "descripcion": "Bar de tapas con 4,8⭐ (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.398878,
@@ -4771,7 +4771,7 @@
       {
         "numero": 2,
         "nombre": "Checkpoint Arcadebar",
-        "descripcion": "Bar de tapas con 4,7⭐ (1183 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (1183 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.397838,
@@ -4782,7 +4782,7 @@
       {
         "numero": 3,
         "nombre": "Cervecería La Salmuera",
-        "descripcion": "Bar de tapas con 4,7⭐ (91 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (91 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.396985,
@@ -4793,7 +4793,7 @@
       {
         "numero": 4,
         "nombre": "M'alegro en verte",
-        "descripcion": "Bar de tapas con 4,7⭐ (20 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (20 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.401951,
@@ -4804,7 +4804,7 @@
       {
         "numero": 5,
         "nombre": "Bar Algabeño",
-        "descripcion": "Bar de tapas con 4,6⭐ (372 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (372 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 37.399213,
@@ -4839,7 +4839,7 @@
       {
         "numero": 1,
         "nombre": "Liverpool",
-        "descripcion": "Bar de tapas con 4,3⭐ (1479 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (1479 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993654,
@@ -4850,7 +4850,7 @@
       {
         "numero": 2,
         "nombre": "King",
-        "descripcion": "Bar de tapas con 4,3⭐ (1359 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (1359 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.995793,
@@ -4861,7 +4861,7 @@
       {
         "numero": 3,
         "nombre": "Donde Siempre",
-        "descripcion": "Bar de tapas con 4,2⭐ (403 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (403 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.998374,
@@ -4872,7 +4872,7 @@
       {
         "numero": 4,
         "nombre": "Anubis Coctelería",
-        "descripcion": "Bar de tapas con 4,2⭐ (327 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (327 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.994746,
@@ -4883,7 +4883,7 @@
       {
         "numero": 5,
         "nombre": "Alaska",
-        "descripcion": "Bar de tapas con 4,2⭐ (165 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (165 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 38.99818,
@@ -4918,7 +4918,7 @@
       {
         "numero": 1,
         "nombre": "De María",
-        "descripcion": "Bar de tapas con 4,4⭐ (180 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (180 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.98625,
@@ -4929,7 +4929,7 @@
       {
         "numero": 2,
         "nombre": "Raykel",
-        "descripcion": "Bar de tapas con 4,4⭐ (135 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (135 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.988301,
@@ -4940,7 +4940,7 @@
       {
         "numero": 3,
         "nombre": "Santi",
-        "descripcion": "Bar de tapas con 4,1⭐ (82 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (82 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.986067,
@@ -4951,7 +4951,7 @@
       {
         "numero": 4,
         "nombre": "El Labrador",
-        "descripcion": "Bar de tapas con 4⭐ (501 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (501 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.984932,
@@ -4962,7 +4962,7 @@
       {
         "numero": 5,
         "nombre": "Míriam",
-        "descripcion": "Cafetería con 5⭐ (25 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 5⭐ en Google (25 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 38.984924,
@@ -4997,7 +4997,7 @@
       {
         "numero": 1,
         "nombre": "80s",
-        "descripcion": "Bar de tapas con 4,9⭐ (119 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,9⭐ en Google (119 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993171,
@@ -5008,7 +5008,7 @@
       {
         "numero": 2,
         "nombre": "La Marimandona",
-        "descripcion": "Bar de tapas con 4,5⭐ (187 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (187 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993018,
@@ -5019,7 +5019,7 @@
       {
         "numero": 3,
         "nombre": "Llilas",
-        "descripcion": "Bar de tapas con 4,5⭐ (60 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (60 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993022,
@@ -5030,7 +5030,7 @@
       {
         "numero": 4,
         "nombre": "Zizú",
-        "descripcion": "Bar de tapas con 4,5⭐ (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (23 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993263,
@@ -5041,7 +5041,7 @@
       {
         "numero": 5,
         "nombre": "Bodega La Caprichosa",
-        "descripcion": "Bar de tapas con 4,4⭐ (383 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (383 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 38.991843,
@@ -5076,7 +5076,7 @@
       {
         "numero": 1,
         "nombre": "Luzia",
-        "descripcion": "Bar de tapas con 4,9⭐ (77 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,9⭐ en Google (77 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.004272,
@@ -5087,7 +5087,7 @@
       {
         "numero": 2,
         "nombre": "Zenai",
-        "descripcion": "Pub con 4,6⭐ (478 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub con 4,6⭐ en Google (478 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.001713,
@@ -5098,7 +5098,7 @@
       {
         "numero": 3,
         "nombre": "Fútbol Base",
-        "descripcion": "Pub con 4,4⭐ (357 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub con 4,4⭐ en Google (357 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.000869,
@@ -5109,7 +5109,7 @@
       {
         "numero": 4,
         "nombre": "Delirio",
-        "descripcion": "Pub con 4,3⭐ (920 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub con 4,3⭐ en Google (920 reseñas). Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.003318,
@@ -5120,7 +5120,7 @@
       {
         "numero": 5,
         "nombre": "Osluc",
-        "descripcion": "Pub con 4,1⭐ (56 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub con 4,1⭐ en Google (56 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 39.003429,
@@ -5155,7 +5155,7 @@
       {
         "numero": 1,
         "nombre": "Entreamigos",
-        "descripcion": "Bar de tapas con 4,2⭐ (1377 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (1377 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.986894,
@@ -5166,7 +5166,7 @@
       {
         "numero": 2,
         "nombre": "Titis",
-        "descripcion": "Bar de tapas con 4,2⭐ (1258 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (1258 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.999927,
@@ -5177,7 +5177,7 @@
       {
         "numero": 3,
         "nombre": "Churrería Chocolatería Cuca",
-        "descripcion": "Cafetería con 4,6⭐ (48 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (48 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.001166,
@@ -5188,7 +5188,7 @@
       {
         "numero": 4,
         "nombre": "Bulevar Andrea",
-        "descripcion": "Cafetería con 4,5⭐ (179 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,5⭐ en Google (179 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.999715,
@@ -5199,7 +5199,7 @@
       {
         "numero": 5,
         "nombre": "Churrería la Caracola",
-        "descripcion": "Cafetería con 4,2⭐ (124 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería con 4,2⭐ en Google (124 reseñas). Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 38.998727,
@@ -5234,7 +5234,7 @@
       {
         "numero": 1,
         "nombre": "El Pequeño Careta",
-        "descripcion": "Bar de tapas con 4,4⭐ (400 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (400 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.994133,
@@ -5245,7 +5245,7 @@
       {
         "numero": 2,
         "nombre": "Zayra",
-        "descripcion": "Bar de tapas con 4,3⭐ (593 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (593 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.994416,
@@ -5256,7 +5256,7 @@
       {
         "numero": 3,
         "nombre": "Comodín",
-        "descripcion": "Bar de tapas con 4⭐ (171 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (171 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.991,
@@ -5267,7 +5267,7 @@
       {
         "numero": 4,
         "nombre": "Trios",
-        "descripcion": "Bar de tapas con 4⭐ (47 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (47 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.993718,
@@ -5278,7 +5278,7 @@
       {
         "numero": 5,
         "nombre": "Chocolatería El Rincón de Mirella",
-        "descripcion": "Cafetería con 4,6⭐ (510 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (510 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 38.993691,
@@ -5313,7 +5313,7 @@
       {
         "numero": 1,
         "nombre": "Alchemist 1967",
-        "descripcion": "Bar de tapas con 5⭐ (427 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 5⭐ en Google (427 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.419163,
@@ -5324,7 +5324,7 @@
       {
         "numero": 2,
         "nombre": "Barra",
-        "descripcion": "Bar de tapas con 4,5⭐ (1237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (1237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.415899,
@@ -5335,7 +5335,7 @@
       {
         "numero": 3,
         "nombre": "Antiguo Café Berlín",
-        "descripcion": "Cafetería con 4,5⭐ (1040 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,5⭐ en Google (1040 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.420298,
@@ -5346,7 +5346,7 @@
       {
         "numero": 4,
         "nombre": "Astoria",
-        "descripcion": "Cafetería con 4,4⭐ (114 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,4⭐ en Google (114 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.420567,
@@ -5357,7 +5357,7 @@
       {
         "numero": 5,
         "nombre": "Gran Café de Madrid",
-        "descripcion": "Cafetería con 4,4⭐ (43 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 40.415949,
@@ -5392,7 +5392,7 @@
       {
         "numero": 1,
         "nombre": "80/20 Vinos Bar",
-        "descripcion": "Bar de tapas con 4,7⭐ (511 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (511 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.429118,
@@ -5403,7 +5403,7 @@
       {
         "numero": 2,
         "nombre": "Bar Amor",
-        "descripcion": "Bar de tapas con 4,6⭐ (899 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (899 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.428831,
@@ -5414,7 +5414,7 @@
       {
         "numero": 3,
         "nombre": "Así sí",
-        "descripcion": "Bar de tapas con 4,5⭐ (157 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (157 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.428761,
@@ -5425,7 +5425,7 @@
       {
         "numero": 4,
         "nombre": "Cervecería Carril",
-        "descripcion": "Bar de tapas con 4,3⭐ (43 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.432618,
@@ -5436,7 +5436,7 @@
       {
         "numero": 5,
         "nombre": "Gato",
-        "descripcion": "Bar de tapas con 4,2⭐ (37 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 40.427205,
@@ -5471,7 +5471,7 @@
       {
         "numero": 1,
         "nombre": "Baranzo",
-        "descripcion": "Bar de tapas con 4,8⭐ (3846 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,8⭐ en Google (3846 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.460045,
@@ -5482,7 +5482,7 @@
       {
         "numero": 2,
         "nombre": "Bar La Carreta",
-        "descripcion": "Cafetería con 4,6⭐ (50 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (50 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.457063,
@@ -5493,7 +5493,7 @@
       {
         "numero": 3,
         "nombre": "Bar La Torre",
-        "descripcion": "Cafetería con 4,4⭐ (95 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,4⭐ en Google (95 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.458886,
@@ -5504,7 +5504,7 @@
       {
         "numero": 4,
         "nombre": "Bar Minuto",
-        "descripcion": "Cafetería con 4,1⭐ (454 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería con 4,1⭐ en Google (454 reseñas). Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.458116,
@@ -5515,7 +5515,7 @@
       {
         "numero": 5,
         "nombre": "Bar El Soto",
-        "descripcion": "Pub con 4,9⭐ (38 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub con 4,9⭐ en Google (38 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 40.459935,
@@ -5550,7 +5550,7 @@
       {
         "numero": 1,
         "nombre": "Bar Barea",
-        "descripcion": "Bar de tapas con 4,2⭐ (1126 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (1126 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.842128,
@@ -5561,7 +5561,7 @@
       {
         "numero": 2,
         "nombre": "Alcazar",
-        "descripcion": "Bar de tapas con 4,1⭐ (876 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (876 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.839498,
@@ -5572,7 +5572,7 @@
       {
         "numero": 3,
         "nombre": "Bar Habibi",
-        "descripcion": "Bar de tapas con 4,1⭐ (310 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (310 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.84022,
@@ -5583,7 +5583,7 @@
       {
         "numero": 4,
         "nombre": "Amorino",
-        "descripcion": "Cafetería con 4,7⭐ (1073 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,7⭐ en Google (1073 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.841243,
@@ -5594,7 +5594,7 @@
       {
         "numero": 5,
         "nombre": "La Dulce Alianza",
-        "descripcion": "Cafetería con 4⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 36.84113,
@@ -5629,7 +5629,7 @@
       {
         "numero": 1,
         "nombre": "Cafe MITICO",
-        "descripcion": "Cafetería con 4,7⭐ (920 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,7⭐ en Google (920 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.759548,
@@ -5640,7 +5640,7 @@
       {
         "numero": 2,
         "nombre": "Cafe Samba Beach",
-        "descripcion": "Cafetería con 4,6⭐ (408 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (408 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.758794,
@@ -5651,7 +5651,7 @@
       {
         "numero": 3,
         "nombre": "Cafe LABOCANA",
-        "descripcion": "Cafetería con 4,6⭐ (38 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (38 reseñas). Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.759043,
@@ -5662,7 +5662,7 @@
       {
         "numero": 4,
         "nombre": "Cafe KORTY",
-        "descripcion": "Cafetería con 4,1⭐ (272 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,1⭐ en Google (272 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 36.756351,
@@ -5697,7 +5697,7 @@
       {
         "numero": 1,
         "nombre": "Bar Sauvage",
-        "descripcion": "Bar de tapas con 4,2⭐ (42 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.384541,
@@ -5708,7 +5708,7 @@
       {
         "numero": 2,
         "nombre": "Bar del Pla",
-        "descripcion": "Bar de tapas con 4,2⭐ (38 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.385604,
@@ -5719,7 +5719,7 @@
       {
         "numero": 3,
         "nombre": "Alsur Café (El Born)",
-        "descripcion": "Cafetería con 4,2⭐ (37 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.386497,
@@ -5730,7 +5730,7 @@
       {
         "numero": 4,
         "nombre": "Sucre Cremat -  Autèntica Crema Catalana",
-        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 41.383057,
@@ -5765,7 +5765,7 @@
       {
         "numero": 1,
         "nombre": "La Fábrica",
-        "descripcion": "Bar de tapas con 4,3⭐ (48 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.71647,
@@ -5776,7 +5776,7 @@
       {
         "numero": 2,
         "nombre": "Boston",
-        "descripcion": "Pub con 4,7⭐ (46 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.714131,
@@ -5787,7 +5787,7 @@
       {
         "numero": 3,
         "nombre": "87 Fusión Tapas and Drinks",
-        "descripcion": "Pub con 4,3⭐ (45 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.716022,
@@ -5798,7 +5798,7 @@
       {
         "numero": 4,
         "nombre": "Antigua Casa de Guardia",
-        "descripcion": "Pub con 4,2⭐ (36 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub. Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.717813,
@@ -5809,7 +5809,7 @@
       {
         "numero": 5,
         "nombre": "PicNic",
-        "descripcion": "Pub con 4⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 36.715817,
@@ -5844,7 +5844,7 @@
       {
         "numero": 1,
         "nombre": "ARVO Coffee & Plants",
-        "descripcion": "Cafetería con 4,5⭐ (46 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.266408,
@@ -5855,7 +5855,7 @@
       {
         "numero": 2,
         "nombre": "Rockade",
-        "descripcion": "Cafetería con 4,4⭐ (40 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.266622,
@@ -5866,7 +5866,7 @@
       {
         "numero": 3,
         "nombre": "Attico 14",
-        "descripcion": "Cafetería con 4,2⭐ (39 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.267038,
@@ -5877,7 +5877,7 @@
       {
         "numero": 4,
         "nombre": "Crazy Horse",
-        "descripcion": "Pub con 4,6⭐ (46 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 43.270146,
@@ -5912,7 +5912,7 @@
       {
         "numero": 1,
         "nombre": "Starbucks",
-        "descripcion": "Cafetería con 4,8⭐ (47 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.470869,
@@ -5923,7 +5923,7 @@
       {
         "numero": 2,
         "nombre": "News & Coffee",
-        "descripcion": "Cafetería con 4,4⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.474401,
@@ -5934,7 +5934,7 @@
       {
         "numero": 3,
         "nombre": "Horchatería Daniel",
-        "descripcion": "Cafetería con 4,4⭐ (43 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.474016,
@@ -5945,7 +5945,7 @@
       {
         "numero": 4,
         "nombre": "Café Lisboa",
-        "descripcion": "Cafetería con 4,1⭐ (38 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.474406,
@@ -5956,7 +5956,7 @@
       {
         "numero": 5,
         "nombre": "Emblematic",
-        "descripcion": "Cafetería con 4⭐ (33 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 39.469371,
@@ -5991,7 +5991,7 @@
       {
         "numero": 1,
         "nombre": "Bar Casalla",
-        "descripcion": "Bar de tapas con 4,3⭐ (44 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.468169,
@@ -6002,7 +6002,7 @@
       {
         "numero": 2,
         "nombre": "ROGEL",
-        "descripcion": "Cafetería con 4,3⭐ (46 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.466013,
@@ -6013,7 +6013,7 @@
       {
         "numero": 3,
         "nombre": "Espai Llimera",
-        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.469245,
@@ -6024,7 +6024,7 @@
       {
         "numero": 4,
         "nombre": "Daily Bistro",
-        "descripcion": "Cafetería con 4,2⭐ (32 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 39.466904,
@@ -6059,7 +6059,7 @@
       {
         "numero": 1,
         "nombre": "Bar Vermudez",
-        "descripcion": "Bar de tapas con 4,2⭐ (36 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.462481,
@@ -6070,7 +6070,7 @@
       {
         "numero": 2,
         "nombre": "The wine gallery",
-        "descripcion": "Bar de tapas con 4⭐ (43 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.461762,
@@ -6081,7 +6081,7 @@
       {
         "numero": 3,
         "nombre": "Coffee & Bastard Kitchen",
-        "descripcion": "Cafetería con 4,2⭐ (35 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.464724,
@@ -6092,7 +6092,7 @@
       {
         "numero": 4,
         "nombre": "Syra Coffee",
-        "descripcion": "Cafetería con 4⭐ (33 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 39.46702,
@@ -6127,7 +6127,7 @@
       {
         "numero": 1,
         "nombre": "El Boticario",
-        "descripcion": "Cafetería con 4,2⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.644094,
@@ -6138,7 +6138,7 @@
       {
         "numero": 2,
         "nombre": "The Boss",
-        "descripcion": "Cafetería con 4,2⭐ (43 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.64309,
@@ -6149,7 +6149,7 @@
       {
         "numero": 3,
         "nombre": "Ibarrola",
-        "descripcion": "Cafetería con 4,2⭐ (40 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.644358,
@@ -6160,7 +6160,7 @@
       {
         "numero": 4,
         "nombre": "Mr. Dumbo",
-        "descripcion": "Pub con 4,2⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.644351,
@@ -6171,7 +6171,7 @@
       {
         "numero": 5,
         "nombre": "La Malteadora",
-        "descripcion": "Pub con 4,1⭐ (33 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 41.641575,
@@ -6206,7 +6206,7 @@
       {
         "numero": 1,
         "nombre": "Contteo Pub",
-        "descripcion": "Bar de tapas con 4⭐ (35 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.175514,
@@ -6217,7 +6217,7 @@
       {
         "numero": 2,
         "nombre": "La Qarmita Cafebreria",
-        "descripcion": "Cafetería con 4,7⭐ (50 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.172891,
@@ -6228,7 +6228,7 @@
       {
         "numero": 3,
         "nombre": "Alhambra",
-        "descripcion": "Cafetería con 4,4⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.174716,
@@ -6239,7 +6239,7 @@
       {
         "numero": 4,
         "nombre": "Dulce y Salado",
-        "descripcion": "Cafetería con 4,1⭐ (34 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.1716,
@@ -6250,7 +6250,7 @@
       {
         "numero": 5,
         "nombre": "La Finca Coffee",
-        "descripcion": "Cafetería con 4⭐ (34 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 37.176207,
@@ -6285,7 +6285,7 @@
       {
         "numero": 1,
         "nombre": "Cafe-Bar Mami",
-        "descripcion": "Bar de tapas con 4,5⭐ (39 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.177979,
@@ -6296,7 +6296,7 @@
       {
         "numero": 2,
         "nombre": "Antonio Pérez Copas",
-        "descripcion": "Bar de tapas con 4,4⭐ (45 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.17823,
@@ -6307,7 +6307,7 @@
       {
         "numero": 3,
         "nombre": "Cafetería Amelia",
-        "descripcion": "Cafetería con 4,3⭐ (44 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.181515,
@@ -6318,7 +6318,7 @@
       {
         "numero": 4,
         "nombre": "Bar Los Pipos",
-        "descripcion": "Pub con 4,7⭐ (45 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 37.178266,
@@ -6353,7 +6353,7 @@
       {
         "numero": 1,
         "nombre": "CHUORE (Churros & More...)",
-        "descripcion": "Cafetería con 4,6⭐ (55 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.876941,
@@ -6364,7 +6364,7 @@
       {
         "numero": 2,
         "nombre": "Café Casino",
-        "descripcion": "Cafetería con 4,3⭐ (47 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.878598,
@@ -6375,7 +6375,7 @@
       {
         "numero": 3,
         "nombre": "A Taberna do Bispo",
-        "descripcion": "Pub con 4,4⭐ (41 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.878099,
@@ -6386,7 +6386,7 @@
       {
         "numero": 4,
         "nombre": "A Taberna do Bispo",
-        "descripcion": "Pub con 4,3⭐ (40 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 42.878099,
@@ -6397,7 +6397,7 @@
       {
         "numero": 5,
         "nombre": "A Borriquita de Belém",
-        "descripcion": "Pub con 4,2⭐ (43 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub. Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 42.880204,
@@ -6432,7 +6432,7 @@
       {
         "numero": 1,
         "nombre": "Las Fronteras",
-        "descripcion": "Bar de tapas con 4,7⭐ (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (268 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.479233,
@@ -6443,7 +6443,7 @@
       {
         "numero": 2,
         "nombre": "La Ruina",
-        "descripcion": "Bar de tapas con 4,6⭐ (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (866 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.479932,
@@ -6454,7 +6454,7 @@
       {
         "numero": 3,
         "nombre": "Marbella",
-        "descripcion": "Bar de tapas con 4,6⭐ (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (160 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.477747,
@@ -6465,7 +6465,7 @@
       {
         "numero": 4,
         "nombre": "Whelans Irish Pub",
-        "descripcion": "Bar de tapas con 4,5⭐ (1027 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,5⭐ en Google (1027 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.481847,
@@ -6476,7 +6476,7 @@
       {
         "numero": 5,
         "nombre": "TDK",
-        "descripcion": "Bar de tapas con 4,4⭐ (51 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (51 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 40.480599,
@@ -6511,7 +6511,7 @@
       {
         "numero": 1,
         "nombre": "London Bar",
-        "descripcion": "Bar de tapas con 4,2⭐ (830 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (830 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.485613,
@@ -6522,7 +6522,7 @@
       {
         "numero": 2,
         "nombre": "Café-Bar Macondo",
-        "descripcion": "Cafetería con 4,3⭐ (1754 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,3⭐ en Google (1754 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.484167,
@@ -6533,7 +6533,7 @@
       {
         "numero": 3,
         "nombre": "Café Hemispherio",
-        "descripcion": "Cafetería con 4,1⭐ (3371 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,1⭐ en Google (3371 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 40.483513,
@@ -6544,7 +6544,7 @@
       {
         "numero": 4,
         "nombre": "Café-bar Teide",
-        "descripcion": "Pub con 4,5⭐ (582 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub con 4,5⭐ en Google (582 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 40.488262,
@@ -6579,7 +6579,7 @@
       {
         "numero": 1,
         "nombre": "Sala Niágara",
-        "descripcion": "Bar de tapas con 4⭐ (37 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.465055,
@@ -6590,7 +6590,7 @@
       {
         "numero": 2,
         "nombre": "Chocolateria Aliva",
-        "descripcion": "Cafetería con 4,1⭐ (43 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.463028,
@@ -6601,7 +6601,7 @@
       {
         "numero": 3,
         "nombre": "Wowble!",
-        "descripcion": "Cafetería con 4,1⭐ (42 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.462771,
@@ -6612,7 +6612,7 @@
       {
         "numero": 4,
         "nombre": "Bar Pacho",
-        "descripcion": "Pub con 4,5⭐ (45 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.462316,
@@ -6623,7 +6623,7 @@
       {
         "numero": 5,
         "nombre": "La Fábrica craft bar",
-        "descripcion": "Pub con 4,3⭐ (41 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 43.463931,
@@ -6658,7 +6658,7 @@
       {
         "numero": 1,
         "nombre": "Picos de Europa",
-        "descripcion": "Cafetería con 4,2⭐ (32 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.460676,
@@ -6669,7 +6669,7 @@
       {
         "numero": 2,
         "nombre": "La Tintoría del Quebec",
-        "descripcion": "Pub con 4,2⭐ (42 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.461027,
@@ -6680,7 +6680,7 @@
       {
         "numero": 3,
         "nombre": "Cervecería Ateka",
-        "descripcion": "Pub con 4,2⭐ (40 reseñas). Un pub con ambiente para alargar la tarde con una copa.",
+        "descripcion": "Pub. Un pub con ambiente para alargar la tarde con una copa.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 43.46452,
@@ -6691,7 +6691,7 @@
       {
         "numero": 4,
         "nombre": "Café&Pub La Comedia",
-        "descripcion": "Pub con 4,1⭐ (35 reseñas). Copas y música: aquí la tarde sube de marcha.",
+        "descripcion": "Pub. Copas y música: aquí la tarde sube de marcha.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 43.461102,
@@ -6726,7 +6726,7 @@
       {
         "numero": 1,
         "nombre": "Sweet Karaoke",
-        "descripcion": "Bar de tapas con 4,3⭐ (44 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.188432,
@@ -6737,7 +6737,7 @@
       {
         "numero": 2,
         "nombre": "Sammy’s",
-        "descripcion": "Bar de tapas con 4,3⭐ (39 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.188468,
@@ -6748,7 +6748,7 @@
       {
         "numero": 3,
         "nombre": "Biblioteca",
-        "descripcion": "Bar de tapas con 4,3⭐ (36 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas. Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.18787,
@@ -6759,7 +6759,7 @@
       {
         "numero": 4,
         "nombre": "The Gold Harvest",
-        "descripcion": "Bar de tapas con 4,2⭐ (45 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 41.188034,
@@ -6770,7 +6770,7 @@
       {
         "numero": 5,
         "nombre": "The New Orleans",
-        "descripcion": "Bar de tapas con 4,2⭐ (41 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 41.187564,
@@ -6805,7 +6805,7 @@
       {
         "numero": 1,
         "nombre": "el Q",
-        "descripcion": "Bar de tapas con 4,6⭐ (195 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (195 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.989451,
@@ -6816,7 +6816,7 @@
       {
         "numero": 2,
         "nombre": "Gazanica Gastrobar",
-        "descripcion": "Bar de tapas con 4,6⭐ (148 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,6⭐ en Google (148 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.99027,
@@ -6827,7 +6827,7 @@
       {
         "numero": 3,
         "nombre": "Entreamigos",
-        "descripcion": "Bar de tapas con 4,4⭐ (1930 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (1930 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.986894,
@@ -6838,7 +6838,7 @@
       {
         "numero": 4,
         "nombre": "Nazaret",
-        "descripcion": "Bar de tapas con 4,4⭐ (682 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (682 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.988781,
@@ -6849,7 +6849,7 @@
       {
         "numero": 5,
         "nombre": "Churrería Como Tú",
-        "descripcion": "Bar de tapas con 4,4⭐ (215 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (215 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 38.988232,
@@ -6884,7 +6884,7 @@
       {
         "numero": 1,
         "nombre": "Tap Room 69",
-        "descripcion": "Bar de tapas con 4,7⭐ (201 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,7⭐ en Google (201 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.988076,
@@ -6895,7 +6895,7 @@
       {
         "numero": 2,
         "nombre": "Titi´s",
-        "descripcion": "Bar de tapas con 4,1⭐ (237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas con 4,1⭐ en Google (237 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.986432,
@@ -6906,7 +6906,7 @@
       {
         "numero": 3,
         "nombre": "Moga",
-        "descripcion": "Bar de tapas con 4⭐ (196 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "descripcion": "Bar de tapas con 4⭐ en Google (196 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.990202,
@@ -6917,7 +6917,7 @@
       {
         "numero": 4,
         "nombre": "Aroma Café",
-        "descripcion": "Cafetería con 4,4⭐ (193 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,4⭐ en Google (193 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 38.987531,
@@ -6928,7 +6928,7 @@
       {
         "numero": 5,
         "nombre": "Dover",
-        "descripcion": "Cafetería con 4,2⭐ (454 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,2⭐ en Google (454 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 38.986647,
@@ -6963,7 +6963,7 @@
       {
         "numero": 1,
         "nombre": "Baldomero",
-        "descripcion": "Bar de tapas con 4,3⭐ (909 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (909 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.390116,
@@ -6974,7 +6974,7 @@
       {
         "numero": 2,
         "nombre": "Almazen Café",
-        "descripcion": "Cafetería con 4,7⭐ (1582 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,7⭐ en Google (1582 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.389734,
@@ -6985,7 +6985,7 @@
       {
         "numero": 3,
         "nombre": "Café Bar Palomo",
-        "descripcion": "Cafetería con 4,6⭐ (285 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería con 4,6⭐ en Google (285 reseñas). Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.390127,
@@ -6996,7 +6996,7 @@
       {
         "numero": 4,
         "nombre": "Jester",
-        "descripcion": "Cafetería con 4,5⭐ (2794 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería con 4,5⭐ en Google (2794 reseñas). Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.385843,
@@ -7007,7 +7007,7 @@
       {
         "numero": 5,
         "nombre": "Cafetería-Panadería-Alimentación Alfonso",
-        "descripcion": "Cafetería con 4,5⭐ (1388 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería con 4,5⭐ en Google (1388 reseñas). Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 37.389458,
@@ -7493,35 +7493,35 @@
       {
         "numero": 1,
         "nombre": "Cheleros",
-        "descripcion": "Bar de tapas con 4,2⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie"
       },
       {
         "numero": 2,
         "nombre": "Alas Wings",
-        "descripcion": "Bar de tapas con 4,2⭐ (32 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie"
       },
       {
         "numero": 3,
         "nombre": "Taller de Espresso",
-        "descripcion": "Cafetería con 4,2⭐ (38 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie"
       },
       {
         "numero": 4,
         "nombre": "El terrible juan",
-        "descripcion": "Cafetería con 4,2⭐ (37 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie"
       },
       {
         "numero": 5,
         "nombre": "Hipatia Café",
-        "descripcion": "Cafetería con 4,1⭐ (31 reseñas). Para reponer fuerzas con un café y un dulce.",
+        "descripcion": "Cafetería. Para reponer fuerzas con un café y un dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "",
         "lat": 40.485934,
@@ -7556,7 +7556,7 @@
       {
         "numero": 1,
         "nombre": "Mastropiero",
-        "descripcion": "Bar de tapas con 4,3⭐ (38 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.471552,
@@ -7567,7 +7567,7 @@
       {
         "numero": 2,
         "nombre": "Algaba",
-        "descripcion": "Cafetería con 4⭐ (32 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.988813,
@@ -7578,7 +7578,7 @@
       {
         "numero": 3,
         "nombre": "Le Boutique Bike",
-        "descripcion": "Cafetería con 4⭐ (27 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 39.461168,
@@ -7589,7 +7589,7 @@
       {
         "numero": 4,
         "nombre": "La Chicha de Belona",
-        "descripcion": "Pub con 4,1⭐ (36 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 39.476582,
@@ -7624,7 +7624,7 @@
       {
         "numero": 1,
         "nombre": "La vermutería del Sherry",
-        "descripcion": "Bar de tapas con 4,1⭐ (42 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "descripcion": "Bar de tapas. Ideal para arrancar con un vermut, cañas y algo de picar.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.693013,
@@ -7635,7 +7635,7 @@
       {
         "numero": 2,
         "nombre": "Coco Café",
-        "descripcion": "Cafetería con 4,1⭐ (39 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "descripcion": "Cafetería. Buen sitio para un café, repostería o algo dulce.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.708628,
@@ -7646,7 +7646,7 @@
       {
         "numero": 3,
         "nombre": "Coso",
-        "descripcion": "Cafetería con 4,1⭐ (37 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "descripcion": "Cafetería. Una pausa con café de especialidad o algo de merienda.",
         "tipo": "Café y dulce",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 36.682828,
@@ -7657,7 +7657,7 @@
       {
         "numero": 4,
         "nombre": "Destraperlo Comando Cervecero",
-        "descripcion": "Pub con 4,6⭐ (56 reseñas). Para subir el ritmo con unas copas y buen ambiente.",
+        "descripcion": "Pub. Para subir el ritmo con unas copas y buen ambiente.",
         "tipo": "Copas y ambiente",
         "tiempo_hasta_siguiente": "",
         "lat": 36.6507,

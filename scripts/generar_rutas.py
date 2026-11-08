@@ -82,7 +82,7 @@ def get_bares(ciudad, n=6, con_geo=False):
     foto = "" if SIN_FOTO else "AND photo_url IS NOT NULL AND photo_url!='' "
     return d1(
         f"SELECT nombre, tipo, direccion, rating, rating_count, lat, lon FROM locales "
-        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 {foto}"
+        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND google_place_id IS NOT NULL AND google_place_id<>'' {foto}"
         f"AND direccion IS NOT NULL {extra}"
         f"ORDER BY rating DESC, rating_count DESC {lim}", [ciudad])
 
@@ -121,7 +121,7 @@ def _construir_ruta(ciudad, bares, barrio=None):
         paradas.append({
             "numero": i + 1,
             "nombre": b["nombre"],
-            "descripcion": f"{tipo_es.capitalize()} con {rating}⭐{reseñas}. {frases[k % len(frases)]}",
+            "descripcion": f"{tipo_es.capitalize()} con {rating}⭐ en Google{reseñas}. {frases[k % len(frases)]}",
             "tipo": rol,
             "tiempo_hasta_siguiente": "5-10 min a pie" if i < len(bares) - 1 else "",
         })

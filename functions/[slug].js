@@ -37,7 +37,7 @@ export async function onRequestGet(context) {
 
   const ul = ulRows[0];
   const { results } = await env.DB.prepare(
-    "SELECT id, nombre, tipo, ciudad, direccion, telefono, web, instagram, horario, terraza, musica, descripcion, foto_perfil, fotos, menu_url, redes, lat, lon, rating, rating_count FROM locales WHERE id = ?"
+    "SELECT id, nombre, tipo, ciudad, direccion, telefono, web, instagram, horario, terraza, musica, descripcion, foto_perfil, fotos, menu_url, redes, lat, lon, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating END AS rating, CASE WHEN (google_place_id IS NOT NULL AND google_place_id <> '') THEN rating_count END AS rating_count FROM locales WHERE id = ?"
   ).bind(ul.local_id).all();
 
   if (!results.length) {
