@@ -176,7 +176,7 @@ export default async function RutaPage({
           </div>
 
           {/* ALTA NEWSLETTER — justo donde acaba la ruta, antes del CTA que lleva a otra página */}
-          <SuscribirCiudad ciudad={ruta.ciudad} />
+          <SuscribirCiudad ciudad={ruta.ciudad} ruta={ruta.slug} />
 
           {/* CONSEJOS */}
           <div style={{ background: "white", border: "1px solid #F5E6D3", borderRadius: "1.25rem", padding: "1.5rem", marginTop: "2.5rem" }}>

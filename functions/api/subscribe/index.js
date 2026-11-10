@@ -1,4 +1,5 @@
 import { tipoPagina } from "../m.js";
+import RUTAS from "../../../data/rutas.json";
 const LISTMONK_URL = "https://listmonk.tresycuarto.com";
 const LISTMONK_LIST_ID = 3;
 
@@ -122,8 +123,23 @@ export async function onRequestPost(context) {
     }
   } catch { /* silencioso */ }
 
-  // Template 5 = ciudad próximamente | Template 4 = ciudad con datos
+  // Template 5 = ciudad próximamente | Template 4 = ciudad con datos.
+  // La oferta del alta (10/11/2026): te mandamos AL MOMENTO la ruta de tardeo de
+  // tu ciudad (si el alta viene de una ruta, esa primero). Sin ruta, la plantilla
+  // enlaza a la página de la ciudad.
   const template_id = proximamente ? 5 : 4;
+  const ciudad0 = listaCiudades[0];
+  const rutasCiudad = RUTAS.filter(r => r.ciudad === ciudad0)
+    .sort((a, b) => (b.slug === body.ruta) - (a.slug === body.ruta))
+    .slice(0, 2)
+    .map(r => ({
+      titulo: r.titulo,
+      url: `https://tresycuarto.com/rutas/${r.slug}/`,
+      intro: r.intro,
+      paradas: r.paradas.slice(0, 5).map(p => ({ numero: p.numero, nombre: p.nombre, tipo: p.tipo })),
+    }));
+  const ciudadSlug = (RUTAS.find(r => r.ciudad === ciudad0) || {}).ciudad_slug
+    || ciudad0.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-");
   await fetch(`${LISTMONK_URL}/api/tx`, {
     method: "POST",
     headers: {
@@ -134,7 +150,11 @@ export async function onRequestPost(context) {
     body: JSON.stringify({
       subscriber_email: email,
       template_id,
-      data: { ciudad: listaCiudades.join(", ") },
+      data: {
+        ciudad: listaCiudades.join(", "),
+        rutas: rutasCiudad,
+        ciudad_url: `https://tresycuarto.com/locales/${ciudadSlug}/`,
+      },
     }),
   });
 

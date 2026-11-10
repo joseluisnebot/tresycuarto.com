@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/></head><body style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#FFF8EF;margin:0;padding:0"><div style="max-width:520px;margin:40px auto;background:white;border-radius:16px;border:1px solid #F5E6D3;overflow:hidden"><div style="background:linear-gradient(135deg,#FB923C,#F59E0B);padding:32px;text-align:center"><h1 style="color:white;font-size:1.8rem;font-weight:900;letter-spacing:-0.03em;margin:0">tres<span style="opacity:0.85">y</span>cuarto</h1></div><div style="padding:32px">
+{{ if .Tx.Data.rutas }}
+<h2 style="color:#1C1917;font-size:1.3rem;font-weight:800;margin:0 0 12px">Tu ruta de tardeo por {{ .Tx.Data.ciudad }} 🍹</h2>
+<p style="color:#78716C;line-height:1.7;margin:0 0 20px">Aquí la tienes, para llevarla en el móvil. Ve de una parada a otra sin prisa: el tardeo va de eso.</p>
+{{ range .Tx.Data.rutas }}
+<div style="border:1px solid #F5E6D3;border-radius:12px;padding:20px 22px;margin:0 0 16px">
+<p style="color:#1C1917;font-size:1.05rem;font-weight:800;margin:0 0 8px">{{ .titulo }}</p>
+<p style="color:#78716C;font-size:0.9rem;line-height:1.6;margin:0 0 14px">{{ .intro }}</p>
+{{ range .paradas }}<p style="margin:0 0 8px;color:#1C1917;font-size:0.95rem"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:#FEF0DC;color:#FB923C;font-weight:800;font-size:0.8rem;text-align:center;line-height:22px;margin-right:8px">{{ .numero }}</span><strong>{{ .nombre }}</strong> <span style="color:#A8A29E">· {{ .tipo }}</span></p>{{ end }}
+<div style="text-align:center;margin:18px 0 4px"><a href="{{ .url }}" style="background:linear-gradient(135deg,#FB923C,#F59E0B);color:white;font-weight:800;text-decoration:none;padding:12px 28px;border-radius:12px;display:inline-block">Ver la ruta con el mapa →</a></div>
+</div>
+{{ end }}
+{{ else }}
+<h2 style="color:#1C1917;font-size:1.3rem;font-weight:800;margin:0 0 16px">¡Ya estás dentro! 🎉</h2>
+<p style="color:#78716C;line-height:1.7;margin:0 0 24px">Ya tenemos mapeados bares, terrazas y cafés para tardear en <strong style="color:#FB923C">{{ .Tx.Data.ciudad }}</strong>. Échales un vistazo:</p>
+<div style="text-align:center;margin:24px 0"><a href="{{ .Tx.Data.ciudad_url }}" style="background:linear-gradient(135deg,#FB923C,#F59E0B);color:white;font-weight:800;text-decoration:none;padding:14px 32px;border-radius:12px;display:inline-block">Ver {{ .Tx.Data.ciudad }} →</a></div>
+{{ end }}
+<p style="color:#78716C;line-height:1.7;margin:16px 0 0">A partir de ahora te avisamos de los planes de tarde que salgan en {{ .Tx.Data.ciudad }}: conciertos, teatro, fiestas y terrazas que merecen la pena.</p>
+<hr style="border:none;border-top:1px solid #F5E6D3;margin:24px 0"/><p style="color:#A8A29E;font-size:0.75rem;text-align:center;margin:0">Sin spam. Solo lo bueno. © 2026 tresycuarto.com<br/><a href="https://tresycuarto.com/api/unsubscribe?uuid={{ .Subscriber.UUID }}" style="color:#A8A29E;text-decoration:underline;">Darme de baja</a></p></div></div></body></html>

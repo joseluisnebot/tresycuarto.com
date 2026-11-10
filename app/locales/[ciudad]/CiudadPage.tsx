@@ -811,17 +811,23 @@ export default function CiudadPage({ slug }: { slug: string }) {
                 <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>✅</div>
                 <p style={{ fontWeight: 700, color: "#166534", marginBottom: "0.25rem" }}>¡Apuntado!</p>
                 <p style={{ color: "#15803D", fontSize: "0.9rem" }}>
-                  Te escribiremos con los planes de {nombreCiudad}.
+                  {RUTAS_POR_CIUDAD[nombreCiudad]
+                    ? `Revisa tu correo: ahí tienes la ruta de tardeo de ${nombreCiudad}.`
+                    : `Te escribiremos con los planes de ${nombreCiudad}.`}
                 </p>
               </>
             ) : (
               <>
                 <div style={{ fontSize: "1.75rem", marginBottom: "0.5rem" }}>☀️</div>
                 <h2 style={{ fontWeight: 800, color: "#1C1917", fontSize: "1.15rem", marginBottom: "0.4rem", letterSpacing: "-0.02em" }}>
-                  Los mejores planes de {nombreCiudad}, cada semana
+                  {RUTAS_POR_CIUDAD[nombreCiudad]
+                    ? `La ruta de tardeo de ${nombreCiudad}, en tu correo`
+                    : `Los mejores planes de ${nombreCiudad}, cada semana`}
                 </h2>
                 <p style={{ color: "#78716C", maxWidth: "420px", margin: "0 auto 1.25rem", lineHeight: 1.6, fontSize: "0.92rem" }}>
-                  Terrazas nuevas, eventos y sitios que merecen la pena. Un correo, sin relleno.
+                  {RUTAS_POR_CIUDAD[nombreCiudad]
+                    ? "Te la mandamos ahora para llevarla en el móvil. Y te avisamos de los planes de tarde que salgan: conciertos, teatro, fiestas."
+                    : "Terrazas nuevas, eventos y sitios que merecen la pena. Un correo, sin relleno."}
                 </p>
                 <div ref={containerRef} />
                 <form
@@ -860,7 +866,7 @@ export default function CiudadPage({ slug }: { slug: string }) {
                       boxShadow: "0 4px 20px rgba(251,146,60,0.35)",
                       opacity: subscribeStatus === "loading" ? 0.7 : 1,
                     }}>
-                      {subscribeStatus === "loading" ? "..." : "Apuntarme →"}
+                      {subscribeStatus === "loading" ? "..." : (RUTAS_POR_CIUDAD[nombreCiudad] ? "Mandármela →" : "Apuntarme →")}
                     </button>
                   </div>
                   {subscribeStatus === "error" && (
