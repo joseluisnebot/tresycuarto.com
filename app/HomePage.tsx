@@ -67,6 +67,7 @@ export default function HomePage() {
   useEffect(() => setMesTemp(new Date().getMonth()), []);
   const [ciudades, setCiudades] = useState<string[]>([]);
   const [status, setStatus] = useState<Status>("idle");
+  const [faltaCiudad, setFaltaCiudad] = useState(false);
   const [busqueda, setBusqueda] = useState("");
   const [ciudadBusqueda, setCiudadBusqueda] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
@@ -96,6 +97,7 @@ export default function HomePage() {
     : [];
 
   function toggleCiudad(c: string) {
+    setFaltaCiudad(false);
     setCiudades(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c]);
   }
 
@@ -107,14 +109,20 @@ export default function HomePage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email || ciudades.length === 0) return;
+    if (!email) return;
+    // Antes, sin ciudad elegida el botón no hacía nada y no avisaba (10-13/11 se
+    // perdió así un alta). Si lo escrito en el buscador es una sola ciudad, vale.
+    let elegidas = ciudades;
+    if (elegidas.length === 0 && sugerenciasForm.length === 1) elegidas = [sugerenciasForm[0]];
+    if (elegidas.length === 0) { setFaltaCiudad(true); return; }
+    setCiudades(elegidas);
     setStatus("loading");
     try {
       const cf_token = await getToken();
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, ciudades, cf_token, replace: true }),
+        body: JSON.stringify({ email, ciudades: elegidas, cf_token, replace: true }),
       });
       setStatus(res.ok ? "ok" : "error");
     } catch {
@@ -330,6 +338,11 @@ export default function HomePage() {
               >
                 {status === "loading" ? "Apuntando..." : "Quiero apuntarme 👋"}
               </button>
+              {faltaCiudad && (
+                <p style={{ color: "#EF4444", fontSize: "0.85rem", textAlign: "center" }}>
+                  Elige tu ciudad en el buscador de arriba y vuelve a pulsar.
+                </p>
+              )}
               {status === "error" && (
                 <p style={{ color: "#EF4444", fontSize: "0.85rem", textAlign: "center" }}>
                   Algo falló. Inténtalo de nuevo.
