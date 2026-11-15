@@ -22,6 +22,8 @@ import generar_rutas as G   # d1, clusters_geograficos, reverse_barrio, _constru
 
 RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 RUTAS = os.path.join(RAIZ, "data", "rutas.json")
+CONTENIDO = json.load(open(os.path.join(RAIZ, "data", "ciudad-content.json")))
+MAX_KM_CENTRO = 12   # hay locales con la ciudad mal asignada: 15/11 salió un "centro de Sevilla" a 108 km
 LISTAS = os.path.join(RAIZ, "logs", "candidatas_rutas")
 DESTINO = "joseluisnebot@mifsut.com"   # entra en la bandeja (la de gmail la archiva un filtro)
 MIN_BARES, POR_SEMANA, DIST_RUTA_KM = 4, 5, 0.7
@@ -74,6 +76,9 @@ def calcular():
         for grupo in G.clusters_geograficos(bares, min_n=MIN_BARES, max_clusters=40):
             cx = sum(b["lat"] for b in grupo) / len(grupo)
             cy = sum(b["lon"] for b in grupo) / len(grupo)
+            centro = CONTENIDO.get(ciudad, {}).get("coords")
+            if centro and km(cx, cy, centro["lat"], centro["lon"]) > MAX_KM_CENTRO:
+                continue   # fuera de la ciudad: ciudad mal asignada en origen
             if paradas and min(km(cx, cy, a, o) for a, o in paradas) <= DIST_RUTA_KM:
                 continue   # ya hay una ruta en esa zona
             nota = sum(float(b["rating"]) for b in grupo) / len(grupo)
