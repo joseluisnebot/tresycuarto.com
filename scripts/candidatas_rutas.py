@@ -25,6 +25,9 @@ RUTAS = os.path.join(RAIZ, "data", "rutas.json")
 LISTAS = os.path.join(RAIZ, "logs", "candidatas_rutas")
 DESTINO = "joseluisnebot@mifsut.com"   # entra en la bandeja (la de gmail la archiva un filtro)
 MIN_BARES, POR_SEMANA, DIST_RUTA_KM = 4, 5, 0.7
+# Más reseñas que esto = casi seguro que se cruzó con un parque o monumento al traer las
+# notas de Google ("Central Park" de Sevilla tenía las 41.364 del Parque de María Luisa)
+MAX_RESENAS_FIABLE = 5000
 NO_TARDEO = re.compile(r"starbucks|panader|helader|churrer|bubble|burger king|mcdonald|kfc|telepizza|domino|"
                        r"pizzer|kebab|d[öo]ner|sushi|wok|gamer|game|ciber|locutorio|asador de pollos", re.I)
 TIPOS_TARDEO = {"bar", "pub", "biergarten", "cafe"}
@@ -40,7 +43,8 @@ def km(a, b, c, d):
 def bares_reales():
     return [b for b in G.d1(
         "SELECT nombre, tipo, direccion, rating, rating_count, lat, lon, slug, ciudad FROM locales "
-        "WHERE google_place_id IS NOT NULL AND google_place_id <> '' AND rating >= 4.0 AND rating_count >= 20 "
+        f"WHERE google_place_id IS NOT NULL AND google_place_id <> '' AND rating >= 4.0 AND rating_count >= 20 "
+        f"AND rating_count <= {MAX_RESENAS_FIABLE} "
         "AND lat IS NOT NULL AND slug IS NOT NULL AND direccion IS NOT NULL "
         "AND (fuente IS NULL OR fuente <> 'demo')")
         if (b["tipo"] or "bar").lower() in TIPOS_TARDEO and not NO_TARDEO.search(b["nombre"])]
@@ -81,17 +85,27 @@ def calcular():
             candidatas.append({"ciudad": ciudad, "lat": cx, "lon": cy, "puntos": round(puntos, 2), "resenas": resenas,
                                "nota_media": round(nota, 2), "bares": grupo})
     candidatas.sort(key=lambda c: -c["puntos"])
-    # Variedad: como mucho 2 por ciudad en cada lista
+    # Variedad (máx. 2 por ciudad) y fuera las que ya están publicadas: el slug depende del
+    # barrio, que se sabe al geocodificar, así que se comprueba aquí (las rutas antiguas sin
+    # coordenadas no se detectan por distancia: así se coló Los Depósitos el 15/11)
+    existentes = {r["slug"] for r in rutas}
     elegidas, usos = [], {}
     for c in candidatas:
-        if usos.get(c["ciudad"], 0) < 2:
-            elegidas.append(c); usos[c["ciudad"]] = usos.get(c["ciudad"], 0) + 1
-        if len(elegidas) == POR_SEMANA:
-            break
-    for i, c in enumerate(elegidas, 1):
-        c["id"] = i
+        if usos.get(c["ciudad"], 0) >= 2:
+            continue
         c["barrio"] = G.reverse_barrio(c["lat"], c["lon"]) or "Centro"
         c["ruta"] = G._construir_ruta(c["ciudad"], c["bares"], barrio=None if c["barrio"] == "Centro" else c["barrio"])
+        if c["ruta"]["slug"] in existentes:
+            continue
+        # Las rutas de centro antiguas usan otro formato de slug (tardeo-centro-X / tardeo-X-centro)
+        if c["barrio"] == "Centro" and any(r["ciudad"] == c["ciudad"] and r["barrio"].lower() in ("centro", "centre")
+                                           for r in rutas):
+            continue
+        c["id"] = len(elegidas) + 1
+        elegidas.append(c); usos[c["ciudad"]] = usos.get(c["ciudad"], 0) + 1
+        existentes.add(c["ruta"]["slug"])   # dos zonas del mismo barrio darían la misma ruta
+        if len(elegidas) == POR_SEMANA:
+            break
     return elegidas, len(candidatas)
 
 
