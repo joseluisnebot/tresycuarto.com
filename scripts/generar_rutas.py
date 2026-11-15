@@ -82,7 +82,7 @@ def get_bares(ciudad, n=6, con_geo=False):
     foto = "" if SIN_FOTO else "AND photo_url IS NOT NULL AND photo_url!='' "
     return d1(
         f"SELECT nombre, tipo, direccion, rating, rating_count, lat, lon FROM locales "
-        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND google_place_id IS NOT NULL AND google_place_id<>'' {foto}"
+        f"WHERE ciudad=? AND rating>=4.0 AND rating_count>=20 AND google_place_id IS NOT NULL AND google_place_id<>'' AND rating_count<=5000 {foto}"
         f"AND direccion IS NOT NULL {extra}"
         f"ORDER BY rating DESC, rating_count DESC {lim}", [ciudad])
 

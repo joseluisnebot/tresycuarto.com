@@ -1596,7 +1596,7 @@
       {
         "numero": 5,
         "nombre": "Apolo",
-        "descripcion": "Bar de tapas con 4,3⭐ en Google (11376 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 40.434961,
@@ -3169,7 +3169,7 @@
       {
         "numero": 2,
         "nombre": "En'ca Omaita",
-        "descripcion": "Bar de tapas con 4,6⭐ en Google (5471 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "5-10 min a pie",
         "lat": 37.387133,
@@ -4488,7 +4488,7 @@
       {
         "numero": 5,
         "nombre": "Bar El Comercio",
-        "descripcion": "Bar de tapas con 4,4⭐ en Google (7430 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "descripcion": "Bar de tapas. Un clásico para tapear y tomar la primera caña de la tarde.",
         "tipo": "Tapas y vermut",
         "tiempo_hasta_siguiente": "",
         "lat": 37.390813,

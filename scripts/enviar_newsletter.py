@@ -202,7 +202,7 @@ def locales_de_ciudad(ciudad, semana):
     pool = RESPALDO_N * RESPALDO_ROTACION
     filas = d1_query(
         "SELECT nombre, tipo, rating, rating_count, terraza, slug, direccion, "
-        "  (google_place_id IS NOT NULL AND google_place_id <> '') AS nota_real "
+        "  (google_place_id IS NOT NULL AND google_place_id <> '' AND rating_count <= 5000) AS nota_real "
         "FROM locales "
         "WHERE ciudad = ? AND slug IS NOT NULL AND rating IS NOT NULL "
         "  AND rating >= 3.5 AND rating_count >= 5 "
