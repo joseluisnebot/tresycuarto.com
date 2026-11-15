@@ -7677,5 +7677,84 @@
       "ruta tardeo el centro Jerez de la Frontera",
       "qué hacer tarde en Jerez de la Frontera"
     ]
+  },
+  {
+    "slug": "tardeo-virgen-del-val-alcala-de-henares",
+    "titulo": "Ruta de tardeo por Virgen del Val, Alcalá de Henares",
+    "ciudad": "Alcalá de Henares",
+    "ciudad_slug": "alcala-de-henares",
+    "barrio": "Virgen del Val",
+    "intro": "Si buscas plan de tarde en Virgen del Val (Alcalá de Henares), aquí tienes 5 de los bares mejor puntuados de la zona para montar una ruta cómoda.",
+    "distancia": "~1,5 km",
+    "duracion": "3-4 horas",
+    "mejor_dia": "Sábado o domingo desde las 13:00",
+    "paradas": [
+      {
+        "numero": 1,
+        "nombre": "Bar Los Arcos",
+        "descripcion": "Bar de tapas con 4,4⭐ en Google (488 reseñas). Ideal para arrancar con un vermut, cañas y algo de picar.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie",
+        "lat": 40.484086,
+        "lon": -3.35137,
+        "local_slug": "bar-los-arcos",
+        "coord": "local"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bar Arribas",
+        "descripcion": "Bar de tapas con 4,3⭐ en Google (124 reseñas). Un clásico para tapear y tomar la primera caña de la tarde.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie",
+        "lat": 40.484573,
+        "lon": -3.35045,
+        "local_slug": "bar-arribas",
+        "coord": "local"
+      },
+      {
+        "numero": 3,
+        "nombre": "Bar Tráfico",
+        "descripcion": "Bar de tapas con 4,2⭐ en Google (102 reseñas). Buen sitio para vermut, tapas y ambiente de barra.",
+        "tipo": "Tapas y vermut",
+        "tiempo_hasta_siguiente": "5-10 min a pie",
+        "lat": 40.484838,
+        "lon": -3.347407,
+        "local_slug": "bar-trafico",
+        "coord": "local"
+      },
+      {
+        "numero": 4,
+        "nombre": "Cafetería Castilla",
+        "descripcion": "Cafetería con 4,6⭐ en Google (69 reseñas). Buen sitio para un café, repostería o algo dulce.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "5-10 min a pie",
+        "lat": 40.483466,
+        "lon": -3.348559,
+        "local_slug": "cafeteria-castilla",
+        "coord": "local"
+      },
+      {
+        "numero": 5,
+        "nombre": "Café Figueroa 22",
+        "descripcion": "Cafetería con 4,2⭐ en Google (334 reseñas). Una pausa con café de especialidad o algo de merienda.",
+        "tipo": "Café y dulce",
+        "tiempo_hasta_siguiente": "",
+        "lat": 40.488915,
+        "lon": -3.347227,
+        "local_slug": "cafe-figueroa-22",
+        "coord": "local"
+      }
+    ],
+    "consejos": [
+      "En Alcalá de Henares el tardeo arranca sobre las 13:00-14:00; llega pronto si quieres terraza.",
+      "El fin de semana es el mejor momento — entre semana el ambiente baja antes.",
+      "Muchos bares no aceptan reserva: la gracia es pasear y entrar donde veas ambiente."
+    ],
+    "seo_keywords": [
+      "tardeo Virgen del Val Alcalá de Henares",
+      "bares Virgen del Val Alcalá de Henares tarde",
+      "ruta tardeo Virgen del Val Alcalá de Henares",
+      "qué hacer tarde en Virgen del Val"
+    ]
   }
 ]
